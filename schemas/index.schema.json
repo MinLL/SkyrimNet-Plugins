@@ -30,12 +30,10 @@
         "type",
         "title",
         "tagline",
-        "author_id",
         "author",
-        "version",
-        "skyrimnet_version",
         "tags",
         "nsfw",
+        "icon",
         "mods",
         "first_published",
         "last_updated"
@@ -44,13 +42,20 @@
       "properties": {
         "id": {
           "type": "string",
-          "pattern": "^plugins/[1-9][0-9]*/[a-z0-9][a-z0-9-]*[a-z0-9]$",
+          "pattern": "^plugins/[a-zA-Z0-9][a-zA-Z0-9._-]{0,63}/[a-z0-9][a-z0-9-]*[a-z0-9]$",
           "maxLength": 200,
-          "description": "Canonical plugin ID derived from the directory path: 'plugins/{author_id}/{slug}'. The first segment after 'plugins/' is the author's numeric GitHub user ID (immutable), and the second segment is the URL-safe slug. Refactored from username-based paths in 2026-04-15 to immune the system to GitHub username changes and username takeover."
+          "description": "Canonical plugin ID derived from the directory path: 'plugins/{author}/{slug}'. The author segment is the SaaS-assigned immutable username (uniqueness + immutability enforced at signup, so paths never collide and never break). The slug is the URL-safe plugin slug."
         },
         "type": {
           "enum": ["bundle", "listing"],
           "description": "Copied from manifest.json. Controls dashboard card rendering (install button vs external-link button) and the 'installable only' filter in browse."
+        },
+        "external_url": {
+          "type": "string",
+          "pattern": "^https://",
+          "minLength": 12,
+          "maxLength": 2000,
+          "description": "Required for listings, absent for bundles. Mirrored from manifest.external_url so the browse page can render an 'open external' link without fetching the full manifest."
         },
         "title": {
           "type": "string",
@@ -64,16 +69,11 @@
           "maxLength": 200,
           "description": "Short one-liner shown on browse cards. Copied from manifest.json."
         },
-        "author_id": {
-          "type": "integer",
-          "minimum": 1,
-          "description": "GitHub user's immutable numeric ID. Copied from manifest.json. The dashboard uses this together with the display name to render Discord-style discriminators (e.g. 'Bob#5678' using last 4 digits) when multiple authors share a display name."
-        },
         "author": {
           "type": "string",
           "minLength": 1,
           "maxLength": 50,
-          "description": "Free-form display name shown on the dashboard. Copied from manifest.json. NOT the GitHub username. No uniqueness enforced — disambiguation handled by the dashboard via author_id discriminator."
+          "description": "The author's SaaS-assigned immutable username. Copied from manifest.json. Also forms the author segment of the plugin path."
         },
         "version": {
           "type": "string",
@@ -100,6 +100,12 @@
         "nsfw": {
           "type": "boolean",
           "description": "Copied from manifest.json. Controls whether this plugin is visible in the default (NSFW-off) browse view."
+        },
+        "icon": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 50,
+          "description": "Copied from manifest.json. Key into the dashboard's Lucide icon registry; rendered as the browse-card thumbnail."
         },
         "contents": {
           "type": "object",
@@ -141,22 +147,25 @@
         "first_published": {
           "type": "string",
           "format": "date-time",
-          "description": "Derived from: git log --reverse --format=%aI -- plugins/{author_id}/{slug}/ | head -1"
+          "description": "Derived from: git log --reverse --format=%aI -- plugins/{author}/{slug}/ | head -1"
         },
         "last_updated": {
           "type": "string",
           "format": "date-time",
-          "description": "Derived from: git log -1 --format=%aI -- plugins/{author_id}/{slug}/"
+          "description": "Derived from: git log -1 --format=%aI -- plugins/{author}/{slug}/"
         }
       },
       "allOf": [
         {
           "if": { "properties": { "type": { "const": "bundle" } }, "required": ["type"] },
-          "then": { "required": ["contents"] }
+          "then": { "required": ["contents", "version", "skyrimnet_version"] }
         },
         {
           "if": { "properties": { "type": { "const": "listing" } }, "required": ["type"] },
-          "then": { "not": { "required": ["contents"] } }
+          "then": {
+            "required": ["external_url"],
+            "not": { "required": ["contents"] }
+          }
         }
       ]
     }

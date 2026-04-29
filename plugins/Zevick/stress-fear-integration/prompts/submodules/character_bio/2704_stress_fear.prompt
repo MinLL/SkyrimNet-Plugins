@@ -1,0 +1,91 @@
+{% if render_mode == "full" or render_mode == "thoughts" or render_mode == "dialogue_target" and actorUUID == player.UUID %}
+{{ "## Stress Level" }}
+{% set total_stress = get_global_value("Stress_Total") %}
+{% if total_stress > 75 %}
+{{ decnpc(actorUUID).name }} is severely stressed. {{ decnpc(actorUUID).subjectivePronoun | capitalize }}'s hands shake uncontrollably, making precise strikes nearly impossible. Reaction time is severely delayed, and {{ decnpc(actorUUID).subjectivePronoun }} struggles to maintain focus on threats. Defensive positioning breaks down, leaving {{ decnpc(actorUUID).possessivePronoun }} body vulnerable to incoming attacks.
+{% elif total_stress > 50 %}
+{{ decnpc(actorUUID).name }} is moderately stressed. {{ decnpc(actorUUID).subjectivePronoun | capitalize }}'s attacks lack precision and power, frequently missing or glancing off opponents. Reaction time is sluggish, making it difficult to dodge incoming strikes. {{ decnpc(actorUUID).possessivePronoun }} defensive stance wavers, and {{ decnpc(actorUUID).subjectivePronoun }} has difficulty maintaining tactical awareness.
+{% elif total_stress > 25 %}
+{{ decnpc(actorUUID).name }} shows mild stress affecting combat. Accuracy is slightly compromised, and {{ decnpc(actorUUID).possessivePronoun }} movements are marginally less fluid. {{ decnpc(actorUUID).subjectivePronoun }} can still fight effectively, but there's a noticeable hesitation in {{ decnpc(actorUUID).possessivePronoun }} strikes. Reaction time is slightly delayed, but still adequate for most encounters.
+{% else %}
+{{ decnpc(actorUUID).name }} is calm and focused.
+{% endif %}
+{% if total_stress > 25 %}
+{{ decnpc(actorUUID).name }} stress can be reduced by drinking alcohol or having sex to release tension.
+{% endif %}
+{% endif %}
+{% if render_mode == "thoughts" and actorUUID == player.UUID %}
+{{ "## Phobias" }}
+{% if has_spell("Stress_PhobiaSpell_Wolf") %}
+I have a phobia of wolves.
+{% endif %}
+{% if has_spell("Stress_PhobiaSpell_Dragons") %}
+I have a phobia of dragons.
+{% endif %}
+{% if has_spell("Stress_PhobiaSpell_Vampires") %}
+I have a phobia of vampires.
+{% endif %}
+{% if has_spell("Stress_PhobiaSpell_Mages") %}
+I have a phobia of mages.
+{% endif %}
+{% if has_spell("Stress_PhobiaSpell_Undead") %}
+I have a phobia of the undead.
+{% endif %}
+{% if has_spell("Stress_PhobiaSpell_Bandits") %}
+I have a phobia of bandits.
+{% endif %}
+{% if has_spell("Stress_PhobiaSpell_Falmer") %}
+I have a phobia of Falmer.
+{% endif %}
+{% if has_spell("Stress_PhobiaSpell_Forsworn") %}
+I have a phobia of the Forsworn.
+{% endif %}
+{% if has_spell("Stress_PhobiaSpell_Hagravens") %}
+I have a phobia of hagravens.
+{% endif %}
+{% if has_spell("Stress_PhobiaSpell_Ghosts") %}
+I have a phobia of ghosts.
+{% endif %}
+{% if has_spell("Stress_PhobiaSpell_Thalmor") %}
+I have a phobia of the Thalmor.
+{% endif %}
+{% if has_spell("Stress_PhobiaSpell_Bears") %}
+I have a phobia of bears.
+{% endif %}
+{% if has_spell("Stress_PhobiaSpell_Spiders") %}
+I have a phobia of spiders.
+{% endif %}
+{% if has_spell("Stress_PhobiaSpell_Chaurus") %}
+I have a phobia of chaurus.
+{% endif %}
+{% if has_spell("Stress_PhobiaSpell_Sabrecats") %}
+I have a phobia of sabre cats.
+{% endif %}
+{% if has_spell("Stress_PhobiaSpell_IceWraiths") %}
+I have a phobia of ice wraiths.
+{% endif %}
+{% if has_spell("Stress_PhobiaSpell_Werewolves") %}
+I have a phobia of werewolves.
+{% endif %}
+{% if has_spell("Stress_PhobiaSpell_Trolls") %}
+I have a phobia of trolls.
+{% endif %}
+{% if has_spell("Stress_PhobiaSpell_Dremora") %}
+I have a phobia of dremora.
+{% endif %}
+{% if has_spell("Stress_PhobiaSpell_Atronachs") %}
+I have a phobia of atronachs.
+{% endif %}
+{% if has_spell("Stress_PhobiaSpell_Dwarven") %}
+I have a phobia of Dwemer automatons.
+{% endif %}
+{% if has_spell("Stress_PhobiaSpell_Giants") %}
+I have a phobia of giants.
+{% endif %}
+{% if has_spell("Stress_PhobiaSpell_Spriggans") %}
+I have a phobia of spriggans.
+{% endif %}
+{% if has_spell("Stress_PhobiaSpell_Wispmothers") %}
+I have a phobia of wispmothers.
+{% endif %}
+{% endif %}

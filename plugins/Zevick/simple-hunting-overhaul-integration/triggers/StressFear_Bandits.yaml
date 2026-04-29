@@ -1,0 +1,24 @@
+name: "StressFear_Bandits"
+description: "You are facing an enemy you fear."
+
+eventCriteria:
+  eventType: "active_effect"
+  schemaConditions:
+    - fieldPath: "effect"
+      operator: "equals"
+      value: "Reduced Combat Abilities"
+      caseSensitive: false
+    - fieldPath: "action"
+      operator: "equals"
+      value: "applied"
+
+response:
+  type: "player_thought"
+  content: "You are terrified of the bandit before you."
+
+audience: "player"
+
+enabled: true
+probability: 1
+cooldownSeconds: 120
+priority: 1

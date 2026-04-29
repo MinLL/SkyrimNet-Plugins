@@ -1,0 +1,17 @@
+{
+  "type": "listing",
+  "title": "S.T.F.U - Skyrim Talk Filter Utility",
+  "tagline": "Skyrim Talk Filter Utility silences tedious frequent utterances",
+  "description": "Skyrim Talk Filter Utility gives you full control over what dialogue you hear in game. You can use the intuitive UI to view recent dialogue and add what you want to the blacklist. All blocking is handled instantly at runtime.\n\n## Features\n- **Intuitive UI** for viewing all dialogue that plays in game. Block whatever you want instantly.\n- **Soft Blocking**: block audio/subtitles from certain dialogue to essentially block it without preventing important scripts from executing. Soft blocked dialogue does not get logged by SkyrimNet *(recommended)*\n- **Hard Blocking**: block dialogue from playing at all. Useful for scenes with packages you want to prevent. Can potentially block scripts, use carefully.\n- **Subtype Filtering**: block all dialogue belonging to certain subtypes for broad dialogue blocking.\n- **Whitelist**: prevent certain dialogue from being blocked under any circumstances to create rule exceptions.\n- **Actor & Faction Filtering**: When blacklisting or whitelisting you can create rules for specific actors or factions.\n- **Persistent & Immediate**: Your blacklist and whitelist is stored in an external database that persists between saves. Changes take place immediately, no need to restart.\n\n- **Lite Mode**: If you can't use the PrismaUI menu (or don't want to) you can block dialogue by viewing the STFU_DialogueLog.txt file and adding the topics to the YAMLs. Click \"Import from YAML\" in the MCM to import the entries into the database. See the github page for more details.\n\n## Requirements\n- SkyUI (for MCM)\n- PrismaUI (for UI)\n- SKSE\n- Address Library\n- Native EditorID Fix",
+  "author": "Zevick",
+  "tags": [
+    "dialogue",
+    "filter",
+    "stfu"
+  ],
+  "nsfw": false,
+  "mods": [],
+  "requirements": [],
+  "external_url": "https://github.com/zevck/S.T.F.U",
+  "version": "1.1.0"
+}

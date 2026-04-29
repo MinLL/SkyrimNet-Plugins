@@ -4,7 +4,7 @@
   "title": "SkyrimNet Plugin Manifest",
   "description": "Metadata for a plugin submission. One manifest.json per plugin directory.\n\nThis schema is deliberately permissive on per-field formatting because the SkyrimNet dashboard is the only supported submission path and is the authoritative source of truth for how fields are shaped. The dashboard generates titles, taglines, descriptions, versions, tags, mod lists, and every other author-facing field, so revalidating their exact character patterns here would only produce false positives when the dashboard evolves.\n\nWhat this schema still enforces is structural: which fields are required, their fundamental types, the bundle-vs-listing discriminator, conditional requirements (listings need external_url, action plugins need an invocation block with source_mods), and basic safety rules (external URLs must be http(s), strings must be non-empty, sanity size ceilings). Cross-file rules (title uniqueness, author matching, invocation-required-if-actions, listing-has-no-content-files) live in validate.yml, not here.\n\nIf you are reading this because the dashboard changed and manifests no longer validate, the fix is usually to relax the schema further — not tighten it.",
   "type": "object",
-  "required": ["type", "title", "tagline", "description", "author_id", "author", "version", "skyrimnet_version", "nsfw"],
+  "required": ["type", "title", "tagline", "description", "author", "nsfw", "icon"],
   "additionalProperties": false,
   "properties": {
     "type": {
@@ -36,16 +36,11 @@
       "maxLength": 5000,
       "description": "Full description shown on the plugin detail page. Not included in index.json — fetched on-demand from manifest.json. Rendered as restricted markdown by the dashboard."
     },
-    "author_id": {
-      "type": "integer",
-      "minimum": 1,
-      "description": "GitHub user's immutable numeric ID (NOT the username). Auto-populated by the dashboard from /user API at publish time. This is the canonical ownership identifier — it never changes when a user renames their account, and it is the basis of the directory path (plugins/{author_id}/{slug}/). validate.yml cross-checks this against github.event.pull_request.user.id, which cannot be spoofed."
-    },
     "author": {
       "type": "string",
       "minLength": 1,
       "maxLength": 50,
-      "description": "Free-form display name shown on the dashboard. NOT the GitHub username (that's just one possible value). Users in the SkyrimNet community are often known by handles different from their GitHub login. The display name has no uniqueness requirement; the dashboard disambiguates same-named users by appending a discriminator derived from author_id (Discord-style: 'Bob#5678'). Per-plugin in the manifest — users with multiple plugins update each individually if they want consistent rebranding."
+      "description": "The author's username. Auto-populated by the dashboard from the authenticated SaaS user and treated as the canonical identifier: the directory name (plugins/{author}/{slug}/) uses this string, PR branches embed it, and bans are keyed on it. Uniqueness and immutability are enforced upstream by the SaaS at account creation — once taken, a username is not reassignable, so plugin paths survive forever even if a user disappears. Character formatting is trusted because users cannot type it; the dashboard only ever writes back the string the SaaS already accepted."
     },
     "version": {
       "type": "string",
@@ -72,6 +67,12 @@
     "nsfw": {
       "type": "boolean",
       "description": "Must accurately reflect whether the plugin contains adult/explicit content. Understating (content is NSFW but flag is false) is a content-review reject reason. Overstating is always fine."
+    },
+    "icon": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 50,
+      "description": "Stable key into the dashboard's curated Lucide icon registry. Used as the thumbnail on browse cards and detail pages, rendered in the user's accent color. The dashboard falls back to the default icon when the key isn't recognised, so the schema doesn't pin an enum — that lets newer dashboards add icons without forcing a schema bump."
     },
     "mods": {
       "type": "array",
@@ -111,53 +112,85 @@
         "description": "Display name of the requirement. May include version notes like 'Apocalypse - Magic of Skyrim >= 9.45'."
       }
     },
+    "files": {
+      "type": "array",
+      "maxItems": 1500,
+      "description": "List of content file paths (relative to the plugin directory) that the dashboard bundled with this submission. Populated automatically at publish time. Used by the dashboard detail view to fetch and preview content without hitting the GitHub Contents API for a directory listing. Cross-file consistency (paths actually exist, no orphans) is enforced in validate.yml, not in the schema.",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 500
+      }
+    },
     "invocation": {
       "type": "object",
       "description": "REQUIRED by validate.yml if the plugin contains any actions/*.yaml files. Provides reviewer context for manual action review. Never present for listing plugins or for bundles with no actions.",
-      "required": ["purpose", "source_mods", "side_effects", "attestation"],
+      "required": ["purpose", "actions", "attestation"],
       "additionalProperties": false,
       "properties": {
         "purpose": {
           "type": "string",
           "minLength": 1,
           "maxLength": 2000,
-          "description": "What the action(s) do, in plain English."
+          "description": "Plugin-level summary of what the action(s) collectively do, in plain English."
         },
-        "source_mods": {
+        "actions": {
           "type": "array",
           "minItems": 1,
           "maxItems": 20,
-          "description": "Skyrim mods whose Papyrus functions the actions call. Required because community-submitted actions are always mod integrations by nature.",
+          "description": "Per-action entries. Each bundled actions/*.yaml file gets its own source_mods list because one submission can combine actions that target different Skyrim mods. Actions that only call vanilla Skyrim Papyrus functions set `vanilla: true` instead of supplying source_mods.",
           "items": {
             "type": "object",
-            "required": ["name", "url"],
+            "required": ["file"],
             "additionalProperties": false,
             "properties": {
-              "name": {
+              "file": {
                 "type": "string",
-                "minLength": 1,
-                "maxLength": 200
-              },
-              "url": {
-                "type": "string",
-                "pattern": "^https?://",
                 "minLength": 10,
-                "maxLength": 2000
+                "maxLength": 500,
+                "pattern": "^actions/.+\\.ya?ml$",
+                "description": "Path of the action file this entry describes, relative to the plugin root. Must match an entry in the plugin's files[] list."
+              },
+              "vanilla": {
+                "type": "boolean",
+                "description": "True when the action calls only vanilla Skyrim / Creation Kit Papyrus functions (no community mod APIs). When true, source_mods is omitted."
+              },
+              "source_mods": {
+                "type": "array",
+                "minItems": 1,
+                "maxItems": 20,
+                "description": "Skyrim mods whose Papyrus functions this specific action calls. Required unless `vanilla: true`.",
+                "items": {
+                  "type": "object",
+                  "required": ["name", "url"],
+                  "additionalProperties": false,
+                  "properties": {
+                    "name": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 200
+                    },
+                    "url": {
+                      "type": "string",
+                      "pattern": "^https?://",
+                      "minLength": 10,
+                      "maxLength": 2000
+                    }
+                  }
+                }
               }
-            }
+            },
+            "oneOf": [
+              { "required": ["vanilla"], "properties": { "vanilla": { "const": true } }, "not": { "required": ["source_mods"] } },
+              { "required": ["source_mods"], "not": { "required": ["vanilla"] } }
+            ]
           }
-        },
-        "side_effects": {
-          "type": "string",
-          "minLength": 1,
-          "maxLength": 2000,
-          "description": "Reviewer-facing explanation of what game state the action modifies and why it's safe."
         },
         "attestation": {
           "type": "string",
           "minLength": 1,
           "maxLength": 2000,
-          "description": "Author's signed statement that they tested the action without save corruption or quest breakage."
+          "description": "Author's signed statement that they tested the actions without save corruption or quest breakage."
         }
       }
     }
@@ -169,7 +202,10 @@
     },
     {
       "if": { "properties": { "type": { "const": "bundle" } }, "required": ["type"] },
-      "then": { "not": { "required": ["external_url"] } }
+      "then": {
+        "required": ["version", "skyrimnet_version"],
+        "not": { "required": ["external_url"] }
+      }
     }
   ]
 }

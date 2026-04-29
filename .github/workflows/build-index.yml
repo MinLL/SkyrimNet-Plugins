@@ -1,13 +1,23 @@
 name: Build plugin index
 
-# Regenerates index.json whenever a plugin is merged to main. Walks every
-# plugins/{author_id}/{slug}/manifest.json, extracts browse-page fields,
-# counts content files, derives dates from git history, and writes the
-# aggregate index.json. Commits the result back to main via the built-in
-# GITHUB_TOKEN.
+# Regenerates index.json from plugins/* + hidden.json after any change
+# that affects what should appear in the index. Pushes the rebuilt file
+# directly to main using a token minted from a dedicated bot GitHub App
+# whose installation is in the ruleset's bypass list — so the push is
+# allowed even though main is protected.
 #
-# The index is the only data source the dashboard reads for the browse page.
-# Individual manifest.json files are fetched on-demand for detail views.
+# Triggers:
+#   - push to main when plugins/** or hidden.json changes — catches
+#     direct admin edits via the GitHub web UI.
+#   - workflow_run after the review pipeline completes — catches plugin
+#     submissions and deletions auto-merged by GITHUB_TOKEN, whose
+#     pushes to main do NOT fire `push` events on downstream workflows.
+#   - workflow_dispatch for manual rebuilds.
+#
+# Required secrets:
+#   BOT_APP_ID         — App ID of the bot App (Settings → Developer
+#                        settings → GitHub Apps → [your app] header).
+#   BOT_APP_PRIVATE_KEY — full PEM contents of the App's private key.
 
 on:
   push:
@@ -15,9 +25,14 @@ on:
     paths:
       - 'plugins/**'
       - 'hidden.json'
+      - 'curated.json'
+  workflow_run:
+    workflows: ['Plugin submission review pipeline']
+    types: [completed]
+  workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read   # job-level token only reads; the bot App token is what writes
 
 concurrency:
   group: build-index
@@ -29,11 +44,22 @@ jobs:
     timeout-minutes: 10
 
     steps:
-      - name: Checkout
+      - name: Mint bot App installation token
+        id: app-token
+        uses: actions/create-github-app-token@v1
+        with:
+          app-id: ${{ secrets.BOT_APP_ID }}
+          private-key: ${{ secrets.BOT_APP_PRIVATE_KEY }}
+
+      - name: Checkout main
         uses: actions/checkout@v4
         with:
-          # Full history needed for git log date derivation
+          ref: main
+          # Full history needed for git log date derivation in build-index.mjs.
           fetch-depth: 0
+          # Use the bot App's token for the local remote so `git push` later
+          # authenticates as the App (which is in the ruleset bypass list).
+          token: ${{ steps.app-token.outputs.token }}
 
       - name: Set up Node
         uses: actions/setup-node@v4
@@ -43,14 +69,33 @@ jobs:
       - name: Build index
         run: node .github/scripts/build-index.mjs
 
-      - name: Commit index.json
+      - name: Resolve bot user id
+        id: bot-user
+        env:
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add index.json
-          if git diff --cached --quiet; then
-            echo "index.json unchanged — nothing to commit"
-          else
-            git commit -m "chore: rebuild index.json [skip ci]"
-            git push
+          # The bot App's noreply email is `<userId>+<slug>[bot]@users.noreply.github.com`
+          # — use that exactly so GitHub marks the resulting commits as
+          # Verified-by-this-App rather than unverified.
+          slug='${{ steps.app-token.outputs.app-slug }}'
+          user_id=$(gh api "/users/${slug}[bot]" --jq .id)
+          echo "slug=${slug}" >> "$GITHUB_OUTPUT"
+          echo "user-id=${user_id}" >> "$GITHUB_OUTPUT"
+
+      - name: Push rebuilt index to main
+        run: |
+          set -euo pipefail
+          if git diff --quiet -- index.json; then
+            echo "index.json unchanged — nothing to push"
+            exit 0
           fi
+          git config user.name  "${{ steps.bot-user.outputs.slug }}[bot]"
+          git config user.email "${{ steps.bot-user.outputs.user-id }}+${{ steps.bot-user.outputs.slug }}[bot]@users.noreply.github.com"
+          git add index.json
+          # [skip ci] is defensive — the file-path filter on this
+          # workflow's `push` trigger already excludes index.json, so the
+          # rebuild commit wouldn't re-fire build-index even without it,
+          # but the marker prevents unrelated future workflows that might
+          # listen on broader paths from looping back here.
+          git commit -m "chore: rebuild index.json [skip ci]"
+          git push origin HEAD:main

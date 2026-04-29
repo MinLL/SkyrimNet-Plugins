@@ -115,13 +115,85 @@ try {
 }
 
 async function main() {
-  // 1. Find the plugin directory. validate.yml already enforced "exactly one
-  //    plugin per PR" so we should find exactly one plugins/{id}/{slug}/ dir.
-  const pluginDir = findPluginDir();
-  if (!pluginDir) {
-    addError("Could not locate plugin directory in PR_DIR. validate.yml should have caught this.");
-    finishSoftFail("The plugin directory was not found during agent review setup.");
+  // 0. Short-circuit on routes that don't need (or shouldn't get) a content
+  //    scan. We always run as a required status check so the merge gate
+  //    reflects "is this PR ready to auto-merge?" — pass on routes that
+  //    should auto-merge, fail on routes that need a human.
+  const route = (process.env.ROUTE || "").trim();
+  if (route === "deletion") {
+    // Takedown PR — no content, nothing for the agent to review. Free pass.
+    result.success = true;
+    result.decision = "approve";
+    result.labels = ["agent-approved"];
+    result.comment =
+      "### Agent content review — skipped (deletion PR)\n\n" +
+      "This PR removes a plugin in its entirety. There's no content to scan, " +
+      "so the agent reviewer is short-circuited to approve.";
+    writeResultAndExit(0);
     return;
+  }
+  if (route === "infra-only") {
+    // Maintainer-edited config / workflow / docs PR. The agent has no
+    // plugin content to scan, but we deliberately short-circuit-FAIL
+    // (uncertain) rather than approve — the failing status check is what
+    // protects these paths from rogue installation tokens. A repo admin
+    // (the maintainer) merges via the "Merge without waiting for
+    // requirements" bypass button; an App with contents+pull-requests
+    // write but no admin role can't bypass and can't fake the check
+    // (no checks:write), so it can't ship infra changes.
+    result.success = true;
+    result.decision = "uncertain";
+    result.labels = ["agent-uncertain"];
+    result.comment =
+      "### Agent content review — skipped (infra-only PR)\n\n" +
+      "This PR only modifies repository infrastructure (config, workflows, " +
+      "docs, or moderation files). The agent reviewer scans plugin content " +
+      "and has nothing to do here. The agent-review check is intentionally " +
+      "left red so a repo admin must explicitly bypass it to merge — that " +
+      "bypass click is the human gate for infra changes.";
+    writeResultAndExit(0);
+    return;
+  }
+  if (route !== "ready-for-agent-review") {
+    // Anything else (manual-review, validation-failed, missing) — block the
+    // merge gate. The PR may still merge once a human approves it through
+    // a different path, but the agent-review status check stays red so
+    // auto-merge can't fire on its own.
+    result.success = true;
+    result.decision = "uncertain";
+    result.labels = ["agent-uncertain"];
+    result.comment =
+      `### Agent content review — skipped (route=${route || "unknown"})\n\n` +
+      "This PR was routed away from the agent reviewer by validate.mjs " +
+      "(typically because it contains actions, isn't dashboard-submitted, " +
+      "or failed structural validation). The agent-review check stays " +
+      "unsatisfied so auto-merge waits for manual handling.";
+    writeResultAndExit(0);
+    return;
+  }
+
+  // 1. Prefer the plugin root that validate.mjs identified — that's the
+  //    authoritative answer about which plugin the PR modifies. The sparse
+  //    checkout also contains every other plugin on main, so a filesystem
+  //    walk can pick the wrong dir (e.g. a listing plugin with no content,
+  //    which then reviews as "0 files → auto-approved" regardless of the
+  //    real submission). Fall back to findPluginDir only if PLUGIN_ROOT
+  //    isn't set (older workflow versions).
+  let pluginDir;
+  if (process.env.PLUGIN_ROOT) {
+    pluginDir = path.join(env.PR_DIR, process.env.PLUGIN_ROOT);
+    if (!fs.existsSync(pluginDir)) {
+      addError(`PLUGIN_ROOT=${process.env.PLUGIN_ROOT} does not exist in PR_DIR.`);
+      finishSoftFail("The plugin directory passed in from validate was not found on disk.");
+      return;
+    }
+  } else {
+    pluginDir = findPluginDir();
+    if (!pluginDir) {
+      addError("Could not locate plugin directory in PR_DIR. validate.yml should have caught this.");
+      finishSoftFail("The plugin directory was not found during agent review setup.");
+      return;
+    }
   }
   const pluginRelPath = path.relative(env.PR_DIR, pluginDir).replace(/\\/g, "/");
   console.log(`Reviewing: ${pluginRelPath}`);
@@ -488,7 +560,12 @@ function buildComment(final, chunkResults, nsfwMode) {
 
   if (final.decision === "reject") {
     parts.push("");
-    parts.push("This PR will not auto-merge. If you believe the rejection is incorrect, fix the content and push an update (which will re-run review) or contact a moderator.");
+    parts.push(
+      "This PR will be closed automatically. To resubmit, adjust the " +
+      "flagged content in SkyrimNet (or flip the appropriate manifest flag, " +
+      "e.g. `nsfw: true`) and publish again from the dashboard — that opens " +
+      "a fresh review. Replies on this PR are not monitored.",
+    );
   } else if (final.decision === "uncertain") {
     parts.push("");
     parts.push("This PR has been escalated to manual review. A human reviewer will look at it.");

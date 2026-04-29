@@ -1,4 +1,11 @@
 {
   "schema_version": 1,
-  "hidden": []
+  "hidden": [
+    {
+      "id": "plugins/vex/dark-brotherhood-personalities",
+      "hidden_at": "2026-04-23T19:34:44.037Z",
+      "moderator": "zevck",
+      "reason": "test"
+    }
+  ]
 }

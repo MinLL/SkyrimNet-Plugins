@@ -1,10 +1,18 @@
 #!/usr/bin/env node
 // SkyrimNet Plugins — index builder
 //
-// Walks every plugins/{author_id}/{slug}/manifest.json, extracts the fields
+// Walks every plugins/{author}/{slug}/manifest.json, extracts the fields
 // the dashboard needs for the browse page, counts content files, derives
-// first_published and last_updated from git history, filters out hidden
-// plugins, and writes index.json.
+// first_published and last_updated from git history, embeds moderation
+// state from hidden.json + curated.json into each entry, and writes
+// index.json.
+//
+// Moderation files (hidden.json / curated.json) remain the source-of-
+// truth and are still hand-edited (or moderation-tool-edited) on main.
+// build-index just bakes their state into the per-plugin entries so
+// the dashboard only has to fetch one file. The trigger paths in
+// build-index.yml include both moderation files, so any edit to them
+// runs this script and refreshes the index.
 //
 // Zero external dependencies — only Node built-ins.
 
@@ -16,6 +24,7 @@ const REPO_ROOT = process.cwd();
 const PLUGINS_DIR = path.join(REPO_ROOT, "plugins");
 const INDEX_PATH = path.join(REPO_ROOT, "index.json");
 const HIDDEN_PATH = path.join(REPO_ROOT, "hidden.json");
+const CURATED_PATH = path.join(REPO_ROOT, "curated.json");
 const CONTENT_DIRS = ["triggers", "actions", "prompts", "knowledge"];
 
 // ----- Helpers ---------------------------------------------------------------
@@ -44,17 +53,55 @@ function countFiles(dir) {
   return count;
 }
 
-// ----- Load hidden list ------------------------------------------------------
+// ----- Load moderation state ------------------------------------------------
 
-let hiddenIds = new Set();
+// Map<pluginId, { reason, hidden_at, moderator? }> — full entry preserved
+// so the dashboard can show the reason on the author's profile view.
+//
+// Parse errors on either moderation file are treated as hard failures:
+// the dashboard relies on these to filter the browse view (hidden) and
+// to show the curated star, and silently dropping the data because of a
+// missing comma corrupts the index in ways that aren't obvious until a
+// moderator notices something missing. Fail loudly so the workflow run
+// goes red and the underlying JSON gets fixed.
+const hiddenById = new Map();
 if (fs.existsSync(HIDDEN_PATH)) {
+  let hidden;
   try {
-    const hidden = JSON.parse(fs.readFileSync(HIDDEN_PATH, "utf8"));
-    if (Array.isArray(hidden.hidden)) {
-      hiddenIds = new Set(hidden.hidden.map(h => h.id).filter(Boolean));
-    }
+    hidden = JSON.parse(fs.readFileSync(HIDDEN_PATH, "utf8"));
   } catch (e) {
-    console.warn(`Warning: could not parse hidden.json: ${e.message}`);
+    console.error(`Failed to parse hidden.json: ${e.message}`);
+    process.exit(1);
+  }
+  if (Array.isArray(hidden.hidden)) {
+    for (const h of hidden.hidden) {
+      if (h && typeof h.id === "string") {
+        hiddenById.set(h.id, {
+          reason: h.reason ?? null,
+          hidden_at: h.hidden_at ?? null,
+          moderator: h.moderator ?? null,
+        });
+      }
+    }
+  }
+}
+
+// Set<pluginId> — curated.json has only the slug per entry today; expand
+// when more fields land.
+const curatedIds = new Set();
+if (fs.existsSync(CURATED_PATH)) {
+  let curated;
+  try {
+    curated = JSON.parse(fs.readFileSync(CURATED_PATH, "utf8"));
+  } catch (e) {
+    console.error(`Failed to parse curated.json: ${e.message}`);
+    process.exit(1);
+  }
+  if (Array.isArray(curated.curated)) {
+    for (const c of curated.curated) {
+      const id = typeof c === "string" ? c : c?.id;
+      if (typeof id === "string") curatedIds.add(id);
+    }
   }
 }
 
@@ -73,12 +120,6 @@ if (!fs.existsSync(PLUGINS_DIR)) {
       if (!slugEntry.isDirectory()) continue;
       const pluginDir = path.join(authorDir, slugEntry.name);
       const pluginId = `plugins/${authorEntry.name}/${slugEntry.name}`;
-
-      // Skip hidden plugins
-      if (hiddenIds.has(pluginId)) {
-        console.log(`  [hidden] ${pluginId}`);
-        continue;
-      }
 
       // Read manifest
       const manifestPath = path.join(pluginDir, "manifest.json");
@@ -118,29 +159,45 @@ if (!fs.existsSync(PLUGINS_DIR)) {
           })).filter(m => m.file)
         : [];
 
-      // Build index entry
+      // Build index entry. version / skyrimnet_version only apply to bundles
+      // — listings point at external content whose version is the upstream's
+      // concern, not ours.
       const entry = {
         id: pluginId,
         type: manifest.type,
         title: manifest.title,
         tagline: manifest.tagline,
-        author_id: manifest.author_id,
         author: manifest.author,
-        version: manifest.version,
-        skyrimnet_version: manifest.skyrimnet_version,
         tags: Array.isArray(manifest.tags) ? manifest.tags : [],
         nsfw: !!manifest.nsfw,
+        icon: typeof manifest.icon === 'string' && manifest.icon ? manifest.icon : 'package',
         mods,
         first_published: firstPublished || new Date().toISOString(),
         last_updated: lastUpdated || new Date().toISOString(),
       };
 
+      if (manifest.type === 'bundle') {
+        entry.version = manifest.version;
+        entry.skyrimnet_version = manifest.skyrimnet_version;
+      }
+      if (manifest.type === 'listing' && typeof manifest.external_url === 'string') {
+        entry.external_url = manifest.external_url;
+      }
+
       if (contents !== undefined) {
         entry.contents = contents;
       }
 
+      // Embed moderation state. `hidden` is the full entry from
+      // hidden.json (so the author's profile view can show the reason)
+      // or null if not hidden. `curated` is a plain boolean flag.
+      const hiddenEntry = hiddenById.get(pluginId);
+      if (hiddenEntry) entry.hidden = hiddenEntry;
+      if (curatedIds.has(pluginId)) entry.curated = true;
+
       plugins.push(entry);
-      console.log(`  [ok] ${pluginId} (${manifest.type}, ${manifest.title})`);
+      const mod = hiddenEntry ? " [hidden]" : (entry.curated ? " [curated]" : "");
+      console.log(`  [ok] ${pluginId} (${manifest.type}, ${manifest.title})${mod}`);
     }
   }
 }

@@ -3,3 +3,4 @@
 /.github/scripts/test-fixtures
 .github/scripts/run-tests.mjs
 /ai_docs
+.github/rejection-labels.md

@@ -1,0 +1,21 @@
+{
+  "type": "bundle",
+  "title": "Stress & Fear Integration",
+  "tagline": "Adds integration with Stress & Fear",
+  "description": "# Stress & Fear Integration\nPrompt that adds NPC awareness of player stress levels through physical descriptors",
+  "author": "Zevick",
+  "tags": [
+    "stress",
+    "fear",
+    "mod integration"
+  ],
+  "nsfw": true,
+  "icon": "scroll",
+  "mods": [],
+  "requirements": [],
+  "version": "1.0.0",
+  "skyrimnet_version": "0.19.0",
+  "files": [
+    "prompts/submodules/character_bio/2704_stress_fear.prompt"
+  ]
+}

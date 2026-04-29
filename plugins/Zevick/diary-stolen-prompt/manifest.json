@@ -1,0 +1,21 @@
+{
+  "type": "bundle",
+  "title": "Diary Stolen Prompt",
+  "tagline": "Diary stolen prompt that goes with Physical Diaries",
+  "description": "This prompt makes NPCs aware of when their diaries are stolen when using the Physical Diaries plugin.",
+  "author": "Zevick",
+  "tags": [
+    "physical",
+    "diaries",
+    "prompt"
+  ],
+  "nsfw": false,
+  "icon": "diary",
+  "mods": [],
+  "requirements": [],
+  "version": "1.0.0",
+  "skyrimnet_version": "0.19.0",
+  "files": [
+    "prompts/diary_stolen.prompt"
+  ]
+}

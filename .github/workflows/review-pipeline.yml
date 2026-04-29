@@ -1,0 +1,590 @@
+name: Plugin submission review pipeline
+
+# Unified review pipeline — validate → agent-review → auto-merge as three
+# sequential jobs in one workflow. Each job decides whether the next should
+# run via job outputs, not via label events (labels applied by GITHUB_TOKEN
+# do not trigger downstream workflows, which is why the pipeline is
+# consolidated here).
+#
+# Labels are still applied at each stage for human visibility:
+#   validate     -> validation-failed | ready-for-agent-review | manual-review
+#   agent-review -> agent-approved    | agent-rejected         | agent-uncertain
+#
+# See ai_docs/AGENT_REVIEW.md for the agent review design rationale.
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    # No paths-ignore: the pipeline must run on every PR so the
+    # `agent-review` required status check always reports. Moderation
+    # PRs (touching only hidden.json/curated.json/bans.json/etc.) are
+    # detected by validate.mjs as `infra-only` and short-circuit-fail
+    # so admin bypass is needed to merge them.
+
+permissions:
+  contents: write        # auto-merge job writes to the repo
+  pull-requests: write   # label + comment + merge
+  models: read           # agent-review uses GitHub Models
+
+concurrency:
+  group: review-pr-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  # ---------------------------------------------------------------------------
+  # Stage 1 — structural validation
+  # ---------------------------------------------------------------------------
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    outputs:
+      route: ${{ steps.route.outputs.route }}
+      plugin_root: ${{ steps.route.outputs.plugin_root }}
+
+    steps:
+      - name: Checkout base
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.base.sha }}
+          path: base
+          fetch-depth: 0
+
+      - name: Checkout PR head (plugins only)
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          path: pr
+          sparse-checkout: |
+            plugins
+          sparse-checkout-cone-mode: false
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+          cache-dependency-path: base/.github/scripts/package-lock.json
+
+      - name: Install validator dependencies
+        working-directory: base/.github/scripts
+        run: npm ci --prefer-offline --no-audit --no-fund
+
+      - name: List PR changed files
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const files = await github.paginate(github.rest.pulls.listFiles, {
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: context.payload.pull_request.number,
+              per_page: 100,
+            });
+            // Emit "status\tfilename" per line so the validator can tell
+            // deletions from additions/modifications. Deletion PRs (hub takedown)
+            // show up as all-removed rows and validate.mjs special-cases them.
+            const lines = files.map(f => `${f.status}\t${f.filename}`);
+            require('fs').writeFileSync(
+              `${process.env.GITHUB_WORKSPACE}/pr-files.txt`,
+              lines.join('\n'),
+            );
+
+      - name: Run validation
+        id: validate
+        env:
+          PR_AUTHOR: ${{ github.event.pull_request.user.login }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          PR_BODY: ${{ github.event.pull_request.body }}
+          BASE_DIR: ${{ github.workspace }}/base
+          PR_DIR: ${{ github.workspace }}/pr
+          PR_FILES_FILE: ${{ github.workspace }}/pr-files.txt
+          RESULT_FILE: ${{ github.workspace }}/validate-result.json
+        run: node "$BASE_DIR/.github/scripts/validate.mjs"
+        continue-on-error: true
+
+      - name: Apply labels and post comment
+        if: always()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const resultPath = `${process.env.GITHUB_WORKSPACE}/validate-result.json`;
+            if (!fs.existsSync(resultPath)) {
+              core.setFailed('validate.mjs did not produce a result file');
+              return;
+            }
+            const result = JSON.parse(fs.readFileSync(resultPath, 'utf8'));
+            const pr = context.issue;
+
+            // All labels the whole pipeline (any job) can apply. Cleared at
+            // validate stage so each run starts from a known state.
+            const ourLabels = new Set([
+              'validation-failed',
+              'ready-for-agent-review',
+              'manual-review',
+              'infra-only',
+              'agent-approved',
+              'agent-rejected',
+              'agent-uncertain',
+            ]);
+
+            const current = await github.rest.issues.listLabelsOnIssue({
+              owner: pr.owner, repo: pr.repo, issue_number: pr.number,
+            });
+            const toRemove = current.data
+              .map(l => l.name)
+              .filter(n => ourLabels.has(n) && !result.labels.includes(n));
+            for (const name of toRemove) {
+              await github.rest.issues.removeLabel({
+                owner: pr.owner, repo: pr.repo, issue_number: pr.number, name,
+              });
+            }
+            if (result.labels.length > 0) {
+              await github.rest.issues.addLabels({
+                owner: pr.owner, repo: pr.repo, issue_number: pr.number,
+                labels: result.labels,
+              });
+            }
+            if (result.comment) {
+              await github.rest.issues.createComment({
+                owner: pr.owner, repo: pr.repo, issue_number: pr.number,
+                body: result.comment,
+              });
+            }
+
+            // Hard validation failure: structural rejection that no reviewer
+            // should look at — close the PR so the dashboard's "Pending" list
+            // doesn't leave the author's submission dangling, then delete the
+            // head branch. Authors are directed by the PR comment to
+            // re-publish from the dashboard (which opens a fresh branch)
+            // rather than push to this one.
+            if (result.labels.includes('validation-failed')) {
+              await github.rest.pulls.update({
+                owner: pr.owner, repo: pr.repo, pull_number: pr.number,
+                state: 'closed',
+              });
+              try {
+                await github.rest.git.deleteRef({
+                  owner: pr.owner, repo: pr.repo,
+                  ref: `heads/${context.payload.pull_request.head.ref}`,
+                });
+              } catch (e) {
+                core.info(`Could not delete rejected head branch: ${e.message}`);
+              }
+            }
+
+      # Surface manifest.invocation in the PR body so reviewers don't have to
+      # open the JSON file to see what the action does, which mods it calls
+      # into, and whether the author attested to testing. Only runs when
+      # validation passed and the plugin contains actions.
+      - name: Inject invocation summary into PR body
+        if: always()
+        uses: actions/github-script@v7
+        env:
+          PR_DIR: ${{ github.workspace }}/pr
+        with:
+          script: |
+            const fs = require('fs');
+            const path = require('path');
+
+            // Locate the single plugin dir under plugins/{author}/{slug}/.
+            const pluginsRoot = path.join(process.env.PR_DIR, 'plugins');
+            if (!fs.existsSync(pluginsRoot)) return;
+            let pluginDir = null;
+            for (const author of fs.readdirSync(pluginsRoot)) {
+              const authorDir = path.join(pluginsRoot, author);
+              if (!fs.statSync(authorDir).isDirectory()) continue;
+              for (const slug of fs.readdirSync(authorDir)) {
+                const slugDir = path.join(authorDir, slug);
+                if (fs.statSync(slugDir).isDirectory()) { pluginDir = slugDir; break; }
+              }
+              if (pluginDir) break;
+            }
+            if (!pluginDir) return;
+
+            const manifestPath = path.join(pluginDir, 'manifest.json');
+            if (!fs.existsSync(manifestPath)) return;
+            let manifest;
+            try {
+              manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
+            } catch (e) {
+              console.log(`Could not parse manifest.json: ${e.message}`);
+              return;
+            }
+            const inv = manifest.invocation;
+            if (!inv) return;
+
+            const lines = ['<!-- invocation-summary:start -->', '## Action Review Details', ''];
+            if (inv.purpose) {
+              lines.push('**Purpose**', '', inv.purpose, '');
+            }
+            if (Array.isArray(inv.actions) && inv.actions.length > 0) {
+              lines.push('**Actions**', '');
+              for (const a of inv.actions) {
+                lines.push(`- \`${a.file}\``);
+                if (a.vanilla === true) {
+                  lines.push('  - Vanilla Papyrus only (no community mod).');
+                } else if (Array.isArray(a.source_mods) && a.source_mods.length > 0) {
+                  for (const m of a.source_mods) {
+                    lines.push(`  - [${m.name}](${m.url})`);
+                  }
+                }
+              }
+              lines.push('');
+            }
+            if (inv.attestation) {
+              lines.push('**Author attestation**', '', `> ${inv.attestation}`, '');
+            }
+            lines.push('<!-- invocation-summary:end -->');
+            const block = lines.join('\n');
+
+            const pr = context.issue;
+            const { data: prData } = await github.rest.pulls.get({
+              owner: pr.owner, repo: pr.repo, pull_number: pr.number,
+            });
+            const existing = prData.body || '';
+            const re = /<!-- invocation-summary:start -->[\s\S]*?<!-- invocation-summary:end -->/;
+            const nextBody = re.test(existing)
+              ? existing.replace(re, block)
+              : (existing.trim() ? `${existing.trim()}\n\n${block}\n` : `${block}\n`);
+            if (nextBody !== existing) {
+              await github.rest.pulls.update({
+                owner: pr.owner, repo: pr.repo, pull_number: pr.number,
+                body: nextBody,
+              });
+            }
+
+      - name: Determine route for next stage
+        id: route
+        if: always()
+        run: |
+          if [ ! -f "$GITHUB_WORKSPACE/validate-result.json" ]; then
+            echo "validate.mjs did not produce a result file"
+            echo "route=validation-failed" >> "$GITHUB_OUTPUT"
+            exit 1
+          fi
+          success=$(node -e "console.log(JSON.parse(require('fs').readFileSync('$GITHUB_WORKSPACE/validate-result.json','utf8')).success)")
+          labels=$(node -e "console.log(JSON.parse(require('fs').readFileSync('$GITHUB_WORKSPACE/validate-result.json','utf8')).labels.join(','))")
+          plugin_root=$(node -e "console.log(JSON.parse(require('fs').readFileSync('$GITHUB_WORKSPACE/validate-result.json','utf8')).plugin_root || '')")
+          echo "plugin_root=$plugin_root" >> "$GITHUB_OUTPUT"
+
+          route="validation-failed"
+          if [ "$success" = "true" ]; then
+            case ",$labels," in
+              *,deletion,*)               route="deletion" ;;
+              *,ready-for-agent-review,*) route="ready-for-agent-review" ;;
+              *,infra-only,*)             route="infra-only" ;;
+              *,manual-review,*)          route="manual-review" ;;
+              *)                          route="manual-review" ;;
+            esac
+          fi
+          echo "route=$route" >> "$GITHUB_OUTPUT"
+
+          if [ "$success" != "true" ]; then
+            echo "Validation failed — see annotations and PR comment for details"
+            exit 1
+          fi
+
+  # ---------------------------------------------------------------------------
+  # Stage 2 — agent content review
+  # ---------------------------------------------------------------------------
+  agent-review:
+    # Always runs (no `if:` gate). The job branches internally on the
+    # validate-emitted route: real LLM scan for ready-for-agent-review,
+    # short-circuit pass for deletion, short-circuit fail for everything
+    # else. This makes the agent-review job's success / failure status
+    # usable as a required-status-check merge gate — passes only when the
+    # PR should auto-merge, fails when it should wait for a human.
+    needs: validate
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    outputs:
+      decision: ${{ steps.decision.outputs.decision }}
+
+    steps:
+      - name: Checkout base
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.base.sha }}
+          path: base
+          fetch-depth: 1
+
+      - name: Checkout PR head (plugins only)
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          path: pr
+          sparse-checkout: |
+            plugins
+          sparse-checkout-cone-mode: false
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Run agent review
+        id: review
+        env:
+          BASE_DIR: ${{ github.workspace }}/base
+          PR_DIR: ${{ github.workspace }}/pr
+          # validate.mjs already identified which plugins/{author}/{slug}/ dir
+          # the PR modifies; pass it through so agent-review reviews that
+          # exact directory instead of walking the filesystem (which also
+          # contains every other plugin on main from the sparse checkout).
+          PLUGIN_ROOT: ${{ needs.validate.outputs.plugin_root }}
+          # Route from validate stage. The script branches on this:
+          #   ready-for-agent-review -> real LLM scan
+          #   deletion               -> short-circuit approve (no LLM call)
+          #   anything else          -> short-circuit uncertain (gate fails)
+          ROUTE: ${{ needs.validate.outputs.route }}
+          RESULT_FILE: ${{ github.workspace }}/agent-review-result.json
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # Model is configurable via repository variables so maintainers can
+          # switch models without editing this file. Defaults to gpt-4.1 which
+          # tested at 98.8% accuracy across 81 runs on dark lore, NSFW, and
+          # rejection scenarios.
+          AGENT_MODEL: ${{ vars.AGENT_MODEL || 'openai/gpt-4.1' }}
+          AGENT_CHUNK_SIZE_BYTES: "81920"
+        run: node "$BASE_DIR/.github/scripts/agent-review.mjs"
+        continue-on-error: true
+
+      - name: Apply labels and post comment
+        if: always()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const resultPath = `${process.env.GITHUB_WORKSPACE}/agent-review-result.json`;
+            if (!fs.existsSync(resultPath)) {
+              core.setFailed('agent-review.mjs did not produce a result file');
+              return;
+            }
+            const result = JSON.parse(fs.readFileSync(resultPath, 'utf8'));
+            const pr = context.issue;
+
+            const ourLabels = new Set([
+              'agent-approved',
+              'agent-rejected',
+              'agent-uncertain',
+            ]);
+            const current = await github.rest.issues.listLabelsOnIssue({
+              owner: pr.owner, repo: pr.repo, issue_number: pr.number,
+            });
+            const toRemove = current.data
+              .map(l => l.name)
+              .filter(n => ourLabels.has(n) && !result.labels.includes(n));
+            for (const name of toRemove) {
+              await github.rest.issues.removeLabel({
+                owner: pr.owner, repo: pr.repo, issue_number: pr.number, name,
+              });
+            }
+            if (result.labels.length > 0) {
+              await github.rest.issues.addLabels({
+                owner: pr.owner, repo: pr.repo, issue_number: pr.number,
+                labels: result.labels,
+              });
+            }
+            if (result.comment) {
+              await github.rest.issues.createComment({
+                owner: pr.owner, repo: pr.repo, issue_number: pr.number,
+                body: result.comment,
+              });
+            }
+
+            // Agent hard-rejection: content violates the forbidden list, not
+            // a marginal call. Close the PR, then delete the head branch —
+            // authors re-publish from the dashboard (fresh branch) rather
+            // than push to this one. agent-uncertain stays open because a
+            // human still needs to look at it; only agent-rejected is
+            // auto-closed here.
+            if (result.labels.includes('agent-rejected')) {
+              await github.rest.pulls.update({
+                owner: pr.owner, repo: pr.repo, pull_number: pr.number,
+                state: 'closed',
+              });
+              try {
+                await github.rest.git.deleteRef({
+                  owner: pr.owner, repo: pr.repo,
+                  ref: `heads/${context.payload.pull_request.head.ref}`,
+                });
+              } catch (e) {
+                core.info(`Could not delete rejected head branch: ${e.message}`);
+              }
+            }
+
+      - name: Determine decision for next stage
+        id: decision
+        if: always()
+        run: |
+          if [ ! -f "$GITHUB_WORKSPACE/agent-review-result.json" ]; then
+            echo "agent-review.mjs did not produce a result file"
+            echo "decision=agent-uncertain" >> "$GITHUB_OUTPUT"
+            exit 1
+          fi
+          labels=$(node -e "console.log(JSON.parse(require('fs').readFileSync('$GITHUB_WORKSPACE/agent-review-result.json','utf8')).labels.join(','))")
+
+          decision="agent-uncertain"
+          case ",$labels," in
+            *,agent-approved,*)  decision="agent-approved" ;;
+            *,agent-rejected,*)  decision="agent-rejected" ;;
+            *,agent-uncertain,*) decision="agent-uncertain" ;;
+          esac
+          echo "decision=$decision" >> "$GITHUB_OUTPUT"
+
+          # The agent-review job is configured as a required status check on
+          # main. Required-status-checks consume the job's success/failure
+          # conclusion — not its outputs — so we make the conclusion match
+          # the merge gate: pass only on agent-approved, fail otherwise.
+          # agent-rejected and agent-uncertain both block the merge; only
+          # uncertain leaves the PR open for a human to look at, but that
+          # decision is enforced by the auto-merge job's `if:`, not here.
+          if [ "$decision" != "agent-approved" ]; then
+            echo "Decision is '$decision' — failing the job so the merge gate stays closed."
+            exit 1
+          fi
+
+  # ---------------------------------------------------------------------------
+  # Stage 3 — auto-merge
+  # ---------------------------------------------------------------------------
+  auto-merge:
+    needs: [validate, agent-review]
+    # agent-review is the single gate. It approves only on routes the bot
+    # can ship on its own (ready-for-agent-review with a passing LLM scan,
+    # or deletion takedowns). It short-circuit-fails everything else,
+    # including infra-only PRs — those are merged by a repo admin via
+    # the bypass button, never by the bot.
+    if: needs.agent-review.result == 'success' && needs.agent-review.outputs.decision == 'agent-approved'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Verify PR is mergeable and merge
+        id: merge
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const owner = context.repo.owner;
+            const repo  = context.repo.repo;
+            const prNumber = context.issue.number;
+            const reviewedSha = '${{ github.event.pull_request.head.sha }}';
+
+            const { data: pr } = await github.rest.pulls.get({
+              owner, repo, pull_number: prNumber,
+            });
+
+            if (pr.merged) {
+              core.setFailed('PR is already merged.');
+              return;
+            }
+            if (pr.state !== 'open') {
+              core.setFailed(`PR is ${pr.state}, not open.`);
+              return;
+            }
+
+            // Head SHA must match what was reviewed — if the author pushed
+            // new commits, the pipeline restarts on the new HEAD so that
+            // run will make the merge decision.
+            if (pr.head.sha !== reviewedSha) {
+              core.setFailed(
+                `PR HEAD has changed since approval. ` +
+                `Reviewed: ${reviewedSha.slice(0, 7)}, current: ${pr.head.sha.slice(0, 7)}.`,
+              );
+              return;
+            }
+
+            // pr.mergeable is computed asynchronously after PR open: null
+            // means GitHub hasn't decided yet. Only `false` is a real
+            // conflict. Poll briefly so we don't bail out on PRs whose
+            // mergeability hasn't been computed yet.
+            let mergeable = pr.mergeable;
+            for (let i = 0; mergeable === null && i < 6; i++) {
+              await new Promise(r => setTimeout(r, 2000));
+              const { data: again } = await github.rest.pulls.get({
+                owner, repo, pull_number: prNumber,
+              });
+              mergeable = again.mergeable;
+            }
+            if (mergeable === false) {
+              core.setFailed('PR has merge conflicts. Author must rebase or resolve.');
+              return;
+            }
+            // mergeable === null after polling: try the merge anyway, the
+            // API will surface the real reason if there's a structural
+            // problem.
+
+            // Required status check propagation can lag the job-level
+            // conclusion by a few seconds. Retry the merge a handful of
+            // times before giving up so a transient "checks not yet
+            // satisfied" race doesn't kill a valid merge.
+            let merged = false;
+            const attempts = [];
+            for (let i = 0; i < 5 && !merged; i++) {
+              try {
+                await github.rest.pulls.merge({
+                  owner, repo,
+                  pull_number: pr.number,
+                  sha: reviewedSha,
+                  merge_method: 'squash',
+                });
+                merged = true;
+                core.info(`PR #${pr.number} merged.`);
+              } catch (e) {
+                const msg = `${e.status || '???'} ${e.message}${e.response && e.response.data ? ' :: ' + JSON.stringify(e.response.data) : ''}`;
+                attempts.push(`attempt ${i + 1}: ${msg}`);
+                core.info(msg);
+                if (i < 4) {
+                  await new Promise(r => setTimeout(r, 3000));
+                }
+              }
+            }
+            if (!merged) {
+              core.setOutput('merge_errors', attempts.join('\n'));
+              core.setFailed(`Merge failed after ${attempts.length} attempts.\n${attempts.join('\n')}`);
+              return;
+            }
+
+            // The repo's "Automatically delete head branches" setting only
+            // fires for UI merges, not API merges triggered by a GitHub
+            // Action using GITHUB_TOKEN. Delete the ref explicitly so bot-
+            // merged submission branches don't pile up. Fails softly: if
+            // the branch is already gone or on a fork, we just log.
+            try {
+              await github.rest.git.deleteRef({
+                owner, repo,
+                ref: `heads/${pr.head.ref}`,
+              });
+              core.info(`Deleted head branch '${pr.head.ref}'.`);
+            } catch (e) {
+              core.info(`Could not delete head branch '${pr.head.ref}': ${e.message}`);
+            }
+
+      # Surface the merge error to the PR as a comment when auto-merge
+      # fails — workflow logs aren't always easy to dig out, so this puts
+      # the actual API error right where someone debugging the PR would
+      # look.
+      - name: Post merge failure to PR
+        if: failure() && steps.merge.outputs.merge_errors != ''
+        uses: actions/github-script@v7
+        env:
+          MERGE_ERRORS: ${{ steps.merge.outputs.merge_errors }}
+        with:
+          script: |
+            const body =
+              `### Auto-merge failed\n\n` +
+              `The auto-merge step could not land this PR after retrying. ` +
+              `Underlying API errors:\n\n` +
+              '```\n' + (process.env.MERGE_ERRORS || '(no errors captured)') + '\n```';
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body,
+            });
+
+  # ---------------------------------------------------------------------------
+  # Index rebuilds happen in build-index.yml, which listens for this
+  # pipeline's completion via a workflow_run trigger. That workflow uses
+  # a dedicated bot App's installation token (in the ruleset bypass list)
+  # to push the rebuilt index.json directly to main — no PR or post-merge
+  # step needed here.
+  # ---------------------------------------------------------------------------

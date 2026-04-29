@@ -1,0 +1,15 @@
+{
+  "type": "listing",
+  "title": "Physical Diaries",
+  "tagline": "Adds diary book items to NPC's inventories to read SkyrimNet diaries in game",
+  "description": "A companion mod for SkyrimNet that turns the AI-generated diary entries written by NPCs into actual books you can find and read in the world.\n\n## Features\n- **Physical diary books** — NPCs with SkyrimNet diary entries carry readable journal books in their inventory. Books are created automatically when the first entry is written and updated as new entries are added.\n- **Multi-volume support** — when a journal fills up (configurable, default 10 entries), it seals and a new volume begins. All volumes are retained in the NPC's inventory.\n- **Theft & return system** — stealing a diary is tracked; the NPC will acknowledge it in future entries. Return the diary before their next entry is written and the NPC won't notice.\n- **MCM** — configure entries per volume (1–50), font sizes for title/date/body/small text, reset all diaries, and toggle debug logging.\n- **Localization** — all 9 official Skyrim languages are supported out of the box: English, French, German, Italian, Spanish, Polish, Russian, Traditional Chinese, and Japanese.\n\n*This mod does not generate diary entries by itself, it only reads what SkyrimNet generates. Old entries will be scanned on first load, future entries are added as they are created.\n\n## Requirements\n- SkyrimNet\n- Dynamic Persistent Forms <-- only thing you probably don't already have\n- SkyUI (for MCM)\n- SKSE\n- Address Library or VR Address Library\n- Native EditorID Fix",
+  "author": "Zevick",
+  "tags": [
+    "diaries",
+    "diary"
+  ],
+  "nsfw": false,
+  "mods": [],
+  "requirements": [],
+  "external_url": "https://github.com/zevck/SkyrimNet-Physical-Diaries"
+}

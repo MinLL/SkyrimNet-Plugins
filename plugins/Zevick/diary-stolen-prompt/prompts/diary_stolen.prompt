@@ -1,0 +1,5 @@
+{% extends "diary_entry.prompt" %}
+
+{% if snpd_diary_stolen(npc.UUID) == "true" %}
+    **IMPORTANT**: You notice that your diary has been stolen! Write about your reaction. You are starting in a new book.
+{% endif %}

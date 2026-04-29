@@ -2,13 +2,15 @@
 // SkyrimNet Plugins — structural validator
 //
 // Runs inside .github/workflows/validate.yml on every pull request. Consumes:
-//   - BASE_DIR:     path to the base branch checkout (trusted — schemas, index.json, etc.)
-//   - PR_DIR:       path to the PR head checkout (untrusted — only plugins/ is sparse-checked-out)
-//   - PR_AUTHOR:    GitHub login of the PR author (informational, for human-readable error messages)
-//   - PR_AUTHOR_ID: GitHub numeric user ID of the PR author (THE integrity check — immutable, cannot be spoofed)
-//   - PR_BODY:      PR description body (used to detect dashboard-submitted vs manual PRs)
-//   - PR_NUMBER:    PR number (informational, for log output)
-//   - RESULT_FILE:  absolute path to write the JSON result to (workflow reads this for labels/comments)
+//   - BASE_DIR:      path to the base branch checkout (trusted — schemas, index.json, etc.)
+//   - PR_DIR:        path to the PR head checkout (untrusted — only plugins/ is sparse-checked-out)
+//   - PR_FILES_FILE: path to a newline-separated list of files this PR changes (written by
+//                    the workflow from the GitHub API). The validator uses this instead of
+//                    walking PR_DIR so unchanged plugins aren't flagged as part of the submission.
+//   - PR_AUTHOR:     GitHub login of the PR author (used to detect bot vs manual submissions)
+//   - PR_BODY:       PR description body (used to detect dashboard-submitted vs manual PRs)
+//   - PR_NUMBER:     PR number (informational, for log output)
+//   - RESULT_FILE:   absolute path to write the JSON result to (workflow reads this for labels/comments)
 //
 // Never consumes anything from the PR side that could influence execution:
 // no require(), no eval(), no dynamic imports of PR files. The PR is treated
@@ -43,17 +45,12 @@ const CONTENT_DIRS = ["triggers", "actions", "prompts", "knowledge"];
 const env = {
   BASE_DIR: requireEnv("BASE_DIR"),
   PR_DIR: requireEnv("PR_DIR"),
+  PR_FILES_FILE: requireEnv("PR_FILES_FILE"),
   PR_AUTHOR: requireEnv("PR_AUTHOR"),
-  PR_AUTHOR_ID: Number(requireEnv("PR_AUTHOR_ID")),
   PR_BODY: process.env.PR_BODY ?? "",
   PR_NUMBER: process.env.PR_NUMBER ?? "unknown",
   RESULT_FILE: requireEnv("RESULT_FILE"),
 };
-
-if (!Number.isInteger(env.PR_AUTHOR_ID) || env.PR_AUTHOR_ID < 1) {
-  console.error(`PR_AUTHOR_ID must be a positive integer, got: ${process.env.PR_AUTHOR_ID}`);
-  process.exit(1);
-}
 
 function requireEnv(name) {
   const v = process.env[name];
@@ -72,6 +69,11 @@ const result = {
   errors: [],
   warnings: [],
   comment: null,
+  // Identified plugin directory (plugins/{author}/{slug}) relative to the
+  // repo root, populated once path-scope parsing succeeds. Consumed by
+  // agent-review.mjs so it doesn't have to re-walk the PR checkout and
+  // pick the wrong plugin dir on re-submissions to already-merged plugins.
+  plugin_root: null,
 };
 
 function addError(file, message) {
@@ -116,6 +118,13 @@ function finish() {
       result.manualReason ?? "This PR will be reviewed by a human. Expect up to a week for action-containing submissions.",
     );
   }
+  if (result.labels.includes("infra-only") && result.errors.length === 0) {
+    parts.push(
+      "### Repository infrastructure change",
+      "",
+      result.manualReason ?? "This PR only modifies repository infrastructure.",
+    );
+  }
   if (parts.length > 0) {
     result.comment = parts.join("\n");
   }
@@ -155,60 +164,243 @@ schemas.manifest = {
 
 // ----- Author ban check ---------------------------------------------------
 //
-// Read bans.json from the upstream base directory and reject the PR
-// immediately if the PR author's GitHub user ID is in the active ban list.
-// Bans are a maintainer-only operation (file is editable only via direct push
-// to main), and they're stored as integer GitHub user IDs so renames don't
-// allow ban evasion. An entry's expires_at field can be null (permanent) or
-// an ISO 8601 timestamp; expired entries are ignored.
+// Read bans.json from the upstream base directory and reject the PR if the
+// author declared in the manifest is in the active ban list. Bans are keyed
+// on the username string (the SaaS-authoritative immutable identifier) and
+// checked AFTER the manifest is parsed below. The ban load happens here so
+// it's in one place, but the match happens after manifest load.
+let bans = [];
 const bansPath = path.join(env.BASE_DIR, "bans.json");
 if (fs.existsSync(bansPath)) {
   try {
     const bansRaw = JSON.parse(fs.readFileSync(bansPath, "utf8"));
-    const bans = Array.isArray(bansRaw?.bans) ? bansRaw.bans : [];
-    const now = Date.now();
-    const activeBan = bans.find((b) => {
-      if (b?.author_id !== env.PR_AUTHOR_ID) return false;
-      if (b.expires_at == null) return true;
-      const expiry = Date.parse(b.expires_at);
-      return Number.isFinite(expiry) ? expiry > now : true;
-    });
-    if (activeBan) {
-      const reason = activeBan.reason ?? "(no reason given)";
-      addError(
-        null,
-        `Author with GitHub user ID ${env.PR_AUTHOR_ID} is banned from publishing to this hub. Reason: ${reason}. If you believe this is in error, contact the moderators.`,
-      );
-      result.labels = ["validation-failed"];
-      finish();
-    }
+    bans = Array.isArray(bansRaw?.bans) ? bansRaw.bans : [];
   } catch (e) {
-    // bans.json is corrupted — log a warning but don't fail every PR
     addWarning(null, `Could not read bans.json: ${e.message}`);
   }
 }
 
-// ----- Detect manual vs dashboard PR --------------------------------------
+function activeBanFor(author) {
+  const now = Date.now();
+  return bans.find((b) => {
+    if (b?.author !== author) return false;
+    if (b.expires_at == null) return true;
+    const expiry = Date.parse(b.expires_at);
+    return Number.isFinite(expiry) ? expiry > now : true;
+  });
+}
 
-const isDashboardSubmitted = env.PR_BODY.includes(DASHBOARD_MARKER);
+// ----- Detect manual vs dashboard PR --------------------------------------
+//
+// Dashboard PRs are opened by the hub's GitHub App (a bot account). Contributors
+// don't have GitHub accounts tied to the hub — their identity is the SaaS
+// username carried in manifest.author. Integrity of that claim is enforced by
+// the SaaS at publish time (the dashboard can only write PRs on behalf of the
+// authenticated user), not by this validator.
+//
+// To treat a PR as dashboard-submitted we require BOTH:
+//   1. The PR opener is a bot account (login ends with '[bot]').
+//   2. The PR body contains the dashboard marker comment.
+//
+// The bot check is the gate — the marker is copy-pasteable alone provides no
+// integrity. A bot opener is controlled by whoever holds the app's installation
+// token, which lives in the backend that fronts the SaaS-authenticated user.
+
+const isBotAuthor = env.PR_AUTHOR.endsWith("[bot]");
+const isDashboardSubmitted = isBotAuthor && env.PR_BODY.includes(DASHBOARD_MARKER);
 if (!isDashboardSubmitted) {
   console.log(
-    "PR body does not contain the dashboard marker. Routing to manual review after structural checks.",
+    "PR is not dashboard-submitted (bot + marker). Routing to manual review after structural checks.",
   );
 }
 
 // ----- Changed files -------------------------------------------------------
+//
+// The list of files this PR actually changes comes from the GitHub Pulls API
+// (written to PR_FILES_FILE by the workflow). We intentionally do NOT walk
+// PR_DIR for this — sparse-checkout pulls the full plugins/ tree from the PR
+// head, which includes every existing plugin on main. Walking it would cause
+// the validator to flag unchanged pre-existing plugins as part of the
+// submission.
 
-// List every file under PR_DIR. We don't use `git diff` here because the CI
-// workflow already sparse-checks-out only `plugins/` — anything visible in
-// PR_DIR is by construction part of the PR, and the authoritative "does the
-// PR touch infra files?" check is enforced structurally by sparse-checkout
-// plus the path-scope verification below.
+// Each line is "status\tfilename" emitted by the workflow. Deletions are
+// included so we can recognise takedown PRs. Lines that predate the tab
+// format are treated as status "changed" for backward compatibility.
 let changedFiles = [];
+let deletedFiles = [];
 try {
-  changedFiles = walkTree(env.PR_DIR).map((abs) => path.relative(env.PR_DIR, abs).replace(/\\/g, "/"));
+  const raw = fs.readFileSync(env.PR_FILES_FILE, "utf8");
+  for (const line of raw.split("\n").map((s) => s.trim()).filter(Boolean)) {
+    const tab = line.indexOf("\t");
+    const status = tab >= 0 ? line.slice(0, tab) : "changed";
+    const file = tab >= 0 ? line.slice(tab + 1) : line;
+    if (status === "removed") {
+      deletedFiles.push(file);
+    } else {
+      changedFiles.push(file);
+    }
+  }
 } catch (e) {
-  addError(null, `Could not enumerate PR files: ${e.message}`);
+  addError(null, `Could not read PR file list (${env.PR_FILES_FILE}): ${e.message}`);
+  finish();
+}
+
+// Deletion PR: every file in the PR is a removal, and they all live under a
+// single plugins/{author}/{slug}/ directory. We route these straight through
+// with a `ready-for-agent-review` label so agent-review → auto-merge still
+// runs; agent-review sees zero content files and auto-approves ("No content
+// files to review.").
+const allFiles = [...changedFiles, ...deletedFiles];
+
+// Maintainer infra PR: every file the PR touches (added, modified, or
+// removed) lives OUTSIDE `plugins/`. Typical cases: editing hidden.json,
+// curated.json, bans.json, workflows, scripts, docs. Routed to a dedicated
+// `infra-only` label so agent-review.mjs short-circuit-FAILS the gate
+// (the agent has nothing to scan, and a failing required check is what
+// blocks rogue installation tokens from shipping infra changes). A repo
+// admin merges these via the "Merge without waiting for requirements"
+// bypass button; the App can't bypass because it isn't an admin.
+const isInfraOnly = allFiles.length > 0 && allFiles.every((f) => !f.startsWith("plugins/"));
+if (isInfraOnly) {
+  result.labels.push("infra-only");
+  result.manualReason =
+    `This PR only modifies repository infrastructure (not plugin content). ` +
+    `The agent-review check is intentionally left red; a repo admin must ` +
+    `bypass the failing check to merge.`;
+  console.log(
+    `Infra-only PR detected (${allFiles.length} file(s) outside plugins/). Routing as infra-only.`,
+  );
+  finish();
+}
+
+// Mixed PR: some files under plugins/, some outside. Rejected outright.
+//
+// Without this guard, a rogue installation token could open a PR carrying
+// real plugin content (which the LLM scans + approves) plus a hidden.json
+// edit hitching a ride. The agent only reads plugin content, so the
+// out-of-band file change rides the auto-merge path. There is no
+// legitimate reason to mix the two — dashboard publishes only ever touch
+// plugins/{author}/{slug}/, and infra edits only ever touch top-level
+// files. So we hard-reject as a validation failure (which closes the PR).
+const pluginPathFiles = allFiles.filter((f) => f.startsWith("plugins/"));
+const nonPluginFiles  = allFiles.filter((f) => !f.startsWith("plugins/"));
+if (pluginPathFiles.length > 0 && nonPluginFiles.length > 0) {
+  addError(
+    null,
+    `PR mixes plugin files (under plugins/) with infrastructure files (outside plugins/). ` +
+      `These must be split into separate PRs:\n` +
+      nonPluginFiles.map((f) => `  - ${f} (infra)`).join("\n") +
+      `\n` +
+      pluginPathFiles.map((f) => `  - ${f} (plugin)`).join("\n"),
+  );
+  console.log(
+    `Mixed PR rejected: ${pluginPathFiles.length} plugin file(s) + ${nonPluginFiles.length} infra file(s).`,
+  );
+  routeOrFail();
+  finish();
+}
+
+const isDeletionPR = changedFiles.length === 0 && deletedFiles.length > 0;
+if (isDeletionPR) {
+  const deletionRoots = new Set();
+  for (const rel of deletedFiles) {
+    if (!rel.startsWith("plugins/")) {
+      addError(rel, `Deletion PR touches a file outside plugins/. Takedown PRs must only remove files inside a single plugin directory.`);
+      continue;
+    }
+    const parts = rel.split("/");
+    if (parts.length < 4) continue;
+    deletionRoots.add(`plugins/${parts[1]}/${parts[2]}`);
+  }
+  if (result.errors.length > 0) { routeOrFail(); finish(); }
+  if (deletionRoots.size !== 1) {
+    addError(
+      null,
+      `Deletion PR must remove files from exactly one plugin directory; found ${deletionRoots.size}.`,
+    );
+    routeOrFail();
+    finish();
+  }
+  const pluginRoot = [...deletionRoots][0];
+  const pathAuthor = pluginRoot.split("/")[1];
+
+  // Safety: the plugin must actually exist on the base branch. An "empty
+  // deletion" PR that adds no files and removes nothing real would otherwise
+  // slide through as a no-op auto-merge.
+  const basePluginDir = path.join(env.BASE_DIR, pluginRoot);
+  if (!fs.existsSync(basePluginDir)) {
+    addError(
+      null,
+      `Deletion PR targets \`${pluginRoot}\` but that directory does not exist on the base branch.`,
+    );
+    routeOrFail();
+    finish();
+  }
+
+  // Safety: every file under the plugin directory on the base branch must
+  // appear in deletedFiles — partial deletions aren't allowed. Forces authors
+  // through the edit flow instead of sneaking content changes as deletions.
+  const baseFiles = walkTree(basePluginDir)
+    .map((abs) => path.relative(env.BASE_DIR, abs).replace(/\\/g, "/"));
+  const deletedSet = new Set(deletedFiles);
+  const missing = baseFiles.filter((f) => !deletedSet.has(f));
+  if (missing.length > 0) {
+    addError(
+      null,
+      `Deletion PR must remove every file in the plugin directory, but these were not removed:\n${missing.map((m) => `  - ${m}`).join("\n")}`,
+    );
+    routeOrFail();
+    finish();
+  }
+
+  // Safety: extra paranoia — reject any "deleted" row that isn't actually
+  // under the target plugin directory. The deletionRoots.size === 1 check
+  // above already enforces this for well-formed paths, but this catches any
+  // oddly shaped rel paths (symlinks, paths with `..`, etc.) that might slip
+  // through the split/filter earlier.
+  const prefix = `${pluginRoot}/`;
+  const stray = deletedFiles.filter((f) => !f.startsWith(prefix));
+  if (stray.length > 0) {
+    addError(
+      null,
+      `Deletion PR must only remove files inside \`${pluginRoot}/\`, but these are outside it:\n${stray.map((m) => `  - ${m}`).join("\n")}`,
+    );
+    routeOrFail();
+    finish();
+  }
+
+  // Safety: deletions must come through the dashboard. A forked-PR that
+  // happens to match the deletion shape must not auto-merge — the bot +
+  // marker gate is the same trust anchor used for additions. Non-dashboard
+  // deletions route to manual review so a maintainer can decide.
+  if (!isDashboardSubmitted) {
+    result.labels.push("manual-review");
+    result.manualReason =
+      `Deletion PR for \`${pluginRoot}\` was not submitted through the dashboard ` +
+      `(bot + marker check failed). Routing to manual review; a maintainer must ` +
+      `confirm this takedown before merging.`;
+    console.log(
+      `Deletion PR (${pluginRoot}) is not dashboard-submitted. Routing to manual review.`,
+    );
+    finish();
+  }
+
+  // Log for audit. Every auto-merged deletion writes this line with the path
+  // author so retrospective review can catch patterns (e.g. one dashboard
+  // account deleting many authors' plugins).
+  console.log(
+    `[takedown] author=${pathAuthor} plugin=${pluginRoot} files=${deletedFiles.length} pr_author=${env.PR_AUTHOR} pr=#${env.PR_NUMBER}`,
+  );
+
+  // Deletion route is its own animal — there's no content for the agent to
+  // scan and findPluginDir() would return the wrong plugin dir (the deleted
+  // one isn't present in the PR head). Workflow routes this straight to
+  // auto-merge.
+  result.labels.push("deletion");
+  result.comment =
+    `### Takedown detected\n\n` +
+    `This PR removes \`${pluginRoot}\` in its entirety. Agent review is ` +
+    `skipped (no content to scan) and the PR will auto-merge.`;
   finish();
 }
 
@@ -234,8 +426,21 @@ function walkTree(root) {
 
 // ----- Path scope check ----------------------------------------------------
 //
-// Sparse checkout only pulls plugins/, so anything present in PR_DIR must
-// be under plugins/ — but we still enforce per-author scoping and single-plugin.
+// Sparse checkout only pulls plugins/, so anything present in PR_DIR must be
+// under plugins/. We enforce:
+//   - files are nested at plugins/{author}/{slug}/...
+//   - the author segment is a filesystem-safe, URL-safe string
+//   - the slug segment is the usual kebab-case plugin slug
+//   - every file in the PR belongs to exactly one plugin directory
+//
+// We do NOT enforce here that directory-author matches manifest-author — that
+// check happens after manifest parsing, where we have the manifest loaded.
+
+// Author segment pattern: SaaS-assigned usernames are treated as opaque but
+// must be safe for use as a path/URL segment. Whatever the SaaS emits flows
+// through here unchanged; this regex is a belt-and-suspenders filesystem
+// safety check, not a semantic validator.
+const AUTHOR_SEGMENT_RE = /^[a-zA-Z0-9][a-zA-Z0-9._-]{0,63}$/;
 
 const pluginRoots = new Set();
 
@@ -246,30 +451,22 @@ for (const rel of changedFiles) {
     continue;
   }
 
-  // Must be under plugins/{author_id}/{slug}/
+  // Must be under plugins/{author}/{slug}/
   const parts = rel.split("/");
   if (parts.length < 4) {
-    addError(rel, `File is not deep enough to be inside a plugin directory. Expected plugins/${env.PR_AUTHOR_ID}/{slug}/...`);
+    addError(rel, `File is not deep enough to be inside a plugin directory. Expected plugins/{author}/{slug}/...`);
     continue;
   }
-  const [, idSegment, slug] = parts;
-  // The directory's first segment must be the PR author's numeric GitHub user ID.
-  // GitHub IDs are immutable across renames and unique forever, so this is the
-  // canonical ownership check — username takeover (someone re-registering a freed
-  // username) cannot fool this because their numeric ID is different.
-  if (!/^[1-9][0-9]*$/.test(idSegment)) {
-    addError(rel, `Plugin directory must be named with a numeric GitHub user ID, got 'plugins/${idSegment}/'. Plugin paths use the author's GitHub user ID (e.g. plugins/12345678/) so renames don't break ownership.`);
-    continue;
-  }
-  if (Number(idSegment) !== env.PR_AUTHOR_ID) {
-    addError(rel, `This file is under plugins/${idSegment}/ but the PR is opened by GitHub user ID ${env.PR_AUTHOR_ID} (login '${env.PR_AUTHOR}'). Contributors may only modify files in their own namespace.`);
+  const [, authorSegment, slug] = parts;
+  if (!AUTHOR_SEGMENT_RE.test(authorSegment)) {
+    addError(rel, `Plugin author directory '${authorSegment}' contains characters not allowed in a path segment (alphanumeric, '.', '_', '-' only, max 64 chars).`);
     continue;
   }
   if (!/^[a-z0-9][a-z0-9-]*[a-z0-9]$/.test(slug)) {
     addError(rel, `Plugin slug '${slug}' does not match the required format (lowercase alphanumeric + hyphens, 3-50 chars).`);
     continue;
   }
-  pluginRoots.add(`plugins/${idSegment}/${slug}`);
+  pluginRoots.add(`plugins/${authorSegment}/${slug}`);
 }
 
 if (result.errors.length > 0) {
@@ -295,6 +492,7 @@ if (pluginRoots.size > 1) {
 
 const pluginRoot = [...pluginRoots][0];
 const pluginAbs = path.join(env.PR_DIR, pluginRoot);
+result.plugin_root = pluginRoot;
 
 // ----- Manifest ------------------------------------------------------------
 
@@ -321,23 +519,33 @@ if (!schemas.manifest.validate(manifest)) {
   }
 }
 
-// Cross-field checks. The integrity gate is manifest.author_id (immutable
-// numeric GitHub ID), not manifest.author (which is now a free-form display
-// name and has no integrity meaning).
-if (manifest.author_id !== env.PR_AUTHOR_ID) {
+// Directory author segment must match manifest.author — the only author
+// consistency check. The SaaS is the integrity root for the claim itself;
+// this validator only ensures the path and the manifest agree.
+const pathAuthor = pluginRoot.split("/")[1];
+if (typeof manifest.author === "string" && manifest.author !== pathAuthor) {
   addError(
     manifestPath,
-    `manifest.author_id is ${manifest.author_id} but the PR is opened by GitHub user ID ${env.PR_AUTHOR_ID}. These must match. The dashboard should populate this automatically — if you are seeing this error after a manual edit, restore the original author_id.`,
+    `manifest.author is '${manifest.author}' but the plugin directory is 'plugins/${pathAuthor}/'. These must match. The dashboard populates this automatically — if you are seeing this error after a manual edit, restore the original author.`,
   );
 }
 
-// Type gate: listing is not yet supported
-if (manifest.type === "listing") {
-  addError(
-    manifestPath,
-    "Listing plugins are not yet supported. This will be enabled in a future release. For now, only 'bundle' type plugins can be published.",
-  );
+// Ban check (keyed on the author string in the manifest).
+if (typeof manifest.author === "string") {
+  const hit = activeBanFor(manifest.author);
+  if (hit) {
+    const reason = hit.reason ?? "(no reason given)";
+    addError(
+      manifestPath,
+      `Author '${manifest.author}' is banned from publishing to this hub. Reason: ${reason}. If you believe this is in error, contact the moderators.`,
+    );
+  }
 }
+
+// Listings are now supported and route to manual-review (see routeOrFail
+// below). The schema enforces that listings have an external_url and no
+// content files, so the structural checks above already catch malformed
+// listing submissions — nothing to gate here.
 
 // Slug consistency (re-slugifying the manifest title and comparing to the
 // directory name) used to live here, but it was dropped because the dashboard
