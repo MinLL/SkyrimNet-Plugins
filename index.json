@@ -1,7 +1,30 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-08-13T03:27:26.759Z",
+  "generated_at": "2026-08-13T03:29:51.502Z",
   "plugins": [
+    {
+      "id": "plugins/min/mintest",
+      "type": "bundle",
+      "title": "MinTest",
+      "tagline": "TestPlugin",
+      "author": "min",
+      "tags": [
+        "test"
+      ],
+      "nsfw": false,
+      "icon": "package",
+      "mods": [],
+      "first_published": "2026-08-13T03:26:33Z",
+      "last_updated": "2026-08-13T03:26:33Z",
+      "version": "1.0.0",
+      "skyrimnet_version": "0.23.0",
+      "contents": {
+        "triggers": 0,
+        "actions": 1,
+        "prompts": 1,
+        "knowledge": 0
+      }
+    },
     {
       "id": "plugins/Zevick/s-t-f-u-skyrim-talk-filter-utility",
       "type": "listing",
