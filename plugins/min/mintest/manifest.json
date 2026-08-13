@@ -1,0 +1,29 @@
+{
+  "type": "bundle",
+  "title": "MinTest",
+  "tagline": "TestPlugin",
+  "description": "testing asdf",
+  "author": "min",
+  "tags": [
+    "test"
+  ],
+  "nsfw": false,
+  "icon": "package",
+  "mods": [],
+  "version": "1.0.0",
+  "skyrimnet_version": "0.23.0",
+  "files": [
+    "prompts/characters/abelone_750.prompt",
+    "actions/cat_scheduling.yaml"
+  ],
+  "invocation": {
+    "purpose": "This is a test",
+    "actions": [
+      {
+        "file": "actions/cat_scheduling.yaml",
+        "vanilla": true
+      }
+    ],
+    "attestation": "I attest that I tested these actions in-game and observed no save corruption, crashes, or quest breakage."
+  }
+}
