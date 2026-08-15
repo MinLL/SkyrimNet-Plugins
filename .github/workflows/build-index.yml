@@ -55,7 +55,11 @@ jobs:
         uses: actions/checkout@v4
         with:
           ref: main
-          # Full history needed for git log date derivation in build-index.mjs.
+          # Full history is REQUIRED, not an optimization: build-index.mjs
+          # derives first_published/last_updated AND each bundle's version
+          # `history` (version -> commit SHA) from git log. A shallow clone
+          # would silently emit truncated history, which is what the in-game
+          # installer resolves rollbacks against.
           fetch-depth: 0
           # Use the bot App's token for the local remote so `git push` later
           # authenticates as the App (which is in the ruleset bypass list).

@@ -3,9 +3,15 @@
 //
 // Walks every plugins/{author}/{slug}/manifest.json, extracts the fields
 // the dashboard needs for the browse page, counts content files, derives
-// first_published and last_updated from git history, embeds moderation
-// state from hidden.json + curated.json into each entry, and writes
-// index.json.
+// first_published, last_updated and the per-bundle version `history` from
+// git history, embeds moderation state from hidden.json + curated.json into
+// each entry, and writes index.json.
+//
+// `history` is what makes install / update / rollback work without any hub
+// API: each entry pins a published version to the newest commit that carried
+// it, and the in-game installer fetches the plugin subtree at that SHA
+// (rollback is the same code path with an older SHA). Requires full git
+// history — build-index.yml checks out with fetch-depth: 0.
 //
 // Moderation files (hidden.json / curated.json) remain the source-of-
 // truth and are still hand-edited (or moderation-tool-edited) on main.
@@ -18,25 +24,88 @@
 
 import fs from "node:fs";
 import path from "node:path";
-import { execSync } from "node:child_process";
+import { execFileSync } from "node:child_process";
 
 const REPO_ROOT = process.cwd();
 const PLUGINS_DIR = path.join(REPO_ROOT, "plugins");
 const INDEX_PATH = path.join(REPO_ROOT, "index.json");
 const HIDDEN_PATH = path.join(REPO_ROOT, "hidden.json");
 const CURATED_PATH = path.join(REPO_ROOT, "curated.json");
-const CONTENT_DIRS = ["triggers", "actions", "prompts", "knowledge"];
+
+// Index format version. Bumped to 2 for the content-store format (plugin_id,
+// history, min_skyrimnet_version, no knowledge counts).
+const INDEX_SCHEMA_VERSION = 2;
+
+// Version-history caps. HISTORY_CAP bounds how far back rollback can reach
+// (and how large index.json grows across the whole ecosystem); the commit
+// scan limit bounds the work per plugin for content-heavy plugins that get
+// many same-version pushes.
+const HISTORY_CAP = 20;
+const HISTORY_COMMIT_SCAN_LIMIT = 200;
 
 // ----- Helpers ---------------------------------------------------------------
 
-function gitDate(args) {
-  // Returns an ISO 8601 date string from git log, or null if no history.
+function git(args) {
+  // Returns trimmed stdout, or null when git fails (no history, unborn repo,
+  // path never existed at that commit, ...).
   try {
-    const out = execSync(`git log ${args}`, { encoding: "utf8", cwd: REPO_ROOT }).trim();
-    return out || null;
+    return execFileSync("git", args, { encoding: "utf8", cwd: REPO_ROOT }).trim();
   } catch {
     return null;
   }
+}
+
+function gitFirstLine(args) {
+  const out = git(args);
+  if (!out) return null;
+  const line = out.split("\n")[0].trim();
+  return line || null;
+}
+
+/**
+ * Published version history for one plugin, newest first.
+ *
+ * Walks the commits touching the plugin directory from newest to oldest and
+ * records the FIRST commit seen for each distinct manifest version — i.e. the
+ * newest commit at which the plugin carried that version. That is the copy a
+ * rollback should restore: the hub permits same-version republishes, so the
+ * last commit of a version is its final content.
+ */
+function pluginHistory(relPath) {
+  const log = git([
+    "log",
+    `-n${HISTORY_COMMIT_SCAN_LIMIT}`,
+    "--format=%H\t%aI",
+    "--",
+    relPath,
+  ]);
+  if (!log) return [];
+
+  const history = [];
+  const seenVersions = new Set();
+
+  for (const line of log.split("\n")) {
+    const [sha, date] = line.trim().split("\t");
+    if (!sha || !date) continue;
+
+    const manifestText = git(["show", `${sha}:${relPath}/manifest.json`]);
+    if (!manifestText) continue; // manifest didn't exist at that commit
+
+    let version;
+    try {
+      version = JSON.parse(manifestText).version;
+    } catch {
+      continue; // unparseable manifest at that commit — skip, don't fail the build
+    }
+    if (typeof version !== "string" || version.length === 0) continue;
+    if (seenVersions.has(version)) continue;
+
+    seenVersions.add(version);
+    history.push({ version, commit: sha, date });
+    if (history.length >= HISTORY_CAP) break;
+  }
+
+  return history;
 }
 
 function countFiles(dir) {
@@ -136,18 +205,21 @@ if (!fs.existsSync(PLUGINS_DIR)) {
         continue;
       }
 
-      // Derive git dates from the plugin directory's history
-      const relPath = path.relative(REPO_ROOT, pluginDir).replace(/\\/g, "/");
-      const firstPublished = gitDate(`--reverse --format=%aI --diff-filter=A -- "${relPath}"`) ||
-                             gitDate(`--reverse --format=%aI -- "${relPath}"`);
-      const lastUpdated = gitDate(`-1 --format=%aI -- "${relPath}"`);
+      // Derive git dates from the plugin directory's history. --reverse emits
+      // every matching commit, so take the first line only — a plugin whose
+      // files were added across several commits has several 'A' rows.
+      const relPath = path.relative(REPO_ROOT, pluginDir).split(path.sep).join("/");
+      const firstPublished =
+        gitFirstLine(["log", "--reverse", "--format=%aI", "--diff-filter=A", "--", relPath]) ||
+        gitFirstLine(["log", "--reverse", "--format=%aI", "--", relPath]);
+      const lastUpdated = gitFirstLine(["log", "-1", "--format=%aI", "--", relPath]);
 
-      // Count content files
+      // Count content files. v1 content types are prompts, triggers and
+      // actions — knowledge packs are punted and rejected by the validator.
       const contents = manifest.type === "bundle" ? {
         triggers: countFiles(path.join(pluginDir, "triggers")),
         actions: countFiles(path.join(pluginDir, "actions")),
         prompts: countFiles(path.join(pluginDir, "prompts")),
-        knowledge: countFiles(path.join(pluginDir, "knowledge")),
       } : undefined;
 
       // Build mods array (name + file + required)
@@ -162,8 +234,17 @@ if (!fs.existsSync(PLUGINS_DIR)) {
       // Build index entry. version / skyrimnet_version only apply to bundles
       // — listings point at external content whose version is the upstream's
       // concern, not ours.
+      // The content-store id ('{author}.{slug}') is authoritative in the
+      // manifest and validated against the path by CI; derive it only as a
+      // fallback for manifests that predate the field.
+      const contentStoreId =
+        typeof manifest.id === "string" && manifest.id.length > 0
+          ? manifest.id
+          : `${authorEntry.name}.${slugEntry.name}`.toLowerCase();
+
       const entry = {
         id: pluginId,
+        plugin_id: contentStoreId,
         type: manifest.type,
         title: manifest.title,
         tagline: manifest.tagline,
@@ -178,7 +259,10 @@ if (!fs.existsSync(PLUGINS_DIR)) {
 
       if (manifest.type === 'bundle') {
         entry.version = manifest.version;
-        entry.skyrimnet_version = manifest.skyrimnet_version;
+        entry.min_skyrimnet_version = manifest.min_skyrimnet_version;
+        // Version history drives install / update / rollback (§5 step 1).
+        // Listings have nothing to install, so they carry none.
+        entry.history = pluginHistory(relPath);
       }
       if (manifest.type === 'listing' && typeof manifest.external_url === 'string') {
         entry.external_url = manifest.external_url;
@@ -208,7 +292,7 @@ plugins.sort((a, b) => b.last_updated.localeCompare(a.last_updated));
 // ----- Write index -----------------------------------------------------------
 
 const index = {
-  schema_version: 1,
+  schema_version: INDEX_SCHEMA_VERSION,
   generated_at: new Date().toISOString(),
   plugins,
 };
