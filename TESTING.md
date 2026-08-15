@@ -11,11 +11,16 @@ it before changing them.
 npm ci --prefix .github/scripts
 
 # run everything
-npm test          # == node --test tests/
+npm test
 
 # run one file
 node --test tests/content-rules.test.mjs
 ```
+
+`npm test` names the test files explicitly rather than passing `tests/` —
+directory and glob arguments to `node --test` behave differently across Node
+versions, and an invocation that silently runs zero tests is worse than a
+verbose one. **Add new test files to the `test` script in `package.json`.**
 
 Requirements: Node >= 20 (the suite uses the built-in `node --test` runner —
 there is no test framework dependency) and `git` on PATH.
