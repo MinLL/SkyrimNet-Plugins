@@ -1,0 +1,14 @@
+{
+  "name": "skyrimnet-plugins",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "SkyrimNet plugin hub data repo. This root package.json exists only to run the test suite for the CI scripts (see TESTING.md) — the scripts' own runtime dependencies live in .github/scripts/package.json.",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "node --test tests/",
+    "build-index": "node .github/scripts/build-index.mjs"
+  }
+}

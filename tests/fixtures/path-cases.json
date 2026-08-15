@@ -1,0 +1,543 @@
+{
+  "corpus_version": 1,
+  "description": "Shared rejection corpus for SkyrimNet content-store path and manifest-identity rules (CONTENT_STORE_DESIGN.md §2, §4, §5 step 3). Consumed by this repo's Node test suite via .github/scripts/lib/content-rules.mjs, and intended to be ported verbatim to the C++ installer's validator so hub CI and the engine provably reject the same attacks. Rules are order-sensitive: 'reason' is the code the FIRST failing rule must produce. Accept cases must produce no issues at all.",
+  "consumers": [
+    "skyrimnet-plugins: tests/content-rules.test.mjs",
+    "SkyrimNet-Core: C++ install-path validator (W3.2)"
+  ],
+  "path_cases": [
+    { "path": "prompts/characters/abelone_750.prompt", "expect": "accept", "reason": "plain character bio" },
+    { "path": "prompts/foo.prompt", "expect": "accept", "reason": "file directly in a content root" },
+    { "path": "prompts/components/0100_submodule.prompt", "expect": "accept", "reason": "numbered submodule prompt" },
+    { "path": "prompts/characters/Lydia_A2C94.prompt", "expect": "accept", "reason": "mixed case is preserved for display, folded for identity" },
+    { "path": "prompts/a/b/c/d/e/deep.prompt", "expect": "accept", "reason": "arbitrary nesting depth" },
+    { "path": "triggers/combat_banter.yaml", "expect": "accept", "reason": "trigger" },
+    { "path": "actions/cat_scheduling.yaml", "expect": "accept", "reason": "action" },
+    { "path": "triggers/skyrimnet_foobar_integration.yaml", "expect": "accept", "reason": "'skyrimnet' is reserved only as an author segment, never in filenames" },
+    { "path": "prompts/dynamic/foo.prompt", "expect": "accept", "reason": "'dynamic' is reserved only directly under 'characters'" },
+    { "path": "prompts/characters/dynamic_bio_helper.prompt", "expect": "accept", "reason": "'dynamic' as a filename prefix is not the reserved directory" },
+    { "path": "prompts/characters/lydia.dynamic_notes.prompt", "expect": "accept", "reason": "only the exact '.dynamic.prompt' suffix is reserved" },
+    { "path": "prompts/console.prompt", "expect": "accept", "reason": "device-name lookalike: 'console' is not 'CON'" },
+    { "path": "prompts/nulls.prompt", "expect": "accept", "reason": "device-name lookalike: 'nulls' is not 'NUL'" },
+    { "path": "prompts/com10.prompt", "expect": "accept", "reason": "device-name lookalike: only COM1-COM9 are reserved" },
+    { "path": "prompts/characters/a.b.c.prompt", "expect": "accept", "reason": "interior dots are legal" },
+
+    { "path": "", "expect": "reject", "reason": "EMPTY_PATH" },
+    { "path": "prompts\\characters\\foo.prompt", "expect": "reject", "reason": "BACKSLASH" },
+    { "path": "prompts/characters\\foo.prompt", "expect": "reject", "reason": "BACKSLASH" },
+    { "path": "prompts/..\\..\\evil.prompt", "expect": "reject", "reason": "BACKSLASH" },
+    { "path": "..\\..\\Windows\\System32\\evil.prompt", "expect": "reject", "reason": "BACKSLASH" },
+    { "path": "prompts/../../evil.prompt", "expect": "reject", "reason": "DOT_DOT" },
+    { "path": "../prompts/foo.prompt", "expect": "reject", "reason": "DOT_DOT" },
+    { "path": "prompts/../secrets/foo.prompt", "expect": "reject", "reason": "DOT_DOT" },
+    { "path": "prompts/characters/../../../../foo.prompt", "expect": "reject", "reason": "DOT_DOT" },
+    { "path": "prompts/./foo.prompt", "expect": "reject", "reason": "DOT_SEGMENT" },
+    { "path": "/prompts/foo.prompt", "expect": "reject", "reason": "EMPTY_SEGMENT" },
+    { "path": "prompts//foo.prompt", "expect": "reject", "reason": "EMPTY_SEGMENT" },
+    { "path": "prompts/foo.prompt/", "expect": "reject", "reason": "EMPTY_SEGMENT" },
+    { "path": "C:/prompts/foo.prompt", "expect": "reject", "reason": "DRIVE_LETTER" },
+    { "path": "C:prompts/foo.prompt", "expect": "reject", "reason": "DRIVE_LETTER" },
+    { "path": "prompts/foo.prompt:Zone.Identifier", "expect": "reject", "reason": "ADS_COLON" },
+    { "path": "prompts/foo.prompt:$DATA", "expect": "reject", "reason": "ADS_COLON" },
+    { "path": "prompts/char:s/foo.prompt", "expect": "reject", "reason": "ADS_COLON" },
+    { "path": "prompts/foo\u0000.prompt", "expect": "reject", "reason": "CONTROL_CHAR" },
+    { "path": "prompts/fo\to.prompt", "expect": "reject", "reason": "CONTROL_CHAR" },
+    { "path": "prompts/foo\n.prompt", "expect": "reject", "reason": "CONTROL_CHAR" },
+    { "path": "prompts/foo\u007f.prompt", "expect": "reject", "reason": "CONTROL_CHAR" },
+    { "path": "prompts/foo.prompt ", "expect": "reject", "reason": "TRAILING_DOT_OR_SPACE" },
+    { "path": "prompts/foo.prompt.", "expect": "reject", "reason": "TRAILING_DOT_OR_SPACE" },
+    { "path": "prompts/characters /foo.prompt", "expect": "reject", "reason": "TRAILING_DOT_OR_SPACE" },
+    { "path": "prompts/characters./foo.prompt", "expect": "reject", "reason": "TRAILING_DOT_OR_SPACE" },
+    { "path": "prompts/NUL.prompt", "expect": "reject", "reason": "RESERVED_DEVICE_NAME" },
+    { "path": "prompts/nul.prompt", "expect": "reject", "reason": "RESERVED_DEVICE_NAME" },
+    { "path": "prompts/con/foo.prompt", "expect": "reject", "reason": "RESERVED_DEVICE_NAME" },
+    { "path": "triggers/COM1.yaml", "expect": "reject", "reason": "RESERVED_DEVICE_NAME" },
+    { "path": "actions/lpt9.yaml", "expect": "reject", "reason": "RESERVED_DEVICE_NAME" },
+    { "path": "prompts/aux.prompt", "expect": "reject", "reason": "RESERVED_DEVICE_NAME" },
+    { "path": "prompts/caf\u00e9.prompt", "expect": "reject", "reason": "CHARSET" },
+    { "path": "prompts/\u0441haracters/foo.prompt", "expect": "reject", "reason": "CHARSET" },
+    { "path": "prompts/my file.prompt", "expect": "reject", "reason": "CHARSET" },
+    { "path": "prompts/foo*.prompt", "expect": "reject", "reason": "CHARSET" },
+    { "path": "prompts/foo?.prompt", "expect": "reject", "reason": "CHARSET" },
+    { "path": "prompts/<script>.prompt", "expect": "reject", "reason": "CHARSET" },
+    { "path": "prompts/foo|bar.prompt", "expect": "reject", "reason": "CHARSET" },
+    { "path": "prompts/foo\"bar.prompt", "expect": "reject", "reason": "CHARSET" },
+    { "path": "prompts/~foo$.prompt", "expect": "reject", "reason": "CHARSET" },
+    { "path": "prompts/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.prompt", "expect": "reject", "reason": "SEGMENT_TOO_LONG" },
+    { "path": "prompts/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb/cccccccccccccccccccccccccccccccccccccccccccccccccc/dddddddddddddddddddddddddddddddddddddddddddddddddd/eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee/ffffffffff.prompt", "expect": "reject", "reason": "PATH_TOO_LONG" },
+    { "path": "knowledge/pack.sknpack", "expect": "reject", "reason": "UNKNOWN_ROOT" },
+    { "path": "manifest.json", "expect": "reject", "reason": "UNKNOWN_ROOT" },
+    { "path": "install.json", "expect": "reject", "reason": "UNKNOWN_ROOT" },
+    { "path": "config/triggers/foo.yaml", "expect": "reject", "reason": "UNKNOWN_ROOT" },
+    { "path": "prompts2/foo.prompt", "expect": "reject", "reason": "UNKNOWN_ROOT" },
+    { "path": "Prompts/foo.prompt", "expect": "reject", "reason": "UNKNOWN_ROOT" },
+    { "path": "prompts", "expect": "reject", "reason": "NO_FILE_IN_ROOT" },
+    { "path": "triggers", "expect": "reject", "reason": "NO_FILE_IN_ROOT" },
+    { "path": "prompts/foo.txt", "expect": "reject", "reason": "BAD_EXTENSION" },
+    { "path": "prompts/foo.PROMPT", "expect": "reject", "reason": "BAD_EXTENSION" },
+    { "path": "prompts/foo.prompt.bak", "expect": "reject", "reason": "BAD_EXTENSION" },
+    { "path": "prompts/foo", "expect": "reject", "reason": "BAD_EXTENSION" },
+    { "path": "prompts/foo.yaml", "expect": "reject", "reason": "BAD_EXTENSION" },
+    { "path": "triggers/foo.yml", "expect": "reject", "reason": "BAD_EXTENSION" },
+    { "path": "triggers/foo.YAML", "expect": "reject", "reason": "BAD_EXTENSION" },
+    { "path": "triggers/foo.prompt", "expect": "reject", "reason": "BAD_EXTENSION" },
+    { "path": "actions/foo.yaml.txt", "expect": "reject", "reason": "BAD_EXTENSION" },
+    { "path": "prompts/.prompt", "expect": "reject", "reason": "EMPTY_STEM" },
+    { "path": "triggers/.yaml", "expect": "reject", "reason": "EMPTY_STEM" },
+    { "path": "prompts/characters/dynamic/lydia_a2c94.prompt", "expect": "reject", "reason": "RESERVED_DYNAMIC" },
+    { "path": "prompts/characters/Dynamic/lydia_a2c94.prompt", "expect": "reject", "reason": "RESERVED_DYNAMIC" },
+    { "path": "prompts/Characters/dynamic/lydia_a2c94.prompt", "expect": "reject", "reason": "RESERVED_DYNAMIC" },
+    { "path": "prompts/sub/characters/dynamic/lydia_a2c94.prompt", "expect": "reject", "reason": "RESERVED_DYNAMIC" },
+    { "path": "prompts/characters/lydia_a2c94.dynamic.prompt", "expect": "reject", "reason": "RESERVED_DYNAMIC" },
+    { "path": "prompts/lydia_a2c94.DYNAMIC.prompt", "expect": "reject", "reason": "RESERVED_DYNAMIC" }
+  ],
+  "collision_cases": [
+    {
+      "paths": ["prompts/characters/a.prompt", "prompts/characters/b.prompt"],
+      "expect": "accept",
+      "reason": "distinct paths"
+    },
+    {
+      "paths": ["triggers/foo.yaml", "actions/foo.yaml"],
+      "expect": "accept",
+      "reason": "same stem under different roots is not a collision"
+    },
+    {
+      "paths": ["prompts/Foo.prompt", "prompts/foo.prompt"],
+      "expect": "reject",
+      "reason": "PATH_COLLISION"
+    },
+    {
+      "paths": ["prompts/characters/Lydia_A2C94.prompt", "prompts/Characters/lydia_a2c94.prompt"],
+      "expect": "reject",
+      "reason": "PATH_COLLISION"
+    },
+    {
+      "paths": ["triggers/Banter.yaml", "triggers/banter.yaml", "triggers/BANTER.yaml"],
+      "expect": "reject",
+      "reason": "PATH_COLLISION"
+    }
+  ],
+  "manifest_cases": [
+    {
+      "name": "happy-bundle",
+      "path_author": "mrsneaky",
+      "path_slug": "apocalypse-reactions",
+      "manifest": {
+        "id": "mrsneaky.apocalypse-reactions",
+        "type": "bundle",
+        "title": "Apocalypse Spell Reactions",
+        "author": "mrsneaky",
+        "version": "1.2.0",
+        "min_skyrimnet_version": "0.25.0"
+      },
+      "expect": "accept",
+      "reason": "canonical bundle manifest"
+    },
+    {
+      "name": "slug-contains-skyrimnet",
+      "path_author": "bob",
+      "path_slug": "skyrimnet-foobar-integration",
+      "manifest": {
+        "id": "bob.skyrimnet-foobar-integration",
+        "type": "bundle",
+        "title": "SkyrimNet FooBar Integration",
+        "author": "bob",
+        "version": "1.0.0",
+        "min_skyrimnet_version": "0.25.0"
+      },
+      "expect": "accept",
+      "reason": "the reservation covers the author segment only — slugs and titles may contain 'skyrimnet' (§2, decision 12)"
+    },
+    {
+      "name": "slug-is-exactly-skyrimnet",
+      "path_author": "bob",
+      "path_slug": "skyrimnet",
+      "manifest": {
+        "id": "bob.skyrimnet",
+        "type": "bundle",
+        "title": "SkyrimNet Extras",
+        "author": "bob",
+        "version": "1.0.0",
+        "min_skyrimnet_version": "0.25.0"
+      },
+      "expect": "accept",
+      "reason": "slug namespace is unrestricted"
+    },
+    {
+      "name": "author-superstring-of-reserved",
+      "path_author": "notskyrimnet",
+      "path_slug": "pack",
+      "manifest": {
+        "id": "notskyrimnet.pack",
+        "type": "bundle",
+        "title": "Not Official",
+        "author": "notskyrimnet",
+        "version": "1.0.0",
+        "min_skyrimnet_version": "0.25.0"
+      },
+      "expect": "accept",
+      "reason": "reservation is exact-match or 'skyrimnet-' prefix, not substring"
+    },
+    {
+      "name": "mixed-case-path-author",
+      "path_author": "Zevick",
+      "path_slug": "physical-diaries",
+      "manifest": {
+        "id": "zevick.physical-diaries",
+        "type": "listing",
+        "title": "Physical Diaries",
+        "author": "Zevick"
+      },
+      "expect": "accept",
+      "reason": "id is canonical lowercase; path and author field compare case-folded"
+    },
+    {
+      "name": "listing-without-versions",
+      "path_author": "zevick",
+      "path_slug": "stfu",
+      "manifest": {
+        "id": "zevick.stfu",
+        "type": "listing",
+        "title": "S.T.F.U",
+        "author": "zevick"
+      },
+      "expect": "accept",
+      "reason": "listings are browse-only hub entries — never installed, so no version gate"
+    },
+    {
+      "name": "prerelease-semver",
+      "path_author": "bob",
+      "path_slug": "pack",
+      "manifest": {
+        "id": "bob.pack",
+        "type": "bundle",
+        "title": "Pack",
+        "author": "bob",
+        "version": "1.0.0-beta.1",
+        "min_skyrimnet_version": "0.25.0"
+      },
+      "expect": "accept",
+      "reason": "strict semver includes prerelease identifiers"
+    },
+    {
+      "name": "underscore-slug",
+      "path_author": "bob",
+      "path_slug": "my_pack",
+      "manifest": {
+        "id": "bob.my_pack",
+        "type": "bundle",
+        "title": "My Pack",
+        "author": "bob",
+        "version": "1.0.0",
+        "min_skyrimnet_version": "0.25.0"
+      },
+      "expect": "accept",
+      "reason": "id charset is [a-z0-9_-]"
+    },
+
+    {
+      "name": "id-missing",
+      "path_author": "bob",
+      "path_slug": "pack",
+      "manifest": {
+        "type": "bundle",
+        "title": "Pack",
+        "author": "bob",
+        "version": "1.0.0",
+        "min_skyrimnet_version": "0.25.0"
+      },
+      "expect": "reject",
+      "reason": "ID_MISSING"
+    },
+    {
+      "name": "id-uppercase",
+      "path_author": "bob",
+      "path_slug": "pack",
+      "manifest": {
+        "id": "Bob.Pack",
+        "type": "bundle",
+        "title": "Pack",
+        "author": "bob",
+        "version": "1.0.0",
+        "min_skyrimnet_version": "0.25.0"
+      },
+      "expect": "reject",
+      "reason": "ID_FORMAT"
+    },
+    {
+      "name": "id-extra-dot",
+      "path_author": "bob",
+      "path_slug": "pack",
+      "manifest": {
+        "id": "bob.my.pack",
+        "type": "bundle",
+        "title": "Pack",
+        "author": "bob",
+        "version": "1.0.0",
+        "min_skyrimnet_version": "0.25.0"
+      },
+      "expect": "reject",
+      "reason": "ID_FORMAT"
+    },
+    {
+      "name": "id-no-dot",
+      "path_author": "bob",
+      "path_slug": "pack",
+      "manifest": {
+        "id": "bobpack",
+        "type": "bundle",
+        "title": "Pack",
+        "author": "bob",
+        "version": "1.0.0",
+        "min_skyrimnet_version": "0.25.0"
+      },
+      "expect": "reject",
+      "reason": "ID_FORMAT"
+    },
+    {
+      "name": "id-empty-segment",
+      "path_author": "bob",
+      "path_slug": "pack",
+      "manifest": {
+        "id": "bob.",
+        "type": "bundle",
+        "title": "Pack",
+        "author": "bob",
+        "version": "1.0.0",
+        "min_skyrimnet_version": "0.25.0"
+      },
+      "expect": "reject",
+      "reason": "ID_FORMAT"
+    },
+    {
+      "name": "id-illegal-char",
+      "path_author": "bob",
+      "path_slug": "pack",
+      "manifest": {
+        "id": "bob.my pack",
+        "type": "bundle",
+        "title": "Pack",
+        "author": "bob",
+        "version": "1.0.0",
+        "min_skyrimnet_version": "0.25.0"
+      },
+      "expect": "reject",
+      "reason": "ID_FORMAT"
+    },
+    {
+      "name": "id-path-mismatch",
+      "path_author": "bob",
+      "path_slug": "my-pack",
+      "manifest": {
+        "id": "bob.other-pack",
+        "type": "bundle",
+        "title": "Pack",
+        "author": "bob",
+        "version": "1.0.0",
+        "min_skyrimnet_version": "0.25.0"
+      },
+      "expect": "reject",
+      "reason": "ID_PATH_MISMATCH"
+    },
+    {
+      "name": "id-author-mismatch",
+      "path_author": "bob",
+      "path_slug": "pack",
+      "manifest": {
+        "id": "bob.pack",
+        "type": "bundle",
+        "title": "Pack",
+        "author": "alice",
+        "version": "1.0.0",
+        "min_skyrimnet_version": "0.25.0"
+      },
+      "expect": "reject",
+      "reason": "ID_AUTHOR_MISMATCH"
+    },
+    {
+      "name": "reserved-author-exact",
+      "path_author": "skyrimnet",
+      "path_slug": "base",
+      "manifest": {
+        "id": "skyrimnet.base",
+        "type": "bundle",
+        "title": "SkyrimNet Base",
+        "author": "skyrimnet",
+        "version": "9.0.0",
+        "min_skyrimnet_version": "0.25.0"
+      },
+      "expect": "reject",
+      "reason": "RESERVED_AUTHOR"
+    },
+    {
+      "name": "reserved-author-prefix",
+      "path_author": "skyrimnet-official",
+      "path_slug": "bios-3dnpc",
+      "manifest": {
+        "id": "skyrimnet-official.bios-3dnpc",
+        "type": "bundle",
+        "title": "Official Bios",
+        "author": "skyrimnet-official",
+        "version": "1.0.0",
+        "min_skyrimnet_version": "0.25.0"
+      },
+      "expect": "reject",
+      "reason": "RESERVED_AUTHOR"
+    },
+    {
+      "name": "reserved-author-mixed-case-path",
+      "path_author": "SkyrimNet",
+      "path_slug": "base",
+      "manifest": {
+        "id": "skyrimnet.base",
+        "type": "bundle",
+        "title": "SkyrimNet Base",
+        "author": "SkyrimNet",
+        "version": "9.0.0",
+        "min_skyrimnet_version": "0.25.0"
+      },
+      "expect": "reject",
+      "reason": "RESERVED_AUTHOR"
+    },
+    {
+      "name": "reserved-author-only-in-author-field",
+      "path_author": "bob",
+      "path_slug": "pack",
+      "manifest": {
+        "id": "bob.pack",
+        "type": "bundle",
+        "title": "Pack",
+        "author": "skyrimnet",
+        "version": "1.0.0",
+        "min_skyrimnet_version": "0.25.0"
+      },
+      "expect": "reject",
+      "reason": "RESERVED_AUTHOR"
+    },
+    {
+      "name": "author-missing",
+      "path_author": "bob",
+      "path_slug": "pack",
+      "manifest": {
+        "id": "bob.pack",
+        "type": "bundle",
+        "title": "Pack",
+        "version": "1.0.0",
+        "min_skyrimnet_version": "0.25.0"
+      },
+      "expect": "reject",
+      "reason": "AUTHOR_MISSING"
+    },
+    {
+      "name": "version-missing",
+      "path_author": "bob",
+      "path_slug": "pack",
+      "manifest": {
+        "id": "bob.pack",
+        "type": "bundle",
+        "title": "Pack",
+        "author": "bob",
+        "min_skyrimnet_version": "0.25.0"
+      },
+      "expect": "reject",
+      "reason": "VERSION_MISSING"
+    },
+    {
+      "name": "version-two-part",
+      "path_author": "bob",
+      "path_slug": "pack",
+      "manifest": {
+        "id": "bob.pack",
+        "type": "bundle",
+        "title": "Pack",
+        "author": "bob",
+        "version": "1.0",
+        "min_skyrimnet_version": "0.25.0"
+      },
+      "expect": "reject",
+      "reason": "VERSION_NOT_SEMVER"
+    },
+    {
+      "name": "version-v-prefix",
+      "path_author": "bob",
+      "path_slug": "pack",
+      "manifest": {
+        "id": "bob.pack",
+        "type": "bundle",
+        "title": "Pack",
+        "author": "bob",
+        "version": "v1.0.0",
+        "min_skyrimnet_version": "0.25.0"
+      },
+      "expect": "reject",
+      "reason": "VERSION_NOT_SEMVER"
+    },
+    {
+      "name": "version-four-part",
+      "path_author": "bob",
+      "path_slug": "pack",
+      "manifest": {
+        "id": "bob.pack",
+        "type": "bundle",
+        "title": "Pack",
+        "author": "bob",
+        "version": "1.0.0.0",
+        "min_skyrimnet_version": "0.25.0"
+      },
+      "expect": "reject",
+      "reason": "VERSION_NOT_SEMVER"
+    },
+    {
+      "name": "listing-version-not-semver",
+      "path_author": "bob",
+      "path_slug": "pack",
+      "manifest": {
+        "id": "bob.pack",
+        "type": "listing",
+        "title": "Pack",
+        "author": "bob",
+        "version": "1.0"
+      },
+      "expect": "reject",
+      "reason": "VERSION_NOT_SEMVER"
+    },
+    {
+      "name": "min-version-missing",
+      "path_author": "bob",
+      "path_slug": "pack",
+      "manifest": {
+        "id": "bob.pack",
+        "type": "bundle",
+        "title": "Pack",
+        "author": "bob",
+        "version": "1.0.0"
+      },
+      "expect": "reject",
+      "reason": "MIN_VERSION_MISSING"
+    },
+    {
+      "name": "min-version-dashed-legacy-format",
+      "path_author": "bob",
+      "path_slug": "pack",
+      "manifest": {
+        "id": "bob.pack",
+        "type": "bundle",
+        "title": "Pack",
+        "author": "bob",
+        "version": "1.0.0",
+        "min_skyrimnet_version": "0-19-0-0"
+      },
+      "expect": "reject",
+      "reason": "MIN_VERSION_NOT_SEMVER"
+    }
+  ],
+  "name_stem_cases": [
+    { "file": "triggers/combat_banter.yaml", "name": "combat_banter", "expect": "accept", "reason": "name equals stem" },
+    { "file": "actions/cat_scheduling.yaml", "name": "cat_scheduling", "expect": "accept", "reason": "name equals stem" },
+    { "file": "actions/cat_scheduling.yaml", "name": "Scheduling", "expect": "reject", "reason": "NAME_NOT_STEM" },
+    { "file": "actions/cat_scheduling.yaml", "name": "Cat_Scheduling", "expect": "reject", "reason": "NAME_NOT_STEM" },
+    { "file": "triggers/combat_banter.yaml", "name": "", "expect": "reject", "reason": "NAME_MISSING" },
+    { "file": "triggers/combat_banter.yaml", "name": null, "expect": "reject", "reason": "NAME_MISSING" }
+  ]
+}
