@@ -15,6 +15,7 @@ import {
   POSIX_ONLY,
   errorMessages,
   goodManifest,
+  makeBaseDir,
   makeTempDir,
   rmDir,
   runValidate,
@@ -209,6 +210,89 @@ test("rejects a listing that ships content files", () => {
     }),
     /Listing plugins must not contain any content files/,
   );
+});
+
+// ----- Cross-plugin id uniqueness -----------------------------------------
+//
+// git is case-sensitive, the install directory is not: two plugin directories
+// differing only in case both fold to one id and would overwrite each other on
+// the user's disk. Staged with a custom BASE_DIR so the two directories live
+// in different checkouts — a single checkout could not hold both on Windows,
+// which is the whole reason only the hub can catch this.
+
+const COOL_PACK_ON_MAIN = {
+  plugins: {
+    "plugins/bob/cool-pack": {
+      manifest: goodManifest({ id: "bob.cool-pack", title: "Bob's Cool Pack" }),
+      files: GOOD_FILES,
+    },
+  },
+};
+
+const COOL_PACK_INDEX = {
+  schema_version: 2,
+  generated_at: "2026-08-14T00:00:00Z",
+  plugins: [
+    {
+      id: "plugins/bob/cool-pack",
+      plugin_id: "bob.cool-pack",
+      type: "bundle",
+      title: "Bob's Cool Pack",
+    },
+  ],
+};
+
+test("rejects a plugin whose id case-folds onto an existing plugin's id", () => {
+  const baseDir = makeBaseDir({ ...COOL_PACK_ON_MAIN, index: COOL_PACK_INDEX });
+  const prDir = makeTempDir();
+  try {
+    // Self-consistent on its own terms: 'Cool-Pack' case-folds onto the id,
+    // so every per-plugin identity rule passes. Only a cross-plugin check
+    // catches it.
+    const changed = writePlugin(prDir, "plugins/bob/Cool-Pack", {
+      manifest: goodManifest({ id: "bob.cool-pack", title: "Bob's Sneaky Homoglyph Pack" }),
+      files: GOOD_FILES,
+    });
+    const res = runValidate({ baseDir, prDir, changed });
+    assertRejected(res, /Plugin id 'bob\.cool-pack' collides with existing plugin 'plugins\/bob\/cool-pack'/);
+  } finally {
+    rmDir(prDir);
+    rmDir(baseDir);
+  }
+});
+
+test("catches an id collision even when index.json has not been rebuilt yet", () => {
+  // index.json is regenerated only after a plugin merges, so the base
+  // directory tree is the fresher source and must be the primary one.
+  const baseDir = makeBaseDir(COOL_PACK_ON_MAIN);
+  const prDir = makeTempDir();
+  try {
+    const changed = writePlugin(prDir, "plugins/bob/COOL-PACK", {
+      manifest: goodManifest({ id: "bob.cool-pack", title: "Bob's Shouty Pack" }),
+      files: GOOD_FILES,
+    });
+    const res = runValidate({ baseDir, prDir, changed });
+    assertRejected(res, /collides with existing plugin/);
+  } finally {
+    rmDir(prDir);
+    rmDir(baseDir);
+  }
+});
+
+test("a plugin updating itself is not an id collision", () => {
+  const baseDir = makeBaseDir({ ...COOL_PACK_ON_MAIN, index: COOL_PACK_INDEX });
+  const prDir = makeTempDir();
+  try {
+    const changed = writePlugin(prDir, "plugins/bob/cool-pack", {
+      manifest: goodManifest({ id: "bob.cool-pack", title: "Bob's Cool Pack", version: "1.1.0" }),
+      files: GOOD_FILES,
+    });
+    const res = runValidate({ baseDir, prDir, changed });
+    assert.equal(res.result.success, true, errorMessages(res.result));
+  } finally {
+    rmDir(prDir);
+    rmDir(baseDir);
+  }
 });
 
 // ----- Path rejections -----------------------------------------------------

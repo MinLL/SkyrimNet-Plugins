@@ -765,6 +765,77 @@ function normalizeTitle(title) {
     .replace(/[.,!?;:'"]+$/g, "");
 }
 
+// ----- Plugin id uniqueness (case-folded, cross-plugin) -------------------
+//
+// git is case-sensitive; Windows filesystems and the content store's identity
+// rules are not. `plugins/bob/Cool-Pack` and `plugins/bob/cool-pack` can both
+// exist in the repo, each validating perfectly against its OWN path — and both
+// fold to the id `bob.cool-pack`, which is the `store/` directory name on the
+// user's disk. Installing both would have one silently overwrite the other.
+// Nothing downstream can catch this: the engine sees one id, not two
+// submissions. The hub is the only gatekeeper for id uniqueness.
+
+try {
+  if (typeof manifest.id === "string" && manifest.id.length > 0) {
+    const incomingId = foldCase(manifest.id);
+    for (const [otherRoot, otherId] of knownPluginIds()) {
+      if (otherRoot === pluginRoot) continue; // this plugin updating itself
+      if (otherId !== incomingId) continue;
+      addError(
+        manifestPath,
+        `Plugin id '${manifest.id}' collides with existing plugin '${otherRoot}' when compared case-insensitively. ` +
+          `The id is used verbatim as the install directory name on a case-insensitive filesystem, so the two would ` +
+          `overwrite each other. Pick a different slug.`,
+      );
+      break;
+    }
+  }
+} catch (e) {
+  addWarning(null, `Could not check plugin id uniqueness: ${e.message}`);
+}
+
+/**
+ * Every plugin id already present on the base branch, as
+ * Map<'plugins/{author}/{slug}', case-folded '{author}.{slug}'>.
+ *
+ * Read primarily from the base checkout's directory tree rather than
+ * index.json: the index is rebuilt only *after* a plugin merges, so a plugin
+ * that landed minutes ago would be missing from it. Ids are derived from the
+ * path, which is sound because every validated manifest's id case-folds onto
+ * its own path. index.json is merged in as a belt-and-suspenders second
+ * source.
+ */
+function knownPluginIds() {
+  const ids = new Map();
+
+  const basePluginsDir = path.join(env.BASE_DIR, "plugins");
+  if (fs.existsSync(basePluginsDir)) {
+    for (const author of fs.readdirSync(basePluginsDir, { withFileTypes: true })) {
+      if (!author.isDirectory()) continue;
+      const authorDir = path.join(basePluginsDir, author.name);
+      for (const slug of fs.readdirSync(authorDir, { withFileTypes: true })) {
+        if (!slug.isDirectory()) continue;
+        ids.set(`plugins/${author.name}/${slug.name}`, foldCase(`${author.name}.${slug.name}`));
+      }
+    }
+  }
+
+  const indexPath = path.join(env.BASE_DIR, "index.json");
+  if (fs.existsSync(indexPath)) {
+    const index = JSON.parse(fs.readFileSync(indexPath, "utf8"));
+    for (const entry of Array.isArray(index.plugins) ? index.plugins : []) {
+      if (typeof entry?.id !== "string") continue;
+      const id =
+        typeof entry.plugin_id === "string" && entry.plugin_id.length > 0
+          ? entry.plugin_id
+          : entry.id.split("/").slice(1).join(".");
+      ids.set(entry.id, foldCase(id));
+    }
+  }
+
+  return ids;
+}
+
 // ----- Routing -------------------------------------------------------------
 
 routeOrFail();

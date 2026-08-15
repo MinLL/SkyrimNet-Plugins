@@ -42,6 +42,30 @@ export function writeFile(root, relPath, content) {
 }
 
 /**
+ * Build a throwaway BASE_DIR: the trusted side of a validation run.
+ *
+ * Carries the real schemas (validate.mjs compiles them from BASE_DIR), an
+ * empty ban list, whatever plugins the test wants already "on main", and
+ * optionally an index.json. Lets a test stage two plugin directories whose
+ * names differ only in case — impossible inside one checkout on Windows, but
+ * perfectly possible in git.
+ *
+ * @param {object} spec { plugins: { "plugins/a/b": { manifest, files } }, index }
+ */
+export function makeBaseDir({ plugins = {}, index = null } = {}) {
+  const base = makeTempDir("snhub-base-");
+  fs.cpSync(path.join(REPO_ROOT, "schemas"), path.join(base, "schemas"), { recursive: true });
+  fs.writeFileSync(path.join(base, "bans.json"), JSON.stringify({ schema_version: 1, bans: [] }, null, 2));
+  for (const [dir, spec] of Object.entries(plugins)) {
+    writePlugin(base, dir, spec);
+  }
+  if (index) {
+    fs.writeFileSync(path.join(base, "index.json"), JSON.stringify(index, null, 2));
+  }
+  return base;
+}
+
+/**
  * Materialize a plugin into `root` and return the repo-relative paths written.
  *
  * @param {string} root      checkout root (acts as PR_DIR)
