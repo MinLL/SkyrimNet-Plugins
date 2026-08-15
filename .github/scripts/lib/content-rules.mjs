@@ -85,10 +85,15 @@ export const RESERVED_AUTHOR_PREFIX = "skyrimnet-";
 
 // Windows reserved device names. Reserved bare AND with any extension
 // (`NUL`, `nul.prompt`, `COM1.yaml` all resolve to the device).
+//
+// COM0 and LPT0 are included: Microsoft's current naming guidance reserves the
+// full COM0-9 / LPT0-9 ranges, not 1-9. Two-digit names (COM10, LPT10) are NOT
+// reserved and stay legal. CONIN$ / CONOUT$ need no entry — `$` is outside the
+// allowed charset, so the charset rule rejects them before this one runs.
 export const RESERVED_DEVICE_NAMES = new Set([
   "CON", "PRN", "AUX", "NUL",
-  "COM1", "COM2", "COM3", "COM4", "COM5", "COM6", "COM7", "COM8", "COM9",
-  "LPT1", "LPT2", "LPT3", "LPT4", "LPT5", "LPT6", "LPT7", "LPT8", "LPT9",
+  "COM0", "COM1", "COM2", "COM3", "COM4", "COM5", "COM6", "COM7", "COM8", "COM9",
+  "LPT0", "LPT1", "LPT2", "LPT3", "LPT4", "LPT5", "LPT6", "LPT7", "LPT8", "LPT9",
 ]);
 
 // Safe ASCII subset for v1 (§5 step 3). Localized display names go through the

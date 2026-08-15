@@ -113,7 +113,10 @@ every rule below is evaluated on a segment before moving to the next segment:
 11. `TRAILING_DOT_OR_SPACE` — segment ends with `.` or a space (Windows strips
     both on create, making `foo.prompt ` an alias for `foo.prompt`).
 12. `RESERVED_DEVICE_NAME` — the text before the segment's first `.`,
-    uppercased, is one of `CON PRN AUX NUL COM1..COM9 LPT1..LPT9`.
+    uppercased, is one of `CON PRN AUX NUL COM0..COM9 LPT0..LPT9` — the full
+    0-9 ranges, per Microsoft's naming guidance. Two-digit names (`COM10`,
+    `LPT10`) are *not* reserved and must stay legal. `CONIN$`/`CONOUT$` need
+    no entry: `$` is outside the charset, so rule 13 rejects them.
 13. `CHARSET` — segment does not match `^[A-Za-z0-9._-]+$`.
 
 **Structure checks**, after all segments pass:

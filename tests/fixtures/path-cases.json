@@ -19,7 +19,8 @@
     { "path": "prompts/characters/lydia.dynamic_notes.prompt", "expect": "accept", "reason": "only the exact '.dynamic.prompt' suffix is reserved" },
     { "path": "prompts/console.prompt", "expect": "accept", "reason": "device-name lookalike: 'console' is not 'CON'" },
     { "path": "prompts/nulls.prompt", "expect": "accept", "reason": "device-name lookalike: 'nulls' is not 'NUL'" },
-    { "path": "prompts/com10.prompt", "expect": "accept", "reason": "device-name lookalike: only COM1-COM9 are reserved" },
+    { "path": "prompts/com10.prompt", "expect": "accept", "reason": "device-name lookalike: two-digit COM10 is not a reserved device" },
+    { "path": "actions/lpt10.yaml", "expect": "accept", "reason": "device-name lookalike: two-digit LPT10 is not a reserved device" },
     { "path": "prompts/characters/a.b.c.prompt", "expect": "accept", "reason": "interior dots are legal" },
 
     { "path": "", "expect": "reject", "reason": "EMPTY_PATH" },
@@ -53,6 +54,8 @@
     { "path": "prompts/con/foo.prompt", "expect": "reject", "reason": "RESERVED_DEVICE_NAME" },
     { "path": "triggers/COM1.yaml", "expect": "reject", "reason": "RESERVED_DEVICE_NAME" },
     { "path": "actions/lpt9.yaml", "expect": "reject", "reason": "RESERVED_DEVICE_NAME" },
+    { "path": "prompts/COM0.prompt", "expect": "reject", "reason": "RESERVED_DEVICE_NAME" },
+    { "path": "actions/lpt0.yaml", "expect": "reject", "reason": "RESERVED_DEVICE_NAME" },
     { "path": "prompts/aux.prompt", "expect": "reject", "reason": "RESERVED_DEVICE_NAME" },
     { "path": "prompts/caf\u00e9.prompt", "expect": "reject", "reason": "CHARSET" },
     { "path": "prompts/\u0441haracters/foo.prompt", "expect": "reject", "reason": "CHARSET" },
