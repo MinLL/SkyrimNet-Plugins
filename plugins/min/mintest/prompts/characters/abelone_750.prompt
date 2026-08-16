@@ -33,3 +33,4 @@
 {% endblock %}
 
 {% block speech_style %}Speaks with a moderate Nord accent and straightforward, practical tone. Uses short, efficient sentences when working and slightly more elaborate speech when socializing in evenings. Delivers information directly without embellishment. Speaks more warmly to regulars and fellow Nords, more formally with strangers. Voice carries the slight roughness of someone who works in the cold.{% endblock %}
+{# v1.2.0 delta-test edit #}
