@@ -1,4 +1,5 @@
 {
+  "id": "zevick.physical-diaries",
   "type": "listing",
   "title": "Physical Diaries",
   "tagline": "Adds diary book items to NPC's inventories to read SkyrimNet diaries in game",
@@ -9,6 +10,7 @@
     "diary"
   ],
   "nsfw": false,
+  "icon": "package",
   "mods": [],
   "requirements": [],
   "external_url": "https://github.com/zevck/SkyrimNet-Physical-Diaries"

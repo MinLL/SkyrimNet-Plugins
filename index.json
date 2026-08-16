@@ -1,9 +1,10 @@
 {
-  "schema_version": 1,
-  "generated_at": "2026-08-15T02:51:49.092Z",
+  "schema_version": 2,
+  "generated_at": "2026-08-15T00:51:28.085Z",
   "plugins": [
     {
       "id": "plugins/min/mintest",
+      "plugin_id": "min.mintest",
       "type": "bundle",
       "title": "MinTest",
       "tagline": "TestPlugin",
@@ -15,18 +16,49 @@
       "icon": "package",
       "mods": [],
       "first_published": "2026-08-13T03:26:33Z",
-      "last_updated": "2026-08-13T03:26:33Z",
-      "version": "1.0.0",
-      "skyrimnet_version": "0.23.0",
+      "last_updated": "2026-08-14T17:51:09-07:00",
+      "version": "1.1.0",
+      "min_skyrimnet_version": "0.23.0",
+      "history": [
+        {
+          "version": "1.1.0",
+          "commit": "ad4dc914d6f6513b50ba1aad14501f1479979060",
+          "date": "2026-08-14T17:51:09-07:00"
+        },
+        {
+          "version": "1.0.0",
+          "commit": "b54c628dc0e8c10fd08b05bc8e6d1e56c98110ad",
+          "date": "2026-08-13T03:26:33Z"
+        }
+      ],
       "contents": {
         "triggers": 0,
         "actions": 1,
-        "prompts": 1,
-        "knowledge": 0
+        "prompts": 1
       }
     },
     {
+      "id": "plugins/Zevick/physical-diaries",
+      "plugin_id": "zevick.physical-diaries",
+      "type": "listing",
+      "title": "Physical Diaries",
+      "tagline": "Adds diary book items to NPC's inventories to read SkyrimNet diaries in game",
+      "author": "Zevick",
+      "tags": [
+        "diaries",
+        "diary"
+      ],
+      "nsfw": false,
+      "icon": "package",
+      "mods": [],
+      "first_published": "2026-04-22T05:57:56Z",
+      "last_updated": "2026-08-14T17:51:09-07:00",
+      "external_url": "https://github.com/zevck/SkyrimNet-Physical-Diaries",
+      "curated": true
+    },
+    {
       "id": "plugins/Zevick/s-t-f-u-skyrim-talk-filter-utility",
+      "plugin_id": "zevick.s-t-f-u-skyrim-talk-filter-utility",
       "type": "listing",
       "title": "S.T.F.U - Skyrim Talk Filter Utility",
       "tagline": "Skyrim Talk Filter Utility silences tedious frequent utterances",
@@ -40,26 +72,8 @@
       "icon": "package",
       "mods": [],
       "first_published": "2026-04-22T06:57:17Z",
-      "last_updated": "2026-04-22T06:57:17Z",
+      "last_updated": "2026-08-14T17:51:09-07:00",
       "external_url": "https://github.com/zevck/S.T.F.U",
-      "curated": true
-    },
-    {
-      "id": "plugins/Zevick/physical-diaries",
-      "type": "listing",
-      "title": "Physical Diaries",
-      "tagline": "Adds diary book items to NPC's inventories to read SkyrimNet diaries in game",
-      "author": "Zevick",
-      "tags": [
-        "diaries",
-        "diary"
-      ],
-      "nsfw": false,
-      "icon": "package",
-      "mods": [],
-      "first_published": "2026-04-22T05:57:56Z",
-      "last_updated": "2026-04-22T05:57:56Z",
-      "external_url": "https://github.com/zevck/SkyrimNet-Physical-Diaries",
       "curated": true
     }
   ]

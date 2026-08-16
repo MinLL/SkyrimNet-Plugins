@@ -1,4 +1,5 @@
 {
+  "id": "min.mintest",
   "type": "bundle",
   "title": "MinTest",
   "tagline": "TestPlugin",
@@ -10,12 +11,8 @@
   "nsfw": false,
   "icon": "package",
   "mods": [],
-  "version": "1.0.0",
-  "skyrimnet_version": "0.23.0",
-  "files": [
-    "prompts/characters/abelone_750.prompt",
-    "actions/cat_scheduling.yaml"
-  ],
+  "version": "1.1.0",
+  "min_skyrimnet_version": "0.23.0",
   "invocation": {
     "purpose": "This is a test",
     "actions": [

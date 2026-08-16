@@ -2,14 +2,20 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://raw.githubusercontent.com/MinLL/SkyrimNet-Plugins/main/schemas/manifest.schema.json",
   "title": "SkyrimNet Plugin Manifest",
-  "description": "Metadata for a plugin submission. One manifest.json per plugin directory.\n\nThis schema is deliberately permissive on per-field formatting because the SkyrimNet dashboard is the only supported submission path and is the authoritative source of truth for how fields are shaped. The dashboard generates titles, taglines, descriptions, versions, tags, mod lists, and every other author-facing field, so revalidating their exact character patterns here would only produce false positives when the dashboard evolves.\n\nWhat this schema still enforces is structural: which fields are required, their fundamental types, the bundle-vs-listing discriminator, conditional requirements (listings need external_url, action plugins need an invocation block with source_mods), and basic safety rules (external URLs must be http(s), strings must be non-empty, sanity size ceilings). Cross-file rules (title uniqueness, author matching, invocation-required-if-actions, listing-has-no-content-files) live in validate.yml, not here.\n\nIf you are reading this because the dashboard changed and manifests no longer validate, the fix is usually to relax the schema further — not tighten it.",
+  "description": "Metadata for a plugin submission. One manifest.json per plugin directory.\n\nThis schema is deliberately permissive on per-field formatting because the SkyrimNet dashboard is the only supported submission path and is the authoritative source of truth for how fields are shaped. The dashboard generates titles, taglines, descriptions, versions, tags, mod lists, and every other author-facing field, so revalidating their exact character patterns here would only produce false positives when the dashboard evolves.\n\nWhat this schema still enforces is structural: which fields are required, their fundamental types, the bundle-vs-listing discriminator, conditional requirements (listings need external_url, action plugins need an invocation block with source_mods), and basic safety rules (external URLs must be http(s), strings must be non-empty, sanity size ceilings). Cross-file and content-store rules (id matches path and author, reserved author namespace, strict semver, title uniqueness, per-root path/extension rules, trigger and action in-file name == filename stem, case-folded path collisions, invocation-required-if-actions, listing-has-no-content-files) live in .github/scripts/validate.mjs, not here.\n\nIf you are reading this because the dashboard changed and manifests no longer validate, the fix is usually to relax the schema further — not tighten it. The identity fields (id, version, min_skyrimnet_version) are the exception: they are load-bearing for install, update, rollback and conflict resolution, and are deliberately strict.",
   "type": "object",
-  "required": ["type", "title", "tagline", "description", "author", "nsfw", "icon"],
+  "required": ["id", "type", "title", "tagline", "description", "author", "nsfw", "icon"],
   "additionalProperties": false,
   "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]{1,64}\\.[a-z0-9_-]{1,64}$",
+      "maxLength": 129,
+      "description": "Canonical plugin id: '{author}.{slug}'. One manifest format is used everywhere (hub repo, store/ install dirs, external layers shipped inside other mods), and external layers have no repo path to derive an id from — so the id is explicit. Each segment is lowercase [a-z0-9_-] with no dots, because the dot is the separator. Used verbatim as the store/ directory name on disk and compared case-folded against the repo path and the author field by CI. The author segment 'skyrimnet' and the 'skyrimnet-' prefix are reserved for official content (plugin slugs and titles may freely contain 'skyrimnet')."
+    },
     "type": {
       "enum": ["bundle", "listing"],
-      "description": "Plugin kind. 'bundle' = self-contained, ships content files. 'listing' = metadata-only pointer to an externally hosted mod, requires external_url. Listing support is gated in validate.yml until v1.1."
+      "description": "Plugin kind. 'bundle' = self-contained, ships content files. 'listing' = metadata-only pointer to an externally hosted mod, requires external_url. Listings are browse-only hub entries: they are never installed by SkyrimNet, so they carry no min_skyrimnet_version and no content files."
     },
     "external_url": {
       "type": "string",
@@ -22,7 +28,7 @@
       "type": "string",
       "minLength": 1,
       "maxLength": 200,
-      "description": "Human-readable plugin name. Globally unique across the repo (enforced by validate.yml, not by the schema)."
+      "description": "Human-readable plugin name. Globally unique across the repo (enforced by validate.mjs, not by the schema)."
     },
     "tagline": {
       "type": "string",
@@ -46,13 +52,13 @@
       "type": "string",
       "minLength": 1,
       "maxLength": 50,
-      "description": "Plugin version. Format is whatever the dashboard emits — no schema-level pattern enforced."
+      "description": "Plugin version. MUST be strict semver (MAJOR.MINOR.PATCH, optionally with a prerelease/build suffix) — enforced by the review pipeline's validator rather than by a schema pattern so the error message can explain why. Versions are load-bearing: they drive update detection, rollback, and duplicate-id resolution (highest semver wins), so a version that doesn't parse is a hard rejection, never a 0.0.0 default."
     },
-    "skyrimnet_version": {
+    "min_skyrimnet_version": {
       "type": "string",
       "minLength": 1,
       "maxLength": 50,
-      "description": "Version of SkyrimNet this plugin was built against. Auto-populated by the dashboard from the running game's version. Format is whatever SkyrimNet exposes at the time — no schema-level pattern enforced so this survives future SkyrimNet version format changes."
+      "description": "Minimum SkyrimNet version this plugin needs. Required for bundles, absent for listings. Auto-stamped by the dashboard with the running SkyrimNet version at publish time — authors are not asked to curate it. MUST be strict semver: the install-time compatibility gate compares it numerically against the running version and installs too-new plugins disabled with an 'Enable anyway' button. Replaces the pre-content-store 'skyrimnet_version' field."
     },
     "tags": {
       "type": "array",
@@ -112,19 +118,9 @@
         "description": "Display name of the requirement. May include version notes like 'Apocalypse - Magic of Skyrim >= 9.45'."
       }
     },
-    "files": {
-      "type": "array",
-      "maxItems": 1500,
-      "description": "List of content file paths (relative to the plugin directory) that the dashboard bundled with this submission. Populated automatically at publish time. Used by the dashboard detail view to fetch and preview content without hitting the GitHub Contents API for a directory listing. Cross-file consistency (paths actually exist, no orphans) is enforced in validate.yml, not in the schema.",
-      "items": {
-        "type": "string",
-        "minLength": 1,
-        "maxLength": 500
-      }
-    },
     "invocation": {
       "type": "object",
-      "description": "REQUIRED by validate.yml if the plugin contains any actions/*.yaml files. Provides reviewer context for manual action review. Never present for listing plugins or for bundles with no actions.",
+      "description": "REQUIRED by validate.mjs if the plugin contains any actions/*.yaml files. Provides reviewer context for manual action review. Never present for listing plugins or for bundles with no actions.",
       "required": ["purpose", "actions", "attestation"],
       "additionalProperties": false,
       "properties": {
@@ -148,8 +144,8 @@
                 "type": "string",
                 "minLength": 10,
                 "maxLength": 500,
-                "pattern": "^actions/.+\\.ya?ml$",
-                "description": "Path of the action file this entry describes, relative to the plugin root. Must match an entry in the plugin's files[] list."
+                "pattern": "^actions/.+\\.yaml$",
+                "description": "Path of the action file this entry describes, relative to the plugin root. Must name a file the submission actually ships under actions/."
               },
               "vanilla": {
                 "type": "boolean",
@@ -203,7 +199,7 @@
     {
       "if": { "properties": { "type": { "const": "bundle" } }, "required": ["type"] },
       "then": {
-        "required": ["version", "skyrimnet_version"],
+        "required": ["version", "min_skyrimnet_version"],
         "not": { "required": ["external_url"] }
       }
     }

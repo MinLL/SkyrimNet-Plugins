@@ -1,0 +1,69 @@
+name: CI script tests
+
+# Runs the test suite for the repo's CI scripts (see TESTING.md): the shared
+# path/identity rule corpus, end-to-end validate.mjs runs against synthetic PR
+# checkouts, end-to-end build-index.mjs runs against throwaway git repos, and a
+# replay of every plugin currently in plugins/ through the validator.
+#
+# Deliberately path-filtered to the scripts, schemas and tests — NOT plugins/.
+# Two reasons:
+#   1. Plugin submissions are already gated by review-pipeline.yml, which runs
+#      the real validator against the PR. A second check would be noise.
+#   2. index.json is rebuilt by build-index.yml AFTER a plugin merges, so
+#      between the merge and the rebuild the tree is legitimately ahead of the
+#      index. build-index.test.mjs asserts the committed index is not stale,
+#      which would flag that window as a failure on plugin pushes.
+#
+# The suite needs the validator's dependencies (ajv, js-yaml) and git, both of
+# which the runner has after the install step below.
+
+on:
+  pull_request:
+    paths:
+      - '.github/scripts/**'
+      - '.github/workflows/tests.yml'
+      - 'schemas/**'
+      - 'tests/**'
+      - 'package.json'
+  push:
+    branches: [main]
+    paths:
+      - '.github/scripts/**'
+      - '.github/workflows/tests.yml'
+      - 'schemas/**'
+      - 'tests/**'
+      - 'package.json'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-tests-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+          cache-dependency-path: .github/scripts/package-lock.json
+
+      - name: Install script dependencies
+        working-directory: .github/scripts
+        run: npm ci --prefer-offline --no-audit --no-fund
+
+      # Runs on Linux, so the cases Windows filesystems cannot express
+      # (backslashes, colons, trailing spaces, case-only collisions) are
+      # exercised here rather than skipped.
+      - name: Run tests
+        run: npm test
