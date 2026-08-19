@@ -1,0 +1,250 @@
+name: Delete plugin (admin takedown)
+
+# Maintainer-only takedown. Removes one plugin directory from main and
+# rebuilds index.json in the same commit, so the tree and the index never
+# disagree (build-index.test.mjs asserts the committed index is not stale).
+#
+# This is the admin counterpart to the two PR-shaped deletion paths that
+# already exist:
+#   - dashboard-submitted takedown PRs auto-merge via the `deletion` route
+#     in review-pipeline.yml;
+#   - hand-made deletion PRs land in `manual-review` and need an admin
+#     bypass-merge.
+# Neither gives a maintainer a one-click way to pull a plugin, which is
+# what this workflow is for (DMCA / policy takedowns, spam, broken bundles).
+#
+# Push model is identical to build-index.yml: main is protected, so the
+# commit is pushed with a token minted from the dedicated bot GitHub App
+# whose installation is in the ruleset's bypass list. Every takedown commit
+# records the requesting actor, the reason and the run URL for audit.
+#
+# What it does:
+#   1. Validates the input resolves to exactly plugins/<author>/<slug> and
+#      that the directory exists on main.
+#   2. `git rm -r` the plugin directory.
+#   3. Prunes any hidden.json / curated.json entries whose id matches the
+#      removed plugin (stale entries are harmless to build-index.mjs but
+#      leave confusing moderation state behind).
+#   4. Runs build-index.mjs and commits tree + index.json together.
+#   5. Pushes to main; on a non-fast-forward (e.g. build-index.yml landed
+#      a rebuild concurrently) it resets to the new origin/main and redoes
+#      steps 2-4 rather than rebasing a generated file.
+#
+# Not touched: bans.json. Banning an author is a separate moderation
+# decision — do that by editing bans.json directly if it's warranted.
+#
+# Required secrets (shared with build-index.yml):
+#   BOT_APP_ID
+#   BOT_APP_PRIVATE_KEY
+
+on:
+  workflow_dispatch:
+    inputs:
+      plugin:
+        description: >-
+          Plugin to remove, as `plugins/<author>/<slug>` (the `plugins/`
+          prefix is optional). Example: plugins/min/mintest
+        required: true
+        type: string
+      reason:
+        description: Why this plugin is being removed (recorded in the commit message).
+        required: true
+        type: string
+      dry_run:
+        description: Show what would be removed and how index.json would change, but do not push.
+        required: false
+        type: boolean
+        default: false
+
+permissions:
+  contents: read   # job-level token only reads; the bot App token is what writes
+
+# Own group, no cancellation: a takedown must never be silently cancelled by
+# a second dispatch, and it must not share build-index's group (that one has
+# cancel-in-progress: true, which would let an index rebuild kill this run
+# mid-push). Races against build-index.yml are handled by the push retry loop.
+concurrency:
+  group: delete-plugin
+  cancel-in-progress: false
+
+jobs:
+  delete:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Normalise and validate plugin path
+        id: target
+        env:
+          RAW_INPUT: ${{ inputs.plugin }}
+        run: |
+          set -euo pipefail
+          # Trim surrounding whitespace, strip an optional leading "plugins/" and any
+          # trailing slash, then require exactly <author>/<slug> using the
+          # same conservative character class the hub uses for path
+          # segments. This is what stops `../` or absolute paths from ever
+          # reaching `git rm`.
+          p="$(printf '%s' "$RAW_INPUT" | sed -E 's/^[[:space:]]+//; s/[[:space:]]+$//')"
+          p="${p#plugins/}"
+          p="${p%/}"
+          if ! printf '%s' "$p" | grep -Eq '^[A-Za-z0-9._-]+/[A-Za-z0-9._-]+$'; then
+            echo "::error::Input '$RAW_INPUT' is not of the form plugins/<author>/<slug>."
+            exit 1
+          fi
+          case "$p" in
+            */..|../*|*/../*|..|.|./*|*/.) echo "::error::Refusing path with dot segments: $p"; exit 1 ;;
+          esac
+          echo "rel=plugins/$p" >> "$GITHUB_OUTPUT"
+          echo "Target: plugins/$p"
+
+      - name: Mint bot App installation token
+        id: app-token
+        uses: actions/create-github-app-token@v1
+        with:
+          app-id: ${{ secrets.BOT_APP_ID }}
+          private-key: ${{ secrets.BOT_APP_PRIVATE_KEY }}
+
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          # Full history is REQUIRED (same reason as build-index.yml):
+          # build-index.mjs derives first_published / last_updated and each
+          # bundle's version `history` from git log. A shallow clone would
+          # silently truncate every remaining plugin's history in the
+          # rebuilt index.
+          fetch-depth: 0
+          token: ${{ steps.app-token.outputs.token }}
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Resolve bot user id
+        id: bot-user
+        env:
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
+        run: |
+          # Same identity build-index.yml commits with, so takedown commits
+          # show as Verified-by-this-App.
+          slug='${{ steps.app-token.outputs.app-slug }}'
+          user_id=$(gh api "/users/${slug}[bot]" --jq .id)
+          echo "slug=${slug}" >> "$GITHUB_OUTPUT"
+          echo "user-id=${user_id}" >> "$GITHUB_OUTPUT"
+
+      - name: Remove plugin, rebuild index, push
+        id: takedown
+        env:
+          TARGET: ${{ steps.target.outputs.rel }}
+          REASON: ${{ inputs.reason }}
+          DRY_RUN: ${{ inputs.dry_run }}
+          ACTOR: ${{ github.actor }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          BOT_SLUG: ${{ steps.bot-user.outputs.slug }}
+          BOT_UID: ${{ steps.bot-user.outputs.user-id }}
+        run: |
+          set -euo pipefail
+
+          git config user.name  "${BOT_SLUG}[bot]"
+          git config user.email "${BOT_UID}+${BOT_SLUG}[bot]@users.noreply.github.com"
+
+          # Everything that mutates the tree lives in one function so the
+          # push-retry loop can redo it from a fresh origin/main.
+          apply_takedown() {
+            if [ ! -d "$TARGET" ]; then
+              echo "::error::$TARGET does not exist on main."
+              return 2
+            fi
+            # Recorded before removal so the summary can list what went.
+            git ls-files -- "$TARGET" > "$RUNNER_TEMP/removed-files.txt"
+            git rm -r -q -- "$TARGET"
+
+            # Prune moderation entries pointing at the removed plugin.
+            # Preserves 2-space formatting and the LF trailing newline the
+            # files are committed with.
+            node --input-type=commonjs - "$TARGET" <<'EOF'
+          const fs = require("fs");
+          const id = process.argv[2];
+          for (const [file, key] of [["hidden.json", "hidden"], ["curated.json", "curated"]]) {
+            if (!fs.existsSync(file)) continue;
+            const raw = fs.readFileSync(file, "utf8");
+            const data = JSON.parse(raw);
+            if (!Array.isArray(data[key])) continue;
+            const before = data[key].length;
+            data[key] = data[key].filter((e) => !(e && e.id === id));
+            if (data[key].length === before) continue;
+            fs.writeFileSync(file, JSON.stringify(data, null, 2) + "\n");
+            console.log(`Pruned ${before - data[key].length} ${key} entr${before - data[key].length === 1 ? "y" : "ies"} for ${id} from ${file}`);
+          }
+          EOF
+
+            node .github/scripts/build-index.mjs
+            git add -A -- hidden.json curated.json index.json
+
+            # [skip ci]: index.json is already rebuilt in this commit, so
+            # build-index.yml (which would otherwise fire on the plugins/**
+            # change because App-token pushes DO trigger workflows) has
+            # nothing to do.
+            git commit -q -F - <<MSG
+          chore: remove ${TARGET} [skip ci]
+
+          Reason: ${REASON}
+          Requested-by: @${ACTOR}
+          Run: ${RUN_URL}
+          MSG
+          }
+
+          apply_takedown
+
+          {
+            echo "## Takedown: \`$TARGET\`"
+            echo
+            echo "- **Requested by:** @${ACTOR}"
+            echo "- **Reason:** ${REASON}"
+            echo "- **Mode:** $([ "$DRY_RUN" = "true" ] && echo 'dry run (nothing pushed)' || echo 'live')"
+            echo
+            echo "### Files removed"
+            echo
+            sed 's/^/- `/; s/$/`/' "$RUNNER_TEMP/removed-files.txt"
+            echo
+            echo "### Commit diffstat"
+            echo
+            echo '```'
+            git show --stat --format= HEAD
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+          if [ "$DRY_RUN" = "true" ]; then
+            echo "Dry run — commit built locally but not pushed:"
+            git show --stat HEAD
+            git diff HEAD~1 -- index.json hidden.json curated.json | head -200
+            exit 0
+          fi
+
+          # Push with retry. A non-fast-forward means main moved under us
+          # (typically build-index.yml pushing a rebuild). Rebasing a
+          # generated index.json is pointless — reset to the new tip and
+          # redo the whole takedown against it.
+          for attempt in 1 2 3 4 5; do
+            if git push origin HEAD:main; then
+              echo "Pushed takedown of $TARGET to main (attempt $attempt)."
+              echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+              exit 0
+            fi
+            echo "Push rejected (attempt $attempt); refreshing main and retrying."
+            sleep $((attempt * 3))
+            git fetch -q origin main
+            git reset -q --hard origin/main
+            if [ ! -d "$TARGET" ]; then
+              # Someone else removed it while we were retrying; nothing
+              # left to do. (Checked explicitly rather than via
+              # apply_takedown's return code so a genuine failure inside
+              # the function is never mistaken for "already gone".)
+              echo "::warning::$TARGET no longer exists on main after refresh — treating as already removed."
+              exit 0
+            fi
+            apply_takedown
+          done
+          echo "::error::Could not push after 5 attempts."
+          exit 1
