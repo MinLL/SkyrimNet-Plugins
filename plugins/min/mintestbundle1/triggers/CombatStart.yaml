@@ -1,0 +1,10 @@
+name: CombatStart
+description: Time to fight
+eventCriteria:
+  eventType: combat
+audience: player
+response:
+  type: player_thought
+  content: These foolish mortals dare to challenge the great Min??
+enabled: true
+cooldownSeconds: 30

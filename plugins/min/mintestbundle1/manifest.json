@@ -1,0 +1,18 @@
+{
+  "id": "min.mintestbundle1",
+  "type": "bundle",
+  "title": "MinTestBundle1",
+  "tagline": "This is a test plugin containing a single trigger",
+  "description": "test bundle 1",
+  "author": "min",
+  "tags": [
+    "tags",
+    "are",
+    "cool"
+  ],
+  "nsfw": false,
+  "icon": "package",
+  "mods": [],
+  "version": "1.0.0",
+  "min_skyrimnet_version": "0.24.0"
+}
