@@ -72,6 +72,10 @@ Open the dashboard, go to your plugin's page, and click **Update**. The dashboar
 
 Bump your `version` when publishing meaningful changes — the dashboard does this for you if you don't.
 
+## Fixing an official bio pack
+
+The character bio packs under `plugins/skyrimnet/bios-{mod}/` are SkyrimNet's own, but bios are community work and fixes are welcome. Open an ordinary PR against the pack's directory (one pack per PR, bump its `version`); it goes through the structural checks and is then reviewed by a maintainer — official content is never auto-merged. You cannot create a *new* `plugins/skyrimnet/...` pack by PR; ask a maintainer.
+
 ## NSFW content
 
 NSFW plugins are welcome but live in a gated section of the dashboard (off by default). When you publish, mark the NSFW toggle accurately. The review agent flags any mismatch between the NSFW flag and the actual content as an automatic rejection.

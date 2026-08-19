@@ -155,6 +155,81 @@ test("rejects the reserved skyrimnet- author prefix", () => {
   assertRejected(res, /reserved/i);
 });
 
+// ----- Official content (reserved author, ruling 26) -----------------------
+//
+// Official packs (`plugins/skyrimnet/bios-{mod}`) land on main by maintainer
+// push, never through a PR. Once one exists there, a PR may update it — every
+// other identity rule still applies and the PR is always human-reviewed.
+
+const OFFICIAL_PACK_FILES = {
+  "prompts/characters/hagravi_gray-wave_8C4.prompt": "{% block summary %}Hagravi.{% endblock %}\n",
+};
+const OFFICIAL_PACK_MANIFEST = goodManifest({
+  id: "skyrimnet.bios-3dnpc",
+  author: "skyrimnet",
+  title: "3DNPC - Character Bios",
+  tagline: "Bios for Interesting NPCs.",
+  mods: [{ name: "3DNPC", file: "3DNPC.esp", required: true }],
+});
+const OFFICIAL_PACK_ON_MAIN = {
+  plugins: {
+    "plugins/skyrimnet/bios-3dnpc": { manifest: OFFICIAL_PACK_MANIFEST, files: OFFICIAL_PACK_FILES },
+  },
+};
+
+test("official pack update: a reserved-author plugin already on main accepts a PR and routes to manual review", () => {
+  const baseDir = makeBaseDir(OFFICIAL_PACK_ON_MAIN);
+  const prDir = makeTempDir();
+  try {
+    const changed = writePlugin(prDir, "plugins/skyrimnet/bios-3dnpc", {
+      manifest: { ...OFFICIAL_PACK_MANIFEST, version: "1.0.1" },
+      files: { ...OFFICIAL_PACK_FILES, "prompts/characters/dar_rakki_911.prompt": "{% block summary %}Dar.{% endblock %}\n" },
+    });
+    // Even a dashboard-shaped submission is never auto-merged into official content.
+    const res = runValidate({ baseDir, prDir, changed });
+    assert.equal(res.result.success, true, errorMessages(res.result));
+    assert.deepEqual(res.result.labels, ["manual-review"]);
+    assert.match(res.result.manualReason, /official SkyrimNet content/i);
+    assert.equal(res.result.plugin_root, "plugins/skyrimnet/bios-3dnpc");
+  } finally {
+    rmDir(prDir);
+    rmDir(baseDir);
+  }
+});
+
+test("official pack update: every other identity rule still applies", () => {
+  const baseDir = makeBaseDir(OFFICIAL_PACK_ON_MAIN);
+  const prDir = makeTempDir();
+  try {
+    // The manifest's id no longer matches the directory it lives at.
+    const changed = writePlugin(prDir, "plugins/skyrimnet/bios-3dnpc", {
+      manifest: { ...OFFICIAL_PACK_MANIFEST, id: "skyrimnet.bios-other" },
+      files: OFFICIAL_PACK_FILES,
+    });
+    const res = runValidate({ baseDir, prDir, changed });
+    assertRejected(res, /ID_PATH_MISMATCH|does not match|directory/i);
+  } finally {
+    rmDir(prDir);
+    rmDir(baseDir);
+  }
+});
+
+test("official pack: a NEW reserved-author plugin is still refused even when a sibling exists on main", () => {
+  const baseDir = makeBaseDir(OFFICIAL_PACK_ON_MAIN);
+  const prDir = makeTempDir();
+  try {
+    const changed = writePlugin(prDir, "plugins/skyrimnet/bios-inigo", {
+      manifest: goodManifest({ id: "skyrimnet.bios-inigo", author: "skyrimnet", title: "Inigo - Character Bios" }),
+      files: OFFICIAL_PACK_FILES,
+    });
+    const res = runValidate({ baseDir, prDir, changed });
+    assertRejected(res, /reserved/i);
+  } finally {
+    rmDir(prDir);
+    rmDir(baseDir);
+  }
+});
+
 test("rejects a non-semver version", () => {
   assertRejected(validatePlugin({ manifest: goodManifest({ version: "1.0" }) }), /strict semver/);
   assertRejected(validatePlugin({ manifest: goodManifest({ version: "v1.0.0" }) }), /strict semver/);

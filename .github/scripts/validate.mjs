@@ -29,12 +29,14 @@ import yaml from "js-yaml";
 // path- and identity-shaped lives there so both sides reject the same
 // attacks; this file only wires the rules to PR data and reporting.
 import {
+  CODES,
   PATH_SEGMENT_RE,
   checkContentPath,
   checkManifestIdentity,
   checkNameMatchesStem,
   findPathCollisions,
   foldCase,
+  isReservedAuthorSegment,
 } from "./lib/content-rules.mjs";
 
 // ----- Configuration -------------------------------------------------------
@@ -86,6 +88,11 @@ const result = {
   // pick the wrong plugin dir on re-submissions to already-merged plugins.
   plugin_root: null,
 };
+
+// Set once the plugin directory is known: the PR targets the reserved author
+// namespace (official SkyrimNet content). Declared up front because routeOrFail()
+// can run from the early-exit paths before the identity section assigns it.
+let isOfficialPath = false;
 
 function addError(file, message) {
   result.errors.push({ file, message });
@@ -550,7 +557,26 @@ if (!schemas.manifest.validate(manifest)) {
 const pathAuthor = pluginRoot.split("/")[1];
 const pathSlug = pluginRoot.split("/")[2];
 
+// Official content (CONTENT_STORE_DESIGN.md ruling 26): `plugins/skyrimnet/*`
+// holds SkyrimNet's own packs — `skyrimnet.bios-{mod}` and whatever follows.
+// Maintainers create those by pushing to main directly (the one-plugin-per-PR
+// rule and this validator never see that), so a reserved-author plugin that is
+// ALREADY on the base branch is official by construction. A PR that updates
+// one (a community bio fix) keeps every other identity rule and is always
+// routed to a human (see routeOrFail). A PR that would CREATE a new
+// reserved-author plugin is still refused: nobody mints official content
+// through the submission path.
+isOfficialPath = isReservedAuthorSegment(pathAuthor);
+const officialExistsOnBase =
+  isOfficialPath && fs.existsSync(path.join(env.BASE_DIR, pluginRoot, "manifest.json"));
+if (officialExistsOnBase) {
+  console.log(
+    `Reserved-author plugin '${pluginRoot}' exists on the base branch: treating as an update to official content.`,
+  );
+}
+
 for (const issue of checkManifestIdentity({ manifest, pathAuthor, pathSlug }).issues) {
+  if (issue.code === CODES.RESERVED_AUTHOR && officialExistsOnBase) continue;
   addError(manifestPath, issue.message);
 }
 
@@ -846,6 +872,13 @@ function routeOrFail() {
 
   if (hasErrors) {
     result.labels = ["validation-failed"];
+    return;
+  }
+
+  if (isOfficialPath) {
+    result.labels = ["manual-review"];
+    result.manualReason =
+      "This PR updates official SkyrimNet content (the reserved `skyrimnet` author namespace). Official content is always reviewed by a maintainer.";
     return;
   }
 

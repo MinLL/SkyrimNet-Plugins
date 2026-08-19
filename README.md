@@ -32,6 +32,13 @@ plugins/
 
 Each plugin lives in its own directory under the author's GitHub username. The `manifest.json` describes the plugin and is required; the three content subdirectories are all optional.
 
+### Official content (`plugins/skyrimnet/`)
+
+The author segment `skyrimnet` (and the `skyrimnet-` prefix) is reserved for SkyrimNet's own content — today the per-mod character bio packs, `skyrimnet.bios-{mod}`, one per source ESP. These are ordinary hub plugins (install, disable, update like any other); only the way they reach the repo differs:
+
+- **New official packs are pushed to `main` by maintainers**, never submitted through a PR. The validator refuses any PR that would create a new reserved-author plugin.
+- **Updates to an existing official pack may be PRs** — fixing a bio in `plugins/skyrimnet/bios-3dnpc/` is welcome. Such PRs pass the normal structural checks but are always routed to a maintainer for review, never auto-merged.
+
 ## Review process
 
 Submissions go through one of two flows depending on what they contain:

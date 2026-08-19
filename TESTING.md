@@ -38,7 +38,7 @@ platform by the corpus test below. The runner prints them as
 |---|---|
 | `tests/fixtures/path-cases.json` | **The shared rejection corpus.** Data, not code — see below. |
 | `tests/content-rules.test.mjs` | Runs the whole corpus against `.github/scripts/lib/content-rules.mjs`. |
-| `tests/validate.test.mjs` | End-to-end runs of `validate.mjs` against synthetic PR checkouts: happy paths, one case per rejection class, PR-shape routing (infra-only, mixed, multi-plugin, manual vs dashboard). |
+| `tests/validate.test.mjs` | End-to-end runs of `validate.mjs` against synthetic PR checkouts: happy paths, one case per rejection class, PR-shape routing (infra-only, mixed, multi-plugin, manual vs dashboard), and the official-content rule (an existing `plugins/skyrimnet/*` pack accepts an update PR and routes to manual review; a new reserved-author pack is still refused). |
 | `tests/build-index.test.mjs` | End-to-end runs of `build-index.mjs` against throwaway git repos with real multi-commit plugin histories; asserts `history` shape, ordering and cap, and validates every emitted index against `schemas/index.schema.json`. Also checks the committed `index.json` is neither stale nor schema-invalid. |
 | `tests/repo-tree.test.mjs` | Replays every plugin currently in `plugins/` through `validate.mjs`. Catches "we tightened a rule and forgot to migrate the entries already in the repo". |
 | `tests/helpers/harness.mjs` | Builds synthetic PR checkouts and runs the real scripts the way `review-pipeline.yml` does (trusted `BASE_DIR`, untrusted `PR_DIR`, `status\tfilename` list). |
