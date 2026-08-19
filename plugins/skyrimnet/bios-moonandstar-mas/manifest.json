@@ -1,0 +1,24 @@
+{
+  "id": "skyrimnet.bios-moonandstar-mas",
+  "type": "bundle",
+  "title": "MoonAndStar_MAS - Character Bios",
+  "tagline": "Hand-written SkyrimNet bios for 5 NPCs from MoonAndStar_MAS.",
+  "description": "Official SkyrimNet character bios for NPCs added by MoonAndStar_MAS (MoonAndStar_MAS.esp).\n\nInstall this if MoonAndStar_MAS.esp is in your load order. NPCs without a static bio still get one generated automatically from their game data; this pack replaces that with the community-curated version.\n\nBios are the work of the SkyrimNet community.",
+  "author": "skyrimnet",
+  "version": "1.0.0",
+  "min_skyrimnet_version": "0.24.0",
+  "tags": [
+    "bios",
+    "characters"
+  ],
+  "nsfw": false,
+  "icon": "users",
+  "mods": [
+    {
+      "name": "MoonAndStar_MAS",
+      "file": "MoonAndStar_MAS.esp",
+      "required": true
+    }
+  ],
+  "requirements": []
+}

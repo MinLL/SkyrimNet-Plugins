@@ -1,0 +1,24 @@
+{
+  "id": "skyrimnet.bios-battlebrothers",
+  "type": "bundle",
+  "title": "BattleBrothers - Character Bios",
+  "tagline": "Hand-written SkyrimNet bios for 4 NPCs from BattleBrothers.",
+  "description": "Official SkyrimNet character bios for NPCs added by BattleBrothers (BattleBrothers.esp).\n\nInstall this if BattleBrothers.esp is in your load order. NPCs without a static bio still get one generated automatically from their game data; this pack replaces that with the community-curated version.\n\nBios are the work of the SkyrimNet community.",
+  "author": "skyrimnet",
+  "version": "1.0.0",
+  "min_skyrimnet_version": "0.24.0",
+  "tags": [
+    "bios",
+    "characters"
+  ],
+  "nsfw": false,
+  "icon": "users",
+  "mods": [
+    {
+      "name": "BattleBrothers",
+      "file": "BattleBrothers.esp",
+      "required": true
+    }
+  ],
+  "requirements": []
+}

@@ -1,0 +1,24 @@
+{
+  "id": "skyrimnet.bios-lotspaidmercs",
+  "type": "bundle",
+  "title": "LotsPaidMercs - Character Bios",
+  "tagline": "Hand-written SkyrimNet bios for 75 NPCs from LotsPaidMercs.",
+  "description": "Official SkyrimNet character bios for NPCs added by LotsPaidMercs (LotsPaidMercs.esp).\n\nInstall this if LotsPaidMercs.esp is in your load order. NPCs without a static bio still get one generated automatically from their game data; this pack replaces that with the community-curated version.\n\nBios are the work of the SkyrimNet community.",
+  "author": "skyrimnet",
+  "version": "1.0.0",
+  "min_skyrimnet_version": "0.24.0",
+  "tags": [
+    "bios",
+    "characters"
+  ],
+  "nsfw": false,
+  "icon": "users",
+  "mods": [
+    {
+      "name": "LotsPaidMercs",
+      "file": "LotsPaidMercs.esp",
+      "required": true
+    }
+  ],
+  "requirements": []
+}

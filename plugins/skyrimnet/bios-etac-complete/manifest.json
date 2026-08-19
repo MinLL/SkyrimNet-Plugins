@@ -1,0 +1,29 @@
+{
+  "id": "skyrimnet.bios-etac-complete",
+  "type": "bundle",
+  "title": "ETaC – Complete - Character Bios",
+  "tagline": "Hand-written SkyrimNet bios for 50 NPCs from ETaC – Complete.",
+  "description": "Official SkyrimNet character bios for NPCs added by ETaC – Complete (ETaC – Complete.esp).\n\nInstall this if ETaC – Complete.esp is in your load order. NPCs without a static bio still get one generated automatically from their game data; this pack replaces that with the community-curated version.\n\nBios are the work of the SkyrimNet community.",
+  "author": "skyrimnet",
+  "version": "1.0.0",
+  "min_skyrimnet_version": "0.24.0",
+  "tags": [
+    "bios",
+    "characters"
+  ],
+  "nsfw": false,
+  "icon": "users",
+  "mods": [
+    {
+      "name": "ETaC – Complete",
+      "file": "ETaC – Complete.esp",
+      "required": true
+    },
+    {
+      "name": "ETaC – Complete",
+      "file": "ETaC - Complete.esp",
+      "required": false
+    }
+  ],
+  "requirements": []
+}

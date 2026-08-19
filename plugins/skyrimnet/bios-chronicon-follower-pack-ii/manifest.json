@@ -1,0 +1,24 @@
+{
+  "id": "skyrimnet.bios-chronicon-follower-pack-ii",
+  "type": "bundle",
+  "title": "Chronicon Follower Pack II - Character Bios",
+  "tagline": "Hand-written SkyrimNet bios for 11 NPCs from Chronicon Follower Pack II.",
+  "description": "Official SkyrimNet character bios for NPCs added by Chronicon Follower Pack II (Chronicon Follower Pack II.esp).\n\nInstall this if Chronicon Follower Pack II.esp is in your load order. NPCs without a static bio still get one generated automatically from their game data; this pack replaces that with the community-curated version.\n\nBios are the work of the SkyrimNet community.",
+  "author": "skyrimnet",
+  "version": "1.0.0",
+  "min_skyrimnet_version": "0.24.0",
+  "tags": [
+    "bios",
+    "characters"
+  ],
+  "nsfw": false,
+  "icon": "users",
+  "mods": [
+    {
+      "name": "Chronicon Follower Pack II",
+      "file": "Chronicon Follower Pack II.esp",
+      "required": true
+    }
+  ],
+  "requirements": []
+}

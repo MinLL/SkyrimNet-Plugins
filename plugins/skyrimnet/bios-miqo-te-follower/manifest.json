@@ -1,0 +1,24 @@
+{
+  "id": "skyrimnet.bios-miqo-te-follower",
+  "type": "bundle",
+  "title": "Miqo'te Follower - Character Bios",
+  "tagline": "Hand-written SkyrimNet bios for 4 NPCs from Miqo'te Follower.",
+  "description": "Official SkyrimNet character bios for NPCs added by Miqo'te Follower (Miqo'te Follower.esp).\n\nInstall this if Miqo'te Follower.esp is in your load order. NPCs without a static bio still get one generated automatically from their game data; this pack replaces that with the community-curated version.\n\nBios are the work of the SkyrimNet community.",
+  "author": "skyrimnet",
+  "version": "1.0.0",
+  "min_skyrimnet_version": "0.24.0",
+  "tags": [
+    "bios",
+    "characters"
+  ],
+  "nsfw": false,
+  "icon": "users",
+  "mods": [
+    {
+      "name": "Miqo'te Follower",
+      "file": "Miqo'te Follower.esp",
+      "required": true
+    }
+  ],
+  "requirements": []
+}

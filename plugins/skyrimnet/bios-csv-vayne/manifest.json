@@ -1,0 +1,24 @@
+{
+  "id": "skyrimnet.bios-csv-vayne",
+  "type": "bundle",
+  "title": "CSV_Vayne - Character Bios",
+  "tagline": "Hand-written SkyrimNet bios for 1 NPC from CSV_Vayne.",
+  "description": "Official SkyrimNet character bios for NPCs added by CSV_Vayne (CSV_Vayne.esp).\n\nInstall this if CSV_Vayne.esp is in your load order. NPCs without a static bio still get one generated automatically from their game data; this pack replaces that with the community-curated version.\n\nBios are the work of the SkyrimNet community.",
+  "author": "skyrimnet",
+  "version": "1.0.0",
+  "min_skyrimnet_version": "0.24.0",
+  "tags": [
+    "bios",
+    "characters"
+  ],
+  "nsfw": false,
+  "icon": "users",
+  "mods": [
+    {
+      "name": "CSV_Vayne",
+      "file": "CSV_Vayne.esp",
+      "required": true
+    }
+  ],
+  "requirements": []
+}

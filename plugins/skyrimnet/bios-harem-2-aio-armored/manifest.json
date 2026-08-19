@@ -1,0 +1,24 @@
+{
+  "id": "skyrimnet.bios-harem-2-aio-armored",
+  "type": "bundle",
+  "title": "Harem 2 AIO Armored - Character Bios",
+  "tagline": "Hand-written SkyrimNet bios for 18 NPCs from Harem 2 AIO Armored.",
+  "description": "Official SkyrimNet character bios for NPCs added by Harem 2 AIO Armored (Harem 2 AIO Armored.esp).\n\nInstall this if Harem 2 AIO Armored.esp is in your load order. NPCs without a static bio still get one generated automatically from their game data; this pack replaces that with the community-curated version.\n\nBios are the work of the SkyrimNet community.",
+  "author": "skyrimnet",
+  "version": "1.0.0",
+  "min_skyrimnet_version": "0.24.0",
+  "tags": [
+    "bios",
+    "characters"
+  ],
+  "nsfw": false,
+  "icon": "users",
+  "mods": [
+    {
+      "name": "Harem 2 AIO Armored",
+      "file": "Harem 2 AIO Armored.esp",
+      "required": true
+    }
+  ],
+  "requirements": []
+}

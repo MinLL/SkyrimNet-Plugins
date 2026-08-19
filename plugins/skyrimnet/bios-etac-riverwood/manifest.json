@@ -1,0 +1,29 @@
+{
+  "id": "skyrimnet.bios-etac-riverwood",
+  "type": "bundle",
+  "title": "ETaC – Riverwood - Character Bios",
+  "tagline": "Hand-written SkyrimNet bios for 11 NPCs from ETaC – Riverwood.",
+  "description": "Official SkyrimNet character bios for NPCs added by ETaC – Riverwood (ETaC – Riverwood.esp).\n\nInstall this if ETaC – Riverwood.esp is in your load order. NPCs without a static bio still get one generated automatically from their game data; this pack replaces that with the community-curated version.\n\nBios are the work of the SkyrimNet community.",
+  "author": "skyrimnet",
+  "version": "1.0.0",
+  "min_skyrimnet_version": "0.24.0",
+  "tags": [
+    "bios",
+    "characters"
+  ],
+  "nsfw": false,
+  "icon": "users",
+  "mods": [
+    {
+      "name": "ETaC – Riverwood",
+      "file": "ETaC – Riverwood.esp",
+      "required": true
+    },
+    {
+      "name": "ETaC – Riverwood",
+      "file": "ETaC - Riverwood.esp",
+      "required": false
+    }
+  ],
+  "requirements": []
+}

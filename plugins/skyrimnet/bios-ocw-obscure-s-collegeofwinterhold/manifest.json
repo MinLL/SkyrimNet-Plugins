@@ -1,0 +1,24 @@
+{
+  "id": "skyrimnet.bios-ocw-obscure-s-collegeofwinterhold",
+  "type": "bundle",
+  "title": "OCW_Obscure's_CollegeofWinterhold - Character Bios",
+  "tagline": "Hand-written SkyrimNet bios for 6 NPCs from OCW_Obscure's_CollegeofWinterhold.",
+  "description": "Official SkyrimNet character bios for NPCs added by OCW_Obscure's_CollegeofWinterhold (OCW_Obscure's_CollegeofWinterhold.esp).\n\nInstall this if OCW_Obscure's_CollegeofWinterhold.esp is in your load order. NPCs without a static bio still get one generated automatically from their game data; this pack replaces that with the community-curated version.\n\nBios are the work of the SkyrimNet community.",
+  "author": "skyrimnet",
+  "version": "1.0.0",
+  "min_skyrimnet_version": "0.24.0",
+  "tags": [
+    "bios",
+    "characters"
+  ],
+  "nsfw": false,
+  "icon": "users",
+  "mods": [
+    {
+      "name": "OCW_Obscure's_CollegeofWinterhold",
+      "file": "OCW_Obscure's_CollegeofWinterhold.esp",
+      "required": true
+    }
+  ],
+  "requirements": []
+}
