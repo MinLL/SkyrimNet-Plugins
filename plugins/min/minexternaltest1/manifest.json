@@ -1,0 +1,18 @@
+{
+  "id": "min.minexternaltest1",
+  "type": "listing",
+  "title": "MinExternalTest1",
+  "tagline": "MinExternalTest1",
+  "description": "This is an external plugin for testing, SFW",
+  "author": "min",
+  "tags": [
+    "some",
+    "tags",
+    "here"
+  ],
+  "nsfw": false,
+  "icon": "zap",
+  "mods": [],
+  "external_url": "https://fateless.ai",
+  "version": "1.0.0"
+}
