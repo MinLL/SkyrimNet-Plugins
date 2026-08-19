@@ -1,5 +1,25 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-08-19T02:43:20.057Z",
-  "plugins": []
+  "generated_at": "2026-08-19T02:43:44.336Z",
+  "plugins": [
+    {
+      "id": "plugins/min/minexternaltest1",
+      "plugin_id": "min.minexternaltest1",
+      "type": "listing",
+      "title": "MinExternalTest1",
+      "tagline": "MinExternalTest1",
+      "author": "min",
+      "tags": [
+        "some",
+        "tags",
+        "here"
+      ],
+      "nsfw": false,
+      "icon": "zap",
+      "mods": [],
+      "first_published": "2026-08-19T02:42:32Z",
+      "last_updated": "2026-08-19T02:42:32Z",
+      "external_url": "https://fateless.ai"
+    }
+  ]
 }
