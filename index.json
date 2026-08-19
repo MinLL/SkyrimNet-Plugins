@@ -1,26 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-08-19T02:38:55.630Z",
+  "generated_at": "2026-08-19T02:40:11.370Z",
   "plugins": [
-    {
-      "id": "plugins/Zevick/physical-diaries",
-      "plugin_id": "zevick.physical-diaries",
-      "type": "listing",
-      "title": "Physical Diaries",
-      "tagline": "Adds diary book items to NPC's inventories to read SkyrimNet diaries in game",
-      "author": "Zevick",
-      "tags": [
-        "diaries",
-        "diary"
-      ],
-      "nsfw": false,
-      "icon": "package",
-      "mods": [],
-      "first_published": "2026-04-22T05:57:56Z",
-      "last_updated": "2026-08-14T17:51:09-07:00",
-      "external_url": "https://github.com/zevck/SkyrimNet-Physical-Diaries",
-      "curated": true
-    },
     {
       "id": "plugins/Zevick/s-t-f-u-skyrim-talk-filter-utility",
       "plugin_id": "zevick.s-t-f-u-skyrim-talk-filter-utility",
