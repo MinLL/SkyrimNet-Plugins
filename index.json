@@ -1,47 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-08-16T06:31:32.234Z",
+  "generated_at": "2026-08-19T02:38:55.630Z",
   "plugins": [
-    {
-      "id": "plugins/min/mintest",
-      "plugin_id": "min.mintest",
-      "type": "bundle",
-      "title": "MinTest",
-      "tagline": "TestPlugin",
-      "author": "min",
-      "tags": [
-        "test"
-      ],
-      "nsfw": false,
-      "icon": "package",
-      "mods": [],
-      "first_published": "2026-08-13T03:26:33Z",
-      "last_updated": "2026-08-15T23:31:06-07:00",
-      "version": "1.2.0",
-      "min_skyrimnet_version": "0.23.0",
-      "history": [
-        {
-          "version": "1.2.0",
-          "commit": "f8259746035e2351656ecef316d48d0ed57a3138",
-          "date": "2026-08-15T23:31:06-07:00"
-        },
-        {
-          "version": "1.1.0",
-          "commit": "ad4dc914d6f6513b50ba1aad14501f1479979060",
-          "date": "2026-08-14T17:51:09-07:00"
-        },
-        {
-          "version": "1.0.0",
-          "commit": "b54c628dc0e8c10fd08b05bc8e6d1e56c98110ad",
-          "date": "2026-08-13T03:26:33Z"
-        }
-      ],
-      "contents": {
-        "triggers": 0,
-        "actions": 1,
-        "prompts": 1
-      }
-    },
     {
       "id": "plugins/Zevick/physical-diaries",
       "plugin_id": "zevick.physical-diaries",
