@@ -1,0 +1,18 @@
+{
+  "id": "min.minexternaltest2",
+  "type": "listing",
+  "title": "MinExternalTest2",
+  "tagline": "Test External Plugin NSFW",
+  "description": "MinExternalTest2 NSFW",
+  "author": "min",
+  "tags": [
+    "some",
+    "more",
+    "tags"
+  ],
+  "nsfw": true,
+  "icon": "package",
+  "mods": [],
+  "external_url": "https://fateless.ai/stats",
+  "version": "1.0.0"
+}
