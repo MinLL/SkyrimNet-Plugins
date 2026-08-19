@@ -1,7 +1,39 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-08-19T02:45:58.031Z",
+  "generated_at": "2026-08-19T03:00:24.056Z",
   "plugins": [
+    {
+      "id": "plugins/min/mintestbundle1",
+      "plugin_id": "min.mintestbundle1",
+      "type": "bundle",
+      "title": "MinTestBundle1",
+      "tagline": "This is a test plugin containing a single trigger",
+      "author": "min",
+      "tags": [
+        "tags",
+        "are",
+        "cool"
+      ],
+      "nsfw": false,
+      "icon": "package",
+      "mods": [],
+      "first_published": "2026-08-19T02:59:16Z",
+      "last_updated": "2026-08-19T02:59:16Z",
+      "version": "1.0.0",
+      "min_skyrimnet_version": "0.24.0",
+      "history": [
+        {
+          "version": "1.0.0",
+          "commit": "3712581176c43e0e0c7a3b7a51578d914339ba47",
+          "date": "2026-08-19T02:59:16Z"
+        }
+      ],
+      "contents": {
+        "triggers": 1,
+        "actions": 0,
+        "prompts": 0
+      }
+    },
     {
       "id": "plugins/min/minexternaltest1",
       "plugin_id": "min.minexternaltest1",
