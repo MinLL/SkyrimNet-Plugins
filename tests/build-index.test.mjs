@@ -268,7 +268,25 @@ test("a manifest that is unparseable at an older commit does not break history",
   }
 });
 
-test("the committed index.json matches the schema and the plugins tree", () => {
+test("the committed index.json matches the schema and the plugins tree", (t) => {
+  // A push that changes plugins/ triggers build-index.yml, which rebuilds and
+  // commits index.json seconds later — so at the exact commit that changed
+  // plugins/, the tree being ahead of the index is by design, not drift. This
+  // suite only runs on such a commit when the push ALSO touched scripts/tests
+  // (a maintainer landing official packs plus CI changes), and a rerun checks
+  // out the same SHA, so asserting staleness there fails permanently. The
+  // guard exists for drift with no rebuild coming — a hand-edited index.json,
+  // or a rebuild that silently failed — and in both of those HEAD did not
+  // touch plugins/, so the assertion still bites.
+  const headTouchedPlugins = execFileSync(
+    "git", ["diff-tree", "--no-commit-id", "--name-only", "-r", "HEAD"],
+    { cwd: REPO_ROOT, encoding: "utf8" },
+  ).split("\n").some((f) => f.startsWith("plugins/"));
+  if (headTouchedPlugins) {
+    t.skip("HEAD itself changed plugins/ — the index rebuild for this commit is pending by design");
+    return;
+  }
+
   const index = JSON.parse(fs.readFileSync(path.join(REPO_ROOT, "index.json"), "utf8"));
   assertValidIndex(index);
 
