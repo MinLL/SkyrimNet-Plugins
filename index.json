@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-08-20T09:10:51.314Z",
+  "generated_at": "2026-08-21T04:38:08.131Z",
   "plugins": [
     {
       "id": "plugins/skyrimnet/bios-018auri",
@@ -4807,43 +4807,6 @@
         {
           "name": "Lucien",
           "file": "lucien.esp",
-          "required": true
-        }
-      ],
-      "first_published": "2026-08-19T07:57:07-07:00",
-      "last_updated": "2026-08-19T07:57:07-07:00",
-      "version": "1.0.0",
-      "min_skyrimnet_version": "0.24.0",
-      "history": [
-        {
-          "version": "1.0.0",
-          "commit": "140c808e229dc217fc042f424faf04b3ed967594",
-          "date": "2026-08-19T07:57:07-07:00"
-        }
-      ],
-      "contents": {
-        "triggers": 0,
-        "actions": 0,
-        "prompts": 1
-      }
-    },
-    {
-      "id": "plugins/skyrimnet/bios-lucyliu",
-      "plugin_id": "skyrimnet.bios-lucyliu",
-      "type": "bundle",
-      "title": "LucyLiu - Character Bios",
-      "tagline": "Hand-written SkyrimNet bios for 1 NPC from LucyLiu.",
-      "author": "skyrimnet",
-      "tags": [
-        "bios",
-        "characters"
-      ],
-      "nsfw": false,
-      "icon": "users",
-      "mods": [
-        {
-          "name": "LucyLiu",
-          "file": "lucyliu.esp",
           "required": true
         }
       ],
