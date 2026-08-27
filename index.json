@@ -1,7 +1,26 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-08-21T04:38:08.131Z",
+  "generated_at": "2026-08-27T06:54:52.486Z",
   "plugins": [
+    {
+      "id": "plugins/zevick/s-t-f-u-skyrim-talk-filter-utility",
+      "plugin_id": "zevick.s-t-f-u-skyrim-talk-filter-utility",
+      "type": "listing",
+      "title": "S.T.F.U - Skyrim Talk Filter Utility",
+      "tagline": "S.T.F.U silences tedious frequent utterances",
+      "author": "zevick",
+      "tags": [
+        "stfu",
+        "dialogue",
+        "filter"
+      ],
+      "nsfw": false,
+      "icon": "dialogue",
+      "mods": [],
+      "first_published": "2026-08-20T09:09:54Z",
+      "last_updated": "2026-08-20T09:09:54Z",
+      "external_url": "https://github.com/zevck/S.T.F.U"
+    },
     {
       "id": "plugins/skyrimnet/bios-018auri",
       "plugin_id": "skyrimnet.bios-018auri",
