@@ -1,7 +1,38 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-08-31T22:22:39.977Z",
+  "generated_at": "2026-08-31T22:27:40.852Z",
   "plugins": [
+    {
+      "id": "plugins/zevick/zevtest2",
+      "plugin_id": "zevick.zevtest2",
+      "type": "bundle",
+      "title": "ZevTest2",
+      "tagline": "eeeeeeeeeeeeeeee",
+      "author": "zevick",
+      "tags": [
+        "eeeee",
+        "eee"
+      ],
+      "nsfw": true,
+      "icon": "package",
+      "mods": [],
+      "first_published": "2026-08-31T22:21:44Z",
+      "last_updated": "2026-08-31T22:21:44Z",
+      "version": "1.0.1",
+      "min_skyrimnet_version": "0.25.0",
+      "history": [
+        {
+          "version": "1.0.1",
+          "commit": "3ac5c42db07d6dfc5d2aa221d4c40b3c35e028c1",
+          "date": "2026-08-31T22:21:44Z"
+        }
+      ],
+      "contents": {
+        "triggers": 0,
+        "actions": 0,
+        "prompts": 1
+      }
+    },
     {
       "id": "plugins/zevick/s-t-f-u-skyrim-talk-filter-utility",
       "plugin_id": "zevick.s-t-f-u-skyrim-talk-filter-utility",
