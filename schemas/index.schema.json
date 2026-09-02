@@ -10,7 +10,7 @@
     "schema_version": {
       "type": "integer",
       "const": 2,
-      "description": "Bump when the entry shape changes in a breaking way. Dashboard refuses unknown versions. v2 is the content-store format: adds plugin_id and history, renames skyrimnet_version to min_skyrimnet_version, and drops the knowledge content count (knowledge packs are not a v1 content type)."
+      "description": "Bump when the entry shape changes in a breaking way. Dashboard and installer refuse unknown versions. v2 is the content-store format: adds plugin_id and history, and renames skyrimnet_version to min_skyrimnet_version. The per-plugin `contents.knowledge` count arrived later within v2 — the count map is read tolerantly on both sides, so adding a key is additive and does not warrant a bump."
     },
     "generated_at": {
       "type": ["string", "null"],
@@ -146,12 +146,13 @@
           "type": "object",
           "required": ["triggers", "actions", "prompts"],
           "additionalProperties": false,
-          "description": "Required for bundle plugins. Absent for listing plugins (they have no content files in the repo). File counts derived by walking the plugin directory. `bios` counts character bios (files under prompts/characters/); they are their own category and are excluded from the `prompts` count. Knowledge packs are punted and are not accepted by the validator.",
+          "description": "Required for bundle plugins. Absent for listing plugins (they have no content files in the repo). File counts derived by walking the plugin directory, one key per content root. `bios` counts character bios (files under prompts/characters/); they are their own category and are excluded from the `prompts` count. `knowledge` (world knowledge packs) was added after v2 shipped and is therefore optional, not required: index entries written before the knowledge root was onboarded simply omit it, and consumers treat a missing key as zero.",
           "properties": {
             "triggers": { "type": "integer", "minimum": 0 },
             "actions": { "type": "integer", "minimum": 0 },
             "prompts": { "type": "integer", "minimum": 0 },
-            "bios": { "type": "integer", "minimum": 0 }
+            "bios": { "type": "integer", "minimum": 0 },
+            "knowledge": { "type": "integer", "minimum": 0 }
           }
         },
         "mods": {
