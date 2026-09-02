@@ -63,10 +63,11 @@ export const CODES = {
 
 // ----- Constants -----------------------------------------------------------
 
-// Content roots accepted in v1 (§5 step 3 / §1 scope: prompts, triggers,
-// actions). Knowledge packs are punted (§13) — `knowledge/` is deliberately
-// NOT a root: the installer would refuse it, so the hub must too.
-export const CONTENT_ROOTS = ["prompts", "triggers", "actions"];
+// Content roots accepted by the hub (§5 step 3 / §1 scope). `knowledge/` is
+// onboarded: the engine-side port accepts it (`ContentRoot::Knowledge`), the
+// installer installs `.sknpack` files like any other content, and
+// `KnowledgeStoreSync` projects them into the per-save database.
+export const CONTENT_ROOTS = ["prompts", "triggers", "actions", "knowledge"];
 
 // Per-root extension whitelist. Matched as an EXACT (byte-for-byte, case
 // sensitive) suffix on the raw final segment — `.PROMPT`, `.yml`,
@@ -75,6 +76,7 @@ export const EXTENSION_BY_ROOT = {
   prompts: ".prompt",
   triggers: ".yaml",
   actions: ".yaml",
+  knowledge: ".sknpack",
 };
 
 // Reserved plugin-id author segment (§2 / decision 12). `skyrimnet` and
