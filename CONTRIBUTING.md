@@ -38,7 +38,7 @@ With your plugin selected in the dashboard:
 
 Every submission runs through an automated validation pipeline. After that, there are two paths:
 
-### Trigger or prompt-only plugins
+### Trigger, prompt or knowledge-only plugins
 
 If your plugin contains only triggers, prompts, and/or knowledge packs (no actions), it's reviewed automatically by SkyrimNet's reviewer, a Claude agent. It checks, in order:
 
@@ -71,6 +71,17 @@ Expect up to a week for manual review. To make the reviewer's job faster, the da
 - An attestation that you tested it for at least an hour without issues
 
 Fill these in honestly — vague or missing answers will slow review or get the plugin rejected.
+
+## Knowledge packs
+
+A plugin may ship **world knowledge packs** as `knowledge/*.sknpack` files — collections of knowledge entries NPCs recall when the entry's condition matches. Export them from the dashboard's **World Knowledge** page; the publish flow puts them in the right place for you.
+
+A few rules the validator enforces:
+
+- Packs must be **`format_version` 3**. That is what the dashboard exports today. If you have an older pack lying around, re-export it — v1/v2 packs still import locally but cannot be published.
+- Every entry carries a stable **`key`** (`[a-z0-9_-]`, up to 64 characters), unique within its file. The key is the entry's identity: when you publish an update, entries are matched by key so edits land in place and players keep their per-entry state. Never hand-edit keys — changing one makes the engine treat it as a deleted entry plus a new one.
+- **1 MB per `.sknpack` file.** A pack bigger than that should be split across several files (`knowledge/lore.sknpack`, `knowledge/quests.sknpack`, …); the engine loads them all and resolves conflicts per file.
+- Knowledge packs do not force manual review — a knowledge-only plugin goes down the same agent-review path as prompts and triggers. The agent reads each entry's `content` and `display_name`.
 
 ## Updating a plugin
 
