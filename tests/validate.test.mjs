@@ -562,6 +562,17 @@ test("a pack that still carries an in-file author (pre-0.25 export) is accepted,
   }
 });
 
+test("a knowledge entry with an empty display_name is accepted", () => {
+  // SkyrimNet's entry form does not require a label and MCP-created entries may omit it;
+  // the export writes "" and keys the entry "entry". Structural validation must accept
+  // what the client legitimately produces.
+  const res = validatePlugin({
+    manifest: goodManifest(),
+    files: knowledgeFiles(goodKnowledgePack({ entries: [knowledgeEntry({ display_name: "" })] })),
+  });
+  assert.equal(res.result.success, true, errorMessages(res.result));
+});
+
 test("a knowledge pack's in-file name need not match the filename stem", () => {
   // Packs have no name==stem contract — the trigger/action rule must not leak.
   const res = validatePlugin({
