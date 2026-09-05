@@ -7,7 +7,7 @@ name: Delete plugin (admin takedown)
 # This is the admin counterpart to the two PR-shaped deletion paths that
 # already exist:
 #   - dashboard-submitted takedown PRs auto-merge via the `deletion` route
-#     in review-pipeline.yml;
+#     of the reviewer (skyrimnet-ops hub-review.yml);
 #   - hand-made deletion PRs land in `manual-review` and need an admin
 #     bypass-merge.
 # Neither gives a maintainer a one-click way to pull a plugin, which is

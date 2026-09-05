@@ -43,10 +43,8 @@ The author segment `skyrimnet` (and the `skyrimnet-` prefix) is reserved for Sky
 
 Submissions go through one of two flows depending on what they contain:
 
-- **Trigger or prompt content only** — reviewed automatically by a GitHub Models agent checking for spam, offensive content, injection attempts, and accuracy of the NSFW flag. Approved submissions auto-merge.
+- **Trigger, prompt, or knowledge content only** — reviewed automatically by SkyrimNet's reviewer (a Claude agent run from the maintainer's private automation repo, never from this repo's own Actions). It checks for spam, forbidden content, obfuscation, accuracy of the NSFW flag, and then the authoring guide in [docs/AUTHORING.md](docs/AUTHORING.md). Approved submissions auto-merge; a submission that needs changes is closed with feedback so you can republish from the dashboard.
 - **Any actions included** — reviewed manually by a SkyrimNet developer or trusted community member. Manual review can take up to a week. This is not a trust issue — Papyrus has no access control, and verifying an action is safe against save corruption requires human judgment.
-
-First-time contributors always get one human review regardless of content type.
 
 ## NSFW content
 

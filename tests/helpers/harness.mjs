@@ -2,7 +2,7 @@
 //
 // validate.mjs is a CI entry point, not a library: it reads env vars, walks
 // two checkouts and writes a result JSON. These helpers reproduce exactly the
-// shape review-pipeline.yml hands it (a trusted BASE_DIR checkout, an
+// shape skyrimnet-ops' hub-review.yml hands it (a trusted BASE_DIR checkout, an
 // untrusted PR_DIR containing only plugins/, and a status\tfilename list from
 // the GitHub Pulls API) so the tests exercise the real script, not a copy of
 // its logic.
@@ -19,7 +19,10 @@ export const VALIDATE_SCRIPT = path.join(SCRIPTS_DIR, "validate.mjs");
 export const BUILD_INDEX_SCRIPT = path.join(SCRIPTS_DIR, "build-index.mjs");
 
 export const DASHBOARD_MARKER = "<!-- skyrimnet-hub: dashboard-submitted -->";
-export const BOT_AUTHOR = "skyrimnet-hub[bot]";
+/** The hub App's login. validate.mjs pins the dashboard gate to exactly this
+ *  (env DASHBOARD_BOT_LOGIN overrides it); any other `[bot]` is not the trust
+ *  root and routes to manual review. */
+export const BOT_AUTHOR = "skyrimnet-plugin-hub-bot[bot]";
 
 /** Windows cannot create files with backslashes, colons, trailing dots or
  *  case-colliding names, so the tests that need such files only run on

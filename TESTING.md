@@ -41,7 +41,7 @@ platform by the corpus test below. The runner prints them as
 | `tests/validate.test.mjs` | End-to-end runs of `validate.mjs` against synthetic PR checkouts: happy paths, one case per rejection class, PR-shape routing (infra-only, mixed, multi-plugin, manual vs dashboard), and the official-content rule (an existing `plugins/skyrimnet/*` pack accepts an update PR and routes to manual review; a new reserved-author pack is still refused). |
 | `tests/build-index.test.mjs` | End-to-end runs of `build-index.mjs` against throwaway git repos with real multi-commit plugin histories; asserts `history` shape, ordering and cap, and validates every emitted index against `schemas/index.schema.json`. Also checks the committed `index.json` is neither stale nor schema-invalid. |
 | `tests/repo-tree.test.mjs` | Replays every plugin currently in `plugins/` through `validate.mjs`. Catches "we tightened a rule and forgot to migrate the entries already in the repo". |
-| `tests/helpers/harness.mjs` | Builds synthetic PR checkouts and runs the real scripts the way `review-pipeline.yml` does (trusted `BASE_DIR`, untrusted `PR_DIR`, `status\tfilename` list). |
+| `tests/helpers/harness.mjs` | Builds synthetic PR checkouts and runs the real scripts the way skyrimnet-ops' `hub-review.yml` does (trusted `BASE_DIR`, untrusted `PR_DIR`, `status\tfilename` list). |
 
 ## The shared rejection corpus
 
@@ -154,11 +154,15 @@ sense on the hub (PR shape, bans, title uniqueness, review routing) stay in
 there.
 
 It deliberately does **not** trigger on `plugins/**`: plugin submissions are
-already gated by `review-pipeline.yml` running the real validator, and
-`index.json` is rebuilt by `build-index.yml` only *after* a plugin merges — so
-between merge and rebuild the tree is legitimately ahead of the index, which
-`build-index.test.mjs`'s staleness check would otherwise flag.
+already gated by the real validator, which the private `skyrimnet-ops` repo's
+`hub-review.yml` runs against every PR from this repo's `main` (this repo has
+no workflow on `pull_request` for submissions any more — it is public, and the
+reviewer runs on self-hosted runners that must never execute fork-authored
+YAML). `index.json` is rebuilt by `build-index.yml` only *after* a plugin
+merges — so between merge and rebuild the tree is legitimately ahead of the
+index, which `build-index.test.mjs`'s staleness check would otherwise flag.
 
 ## Not covered
 
-- `agent-review.mjs` (the LLM content scan) has no tests here.
+- The LLM review itself (the `/hub-review` skill and `apply-verdict.sh` in
+  `skyrimnet-ops`) has no tests here; the verdict contract is checked there.
