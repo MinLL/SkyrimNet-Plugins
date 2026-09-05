@@ -154,6 +154,42 @@ export function goodManifest(overrides = {}) {
   };
 }
 
+/** A format_version 3 .sknpack that passes the schema, for tests to mutate. */
+export function goodKnowledgePack({ entries, ...overrides } = {}) {
+  return {
+    skyrimnet_knowledge_pack: {
+      name: "Bob's Lore Pack",
+      author: "bob",
+      description: "A fixture knowledge pack.",
+      version: "1.0.0",
+      format_version: 3,
+      exported_at: "2026-09-01T00:00:00Z",
+      entry_count: entries ? entries.length : 1,
+      npc_groups: [],
+      entries: entries ?? [knowledgeEntry()],
+      ...overrides,
+    },
+  };
+}
+
+/** One .sknpack entry with every required v3 field. */
+export function knowledgeEntry(overrides = {}) {
+  return {
+    key: "whiterun_market_rumor",
+    type: "KNOWLEDGE",
+    display_name: "Whiterun market rumour",
+    content: "Traders in Whiterun say the roads south have grown dangerous.",
+    condition_expr: "",
+    always_inject: false,
+    importance: 0.5,
+    emotion: "",
+    location: "Whiterun",
+    tags: ["lore"],
+    knowledge_key: "",
+    ...overrides,
+  };
+}
+
 export const GOOD_FILES = {
   "prompts/characters/test_npc.prompt": "You are a test NPC.\n",
   "triggers/test_trigger.yaml": "name: test_trigger\nenabled: true\ndescription: fixture\n",

@@ -13,6 +13,7 @@ import { fileURLToPath } from "node:url";
 import {
   CODES,
   CONTENT_ROOTS,
+  EXTENSION_BY_ROOT,
   checkContentPath,
   checkManifestIdentity,
   checkNameMatchesStem,
@@ -173,7 +174,9 @@ test("case folding is ASCII only", () => {
 
 test("every content root has an extension rule and rejects the others", () => {
   for (const root of CONTENT_ROOTS) {
-    assert.equal(checkContentPath(`${root}/ok.${root === "prompts" ? "prompt" : "yaml"}`).ok, true);
+    const ext = EXTENSION_BY_ROOT[root];
+    assert.ok(typeof ext === "string" && ext.startsWith("."), `${root} has no extension rule`);
+    assert.equal(checkContentPath(`${root}/ok${ext}`).ok, true);
     assert.equal(checkContentPath(`${root}/bad.exe`).code, CODES.BAD_EXTENSION);
   }
 });

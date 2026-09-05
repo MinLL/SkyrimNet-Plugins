@@ -120,7 +120,7 @@ test("emits per-version history newest-first, pinned to the newest commit of eac
     assert.equal(entry.plugin_id, "bob.pack");
     assert.equal(entry.version, "1.1.0");
     assert.equal(entry.min_skyrimnet_version, "0.25.0");
-    assert.deepEqual(entry.contents, { triggers: 0, actions: 0, prompts: 1, bios: 0 });
+    assert.deepEqual(entry.contents, { triggers: 0, actions: 0, prompts: 1, bios: 0, knowledge: 0 });
 
     assert.equal(entry.history.length, 2);
     assert.equal(entry.history[0].version, "1.1.0");
@@ -160,6 +160,32 @@ test("history is capped at 20 entries", () => {
     assert.equal(entry.history[0].version, "1.24.0");
     assert.equal(entry.history.at(-1).version, "1.5.0");
     assert.equal(new Set(entry.history.map((h) => h.version)).size, 20, "versions are deduplicated");
+  } finally {
+    rmDir(repo);
+  }
+});
+
+test("knowledge packs are counted in contents without bumping the schema version", () => {
+  const repo = initRepo();
+  try {
+    writeFile(repo, "plugins/bob/pack/manifest.json", JSON.stringify(bundleManifest(), null, 2));
+    writeFile(repo, "plugins/bob/pack/prompts/a.prompt", "x\n");
+    writeFile(repo, "plugins/bob/pack/knowledge/lore.sknpack", "{}\n");
+    writeFile(repo, "plugins/bob/pack/knowledge/nested/more.sknpack", "{}\n");
+    commitAll(repo, "add pack with knowledge");
+
+    const { index } = runBuildIndex(repo);
+    assertValidIndex(index);
+
+    // Additive: the engine hard-rejects any schema_version but 2.
+    assert.equal(index.schema_version, 2);
+    assert.deepEqual(index.plugins[0].contents, {
+      triggers: 0,
+      actions: 0,
+      prompts: 1,
+      bios: 0,
+      knowledge: 2,
+    });
   } finally {
     rmDir(repo);
   }
@@ -220,7 +246,7 @@ test("character bios count as `bios`, not `prompts`", () => {
 
     const entry = index.plugins[0];
     // prompts excludes the two under prompts/characters/; bios counts them.
-    assert.deepEqual(entry.contents, { triggers: 0, actions: 0, prompts: 1, bios: 2 });
+    assert.deepEqual(entry.contents, { triggers: 0, actions: 0, prompts: 1, bios: 2, knowledge: 0 });
   } finally {
     rmDir(repo);
   }

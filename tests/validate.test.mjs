@@ -14,7 +14,9 @@ import {
   GOOD_FILES,
   POSIX_ONLY,
   errorMessages,
+  goodKnowledgePack,
   goodManifest,
+  knowledgeEntry,
   makeBaseDir,
   makeTempDir,
   rmDir,
@@ -382,7 +384,7 @@ test("a plugin updating itself is not an id collision", () => {
 
 test("rejects a file outside the content roots", () => {
   assertRejected(
-    validatePlugin({ manifest: goodManifest(), files: { "knowledge/pack.sknpack": "{}" } }),
+    validatePlugin({ manifest: goodManifest(), files: { "lore/pack.txt": "{}" } }),
     /\[UNKNOWN_ROOT\]/,
   );
 });
@@ -508,6 +510,174 @@ test("accepts an action whose name equals its stem", () => {
   assert.equal(res.result.success, true, errorMessages(res.result));
   // Action-bearing plugins always go to a human.
   assert.deepEqual(res.result.labels, ["manual-review"]);
+});
+
+// ----- Knowledge packs (knowledge/*.sknpack) -------------------------------
+//
+// The fourth content root. Packs are schema-checked (unlike trigger/action
+// YAML) because the engine's store sync parses them on every save load and an
+// entry with no `key` can never be updated in place.
+
+const KNOWLEDGE_PATH = "knowledge/lore.sknpack";
+
+function knowledgeFiles(pack) {
+  return { [KNOWLEDGE_PATH]: JSON.stringify(pack, null, 2) };
+}
+
+test("accepts a knowledge-only bundle and routes it to agent review", () => {
+  const res = validatePlugin({
+    manifest: goodManifest(),
+    files: knowledgeFiles(goodKnowledgePack()),
+  });
+  assert.equal(res.result.success, true, errorMessages(res.result));
+  assert.deepEqual(res.result.labels, ["ready-for-agent-review"]);
+});
+
+test("accepts knowledge alongside prompts and triggers, still agent-reviewed", () => {
+  const res = validatePlugin({
+    manifest: goodManifest(),
+    files: { ...GOOD_FILES, ...knowledgeFiles(goodKnowledgePack()) },
+  });
+  assert.equal(res.result.success, true, errorMessages(res.result));
+  assert.deepEqual(res.result.labels, ["ready-for-agent-review"]);
+});
+
+test("accepts a nested knowledge pack path", () => {
+  const res = validatePlugin({
+    manifest: goodManifest(),
+    files: { "knowledge/lore/deep_pack.sknpack": JSON.stringify(goodKnowledgePack()) },
+  });
+  assert.equal(res.result.success, true, errorMessages(res.result));
+});
+
+test("a knowledge pack's in-file name need not match the filename stem", () => {
+  // Packs have no name==stem contract — the trigger/action rule must not leak.
+  const res = validatePlugin({
+    manifest: goodManifest(),
+    files: knowledgeFiles(goodKnowledgePack({ name: "Something Else Entirely" })),
+  });
+  assert.equal(res.result.success, true, errorMessages(res.result));
+});
+
+test("rejects a knowledge file with the wrong extension", () => {
+  assertRejected(
+    validatePlugin({
+      manifest: goodManifest(),
+      files: { "knowledge/pack.yaml": "name: pack\n" },
+    }),
+    /\[BAD_EXTENSION\]/,
+  );
+  assertRejected(
+    validatePlugin({
+      manifest: goodManifest(),
+      files: { "knowledge/pack.SKNPACK": "{}" },
+    }),
+    /\[BAD_EXTENSION\]/,
+  );
+});
+
+test("rejects a knowledge pack that is not valid JSON", () => {
+  assertRejected(
+    validatePlugin({ manifest: goodManifest(), files: { [KNOWLEDGE_PATH]: "{ nope" } }),
+    /not valid JSON/,
+  );
+});
+
+test("rejects a knowledge pack at an older format_version", () => {
+  assertRejected(
+    validatePlugin({
+      manifest: goodManifest(),
+      files: knowledgeFiles(goodKnowledgePack({ format_version: 1 })),
+    }),
+    /Knowledge pack schema/,
+  );
+});
+
+test("rejects a knowledge entry with no key", () => {
+  const entry = knowledgeEntry();
+  delete entry.key;
+  assertRejected(
+    validatePlugin({
+      manifest: goodManifest(),
+      files: knowledgeFiles(goodKnowledgePack({ entries: [entry] })),
+    }),
+    /Knowledge pack schema.*key/s,
+  );
+});
+
+test("rejects a knowledge entry whose key is malformed", () => {
+  assertRejected(
+    validatePlugin({
+      manifest: goodManifest(),
+      files: knowledgeFiles(goodKnowledgePack({ entries: [knowledgeEntry({ key: "Not A Key" })] })),
+    }),
+    /Knowledge pack schema/,
+  );
+});
+
+test("rejects duplicate entry keys within one knowledge pack", () => {
+  // Schema-legal but identity-broken: JSON Schema cannot express uniqueness
+  // across a field, so the validator checks it by hand.
+  assertRejected(
+    validatePlugin({
+      manifest: goodManifest(),
+      files: knowledgeFiles(
+        goodKnowledgePack({
+          entries: [
+            knowledgeEntry({ key: "same_key" }),
+            knowledgeEntry({ key: "same_key", display_name: "Another entry" }),
+          ],
+        }),
+      ),
+    }),
+    /duplicate entry key 'same_key'/,
+  );
+});
+
+test("the same key in two different packs is fine — uniqueness is per file", () => {
+  const res = validatePlugin({
+    manifest: goodManifest(),
+    files: {
+      "knowledge/a.sknpack": JSON.stringify(goodKnowledgePack()),
+      "knowledge/b.sknpack": JSON.stringify(goodKnowledgePack()),
+    },
+  });
+  assert.equal(res.result.success, true, errorMessages(res.result));
+});
+
+test("rejects a knowledge pack over the 1 MB per-file limit", () => {
+  const huge = goodKnowledgePack({
+    entries: Array.from({ length: 400 }, (_, i) =>
+      knowledgeEntry({ key: `entry_${i}`, content: "x".repeat(3900) }),
+    ),
+  });
+  assertRejected(
+    validatePlugin({ manifest: goodManifest(), files: knowledgeFiles(huge) }),
+    /exceeds the 1\.00 MB per-file limit for knowledge packs/,
+  );
+});
+
+test("rejects a listing that ships a knowledge pack", () => {
+  assertRejected(
+    validatePlugin({
+      pluginDir: "plugins/bob/listing-with-knowledge",
+      manifest: {
+        id: "bob.listing-with-knowledge",
+        type: "listing",
+        title: "Bob's Sneaky Knowledge Listing",
+        tagline: "Hosted elsewhere.",
+        description: "A listing entry.",
+        author: "bob",
+        tags: [],
+        nsfw: false,
+        icon: "package",
+        mods: [],
+        external_url: "https://example.com/mod",
+      },
+      files: knowledgeFiles(goodKnowledgePack()),
+    }),
+    /Listing plugins must not contain any content files/,
+  );
 });
 
 // ----- Structural PR shape (unchanged behaviour, guarded) ------------------

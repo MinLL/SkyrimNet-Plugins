@@ -7,8 +7,9 @@ A **plugin** is a bundle containing any combination of:
 - **Prompts** (`.prompt`) — text files that shape how NPCs perceive the world or behave in specific situations
 - **Triggers** (`.yaml`) — YAML rules that react to game events (spell casts, combat, mod events, etc.) and generate dialogue, narration, diary entries, or bio updates
 - **Actions** (`.yaml`) — YAML definitions that let NPCs execute Papyrus mod functions in response to dialogue
+- **Knowledge packs** (`.sknpack`) — collections of world knowledge entries that NPCs recall when a condition matches (a rumour, a piece of lore, a fact about your mod)
 
-Plugins often work together as a bundle (e.g. an action paired with a trigger that invokes it and a prompt that teaches NPCs when to use it), but any subset is valid — a pure prompt pack or a trigger-only submission is perfectly fine.
+Plugins often work together as a bundle (e.g. an action paired with a trigger that invokes it and a prompt that teaches NPCs when to use it), but any subset is valid — a pure prompt pack, a trigger-only submission or a lone knowledge pack is perfectly fine.
 
 ## Browsing and installing
 
@@ -28,9 +29,10 @@ plugins/
       triggers/*.yaml         # optional
       actions/*.yaml          # optional
       prompts/*.prompt        # optional
+      knowledge/*.sknpack     # optional
 ```
 
-Each plugin lives in its own directory under the author's GitHub username. The `manifest.json` describes the plugin and is required; the three content subdirectories are all optional.
+Each plugin lives in its own directory under the author's GitHub username. The `manifest.json` describes the plugin and is required; the four content subdirectories are all optional.
 
 ### Official content (`plugins/skyrimnet/`)
 
