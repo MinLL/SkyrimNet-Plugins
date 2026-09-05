@@ -544,7 +544,9 @@
     { "file": "triggers/combat_banter.yaml", "name": "combat_banter", "expect": "accept", "reason": "name equals stem" },
     { "file": "actions/cat_scheduling.yaml", "name": "cat_scheduling", "expect": "accept", "reason": "name equals stem" },
     { "file": "actions/cat_scheduling.yaml", "name": "Scheduling", "expect": "reject", "reason": "NAME_NOT_STEM" },
-    { "file": "actions/cat_scheduling.yaml", "name": "Cat_Scheduling", "expect": "reject", "reason": "NAME_NOT_STEM" },
+    { "file": "actions/cat_scheduling.yaml", "name": "Cat_Scheduling", "expect": "accept", "reason": "name equals stem case-insensitively" },
+    { "file": "actions/givegold.yaml", "name": "GiveGold", "expect": "accept", "reason": "name equals stem case-insensitively" },
+    { "file": "actions/GiveGold.yaml", "name": "givegold", "expect": "accept", "reason": "the stem's casing is not identity either" },
     { "file": "triggers/combat_banter.yaml", "name": "", "expect": "reject", "reason": "NAME_MISSING" },
     { "file": "triggers/combat_banter.yaml", "name": null, "expect": "reject", "reason": "NAME_MISSING" }
   ]
