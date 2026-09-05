@@ -1,0 +1,16 @@
+{
+  "id": "min.minsfwbundletest2",
+  "type": "bundle",
+  "title": "MinSfwBundleTest2",
+  "tagline": "test sfw",
+  "description": "test",
+  "author": "min",
+  "tags": [
+    "test"
+  ],
+  "nsfw": false,
+  "icon": "package",
+  "mods": [],
+  "version": "1.0.0",
+  "min_skyrimnet_version": "0.25.0"
+}
