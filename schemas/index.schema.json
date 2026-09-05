@@ -146,11 +146,12 @@
           "type": "object",
           "required": ["triggers", "actions", "prompts"],
           "additionalProperties": false,
-          "description": "Required for bundle plugins. Absent for listing plugins (they have no content files in the repo). File counts derived by walking the plugin directory. The v1 content types are exactly these three — knowledge packs are punted and are not accepted by the validator.",
+          "description": "Required for bundle plugins. Absent for listing plugins (they have no content files in the repo). File counts derived by walking the plugin directory. `bios` counts character bios (files under prompts/characters/); they are their own category and are excluded from the `prompts` count. Knowledge packs are punted and are not accepted by the validator.",
           "properties": {
             "triggers": { "type": "integer", "minimum": 0 },
             "actions": { "type": "integer", "minimum": 0 },
-            "prompts": { "type": "integer", "minimum": 0 }
+            "prompts": { "type": "integer", "minimum": 0 },
+            "bios": { "type": "integer", "minimum": 0 }
           }
         },
         "mods": {
