@@ -47,7 +47,7 @@
         "format_version": {
           "type": "integer",
           "const": 1,
-          "description": "Format version of the .sknpack file structure itself. Currently 1. Unknown format versions are rejected by validate.yml until the hub is updated to support them — SkyrimNet's format is expected to evolve, at which point this schema will either accept multiple versions or mark older versions as deprecated."
+          "description": "Format version of the .sknpack file structure itself. Currently 1. Unknown format versions are rejected by validate.mjs until the hub is updated to support them — SkyrimNet's format is expected to evolve, at which point this schema will either accept multiple versions or mark older versions as deprecated."
         },
         "exported_at": {
           "type": "string",
@@ -57,7 +57,7 @@
         "entry_count": {
           "type": "integer",
           "minimum": 0,
-          "description": "Redundant with entries.length, but preserved as-exported. validate.yml may enforce entry_count == entries.length."
+          "description": "Redundant with entries.length, but preserved as-exported. validate.mjs may enforce entry_count == entries.length."
         },
         "npc_groups": {
           "type": "array",

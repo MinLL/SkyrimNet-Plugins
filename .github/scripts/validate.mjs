@@ -1,8 +1,9 @@
 #!/usr/bin/env node
 // SkyrimNet Plugins — structural validator
 //
-// Runs as stage 1 of .github/workflows/review-pipeline.yml on every pull
-// request. Consumes:
+// Runs on every dashboard pull request from the private skyrimnet-ops repo
+// (.github/workflows/hub-review.yml there), which checks this file out from
+// main and never from the PR. Consumes:
 //   - BASE_DIR:      path to the base branch checkout (trusted — schemas, index.json, etc.)
 //   - PR_DIR:        path to the PR head checkout (untrusted — only plugins/ is sparse-checked-out)
 //   - PR_FILES_FILE: path to a newline-separated list of files this PR changes (written by
@@ -83,9 +84,9 @@ const result = {
   warnings: [],
   comment: null,
   // Identified plugin directory (plugins/{author}/{slug}) relative to the
-  // repo root, populated once path-scope parsing succeeds. Consumed by
-  // agent-review.mjs so it doesn't have to re-walk the PR checkout and
-  // pick the wrong plugin dir on re-submissions to already-merged plugins.
+  // repo root, populated once path-scope parsing succeeds. Consumed by the
+  // reviewer (skyrimnet-ops hub-review.yml) so it reviews exactly this dir and
+  // never re-walks the PR checkout, which also holds every other plugin.
   plugin_root: null,
 };
 
@@ -218,14 +219,16 @@ function activeBanFor(author) {
 // authenticated user), not by this validator.
 //
 // To treat a PR as dashboard-submitted we require BOTH:
-//   1. The PR opener is a bot account (login ends with '[bot]').
+//   1. The PR opener is the hub's own App (exact login, not any '[bot]').
 //   2. The PR body contains the dashboard marker comment.
 //
-// The bot check is the gate — the marker is copy-pasteable alone provides no
-// integrity. A bot opener is controlled by whoever holds the app's installation
-// token, which lives in the backend that fronts the SaaS-authenticated user.
+// The bot check is the gate — the marker is copy-pasteable and alone provides
+// no integrity. The hub App's installation token lives only in the backend
+// that fronts the SaaS-authenticated user. Any other installed App (Dependabot,
+// the reviewer App itself) is not that trust root, so the login is pinned.
 
-const isBotAuthor = env.PR_AUTHOR.endsWith("[bot]");
+const DASHBOARD_BOT_LOGIN = process.env.DASHBOARD_BOT_LOGIN || "skyrimnet-plugin-hub-bot[bot]";
+const isBotAuthor = env.PR_AUTHOR === DASHBOARD_BOT_LOGIN;
 const isDashboardSubmitted = isBotAuthor && env.PR_BODY.includes(DASHBOARD_MARKER);
 if (!isDashboardSubmitted) {
   console.log(
@@ -266,15 +269,14 @@ try {
 
 // Deletion PR: every file in the PR is a removal, and they all live under a
 // single plugins/{author}/{slug}/ directory. We route these straight through
-// with a `ready-for-agent-review` label so agent-review → auto-merge still
-// runs; agent-review sees zero content files and auto-approves ("No content
-// files to review.").
+// with a `deletion` label; the reviewer short-circuits it to approve (nothing
+// to scan) and merges.
 const allFiles = [...changedFiles, ...deletedFiles];
 
 // Maintainer infra PR: every file the PR touches (added, modified, or
 // removed) lives OUTSIDE `plugins/`. Typical cases: editing hidden.json,
 // curated.json, bans.json, workflows, scripts, docs. Routed to a dedicated
-// `infra-only` label so agent-review.mjs short-circuit-FAILS the gate
+// `infra-only` label so the reviewer short-circuit-FAILS the gate
 // (the agent has nothing to scan, and a failing required check is what
 // blocks rogue installation tokens from shipping infra changes). A repo
 // admin merges these via the "Merge without waiting for requirements"

@@ -1,7 +1,7 @@
 // End-to-end tests for .github/scripts/validate.mjs.
 //
 // Each test builds a synthetic PR checkout and runs the real script the way
-// review-pipeline.yml does. BASE_DIR is this repo (the trusted side: schemas,
+// skyrimnet-ops' hub-review.yml does. BASE_DIR is this repo (the trusted side: schemas,
 // bans.json, index.json), PR_DIR is a throwaway tree.
 
 import test from "node:test";
@@ -51,6 +51,14 @@ test("happy path: dashboard-submitted prompt+trigger bundle passes", () => {
   assert.deepEqual(res.result.labels, ["ready-for-agent-review"]);
   assert.equal(res.result.plugin_root, "plugins/bob/test-pack");
   assert.deepEqual(res.result.errors, []);
+});
+
+test("another installed [bot] with the marker is NOT dashboard-submitted", () => {
+  // The gate is the hub App's exact login. A different App (Dependabot, the
+  // reviewer App) plus a copy-pasted marker must route to a human.
+  const res = validatePlugin({ manifest: goodManifest(), prAuthor: "some-other-app[bot]" });
+  assert.equal(res.result.success, true, errorMessages(res.result));
+  assert.deepEqual(res.result.labels, ["manual-review"]);
 });
 
 test("happy path: 'SkyrimNet FooBar Integration' by bob is accepted end to end", () => {

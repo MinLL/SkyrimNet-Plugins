@@ -7,8 +7,8 @@ name: CI script tests
 #
 # Deliberately path-filtered to the scripts, schemas and tests — NOT plugins/.
 # Two reasons:
-#   1. Plugin submissions are already gated by review-pipeline.yml, which runs
-#      the real validator against the PR. A second check would be noise.
+#   1. Plugin submissions are already gated by skyrimnet-ops' hub-review.yml,
+#      which runs the real validator against the PR. A second check would be noise.
 #   2. index.json is rebuilt by build-index.yml AFTER a plugin merges, so
 #      between the merge and the rebuild the tree is legitimately ahead of the
 #      index. build-index.test.mjs asserts the committed index is not stale,

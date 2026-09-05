@@ -9,10 +9,14 @@ name: Build plugin index
 # Triggers:
 #   - push to main when plugins/** or hidden.json changes — catches
 #     direct admin edits via the GitHub web UI.
-#   - workflow_run after the review pipeline completes — catches plugin
-#     submissions and deletions auto-merged by GITHUB_TOKEN, whose
-#     pushes to main do NOT fire `push` events on downstream workflows.
 #   - workflow_dispatch for manual rebuilds.
+#
+# Submission merges are performed by the hub-reviewer App from the private
+# skyrimnet-ops repo (hub-review.yml there), with an App installation token.
+# Unlike GITHUB_TOKEN, App-token merges DO fire `push`, so the `push` trigger
+# above covers them; the old `workflow_run` hook on the retired in-repo review
+# pipeline is gone with it. The reviewer writes a fixed squash message, so a
+# `[skip ci]` in a submitter's commit cannot suppress the rebuild.
 #
 # Required secrets:
 #   BOT_APP_ID         — App ID of the bot App (Settings → Developer
@@ -26,9 +30,6 @@ on:
       - 'plugins/**'
       - 'hidden.json'
       - 'curated.json'
-  workflow_run:
-    workflows: ['Plugin submission review pipeline']
-    types: [completed]
   workflow_dispatch:
 
 permissions:

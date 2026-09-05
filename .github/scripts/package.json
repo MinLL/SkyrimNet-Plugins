@@ -1,7 +1,7 @@
 {
   "name": "skyrimnet-plugins-validator",
   "version": "1.0.0",
-  "description": "Scripts run by SkyrimNet-Plugins CI workflows. Includes validate.mjs (structural validation, used by validate.yml) and agent-review.mjs (LLM content review, used by agent-review.yml). Both run against the base branch's files and receive the PR content as read-only data. Never installed or run from PR-supplied code. agent-review.mjs has no external dependencies (only Node built-ins + fetch); the listed dependencies are used by validate.mjs.",
+  "description": "Scripts for the SkyrimNet-Plugins hub. validate.mjs (structural validation) is run against every dashboard PR by the private skyrimnet-ops repo's hub-review.yml, checked out from main and receiving the PR content as read-only data; build-index.mjs rebuilds index.json. Never installed or run from PR-supplied code.",
   "private": true,
   "type": "module",
   "engines": {

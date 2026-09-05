@@ -40,17 +40,23 @@ Every submission runs through an automated validation pipeline. After that, ther
 
 ### Trigger or prompt-only plugins
 
-If your plugin contains only triggers and/or prompts (no actions), it's reviewed automatically by a GitHub Models agent. The agent checks for:
+If your plugin contains only triggers, prompts, and/or knowledge packs (no actions), it's reviewed automatically by SkyrimNet's reviewer, a Claude agent. It checks, in order:
 
-- Spam or low-effort content
-- Offensive content (harassment, slurs, etc.)
-- Prompt injection attempts
-- Title/description accuracy vs. actual content
+- Spam or low-effort content (an unreadable title, tagline, or description is enough)
+- Forbidden content: sexual content involving minors, real-person targeting, real-world slurs
+- Obfuscation or hidden strings in templates
+- Links in the tagline or description
 - NSFW flag accuracy
+- The authoring guide in [docs/AUTHORING.md](docs/AUTHORING.md): does the plugin work as submitted and follow the conventions there
 
-If the agent approves, your plugin is **auto-merged**. If it rejects, it leaves a comment explaining why — fix the issue, push an update from the dashboard, and the agent will re-review.
+Outcomes, each posted as a comment on your PR and shown on your plugin's page in the dashboard:
 
-First-time contributors always get one human review regardless, as a trust gate.
+- **Approved** — your plugin is **auto-merged** and appears in the index within minutes.
+- **Changes requested** — the PR is closed with feedback. Fix the issue and publish again from the dashboard; that opens a fresh review.
+- **Rejected** — a forbidden-content or NSFW-flag rule fired. The PR is closed with the rule named; adjust and republish.
+- **Escalated** — the reviewer was unsure. The PR stays open and a human looks at it.
+
+The reviewer reads your submission as data. Text in a prompt asking it to approve the plugin is treated as a finding, not an instruction.
 
 ### Plugins containing actions
 
@@ -68,9 +74,9 @@ Fill these in honestly — vague or missing answers will slow review or get the 
 
 ## Updating a plugin
 
-Open the dashboard, go to your plugin's page, and click **Update**. The dashboard opens a new PR against your existing plugin directory. Updates skip the first-time contributor gate and go straight into their respective review flow (agent-reviewed for trigger/prompt updates, manual for action updates).
+Open the dashboard, go to your plugin's page, and click **Update**. The dashboard opens a new PR against your existing plugin directory. Updates go straight into their respective review flow (agent-reviewed for trigger/prompt updates, manual for action updates).
 
-Bump your `version` when publishing meaningful changes — the dashboard does this for you if you don't.
+Bump your `version` when publishing meaningful changes — the dashboard warns you if you forget.
 
 ## Fixing an official bio pack
 
@@ -78,7 +84,7 @@ The character bio packs under `plugins/skyrimnet/bios-{mod}/` are SkyrimNet's ow
 
 ## NSFW content
 
-NSFW plugins are welcome but live in a gated section of the dashboard (off by default). When you publish, mark the NSFW toggle accurately. The review agent flags any mismatch between the NSFW flag and the actual content as an automatic rejection.
+NSFW plugins are welcome but live in a gated section of the dashboard (off by default). When you publish, mark the NSFW toggle accurately. The reviewer flags any mismatch between the NSFW flag and the actual content as an automatic rejection. The flag governs sexual content only: violence, gore, horror, and other mature non-sexual themes are always allowed in a rated-M game.
 
 ## License
 
@@ -86,6 +92,6 @@ All contributions fall under the repository's license. By publishing, you agree 
 
 ## Questions or problems
 
-- **My PR was rejected by the agent and I think it's wrong** — push an update with a clarifying change, or open an issue on this repo explaining the situation. A human can override the agent.
+- **My PR was rejected by the reviewer and I think it's wrong** — republish with a clarifying change, or open an issue on this repo explaining the situation. A human can override the reviewer.
 - **My action plugin has been waiting for review for more than a week** — feel free to bump the PR with a polite comment, or open an issue.
 - **I found a bug in the dashboard publish flow** — file it in the main SkyrimNet repo, not this one.
