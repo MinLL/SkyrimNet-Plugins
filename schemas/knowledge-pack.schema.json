@@ -11,7 +11,6 @@
       "type": "object",
       "required": [
         "name",
-        "author",
         "description",
         "version",
         "format_version",
@@ -30,9 +29,8 @@
         },
         "author": {
           "type": "string",
-          "minLength": 1,
           "maxLength": 100,
-          "description": "Author name as recorded inside the pack. Informational only — the authoritative author for hub publishing is the GitHub username at the plugin directory level. These may differ (pack author is a display name, plugin author is a GitHub username)."
+          "description": "DEPRECATED and ignored. SkyrimNet no longer records an author inside the pack: the author of a hub plugin is the GitHub username at the plugin directory level (manifest.author), and a pack shipped by a mod belongs to that mod. Still accepted, empty or not, so packs exported by SkyrimNet builds before 0.25 keep validating."
         },
         "description": {
           "type": "string",
