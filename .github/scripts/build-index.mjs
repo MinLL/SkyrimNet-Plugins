@@ -216,10 +216,19 @@ if (!fs.existsSync(PLUGINS_DIR)) {
 
       // Count content files. v1 content types are prompts, triggers and
       // actions — knowledge packs are punted and rejected by the validator.
+      //
+      // Character bios live in prompts/characters/. They are their own
+      // category (Character Packs) rather than generic prompts, so count them
+      // separately as `bios` and exclude them from the `prompts` count — a
+      // pack of bios is not a prompt plugin. countFiles(prompts) is recursive,
+      // so the plain prompts count is the total minus the bios under it.
+      const promptsDir = path.join(pluginDir, "prompts");
+      const biosCount = countFiles(path.join(promptsDir, "characters"));
       const contents = manifest.type === "bundle" ? {
         triggers: countFiles(path.join(pluginDir, "triggers")),
         actions: countFiles(path.join(pluginDir, "actions")),
-        prompts: countFiles(path.join(pluginDir, "prompts")),
+        prompts: countFiles(promptsDir) - biosCount,
+        bios: biosCount,
       } : undefined;
 
       // Build mods array (name + file + required)

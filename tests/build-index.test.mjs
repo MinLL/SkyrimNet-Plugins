@@ -120,7 +120,7 @@ test("emits per-version history newest-first, pinned to the newest commit of eac
     assert.equal(entry.plugin_id, "bob.pack");
     assert.equal(entry.version, "1.1.0");
     assert.equal(entry.min_skyrimnet_version, "0.25.0");
-    assert.deepEqual(entry.contents, { triggers: 0, actions: 0, prompts: 1 });
+    assert.deepEqual(entry.contents, { triggers: 0, actions: 0, prompts: 1, bios: 0 });
 
     assert.equal(entry.history.length, 2);
     assert.equal(entry.history[0].version, "1.1.0");
@@ -200,6 +200,27 @@ test("listings carry no history and no contents", () => {
     assert.ok(!("history" in entry));
     assert.ok(!("contents" in entry));
     assert.ok(!("min_skyrimnet_version" in entry));
+  } finally {
+    rmDir(repo);
+  }
+});
+
+test("character bios count as `bios`, not `prompts`", () => {
+  const repo = initRepo();
+  try {
+    writeFile(repo, "plugins/bob/pack/manifest.json", JSON.stringify(bundleManifest(), null, 2));
+    // One ordinary prompt, two character bios under prompts/characters/.
+    writeFile(repo, "plugins/bob/pack/prompts/system.prompt", "a prompt\n");
+    writeFile(repo, "plugins/bob/pack/prompts/characters/alice.prompt", "bio\n");
+    writeFile(repo, "plugins/bob/pack/prompts/characters/bob.prompt", "bio\n");
+    commitAll(repo, "add pack with bios");
+
+    const { index } = runBuildIndex(repo);
+    assertValidIndex(index);
+
+    const entry = index.plugins[0];
+    // prompts excludes the two under prompts/characters/; bios counts them.
+    assert.deepEqual(entry.contents, { triggers: 0, actions: 0, prompts: 1, bios: 2 });
   } finally {
     rmDir(repo);
   }
