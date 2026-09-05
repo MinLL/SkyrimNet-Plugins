@@ -1,0 +1,27 @@
+{
+  "skyrimnet_knowledge_pack": {
+    "author": "",
+    "description": "",
+    "entries": [
+      {
+        "always_inject": false,
+        "condition_expr": "",
+        "content": "some cool info about something",
+        "display_name": "",
+        "emotion": "",
+        "importance": 0.699999988079071,
+        "key": "entry",
+        "knowledge_key": "",
+        "location": "",
+        "tags": [],
+        "type": "KNOWLEDGE"
+      }
+    ],
+    "entry_count": 1,
+    "exported_at": "2026-09-05T16:23:20Z",
+    "format_version": 3,
+    "name": "test",
+    "npc_groups": [],
+    "version": "1.0.0"
+  }
+}
