@@ -550,6 +550,18 @@ test("accepts a nested knowledge pack path", () => {
   assert.equal(res.result.success, true, errorMessages(res.result));
 });
 
+test("a pack that still carries an in-file author (pre-0.25 export) is accepted, even empty", () => {
+  // SkyrimNet dropped the field; the schema keeps it optional and unconstrained so older
+  // clients, which wrote whatever the UI held (often ""), are not turned away on it.
+  for (const author of ["bob", ""]) {
+    const res = validatePlugin({
+      manifest: goodManifest(),
+      files: knowledgeFiles(goodKnowledgePack({ author })),
+    });
+    assert.equal(res.result.success, true, errorMessages(res.result));
+  }
+});
+
 test("a knowledge pack's in-file name need not match the filename stem", () => {
   // Packs have no name==stem contract — the trigger/action rule must not leak.
   const res = validatePlugin({

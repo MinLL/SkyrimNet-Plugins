@@ -159,7 +159,6 @@ export function goodKnowledgePack({ entries, ...overrides } = {}) {
   return {
     skyrimnet_knowledge_pack: {
       name: "Bob's Lore Pack",
-      author: "bob",
       description: "A fixture knowledge pack.",
       version: "1.0.0",
       format_version: 3,
