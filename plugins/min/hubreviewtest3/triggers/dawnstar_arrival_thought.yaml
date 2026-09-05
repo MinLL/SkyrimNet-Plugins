@@ -1,0 +1,14 @@
+name: dawnstar_arrival_thought
+description: When the player enters Dawnstar, give them a brief internal thought about the cold and the town's uneasy mood. Fires at most once every ten minutes.
+eventCriteria:
+  eventType: location_change
+  schemaConditions:
+    - fieldPath: to_location
+      operator: contains
+      value: Dawnstar
+audience: player
+response:
+  type: player_thought
+  content: "The wind off the Sea of Ghosts cuts straight through my cloak. Dawnstar looks the same as ever, but the people here move like they have not slept."
+enabled: true
+cooldownSeconds: 600
