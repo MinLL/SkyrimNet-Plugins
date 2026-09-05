@@ -1,0 +1,20 @@
+name: min_jumpdown_anim_trigger
+description: Trigger on animation_event event from Min
+eventCriteria:
+  eventType: animation_event
+  schemaConditions:
+    - fieldPath: tag
+      operator: equals
+      value: JumpDown
+    - fieldPath: actor_name
+      operator: equals
+      value: Min
+      caseSensitive: false
+audience: player
+response:
+  type: fire_action
+  content: I notice {{ event_json.actor_name }} performing a {{ event_json.tag }} animation{% if event_json.payload %} ({{ event_json.payload }}){% endif %}.
+  targetScope: triggering_actor
+  actionName: Undress
+enabled: true
+cooldownSeconds: 3
