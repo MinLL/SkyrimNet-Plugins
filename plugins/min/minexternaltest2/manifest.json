@@ -1,0 +1,18 @@
+{
+  "id": "min.minexternaltest2",
+  "type": "listing",
+  "title": "MinExternalTest2",
+  "tagline": "Testing externa llisting",
+  "description": "Test test, this is a cool sfw mod",
+  "author": "min",
+  "tags": [
+    "test",
+    "some",
+    "mod"
+  ],
+  "nsfw": false,
+  "icon": "package",
+  "mods": [],
+  "external_url": "https://fateless.ai",
+  "version": "1.0.0"
+}
