@@ -114,9 +114,8 @@
         },
         "display_name": {
           "type": "string",
-          "minLength": 1,
-          "maxLength": 100,
-          "description": "Short label shown in the SkyrimNet UI when listing entries. Not injected into the prompt."
+                    "maxLength": 100,
+          "description": "Short label shown in the SkyrimNet UI. Optional there (the entry form has no required label, and entries created through MCP may omit it), so an empty string is valid here too. Not used by the hub itself; when empty SkyrimNet keys the entry as \"entry\"."
         },
         "content": {
           "type": "string",
