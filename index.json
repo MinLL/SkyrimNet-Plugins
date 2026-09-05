@@ -1,40 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-09-05T16:01:37.035Z",
+  "generated_at": "2026-09-05T16:02:35.267Z",
   "plugins": [
-    {
-      "id": "plugins/min/hubreviewtest4",
-      "plugin_id": "min.hubreviewtest4",
-      "type": "bundle",
-      "title": "Hub Review Smoke Test 4",
-      "tagline": "Gives Dawnstar's innkeeper a nervous new stable hand to gossip about.",
-      "author": "min",
-      "tags": [
-        "test",
-        "dawnstar",
-        "npc"
-      ],
-      "nsfw": false,
-      "icon": "package",
-      "mods": [],
-      "first_published": "2026-09-05T16:01:22Z",
-      "last_updated": "2026-09-05T16:01:22Z",
-      "version": "1.0.0",
-      "min_skyrimnet_version": "0.25.0",
-      "history": [
-        {
-          "version": "1.0.0",
-          "commit": "a31d9989bcd05b380a926fa5e3b9b7e52d8496ea",
-          "date": "2026-09-05T16:01:22Z"
-        }
-      ],
-      "contents": {
-        "triggers": 1,
-        "actions": 0,
-        "prompts": 0,
-        "bios": 1
-      }
-    },
     {
       "id": "plugins/zevick/zevtest2",
       "plugin_id": "zevick.zevtest2",
