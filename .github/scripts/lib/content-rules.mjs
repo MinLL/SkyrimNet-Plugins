@@ -310,17 +310,19 @@ export function findPathCollisions(paths) {
 /**
  * The in-file `name` of a trigger or action must equal its filename stem —
  * path is the only identity, so a divergent in-file name is a second identity.
+ * Compared ASCII-case-insensitively, like path identity itself: the stem is the
+ * identity, the name's casing is the author's (and the LLM's) to keep.
  */
 export function checkNameMatchesStem(name, filenameOrPath) {
   const stem = stemOf(filenameOrPath);
   if (typeof name !== "string" || name.length === 0) {
     return reject(CODES.NAME_MISSING, "File has no 'name' field.");
   }
-  if (name !== stem) {
+  if (foldCase(name) !== foldCase(stem)) {
     return reject(
       CODES.NAME_NOT_STEM,
-      `In-file name '${name}' does not match the filename stem '${stem}'. ` +
-        `The filename is the identity — rename the file or the name so they match.`,
+      `In-file name '${name}' does not match the filename stem '${stem}' ` +
+        `(compared case-insensitively). The filename is the identity — rename the file or the name so they match.`,
     );
   }
   return ok();
