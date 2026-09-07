@@ -15,6 +15,12 @@ Plugins often work together as a bundle (e.g. an action paired with a trigger th
 
 Use the **Plugins** page in your in-game SkyrimNet dashboard to browse and install from this repo. No GitHub account required for browsing.
 
+### Download counts and endorsements
+
+This repo is static — nothing here sees an install. Popularity comes from [fateless.ai](https://fateless.ai), SkyrimNet's companion service: the in-game installer sends an anonymous "installed `author.slug`" ping after each install (no account, no identifier, suppressed by SkyrimNet's master telemetry switch), and signed-in fateless users can **endorse** a plugin — one vote per account, toggleable. Downloads never need an account; endorsing does.
+
+Those figures reach the browse page through `index.json`: `build-index.yml` runs hourly, fetches fateless.ai's public stats document (`GET https://fateless.ai/v1/hub/stats`) and bakes each plugin's `stats: { downloads, endorsements }` into its entry. Browsing therefore never calls fateless.ai. The bake is fail-soft — if the document is unreachable the previous figures are carried forward and `stats_as_of` says how old they are — and a rebuild that would only move timestamps commits nothing. Your own endorsement shows in the dashboard immediately; everyone else sees it after the next bake.
+
 ## Publishing a plugin
 
 The easiest way to publish is from the dashboard's **Publish** page. It handles everything — authenticating with GitHub via Device Flow, forking this repo, writing files to the correct location, and opening a pull request — so you never need to touch git.

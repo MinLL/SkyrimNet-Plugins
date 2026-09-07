@@ -20,6 +20,11 @@
 // build-index.yml include both moderation files, so any edit to them
 // runs this script and refreshes the index.
 //
+// Popularity (`stats`: download and endorsement counts) is baked the same
+// way, from fateless.ai's public stats document, on the hourly cron in
+// build-index.yml — see "Popularity stats" below for the fail-soft rule and
+// the no-op guard that keeps a quiet hour from committing anything.
+//
 // Zero external dependencies — only Node built-ins.
 
 import fs from "node:fs";
@@ -45,6 +50,18 @@ const INDEX_SCHEMA_VERSION = 2;
 // many same-version pushes.
 const HISTORY_CAP = 20;
 const HISTORY_COMMIT_SCAN_LIMIT = 200;
+
+// Popularity stats source. fateless.ai is the hub's authenticated backing and
+// the only thing that observes an install or an endorsement (this repo is
+// static). The document is public and edge-cached; the URL is overridable so
+// the tests can point at a local server, and the literal `none` skips the
+// fetch entirely (offline runs, tests that exercise the fallback). The
+// timeout is generous for a CDN read and short enough that a wedged upstream
+// cannot eat the workflow's 10-minute budget.
+const STATS_URL_DEFAULT = "https://fateless.ai/v1/hub/stats";
+const STATS_URL = process.env.SKYRIMNET_HUB_STATS_URL || STATS_URL_DEFAULT;
+const STATS_DISABLED = STATS_URL.trim().toLowerCase() === "none";
+const STATS_TIMEOUT_MS = 15_000;
 
 // ----- Helpers ---------------------------------------------------------------
 
@@ -109,6 +126,159 @@ function pluginHistory(relPath) {
   }
 
   return history;
+}
+
+// ----- Popularity stats ------------------------------------------------------
+//
+// Download and endorsement counts live on fateless.ai; they reach the browse
+// page by being baked into each entry here as an additive `stats` object,
+// plus a top-level `stats_as_of`. Additive within schema v2: the engine and
+// the dashboard read rows by key and ignore unknown ones — the same precedent
+// as `contents.knowledge`. No schema_version bump.
+//
+// Fail SOFT, deliberately the opposite of the moderation files below. This
+// script runs on every plugin merge as well as on the hourly cron, so a
+// fateless outage going red here would block index rebuilds for every
+// submission; and zeroing the counts would make every plugin look abandoned
+// for an hour. The previous index.json on disk is the fallback: each entry's
+// stats carry forward by plugin_id and stats_as_of keeps its previous value,
+// so a reader can still tell the figures are stale. A plugin absent from the
+// previous index (published since the last successful bake) simply gets no
+// `stats` key until the next successful fetch — consumers treat absence as
+// "unknown", never as zero.
+
+function nonNegativeInt(value) {
+  return Number.isInteger(value) && value >= 0 ? value : 0;
+}
+
+function statsPair(raw) {
+  return {
+    downloads: nonNegativeInt(raw?.downloads),
+    endorsements: nonNegativeInt(raw?.endorsements),
+  };
+}
+
+/**
+ * The live stats document, reduced to Map<plugin_id, {downloads, endorsements}>
+ * plus its generated_at, or null on ANY failure (the caller falls back).
+ * Keys are case-folded on the way in: plugin_id is lowercase by contract on
+ * both sides, and a stray uppercase key must not orphan a plugin's counts.
+ */
+async function fetchStats() {
+  if (STATS_DISABLED) {
+    console.error("stats: SKYRIMNET_HUB_STATS_URL=none — skipping the fetch");
+    return null;
+  }
+  let res;
+  try {
+    res = await fetch(STATS_URL, {
+      headers: { accept: "application/json", "user-agent": "skyrimnet-plugins build-index" },
+      signal: AbortSignal.timeout(STATS_TIMEOUT_MS),
+    });
+  } catch (e) {
+    console.error(`stats: fetch of ${STATS_URL} failed (${e.message}) — carrying previous stats forward`);
+    return null;
+  }
+  if (!res.ok) {
+    console.error(`stats: ${STATS_URL} answered HTTP ${res.status} — carrying previous stats forward`);
+    return null;
+  }
+  let doc;
+  try {
+    doc = await res.json();
+  } catch (e) {
+    console.error(`stats: response is not JSON (${e.message}) — carrying previous stats forward`);
+    return null;
+  }
+  if (!doc || typeof doc !== "object" || !doc.plugins || typeof doc.plugins !== "object") {
+    console.error("stats: document has no plugins map — carrying previous stats forward");
+    return null;
+  }
+  const byId = new Map();
+  for (const [id, raw] of Object.entries(doc.plugins)) {
+    if (!raw || typeof raw !== "object") continue;
+    byId.set(id.toLowerCase(), statsPair(raw));
+  }
+  // The document's own timestamp is the honest "as of"; fall back to the
+  // fetch time only when it is missing or unparseable (the data IS current
+  // at that moment — the timestamp is ours, the figures are theirs).
+  const generatedAt =
+    typeof doc.generated_at === "string" && !Number.isNaN(Date.parse(doc.generated_at))
+      ? doc.generated_at
+      : new Date().toISOString();
+  return { generatedAt, byId };
+}
+
+/**
+ * The index.json already on disk, parsed, or null. Serves two purposes: the
+ * stats fallback above, and the no-op guard at the bottom of the file.
+ */
+function readPreviousIndex() {
+  if (!fs.existsSync(INDEX_PATH)) return null;
+  try {
+    const prev = JSON.parse(fs.readFileSync(INDEX_PATH, "utf8"));
+    return prev && typeof prev === "object" && Array.isArray(prev.plugins) ? prev : null;
+  } catch {
+    return null;
+  }
+}
+
+/** Map<plugin_id, stats> carried by a previous index, plus its stats_as_of. */
+function previousStats(prev) {
+  const byId = new Map();
+  if (!prev) return { asOf: null, byId };
+  for (const p of prev.plugins) {
+    if (p && typeof p.plugin_id === "string" && p.stats && typeof p.stats === "object") {
+      byId.set(p.plugin_id, statsPair(p.stats));
+    }
+  }
+  return { asOf: typeof prev.stats_as_of === "string" ? prev.stats_as_of : null, byId };
+}
+
+/**
+ * Attach `stats` to every entry. Returns the stats_as_of to write.
+ *
+ * Live document: every entry gets a stats object — zeros for ids the
+ * document does not know, which is the truthful figure for a plugin nobody
+ * has installed or endorsed yet. Fallback: only entries the previous index
+ * knew get one (see the section comment).
+ */
+async function applyStats(entries, prev) {
+  const live = await fetchStats();
+  if (live) {
+    for (const entry of entries) {
+      entry.stats = live.byId.get(entry.plugin_id) ?? { downloads: 0, endorsements: 0 };
+    }
+    console.log(`Stats: live from ${STATS_URL} (${live.byId.size} known ids, as of ${live.generatedAt})`);
+    return live.generatedAt;
+  }
+  const carried = previousStats(prev);
+  let count = 0;
+  for (const entry of entries) {
+    const stats = carried.byId.get(entry.plugin_id);
+    if (stats) {
+      entry.stats = stats;
+      count++;
+    }
+  }
+  console.log(
+    carried.byId.size > 0
+      ? `Stats: unavailable — carried forward for ${count} entries (as of ${carried.asOf ?? "unknown"})`
+      : "Stats: unavailable and nothing to carry forward — entries have no stats",
+  );
+  return carried.asOf;
+}
+
+/**
+ * The index minus the two timestamps that change on every run. Used by the
+ * no-op guard: on the hourly cron nothing material usually changes, and a
+ * timestamp-only rewrite would turn into a bot commit every hour — the
+ * workflow's "no diff, no push" step can only stay cheap if this script
+ * leaves an unchanged index alone.
+ */
+function materialContent(index) {
+  const { generated_at: _g, stats_as_of: _s, ...rest } = index;
+  return JSON.stringify(rest);
 }
 
 function countFiles(dir) {
@@ -302,13 +472,27 @@ if (!fs.existsSync(PLUGINS_DIR)) {
 // Sort by last_updated descending (newest first)
 plugins.sort((a, b) => b.last_updated.localeCompare(a.last_updated));
 
+// ----- Popularity stats ------------------------------------------------------
+
+const previousIndex = readPreviousIndex();
+const statsAsOf = await applyStats(plugins, previousIndex);
+
 // ----- Write index -----------------------------------------------------------
 
 const index = {
   schema_version: INDEX_SCHEMA_VERSION,
   generated_at: new Date().toISOString(),
+  stats_as_of: statsAsOf,
   plugins,
 };
 
-fs.writeFileSync(INDEX_PATH, JSON.stringify(index, null, 2) + "\n");
-console.log(`\nWrote index.json: ${plugins.length} plugins`);
+// No-op guard (see materialContent). When only the timestamps would move,
+// keep the file byte-for-byte: generated_at then reads as "the last rebuild
+// that changed anything" and stats_as_of as "the stats document that last
+// changed a figure", both of which are the honest answer.
+if (previousIndex && materialContent(previousIndex) === materialContent(index)) {
+  console.log(`\nindex.json unchanged (timestamps aside): ${plugins.length} plugins — left as is`);
+} else {
+  fs.writeFileSync(INDEX_PATH, JSON.stringify(index, null, 2) + "\n");
+  console.log(`\nWrote index.json: ${plugins.length} plugins`);
+}

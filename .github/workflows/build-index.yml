@@ -10,6 +10,17 @@ name: Build plugin index
 #   - push to main when plugins/** or hidden.json changes — catches
 #     direct admin edits via the GitHub web UI.
 #   - workflow_dispatch for manual rebuilds.
+#   - hourly schedule, for the popularity stats bake: download and
+#     endorsement counts live on fateless.ai, and build-index.mjs folds
+#     its public stats document into each entry's `stats`. Nothing in this
+#     repo changes when a plugin is installed or endorsed, so only a clock
+#     can refresh those figures. A quiet hour costs nothing: the script
+#     leaves an index whose only difference would be timestamps untouched,
+#     and the "no diff, no push" step below then exits without a commit.
+#     Off the hour (:17) so the run does not queue behind everyone else's
+#     top-of-the-hour crons. Caveat: GitHub disables scheduled workflows
+#     after 60 days without repository activity — a merge or a
+#     workflow_dispatch re-arms it.
 #
 # Submission merges are performed by the hub-reviewer App from the private
 # skyrimnet-ops repo (hub-review.yml there), with an App installation token.
@@ -30,6 +41,8 @@ on:
       - 'plugins/**'
       - 'hidden.json'
       - 'curated.json'
+  schedule:
+    - cron: "17 * * * *"
   workflow_dispatch:
 
 permissions:
