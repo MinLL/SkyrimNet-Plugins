@@ -205,7 +205,7 @@
           "additionalProperties": false,
           "description": "Popularity, baked hourly by build-index.yml from fateless.ai's public stats document (GET https://fateless.ai/v1/hub/stats), keyed by plugin_id. `downloads` counts completed installs reported by the in-game installer's anonymous ping (install, update and rollback each count once); `endorsements` counts signed-in fateless users who currently endorse the plugin. Zeros are truthful (nothing counted yet). ABSENT means unknown, never zero: stats are omitted only when the fetch failed and the previous index had nothing to carry forward for this plugin — consumers hide the figures rather than showing 0. Listings carry the object too (installs are always 0; endorsements are real). Additive within schema v2.",
           "properties": {
-            "downloads": { "type": "integer", "minimum": 0 },
+            "downloads": { "type": "integer", "minimum": 0, "description": "Downloads resolved through fateless.ai. For listings, which have no files, this counts click-outs to external_url." },
             "endorsements": { "type": "integer", "minimum": 0 }
           }
         },
