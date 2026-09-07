@@ -5,12 +5,18 @@
 // multi-commit plugin histories and run the real script against them. The
 // emitted index is validated against schemas/index.schema.json — the same
 // contract the dashboard and the C++ installer read.
+//
+// The popularity `stats` bake is exercised against a throwaway local HTTP
+// server standing in for fateless.ai's stats document. Every run here pins
+// SKYRIMNET_HUB_STATS_URL (default `none`): the script must never reach the
+// real fateless.ai from a test.
 
 import test from "node:test";
 import assert from "node:assert/strict";
 import fs from "node:fs";
+import http from "node:http";
 import path from "node:path";
-import { execFileSync, spawnSync } from "node:child_process";
+import { execFileSync, spawn, spawnSync } from "node:child_process";
 import { createRequire } from "node:module";
 
 import { BUILD_INDEX_SCRIPT, REPO_ROOT, makeTempDir, rmDir, writeFile } from "./helpers/harness.mjs";
@@ -81,11 +87,66 @@ function bundleManifest(overrides = {}) {
   };
 }
 
-function runBuildIndex(repo) {
-  const proc = spawnSync(process.execPath, [BUILD_INDEX_SCRIPT], { cwd: repo, encoding: "utf8" });
-  assert.equal(proc.status, 0, `build-index failed:\n${proc.stdout}\n${proc.stderr}`);
-  const index = JSON.parse(fs.readFileSync(path.join(repo, "index.json"), "utf8"));
-  return { index, stdout: proc.stdout };
+function buildIndexSpawnOptions(repo, statsUrl) {
+  return { cwd: repo, encoding: "utf8", env: { ...process.env, SKYRIMNET_HUB_STATS_URL: statsUrl } };
+}
+
+function collectBuildIndex(repo, { status, stdout, stderr }) {
+  assert.equal(status, 0, `build-index failed:\n${stdout}\n${stderr}`);
+  const raw = fs.readFileSync(path.join(repo, "index.json"), "utf8");
+  return { index: JSON.parse(raw), raw, stdout, stderr };
+}
+
+function runBuildIndex(repo, { statsUrl = "none" } = {}) {
+  const proc = spawnSync(process.execPath, [BUILD_INDEX_SCRIPT], buildIndexSpawnOptions(repo, statsUrl));
+  return collectBuildIndex(repo, proc);
+}
+
+/**
+ * The stats tests need this one: the stand-in stats server runs on THIS
+ * process's event loop, and spawnSync would block that loop for the whole
+ * run — the child's fetch would sit unanswered until its timeout fired.
+ */
+function runBuildIndexAsync(repo, { statsUrl = "none" } = {}) {
+  return new Promise((resolve, reject) => {
+    const proc = spawn(process.execPath, [BUILD_INDEX_SCRIPT], buildIndexSpawnOptions(repo, statsUrl));
+    let stdout = "";
+    let stderr = "";
+    proc.stdout.on("data", (chunk) => { stdout += chunk; });
+    proc.stderr.on("data", (chunk) => { stderr += chunk; });
+    proc.on("error", reject);
+    proc.on("close", (status) => {
+      try {
+        resolve(collectBuildIndex(repo, { status, stdout, stderr }));
+      } catch (e) {
+        reject(e);
+      }
+    });
+  });
+}
+
+/**
+ * A local stand-in for GET https://fateless.ai/v1/hub/stats. `respond` is
+ * called per request and returns { status, body } (body is JSON-encoded
+ * unless it is already a string). Resolves to the URL to hand the script.
+ */
+async function withStatsServer(respond, fn) {
+  const server = http.createServer((req, res) => {
+    const { status = 200, body = {} } = respond(req);
+    const text = typeof body === "string" ? body : JSON.stringify(body);
+    res.writeHead(status, { "content-type": "application/json" });
+    res.end(text);
+  });
+  await new Promise((resolve) => server.listen(0, "127.0.0.1", resolve));
+  try {
+    return await fn(`http://127.0.0.1:${server.address().port}/v1/hub/stats`);
+  } finally {
+    await new Promise((resolve) => server.close(resolve));
+  }
+}
+
+function statsDoc(plugins, generatedAt = "2026-09-07T10:00:00.000Z") {
+  return { v: 1, generated_at: generatedAt, plugins };
 }
 
 // ----- Tests ---------------------------------------------------------------
@@ -310,6 +371,164 @@ test("a manifest that is unparseable at an older commit does not break history",
     assert.equal(entry.history.length, 1);
     assert.equal(entry.history[0].version, "2.0.0");
     assert.equal(entry.history[0].commit, good);
+  } finally {
+    rmDir(repo);
+  }
+});
+
+// ----- Popularity stats ----------------------------------------------------
+
+function twoPluginRepo() {
+  const repo = initRepo();
+  writeFile(repo, "plugins/bob/pack/manifest.json", JSON.stringify(bundleManifest(), null, 2));
+  writeFile(repo, "plugins/bob/pack/prompts/a.prompt", "x\n");
+  writeFile(
+    repo,
+    "plugins/bob/other/manifest.json",
+    JSON.stringify(bundleManifest({ id: "bob.other", title: "Bob's Other Pack" }), null, 2),
+  );
+  writeFile(repo, "plugins/bob/other/prompts/b.prompt", "y\n");
+  commitAll(repo, "add two packs");
+  return repo;
+}
+
+function entryById(index, pluginId) {
+  const entry = index.plugins.find((p) => p.plugin_id === pluginId);
+  assert.ok(entry, `no entry for ${pluginId}`);
+  return entry;
+}
+
+test("stats from the live document are attached to every entry; unknown ids get zeros; bad values clamp", async () => {
+  const repo = twoPluginRepo();
+  try {
+    const { index } = await withStatsServer(
+      () => ({
+        body: statsDoc({
+          // Uppercase key on purpose: plugin_id is lowercase by contract, and
+          // a stray uppercase key must still land on its plugin.
+          "BOB.PACK": { downloads: 12, endorsements: 3 },
+          // bob.other is deliberately absent from the document.
+          "someone.else": { downloads: 99, endorsements: 99 },
+        }),
+      }),
+      (url) => runBuildIndexAsync(repo, { statsUrl: url }),
+    );
+    assertValidIndex(index);
+
+    assert.equal(index.schema_version, 2, "stats are additive within v2");
+    assert.equal(index.stats_as_of, "2026-09-07T10:00:00.000Z");
+    assert.deepEqual(entryById(index, "bob.pack").stats, { downloads: 12, endorsements: 3 });
+    assert.deepEqual(entryById(index, "bob.other").stats, { downloads: 0, endorsements: 0 });
+
+    // Values the document has no business sending are clamped, never trusted.
+    const { index: clamped } = await withStatsServer(
+      () => ({
+        body: statsDoc({
+          "bob.pack": { downloads: -4, endorsements: "7" },
+          "bob.other": { downloads: 2.5, endorsements: 1 },
+        }),
+      }),
+      (url) => runBuildIndexAsync(repo, { statsUrl: url }),
+    );
+    assertValidIndex(clamped);
+    assert.deepEqual(entryById(clamped, "bob.pack").stats, { downloads: 0, endorsements: 0 });
+    assert.deepEqual(entryById(clamped, "bob.other").stats, { downloads: 0, endorsements: 1 });
+  } finally {
+    rmDir(repo);
+  }
+});
+
+test("a failed stats fetch carries the previous index's stats forward and keeps stats_as_of", async () => {
+  const repo = twoPluginRepo();
+  try {
+    const { index: first } = await withStatsServer(
+      () => ({ body: statsDoc({ "bob.pack": { downloads: 5, endorsements: 2 } }) }),
+      (url) => runBuildIndexAsync(repo, { statsUrl: url }),
+    );
+    assertValidIndex(first);
+    assert.equal(first.stats_as_of, "2026-09-07T10:00:00.000Z");
+
+    // A plugin published since the last successful bake: the previous index
+    // knows nothing about it, so it must come out with no stats at all.
+    writeFile(
+      repo,
+      "plugins/bob/newer/manifest.json",
+      JSON.stringify(bundleManifest({ id: "bob.newer", title: "Bob's Newer Pack" }), null, 2),
+    );
+    writeFile(repo, "plugins/bob/newer/prompts/c.prompt", "z\n");
+    commitAll(repo, "add a third pack");
+
+    // Each case pins the reason the script logged, so a fetch that silently
+    // timed out (which also carries forward) cannot pass for the intended one.
+    for (const failure of [
+      { name: "HTTP 503", respond: () => ({ status: 503, body: { error: "down" } }), logged: /answered HTTP 503/ },
+      { name: "not JSON", respond: () => ({ body: "<html>maintenance</html>" }), logged: /not JSON/ },
+      { name: "no plugins map", respond: () => ({ body: { v: 1 } }), logged: /no plugins map/ },
+    ]) {
+      const { index, stderr } = await withStatsServer(failure.respond, (url) =>
+        runBuildIndexAsync(repo, { statsUrl: url }),
+      );
+      assertValidIndex(index);
+      assert.equal(index.plugins.length, 3, failure.name);
+      assert.deepEqual(entryById(index, "bob.pack").stats, { downloads: 5, endorsements: 2 }, failure.name);
+      assert.deepEqual(entryById(index, "bob.other").stats, { downloads: 0, endorsements: 0 }, failure.name);
+      assert.ok(!("stats" in entryById(index, "bob.newer")), `${failure.name}: unknown plugin must not get stats`);
+      assert.equal(index.stats_as_of, "2026-09-07T10:00:00.000Z", `${failure.name}: stats_as_of is kept`);
+      assert.match(stderr, failure.logged, failure.name);
+      assert.match(stderr, /carrying previous stats forward/, failure.name);
+    }
+
+    // The script never reaches out when told not to, and still carries forward.
+    const { index: offline, stderr } = runBuildIndex(repo, { statsUrl: "none" });
+    assertValidIndex(offline);
+    assert.deepEqual(entryById(offline, "bob.pack").stats, { downloads: 5, endorsements: 2 });
+    assert.match(stderr, /skipping the fetch/);
+  } finally {
+    rmDir(repo);
+  }
+});
+
+test("with no live document and nothing to carry forward, stats are omitted and stats_as_of is null", () => {
+  const repo = twoPluginRepo();
+  try {
+    const { index } = runBuildIndex(repo, { statsUrl: "none" });
+    assertValidIndex(index);
+    assert.equal(index.stats_as_of, null);
+    for (const entry of index.plugins) {
+      assert.ok(!("stats" in entry), `${entry.plugin_id} must not carry stats`);
+    }
+  } finally {
+    rmDir(repo);
+  }
+});
+
+test("a rebuild that would only move the timestamps leaves index.json untouched", async () => {
+  const repo = twoPluginRepo();
+  try {
+    const doc = statsDoc({ "bob.pack": { downloads: 5, endorsements: 2 } });
+    const first = await withStatsServer(() => ({ body: doc }), (url) => runBuildIndexAsync(repo, { statsUrl: url }));
+    assertValidIndex(first.index);
+
+    // Same figures, later document, later wall clock: byte-identical output
+    // — this is what keeps the hourly cron from committing every hour.
+    await new Promise((resolve) => setTimeout(resolve, 20));
+    const same = await withStatsServer(
+      () => ({ body: statsDoc(doc.plugins, "2026-09-07T11:00:00.000Z") }),
+      (url) => runBuildIndexAsync(repo, { statsUrl: url }),
+    );
+    assert.equal(same.raw, first.raw);
+    assert.match(same.stdout, /left as is/);
+
+    // One figure moves: the file is rewritten and both timestamps advance.
+    const changed = await withStatsServer(
+      () => ({ body: statsDoc({ "bob.pack": { downloads: 6, endorsements: 2 } }, "2026-09-07T12:00:00.000Z") }),
+      (url) => runBuildIndexAsync(repo, { statsUrl: url }),
+    );
+    assertValidIndex(changed.index);
+    assert.notEqual(changed.raw, first.raw);
+    assert.equal(changed.index.stats_as_of, "2026-09-07T12:00:00.000Z");
+    assert.ok(Date.parse(changed.index.generated_at) > Date.parse(first.index.generated_at));
+    assert.deepEqual(entryById(changed.index, "bob.pack").stats, { downloads: 6, endorsements: 2 });
   } finally {
     rmDir(repo);
   }

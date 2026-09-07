@@ -10,12 +10,17 @@
     "schema_version": {
       "type": "integer",
       "const": 2,
-      "description": "Bump when the entry shape changes in a breaking way. Dashboard and installer refuse unknown versions. v2 is the content-store format: adds plugin_id and history, and renames skyrimnet_version to min_skyrimnet_version. The per-plugin `contents.knowledge` count arrived later within v2 — the count map is read tolerantly on both sides, so adding a key is additive and does not warrant a bump."
+      "description": "Bump when the entry shape changes in a breaking way. Dashboard and installer refuse unknown versions. v2 is the content-store format: adds plugin_id and history, and renames skyrimnet_version to min_skyrimnet_version. The per-plugin `contents.knowledge` count arrived later within v2 — the count map is read tolerantly on both sides, so adding a key is additive and does not warrant a bump. The per-plugin `stats` object and the top-level `stats_as_of` (popularity, baked hourly from fateless.ai) arrived later still, on the same precedent: both are optional, consumers ignore unknown keys, and a client that predates them keeps working."
     },
     "generated_at": {
       "type": ["string", "null"],
       "format": "date-time",
-      "description": "ISO 8601 timestamp of the last rebuild. Null before the first run."
+      "description": "ISO 8601 timestamp of the last rebuild that changed anything. Null before the first run. Not advanced by a rebuild whose only difference would be timestamps (the hourly stats bake on a quiet hour), so that such a run commits nothing."
+    },
+    "stats_as_of": {
+      "type": ["string", "null"],
+      "format": "date-time",
+      "description": "generated_at of the fateless.ai stats document the per-plugin `stats` were last taken from. Null when no stats have ever been baked. When the stats fetch fails, the previous value is kept alongside the carried-forward figures, so a reader can tell they are stale. Like generated_at, it does not advance when no figure changed."
     },
     "plugins": {
       "type": "array",
@@ -193,6 +198,16 @@
         "curated": {
           "type": "boolean",
           "description": "Present and true only for curated plugins (from curated.json). Absent otherwise."
+        },
+        "stats": {
+          "type": "object",
+          "required": ["downloads", "endorsements"],
+          "additionalProperties": false,
+          "description": "Popularity, baked hourly by build-index.yml from fateless.ai's public stats document (GET https://fateless.ai/v1/hub/stats), keyed by plugin_id. `downloads` counts completed installs reported by the in-game installer's anonymous ping (install, update and rollback each count once); `endorsements` counts signed-in fateless users who currently endorse the plugin. Zeros are truthful (nothing counted yet). ABSENT means unknown, never zero: stats are omitted only when the fetch failed and the previous index had nothing to carry forward for this plugin — consumers hide the figures rather than showing 0. Listings carry the object too (installs are always 0; endorsements are real). Additive within schema v2.",
+          "properties": {
+            "downloads": { "type": "integer", "minimum": 0 },
+            "endorsements": { "type": "integer", "minimum": 0 }
+          }
         },
         "first_published": {
           "type": "string",
