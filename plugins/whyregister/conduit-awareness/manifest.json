@@ -1,0 +1,19 @@
+{
+  "id": "whyregister.conduit-awareness",
+  "type": "bundle",
+  "title": "Conduit Awareness",
+  "tagline": "Conduit Awareness in Skyrimnet. Prompt plug triggers",
+  "description": "SkyrimNet — Conduit Awareness\n=============================\n\nRequires Conduit on Nexus\n\nMakes Conduit's short-term weapon infusions visible to SkyrimNet NPCs.\n\nWhen you force a spell into a held weapon, nearby characters can react to the\nlive charge (heat, frost, sparks, judgement-light, or raw arcane — from the\nactive Conduit MainEff). Every Conduit cast is also written into the persistent\nevent log so dialogue and memory can refer to it later. Optional rare narration\nfires so the moment can land cinematically without spamming every cast in combat.\n\nREQUIREMENTS\nSkyrimNet\nConduit - Short-term Weapon Infusions (Conduit.esp)\n\nINSTALL\nInstall as a normal mod (Vortex / MO2) or merge the SKSE folder into Data.\nRestart the game (or reload SkyrimNet prompts/triggers).\nIf you have an older single trigger named conduit_weapon_cast_trigger, disable it.\n\nCONTENTS\ncharacter_bio/0196_conduit_weapon.prompt\ntriggers/conduit_weapon_cast_persistent.yaml (100%)\ntriggers/conduit_weapon_cast_narration.yaml (20%, 120s)\n\nNOTES\nDoes not change Conduit gameplay — SkyrimNet files only.\nElement flavor comes from the bio prompt (MainEff), not the cast trigger.\nCompatible with Spellsiphon Awareness; wording is kept distinct(conducted spell vs siphoned element).",
+  "author": "whyregister",
+  "tags": [
+    "conduit",
+    "spells",
+    "actions",
+    "prompts"
+  ],
+  "nsfw": false,
+  "icon": "sparkles",
+  "mods": [],
+  "version": "1.0.0",
+  "min_skyrimnet_version": "0.25.0"
+}

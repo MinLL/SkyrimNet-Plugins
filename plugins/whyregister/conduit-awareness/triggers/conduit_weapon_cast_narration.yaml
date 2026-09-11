@@ -1,0 +1,24 @@
+name: conduit_weapon_cast_narration
+description: >-
+  Occasional nearby narration when the player conducts a spell into a weapon.
+  Kept rare so combat casting does not spam the scene.
+eventCriteria:
+  eventType: spell_cast
+  schemaConditions:
+    - fieldPath: spell_editor_id
+      operator: equals
+      value: CSTE__Conduit
+audience: nearby_npcs
+response:
+  type: direct_narration
+  content: >-
+    {{ player.name }} grips a weapon in one hand and a spell in the other,
+    then forces the magic down the steel — the weapon takes on a short-lived
+    conducted charge, overlaying whatever enchantment it already carries.
+    Keep it to one tight beat. Describe the act of conduction, not a lecture.
+    Do not invent which element it is unless the scene already makes it obvious.
+enabled: true
+interrupt: false
+probability: 0.2
+cooldownSeconds: 120
+priority: 8
