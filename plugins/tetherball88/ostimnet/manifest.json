@@ -1,0 +1,18 @@
+{
+  "id": "tetherball88.ostimnet",
+  "type": "listing",
+  "title": "OStimNet",
+  "tagline": "Intimate encounter AI framework integration for OStim and SkyrimNet.",
+  "description": "# 🔮 SkyrimNet-OStim Integration 🔥\n\n## Overview\n\nThis integration mod creates a powerful bridge between **SkyrimNet** AI framework and **OStim** adult framework for Skyrim, enabling natural language control over intimate encounters. Simply chat with NPCs and the AI will intelligently interpret your dialogue to initiate, modify, or end intimate scenes! 🗣️💬\n\n> ⚠️ **When you see Skyrim message boxes NEVER use mouse to answer them, it will make sometimes your camera to fly away, it is known issue without known solution. Use keyboard hotkeys to select confirmation option.**\n\n> 📝 **NOTE**: This integration does NOT alter the main SkyrimNet prompt to make NPCs more sexually forward or explicit. NPCs will maintain their established personalities and relationship boundaries. The mod simply adds capabilities for the AI to understand and interact with OStim functionality when appropriate within character.\n\n## ✨ Features\n\n- **📚 Available Actions**\n- **⚙️ Configuration Settings**\n- **🎭 Intents, Roles, Scenes & Threads**\n- **⏳ Thread Phases**\n- **👀 Spectators System**\n- **🧠 AI Encounter Evaluations**\n- **📝 Scene Descriptions**\n- **💬 Confirmation Messages**\n- **💦 OCum Integration** - Enhances AI awareness with fluid overlays and generates more immersive climax narratives.",
+  "author": "tetherball88",
+  "tags": [
+    "ostim",
+    "animation",
+    "adult"
+  ],
+  "nsfw": true,
+  "icon": "heart",
+  "mods": [],
+  "external_url": "https://github.com/tetherball88/OStimNet/releases/latest",
+  "version": "2.4.2"
+}
