@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-09-11T02:36:45.018Z",
-  "stats_as_of": "2026-09-11T02:36:44.893Z",
+  "generated_at": "2026-09-11T14:29:00.252Z",
+  "stats_as_of": "2026-09-11T14:29:00.169Z",
   "plugins": [
     {
       "id": "plugins/min/nords-are-jerks",
@@ -136,7 +136,7 @@
         "knowledge": 0
       },
       "stats": {
-        "downloads": 0,
+        "downloads": 1,
         "endorsements": 0
       }
     },
@@ -1899,7 +1899,7 @@
         "knowledge": 0
       },
       "stats": {
-        "downloads": 0,
+        "downloads": 1,
         "endorsements": 0
       }
     },
@@ -3548,7 +3548,7 @@
         "knowledge": 0
       },
       "stats": {
-        "downloads": 0,
+        "downloads": 1,
         "endorsements": 0
       }
     },
@@ -6988,7 +6988,7 @@
         "knowledge": 0
       },
       "stats": {
-        "downloads": 0,
+        "downloads": 1,
         "endorsements": 0
       }
     },
@@ -9371,7 +9371,7 @@
       "last_updated": "2026-08-19T02:42:32Z",
       "external_url": "https://fateless.ai",
       "stats": {
-        "downloads": 0,
+        "downloads": 1,
         "endorsements": 0
       }
     }
