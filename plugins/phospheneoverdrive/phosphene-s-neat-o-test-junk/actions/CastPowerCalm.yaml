@@ -1,0 +1,31 @@
+name: CastPowerCalm
+description: Speaker calms down. ( https://www.nexusmods.com/skyrimspecialedition/mods/112568 )
+questEditorId: skynet_MainController
+scriptName: skynet_Library
+executionFunctionName: CastSpell_Execute
+parameterMapping:
+  - type: static
+    value: "\"5CE6809864398A72\""
+    name: akSource
+    description: Static Actor parameter
+  - type: speaker
+    name: akTarget
+    description: Speaker Actor parameter (triggering entity)
+  - type: static
+    value: "\"0xFE14B802\""
+    name: sHexFormID
+    description: Static string parameter
+enabled: false
+eligibilityRules:
+  - conditions:
+      - decoratorName: is_hostile_to_actor
+        arguments:
+          - player
+          - currentActor
+        comparisonOperator: ==
+        expectedValue: true
+      - decoratorName: is_plugin_loaded
+        arguments:
+          - Calm Anyone.esp
+        comparisonOperator: ==
+        expectedValue: true

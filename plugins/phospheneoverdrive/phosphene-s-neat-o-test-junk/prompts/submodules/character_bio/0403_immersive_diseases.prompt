@@ -1,0 +1,56 @@
+{# render_mode {% if #}
+{# Immersive Diseases Character Description Submodule
+This template adds disease descriptions to character bios when they are
+suffering from diseases added by Immersive Diseases mod.
+Only runs if Immersive Diseases Distributed.esp is loaded.
+https://www.nexusmods.com/skyrimspecialedition/mods/158221
+(Place in `...\SKSE\Plugins\SkyrimNet\prompts\submodules\character_bio`)
+Each commented out physical descriptions are currently disabled as I've never seen them in game yet...
+#}
+{% set modLoaded = is_plugin_loaded("Immersive Diseases Distributed.esp") %}
+    {# Only check for diseases if the mod is loaded #}
+{% if modLoaded %}
+    {% set actor = decnpc(actorUUID) %}
+    {% set hasAtaxia = has_magic_effect(actorUUID, "HSFAtaxiaEffect") %}
+    {% set hasBoneBreak = has_magic_effect(actorUUID, "HSFBoneBreakFeverEffect") %}
+    {% set hasBrainrot = has_magic_effect(actorUUID, "HSFBrainrotEffect") %}
+    {% set hasRattles = has_magic_effect(actorUUID, "HSFRattlesEffect") %}
+    {% set hasRockjoint = has_magic_effect(actorUUID, "HSFRockjointEffect") %}
+    {% set hasWitbane = has_magic_effect(actorUUID, "HSFWitbaneEffect") %}
+
+    {# Determine if we should show the heading (only in full bio contexts) #}
+    {% set showHeading = render_mode == "transform" or render_mode == "full" or render_mode == "thoughts" or render_mode == "dialogue_target" %}
+
+    {# Only output descriptions if the NPC actually has at least one disease #}
+    {% if (hasAtaxia or hasBoneBreak or hasBrainrot or hasRattles or hasRockjoint or hasWitbane) %}
+
+        {% if showHeading %}
+## Afflictions
+        {% endif %}
+
+        {% if hasAtaxia %}
+{{ actor.name }} is suffering from Ataxia. {{ actor.subjectivePronoun | capitalize }} has pale, mottled skin.
+ {# and one arm hangs loosely at {{ actor.possessivePronoun }} side, as if broken. #}
+        {% endif %}
+        {% if hasBoneBreak %}
+{{ actor.name }} is afflicted with Bone Break Fever. {{ actor.subjectivePronoun | capitalize }} has a reddish rash with visible scratch marks.
+ {# and holds {{ actor.possessivePronoun }} arms wrapped tightly around {{ actor.objectivePronoun }}self. #}
+        {% endif %}
+        {% if hasBrainrot %}
+{{ actor.name }} has contracted Brain Rot. {{ actor.possessivePronoun | capitalize }} flesh appears necrotic with patches of decaying skin.
+{# , and {{ actor.subjectivePronoun }} occasionally clutches {{ actor.possessivePronoun }} head in distress. #}
+        {% endif %}
+        {% if hasRattles %}
+{{ actor.name }} suffers from Rattles. {{ actor.subjectivePronoun | capitalize }} has a bumpy, uneven rash and is prone to uncontrollable coughing fits that shake {{ actor.possessivePronoun }} entire body.
+        {% endif %}
+        {% if hasRockjoint %}
+{{ actor.name }} is stricken with Rockjoint. {{ actor.possessivePronoun | capitalize }} skin shows visible veins with a slightly purple tint.
+{# , and {{ actor.objectivePronoun }} moves stiffly with both arms locked in crooked, painful-looking joints. #}
+        {% endif %}
+        {% if hasWitbane %}
+{{ actor.name }} has Witbane. {{ actor.subjectivePronoun | capitalize }} has bruises and patches of infected skin visible on {{ actor.possessivePronoun }} face.
+{# , and appears to suffer from a persistent, throbbing headache. #}
+        {% endif %}
+
+    {% endif %}
+{% endif %}

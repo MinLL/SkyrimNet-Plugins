@@ -1,0 +1,26 @@
+name: "PlayerPlayingInstrument"
+description: "Auto-generated trigger for equip"
+
+eventCriteria:
+  eventType: "equip"
+  schemaConditions:
+    - fieldPath: "item"
+      operator: "equals"
+      value: "Flute"
+    - fieldPath: "action"
+      operator: "equals"
+      value: "equipped"
+    - fieldPath: "actor"
+      operator: "equals"
+      value: "{{player.name}}"
+
+response:
+  type: "direct_narration"
+  content: "{{ event_json.actor }} plays music with {{ event_json.item }}."
+
+audience: "player"
+
+enabled: true
+probability: 1
+cooldownSeconds: 30
+priority: 1

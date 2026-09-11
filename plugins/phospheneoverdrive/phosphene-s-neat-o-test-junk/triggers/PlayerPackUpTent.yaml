@@ -1,0 +1,17 @@
+name: PlayerPackUpTent
+description: Player packs up tent
+eventCriteria:
+  eventType: container_changed
+  schemaConditions:
+    - fieldPath: from_container
+      operator: equals
+      value: World
+    - fieldPath: item
+      operator: equals
+      value: Tent
+audience: nearby_npcs
+response:
+  type: direct_narration
+  content: "{{player.name}} packed up tent & campsite."
+enabled: true
+cooldownSeconds: 30

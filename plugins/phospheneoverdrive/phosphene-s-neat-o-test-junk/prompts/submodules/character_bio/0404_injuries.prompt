@@ -1,0 +1,41 @@
+{# INJU Injury / Follower Death Chance mod - wound and bandage awareness #}
+{# https://www.nexusmods.com/skyrimspecialedition/mods/38043 #}
+{% if render_mode == "full" or render_mode == "thoughts" or render_mode == "transform" or render_mode == "dialogue_target" %}
+    {% set hasInjury = false %}
+    {% set npc_equipment = get_worn_equipment(actorUUID) %}
+    {% for slot, item in npc_equipment %}
+        {% if item.name %}
+            {% set itemNameLower = lower(item.name) %}
+            {% if replace(itemNameLower, "bandage", "") != itemNameLower %}
+                {% set hasInjury = true %}
+            {% endif %}
+        {% endif %}
+    {% endfor %}
+
+    {% if hasInjury %}
+        {% set actor = decnpc(actorUUID) %}
+        {% set gameDaysPassed = get_global_value("GameDaysPassed") %}
+        {% set injuredDate = get_global_value("Injured_date") %}
+        {% set injuredDuration = get_global_value("Injured_duration") %}
+        {% set hasRecoveryData = injuredDate > 0 and injuredDuration > 0 %}
+        {% if hasRecoveryData %}
+            {% set daysSinceInjury = gameDaysPassed - injuredDate %}
+            {% set recoveryProgress = daysSinceInjury / injuredDuration %}
+            {% if recoveryProgress > 1 %}{% set recoveryProgress = 1 %}{% endif %}
+            {% if recoveryProgress < 0 %}{% set recoveryProgress = 0 %}{% endif %}
+        {% endif %}
+
+    ## Wounds
+        {% if hasRecoveryData and recoveryProgress < 0.3 %}
+{{ actor.name }} is raw from a recent wound — wrapped in fresh bandages. {{ actor.subjectivePronoun | capitalize }} was brought down hard and is still struggling. Recovery will take time.
+        {% elif hasRecoveryData and recoveryProgress < 0.6 %}
+{{ actor.name }} bears the marks of a serious injury — bound in bandages. {{ actor.subjectivePronoun | capitalize }} is healing, but the wound is still tender and {{ actor.objectivePronoun }} movements carry a hint of stiffness.
+        {% elif hasRecoveryData and recoveryProgress < 0.9 %}
+{{ actor.name }} is on the mend — still wrapped in bandages, but they look cleaner now. {{ actor.subjectivePronoun | capitalize }} is mostly recovered, though the wound hasn't fully closed.
+        {% elif hasRecoveryData %}
+{{ actor.name }} is nearly healed — still bandaged, but {{ actor.subjectivePronoun }} moves without the wince {{ actor.objectivePronoun }} had before. Just a matter of time now.
+        {% else %}
+{{ actor.name }} is recovering from a wound — wrapped in bandages. {{ actor.subjectivePronoun | capitalize }} is on the mend but not yet fully recovered.
+        {% endif %}
+    {% endif %}
+{% endif %}

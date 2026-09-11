@@ -1,0 +1,32 @@
+{
+  "id": "phospheneoverdrive.phosphene-s-neat-o-test-junk",
+  "type": "bundle",
+  "title": "Phosphene's Neat-o Test Junk",
+  "tagline": "Bundle o' fun... for YOU!",
+  "description": "A few NPC bios, actions & and event for testing out beta 25's snazzy new plugin system. Neat!",
+  "author": "phospheneoverdrive",
+  "tags": [
+    "alpha-test",
+    "testing-plugin"
+  ],
+  "nsfw": false,
+  "icon": "customization",
+  "mods": [],
+  "version": "1.0.0",
+  "min_skyrimnet_version": "0.25.0",
+  "invocation": {
+    "purpose": "Causes NPC to cast [Power Calm](https://www.nexusmods.com/skyrimspecialedition/mods/112568) and make everyone chill out.",
+    "actions": [
+      {
+        "file": "actions/CastPowerCalm.yaml",
+        "source_mods": [
+          {
+            "name": "Power Calm",
+            "url": "https://www.nexusmods.com/skyrimspecialedition/mods/112568"
+          }
+        ]
+      }
+    ],
+    "attestation": "I attest that I tested these actions in-game and observed no save corruption, crashes, or quest breakage."
+  }
+}

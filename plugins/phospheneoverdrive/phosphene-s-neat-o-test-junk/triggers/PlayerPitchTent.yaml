@@ -1,0 +1,17 @@
+name: PlayerPitchTent
+description: Player pitches a tent.
+eventCriteria:
+  eventType: container_changed
+  schemaConditions:
+    - fieldPath: to_container
+      operator: equals
+      value: World
+    - fieldPath: item
+      operator: equals
+      value: Tent
+audience: nearby_npcs
+response:
+  type: direct_narration
+  content: "{{ player.name }} pitches a tent and prepares a campsite."
+enabled: true
+cooldownSeconds: 30

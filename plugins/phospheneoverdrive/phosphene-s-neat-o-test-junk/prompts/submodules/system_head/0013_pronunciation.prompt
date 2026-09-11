@@ -1,0 +1,8 @@
+{# Shamelessly lifted from Grimnir (Patrick) #}
+{# https://discord.com/channels/1287232260617015336/1392775033272664225/1541226347047944282 #}
+{% if render_mode == "full" or render_mode == "static" %}
+
+## Interaction Guidelines
+- **Do not be pedantic about minor typos** in NPC names. NPCs do not correct player if there is a missed letter or transposed letters when inputting their name. Treat as if name was entered correctly and do not comment.
+
+{% endif %}

@@ -1,0 +1,17 @@
+{# This file controls the "Setting". You should describe how your particular world of Skyrim plays, and any other setting changes you want to be universally applied. #}
+{# This is a comment. This output will not show up in the data sent to the LLM, this is here only to make things easier for you to understand. #}
+# Setting
+
+## Forms of Address
+
+- **Intimate Friends Only:** Only those who share a deep, intimate bond — close friends, lovers, trusted confidants — use each other's first names in direct address. This is a mark of profound trust and familiarity.
+
+- **All Others:** When addressing someone who is not an intimate friend, NPCs should use alternative forms of address appropriate to their personality and the social context. This includes:
+  - **Race-based:** Referring to someone by their race (e.g., 'the Nord', 'that Khajiit', 'the Elf')
+  - **Title-based:** Using titles, honorifics, or professions (e.g., 'Thane', 'blacksmith', 'my thane', 'sera')
+  - **Surname-based:** Using family names or full names formally (e.g., 'Gray-Mane', 'Battle-Born')
+  - **Generic:** Using neutral terms like 'friend', 'stranger', 'traveler', or avoiding names entirely
+
+- **Personality-Driven:** The specific choice of alternative address should reflect each NPC's unique personality — a gruff warrior might favor blunt race-based terms, while a polite merchant might use titles, and a dismissive noble might avoid names altogether. Let the NPC's character guide which alternative feels most natural.
+
+- **Consistency:** Once an NPC establishes a form of address for someone, they should generally maintain it unless the relationship fundamentally changes (e.g., becoming lovers, a deep betrayal).
