@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-09-11T00:59:52.163Z",
-  "stats_as_of": "2026-09-11T00:59:52.051Z",
+  "generated_at": "2026-09-11T01:36:10.464Z",
+  "stats_as_of": "2026-09-11T01:36:10.395Z",
   "plugins": [
     {
       "id": "plugins/min/nords-are-jerks",
@@ -34,7 +34,7 @@
       },
       "stats": {
         "downloads": 2,
-        "endorsements": 0
+        "endorsements": 1
       }
     },
     {
