@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-09-11T15:27:34.472Z",
-  "stats_as_of": "2026-09-11T15:27:34.354Z",
+  "generated_at": "2026-09-11T17:25:09.845Z",
+  "stats_as_of": "2026-09-11T17:25:09.730Z",
   "plugins": [
     {
       "id": "plugins/min/nords-are-jerks",
@@ -93,7 +93,7 @@
       "last_updated": "2026-08-20T09:09:54Z",
       "external_url": "https://github.com/zevck/S.T.F.U",
       "stats": {
-        "downloads": 4,
+        "downloads": 5,
         "endorsements": 0
       }
     },
@@ -9371,7 +9371,7 @@
       "last_updated": "2026-08-19T02:42:32Z",
       "external_url": "https://fateless.ai",
       "stats": {
-        "downloads": 1,
+        "downloads": 2,
         "endorsements": 0
       }
     }
