@@ -1,0 +1,19 @@
+{
+  "id": "johnsonjoe1.skyrimnet-messageless-immersion",
+  "type": "listing",
+  "title": "SkyrimNet Messageless Immersion",
+  "tagline": "Immersive player thoughts for game events, status changes, and supported mods.",
+  "description": "SkyrimNet Messageless Immersion is an SKSE plugin that turns game events,\nstatus changes, notifications, and events from supported mods into immersive\nSkyrimNet player thoughts.\n\nThis Hub entry links to the complete mod download. The full mod is required\nbecause it contains the native SKSE DLL, ESP, Papyrus scripts, configuration,\nand SkyrimNet trigger definitions.\n\nVersion 0.6.12 supports both the legacy SkyrimNet trigger layout used through\nbeta25 RC6 and the external content-plugin layout introduced in beta25 RC7.\n\nDownload and install the latest release with your mod manager.",
+  "author": "johnsonjoe1",
+  "tags": [
+    "immersion",
+    "player-thoughts",
+    "triggers",
+    "SKSE"
+  ],
+  "nsfw": true,
+  "icon": "package",
+  "mods": [],
+  "external_url": "https://github.com/johnsonjoe1/SkyrimNetMessagelessImmersion/releases",
+  "version": "0.6.12"
+}
