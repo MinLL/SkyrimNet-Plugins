@@ -60,4 +60,4 @@ NSFW plugins are allowed and live in a gated section of the dashboard (off by de
 
 ## License
 
-To be decided.
+Every plugin here is published under the [SkyrimNet Plugin License](LICENSE.md). Authors keep their copyright. The hub and SkyrimNet may distribute plugins with credit. Users may install, use, and modify them for their own game, but not share them. Fixed or extended versions may be published back to the hub, credited to the original author. Plugins are for SkyrimNet only. LICENSE.md opens with the plain-English summary the dashboard shows before you publish, followed by the license itself.
