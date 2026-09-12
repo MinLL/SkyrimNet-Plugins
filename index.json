@@ -1,8 +1,32 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-09-12T14:44:51.791Z",
-  "stats_as_of": "2026-09-12T14:44:26.128Z",
+  "generated_at": "2026-09-12T14:46:57.360Z",
+  "stats_as_of": "2026-09-12T14:46:57.262Z",
   "plugins": [
+    {
+      "id": "plugins/johnsonjoe1/skyrimnet-messageless-immersion",
+      "plugin_id": "johnsonjoe1.skyrimnet-messageless-immersion",
+      "type": "listing",
+      "title": "SkyrimNet Messageless Immersion",
+      "tagline": "Immersive player thoughts for game events, status changes, and supported mods.",
+      "author": "johnsonjoe1",
+      "tags": [
+        "immersion",
+        "player-thoughts",
+        "triggers",
+        "SKSE"
+      ],
+      "nsfw": true,
+      "icon": "package",
+      "mods": [],
+      "first_published": "2026-09-12T06:46:39-08:00",
+      "last_updated": "2026-09-12T06:46:39-08:00",
+      "external_url": "https://github.com/johnsonjoe1/SkyrimNetMessagelessImmersion/releases",
+      "stats": {
+        "downloads": 0,
+        "endorsements": 0
+      }
+    },
     {
       "id": "plugins/tetherball88/ostimnet",
       "plugin_id": "tetherball88.ostimnet",
