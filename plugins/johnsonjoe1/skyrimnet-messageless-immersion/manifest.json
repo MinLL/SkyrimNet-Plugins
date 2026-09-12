@@ -1,0 +1,19 @@
+{
+  "id": "johnsonjoe1.skyrimnet-messageless-immersion",
+  "type": "listing",
+  "title": "SkyrimNet Messageless Immersion",
+  "tagline": "Immersive player thoughts for game events, status changes, and supported mods.",
+  "description": "SkyrimNet Messageless Immersion is an SKSE plugin that turns game events,\nstatus changes, notifications, and events from supported mods into immersive\nSkyrimNet player thoughts.\n\nThis Hub entry links to the complete mod download. The full mod is required\nbecause it contains the native SKSE DLL, ESP, Papyrus scripts, configuration,\nand SkyrimNet trigger definitions.\n\nVersion 0.6.12 supports both the legacy SkyrimNet trigger layout used through\nbeta25 RC6 and the external content-plugin layout introduced in beta25 RC7.\n\nDownload and install the latest release with your mod manager.\n\nList of mods that may benefit to varying degrees from the plugin and where to find them:\nYPS fashion mod: YPS thoughts piped to SkyrimNet, YPS heels and feet training status and slowdown effects, comments on activation of clothing with YPS keywords, ( Recommended setting for this one: Turn off the in-build thought volume to zero, so that you don't have like an echo of the original sound sample from YPS and the player-thought voice from SkyrimNet. Also, reduce the default frequency of thoughts, so that they integrate well with the higher chatter frequency from SkyrimNet. I use a setting of 4 percent probability per frame on 60 fps myself.\r\nMME Milk mod: Full milk, halfway full, empty, lactacid level rise, milk pump usage, maid level rise, (\r\nAdvanced Nudity Detection (AND) mod: Change of (partial) nudity state, (\r\nSLSF: Major changes of fame, (\r\nBattlefuck: Start of struggle comments, (\r\nFINISHED in 0.6.3: Support for BodySearch mod (\r\nUnforgiving Devices / Unforgiving Skyrim: Application and removal of certain devices,\r\nSLAC: Start of scenes and end of scenes, (\r\nSL Survival 0.685 Beta SE: barefoot effect, (\r\nSTA v4.8 BETA SE: run-up-and-spank mod broadcast, (\r\nThe Ancient Profession: Generic freelance work scene. (\r\nSome basic support for Jailrape mod. (\r\nSome basic support for Licenses - Player Oppression mod. (\r\nSome basic support for the SE Version of the Apropos 2 mod (from the LL forum: \r\nVanilla Skyrim: disease application and cure (partial, only stomach rot disease so far).\r\nVanilla Skyrim: furniture use, now with a furniture-type specific cooldown (0.6.6).",
+  "author": "johnsonjoe1",
+  "tags": [
+    "immersion",
+    "player-thoughts",
+    "triggers",
+    "SKSE"
+  ],
+  "nsfw": true,
+  "icon": "package",
+  "mods": [],
+  "external_url": "https://github.com/johnsonjoe1/SkyrimNetMessagelessImmersion/releases",
+  "version": "0.6.12"
+}
