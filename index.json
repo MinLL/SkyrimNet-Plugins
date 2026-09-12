@@ -1,8 +1,32 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-09-12T12:34:15.379Z",
-  "stats_as_of": "2026-09-12T12:34:15.268Z",
+  "generated_at": "2026-09-12T14:44:26.245Z",
+  "stats_as_of": "2026-09-12T14:44:26.128Z",
   "plugins": [
+    {
+      "id": "plugins/whyregister/conduit-awareness",
+      "plugin_id": "whyregister.conduit-awareness",
+      "type": "listing",
+      "title": "Conduit Awareness",
+      "tagline": "Conduit Awareness in Skyrimnet. Prompt plug triggers",
+      "author": "whyregister",
+      "tags": [
+        "conduit",
+        "spells",
+        "actions",
+        "prompts"
+      ],
+      "nsfw": false,
+      "icon": "sparkles",
+      "mods": [],
+      "first_published": "2026-09-12T06:44:11-08:00",
+      "last_updated": "2026-09-12T06:44:11-08:00",
+      "external_url": "https://www.nexusmods.com/skyrimspecialedition/mods/58023?tab=description",
+      "stats": {
+        "downloads": 0,
+        "endorsements": 0
+      }
+    },
     {
       "id": "plugins/min/nords-are-jerks",
       "plugin_id": "min.nords-are-jerks",
