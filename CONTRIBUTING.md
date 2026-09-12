@@ -99,7 +99,7 @@ NSFW plugins are welcome but live in a gated section of the dashboard (off by de
 
 ## License
 
-All contributions fall under the repository's license. By publishing, you agree your submission is made available under those terms.
+By publishing, you license your plugin under the [SkyrimNet Plugin License](https://github.com/MinLL/SkyrimNet-Plugins/blob/main/LICENSE.md) and confirm you have the right to do so for every included file. You keep your copyright and may publish the same plugin elsewhere under any terms. The hub and SkyrimNet may distribute your plugin with credit. Users may install, use, and modify it for their own game, but not share it. Others may publish a fixed or extended version on the hub, credited to you. Text copied from UESP or the Fandom wiki cannot be published under these terms, so paraphrase it.
 
 ## Questions or problems
 
