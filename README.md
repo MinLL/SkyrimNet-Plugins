@@ -60,4 +60,4 @@ NSFW plugins are allowed and live in a gated section of the dashboard (off by de
 
 ## License
 
-To be decided.
+Everything in this repository is published under [CC BY-SA 4.0](LICENSE). Authors keep their copyright. Anyone may share and adapt a plugin with credit, and adapted versions must carry the same license. [LICENSE.md](LICENSE.md) is the plain-English summary the dashboard shows before you publish.
