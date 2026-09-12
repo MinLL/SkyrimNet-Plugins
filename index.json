@@ -1,8 +1,31 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-09-12T14:44:26.245Z",
+  "generated_at": "2026-09-12T14:44:51.791Z",
   "stats_as_of": "2026-09-12T14:44:26.128Z",
   "plugins": [
+    {
+      "id": "plugins/tetherball88/ostimnet",
+      "plugin_id": "tetherball88.ostimnet",
+      "type": "listing",
+      "title": "OStimNet",
+      "tagline": "Intimate encounter AI framework integration for OStim and SkyrimNet.",
+      "author": "tetherball88",
+      "tags": [
+        "ostim",
+        "animation",
+        "adult"
+      ],
+      "nsfw": true,
+      "icon": "heart",
+      "mods": [],
+      "first_published": "2026-09-12T06:44:36-08:00",
+      "last_updated": "2026-09-12T06:44:36-08:00",
+      "external_url": "https://github.com/tetherball88/OStimNet/releases/latest",
+      "stats": {
+        "downloads": 0,
+        "endorsements": 0
+      }
+    },
     {
       "id": "plugins/whyregister/conduit-awareness",
       "plugin_id": "whyregister.conduit-awareness",
