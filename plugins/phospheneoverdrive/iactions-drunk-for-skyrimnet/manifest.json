@@ -1,0 +1,18 @@
+{
+  "id": "phospheneoverdrive.iactions-drunk-for-skyrimnet",
+  "type": "listing",
+  "title": "iActions [Drunk+] for SkyrimNet",
+  "tagline": "NPC drinking, intoxication, food, exchange, and related actions for SkyrimNet.",
+  "description": "Adds iActions SkyrimNet prompts and Papyrus-backed actions for NPC drinking, intoxication, sobering, food requests, inventory exchange, stumbling, compliance, and arrow extraction. REQUIRES SkyrimNet Beta 25 or newer for v0.6.6; earlier SkyrimNet versions are unsupported. Also requires SKSE64, JContainers, PO3_SKSEFunctions, and SkyUI. (Upgrading iActions from v0.6.5 does not require a clean install; optional drunk animations are documented by the mod.)",
+  "author": "phospheneoverdrive",
+  "tags": [
+    "dialogue",
+    "immersion",
+    "actions"
+  ],
+  "nsfw": false,
+  "icon": "zap",
+  "mods": [],
+  "external_url": "https://github.com/Gerkinfeltser/iActions/releases",
+  "version": "0.6.6"
+}
