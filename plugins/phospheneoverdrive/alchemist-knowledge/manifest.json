@@ -1,0 +1,20 @@
+{
+  "id": "phospheneoverdrive.alchemist-knowledge",
+  "type": "bundle",
+  "title": "Alchemist Knowledge",
+  "tagline": "Gives apothecaries practical knowledge of ingredients, effects, and valuable recipes.",
+  "description": "Detailed alchemy knowledge gated to JobApothecaryFaction (alchemists). Includes 140 entries covering 47 effects and 91 ingredients, with effect-based recipes, ingredient pairings, and high-value mixtures.",
+  "author": "phospheneoverdrive",
+  "tags": [
+    "alchemy",
+    "apothecaries",
+    "ingredients",
+    "potions",
+    "world knowledge"
+  ],
+  "nsfw": false,
+  "icon": "brain",
+  "mods": [],
+  "version": "0.1.0",
+  "min_skyrimnet_version": "0.25.0"
+}
