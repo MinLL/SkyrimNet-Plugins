@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-09-13T15:24:51.723Z",
-  "stats_as_of": "2026-09-13T15:24:51.650Z",
+  "generated_at": "2026-09-13T22:25:49.430Z",
+  "stats_as_of": "2026-09-13T22:25:49.311Z",
   "plugins": [
     {
       "id": "plugins/oldcustard/wintersun-skyrimnet-integration",
@@ -5433,7 +5433,7 @@
         "knowledge": 0
       },
       "stats": {
-        "downloads": 0,
+        "downloads": 1,
         "endorsements": 0
       }
     },
