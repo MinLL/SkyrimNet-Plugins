@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-09-13T14:00:28.530Z",
-  "stats_as_of": "2026-09-13T14:00:28.443Z",
+  "generated_at": "2026-09-13T15:24:51.723Z",
+  "stats_as_of": "2026-09-13T15:24:51.650Z",
   "plugins": [
     {
       "id": "plugins/oldcustard/wintersun-skyrimnet-integration",
@@ -64,7 +64,7 @@
         "knowledge": 1
       },
       "stats": {
-        "downloads": 0,
+        "downloads": 1,
         "endorsements": 0
       }
     },
@@ -158,7 +158,7 @@
       "last_updated": "2026-09-12T06:44:11-08:00",
       "external_url": "https://www.nexusmods.com/skyrimspecialedition/mods/58023?tab=description",
       "stats": {
-        "downloads": 5,
+        "downloads": 7,
         "endorsements": 0
       }
     },
@@ -387,7 +387,7 @@
         "knowledge": 0
       },
       "stats": {
-        "downloads": 5,
+        "downloads": 6,
         "endorsements": 0
       }
     },
@@ -1032,7 +1032,7 @@
         "knowledge": 0
       },
       "stats": {
-        "downloads": 1,
+        "downloads": 2,
         "endorsements": 0
       }
     },
@@ -1075,7 +1075,7 @@
         "knowledge": 0
       },
       "stats": {
-        "downloads": 1,
+        "downloads": 2,
         "endorsements": 0
       }
     },
@@ -1376,7 +1376,7 @@
         "knowledge": 0
       },
       "stats": {
-        "downloads": 2,
+        "downloads": 3,
         "endorsements": 0
       }
     },
