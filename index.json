@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-09-12T22:24:32.775Z",
-  "stats_as_of": "2026-09-12T22:24:32.657Z",
+  "generated_at": "2026-09-13T04:31:11.289Z",
+  "stats_as_of": "2026-09-13T04:31:11.176Z",
   "plugins": [
     {
       "id": "plugins/johnsonjoe1/skyrimnet-messageless-immersion",
@@ -23,7 +23,7 @@
       "last_updated": "2026-09-12T06:46:39-08:00",
       "external_url": "https://github.com/johnsonjoe1/SkyrimNetMessagelessImmersion/releases",
       "stats": {
-        "downloads": 0,
+        "downloads": 1,
         "endorsements": 0
       }
     },
@@ -70,7 +70,7 @@
       "last_updated": "2026-09-12T06:44:11-08:00",
       "external_url": "https://www.nexusmods.com/skyrimspecialedition/mods/58023?tab=description",
       "stats": {
-        "downloads": 1,
+        "downloads": 3,
         "endorsements": 0
       }
     },
