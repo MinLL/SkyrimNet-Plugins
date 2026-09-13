@@ -1,8 +1,61 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-09-13T22:25:49.430Z",
-  "stats_as_of": "2026-09-13T22:25:49.311Z",
+  "generated_at": "2026-09-13T23:00:43.621Z",
+  "stats_as_of": "2026-09-13T23:00:43.494Z",
   "plugins": [
+    {
+      "id": "plugins/phospheneoverdrive/lore-accurate-dagoth-ur-follower-bios",
+      "plugin_id": "phospheneoverdrive.lore-accurate-dagoth-ur-follower-bios",
+      "type": "bundle",
+      "title": "(Lore Accurate) Dagoth Ur Follower Bios",
+      "tagline": "Character Bio for self-aware Dagoth Ur companion who roasts Skyrim, the player, and the limits of immersion/patience.",
+      "author": "phospheneoverdrive",
+      "tags": [
+        "followers",
+        "companions",
+        "characters",
+        "dagoth ur",
+        "morrowind",
+        "meta",
+        "nsfw"
+      ],
+      "nsfw": true,
+      "icon": "mask",
+      "mods": [
+        {
+          "name": "(LORE ACCURATE) Dagoth Ur Follower",
+          "file": "du01dagothurfollower.esp",
+          "required": true
+        },
+        {
+          "name": "DU01DagothUrFollower.esp",
+          "file": "du01dagothurfollower.esp",
+          "required": true
+        }
+      ],
+      "first_published": "2026-09-13T23:00:23Z",
+      "last_updated": "2026-09-13T23:00:23Z",
+      "version": "0.1.0",
+      "min_skyrimnet_version": "0.25.0",
+      "history": [
+        {
+          "version": "0.1.0",
+          "commit": "500e62d3223692803f97c5d9f6f26d2f4b87532f",
+          "date": "2026-09-13T23:00:23Z"
+        }
+      ],
+      "contents": {
+        "triggers": 0,
+        "actions": 0,
+        "prompts": 0,
+        "bios": 1,
+        "knowledge": 0
+      },
+      "stats": {
+        "downloads": 0,
+        "endorsements": 0
+      }
+    },
     {
       "id": "plugins/oldcustard/wintersun-skyrimnet-integration",
       "plugin_id": "oldcustard.wintersun-skyrimnet-integration",
