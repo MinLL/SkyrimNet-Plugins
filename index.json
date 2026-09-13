@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-09-13T12:58:33.367Z",
-  "stats_as_of": "2026-09-13T12:58:33.251Z",
+  "generated_at": "2026-09-13T13:18:19.870Z",
+  "stats_as_of": "2026-09-13T13:18:19.797Z",
   "plugins": [
     {
       "id": "plugins/phospheneoverdrive/alchemist-knowledge",
@@ -38,6 +38,29 @@
         "bios": 0,
         "knowledge": 1
       },
+      "stats": {
+        "downloads": 0,
+        "endorsements": 0
+      }
+    },
+    {
+      "id": "plugins/phospheneoverdrive/iactions-drunk-for-skyrimnet",
+      "plugin_id": "phospheneoverdrive.iactions-drunk-for-skyrimnet",
+      "type": "listing",
+      "title": "iActions [Drunk+] for SkyrimNet",
+      "tagline": "NPC drinking, intoxication, food, exchange, and related actions for SkyrimNet.",
+      "author": "phospheneoverdrive",
+      "tags": [
+        "dialogue",
+        "immersion",
+        "actions"
+      ],
+      "nsfw": false,
+      "icon": "zap",
+      "mods": [],
+      "first_published": "2026-09-12T21:07:45Z",
+      "last_updated": "2026-09-12T21:07:45Z",
+      "external_url": "https://github.com/Gerkinfeltser/iActions/releases",
       "stats": {
         "downloads": 0,
         "endorsements": 0
