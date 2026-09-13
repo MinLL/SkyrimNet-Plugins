@@ -1,8 +1,48 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-09-13T04:31:11.289Z",
-  "stats_as_of": "2026-09-13T04:31:11.176Z",
+  "generated_at": "2026-09-13T04:43:08.143Z",
+  "stats_as_of": "2026-09-13T04:43:08.029Z",
   "plugins": [
+    {
+      "id": "plugins/phospheneoverdrive/alchemist-knowledge",
+      "plugin_id": "phospheneoverdrive.alchemist-knowledge",
+      "type": "bundle",
+      "title": "Alchemist Knowledge",
+      "tagline": "Gives apothecaries practical knowledge of ingredients, effects, and valuable recipes.",
+      "author": "phospheneoverdrive",
+      "tags": [
+        "alchemy",
+        "apothecaries",
+        "ingredients",
+        "potions",
+        "world knowledge"
+      ],
+      "nsfw": false,
+      "icon": "brain",
+      "mods": [],
+      "first_published": "2026-09-13T04:40:41Z",
+      "last_updated": "2026-09-13T04:40:41Z",
+      "version": "0.1.0",
+      "min_skyrimnet_version": "0.25.0",
+      "history": [
+        {
+          "version": "0.1.0",
+          "commit": "b9bca86f0634d566cfa1f7c7e2d5844696c06660",
+          "date": "2026-09-13T04:40:41Z"
+        }
+      ],
+      "contents": {
+        "triggers": 0,
+        "actions": 0,
+        "prompts": 0,
+        "bios": 0,
+        "knowledge": 1
+      },
+      "stats": {
+        "downloads": 0,
+        "endorsements": 0
+      }
+    },
     {
       "id": "plugins/johnsonjoe1/skyrimnet-messageless-immersion",
       "plugin_id": "johnsonjoe1.skyrimnet-messageless-immersion",
