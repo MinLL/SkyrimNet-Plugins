@@ -1,8 +1,33 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-09-13T13:18:19.870Z",
-  "stats_as_of": "2026-09-13T13:18:19.797Z",
+  "generated_at": "2026-09-13T14:00:28.530Z",
+  "stats_as_of": "2026-09-13T14:00:28.443Z",
   "plugins": [
+    {
+      "id": "plugins/oldcustard/wintersun-skyrimnet-integration",
+      "plugin_id": "oldcustard.wintersun-skyrimnet-integration",
+      "type": "listing",
+      "title": "Wintersun Skyrimnet Integration",
+      "tagline": "Narrates your character's religious life and lets you converse with your deity during prayer.",
+      "author": "oldcustard",
+      "tags": [
+        "religion",
+        "dialogue",
+        "npcs",
+        "narration",
+        "wintersun"
+      ],
+      "nsfw": false,
+      "icon": "world",
+      "mods": [],
+      "first_published": "2026-09-13T13:44:32Z",
+      "last_updated": "2026-09-13T13:44:32Z",
+      "external_url": "https://github.com/Oldcustard/Wintersun-Skyrimnet-Integration/releases",
+      "stats": {
+        "downloads": 0,
+        "endorsements": 0
+      }
+    },
     {
       "id": "plugins/phospheneoverdrive/alchemist-knowledge",
       "plugin_id": "phospheneoverdrive.alchemist-knowledge",
@@ -190,7 +215,7 @@
       "last_updated": "2026-08-20T09:09:54Z",
       "external_url": "https://github.com/zevck/S.T.F.U",
       "stats": {
-        "downloads": 8,
+        "downloads": 9,
         "endorsements": 0
       }
     },
