@@ -1,0 +1,33 @@
+{
+  "id": "phospheneoverdrive.lore-accurate-dagoth-ur-follower-bios",
+  "type": "bundle",
+  "title": "(Lore Accurate) Dagoth Ur Follower Bios",
+  "tagline": "Character Bio for self-aware Dagoth Ur companion who roasts Skyrim, the player, and the limits of immersion/patience.",
+  "description": "A hand-written SkyrimNet character bio for Dagoth Ur from (LORE ACCURATE) Dagoth Ur Follower. The self-aware Sixth House Lord serves as a sarcastic, fourth-wall-breaking companion, mixing Elder Scrolls lore, Skyrim and modding commentary, modern gaming jargon, and aggressively NSFW humor.",
+  "author": "phospheneoverdrive",
+  "tags": [
+    "followers",
+    "companions",
+    "characters",
+    "dagoth ur",
+    "morrowind",
+    "meta",
+    "nsfw"
+  ],
+  "nsfw": true,
+  "icon": "mask",
+  "mods": [
+    {
+      "name": "(LORE ACCURATE) Dagoth Ur Follower",
+      "file": "du01dagothurfollower.esp",
+      "required": true
+    },
+    {
+      "name": "DU01DagothUrFollower.esp",
+      "file": "du01dagothurfollower.esp",
+      "required": true
+    }
+  ],
+  "version": "0.1.0",
+  "min_skyrimnet_version": "0.25.0"
+}
