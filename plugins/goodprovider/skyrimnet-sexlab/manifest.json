@@ -1,0 +1,18 @@
+{
+  "id": "goodprovider.skyrimnet-sexlab",
+  "type": "listing",
+  "title": "SkyrimNet SexLab",
+  "tagline": "Supports SexLab animations",
+  "description": "Provides the actions and prompts needed to support sexlab animations in SkyrimNet.\n\nDetails at\n\n## Required\n\n- SexLab Framework (vanilla or P+; P+ Separate/enjoyment-wait scenes are capped so LLM scenes end)\n- Papyrus MessageBox\n- JContainers v4.2.13.1+\n- SkyUI SE\n- UIExtensions\n - UIExtensions_UITextEntryMenu_with_VR_support (VR)\n- Prisma UI\n - Media Keys Fix\n- Dragonborn voice over 2\n- SkyrimNet **0.25.0+** (Beta 25; narration enabled). This mod ships LLM content as plugin `goodprovider.sexlab` under `Data/SKSE/Plugins/SkyrimNet/external/`. Older SkyrimNet builds that only read `prompts/` and `config/actions/` will not load those files.\n- SkyrimNet_SexLab (this mod)\n- Animation utilities: Pandora, XPMSSE, SL Animation Loader, Hug kill move fix for USSEP\n- Ace Animations (cuddle/spooning)",
+  "author": "goodprovider",
+  "tags": [
+    "sex",
+    "nswf",
+    "sexlab"
+  ],
+  "nsfw": true,
+  "icon": "heart",
+  "mods": [],
+  "external_url": "https://github.com/GoodProvider/SkyrimNet_Leashed/releases/latest",
+  "version": "0.35.0"
+}
