@@ -1,8 +1,48 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-09-14T23:19:12.523Z",
-  "stats_as_of": "2026-09-14T23:19:12.396Z",
+  "generated_at": "2026-09-14T23:47:27.352Z",
+  "stats_as_of": "2026-09-14T23:47:27.301Z",
   "plugins": [
+    {
+      "id": "plugins/jykej/audio-tags-for-inworld-tts-2",
+      "plugin_id": "jykej.audio-tags-for-inworld-tts-2",
+      "type": "bundle",
+      "title": "Audio Tags For Inworld TTS-2",
+      "tagline": "Enables natural language steering capabilities for Inworld TTS-2.",
+      "author": "jykej",
+      "tags": [
+        "inworld",
+        "audio",
+        "audio tags",
+        "TTS",
+        "text-to-speech"
+      ],
+      "nsfw": false,
+      "icon": "voice",
+      "mods": [],
+      "first_published": "2026-09-14T23:16:39Z",
+      "last_updated": "2026-09-14T23:47:09Z",
+      "version": "1.1.1",
+      "min_skyrimnet_version": "0.25.0",
+      "history": [
+        {
+          "version": "1.1.1",
+          "commit": "33e543beb6fbeafaf7b0963723f1bda181d08b62",
+          "date": "2026-09-14T23:47:09Z"
+        }
+      ],
+      "contents": {
+        "triggers": 0,
+        "actions": 0,
+        "prompts": 1,
+        "bios": 0,
+        "knowledge": 0
+      },
+      "stats": {
+        "downloads": 0,
+        "endorsements": 0
+      }
+    },
     {
       "id": "plugins/phospheneoverdrive/lore-accurate-dagoth-ur-follower-bios",
       "plugin_id": "phospheneoverdrive.lore-accurate-dagoth-ur-follower-bios",
