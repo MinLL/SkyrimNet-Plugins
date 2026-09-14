@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-09-13T23:00:43.621Z",
-  "stats_as_of": "2026-09-13T23:00:43.494Z",
+  "generated_at": "2026-09-14T17:26:11.542Z",
+  "stats_as_of": "2026-09-14T17:26:11.454Z",
   "plugins": [
     {
       "id": "plugins/phospheneoverdrive/lore-accurate-dagoth-ur-follower-bios",
@@ -188,30 +188,6 @@
       "external_url": "https://github.com/tetherball88/OStimNet/releases/latest",
       "stats": {
         "downloads": 1,
-        "endorsements": 0
-      }
-    },
-    {
-      "id": "plugins/whyregister/conduit-awareness",
-      "plugin_id": "whyregister.conduit-awareness",
-      "type": "listing",
-      "title": "Conduit Awareness",
-      "tagline": "Conduit Awareness in Skyrimnet. Prompt plug triggers",
-      "author": "whyregister",
-      "tags": [
-        "conduit",
-        "spells",
-        "actions",
-        "prompts"
-      ],
-      "nsfw": false,
-      "icon": "sparkles",
-      "mods": [],
-      "first_published": "2026-09-12T06:44:11-08:00",
-      "last_updated": "2026-09-12T06:44:11-08:00",
-      "external_url": "https://www.nexusmods.com/skyrimspecialedition/mods/58023?tab=description",
-      "stats": {
-        "downloads": 7,
         "endorsements": 0
       }
     },
