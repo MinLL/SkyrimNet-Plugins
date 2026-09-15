@@ -3,7 +3,7 @@
   "type": "listing",
   "title": "Wintersun Skyrimnet Integration",
   "tagline": "Narrates your character's religious life and lets you converse with your deity during prayer.",
-  "description": "SkyrimNet integration for Wintersun - Faiths of Skyrim.\\n\\n- **Prayer narration** - nearby NPCs hear a line when you kneel to pray\\n- **Shrine worship narration** - NPCs react when you worship at a shrine\\n- **Deity virtual NPC** - your deity becomes a conversation partner while you pray, with a unique voice and personality for all 52 deities\\n- **Shrine communion** - activating any shrine starts a brief conversation with that deity\\n- **Character bio submodule** - your deity and rank appear in your SkyrimNet character profile\\n- **World knowledge** - domain, tenets and boons for every deity\\n\\nSettings are configurable in the SkyrimNet dashboard under the **Wintersun Integration** plugin.",
+  "description": "SkyrimNet integration for Wintersun - Faiths of Skyrim.\n\n- **Prayer narration** - nearby NPCs hear a line when you kneel to pray\n- **Shrine worship narration** - NPCs react when you worship at a shrine\n- **Deity virtual NPC** - your deity becomes a conversation partner while you pray, with a unique voice and personality for all 52 deities\n- **Shrine communion** - activating any shrine starts a brief conversation with that deity\n- **Character bio submodule** - your deity and rank appear in your SkyrimNet character profile\n- **World knowledge** - domain, tenets and boons for every deity\n\nSettings are configurable in the SkyrimNet dashboard under the **Wintersun Integration** plugin.",
   "author": "oldcustard",
   "tags": [
     "religion",
