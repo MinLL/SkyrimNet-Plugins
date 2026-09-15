@@ -1,0 +1,18 @@
+{
+  "id": "deadohiosky.kinship",
+  "type": "listing",
+  "title": "Kinship",
+  "tagline": "Have unlimited children with unlimited mothers and watch them grow up",
+  "description": "Requires Fertility Mode Reloaded/FM+/v3 or Beeing Female for pregnancy and birth. Kinship takes over at birth and handles naming the child, ensuring they are associated with the right mother and father, and makes them SkyrimNet-aware. Your children know who you are in the world.",
+  "author": "deadohiosky",
+  "tags": [
+    "children",
+    "fertility",
+    "family"
+  ],
+  "nsfw": false,
+  "icon": "characters",
+  "mods": [],
+  "external_url": "https://github.com/deadohiosky48/SkyrimNet-Kinship",
+  "version": "1.8.1"
+}
