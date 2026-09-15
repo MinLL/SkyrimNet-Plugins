@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-09-15T06:44:44.600Z",
-  "stats_as_of": "2026-09-15T06:44:44.508Z",
+  "generated_at": "2026-09-15T09:34:47.979Z",
+  "stats_as_of": "2026-09-15T09:34:47.923Z",
   "plugins": [
     {
       "id": "plugins/jykej/audio-tags-for-inworld-tts-2",
@@ -157,7 +157,7 @@
         "knowledge": 1
       },
       "stats": {
-        "downloads": 1,
+        "downloads": 2,
         "endorsements": 0
       }
     },
@@ -671,7 +671,7 @@
         "knowledge": 0
       },
       "stats": {
-        "downloads": 2,
+        "downloads": 3,
         "endorsements": 0
       }
     },
@@ -5631,7 +5631,7 @@
         "knowledge": 0
       },
       "stats": {
-        "downloads": 2,
+        "downloads": 3,
         "endorsements": 0
       }
     },
@@ -5889,7 +5889,7 @@
         "knowledge": 0
       },
       "stats": {
-        "downloads": 1,
+        "downloads": 2,
         "endorsements": 0
       }
     },
@@ -8211,7 +8211,7 @@
         "knowledge": 0
       },
       "stats": {
-        "downloads": 0,
+        "downloads": 1,
         "endorsements": 0
       }
     },
@@ -8899,7 +8899,7 @@
         "knowledge": 0
       },
       "stats": {
-        "downloads": 3,
+        "downloads": 4,
         "endorsements": 0
       }
     },
@@ -9157,7 +9157,7 @@
         "knowledge": 0
       },
       "stats": {
-        "downloads": 0,
+        "downloads": 1,
         "endorsements": 0
       }
     },
