@@ -1,0 +1,16 @@
+{
+  "id": "goodprovider.skyrimnet-leash",
+  "type": "listing",
+  "title": "SkyrimNet Leash ",
+  "tagline": "Allows actors to leash and lead other actors.",
+  "description": "!image of man holding woman on leash<br/>\nSkyrimNet (LLM) bridge for Leash Framework.\nNPCs can leash and unleash through SkyrimNet actions, and the leashed characters are presented in each prompt.\n\nRequirements can be found\n\n![ko-fi](",
+  "author": "goodprovider",
+  "tags": [
+    "leash"
+  ],
+  "nsfw": true,
+  "icon": "package",
+  "mods": [],
+  "external_url": "https://github.com/GoodProvider/SkyrimNet_Leashed/releases/latest",
+  "version": "1.0.0"
+}
