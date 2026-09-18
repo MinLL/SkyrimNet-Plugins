@@ -41,7 +41,8 @@ const CURATED_PATH = path.join(REPO_ROOT, "curated.json");
 // history, min_skyrimnet_version). NOT bumped when the knowledge content root
 // was onboarded: the engine hard-rejects any schema_version other than 2 and
 // reads the per-plugin counts tolerantly, so `contents.knowledge` was added as
-// a purely additive field. Bump only for a genuinely breaking entry shape.
+// a purely additive field, and `contents.entities` after it on the same
+// precedent. Bump only for a genuinely breaking entry shape.
 const INDEX_SCHEMA_VERSION = 2;
 
 // Version-history caps. HISTORY_CAP bounds how far back rollback can reach
@@ -388,7 +389,7 @@ if (!fs.existsSync(PLUGINS_DIR)) {
       const lastUpdated = gitFirstLine(["log", "-1", "--format=%aI", "--", relPath]);
 
       // Count content files, one key per content root: prompts, triggers,
-      // actions and knowledge packs.
+      // actions, knowledge packs and virtual entities.
       //
       // Character bios live in prompts/characters/. They are their own
       // category (Character Packs) rather than generic prompts, so count them
@@ -403,6 +404,7 @@ if (!fs.existsSync(PLUGINS_DIR)) {
         prompts: countFiles(promptsDir) - biosCount,
         bios: biosCount,
         knowledge: countFiles(path.join(pluginDir, "knowledge")),
+        entities: countFiles(path.join(pluginDir, "entities")),
       } : undefined;
 
       // Build mods array (name + file + required)

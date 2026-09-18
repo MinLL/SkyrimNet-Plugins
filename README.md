@@ -8,6 +8,7 @@ A **plugin** is a bundle containing any combination of:
 - **Triggers** (`.yaml`) — YAML rules that react to game events (spell casts, combat, mod events, etc.) and generate dialogue, narration, diary entries, or bio updates
 - **Actions** (`.yaml`) — YAML definitions that let NPCs execute Papyrus mod functions in response to dialogue
 - **Knowledge packs** (`.sknpack`) — collections of world knowledge entries that NPCs recall when a condition matches (a rumour, a piece of lore, a fact about your mod)
+- **Virtual entities** (`.entity.yaml`) — bodiless NPCs (a spirit, a voice in the player's head, a radio host) with a name, a voice and a conversation mode, paired with a character prompt for their bio
 
 Plugins often work together as a bundle (e.g. an action paired with a trigger that invokes it and a prompt that teaches NPCs when to use it), but any subset is valid — a pure prompt pack, a trigger-only submission or a lone knowledge pack is perfectly fine.
 
@@ -36,9 +37,10 @@ plugins/
       actions/*.yaml          # optional
       prompts/*.prompt        # optional
       knowledge/*.sknpack     # optional
+      entities/*.entity.yaml  # optional
 ```
 
-Each plugin lives in its own directory under the author's GitHub username. The `manifest.json` describes the plugin and is required; the four content subdirectories are all optional.
+Each plugin lives in its own directory under the author's GitHub username. The `manifest.json` describes the plugin and is required; the five content subdirectories are all optional.
 
 ### Official content (`plugins/skyrimnet/`)
 
@@ -51,7 +53,7 @@ The author segment `skyrimnet` (and the `skyrimnet-` prefix) is reserved for Sky
 
 Submissions go through one of two flows depending on what they contain:
 
-- **Trigger, prompt, or knowledge content only** — reviewed automatically by SkyrimNet's reviewer (a Claude agent run from the maintainer's private automation repo, never from this repo's own Actions). It checks for spam, forbidden content, obfuscation, accuracy of the NSFW flag, and then the authoring guide in [docs/AUTHORING.md](docs/AUTHORING.md). Approved submissions auto-merge; a submission that needs changes is closed with feedback so you can republish from the dashboard.
+- **Trigger, prompt, knowledge or virtual-entity content only** — reviewed automatically by SkyrimNet's reviewer (a Claude agent run from the maintainer's private automation repo, never from this repo's own Actions). It checks for spam, forbidden content, obfuscation, accuracy of the NSFW flag, and then the authoring guide in [docs/AUTHORING.md](docs/AUTHORING.md). Approved submissions auto-merge; a submission that needs changes is closed with feedback so you can republish from the dashboard.
 - **Any actions included** — reviewed manually by a SkyrimNet developer or trusted community member. Manual review can take up to a week. This is not a trust issue — Papyrus has no access control, and verifying an action is safe against save corruption requires human judgment.
 
 ## NSFW content

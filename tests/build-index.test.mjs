@@ -181,7 +181,7 @@ test("emits per-version history newest-first, pinned to the newest commit of eac
     assert.equal(entry.plugin_id, "bob.pack");
     assert.equal(entry.version, "1.1.0");
     assert.equal(entry.min_skyrimnet_version, "0.25.0");
-    assert.deepEqual(entry.contents, { triggers: 0, actions: 0, prompts: 1, bios: 0, knowledge: 0 });
+    assert.deepEqual(entry.contents, { triggers: 0, actions: 0, prompts: 1, bios: 0, knowledge: 0, entities: 0 });
 
     assert.equal(entry.history.length, 2);
     assert.equal(entry.history[0].version, "1.1.0");
@@ -246,6 +246,33 @@ test("knowledge packs are counted in contents without bumping the schema version
       prompts: 1,
       bios: 0,
       knowledge: 2,
+      entities: 0,
+    });
+  } finally {
+    rmDir(repo);
+  }
+});
+
+test("virtual entities are counted in contents without bumping the schema version", () => {
+  const repo = initRepo();
+  try {
+    writeFile(repo, "plugins/bob/pack/manifest.json", JSON.stringify(bundleManifest(), null, 2));
+    writeFile(repo, "plugins/bob/pack/prompts/characters/voice_virtual.prompt", "bio\n");
+    writeFile(repo, "plugins/bob/pack/entities/voice_virtual.entity.yaml", "entityName: Voice\n");
+    writeFile(repo, "plugins/bob/pack/entities/pact/spirit.entity.yaml", "entityName: Spirit\n");
+    commitAll(repo, "add pack with entities");
+
+    const { index } = runBuildIndex(repo);
+    assertValidIndex(index);
+
+    assert.equal(index.schema_version, 2);
+    assert.deepEqual(index.plugins[0].contents, {
+      triggers: 0,
+      actions: 0,
+      prompts: 0,
+      bios: 1,
+      knowledge: 0,
+      entities: 2,
     });
   } finally {
     rmDir(repo);
@@ -307,7 +334,7 @@ test("character bios count as `bios`, not `prompts`", () => {
 
     const entry = index.plugins[0];
     // prompts excludes the two under prompts/characters/; bios counts them.
-    assert.deepEqual(entry.contents, { triggers: 0, actions: 0, prompts: 1, bios: 2, knowledge: 0 });
+    assert.deepEqual(entry.contents, { triggers: 0, actions: 0, prompts: 1, bios: 2, knowledge: 0, entities: 0 });
   } finally {
     rmDir(repo);
   }

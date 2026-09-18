@@ -151,13 +151,14 @@
           "type": "object",
           "required": ["triggers", "actions", "prompts"],
           "additionalProperties": false,
-          "description": "Required for bundle plugins. Absent for listing plugins (they have no content files in the repo). File counts derived by walking the plugin directory, one key per content root. `bios` counts character bios (files under prompts/characters/); they are their own category and are excluded from the `prompts` count. `knowledge` (world knowledge packs) was added after v2 shipped and is therefore optional, not required: index entries written before the knowledge root was onboarded simply omit it, and consumers treat a missing key as zero.",
+          "description": "Required for bundle plugins. Absent for listing plugins (they have no content files in the repo). File counts derived by walking the plugin directory, one key per content root. `bios` counts character bios (files under prompts/characters/); they are their own category and are excluded from the `prompts` count. `knowledge` (world knowledge packs) was added after v2 shipped and is therefore optional, not required: index entries written before the knowledge root was onboarded simply omit it, and consumers treat a missing key as zero. `entities` (virtual NPC records under entities/) followed on the same precedent and is optional for the same reason.",
           "properties": {
             "triggers": { "type": "integer", "minimum": 0 },
             "actions": { "type": "integer", "minimum": 0 },
             "prompts": { "type": "integer", "minimum": 0 },
             "bios": { "type": "integer", "minimum": 0 },
-            "knowledge": { "type": "integer", "minimum": 0 }
+            "knowledge": { "type": "integer", "minimum": 0 },
+            "entities": { "type": "integer", "minimum": 0 }
           }
         },
         "mods": {
