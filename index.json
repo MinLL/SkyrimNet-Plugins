@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-09-17T21:26:07.292Z",
-  "stats_as_of": "2026-09-17T21:26:07.166Z",
+  "generated_at": "2026-09-18T06:44:11.516Z",
+  "stats_as_of": "2026-09-18T06:44:11.400Z",
   "plugins": [
     {
       "id": "plugins/jykej/audio-tags-for-inworld-tts-2",
@@ -39,7 +39,7 @@
         "knowledge": 0
       },
       "stats": {
-        "downloads": 2,
+        "downloads": 3,
         "endorsements": 0
       }
     },
