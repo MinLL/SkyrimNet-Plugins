@@ -14,6 +14,7 @@ import {
   GOOD_FILES,
   POSIX_ONLY,
   errorMessages,
+  goodEntity,
   goodKnowledgePack,
   goodManifest,
   knowledgeEntry,
@@ -698,6 +699,173 @@ test("rejects a listing that ships a knowledge pack", () => {
         external_url: "https://example.com/mod",
       },
       files: knowledgeFiles(goodKnowledgePack()),
+    }),
+    /Listing plugins must not contain any content files/,
+  );
+});
+
+// ----- Virtual entities (entities/*.entity.yaml) ----------------------------
+//
+// The fifth content root. One record per virtual NPC; parse-only like a
+// trigger, plus the rules the engine would otherwise apply silently (no name
+// means never loaded, a fixed entity's plugin copy is ignored, an unknown
+// mode becomes private, duplicate names collapse).
+
+const ENTITY_PATH = "entities/the_whispering_voice_virtual.entity.yaml";
+
+function entityFiles(record) {
+  return { [ENTITY_PATH]: record };
+}
+
+test("accepts an entity-only bundle and routes it to agent review", () => {
+  const res = validatePlugin({
+    manifest: goodManifest(),
+    files: entityFiles(goodEntity()),
+  });
+  assert.equal(res.result.success, true, errorMessages(res.result));
+  assert.deepEqual(res.result.labels, ["ready-for-agent-review"]);
+});
+
+test("accepts an entity alongside its bio prompt and a trigger, still agent-reviewed", () => {
+  const res = validatePlugin({
+    manifest: goodManifest(),
+    files: {
+      ...GOOD_FILES,
+      ...entityFiles(goodEntity()),
+      "prompts/characters/the_whispering_voice_virtual.prompt": "{% block summary %}A voice.{% endblock %}\n",
+    },
+  });
+  assert.equal(res.result.success, true, errorMessages(res.result));
+  assert.deepEqual(res.result.labels, ["ready-for-agent-review"]);
+});
+
+test("accepts a nested entity path", () => {
+  const res = validatePlugin({
+    manifest: goodManifest(),
+    files: { "entities/pact/spirit.entity.yaml": goodEntity({ entityName: "Pact Spirit" }) },
+  });
+  assert.equal(res.result.success, true, errorMessages(res.result));
+});
+
+test("an entity's in-file name need not match the filename stem", () => {
+  // The engine keys by entityName and derives the filename itself — the
+  // trigger/action name==stem rule must not leak.
+  const res = validatePlugin({
+    manifest: goodManifest(),
+    files: { "entities/anything.entity.yaml": goodEntity() },
+  });
+  assert.equal(res.result.success, true, errorMessages(res.result));
+});
+
+test("accepts a public entity and one with only the required field", () => {
+  const res = validatePlugin({
+    manifest: goodManifest(),
+    files: {
+      "entities/a.entity.yaml": goodEntity({ entityName: "Town Crier", conversationMode: "public" }),
+      "entities/b.entity.yaml": "entityName: Bare Minimum\n",
+    },
+  });
+  assert.equal(res.result.success, true, errorMessages(res.result));
+});
+
+test("rejects an entity file with the wrong extension", () => {
+  assertRejected(
+    validatePlugin({ manifest: goodManifest(), files: { "entities/npc.yaml": goodEntity() } }),
+    /\[BAD_EXTENSION\]/,
+  );
+  assertRejected(
+    validatePlugin({ manifest: goodManifest(), files: { "entities/npc.ENTITY.YAML": goodEntity() } }),
+    /\[BAD_EXTENSION\]/,
+  );
+});
+
+test("rejects an entity file that is not a YAML mapping", () => {
+  assertRejected(
+    validatePlugin({ manifest: goodManifest(), files: entityFiles("- just\n- a list\n") }),
+    /YAML mapping at the top level/,
+  );
+  assertRejected(
+    validatePlugin({ manifest: goodManifest(), files: entityFiles("entityName: [unclosed\n") }),
+    /YAML parse error/,
+  );
+});
+
+test("rejects an entity with no entityName", () => {
+  assertRejected(
+    validatePlugin({
+      manifest: goodManifest(),
+      files: entityFiles(goodEntity({ entityName: undefined })),
+    }),
+    /no 'entityName' string/,
+  );
+  assertRejected(
+    validatePlugin({ manifest: goodManifest(), files: entityFiles(goodEntity({ entityName: "  " })) }),
+    /no 'entityName' string/,
+  );
+});
+
+test("rejects a plugin copy of a fixed virtual entity", () => {
+  for (const name of ["Player Thoughts", "Narrator", "System Voice", "Game Master"]) {
+    assertRejected(
+      validatePlugin({ manifest: goodManifest(), files: entityFiles(goodEntity({ entityName: name })) }),
+      /fixed virtual entities/,
+    );
+  }
+});
+
+test("rejects an entity whose conversationMode is not private or public", () => {
+  for (const mode of ["system", "loud"]) {
+    assertRejected(
+      validatePlugin({
+        manifest: goodManifest(),
+        files: entityFiles(goodEntity({ conversationMode: mode })),
+      }),
+      /conversationMode/,
+    );
+  }
+});
+
+test("rejects two entity files naming the same entity, case-insensitively", () => {
+  assertRejected(
+    validatePlugin({
+      manifest: goodManifest(),
+      files: {
+        "entities/a.entity.yaml": goodEntity({ entityName: "The Whispering Voice" }),
+        "entities/b.entity.yaml": goodEntity({ entityName: "the whispering voice" }),
+      },
+    }),
+    /is also declared by/,
+  );
+});
+
+test("rejects an entity file over the 32 KB per-file limit", () => {
+  assertRejected(
+    validatePlugin({
+      manifest: goodManifest(),
+      files: entityFiles(goodEntity({ displayName: "x".repeat(40 * 1024) })),
+    }),
+    /exceeds the 32\.0 KB per-file limit for entity files/,
+  );
+});
+
+test("rejects a listing that ships an entity", () => {
+  assertRejected(
+    validatePlugin({
+      pluginDir: "plugins/bob/listing-with-entity",
+      manifest: {
+        id: "bob.listing-with-entity",
+        type: "listing",
+        title: "Bob's Sneaky Entity Listing",
+        tagline: "Hosted elsewhere.",
+        description: "A listing entry.",
+        author: "bob",
+        tags: [],
+        nsfw: false,
+        icon: "package",
+        mods: [],
+        external_url: "https://example.com/mod",
+      },
+      files: entityFiles(goodEntity()),
     }),
     /Listing plugins must not contain any content files/,
   );

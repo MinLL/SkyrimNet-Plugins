@@ -75,6 +75,19 @@ good, not whether it is well-formed.
   injected into every prompt for every NPC.
 - Keep entries short and specific. One fact per entry beats a paragraph of lore per entry.
 
+## Virtual entities (`entities/*.entity.yaml`)
+
+- **Must:** each entity ships its bio as `prompts/characters/<slug>_virtual.prompt`, where the slug
+  is the `entityName` lowercased with spaces as underscores. A record without a bio has no
+  character behind it, and the bio is judged by the character-prompt rules above.
+- **Must:** `displayName` and the bio agree on who the entity is. The record is the voice; the
+  prompt is the character.
+- `voiceId` names a voice type the user's TTS setup can produce; prefer a vanilla one unless the
+  plugin lists the mod that provides it.
+- `conversationMode` is `private` (the entity speaks only to the player) or `public` (nearby
+  NPCs hear and may react). Pick `private` for anything that would be strange for a bystander
+  to overhear.
+
 ## Things that are always fine
 
 Dark themes, violence, gore, crude language, in-universe prejudice between Skyrim's races, morally

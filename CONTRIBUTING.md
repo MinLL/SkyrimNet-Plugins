@@ -38,9 +38,9 @@ With your plugin selected in the dashboard:
 
 Every submission runs through an automated validation pipeline. After that, there are two paths:
 
-### Trigger, prompt or knowledge-only plugins
+### Plugins without actions
 
-If your plugin contains only triggers, prompts, and/or knowledge packs (no actions), it's reviewed automatically by SkyrimNet's reviewer, a Claude agent. It checks, in order:
+If your plugin contains only triggers, prompts, knowledge packs and/or virtual entities (no actions), it's reviewed automatically by SkyrimNet's reviewer, a Claude agent. It checks, in order:
 
 - Spam or low-effort content (an unreadable title, tagline, or description is enough)
 - Forbidden content: sexual content involving minors, real-person targeting, real-world slurs
@@ -83,9 +83,22 @@ A few rules the validator enforces:
 - **1 MB per `.sknpack` file.** A pack bigger than that should be split across several files (`knowledge/lore.sknpack`, `knowledge/quests.sknpack`, …); the engine loads them all and resolves conflicts per file.
 - Knowledge packs do not force manual review — a knowledge-only plugin goes down the same agent-review path as prompts and triggers. The agent reads each entry's `content` and `display_name`.
 
+## Virtual entities
+
+A plugin may ship **virtual entities** as `entities/*.entity.yaml` files — NPCs with no body in the world (a spirit, a voice in the player's head, a narrator of your own) that take part in conversation like any other NPC. Create them on the dashboard's **Virtual Entities** page; the publish flow writes one file per entity plus its bio under `prompts/characters/`.
+
+A few rules the validator enforces:
+
+- Every file carries an **`entityName`**. That name is the entity's identity: the engine keys records by it and derives the bio template's filename from it, so the filename itself need not match anything.
+- **One file per name.** Two files naming the same entity (compared case-insensitively) are rejected — the engine would keep only one of them.
+- **`conversationMode` is `private` or `public`.** `system` belongs to SkyrimNet's own fixed entities.
+- **The fixed entities cannot be shipped.** Player Thoughts, Narrator, System Voice and Game Master are SkyrimNet's; a plugin file naming one is rejected because the engine would ignore it anyway (only a user's own copy re-voices them).
+- **32 KB per file**, the same cap as a trigger.
+- Virtual entities do not force manual review. The entity's bio is a character prompt and is reviewed as one.
+
 ## Updating a plugin
 
-Open the dashboard, go to your plugin's page, and click **Update**. The dashboard opens a new PR against your existing plugin directory. Updates go straight into their respective review flow (agent-reviewed for trigger/prompt updates, manual for action updates).
+Open the dashboard, go to your plugin's page, and click **Update**. The dashboard opens a new PR against your existing plugin directory. Updates go straight into their respective review flow (agent-reviewed for anything without actions, manual for action updates).
 
 Bump your `version` when publishing meaningful changes — the dashboard warns you if you forget.
 

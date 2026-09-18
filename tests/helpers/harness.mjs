@@ -189,6 +189,28 @@ export function knowledgeEntry(overrides = {}) {
   };
 }
 
+/**
+ * One `entities/*.entity.yaml` record with the fields the dashboard writes.
+ * Emitted by hand (the test tree has no js-yaml): JSON string literals are
+ * valid double-quoted YAML scalars, and the flag is a bare YAML bool.
+ */
+export function goodEntity(overrides = {}) {
+  const fields = {
+    entityName: "The Whispering Voice",
+    displayName: "The Whispering Voice",
+    voiceId: "femaleeventoned",
+    ttsOverride: "",
+    language: "",
+    conversationMode: "private",
+    enabled: true,
+    ...overrides,
+  };
+  return Object.entries(fields)
+    .filter(([, v]) => v !== undefined)
+    .map(([k, v]) => `${k}: ${typeof v === "string" ? JSON.stringify(v) : String(v)}`)
+    .join("\n") + "\n";
+}
+
 export const GOOD_FILES = {
   "prompts/characters/test_npc.prompt": "You are a test NPC.\n",
   "triggers/test_trigger.yaml": "name: test_trigger\nenabled: true\ndescription: fixture\n",

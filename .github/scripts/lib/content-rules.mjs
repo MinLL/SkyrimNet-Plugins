@@ -66,8 +66,10 @@ export const CODES = {
 // Content roots accepted by the hub (§5 step 3 / §1 scope). `knowledge/` is
 // onboarded: the engine-side port accepts it (`ContentRoot::Knowledge`), the
 // installer installs `.sknpack` files like any other content, and
-// `KnowledgeStoreSync` projects them into the per-save database.
-export const CONTENT_ROOTS = ["prompts", "triggers", "actions", "knowledge"];
+// `KnowledgeStoreSync` projects them into the per-save database. `entities/`
+// likewise: one `.entity.yaml` per virtual NPC (`ContentRoot::VirtualEntities`),
+// loaded by `VirtualEntityRegistry` on the same reload path as triggers.
+export const CONTENT_ROOTS = ["prompts", "triggers", "actions", "knowledge", "entities"];
 
 // Per-root extension whitelist. Matched as an EXACT (byte-for-byte, case
 // sensitive) suffix on the raw final segment — `.PROMPT`, `.yml`,
@@ -77,6 +79,9 @@ export const EXTENSION_BY_ROOT = {
   triggers: ".yaml",
   actions: ".yaml",
   knowledge: ".sknpack",
+  // Stems read before the FIRST dot, so `entities/foo.entity.yaml` has stem
+  // `foo` on both sides.
+  entities: ".entity.yaml",
 };
 
 // Reserved plugin-id author segment (§2 / decision 12). `skyrimnet` and
