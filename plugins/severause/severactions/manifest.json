@@ -1,0 +1,14 @@
+{
+  "id": "severause.severactions",
+  "type": "listing",
+  "title": "SeverActions ",
+  "tagline": "An action, prompt, and behavior pack for SkyrimNet",
+  "description": "SeverActions extends SkyrimNet with actions, prompts, and a native SKSE plugin that together let NPCs act on what they say. They follow you and travel across Skyrim, craft and cook and brew, manage their outfits, handle gold and debt, sit down, fight, get arrested and escorted to jail, settle disputes with fists, run businesses for you, and remember what happened.\n\nOne principle runs through all of it: the AI decides what to do, and the mod makes it happen in-game — with the engine's own systems, not around them.",
+  "author": "severause",
+  "tags": [],
+  "nsfw": false,
+  "icon": "scroll",
+  "mods": [],
+  "external_url": "https://github.com/Severause/SeverActions/releases/tag/v3.9.14-beta25",
+  "version": "3.9.14"
+}
