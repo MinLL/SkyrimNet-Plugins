@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-09-18T21:41:18.793Z",
-  "stats_as_of": "2026-09-18T21:41:18.686Z",
+  "generated_at": "2026-09-18T22:25:47.281Z",
+  "stats_as_of": "2026-09-18T22:25:47.143Z",
   "plugins": [
     {
       "id": "plugins/jykej/audio-tags-for-inworld-tts-2",
@@ -161,7 +161,7 @@
       "last_updated": "2026-09-13T21:55:00Z",
       "external_url": "https://github.com/GoodProvider/SkyrimNet_Leashed/releases/latest",
       "stats": {
-        "downloads": 0,
+        "downloads": 1,
         "endorsements": 0
       }
     },
@@ -9145,7 +9145,7 @@
         "entities": 0
       },
       "stats": {
-        "downloads": 4,
+        "downloads": 5,
         "endorsements": 0
       }
     },
