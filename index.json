@@ -1,8 +1,32 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-09-19T16:56:10.996Z",
-  "stats_as_of": "2026-09-19T16:56:10.909Z",
+  "generated_at": "2026-09-19T16:59:48.458Z",
+  "stats_as_of": "2026-09-19T16:59:48.339Z",
   "plugins": [
+    {
+      "id": "plugins/deadohiosky/relationships",
+      "plugin_id": "deadohiosky.relationships",
+      "type": "listing",
+      "title": "Relationships",
+      "tagline": "Build relationships naturally and organically in a world where every character is unique",
+      "author": "deadohiosky",
+      "tags": [
+        "relationship",
+        "romance",
+        "love",
+        "friendship"
+      ],
+      "nsfw": false,
+      "icon": "heart",
+      "mods": [],
+      "first_published": "2026-09-19T13:07:18Z",
+      "last_updated": "2026-09-19T13:07:18Z",
+      "external_url": "https://github.com/deadohiosky48/SkyrimNet-Relationships",
+      "stats": {
+        "downloads": 0,
+        "endorsements": 0
+      }
+    },
     {
       "id": "plugins/deadohiosky/kinship",
       "plugin_id": "deadohiosky.kinship",
