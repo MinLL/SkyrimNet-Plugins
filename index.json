@@ -1,8 +1,32 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-09-19T18:54:17.051Z",
-  "stats_as_of": "2026-09-19T18:54:16.950Z",
+  "generated_at": "2026-09-19T18:56:06.407Z",
+  "stats_as_of": "2026-09-19T18:56:06.321Z",
   "plugins": [
+    {
+      "id": "plugins/goodprovider/skyrimnet-sexlab",
+      "plugin_id": "goodprovider.skyrimnet-sexlab",
+      "type": "listing",
+      "title": "SkyrimNet SexLab",
+      "tagline": "Supports SexLab animations",
+      "author": "goodprovider",
+      "tags": [
+        "sex",
+        "nswf",
+        "sexlab",
+        "actions"
+      ],
+      "nsfw": true,
+      "icon": "heart",
+      "mods": [],
+      "first_published": "2026-09-13T21:55:00Z",
+      "last_updated": "2026-09-19T14:35:33Z",
+      "external_url": "https://github.com/GoodProvider/SkyrimNet_Leashed/releases/latest",
+      "stats": {
+        "downloads": 1,
+        "endorsements": 0
+      }
+    },
     {
       "id": "plugins/deadohiosky/relationships",
       "plugin_id": "deadohiosky.relationships",
@@ -186,29 +210,6 @@
       },
       "stats": {
         "downloads": 0,
-        "endorsements": 0
-      }
-    },
-    {
-      "id": "plugins/goodprovider/skyrimnet-sexlab",
-      "plugin_id": "goodprovider.skyrimnet-sexlab",
-      "type": "listing",
-      "title": "SkyrimNet SexLab",
-      "tagline": "Supports SexLab animations",
-      "author": "goodprovider",
-      "tags": [
-        "sex",
-        "nswf",
-        "sexlab"
-      ],
-      "nsfw": true,
-      "icon": "heart",
-      "mods": [],
-      "first_published": "2026-09-13T21:55:00Z",
-      "last_updated": "2026-09-13T21:55:00Z",
-      "external_url": "https://github.com/GoodProvider/SkyrimNet_Leashed/releases/latest",
-      "stats": {
-        "downloads": 1,
         "endorsements": 0
       }
     },
