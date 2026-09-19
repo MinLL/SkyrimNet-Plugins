@@ -1,0 +1,19 @@
+{
+  "id": "deadohiosky.relationships",
+  "type": "listing",
+  "title": "Relationships",
+  "tagline": "Build relationships naturally and organically in a world where every character is unique",
+  "description": "Relationships builds on ColdSun's Romantasy mod to establish and build relationships in a way that feels natural and organic in a SkyrimNet-driven world. Every character has a unique combination of traits and attributes that make them behave and react to you in their own way.\n\nSome characters fall deeply in love but want to save themselves for marriage, while others shun commitment but are DTF with no strings attached. Getting to know them and treating them accordingly is the whole point, just as in real life. Settings give you control over how quickly relationships progress. Relationships can also regress as warranted.\n\nThis applies to both romantic and platonic relationships. Deciding to progress to a romantic relationship requires mutual consent. A successful marriage proposal requires progressing to the highest tier.\n\nOptionally integrates with its companion mod Kinship, so your significant other(s) and children are aware of their relationships to one another and act accordingly. Settings can ensure that your children are blocked from having romantic relations but can still grow their platonic bond.\n\nCurrently requires Romantasy ( but removing that dependency is on the roadmap for a future release. Optionally supports:\n- Kinship ( for awareness of familial ties\n- M.A.R.A.S. ( for marriage\n- OStim Community Resource ( for attractiveness rating\n- SeverActions ( for custom bio blocks\n\nContains no adult content, though it can gate access to adult content provided by other mods depending on relationship status.",
+  "author": "deadohiosky",
+  "tags": [
+    "relationship",
+    "romance",
+    "love",
+    "friendship"
+  ],
+  "nsfw": false,
+  "icon": "heart",
+  "mods": [],
+  "external_url": "https://github.com/deadohiosky48/SkyrimNet-Relationships",
+  "version": "1.6.0"
+}
