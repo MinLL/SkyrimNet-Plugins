@@ -1,0 +1,16 @@
+{
+  "id": "goodprovider.skyrimnet-leashed",
+  "type": "listing",
+  "title": "SkyrimNet Leashed",
+  "tagline": "Add the ability to leash, be leashed, lead, and be lead while leashed.",
+  "description": "SkyrimNet (LLM) bridge for Leash Framework.\nNPCs can leash and unleash through SkyrimNet actions, and the leashed characters are presented in each prompt.\n\nRequirements:\n\n- Leash Framework: (Nexus 187303) or (Sexlab 50377)",
+  "author": "goodprovider",
+  "tags": [
+    "actions"
+  ],
+  "nsfw": true,
+  "icon": "system",
+  "mods": [],
+  "external_url": "https://github.com/GoodProvider/SkyrimNet_Leashed/releases/latest",
+  "version": "0.4.1"
+}
