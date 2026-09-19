@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-09-19T21:35:06.790Z",
+  "generated_at": "2026-09-19T21:36:07.177Z",
   "stats_as_of": "2026-09-19T21:35:06.694Z",
   "plugins": [
     {
@@ -322,41 +322,6 @@
       "stats": {
         "downloads": 1,
         "endorsements": 0
-      }
-    },
-    {
-      "id": "plugins/min/nords-are-jerks",
-      "plugin_id": "min.nords-are-jerks",
-      "type": "bundle",
-      "title": "Nords are Jerks",
-      "tagline": "Makes the nords of Skyrim act like jerks.",
-      "author": "min",
-      "tags": [],
-      "nsfw": false,
-      "icon": "package",
-      "mods": [],
-      "first_published": "2026-09-05T17:49:08Z",
-      "last_updated": "2026-09-05T17:49:08Z",
-      "version": "1.0.0",
-      "min_skyrimnet_version": "0.25.0",
-      "history": [
-        {
-          "version": "1.0.0",
-          "commit": "f581b9a0d9236f12406503e6b6fbdfc590e156e5",
-          "date": "2026-09-05T17:49:08Z"
-        }
-      ],
-      "contents": {
-        "triggers": 0,
-        "actions": 0,
-        "prompts": 0,
-        "bios": 0,
-        "knowledge": 1,
-        "entities": 0
-      },
-      "stats": {
-        "downloads": 5,
-        "endorsements": 1
       }
     },
     {
