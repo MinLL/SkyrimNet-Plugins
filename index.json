@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-09-19T21:36:07.177Z",
-  "stats_as_of": "2026-09-19T21:35:06.694Z",
+  "generated_at": "2026-09-19T22:24:56.877Z",
+  "stats_as_of": "2026-09-19T22:24:56.811Z",
   "plugins": [
     {
       "id": "plugins/goodprovider/skyrimnet-sexlab",
@@ -297,7 +297,7 @@
       "last_updated": "2026-09-12T14:51:27Z",
       "external_url": "https://github.com/johnsonjoe1/SkyrimNetMessagelessImmersion/releases",
       "stats": {
-        "downloads": 1,
+        "downloads": 2,
         "endorsements": 0
       }
     },
@@ -4714,7 +4714,7 @@
         "entities": 0
       },
       "stats": {
-        "downloads": 2,
+        "downloads": 3,
         "endorsements": 0
       }
     },
@@ -5198,7 +5198,7 @@
         "entities": 0
       },
       "stats": {
-        "downloads": 0,
+        "downloads": 1,
         "endorsements": 0
       }
     },
@@ -6210,7 +6210,7 @@
         "entities": 0
       },
       "stats": {
-        "downloads": 0,
+        "downloads": 1,
         "endorsements": 0
       }
     },
