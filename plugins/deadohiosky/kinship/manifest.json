@@ -1,0 +1,18 @@
+{
+  "id": "deadohiosky.kinship",
+  "type": "listing",
+  "title": "Kinship",
+  "tagline": "Have unlimited children and make SkyrimNet aware of them and their familial relationships",
+  "description": "Kinship can take a child that is born to or adopted by your player and ensure they are properly associated with the right mother and father, and makes that information available to SkyrimNet. Optionally supports fertility mods like Fertility Mode Reloaded/FM+/v3 and Beeing Female that enable childbirth where the player is father or mother. It also progresses the child through life stages until adulthood. Family members are now aware of one another, including how they are related, and they behave and react accordingly.",
+  "author": "deadohiosky",
+  "tags": [
+    "children",
+    "family",
+    "bloodline"
+  ],
+  "nsfw": false,
+  "icon": "characters",
+  "mods": [],
+  "external_url": "https://github.com/deadohiosky48/SkyrimNet-Kinship",
+  "version": "1.9.3"
+}
