@@ -1,0 +1,19 @@
+name: IddleWheelAnimation_Agitate
+description: "Idle Animations WheelMenu SE TRIGGER:\nShow that you seriously agitate"
+eventCriteria:
+  eventType: active_effect
+  schemaConditions:
+    - fieldPath: effect
+      operator: equals
+      value: IdlePlayAgitatedME
+      caseSensitive: false
+    - fieldPath: action
+      operator: equals
+      value: applied
+audience: nearby_npcs
+response:
+  type: direct_narration
+  content: "{{ originator }} waves his/her arms sharply, as if persistently agitating."
+enabled: true
+cooldownSeconds: 1
+priority: 6

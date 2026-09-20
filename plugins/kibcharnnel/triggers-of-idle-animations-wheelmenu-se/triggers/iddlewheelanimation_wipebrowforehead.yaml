@@ -1,0 +1,19 @@
+name: IddleWheelAnimation_WipeBrowForehead
+description: "Idle Animations WheelMenu SE TRIGGER:\nWhipe a sweat from your forehead."
+eventCriteria:
+  eventType: active_effect
+  schemaConditions:
+    - fieldPath: effect
+      operator: equals
+      value: IdlePlayWipeBrowME
+      caseSensitive: false
+    - fieldPath: action
+      operator: equals
+      value: applied
+audience: nearby_npcs
+response:
+  type: direct_narration
+  content: "{{ originator }} wipes sweat from his/her forehead/brows."
+enabled: true
+cooldownSeconds: 1
+priority: 4

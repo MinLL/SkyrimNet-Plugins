@@ -1,0 +1,19 @@
+name: IddleWheelAnimation_ComeHere
+description: "Idle Animations WheelMenu SE TRIGGER:\nCall anyone with gesture."
+eventCriteria:
+  eventType: active_effect
+  schemaConditions:
+    - fieldPath: effect
+      operator: equals
+      value: IdlePlayComeThisWayME
+      caseSensitive: false
+    - fieldPath: action
+      operator: equals
+      value: applied
+audience: nearby_npcs
+response:
+  type: direct_narration
+  content: "{{ originator }} makes a beckoning gesture with his right hand. He beckons, as if to say, \"Come here.\""
+enabled: true
+cooldownSeconds: 5
+priority: 4

@@ -1,0 +1,19 @@
+name: IddleWheelAnimation_Give
+description: "Idle Animations WheelMenu SE TRIGGER:\nGive something"
+eventCriteria:
+  eventType: active_effect
+  schemaConditions:
+    - fieldPath: effect
+      operator: equals
+      value: IdlePlayGiveME
+      caseSensitive: false
+    - fieldPath: action
+      operator: equals
+      value: applied
+audience: nearby_npcs
+response:
+  type: direct_narration
+  content: "{{ originator }} makes a movement with his/hers hand, he/she puts his hand in his pocket and then extends it as if giving something."
+enabled: true
+cooldownSeconds: 5
+priority: 4

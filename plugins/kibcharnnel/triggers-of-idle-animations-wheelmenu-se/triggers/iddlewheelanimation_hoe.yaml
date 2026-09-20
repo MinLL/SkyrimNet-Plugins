@@ -1,0 +1,19 @@
+name: IddleWheelAnimation_Hoe
+description: "Idle Animations WheelMenu SE TRIGGER:\nTake that hoe...and start working on a field."
+eventCriteria:
+  eventType: active_effect
+  schemaConditions:
+    - fieldPath: effect
+      operator: equals
+      value: IdlePlayHoeME
+      caseSensitive: false
+    - fieldPath: action
+      operator: equals
+      value: applied
+audience: nearby_npcs
+response:
+  type: direct_narration
+  content: "{{ originator }} takes out a hoe and begins to cultivate the land"
+enabled: true
+cooldownSeconds: 5
+priority: 4

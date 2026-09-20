@@ -1,0 +1,18 @@
+name: IddleWheelAnimation_Point2
+description: "Idle Animations WheelMenu SE TRIGGER:\nPoint"
+eventCriteria:
+  eventType: active_effect
+  schemaConditions:
+    - fieldPath: effect
+      operator: equals
+      value: IdlePlayPointfar02ME
+      caseSensitive: false
+    - fieldPath: action
+      operator: equals
+      value: applied
+audience: nearby_npcs
+response:
+  type: direct_narration
+  content: "{{ originator }} points his finger in front of him/her."
+enabled: true
+priority: 5

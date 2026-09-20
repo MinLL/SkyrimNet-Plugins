@@ -1,0 +1,19 @@
+name: IddleWheelAnimation_WaveArmsforAttention
+description: "Idle Animations WheelMenu SE TRIGGER:\nWave both of your arms to get attention"
+eventCriteria:
+  eventType: active_effect
+  schemaConditions:
+    - fieldPath: effect
+      operator: equals
+      value: IdlePlayGetAttentionME
+      caseSensitive: false
+    - fieldPath: action
+      operator: equals
+      value: applied
+audience: nearby_npcs
+response:
+  type: direct_narration
+  content: "{{ originator }} waves both arms above his/hers head to attract attention"
+enabled: true
+cooldownSeconds: 1
+priority: 4

@@ -1,0 +1,19 @@
+name: IddleWheelAnimation_Wave
+description: "Idle Animations WheelMenu SE TRIGGER:\nArm wave."
+eventCriteria:
+  eventType: active_effect
+  schemaConditions:
+    - fieldPath: effect
+      operator: equals
+      value: IdlePlayWave
+      caseSensitive: false
+    - fieldPath: action
+      operator: equals
+      value: applied
+audience: nearby_npcs
+response:
+  type: direct_narration
+  content: "{{ originator }} waves his/her arm."
+enabled: true
+cooldownSeconds: 5
+priority: 4

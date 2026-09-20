@@ -1,0 +1,19 @@
+name: IddleWheelAnimation_CheersToast
+description: "Idle Animations WheelMenu SE TRIGGER:\nToast with goblet."
+eventCriteria:
+  eventType: active_effect
+  schemaConditions:
+    - fieldPath: effect
+      operator: equals
+      value: IdlePlayToastStartME
+      caseSensitive: false
+    - fieldPath: action
+      operator: equals
+      value: applied
+audience: nearby_npcs
+response:
+  type: direct_narration
+  content: "{{ originator }} with his/her right hand takes out a goblet and raises it up for a toast."
+enabled: true
+cooldownSeconds: 5
+priority: 5
