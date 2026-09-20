@@ -55,16 +55,25 @@ good, not whether it is well-formed.
 - **Must:** `description` says when it fires and what the player sees. "Time to fight" is not a
   description.
 - **Must:** `eventCriteria.eventType` is a real SkyrimNet event (`combat`, `hit`, `death`,
-  `location_change`, `quest_stage`, `book_read`, `sleep_stop`, ...) and
-  `eventCriteria.schemaConditions` reference fields that event actually carries.
+  `location_change`, `quest_stage`, `book_read`, `sleep_stop`, ...; the full list is in
+  `schemas/trigger.schema.json` and `gameplugin/docs/modding/WORKFLOW_TRIGGERS.md`) and
+  `eventCriteria.schemaConditions` reference fields that event actually carries, with operator names
+  the engine knows (`equals`, `contains`, `regex`, `greater_equal`, ...; see the schema's `operator`
+  enum).
 - **Must:** a trigger on a high-frequency event (`hit`, `active_effect`, `location_change`,
   `animation_event`, `*`) has a `cooldownSeconds` or a `probability` well under 1.0. A response on
   every hit is spam in the user's game.
 - **Must:** `diary_entry` and `dynamic_bio_update` responses set `targetScope`.
 - `audience` matches the response: a `player_thought` for `nearby_npcs` makes no sense.
-- `content` is an Inja template. Use the variables the schema lists (`{{ player_name }}`,
-  `{{ event_json.FIELD }}`, `{{ location }}`, ...); a placeholder the engine does not know renders
-  as empty text.
+- `content` is an Inja template. The trigger engine sets `{{ originator }}` and `{{ originator_uuid }}`
+  (the event's originating actor), `{{ target }}` / `{{ target_uuid }}`, `{{ actor.name }}`,
+  `{{ target_actor.name }}`, `{{ player.name }}`, `{{ event_json.FIELD }}`, `{{ event_type }}` and
+  `{{ event_location }}`, on top of the prompt engine's defaults (`{{ player_name }}`, `{{ location }}`,
+  `{{ gameTime }}`, every decorator). For `active_effect` the originator is the actor the effect landed
+  on, so `{{ originator }}` names the emoting player in a self-cast emote. The full table is in
+  `gameplugin/docs/modding/WORKFLOW_TRIGGERS.md`. A placeholder the engine does not know is a render
+  error: the template is posted verbatim, braces and all, so flag only names that appear in neither
+  that table nor the decorator library.
 - Name triggers for what they do (`companions_job_banter`), not what they are (`trigger1`).
 
 ## Knowledge packs (`knowledge/*.sknpack`)

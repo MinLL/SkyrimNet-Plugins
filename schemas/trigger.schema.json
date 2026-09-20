@@ -2,15 +2,19 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://raw.githubusercontent.com/MinLL/SkyrimNet-Plugins/main/schemas/trigger.schema.json",
   "title": "SkyrimNet Trigger",
-  "description": "A YAML rule that watches for a game event and emits a response (dialogue, narration, diary entry, etc.). Shape matches SkyrimNet's WORKFLOW_TRIGGERS.md. This schema is syntactic only — semantic validation (real eventType names, valid schemaCondition field paths for the declared eventType) runs inside the dashboard via SkyrimNet's own validate_custom_trigger at publish time.",
+  "description": "A YAML rule that watches for a game event and emits a response (dialogue, narration, thought, diary entry, virtual NPC or voice effect change). Shape matches SkyrimNet's WORKFLOW_TRIGGERS.md and Config/TriggerConfig.h. This schema is descriptive only: the hub validator parses trigger YAML and checks name == filename stem (case-insensitively) but does not apply this schema; semantic validation (real eventType names, valid schemaCondition field paths for the declared eventType) runs inside the dashboard via SkyrimNet's own validate_custom_trigger at publish time.",
   "type": "object",
-  "required": ["name", "description", "eventCriteria", "response"],
+  "required": [
+    "name",
+    "description",
+    "eventCriteria",
+    "response"
+  ],
   "properties": {
     "name": {
       "type": "string",
-      "pattern": "^[a-z][a-z0-9_]*$",
       "minLength": 1,
-      "description": "snake_case identifier for this trigger. Must start with a lowercase letter."
+      "description": "Identifier for this trigger. The hub validator requires it to equal the filename stem, compared case-insensitively; SkyrimNet itself accepts any string. snake_case is the convention."
     },
     "description": {
       "type": "string",
@@ -18,93 +22,293 @@
       "description": "Human-readable description of when this trigger fires and what it does."
     },
     "eventCriteria": {
-      "type": "object",
-      "required": ["eventType"],
-      "additionalProperties": false,
-      "properties": {
-        "eventType": {
-          "type": "string",
-          "minLength": 1,
-          "description": "Game event type. Common values from SkyrimNet: spell_cast, active_effect, hit, combat, death, activation, equip, sleep_start, sleep_stop, book_read, quest_stage, quest_start_stop, location_change, container_changed, enter_bleedout, animation_event, mod_event, crime, dragon_soul, dialogue, or '*' for wildcard. SkyrimNet may add more — this field is not restricted to an enum for forward compatibility. Real validity is checked by validate_custom_trigger at publish time."
+      "description": "One rule object, or a list of rule objects that are OR-ed (the trigger fires when any rule matches).",
+      "oneOf": [
+        {
+          "type": "object",
+          "required": [
+            "eventType"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "eventType": {
+              "type": "string",
+              "minLength": 1,
+              "description": "Game event type. Values SkyrimNet registers: spell_cast, active_effect, hit, combat, death, crime, dragon_soul, equip, enter_bleedout, activation, sleep_start, sleep_stop, book_read, container_changed, trade_start, trade_complete, lock_changed, quest_stage, quest_start_stop, quest_objective_state, cell_attach_detach, location_change, scene, scene_action, scene_phase, package_apply, package_remove, custom, direct_narration, continue_narration, persistent_generic, gamemaster_dialogue, mod_event, animation_event, diary_entry_created, messagebox, notification, dialogue, dialogue_npc, dialogue_player, dialogue_player_stt, dialogue_player_text, dialogue_player_telepathy, dialogue_npc_telepathy, dialogue_background, player_thoughts, npc_thoughts, dialogue_player_monologue, or '*' for wildcard. SkyrimNet may add more; this field is not an enum for forward compatibility. Real validity is checked by validate_custom_trigger at publish time."
+            },
+            "schemaConditions": {
+              "type": "array",
+              "description": "Filters on the event's extraData fields, combined with logicalOperator (default AND).",
+              "items": {
+                "type": "object",
+                "required": [
+                  "fieldPath",
+                  "operator",
+                  "value"
+                ],
+                "additionalProperties": false,
+                "properties": {
+                  "fieldPath": {
+                    "type": "string",
+                    "minLength": 1,
+                    "description": "Dot-path into the event's extraData (e.g. 'event_name', 'sender_form_id', 'num_arg'). Available paths vary by eventType."
+                  },
+                  "operator": {
+                    "enum": [
+                      "equals",
+                      "not_equals",
+                      "contains",
+                      "not_contains",
+                      "starts_with",
+                      "ends_with",
+                      "regex",
+                      "greater_than",
+                      "greater_equal",
+                      "less_than",
+                      "less_equal",
+                      "length_equals",
+                      "length_greater",
+                      "length_less",
+                      "has_field",
+                      "not_has_field"
+                    ],
+                    "description": "Comparison operator, exactly as SkyrimNet's TriggerManager spells it. equals/not_equals work on any type; contains/not_contains on strings (substring) and arrays (element); starts_with, ends_with and regex on strings; greater_than, greater_equal, less_than and less_equal on numbers; length_* on arrays; has_field/not_has_field on objects. There is no matches_regex, greater_than_or_equal or less_than_or_equal: an unknown operator never matches."
+                  },
+                  "value": {
+                    "type": [
+                      "string",
+                      "number",
+                      "boolean"
+                    ],
+                    "description": "Scalar value to compare against. Inja template strings like '{{ player_name }}' are allowed."
+                  },
+                  "caseSensitive": {
+                    "type": "boolean",
+                    "description": "String comparisons only. Default: true."
+                  }
+                }
+              }
+            },
+            "logicalOperator": {
+              "enum": [
+                "AND",
+                "OR"
+              ],
+              "description": "How this rule's schemaConditions combine. Default: AND. Uppercase only."
+            }
+          }
         },
-        "schemaConditions": {
+        {
           "type": "array",
-          "description": "Filters on the event's extraData fields. All conditions must pass (AND).",
+          "minItems": 1,
           "items": {
             "type": "object",
-            "required": ["fieldPath", "operator", "value"],
+            "required": [
+              "eventType"
+            ],
             "additionalProperties": false,
             "properties": {
-              "fieldPath": {
+              "eventType": {
                 "type": "string",
                 "minLength": 1,
-                "description": "Dot-path into the event's extraData (e.g. 'event_name', 'sender_form_id', 'num_arg'). Available paths vary by eventType."
+                "description": "Game event type. Values SkyrimNet registers: spell_cast, active_effect, hit, combat, death, crime, dragon_soul, equip, enter_bleedout, activation, sleep_start, sleep_stop, book_read, container_changed, trade_start, trade_complete, lock_changed, quest_stage, quest_start_stop, quest_objective_state, cell_attach_detach, location_change, scene, scene_action, scene_phase, package_apply, package_remove, custom, direct_narration, continue_narration, persistent_generic, gamemaster_dialogue, mod_event, animation_event, diary_entry_created, messagebox, notification, dialogue, dialogue_npc, dialogue_player, dialogue_player_stt, dialogue_player_text, dialogue_player_telepathy, dialogue_npc_telepathy, dialogue_background, player_thoughts, npc_thoughts, dialogue_player_monologue, or '*' for wildcard. SkyrimNet may add more; this field is not an enum for forward compatibility. Real validity is checked by validate_custom_trigger at publish time."
               },
-              "operator": {
+              "schemaConditions": {
+                "type": "array",
+                "description": "Filters on the event's extraData fields, combined with logicalOperator (default AND).",
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "fieldPath",
+                    "operator",
+                    "value"
+                  ],
+                  "additionalProperties": false,
+                  "properties": {
+                    "fieldPath": {
+                      "type": "string",
+                      "minLength": 1,
+                      "description": "Dot-path into the event's extraData (e.g. 'event_name', 'sender_form_id', 'num_arg'). Available paths vary by eventType."
+                    },
+                    "operator": {
+                      "enum": [
+                        "equals",
+                        "not_equals",
+                        "contains",
+                        "not_contains",
+                        "starts_with",
+                        "ends_with",
+                        "regex",
+                        "greater_than",
+                        "greater_equal",
+                        "less_than",
+                        "less_equal",
+                        "length_equals",
+                        "length_greater",
+                        "length_less",
+                        "has_field",
+                        "not_has_field"
+                      ],
+                      "description": "Comparison operator, exactly as SkyrimNet's TriggerManager spells it. equals/not_equals work on any type; contains/not_contains on strings (substring) and arrays (element); starts_with, ends_with and regex on strings; greater_than, greater_equal, less_than and less_equal on numbers; length_* on arrays; has_field/not_has_field on objects. There is no matches_regex, greater_than_or_equal or less_than_or_equal: an unknown operator never matches."
+                    },
+                    "value": {
+                      "type": [
+                        "string",
+                        "number",
+                        "boolean"
+                      ],
+                      "description": "Scalar value to compare against. Inja template strings like '{{ player_name }}' are allowed."
+                    },
+                    "caseSensitive": {
+                      "type": "boolean",
+                      "description": "String comparisons only. Default: true."
+                    }
+                  }
+                }
+              },
+              "logicalOperator": {
                 "enum": [
-                  "equals", "not_equals",
-                  "contains", "not_contains",
-                  "greater_than", "less_than",
-                  "greater_than_or_equal", "less_than_or_equal",
-                  "starts_with", "ends_with",
-                  "matches_regex"
+                  "AND",
+                  "OR"
                 ],
-                "description": "Comparison operator. Numeric operators require numeric values; string operators require string values."
-              },
-              "value": {
-                "type": ["string", "number", "boolean"],
-                "description": "Scalar value to compare against. Inja template strings like '{{ player_name }}' are allowed."
-              },
-              "caseSensitive": {
-                "type": "boolean",
-                "description": "String comparisons only. Default: true."
+                "description": "How this rule's schemaConditions combine. Default: AND. Uppercase only."
               }
             }
           }
         }
-      }
+      ]
     },
     "response": {
       "type": "object",
-      "required": ["type", "content"],
+      "required": [
+        "type"
+      ],
       "additionalProperties": false,
       "properties": {
         "type": {
           "enum": [
             "player_thought",
             "player_dialogue",
+            "npc_thought",
             "direct_narration",
             "persistent_generic",
             "diary_entry",
-            "dynamic_bio_update"
+            "dynamic_bio_update",
+            "enable_virtual_npc",
+            "disable_virtual_npc",
+            "activate_voice_effect",
+            "deactivate_voice_effect"
           ],
-          "description": "Kind of response generated when the trigger matches. player_thought = internal monologue, player_dialogue = player speaks aloud, direct_narration = narrative text NPCs react to, persistent_generic = log event without dialogue, diary_entry = create a diary entry, dynamic_bio_update = update character biography."
+          "description": "Kind of response generated when the trigger matches. player_thought = player internal monologue, player_dialogue = player speaks aloud, npc_thought = unvoiced thought for the target NPC(s), direct_narration = narrative text NPCs react to, persistent_generic = log event without dialogue, diary_entry = create a diary entry, dynamic_bio_update = update character biography, enable_virtual_npc / disable_virtual_npc = toggle a virtual NPC named by targetName, activate_voice_effect / deactivate_voice_effect = set or clear a voice effect recipe on the target actor(s)."
         },
         "content": {
           "type": "string",
-          "minLength": 1,
-          "description": "Inja template string. Available variables: {{ player_name }}, {{ player.name }}, {{ event_json.FIELD }}, {{ time_desc }}, {{ location }}, {{ gameTimeStr }}."
+          "description": "Inja template string. Variables set per event by SkyrimNet's TriggerManager: {{ originator }} (display name of the event's originating actor), {{ originator_uuid }}, {{ target }}, {{ target_uuid }}, {{ actor.name }} / {{ actor.UUID }} (originator as an object), {{ target_actor.name }} / {{ target_actor.UUID }}, {{ player.name }} / {{ player.UUID }}, {{ event_json.FIELD }} (any extraData field of the event), {{ event_type }}, {{ event_location }}, {{ timestamp }}; plus the prompt engine's defaults such as {{ player_name }}, {{ location }}, {{ gameTime }} and every decorator (e.g. {{ decnpc(originator_uuid).possessivePronoun }}). Which actor is the originator depends on the event: for active_effect it is the actor the effect was applied to (event_json.target) and target is the caster; for hit the aggressor; for death the victim; for dialogue the speaker. An unknown variable is a render error: the engine logs it and posts the template text verbatim. Not required for enable_virtual_npc, disable_virtual_npc, activate_voice_effect or deactivate_voice_effect."
         },
         "targetScope": {
-          "enum": ["triggering_actor", "player", "all_pinned_actors", "all_nearby_actors"],
-          "description": "Required for diary_entry and dynamic_bio_update. Who the diary/bio update applies to."
+          "enum": [
+            "triggering_actor",
+            "player",
+            "all_pinned_actors",
+            "all_nearby_actors",
+            "all_enabled_virtual_npcs"
+          ],
+          "description": "Who the response applies to for diary_entry, dynamic_bio_update, npc_thought, activate_voice_effect and deactivate_voice_effect. Default: triggering_actor."
         },
         "nearbyRadius": {
           "type": "number",
           "minimum": 0,
-          "description": "Optional. Radius in game units for 'nearby' scopes (default 2000)."
+          "description": "Optional. Radius in game units for all_nearby_actors (default 2000)."
+        },
+        "targetName": {
+          "type": "string",
+          "description": "enable_virtual_npc / disable_virtual_npc: name of the virtual NPC to toggle. Inja templates allowed (e.g. '{{ originator }}')."
+        },
+        "effectId": {
+          "type": "string",
+          "description": "activate_voice_effect: id of the voice effect recipe to apply (e.g. 'werewolf')."
+        },
+        "promptTemplate": {
+          "type": "string",
+          "description": "Optional prompt template override used by the generating response types."
         }
       },
       "allOf": [
         {
-          "if": { "properties": { "type": { "enum": ["diary_entry", "dynamic_bio_update"] } }, "required": ["type"] },
-          "then": { "required": ["targetScope"] }
+          "if": {
+            "properties": {
+              "type": {
+                "enum": [
+                  "player_thought",
+                  "player_dialogue",
+                  "npc_thought",
+                  "direct_narration",
+                  "persistent_generic",
+                  "diary_entry",
+                  "dynamic_bio_update"
+                ]
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "required": [
+              "content"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "enum": [
+                  "enable_virtual_npc",
+                  "disable_virtual_npc"
+                ]
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "required": [
+              "targetName"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "activate_voice_effect"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "required": [
+              "effectId"
+            ]
+          }
         }
       ]
     },
     "audience": {
-      "enum": ["player", "originator", "target", "originator_or_target", "everyone", "nearby_npcs"],
-      "description": "Who perceives the response. Default: player. originator = actor that caused the event, target = target of the event, nearby_npcs = NPCs only (excludes player)."
+      "enum": [
+        "player",
+        "originator",
+        "target",
+        "originator_or_target",
+        "everyone",
+        "nearby_npcs",
+        "enabled_virtual_npcs"
+      ],
+      "description": "Who perceives the response. Default: player. originator = actor that caused the event, target = target of the event, nearby_npcs = NPCs only (excludes player), enabled_virtual_npcs = every enabled virtual NPC."
     },
     "enabled": {
       "type": "boolean",
@@ -124,6 +328,10 @@
     "priority": {
       "type": "integer",
       "description": "Ordering hint when multiple triggers match the same event. Higher fires first."
+    },
+    "interrupt": {
+      "type": "boolean",
+      "description": "If true, queued dialogue and audio are purged before the response runs. Default: false."
     }
   }
 }

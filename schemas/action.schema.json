@@ -103,7 +103,8 @@
                   "description": "Arguments to the decorator. Use the token 'currentActor' or 'player' for actor references, not '{{ actor.UUID }}'."
                 },
                 "comparisonOperator": {
-                  "enum": ["==", "!=", ">", "<", ">=", "<="]
+                  "enum": ["==", "!=", ">", "<", ">=", "<=", "contains", "not_contains", "is_null", "is_not_null", "is_empty", "is_not_empty"],
+                  "description": "Comparison between the decorator result and expectedValue, as SkyrimNet's EligibilityChecker spells it. The symbolic forms are what the dashboard emits; the engine also accepts equals, not_equals, greater_than, less_than, greater_than_or_equal and less_than_or_equal. contains/not_contains work on strings and arrays; is_null, is_not_null, is_empty and is_not_empty ignore expectedValue."
                 },
                 "expectedValue": {
                   "type": ["string", "number", "boolean"],
