@@ -452,6 +452,11 @@ if (!fs.existsSync(PLUGINS_DIR)) {
       if (manifest.type === 'listing' && typeof manifest.external_url === 'string') {
         entry.external_url = manifest.external_url;
       }
+      // Optional; the browse page's Language facet appears only once some row carries it.
+      // Lowercased so the row matches the bare-code shape the schema pins.
+      if (typeof manifest.language === 'string' && manifest.language.trim()) {
+        entry.language = manifest.language.trim().toLowerCase();
+      }
 
       if (contents !== undefined) {
         entry.contents = contents;

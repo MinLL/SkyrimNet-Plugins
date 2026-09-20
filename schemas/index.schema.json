@@ -147,6 +147,11 @@
           "maxLength": 50,
           "description": "Copied from manifest.json. Key into the dashboard's Lucide icon registry; rendered as the browse-card thumbnail."
         },
+        "language": {
+          "type": "string",
+          "pattern": "^[a-z]{2}$",
+          "description": "Copied from manifest.json when the manifest declares one; absent otherwise. Bare lowercase ISO 639-1 code ('en', 'de') the content is written in. The dashboard's browse page derives its Language filter from the distinct values present and labels each with its friendly name, so the facet only appears once at least one entry carries the key. Additive within schema v2."
+        },
         "contents": {
           "type": "object",
           "required": ["triggers", "actions", "prompts"],
