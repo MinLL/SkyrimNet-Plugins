@@ -72,9 +72,8 @@
     },
     "language": {
       "type": "string",
-      "minLength": 1,
-      "maxLength": 50,
-      "description": "Optional. The language the content is written in, as a short locale code ('en', 'de'). Free text typed by the author in the dashboard; the dashboard trims it and omits the key when empty, so it is never present-but-blank. Copied into index.json so the browse page can offer a Language filter without fetching manifests. Absent means undeclared, not English."
+      "pattern": "^[a-z]{2}$",
+      "description": "Optional. The language the content is written in, as a bare lowercase ISO 639-1 code ('en', 'de'). The dashboard offers a fixed list of codes with friendly names and omits the key when nothing is chosen, so it is never present-but-blank. The schema pins the shape, not the membership: which codes the list offers is a dashboard concern, so adding a language never needs a schema change here. Copied into index.json so the browse page can offer a Language filter without fetching manifests. Absent means undeclared, not English."
     },
     "nsfw": {
       "type": "boolean",

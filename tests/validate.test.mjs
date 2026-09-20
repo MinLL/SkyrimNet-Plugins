@@ -62,6 +62,12 @@ test("happy path: a manifest declaring a language is accepted", () => {
   assert.deepEqual(res.result.labels, ["ready-for-agent-review"]);
 });
 
+test("rejects a language that is not a bare lowercase ISO 639-1 code", () => {
+  for (const language of ["German", "DE", "de-DE", ""]) {
+    assertRejected(validatePlugin({ manifest: goodManifest({ language }) }), /language/);
+  }
+});
+
 test("another installed [bot] with the marker is NOT dashboard-submitted", () => {
   // The gate is the hub App's exact login. A different App (Dependabot, the
   // reviewer App) plus a copy-pasted marker must route to a human.

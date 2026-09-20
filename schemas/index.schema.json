@@ -149,9 +149,8 @@
         },
         "language": {
           "type": "string",
-          "minLength": 1,
-          "maxLength": 50,
-          "description": "Copied from manifest.json when the manifest declares one; absent otherwise. Short locale code ('en', 'de') the content is written in. The dashboard's browse page derives its Language filter from the distinct values present, so the facet only appears once at least one entry carries the key. Additive within schema v2."
+          "pattern": "^[a-z]{2}$",
+          "description": "Copied from manifest.json when the manifest declares one; absent otherwise. Bare lowercase ISO 639-1 code ('en', 'de') the content is written in. The dashboard's browse page derives its Language filter from the distinct values present and labels each with its friendly name, so the facet only appears once at least one entry carries the key. Additive within schema v2."
         },
         "contents": {
           "type": "object",
