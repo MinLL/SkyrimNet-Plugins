@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-09-20T06:40:43.039Z",
-  "stats_as_of": "2026-09-20T06:40:42.934Z",
+  "generated_at": "2026-09-20T08:33:06.128Z",
+  "stats_as_of": "2026-09-20T08:33:05.999Z",
   "plugins": [
     {
       "id": "plugins/kibcharnnel/triggers-of-idle-animations-wheelmenu-se",
@@ -200,7 +200,7 @@
       "last_updated": "2026-09-14T11:37:07Z",
       "external_url": "https://github.com/Oldcustard/Wintersun-Skyrimnet-Integration/releases",
       "stats": {
-        "downloads": 3,
+        "downloads": 4,
         "endorsements": 0
       }
     },
