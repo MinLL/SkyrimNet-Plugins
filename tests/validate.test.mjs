@@ -62,6 +62,24 @@ test("happy path: a manifest declaring a language is accepted", () => {
   assert.deepEqual(res.result.labels, ["ready-for-agent-review"]);
 });
 
+test("happy path: a manifest carrying a changelog is accepted", () => {
+  const res = validatePlugin({ manifest: goodManifest({ changelog: "Added Lydia's banter." }) });
+  assert.equal(res.result.success, true, errorMessages(res.result));
+});
+
+test("rejects a changelog that is blank or over the ceiling", () => {
+  for (const changelog of ["", "x".repeat(2001)]) {
+    assertRejected(validatePlugin({ manifest: goodManifest({ changelog }) }), /changelog/);
+  }
+});
+
+test("rejects a changelog on a listing, which has no versions to describe", () => {
+  const manifest = goodManifest({ type: "listing", external_url: "https://example.org/mod", changelog: "First." });
+  delete manifest.version;
+  delete manifest.min_skyrimnet_version;
+  assertRejected(validatePlugin({ manifest, files: {} }), /changelog/);
+});
+
 test("rejects a language that is not a bare lowercase ISO 639-1 code", () => {
   for (const language of ["German", "DE", "de-DE", ""]) {
     assertRejected(validatePlugin({ manifest: goodManifest({ language }) }), /language/);

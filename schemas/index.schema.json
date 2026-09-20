@@ -102,7 +102,7 @@
         "history": {
           "type": "array",
           "maxItems": 50,
-          "description": "Published version history for bundles, newest first, derived from git. Each entry pins a version to the newest commit at which the plugin carried that version, which is exactly what the installer needs: install/update takes history[0], rollback takes any earlier entry and re-runs the same code path against the older SHA. Capped — old versions beyond the cap are not offered for rollback. Absent for listings (nothing to install).",
+          "description": "Published version history for bundles, newest first, derived from git. Each entry pins a version to the newest commit at which the plugin carried that version, which is exactly what the installer needs: install/update takes history[0], rollback takes any earlier entry and re-runs the same code path against the older SHA. Each entry also carries that version's `changelog` when the manifest at that commit had one, so the dashboard and the hub site can show what changed without fetching manifests. Capped — old versions beyond the cap are not offered for rollback. Absent for listings (nothing to install).",
           "items": {
             "type": "object",
             "required": ["version", "commit", "date"],
@@ -123,6 +123,12 @@
                 "type": "string",
                 "format": "date-time",
                 "description": "Author date of that commit."
+              },
+              "changelog": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 2000,
+                "description": "manifest.changelog as it stood at that commit: the author's note on what changed in that version, restricted markdown. Absent when the manifest at that commit carried none (versions published before the field existed). Additive within schema v2, same precedent as `language`."
               }
             }
           }
