@@ -1,0 +1,19 @@
+name: IddleWheelAnimation_Point3Down
+description: Pont down
+eventCriteria:
+  eventType: active_effect
+  schemaConditions:
+    - fieldPath: effect
+      operator: equals
+      value: IdlePlayPointCloseME
+      caseSensitive: false
+    - fieldPath: action
+      operator: equals
+      value: applied
+audience: nearby_npcs
+response:
+  type: direct_narration
+  content: "{{ originator }} points with his/her hand slightly downwards, as if pointing down but still in front of him/her."
+enabled: true
+cooldownSeconds: 5
+priority: 5

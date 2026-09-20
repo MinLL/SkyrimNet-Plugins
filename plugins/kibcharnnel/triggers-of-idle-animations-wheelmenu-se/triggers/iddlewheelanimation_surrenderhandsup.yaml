@@ -1,0 +1,19 @@
+name: IddleWheelAnimation_SurrenderHandsUp
+description: Give up! Hands up!
+eventCriteria:
+  eventType: active_effect
+  schemaConditions:
+    - fieldPath: effect
+      operator: equals
+      value: IdlePlaySurrenderME
+      caseSensitive: false
+    - fieldPath: action
+      operator: equals
+      value: applied
+audience: nearby_npcs
+response:
+  type: direct_narration
+  content: "{{ originator }} raises hands up, showing that {{ originator }} surrenders!"
+enabled: true
+cooldownSeconds: 5
+priority: 4

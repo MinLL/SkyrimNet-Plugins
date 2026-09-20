@@ -1,0 +1,19 @@
+name: IddleWheelAnimation_TavernCheer
+description: Cheer, shaking your fists in approval
+eventCriteria:
+  eventType: active_effect
+  schemaConditions:
+    - fieldPath: effect
+      operator: equals
+      value: IdlePlayTavernCheerME
+      caseSensitive: false
+    - fieldPath: action
+      operator: equals
+      value: applied
+audience: nearby_npcs
+response:
+  type: direct_narration
+  content: "{{ originator }} сheers, shaking his/her fists in approval"
+enabled: true
+cooldownSeconds: 5
+priority: 4

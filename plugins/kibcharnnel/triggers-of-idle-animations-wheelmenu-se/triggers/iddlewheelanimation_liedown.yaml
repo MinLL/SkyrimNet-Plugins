@@ -1,0 +1,19 @@
+name: IddleWheelAnimation_LieDown
+description: Lie down
+eventCriteria:
+  eventType: active_effect
+  schemaConditions:
+    - fieldPath: effect
+      operator: equals
+      value: IdlePlayLayDownME
+      caseSensitive: false
+    - fieldPath: action
+      operator: equals
+      value: applied
+audience: nearby_npcs
+response:
+  type: direct_narration
+  content: "{{ originator }} lies down and throws his/her hands behind his/her head"
+enabled: true
+cooldownSeconds: 5
+priority: 4

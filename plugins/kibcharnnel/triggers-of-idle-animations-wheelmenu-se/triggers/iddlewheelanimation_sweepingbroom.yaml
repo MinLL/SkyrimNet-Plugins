@@ -1,0 +1,19 @@
+name: IddleWheelAnimation_SweepingBroom
+description: take care of this mess
+eventCriteria:
+  eventType: active_effect
+  schemaConditions:
+    - fieldPath: effect
+      operator: equals
+      value: IdlePlaySweepingME
+      caseSensitive: false
+    - fieldPath: action
+      operator: equals
+      value: applied
+audience: nearby_npcs
+response:
+  type: direct_narration
+  content: "{{ originator }} takes out a broom and starts sweeping the floor."
+enabled: true
+cooldownSeconds: 10
+priority: 4

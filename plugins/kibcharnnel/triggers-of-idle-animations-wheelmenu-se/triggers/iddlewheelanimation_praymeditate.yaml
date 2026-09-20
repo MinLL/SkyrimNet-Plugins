@@ -1,0 +1,19 @@
+name: IddleWheelAnimation_PrayMeditate
+description: Pray or meditate?
+eventCriteria:
+  eventType: active_effect
+  schemaConditions:
+    - fieldPath: effect
+      operator: equals
+      value: IdlePlaySitMeditateME
+      caseSensitive: false
+    - fieldPath: action
+      operator: equals
+      value: applied
+audience: nearby_npcs
+response:
+  type: direct_narration
+  content: "{{ originator }} kneels, presses his/her hands to his/her waist and lowers his/her head in prayer or meditation."
+enabled: true
+cooldownSeconds: 5
+priority: 4

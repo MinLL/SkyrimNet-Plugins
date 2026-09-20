@@ -1,0 +1,19 @@
+name: IddleWheelAnimation_Dance2
+description: Start dancing and claping your hand
+eventCriteria:
+  eventType: active_effect
+  schemaConditions:
+    - fieldPath: effect
+      operator: equals
+      value: IdlePlayCiceroDance02ME
+      caseSensitive: false
+    - fieldPath: action
+      operator: equals
+      value: applied
+audience: nearby_npcs
+response:
+  type: direct_narration
+  content: "{{ originator }} claps his/her hands and starts dancing while clapping"
+enabled: true
+cooldownSeconds: 5
+priority: 6

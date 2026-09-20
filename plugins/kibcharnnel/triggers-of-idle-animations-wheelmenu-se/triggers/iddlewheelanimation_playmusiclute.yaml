@@ -1,0 +1,19 @@
+name: IddleWheelAnimation_PlayMusicLute
+description: Play some music with lute
+eventCriteria:
+  eventType: active_effect
+  schemaConditions:
+    - fieldPath: effect
+      operator: equals
+      value: IdlePlayLuteStartME
+      caseSensitive: false
+    - fieldPath: action
+      operator: equals
+      value: applied
+audience: nearby_npcs
+response:
+  type: direct_narration
+  content: "{{ originator }} takes out a lute and starts playing it"
+enabled: true
+cooldownSeconds: 5
+priority: 7

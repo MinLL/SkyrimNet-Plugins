@@ -1,0 +1,19 @@
+name: IddleWheelAnimation_ReadBook
+description: read a book
+eventCriteria:
+  eventType: active_effect
+  schemaConditions:
+    - fieldPath: effect
+      operator: equals
+      value: IdlePlayReadBookME
+      caseSensitive: false
+    - fieldPath: action
+      operator: equals
+      value: removed
+audience: nearby_npcs
+response:
+  type: direct_narration
+  content: "{{ originator }} takes out a book and starts reading"
+enabled: true
+cooldownSeconds: 5
+priority: 4

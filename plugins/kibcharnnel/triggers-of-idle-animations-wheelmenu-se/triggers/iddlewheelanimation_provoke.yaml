@@ -1,0 +1,19 @@
+name: IddleWheelAnimation_Provoke
+description: Provoke anyone!
+eventCriteria:
+  eventType: active_effect
+  schemaConditions:
+    - fieldPath: effect
+      operator: equals
+      value: IdlePlayProvokeME
+      caseSensitive: false
+    - fieldPath: action
+      operator: equals
+      value: applied
+audience: nearby_npcs
+response:
+  type: direct_narration
+  content: "{{ originator }} hits his/hers chest twice with his right hand in a threatening position. {{ originator }} is clearly provoking!"
+enabled: true
+cooldownSeconds: 5
+priority: 5

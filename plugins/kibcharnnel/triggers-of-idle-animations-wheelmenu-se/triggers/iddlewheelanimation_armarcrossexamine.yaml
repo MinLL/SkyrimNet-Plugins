@@ -1,0 +1,19 @@
+name: IddleWheelAnimation_ArmArcrossExamine
+description: Fold arms and examine
+eventCriteria:
+  eventType: active_effect
+  schemaConditions:
+    - fieldPath: effect
+      operator: equals
+      value: IdlePlayExamineME
+      caseSensitive: false
+    - fieldPath: action
+      operator: equals
+      value: applied
+audience: nearby_npcs
+response:
+  type: direct_narration
+  content: "{{ originator }} folds his/her arms across his/her chest. {{ originator }}He also looks with a searching gaze."
+enabled: true
+cooldownSeconds: 5
+priority: 4

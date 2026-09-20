@@ -1,0 +1,20 @@
+name: IddleWheelAnimation_Horn
+description: Blow your horn!
+eventCriteria:
+  eventType: active_effect
+  schemaConditions:
+    - fieldPath: effect
+      operator: equals
+      value: IdlePlayBlowHornME
+      caseSensitive: false
+    - fieldPath: action
+      operator: equals
+      value: applied
+audience: nearby_npcs
+response:
+  type: direct_narration
+  content: "{{ originator }} takes out a long horn and starts blowing."
+enabled: true
+cooldownSeconds: 5
+priority: 7
+interrupt: true

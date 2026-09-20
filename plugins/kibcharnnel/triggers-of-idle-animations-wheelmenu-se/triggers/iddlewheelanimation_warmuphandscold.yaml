@@ -1,0 +1,19 @@
+name: IddleWheelAnimation_WarmUpHandsCold
+description: Its cold here!
+eventCriteria:
+  eventType: active_effect
+  schemaConditions:
+    - fieldPath: effect
+      operator: equals
+      value: IdlePlayWarmarmsME
+      caseSensitive: false
+    - fieldPath: action
+      operator: equals
+      value: applied
+audience: nearby_npcs
+response:
+  type: direct_narration
+  content: "{{ originator }} warms his/her hand. Rubs his/her left hand against his right arm and right hand against left arm. This gesture shows that {{ originator }} feels cold."
+enabled: true
+cooldownSeconds: 5
+priority: 4
