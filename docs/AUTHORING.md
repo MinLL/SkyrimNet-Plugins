@@ -22,6 +22,9 @@ good, not whether it is well-formed.
   load-order mod (an SKSE plugin, a voice model) goes in `requirements`.
 - Bump `version` on every republish. The dashboard warns if you did not; it does not do it for you.
 - `tags` are search terms. Three to six specific ones beat a dozen generic ones.
+- `language` is optional. Set it to a short locale code (`en`, `de`, `fr`) when the content is not
+  written in English, or when you want it findable under the browse page's Language filter. Leave
+  it blank rather than guessing; blank means undeclared.
 
 ## Character prompts (`prompts/characters/*.prompt`)
 

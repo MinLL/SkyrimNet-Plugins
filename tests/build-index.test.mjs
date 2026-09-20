@@ -253,6 +253,30 @@ test("knowledge packs are counted in contents without bumping the schema version
   }
 });
 
+test("a manifest language is baked into its row without bumping the schema version", () => {
+  const repo = initRepo();
+  try {
+    writeFile(repo, "plugins/bob/pack/manifest.json", JSON.stringify(bundleManifest({ language: " de " }), null, 2));
+    writeFile(repo, "plugins/bob/pack/prompts/a.prompt", "x\n");
+    writeFile(repo, "plugins/bob/other/manifest.json",
+      JSON.stringify(bundleManifest({ id: "bob.other", title: "Bob's Other" }), null, 2));
+    writeFile(repo, "plugins/bob/other/prompts/a.prompt", "x\n");
+    commitAll(repo, "add packs");
+
+    const { index } = runBuildIndex(repo);
+    assertValidIndex(index);
+    assert.equal(index.schema_version, 2);
+
+    const byId = new Map(index.plugins.map((p) => [p.plugin_id, p]));
+    // Trimmed on the way in, so a padded value matches the facet option it produces.
+    assert.equal(byId.get("bob.pack").language, "de");
+    // Undeclared stays absent, never present-but-empty.
+    assert.equal(Object.hasOwn(byId.get("bob.other"), "language"), false);
+  } finally {
+    rmDir(repo);
+  }
+});
+
 test("virtual entities are counted in contents without bumping the schema version", () => {
   const repo = initRepo();
   try {

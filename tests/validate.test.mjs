@@ -56,6 +56,12 @@ test("happy path: dashboard-submitted prompt+trigger bundle passes", () => {
   assert.deepEqual(res.result.errors, []);
 });
 
+test("happy path: a manifest declaring a language is accepted", () => {
+  const res = validatePlugin({ manifest: goodManifest({ language: "de" }) });
+  assert.equal(res.result.success, true, errorMessages(res.result));
+  assert.deepEqual(res.result.labels, ["ready-for-agent-review"]);
+});
+
 test("another installed [bot] with the marker is NOT dashboard-submitted", () => {
   // The gate is the hub App's exact login. A different App (Dependabot, the
   // reviewer App) plus a copy-pasted marker must route to a human.
