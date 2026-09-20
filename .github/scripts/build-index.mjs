@@ -51,6 +51,8 @@ const INDEX_SCHEMA_VERSION = 2;
 // many same-version pushes.
 const HISTORY_CAP = 20;
 const HISTORY_COMMIT_SCAN_LIMIT = 200;
+// Mirrors manifest.schema.json's `changelog` maxLength.
+const CHANGELOG_MAX_LENGTH = 2000;
 
 // Popularity stats source. fateless.ai is the hub's authenticated backing and
 // the only thing that observes an install or an endorsement (this repo is
@@ -113,8 +115,11 @@ function pluginHistory(relPath) {
     if (!manifestText) continue; // manifest didn't exist at that commit
 
     let version;
+    let changelog;
     try {
-      version = JSON.parse(manifestText).version;
+      const manifest = JSON.parse(manifestText);
+      version = manifest.version;
+      changelog = manifest.changelog;
     } catch {
       continue; // unparseable manifest at that commit — skip, don't fail the build
     }
@@ -122,7 +127,16 @@ function pluginHistory(relPath) {
     if (seenVersions.has(version)) continue;
 
     seenVersions.add(version);
-    history.push({ version, commit: sha, date });
+    const entry = { version, commit: sha, date };
+    // The author's note for this version travels with the pin, so consumers
+    // never fetch a historical manifest to show what changed. Same-version
+    // republishes keep the note from the newest commit, like the pin itself.
+    // Capped at the manifest schema's ceiling so a hand-edited manifest that
+    // slipped past validation cannot bloat index.json.
+    if (typeof changelog === "string" && changelog.trim()) {
+      entry.changelog = changelog.trim().slice(0, CHANGELOG_MAX_LENGTH);
+    }
+    history.push(entry);
     if (history.length >= HISTORY_CAP) break;
   }
 

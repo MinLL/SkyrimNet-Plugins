@@ -166,7 +166,7 @@ test("emits per-version history newest-first, pinned to the newest commit of eac
     writeFile(
       repo,
       "plugins/bob/pack/manifest.json",
-      JSON.stringify(bundleManifest({ version: "1.1.0" }), null, 2),
+      JSON.stringify(bundleManifest({ version: "1.1.0", changelog: "  Added Lydia's banter.  " }), null, 2),
     );
     const c3 = commitAll(repo, "bump to 1.1.0");
 
@@ -189,6 +189,11 @@ test("emits per-version history newest-first, pinned to the newest commit of eac
     assert.equal(entry.history[1].version, "1.0.0");
     assert.equal(entry.history[1].commit, c2, "rollback target is the newest commit of that version");
     assert.notEqual(entry.history[1].commit, c1);
+
+    // The version's note rides along with its pin, trimmed; a version whose
+    // manifest predates the field carries no key at all (absent, not "").
+    assert.equal(entry.history[0].changelog, "Added Lydia's banter.");
+    assert.ok(!("changelog" in entry.history[1]));
 
     for (const h of entry.history) {
       assert.match(h.commit, /^[0-9a-f]{40}$/);

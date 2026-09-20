@@ -70,6 +70,12 @@
       },
       "description": "Short keywords for filtering. Whatever strings the dashboard emits — no pattern enforced."
     },
+    "changelog": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 2000,
+      "description": "What changed in THIS version, written by the author at publish time and rendered as restricted markdown. Describes one version only: the full per-version history is assembled by build-index.mjs, which reads the manifest as it stood at each version's commit and copies this field into the matching index.json history entry. The dashboard requires it on every publish (prefilled with 'Initial release' for a first submission, cleared when the version is bumped on an edit); the schema keeps it optional so manifests published before the field existed still validate."
+    },
     "language": {
       "type": "string",
       "pattern": "^[a-z]{2}$",

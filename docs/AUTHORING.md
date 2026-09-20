@@ -21,6 +21,11 @@ good, not whether it is well-formed.
   user who searches by their load order. Anything else the user has to install that is not a
   load-order mod (an SKSE plugin, a voice model) goes in `requirements`.
 - Bump `version` on every republish. The dashboard warns if you did not; it does not do it for you.
+- **Must:** `changelog` says what changed in this version, for the user deciding whether to
+  update. One to a few sentences; restricted markdown is fine. "Added banter for the Jorrvaskr
+  members; fixed Aela's speech style" is a changelog; "update" and "fixes" are not. It describes
+  the current version only: the hub keeps every earlier version's note from git and shows them
+  as a history, so do not paste previous entries into it.
 - `tags` are search terms. Three to six specific ones beat a dozen generic ones.
 - `language` is optional. Pick it from the dashboard's list when the content is not written in
   English, or when you want it findable under the browse page's Language filter. It is stored as
