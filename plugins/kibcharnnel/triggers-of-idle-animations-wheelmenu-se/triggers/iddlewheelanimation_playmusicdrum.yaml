@@ -1,0 +1,19 @@
+name: IddleWheelAnimation_PlayMusicDrum
+description: Play some music with drum
+eventCriteria:
+  eventType: active_effect
+  schemaConditions:
+    - fieldPath: effect
+      operator: equals
+      value: IdlePlayDrumStartME
+      caseSensitive: false
+    - fieldPath: action
+      operator: equals
+      value: applied
+audience: nearby_npcs
+response:
+  type: direct_narration
+  content: "{{ originator }} takes out a drum and starts playing it"
+enabled: true
+cooldownSeconds: 5
+priority: 7

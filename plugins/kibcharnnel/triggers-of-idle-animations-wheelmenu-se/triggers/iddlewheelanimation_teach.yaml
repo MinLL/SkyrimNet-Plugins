@@ -1,0 +1,19 @@
+name: IddleWheelAnimation_Teach
+description: You are smart! You explain!
+eventCriteria:
+  eventType: active_effect
+  schemaConditions:
+    - fieldPath: effect
+      operator: equals
+      value: IdlePlayWordTeachME
+      caseSensitive: false
+    - fieldPath: action
+      operator: equals
+      value: applied
+audience: nearby_npcs
+response:
+  type: direct_narration
+  content: "{{ originator }} makes a movement with his right hand in front of him/her, as if explaining something."
+enabled: true
+cooldownSeconds: 5
+priority: 4

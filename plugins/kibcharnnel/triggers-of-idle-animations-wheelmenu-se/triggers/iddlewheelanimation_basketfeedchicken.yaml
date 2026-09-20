@@ -1,0 +1,19 @@
+name: IddleWheelAnimation_BasketFeedChicken
+description: time to feed birds
+eventCriteria:
+  eventType: active_effect
+  schemaConditions:
+    - fieldPath: effect
+      operator: equals
+      value: IdlePlayFeedChickenME
+      caseSensitive: false
+    - fieldPath: action
+      operator: equals
+      value: applied
+audience: nearby_npcs
+response:
+  type: direct_narration
+  content: "{{ originator }} takes out a basket and starts throwing something out of it onto the ground"
+enabled: true
+cooldownSeconds: 5
+priority: 4

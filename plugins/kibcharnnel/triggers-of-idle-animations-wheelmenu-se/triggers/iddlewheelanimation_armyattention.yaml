@@ -1,0 +1,19 @@
+name: IddleWheelAnimation_ArmyAttention
+description: Attention army stand
+eventCriteria:
+  eventType: active_effect
+  schemaConditions:
+    - fieldPath: effect
+      operator: equals
+      value: IdlePlaySnapME
+      caseSensitive: false
+    - fieldPath: action
+      operator: equals
+      value: applied
+audience: nearby_npcs
+response:
+  type: direct_narration
+  content: "{{ originator }} stands at attention like a soldier."
+enabled: true
+cooldownSeconds: 5
+priority: 5

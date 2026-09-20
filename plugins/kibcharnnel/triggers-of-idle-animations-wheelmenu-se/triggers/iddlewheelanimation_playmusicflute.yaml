@@ -1,0 +1,19 @@
+name: IddleWheelAnimation_PlayMusicFlute
+description: Play some music with flute
+eventCriteria:
+  eventType: active_effect
+  schemaConditions:
+    - fieldPath: effect
+      operator: equals
+      value: IdlePlayFluteStartME
+      caseSensitive: false
+    - fieldPath: action
+      operator: equals
+      value: applied
+audience: nearby_npcs
+response:
+  type: direct_narration
+  content: "{{ originator }} takes out a flute and starts playing it."
+enabled: true
+cooldownSeconds: 5
+priority: 7

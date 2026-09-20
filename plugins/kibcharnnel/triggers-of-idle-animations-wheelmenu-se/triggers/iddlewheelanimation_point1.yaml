@@ -1,0 +1,19 @@
+name: IddleWheelAnimation_Point1
+description: Point with finger
+eventCriteria:
+  eventType: active_effect
+  schemaConditions:
+    - fieldPath: effect
+      operator: equals
+      value: IdlePlayPointfar01ME
+      caseSensitive: false
+    - fieldPath: action
+      operator: equals
+      value: applied
+audience: nearby_npcs
+response:
+  type: direct_narration
+  content: "{{ originator }} points his/her finger in front of him/her while holding his/her hand above his/her head as if pointing upwards."
+enabled: true
+cooldownSeconds: 5
+priority: 5

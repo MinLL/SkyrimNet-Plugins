@@ -1,0 +1,19 @@
+name: IddleWheelAnimation_Laugh
+description: Time for some laugh!
+eventCriteria:
+  eventType: active_effect
+  schemaConditions:
+    - fieldPath: effect
+      operator: equals
+      value: IdlePlayLaughME
+      caseSensitive: false
+    - fieldPath: action
+      operator: equals
+      value: applied
+audience: nearby_npcs
+response:
+  type: direct_narration
+  content: "{{ originator }} starts laughing hard, holding his/her stomach."
+enabled: true
+cooldownSeconds: 5
+priority: 7

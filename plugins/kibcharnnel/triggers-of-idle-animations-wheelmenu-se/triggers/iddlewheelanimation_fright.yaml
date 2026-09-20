@@ -1,0 +1,19 @@
+name: IddleWheelAnimation_Fright
+description: Boo!Are you afraid?
+eventCriteria:
+  eventType: active_effect
+  schemaConditions:
+    - fieldPath: effect
+      operator: equals
+      value: IdlePlayFrightenedGestureME
+      caseSensitive: false
+    - fieldPath: action
+      operator: equals
+      value: applied
+audience: nearby_npcs
+response:
+  type: direct_narration
+  content: "{{ originator }} sharply raises his/her hands in front of himself/herself, slightly frightened"
+enabled: true
+cooldownSeconds: 5
+priority: 6

@@ -1,0 +1,19 @@
+name: IddleWheelAnimation_Think
+description: Im thinking
+eventCriteria:
+  eventType: active_effect
+  schemaConditions:
+    - fieldPath: effect
+      operator: equals
+      value: IdlePlayStudyME
+      caseSensitive: false
+    - fieldPath: action
+      operator: equals
+      value: applied
+audience: nearby_npcs
+response:
+  type: direct_narration
+  content: "{{ originator }} rubs his/her chin with the fingers of his/her left hand, showing that {{ originator }} is in deep thoughts. {{ originator }} is thinking."
+enabled: true
+cooldownSeconds: 5
+priority: 3

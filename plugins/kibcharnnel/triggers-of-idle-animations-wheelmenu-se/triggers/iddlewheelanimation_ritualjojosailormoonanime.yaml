@@ -1,0 +1,19 @@
+name: IddleWheelAnimation_RitualJojoSailorMoonAnime
+description: MOON PRISM GIVE ME POWER
+eventCriteria:
+  eventType: active_effect
+  schemaConditions:
+    - fieldPath: effect
+      operator: equals
+      value: IdlePlayRitualStartME
+      caseSensitive: false
+    - fieldPath: action
+      operator: equals
+      value: applied
+audience: nearby_npcs
+response:
+  type: direct_narration
+  content: "{{ originator }} makes two arm swings and then stands in a pose with arms crossed above head."
+enabled: true
+cooldownSeconds: 5
+priority: 5

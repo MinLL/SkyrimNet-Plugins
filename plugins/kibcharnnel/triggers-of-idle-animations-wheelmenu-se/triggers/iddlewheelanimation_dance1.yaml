@@ -1,0 +1,19 @@
+name: IddleWheelAnimation_Dance1
+description: Dance number 1
+eventCriteria:
+  eventType: active_effect
+  schemaConditions:
+    - fieldPath: effect
+      operator: equals
+      value: IdlePlayCiceroDance01ME
+      caseSensitive: false
+    - fieldPath: action
+      operator: equals
+      value: applied
+audience: nearby_npcs
+response:
+  type: direct_narration
+  content: "{{ originator }} starts dancing, waving his and tap dancing on heels"
+enabled: true
+cooldownSeconds: 5
+priority: 5

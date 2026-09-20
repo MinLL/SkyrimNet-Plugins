@@ -1,0 +1,19 @@
+name: IddleWheelAnimation_ApplaudCheerful
+description: Clap your hands cheerfuly
+eventCriteria:
+  eventType: active_effect
+  schemaConditions:
+    - fieldPath: effect
+      operator: equals
+      value: IdlePlayApplaud4ME
+      caseSensitive: false
+    - fieldPath: action
+      operator: equals
+      value: applied
+audience: nearby_npcs
+response:
+  type: direct_narration
+  content: "{{ originator }} starts clapping his hands very actively"
+enabled: true
+cooldownSeconds: 5
+priority: 7

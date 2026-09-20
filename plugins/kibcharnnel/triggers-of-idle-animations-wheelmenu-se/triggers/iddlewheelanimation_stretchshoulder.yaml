@@ -1,0 +1,19 @@
+name: IddleWheelAnimation_StretchShoulder
+description: You stretch your shoulders
+eventCriteria:
+  eventType: active_effect
+  schemaConditions:
+    - fieldPath: effect
+      operator: equals
+      value: IdlePlayStretchingME
+      caseSensitive: false
+    - fieldPath: action
+      operator: equals
+      value: applied
+audience: nearby_npcs
+response:
+  type: direct_narration
+  content: "{{ originator }} stretches shoulders, moving elbows back."
+enabled: true
+cooldownSeconds: 5
+priority: 4
