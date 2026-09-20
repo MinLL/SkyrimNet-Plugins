@@ -1,0 +1,19 @@
+name: IddleWheelAnimation_SearchStand
+description: "Idle Animations WheelMenu SE TRIGGER:\nYou are searching for something."
+eventCriteria:
+  eventType: active_effect
+  schemaConditions:
+    - fieldPath: effect
+      operator: equals
+      value: IdlePlaySearchingTableME
+      caseSensitive: false
+    - fieldPath: action
+      operator: equals
+      value: applied
+audience: nearby_npcs
+response:
+  type: direct_narration
+  content: "{{ originator }} standing, looking around"
+enabled: true
+cooldownSeconds: 1
+priority: 4

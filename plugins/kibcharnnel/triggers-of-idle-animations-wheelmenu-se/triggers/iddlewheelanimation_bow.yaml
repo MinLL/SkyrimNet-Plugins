@@ -1,0 +1,19 @@
+name: IddleWheelAnimation_Bow
+description: "Idle Animations WheelMenu SE TRIGGER:\nPerforming a bow of greeting"
+eventCriteria:
+  eventType: active_effect
+  schemaConditions:
+    - fieldPath: effect
+      operator: equals
+      value: IdlePlayBowingME
+      caseSensitive: false
+    - fieldPath: action
+      operator: equals
+      value: applied
+audience: nearby_npcs
+response:
+  type: direct_narration
+  content: "{{ originator }} makes a welcoming bow."
+enabled: true
+cooldownSeconds: 5
+priority: 4

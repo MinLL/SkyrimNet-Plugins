@@ -1,0 +1,19 @@
+name: IddleWheelAnimation_CleanSword
+description: "Idle Animations WheelMenu SE TRIGGER:\nClean your sword"
+eventCriteria:
+  eventType: active_effect
+  schemaConditions:
+    - fieldPath: effect
+      operator: equals
+      value: IdlePlayCleanSwordME
+      caseSensitive: false
+    - fieldPath: action
+      operator: equals
+      value: applied
+audience: nearby_npcs
+response:
+  type: direct_narration
+  content: "{{ originator }} takes out a sword with his/her right hand and wipes it with his/her left hand."
+enabled: true
+cooldownSeconds: 5
+priority: 3

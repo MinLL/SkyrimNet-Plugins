@@ -1,0 +1,19 @@
+name: IddleWheelAnimation_SearchDown
+description: "Idle Animations WheelMenu SE TRIGGER:\nYou act like a true detective"
+eventCriteria:
+  eventType: active_effect
+  schemaConditions:
+    - fieldPath: effect
+      operator: equals
+      value: IdlePlaySearchBodyME
+      caseSensitive: false
+    - fieldPath: action
+      operator: equals
+      value: applied
+audience: nearby_npcs
+response:
+  type: direct_narration
+  content: "{{ originator }} gets down on one knee and starts touching the ground with right hand, looking at what's below, as if he/she's searching for something."
+enabled: true
+cooldownSeconds: 6
+priority: 5

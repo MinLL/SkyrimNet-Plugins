@@ -1,0 +1,19 @@
+name: IddleWheelAnimation_Cower
+description: "Idle Animations WheelMenu SE TRIGGER:\nTake cower!"
+eventCriteria:
+  eventType: active_effect
+  schemaConditions:
+    - fieldPath: effect
+      operator: equals
+      value: IdlePlayCoweringME
+      caseSensitive: false
+    - fieldPath: action
+      operator: equals
+      value: applied
+audience: nearby_npcs
+response:
+  type: direct_narration
+  content: "{{ originator }} curls up into a ball, covering his/her head with his hands, as if covering themself."
+enabled: true
+cooldownSeconds: 5
+priority: 4

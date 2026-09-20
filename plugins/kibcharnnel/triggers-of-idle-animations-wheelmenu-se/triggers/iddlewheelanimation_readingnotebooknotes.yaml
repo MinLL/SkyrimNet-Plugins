@@ -1,0 +1,19 @@
+name: IddleWheelAnimation_ReadingNotebookNotes
+description: "Idle Animations WheelMenu SE TRIGGER:\nRead some notes"
+eventCriteria:
+  eventType: active_effect
+  schemaConditions:
+    - fieldPath: effect
+      operator: equals
+      value: IdlePlayNoteReadME
+      caseSensitive: false
+    - fieldPath: action
+      operator: equals
+      value: applied
+audience: nearby_npcs
+response:
+  type: direct_narration
+  content: "{{ originator }} takes a notebook out of his/her pocket and starts reading."
+enabled: true
+cooldownSeconds: 1
+priority: 4

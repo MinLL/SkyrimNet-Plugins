@@ -1,0 +1,19 @@
+name: IddleWheelAnimation_TrayCupsDrinks
+description: "Idle Animations WheelMenu SE TRIGGER:\nGrab a tray with drinks"
+eventCriteria:
+  eventType: active_effect
+  schemaConditions:
+    - fieldPath: effect
+      operator: equals
+      value: IdlePlayHoldingDrinkTray
+      caseSensitive: false
+    - fieldPath: action
+      operator: equals
+      value: applied
+audience: nearby_npcs
+response:
+  type: direct_narration
+  content: "{{ originator }} takes out a tray with four cups on it"
+enabled: true
+cooldownSeconds: 5
+priority: 5

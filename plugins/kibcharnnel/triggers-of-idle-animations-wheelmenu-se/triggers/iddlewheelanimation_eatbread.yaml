@@ -1,0 +1,19 @@
+name: IddleWheelAnimation_EatBread
+description: "Idle Animations WheelMenu SE TRIGGER:\nEat bread"
+eventCriteria:
+  eventType: active_effect
+  schemaConditions:
+    - fieldPath: effect
+      operator: equals
+      value: IdlePlayEatingME
+      caseSensitive: false
+    - fieldPath: action
+      operator: equals
+      value: applied
+audience: nearby_npcs
+response:
+  type: direct_narration
+  content: "{{ originator }} takes out half a loaf of bread and bites off a piece"
+enabled: true
+cooldownSeconds: 1
+priority: 4

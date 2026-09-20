@@ -1,0 +1,19 @@
+name: IddleWheelAnimation_Pray
+description: "Idle Animations WheelMenu SE TRIGGER:\nYou start to pray"
+eventCriteria:
+  eventType: active_effect
+  schemaConditions:
+    - fieldPath: effect
+      operator: equals
+      value: IdlePlayPrayME
+      caseSensitive: false
+    - fieldPath: action
+      operator: equals
+      value: applied
+audience: nearby_npcs
+response:
+  type: direct_narration
+  content: "{{ originator }} stretches his arms slightly in front of him, palms up, as if praying"
+enabled: true
+cooldownSeconds: 5
+priority: 5
