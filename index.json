@@ -1,8 +1,31 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-09-20T12:35:40.118Z",
-  "stats_as_of": "2026-09-20T12:35:40.071Z",
+  "generated_at": "2026-09-20T21:01:09.839Z",
+  "stats_as_of": "2026-09-20T21:01:09.701Z",
   "plugins": [
+    {
+      "id": "plugins/deadohiosky/kinship",
+      "plugin_id": "deadohiosky.kinship",
+      "type": "listing",
+      "title": "Kinship",
+      "tagline": "Have unlimited children and make SkyrimNet aware of them and their familial relationships",
+      "author": "deadohiosky",
+      "tags": [
+        "children",
+        "family",
+        "bloodline"
+      ],
+      "nsfw": false,
+      "icon": "characters",
+      "mods": [],
+      "first_published": "2026-09-19T12:22:14Z",
+      "last_updated": "2026-09-20T19:04:11Z",
+      "external_url": "https://github.com/deadohiosky48/SkyrimNet-Kinship",
+      "stats": {
+        "downloads": 0,
+        "endorsements": 0
+      }
+    },
     {
       "id": "plugins/kibcharnnel/triggers-of-idle-animations-wheelmenu-se",
       "plugin_id": "kibcharnnel.triggers-of-idle-animations-wheelmenu-se",
@@ -112,29 +135,6 @@
       "external_url": "https://github.com/deadohiosky48/SkyrimNet-Relationships",
       "stats": {
         "downloads": 3,
-        "endorsements": 0
-      }
-    },
-    {
-      "id": "plugins/deadohiosky/kinship",
-      "plugin_id": "deadohiosky.kinship",
-      "type": "listing",
-      "title": "Kinship",
-      "tagline": "Have unlimited children and make SkyrimNet aware of them and their familial relationships",
-      "author": "deadohiosky",
-      "tags": [
-        "children",
-        "family",
-        "bloodline"
-      ],
-      "nsfw": false,
-      "icon": "characters",
-      "mods": [],
-      "first_published": "2026-09-19T12:22:14Z",
-      "last_updated": "2026-09-19T12:22:14Z",
-      "external_url": "https://github.com/deadohiosky48/SkyrimNet-Kinship",
-      "stats": {
-        "downloads": 0,
         "endorsements": 0
       }
     },
