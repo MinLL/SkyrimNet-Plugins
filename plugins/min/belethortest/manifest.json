@@ -1,0 +1,15 @@
+{
+  "id": "min.belethortest",
+  "type": "bundle",
+  "title": "Belethor - Test",
+  "tagline": "Cool belethor customization",
+  "description": "This makes belethor a much cooler dude",
+  "author": "min",
+  "tags": [],
+  "nsfw": false,
+  "icon": "package",
+  "mods": [],
+  "version": "1.0.0",
+  "min_skyrimnet_version": "0.25.0",
+  "changelog": "Initial release"
+}
