@@ -1,8 +1,51 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-09-20T03:33:36.968Z",
-  "stats_as_of": "2026-09-20T03:33:36.912Z",
+  "generated_at": "2026-09-20T06:31:40.420Z",
+  "stats_as_of": "2026-09-20T06:31:40.299Z",
   "plugins": [
+    {
+      "id": "plugins/kibcharnnel/triggers-of-idle-animations-wheelmenu-se",
+      "plugin_id": "kibcharnnel.triggers-of-idle-animations-wheelmenu-se",
+      "type": "bundle",
+      "title": "Triggers of Idle Animations WheelMenu SE",
+      "tagline": "Use WheelMenu to perfome and everyone around you will react!",
+      "author": "kibcharnnel",
+      "tags": [
+        "triggers trigger animation reaction emotes"
+      ],
+      "nsfw": false,
+      "icon": "sparkles",
+      "mods": [
+        {
+          "name": "IdlePlayWheelMenu.esp",
+          "file": "idleplaywheelmenu.esp",
+          "required": true
+        }
+      ],
+      "first_published": "2026-09-20T06:31:24Z",
+      "last_updated": "2026-09-20T06:31:24Z",
+      "version": "1.0.0",
+      "min_skyrimnet_version": "0.25.0",
+      "history": [
+        {
+          "version": "1.0.0",
+          "commit": "7ed99a8fe798dab049da00f34e9dc8194d9e7ac1",
+          "date": "2026-09-20T06:31:24Z"
+        }
+      ],
+      "contents": {
+        "triggers": 70,
+        "actions": 0,
+        "prompts": 0,
+        "bios": 0,
+        "knowledge": 0,
+        "entities": 0
+      },
+      "stats": {
+        "downloads": 0,
+        "endorsements": 0
+      }
+    },
     {
       "id": "plugins/goodprovider/skyrimnet-sexlab",
       "plugin_id": "goodprovider.skyrimnet-sexlab",
