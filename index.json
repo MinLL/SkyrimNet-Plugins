@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-09-20T06:31:40.420Z",
-  "stats_as_of": "2026-09-20T06:31:40.299Z",
+  "generated_at": "2026-09-20T06:40:43.039Z",
+  "stats_as_of": "2026-09-20T06:40:42.934Z",
   "plugins": [
     {
       "id": "plugins/kibcharnnel/triggers-of-idle-animations-wheelmenu-se",
@@ -111,7 +111,7 @@
       "last_updated": "2026-09-19T13:07:18Z",
       "external_url": "https://github.com/deadohiosky48/SkyrimNet-Relationships",
       "stats": {
-        "downloads": 2,
+        "downloads": 3,
         "endorsements": 0
       }
     },
