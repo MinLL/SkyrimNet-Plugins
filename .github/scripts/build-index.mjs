@@ -132,9 +132,12 @@ function pluginHistory(relPath) {
     // never fetch a historical manifest to show what changed. Same-version
     // republishes keep the note from the newest commit, like the pin itself.
     // Capped at the manifest schema's ceiling so a hand-edited manifest that
-    // slipped past validation cannot bloat index.json.
+    // slipped past validation cannot bloat index.json. Counted in code points
+    // like the schema's maxLength: a UTF-16 slice could cut an astral pair and
+    // leave a lone surrogate, which the in-game client's JSON parser rejects
+    // along with the whole index.
     if (typeof changelog === "string" && changelog.trim()) {
-      entry.changelog = changelog.trim().slice(0, CHANGELOG_MAX_LENGTH);
+      entry.changelog = Array.from(changelog.trim()).slice(0, CHANGELOG_MAX_LENGTH).join("");
     }
     history.push(entry);
     if (history.length >= HISTORY_CAP) break;

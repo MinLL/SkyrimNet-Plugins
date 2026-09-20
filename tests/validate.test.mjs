@@ -73,6 +73,13 @@ test("rejects a changelog that is blank or over the ceiling", () => {
   }
 });
 
+test("rejects a changelog on a listing, which has no versions to describe", () => {
+  const manifest = goodManifest({ type: "listing", external_url: "https://example.org/mod", changelog: "First." });
+  delete manifest.version;
+  delete manifest.min_skyrimnet_version;
+  assertRejected(validatePlugin({ manifest, files: {} }), /changelog/);
+});
+
 test("rejects a language that is not a bare lowercase ISO 639-1 code", () => {
   for (const language of ["German", "DE", "de-DE", ""]) {
     assertRejected(validatePlugin({ manifest: goodManifest({ language }) }), /language/);
