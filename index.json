@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-09-19T23:23:28.855Z",
-  "stats_as_of": "2026-09-19T23:23:28.815Z",
+  "generated_at": "2026-09-20T01:07:04.430Z",
+  "stats_as_of": "2026-09-20T01:07:04.304Z",
   "plugins": [
     {
       "id": "plugins/goodprovider/skyrimnet-sexlab",
@@ -28,6 +28,27 @@
       }
     },
     {
+      "id": "plugins/goodprovider/skyrimnet-leashed",
+      "plugin_id": "goodprovider.skyrimnet-leashed",
+      "type": "listing",
+      "title": "SkyrimNet Leashed",
+      "tagline": "Add the ability to leash, be leashed, lead, and be lead while leashed.",
+      "author": "goodprovider",
+      "tags": [
+        "actions"
+      ],
+      "nsfw": true,
+      "icon": "system",
+      "mods": [],
+      "first_published": "2026-09-19T14:34:21Z",
+      "last_updated": "2026-09-19T14:34:21Z",
+      "external_url": "https://github.com/GoodProvider/SkyrimNet_Leashed/releases/latest",
+      "stats": {
+        "downloads": 0,
+        "endorsements": 0
+      }
+    },
+    {
       "id": "plugins/deadohiosky/relationships",
       "plugin_id": "deadohiosky.relationships",
       "type": "listing",
@@ -47,7 +68,7 @@
       "last_updated": "2026-09-19T13:07:18Z",
       "external_url": "https://github.com/deadohiosky48/SkyrimNet-Relationships",
       "stats": {
-        "downloads": 0,
+        "downloads": 2,
         "endorsements": 0
       }
     },
@@ -136,7 +157,7 @@
       "last_updated": "2026-09-14T11:37:07Z",
       "external_url": "https://github.com/Oldcustard/Wintersun-Skyrimnet-Integration/releases",
       "stats": {
-        "downloads": 0,
+        "downloads": 3,
         "endorsements": 0
       }
     },
@@ -155,7 +176,7 @@
       "last_updated": "2026-09-14T10:26:17Z",
       "external_url": "https://github.com/Severause/SeverActions/releases/tag/v3.9.14-beta25",
       "stats": {
-        "downloads": 1,
+        "downloads": 3,
         "endorsements": 0
       }
     },
@@ -273,7 +294,7 @@
       "last_updated": "2026-09-12T21:07:45Z",
       "external_url": "https://github.com/Gerkinfeltser/iActions/releases",
       "stats": {
-        "downloads": 0,
+        "downloads": 1,
         "endorsements": 0
       }
     },
@@ -297,7 +318,7 @@
       "last_updated": "2026-09-12T14:51:27Z",
       "external_url": "https://github.com/johnsonjoe1/SkyrimNetMessagelessImmersion/releases",
       "stats": {
-        "downloads": 2,
+        "downloads": 3,
         "endorsements": 0
       }
     },
@@ -320,7 +341,7 @@
       "last_updated": "2026-09-12T06:44:36-08:00",
       "external_url": "https://github.com/tetherball88/OStimNet/releases/latest",
       "stats": {
-        "downloads": 1,
+        "downloads": 2,
         "endorsements": 0
       }
     },
@@ -343,7 +364,7 @@
       "last_updated": "2026-08-20T09:09:54Z",
       "external_url": "https://github.com/zevck/S.T.F.U",
       "stats": {
-        "downloads": 10,
+        "downloads": 11,
         "endorsements": 0
       }
     },
