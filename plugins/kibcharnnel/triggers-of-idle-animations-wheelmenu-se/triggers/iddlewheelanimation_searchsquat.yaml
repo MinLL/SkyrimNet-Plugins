@@ -1,0 +1,19 @@
+name: IddleWheelAnimation_SearchSquat
+description: "Idle Animations WheelMenu SE TRIGGER:\nYou search like a gopnik."
+eventCriteria:
+  eventType: active_effect
+  schemaConditions:
+    - fieldPath: effect
+      operator: equals
+      value: IdlePlaySearchingChestME
+      caseSensitive: false
+    - fieldPath: action
+      operator: equals
+      value: applied
+audience: nearby_npcs
+response:
+  type: direct_narration
+  content: "{{ originator }} squats down, looking around."
+enabled: true
+cooldownSeconds: 1
+priority: 4

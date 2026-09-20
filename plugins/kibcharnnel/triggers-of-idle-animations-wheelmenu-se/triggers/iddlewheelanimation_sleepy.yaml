@@ -1,0 +1,19 @@
+name: IddleWheelAnimation_Sleepy
+description: "Idle Animations WheelMenu SE TRIGGER:\nShow that you feel sleepy"
+eventCriteria:
+  eventType: active_effect
+  schemaConditions:
+    - fieldPath: effect
+      operator: equals
+      value: IdlePlaySleepNodME
+      caseSensitive: false
+    - fieldPath: action
+      operator: equals
+      value: applied
+audience: nearby_npcs
+response:
+  type: direct_narration
+  content: "{{ originator }} stands there, showing that {{ originator }} having a hard time staying awake. {{ originator }}'s eyes are already warming up, and {{ originator }} is barely fighting sleep."
+enabled: true
+cooldownSeconds: 4
+priority: 4

@@ -1,0 +1,19 @@
+name: IddleWheelAnimation_DanceWithMug
+description: "Idle Animations WheelMenu SE TRIGGER:\nDance with mug"
+eventCriteria:
+  eventType: active_effect
+  schemaConditions:
+    - fieldPath: effect
+      operator: equals
+      value: IdlePlayDrinkDanceME
+      caseSensitive: false
+    - fieldPath: action
+      operator: equals
+      value: applied
+audience: nearby_npcs
+response:
+  type: direct_narration
+  content: "{{ originator }} starts dancing, holding a mug in his/her right hand"
+enabled: true
+cooldownSeconds: 1
+priority: 6

@@ -1,0 +1,19 @@
+name: IddleWheelAnimation_MourGrave2
+description: "Idle Animations WheelMenu SE TRIGGER:\nPay Respect"
+eventCriteria:
+  eventType: active_effect
+  schemaConditions:
+    - fieldPath: effect
+      operator: equals
+      value: IdlePlayGrave02ME
+      caseSensitive: false
+    - fieldPath: action
+      operator: equals
+      value: applied
+audience: nearby_npcs
+response:
+  type: direct_narration
+  content: "{{ originator }} crosses his arms behind his back, showing respect"
+enabled: true
+cooldownSeconds: 5
+priority: 4

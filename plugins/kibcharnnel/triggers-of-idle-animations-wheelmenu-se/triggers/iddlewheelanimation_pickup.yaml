@@ -1,0 +1,19 @@
+name: IddleWheelAnimation_PickUp
+description: "Idle Animations WheelMenu SE TRIGGER:\nPick it up. Pick.It.Up."
+eventCriteria:
+  eventType: active_effect
+  schemaConditions:
+    - fieldPath: effect
+      operator: equals
+      value: IdlePlayPickupME
+      caseSensitive: false
+    - fieldPath: action
+      operator: equals
+      value: applied
+audience: nearby_npcs
+response:
+  type: direct_narration
+  content: "{{ originator }} squats down, makes a movement with his/her left hand, picking something up from the ground and stands up."
+enabled: true
+cooldownSeconds: 5
+priority: 4

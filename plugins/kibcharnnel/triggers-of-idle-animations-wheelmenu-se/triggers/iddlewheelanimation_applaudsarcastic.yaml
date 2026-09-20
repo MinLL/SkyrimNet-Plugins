@@ -1,0 +1,19 @@
+name: IddleWheelAnimation_ApplaudSarcastic
+description: "Idle Animations WheelMenu SE TRIGGER:\nClap your hands sacrasticly"
+eventCriteria:
+  eventType: active_effect
+  schemaConditions:
+    - fieldPath: effect
+      operator: equals
+      value: IdlePlayApplaudSarcasticME
+      caseSensitive: false
+    - fieldPath: action
+      operator: equals
+      value: applied
+audience: nearby_npcs
+response:
+  type: direct_narration
+  content: "{{ originator }} sarcastically applauds, clapping his hands."
+enabled: true
+cooldownSeconds: 1
+priority: 5
