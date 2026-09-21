@@ -322,6 +322,38 @@ test("virtual entities are counted in contents without bumping the schema versio
   }
 });
 
+test("a versioned listing carries its version and note history, still no contents", () => {
+  const repo = initRepo();
+  try {
+    const listing = (over) => JSON.stringify({
+      id: "bob.listed", type: "listing", title: "Bob's Listed Mod", tagline: "Hosted elsewhere.",
+      description: "Fixture listing.", author: "bob", tags: [], nsfw: false, icon: "package", mods: [],
+      external_url: "https://example.com/mod", ...over,
+    }, null, 2);
+    writeFile(repo, "plugins/bob/listed/manifest.json", listing({}));
+    commitAll(repo, "add listing, unversioned");
+    writeFile(repo, "plugins/bob/listed/manifest.json", listing({ version: "1.0.0" }));
+    commitAll(repo, "give it a version");
+    writeFile(repo, "plugins/bob/listed/manifest.json", listing({ version: "1.1.0", changelog: "Now on Nexus." }));
+    const c3 = commitAll(repo, "1.1.0 with a note");
+
+    const { index } = runBuildIndex(repo);
+    assertValidIndex(index);
+    const entry = index.plugins[0];
+    assert.equal(entry.type, "listing");
+    assert.equal(entry.version, "1.1.0");
+    assert.ok(!("contents" in entry));
+    assert.ok(!("min_skyrimnet_version" in entry));
+    // Only the versioned commits make history; the unversioned first one does not.
+    assert.deepEqual(entry.history.map((h) => h.version), ["1.1.0", "1.0.0"]);
+    assert.equal(entry.history[0].commit, c3);
+    assert.equal(entry.history[0].changelog, "Now on Nexus.");
+    assert.ok(!("changelog" in entry.history[1]));
+  } finally {
+    rmDir(repo);
+  }
+});
+
 test("listings carry no history and no contents", () => {
   const repo = initRepo();
   try {
@@ -354,6 +386,8 @@ test("listings carry no history and no contents", () => {
     const entry = index.plugins[0];
     assert.equal(entry.type, "listing");
     assert.equal(entry.external_url, "https://example.com/mod");
+    // Never versioned: no version, so no history to hang a note on.
+    assert.ok(!("version" in entry));
     assert.ok(!("history" in entry));
     assert.ok(!("contents" in entry));
     assert.ok(!("min_skyrimnet_version" in entry));

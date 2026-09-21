@@ -463,8 +463,14 @@ if (!fs.existsSync(PLUGINS_DIR)) {
         entry.version = manifest.version;
         entry.min_skyrimnet_version = manifest.min_skyrimnet_version;
         // Version history drives install / update / rollback (§5 step 1).
-        // Listings have nothing to install, so they carry none.
         entry.history = pluginHistory(relPath);
+      } else if (typeof manifest.version === 'string' && manifest.version) {
+        // A listing's version is display only, but it is what its changelog
+        // attaches to: the history carries each versioned note for the
+        // browse pages. A listing that never carried a version has neither.
+        entry.version = manifest.version;
+        const history = pluginHistory(relPath);
+        if (history.length > 0) entry.history = history;
       }
       if (manifest.type === 'listing' && typeof manifest.external_url === 'string') {
         entry.external_url = manifest.external_url;
