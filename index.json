@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-09-21T02:56:04.024Z",
-  "stats_as_of": "2026-09-21T02:56:03.907Z",
+  "generated_at": "2026-09-21T04:35:37.197Z",
+  "stats_as_of": "2026-09-21T04:35:37.134Z",
   "plugins": [
     {
       "id": "plugins/min/test-discord-integration",
@@ -16,6 +16,19 @@
       "mods": [],
       "first_published": "2026-09-21T01:16:39Z",
       "last_updated": "2026-09-21T02:39:16Z",
+      "version": "1.0.1",
+      "history": [
+        {
+          "version": "1.0.1",
+          "commit": "97f550880d2d6da4eca35caa2932f886b81d83c2",
+          "date": "2026-09-21T02:39:16Z"
+        },
+        {
+          "version": "1.0.0",
+          "commit": "69062811cd2b4d0c4a0c25e1381ead2a3e60b884",
+          "date": "2026-09-21T01:16:39Z"
+        }
+      ],
       "external_url": "https://fateless.ai",
       "stats": {
         "downloads": 1,
@@ -160,6 +173,19 @@
       "mods": [],
       "first_published": "2026-09-19T12:22:14Z",
       "last_updated": "2026-09-20T19:04:11Z",
+      "version": "1.9.4",
+      "history": [
+        {
+          "version": "1.9.4",
+          "commit": "2a111d61f697705542c979f7d5dc96fe657d4dab",
+          "date": "2026-09-20T19:04:11Z"
+        },
+        {
+          "version": "1.9.3",
+          "commit": "31efbda09c1641469b20b70f814d6e94affc7756",
+          "date": "2026-09-19T12:22:14Z"
+        }
+      ],
       "external_url": "https://github.com/deadohiosky48/SkyrimNet-Kinship",
       "stats": {
         "downloads": 0,
@@ -227,6 +253,14 @@
       "mods": [],
       "first_published": "2026-09-13T21:55:00Z",
       "last_updated": "2026-09-19T14:35:33Z",
+      "version": "0.35.0",
+      "history": [
+        {
+          "version": "0.35.0",
+          "commit": "e762b480c7b95fa8f3de3e8fef5340baab82cda8",
+          "date": "2026-09-19T14:35:33Z"
+        }
+      ],
       "external_url": "https://github.com/GoodProvider/SkyrimNet_Leashed/releases/latest",
       "stats": {
         "downloads": 2,
@@ -248,6 +282,14 @@
       "mods": [],
       "first_published": "2026-09-19T14:34:21Z",
       "last_updated": "2026-09-19T14:34:21Z",
+      "version": "0.4.1",
+      "history": [
+        {
+          "version": "0.4.1",
+          "commit": "c4f5d9a41b3c2eb1ede237b08df6071671cb9be6",
+          "date": "2026-09-19T14:34:21Z"
+        }
+      ],
       "external_url": "https://github.com/GoodProvider/SkyrimNet_Leashed/releases/latest",
       "stats": {
         "downloads": 1,
@@ -272,6 +314,14 @@
       "mods": [],
       "first_published": "2026-09-19T13:07:18Z",
       "last_updated": "2026-09-19T13:07:18Z",
+      "version": "1.6.0",
+      "history": [
+        {
+          "version": "1.6.0",
+          "commit": "c85c6ccc57131d57506c2fec2391f48ebddd859b",
+          "date": "2026-09-19T13:07:18Z"
+        }
+      ],
       "external_url": "https://github.com/deadohiosky48/SkyrimNet-Relationships",
       "stats": {
         "downloads": 3,
@@ -338,6 +388,14 @@
       "mods": [],
       "first_published": "2026-09-13T13:44:32Z",
       "last_updated": "2026-09-14T11:37:07Z",
+      "version": "3.0.0",
+      "history": [
+        {
+          "version": "3.0.0",
+          "commit": "b73be03d5bac7cbcab76c03b64cca157e5161db3",
+          "date": "2026-09-14T11:37:07Z"
+        }
+      ],
       "external_url": "https://github.com/Oldcustard/Wintersun-Skyrimnet-Integration/releases",
       "stats": {
         "downloads": 5,
@@ -357,6 +415,14 @@
       "mods": [],
       "first_published": "2026-09-14T10:26:17Z",
       "last_updated": "2026-09-14T10:26:17Z",
+      "version": "3.9.14",
+      "history": [
+        {
+          "version": "3.9.14",
+          "commit": "861f6ee00180d808d868fd7743f4806d1979e23b",
+          "date": "2026-09-14T10:26:17Z"
+        }
+      ],
       "external_url": "https://github.com/Severause/SeverActions/releases/tag/v3.9.14-beta25",
       "stats": {
         "downloads": 5,
@@ -475,6 +541,14 @@
       "mods": [],
       "first_published": "2026-09-12T21:07:45Z",
       "last_updated": "2026-09-12T21:07:45Z",
+      "version": "0.6.6",
+      "history": [
+        {
+          "version": "0.6.6",
+          "commit": "30146b7520a66fca43d6dd69e14beff1f649073c",
+          "date": "2026-09-12T21:07:45Z"
+        }
+      ],
       "external_url": "https://github.com/Gerkinfeltser/iActions/releases",
       "stats": {
         "downloads": 2,
@@ -499,6 +573,14 @@
       "mods": [],
       "first_published": "2026-09-12T06:46:39-08:00",
       "last_updated": "2026-09-12T14:51:27Z",
+      "version": "0.6.12",
+      "history": [
+        {
+          "version": "0.6.12",
+          "commit": "28a6bbfc2ca32585d9cdb2fe18dd716de27bf962",
+          "date": "2026-09-12T14:51:27Z"
+        }
+      ],
       "external_url": "https://github.com/johnsonjoe1/SkyrimNetMessagelessImmersion/releases",
       "stats": {
         "downloads": 3,
@@ -522,6 +604,14 @@
       "mods": [],
       "first_published": "2026-09-12T06:44:36-08:00",
       "last_updated": "2026-09-12T06:44:36-08:00",
+      "version": "2.4.2",
+      "history": [
+        {
+          "version": "2.4.2",
+          "commit": "6beaea6234d873a19a83b6da3003d65d0c5982ab",
+          "date": "2026-09-12T06:44:36-08:00"
+        }
+      ],
       "external_url": "https://github.com/tetherball88/OStimNet/releases/latest",
       "stats": {
         "downloads": 3,
@@ -545,6 +635,14 @@
       "mods": [],
       "first_published": "2026-08-20T09:09:54Z",
       "last_updated": "2026-08-20T09:09:54Z",
+      "version": "1.1.0",
+      "history": [
+        {
+          "version": "1.1.0",
+          "commit": "8961aed30bfcfbfc1a3f45d372a8b0ae23e86b6d",
+          "date": "2026-08-20T09:09:54Z"
+        }
+      ],
       "external_url": "https://github.com/zevck/S.T.F.U",
       "stats": {
         "downloads": 14,
