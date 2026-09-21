@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-09-20T21:24:57.231Z",
-  "stats_as_of": "2026-09-20T21:24:55.857Z",
+  "generated_at": "2026-09-21T01:07:05.634Z",
+  "stats_as_of": "2026-09-21T01:07:05.507Z",
   "plugins": [
     {
       "id": "plugins/deadohiosky/kinship",
@@ -89,7 +89,7 @@
       "last_updated": "2026-09-19T14:35:33Z",
       "external_url": "https://github.com/GoodProvider/SkyrimNet_Leashed/releases/latest",
       "stats": {
-        "downloads": 1,
+        "downloads": 2,
         "endorsements": 0
       }
     },
@@ -110,7 +110,7 @@
       "last_updated": "2026-09-19T14:34:21Z",
       "external_url": "https://github.com/GoodProvider/SkyrimNet_Leashed/releases/latest",
       "stats": {
-        "downloads": 0,
+        "downloads": 1,
         "endorsements": 0
       }
     },
@@ -219,7 +219,7 @@
       "last_updated": "2026-09-14T10:26:17Z",
       "external_url": "https://github.com/Severause/SeverActions/releases/tag/v3.9.14-beta25",
       "stats": {
-        "downloads": 4,
+        "downloads": 5,
         "endorsements": 0
       }
     },
@@ -407,7 +407,7 @@
       "last_updated": "2026-08-20T09:09:54Z",
       "external_url": "https://github.com/zevck/S.T.F.U",
       "stats": {
-        "downloads": 12,
+        "downloads": 14,
         "endorsements": 0
       }
     },
