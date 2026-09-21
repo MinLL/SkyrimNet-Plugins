@@ -1,8 +1,49 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-09-21T02:08:58.911Z",
-  "stats_as_of": "2026-09-21T02:08:58.802Z",
+  "generated_at": "2026-09-21T02:17:57.026Z",
+  "stats_as_of": "2026-09-21T02:17:56.885Z",
   "plugins": [
+    {
+      "id": "plugins/min/belethor-remix",
+      "plugin_id": "min.belethor-remix",
+      "type": "bundle",
+      "title": "Nords are Jerks redux",
+      "tagline": "Nords - Jerks!",
+      "author": "min",
+      "tags": [
+        "nords",
+        "stormcloaks",
+        "jerks"
+      ],
+      "nsfw": false,
+      "icon": "package",
+      "mods": [],
+      "first_published": "2026-09-21T02:17:40Z",
+      "last_updated": "2026-09-21T02:17:40Z",
+      "version": "1.0.1",
+      "min_skyrimnet_version": "0.25.0",
+      "history": [
+        {
+          "version": "1.0.1",
+          "commit": "ec521591814dd488dc446900c3040aa09f633ca1",
+          "date": "2026-09-21T02:17:40Z",
+          "changelog": "Initial release"
+        }
+      ],
+      "language": "en",
+      "contents": {
+        "triggers": 0,
+        "actions": 0,
+        "prompts": 1,
+        "bios": 0,
+        "knowledge": 0,
+        "entities": 0
+      },
+      "stats": {
+        "downloads": 0,
+        "endorsements": 0
+      }
+    },
     {
       "id": "plugins/min/test-discord-integration",
       "plugin_id": "min.test-discord-integration",
