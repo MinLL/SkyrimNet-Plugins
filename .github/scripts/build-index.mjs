@@ -3,8 +3,9 @@
 //
 // Walks every plugins/{author}/{slug}/manifest.json, extracts the fields
 // the dashboard needs for the browse page, counts content files, derives
-// first_published, last_updated and the per-bundle version `history` from
-// git history, embeds moderation state from hidden.json + curated.json into
+// first_published, last_updated and the version `history` (bundles, and any
+// listing that declares a version) from git history, embeds moderation state
+// from hidden.json + curated.json into
 // each entry, and writes index.json.
 //
 // `history` is what makes install / update / rollback work without any hub
@@ -433,9 +434,9 @@ if (!fs.existsSync(PLUGINS_DIR)) {
           })).filter(m => m.file)
         : [];
 
-      // Build index entry. version / skyrimnet_version only apply to bundles
-      // — listings point at external content whose version is the upstream's
-      // concern, not ours.
+      // Build index entry. min_skyrimnet_version and contents apply to bundles
+      // only. version and history apply to bundles, and to a listing that
+      // declares a version: display only there, but the changelog attaches to it.
       // The content-store id ('{author}.{slug}') is authoritative in the
       // manifest and validated against the path by CI; derive it only as a
       // fallback for manifests that predate the field.
