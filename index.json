@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-09-21T02:42:32.549Z",
-  "stats_as_of": "2026-09-21T02:42:32.430Z",
+  "generated_at": "2026-09-21T02:56:04.024Z",
+  "stats_as_of": "2026-09-21T02:56:03.907Z",
   "plugins": [
     {
       "id": "plugins/min/test-discord-integration",
@@ -113,10 +113,16 @@
       "icon": "voice",
       "mods": [],
       "first_published": "2026-09-20T19:04:25-07:00",
-      "last_updated": "2026-09-20T19:04:25-07:00",
-      "version": "1.0.0",
+      "last_updated": "2026-09-20T19:52:06-07:00",
+      "version": "1.1.0",
       "min_skyrimnet_version": "0.25.0",
       "history": [
+        {
+          "version": "1.1.0",
+          "commit": "03e64178653f0be7b93c83b27b7f346fe52a3d81",
+          "date": "2026-09-20T19:52:06-07:00",
+          "changelog": "Bumped the version to test the **update** announcement and the forum reply. Nothing else changed."
+        },
         {
           "version": "1.0.0",
           "commit": "36c1ecd3b6c36be1c2874fb756fe6cc179f448a9",
