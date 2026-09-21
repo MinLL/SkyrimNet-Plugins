@@ -74,7 +74,7 @@
       "type": "string",
       "minLength": 1,
       "maxLength": 2000,
-      "description": "What changed in THIS version, written by the author at publish time and rendered as restricted markdown. Describes one version only: the full per-version history is assembled by build-index.mjs, which reads the manifest as it stood at each version's commit and copies this field into the matching index.json history entry, so a note needs a `version` to attach to. The dashboard requires it on every bundle publish (prefilled with 'Initial release' for a first submission, refused after a version bump until it changes) and offers it optionally on a listing that carries a version; the schema keeps it optional so manifests published before the field existed still validate."
+      "description": "What changed in THIS version, written by the author at publish time and rendered as restricted markdown. Describes one version only: the full per-version history is assembled by build-index.mjs, which reads the manifest as it stood at each version's commit and copies this field into the matching index.json history entry, so a note needs a `version` to attach to. The dashboard requires it on every publish, bundle or listing (prefilled with 'Initial release' for a first submission, refused after a version bump until it changes), and requires a listing's version with it; the schema keeps both optional so manifests published before the field existed still validate."
     },
     "language": {
       "type": "string",
