@@ -1,8 +1,44 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-09-21T02:17:57.026Z",
-  "stats_as_of": "2026-09-21T02:17:56.885Z",
+  "generated_at": "2026-09-21T02:37:19.919Z",
+  "stats_as_of": "2026-09-21T02:37:19.800Z",
   "plugins": [
+    {
+      "id": "plugins/min/saucy-appetite",
+      "plugin_id": "min.saucy-appetite",
+      "type": "bundle",
+      "title": "Saucy Appetite",
+      "tagline": "Romantic Interests and Preferences",
+      "author": "min",
+      "tags": [],
+      "nsfw": true,
+      "icon": "package",
+      "mods": [],
+      "first_published": "2026-09-21T02:37:04Z",
+      "last_updated": "2026-09-21T02:37:04Z",
+      "version": "1.0.0",
+      "min_skyrimnet_version": "0.25.0",
+      "history": [
+        {
+          "version": "1.0.0",
+          "commit": "6415dcfeb17efbd7ab3e160ccc13c9b25e504c6b",
+          "date": "2026-09-21T02:37:04Z",
+          "changelog": "Initial release"
+        }
+      ],
+      "contents": {
+        "triggers": 0,
+        "actions": 0,
+        "prompts": 1,
+        "bios": 0,
+        "knowledge": 0,
+        "entities": 0
+      },
+      "stats": {
+        "downloads": 0,
+        "endorsements": 0
+      }
+    },
     {
       "id": "plugins/min/belethor-remix",
       "plugin_id": "min.belethor-remix",
@@ -59,7 +95,7 @@
       "last_updated": "2026-09-21T01:16:39Z",
       "external_url": "https://fateless.ai",
       "stats": {
-        "downloads": 0,
+        "downloads": 1,
         "endorsements": 0
       }
     },
