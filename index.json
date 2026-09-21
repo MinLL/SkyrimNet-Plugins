@@ -1,8 +1,27 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-09-21T02:37:19.919Z",
-  "stats_as_of": "2026-09-21T02:37:19.800Z",
+  "generated_at": "2026-09-21T02:42:32.549Z",
+  "stats_as_of": "2026-09-21T02:42:32.430Z",
   "plugins": [
+    {
+      "id": "plugins/min/test-discord-integration",
+      "plugin_id": "min.test-discord-integration",
+      "type": "listing",
+      "title": "Test Discord Integration",
+      "tagline": "Testing",
+      "author": "min",
+      "tags": [],
+      "nsfw": false,
+      "icon": "package",
+      "mods": [],
+      "first_published": "2026-09-21T01:16:39Z",
+      "last_updated": "2026-09-21T02:39:16Z",
+      "external_url": "https://fateless.ai",
+      "stats": {
+        "downloads": 1,
+        "endorsements": 0
+      }
+    },
     {
       "id": "plugins/min/saucy-appetite",
       "plugin_id": "min.saucy-appetite",
@@ -77,25 +96,6 @@
       },
       "stats": {
         "downloads": 0,
-        "endorsements": 0
-      }
-    },
-    {
-      "id": "plugins/min/test-discord-integration",
-      "plugin_id": "min.test-discord-integration",
-      "type": "listing",
-      "title": "Test Discord Integration",
-      "tagline": "Testing",
-      "author": "min",
-      "tags": [],
-      "nsfw": false,
-      "icon": "package",
-      "mods": [],
-      "first_published": "2026-09-21T01:16:39Z",
-      "last_updated": "2026-09-21T01:16:39Z",
-      "external_url": "https://fateless.ai",
-      "stats": {
-        "downloads": 1,
         "endorsements": 0
       }
     },
