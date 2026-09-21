@@ -1,0 +1,20 @@
+{
+  "id": "min.belethor-remix",
+  "type": "bundle",
+  "title": "Nords are Jerks redux",
+  "tagline": "Nords - Jerks!",
+  "description": "Reveals nords for what they have always been.",
+  "author": "min",
+  "tags": [
+    "nords",
+    "stormcloaks",
+    "jerks"
+  ],
+  "nsfw": false,
+  "icon": "package",
+  "mods": [],
+  "language": "en",
+  "version": "1.0.1",
+  "min_skyrimnet_version": "0.25.0",
+  "changelog": "Initial release"
+}
