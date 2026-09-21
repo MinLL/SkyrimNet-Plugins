@@ -3,7 +3,7 @@
   "type": "bundle",
   "title": "Discord Integration Test",
   "tagline": "A copy of Audio Tags For Inworld TTS-2 used to test the Discord bot; safe to delete.",
-  "description": "**Test plugin.** This is a copy of the Audio Tags For Inworld TTS-2 bundle, republished under a different name so the SkyrimNet Discord bot can be tested end to end: release announcement, forum post, then a version bump with a changelog.\n\nIt will be deleted once the test is done. Do not install it.",
+  "description": "**Test plugin.** This is a copy of the Audio Tags For Inworld TTS-2 bundle, republished under a different name so the SkyrimNet Discord bot can be tested end to end: release announcement, forum post, then this version bump with a changelog.\n\nIt will be deleted once the test is done. Do not install it.",
   "author": "meimaxmei",
   "tags": [
     "test"
@@ -11,7 +11,7 @@
   "nsfw": false,
   "icon": "voice",
   "mods": [],
-  "version": "1.0.0",
+  "version": "1.1.0",
   "min_skyrimnet_version": "0.25.0",
-  "changelog": "Initial release, for testing the Discord announcements."
+  "changelog": "Bumped the version to test the **update** announcement and the forum reply. Nothing else changed."
 }
