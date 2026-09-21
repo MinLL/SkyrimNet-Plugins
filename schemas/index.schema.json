@@ -91,7 +91,7 @@
           "type": "string",
           "minLength": 1,
           "maxLength": 50,
-          "description": "Plugin version. Copied from manifest.json."
+          "description": "Plugin version. Copied from manifest.json. Always present for bundles; present for a listing only when its manifest declares one."
         },
         "min_skyrimnet_version": {
           "type": "string",
@@ -102,7 +102,7 @@
         "history": {
           "type": "array",
           "maxItems": 50,
-          "description": "Published version history for bundles, newest first, derived from git. Each entry pins a version to the newest commit at which the plugin carried that version, which is exactly what the installer needs: install/update takes history[0], rollback takes any earlier entry and re-runs the same code path against the older SHA. Each entry also carries that version's `changelog` when the manifest at that commit had one, so the dashboard and the hub site can show what changed without fetching manifests. Capped — old versions beyond the cap are not offered for rollback. Absent for listings (nothing to install).",
+          "description": "Published version history, newest first, derived from git. Each entry pins a version to the newest commit at which the plugin carried that version, which is exactly what the installer needs for a bundle: install/update takes history[0], rollback takes any earlier entry and re-runs the same code path against the older SHA. Each entry also carries that version's `changelog` when the manifest at that commit had one, so the dashboard and the hub site can show what changed without fetching manifests. Capped — old versions beyond the cap are not offered for rollback. Required for bundles. For a listing it is display only (nothing to install) and present only when the listing has carried a version; the engine refuses to resolve a listing regardless.",
           "items": {
             "type": "object",
             "required": ["version", "commit", "date"],
@@ -241,7 +241,7 @@
           "if": { "properties": { "type": { "const": "listing" } }, "required": ["type"] },
           "then": {
             "required": ["external_url"],
-            "not": { "anyOf": [{ "required": ["contents"] }, { "required": ["history"] }] }
+            "not": { "required": ["contents"] }
           }
         }
       ]
