@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-09-21T18:34:01.386Z",
-  "stats_as_of": "2026-09-21T18:33:49.555Z",
+  "generated_at": "2026-09-22T01:01:47.392Z",
+  "stats_as_of": "2026-09-22T01:01:47.284Z",
   "plugins": [
     {
       "id": "plugins/min/test-discord-integration",
@@ -1481,7 +1481,7 @@
         "entities": 0
       },
       "stats": {
-        "downloads": 2,
+        "downloads": 3,
         "endorsements": 0
       }
     },
