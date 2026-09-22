@@ -15,7 +15,7 @@
 
 import { RESERVED_DEVICE_NAMES } from "./content-rules.mjs";
 
-export const IMAGE_MAX_BYTES = 1024 * 1024; // 1 MB
+export const IMAGE_MAX_BYTES = 5 * 1024 * 1024; // 5 MB
 export const IMAGE_MAX_DIMENSION = 2048; // px, each side
 export const IMAGE_MIN_DIMENSION = 128; // px, each side
 
