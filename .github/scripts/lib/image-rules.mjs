@@ -12,12 +12,19 @@
 // animated PNG (an `acTL` chunk) refused, so a cover is always a still. The
 // extension must match the bytes, so a renamed file is refused rather than
 // sniffed into acceptance.
+//
+// One aspect ratio, 16:9, because every surface draws the cover in a 16:9
+// frame (the hub site's cards and hero, the in-game detail views, the publish
+// form's preview). Enforcing it here means no surface ever crops.
 
 import { RESERVED_DEVICE_NAMES } from "./content-rules.mjs";
 
 export const IMAGE_MAX_BYTES = 5 * 1024 * 1024; // 5 MB
-export const IMAGE_MAX_DIMENSION = 2048; // px, each side
-export const IMAGE_MIN_DIMENSION = 128; // px, each side
+export const IMAGE_MIN_WIDTH = 640; // px; 16:9 puts the height at 360
+export const IMAGE_MAX_WIDTH = 2048; // px; 16:9 puts the height at 1152
+export const IMAGE_ASPECT = 16 / 9;
+export const IMAGE_ASPECT_TOLERANCE = 0.01; // of the ratio: 1920×1090 passes, 1920×1100 does not
+export const IMAGE_SIZE_EXAMPLES = "1280×720 or 1920×1080";
 
 // A bare filename at the plugin root: the same charset as content paths, no
 // directories, an exact lowercase extension. Stem length matches
@@ -33,7 +40,14 @@ export const IMAGE_CODES = {
   IMAGE_EXT_MISMATCH: "IMAGE_EXT_MISMATCH",
   IMAGE_TOO_LARGE: "IMAGE_TOO_LARGE",
   IMAGE_DIMENSIONS: "IMAGE_DIMENSIONS",
+  IMAGE_ASPECT: "IMAGE_ASPECT",
 };
+
+/** Is `width`×`height` 16:9 within the tolerance? */
+export function isCoverAspect(width, height) {
+  if (!(width > 0) || !(height > 0)) return false;
+  return Math.abs(width / height - IMAGE_ASPECT) <= IMAGE_ASPECT * IMAGE_ASPECT_TOLERANCE;
+}
 
 const PNG_SIGNATURE = Buffer.from([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a]);
 
@@ -185,13 +199,16 @@ export function checkImage({ name, bytes }) {
   }
 
   const { width, height } = info;
-  if (
-    width < IMAGE_MIN_DIMENSION || height < IMAGE_MIN_DIMENSION ||
-    width > IMAGE_MAX_DIMENSION || height > IMAGE_MAX_DIMENSION
-  ) {
+  if (!isCoverAspect(width, height)) {
+    reject(
+      IMAGE_CODES.IMAGE_ASPECT,
+      `Image is ${width}×${height}px, not 16:9. Crop it to 16:9 — for example ${IMAGE_SIZE_EXAMPLES}.`,
+    );
+  }
+  if (width < IMAGE_MIN_WIDTH || width > IMAGE_MAX_WIDTH) {
     reject(
       IMAGE_CODES.IMAGE_DIMENSIONS,
-      `Image is ${width}×${height}px; each side must be between ${IMAGE_MIN_DIMENSION} and ${IMAGE_MAX_DIMENSION}px.`,
+      `Image is ${width}×${height}px; the width must be between ${IMAGE_MIN_WIDTH} and ${IMAGE_MAX_WIDTH}px (${IMAGE_SIZE_EXAMPLES} are good sizes).`,
     );
   }
 

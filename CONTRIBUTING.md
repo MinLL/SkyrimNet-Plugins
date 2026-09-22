@@ -31,7 +31,7 @@ With your plugin selected in the dashboard:
    - **Tags** — a few short keywords for filtering (e.g. `combat`, `dialogue`, `followers`).
    - **NSFW flag** — toggle if your plugin contains adult content. This is enforced, not optional — mismatches are an automatic rejection.
    - **Integrated mods** — if your plugin works with other Skyrim mods, add them here. The dashboard can pre-populate from your installed plugin list.
-   - **Cover image** (optional) — one PNG or JPEG, up to 5 MB, each side 128–2048px, shown on the hub site, in-game, and on the plugin's Discord thread. It goes through the same review as everything else: see the image rules in [docs/AUTHORING.md](docs/AUTHORING.md).
+   - **Cover image** (optional) — one PNG or JPEG, 16:9 (for example 1280×720 or 1920×1080), 640–2048px wide, up to 5 MB, shown on the hub site, in-game, and on the plugin's Discord thread. It goes through the same review as everything else: see the image rules in [docs/AUTHORING.md](docs/AUTHORING.md).
 2. The dashboard packages your plugin files, generates the manifest, forks this repo, and opens a pull request. You never touch git.
 3. You'll get a link to your PR. The dashboard also shows submission status on the plugin's page so you can check in.
 

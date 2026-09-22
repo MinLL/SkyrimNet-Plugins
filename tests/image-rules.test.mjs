@@ -7,8 +7,9 @@ import assert from "node:assert/strict";
 import {
   IMAGE_CODES,
   IMAGE_MAX_BYTES,
-  IMAGE_MAX_DIMENSION,
-  IMAGE_MIN_DIMENSION,
+  IMAGE_MIN_WIDTH,
+  IMAGE_MAX_WIDTH,
+  isCoverAspect,
   checkImage,
   formatFromName,
   isImageName,
@@ -76,33 +77,41 @@ test("checkImage refuses bytes that are not an image", () => {
 });
 
 test("checkImage refuses an extension that lies about the format", () => {
-  assert.deepEqual(codes(checkImage({ name: "cover.jpg", bytes: makePng(500, 500) })), [IMAGE_CODES.IMAGE_EXT_MISMATCH]);
-  assert.deepEqual(codes(checkImage({ name: "cover.png", bytes: makeJpeg(500, 500) })), [IMAGE_CODES.IMAGE_EXT_MISMATCH]);
+  assert.deepEqual(codes(checkImage({ name: "cover.jpg", bytes: makePng(1280, 720) })), [IMAGE_CODES.IMAGE_EXT_MISMATCH]);
+  assert.deepEqual(codes(checkImage({ name: "cover.png", bytes: makeJpeg(1280, 720) })), [IMAGE_CODES.IMAGE_EXT_MISMATCH]);
 });
 
 test("checkImage enforces the byte cap", () => {
-  const padded = Buffer.concat([makePng(500, 500), Buffer.alloc(IMAGE_MAX_BYTES)]);
+  const padded = Buffer.concat([makePng(1280, 720), Buffer.alloc(IMAGE_MAX_BYTES)]);
   assert.deepEqual(codes(checkImage({ name: "cover.png", bytes: padded })), [IMAGE_CODES.IMAGE_TOO_LARGE]);
-  const exact = Buffer.concat([makeJpeg(500, 500)]);
+  const exact = Buffer.concat([makeJpeg(1280, 720)]);
   assert.ok(exact.length < IMAGE_MAX_BYTES);
   assert.equal(checkImage({ name: "cover.jpg", bytes: exact }).ok, true);
 });
 
-test("checkImage enforces the dimension window on both sides", () => {
-  const max = IMAGE_MAX_DIMENSION;
-  const min = IMAGE_MIN_DIMENSION;
-  assert.equal(checkImage({ name: "c.jpg", bytes: makeJpeg(max, max) }).ok, true);
-  assert.equal(checkImage({ name: "c.jpg", bytes: makeJpeg(min, min) }).ok, true);
-  for (const [w, h] of [[max + 1, 100], [100, max + 1], [min - 1, 500], [500, min - 1], [0, 0]]) {
+test("checkImage enforces 16:9 within the tolerance and the width window", () => {
+  for (const [w, h] of [[640, 360], [1280, 720], [1920, 1080], [2048, 1152], [1920, 1090], [1280, 721]]) {
+    assert.equal(checkImage({ name: "c.jpg", bytes: makeJpeg(w, h) }).ok, true, `${w}x${h}`);
+  }
+  assert.equal(isCoverAspect(1920, 1100), false);
+  assert.equal(isCoverAspect(0, 0), false);
+  for (const [w, h] of [[1122, 1402], [1280, 800], [1920, 1100], [1000, 1000]]) {
+    assert.deepEqual(codes(checkImage({ name: "c.jpg", bytes: makeJpeg(w, h) })), [IMAGE_CODES.IMAGE_ASPECT], `${w}x${h}`);
+  }
+  for (const [w, h] of [[IMAGE_MIN_WIDTH - 16, 351], [IMAGE_MAX_WIDTH + 16, 1161], [320, 180]]) {
     assert.deepEqual(codes(checkImage({ name: "c.jpg", bytes: makeJpeg(w, h) })), [IMAGE_CODES.IMAGE_DIMENSIONS], `${w}x${h}`);
   }
+  assert.deepEqual(
+    codes(checkImage({ name: "c.jpg", bytes: makeJpeg(100, 4000) })).sort(),
+    [IMAGE_CODES.IMAGE_ASPECT, IMAGE_CODES.IMAGE_DIMENSIONS],
+  );
 });
 
 test("checkImage reports every failing rule at once", () => {
-  const huge = Buffer.concat([makePng(IMAGE_MAX_DIMENSION + 1, 10), Buffer.alloc(IMAGE_MAX_BYTES)]);
+  const huge = Buffer.concat([makePng(IMAGE_MAX_WIDTH + 1, 10), Buffer.alloc(IMAGE_MAX_BYTES)]);
   const res = checkImage({ name: "cover.jpg", bytes: huge });
   assert.deepEqual(codes(res).sort(), [
-    IMAGE_CODES.IMAGE_DIMENSIONS, IMAGE_CODES.IMAGE_EXT_MISMATCH, IMAGE_CODES.IMAGE_TOO_LARGE,
+    IMAGE_CODES.IMAGE_ASPECT, IMAGE_CODES.IMAGE_DIMENSIONS, IMAGE_CODES.IMAGE_EXT_MISMATCH, IMAGE_CODES.IMAGE_TOO_LARGE,
   ].sort());
 });
 
@@ -115,7 +124,7 @@ test("image names refuse Windows reserved device names, as the path rules do", (
 });
 
 test("an animated PNG (acTL chunk) is refused; a plain PNG with other ancillary chunks is not", () => {
-  const still = makePng(500, 500);
+  const still = makePng(1280, 720);
   // Splice an acTL chunk in after IHDR (8 signature + 25 IHDR bytes).
   const actl = Buffer.concat([Buffer.from([0, 0, 0, 8]), Buffer.from("acTL", "latin1"), Buffer.alloc(8), Buffer.alloc(4)]);
   const animated = Buffer.concat([still.subarray(0, 33), actl, still.subarray(33)]);
