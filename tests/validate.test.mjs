@@ -1010,7 +1010,7 @@ test("cover image: a second image beside the declared one is refused", () => {
 });
 
 test("cover image: a declared image that is not in the tree is refused", () => {
-  assertRejected(validatePlugin({ manifest: goodManifest({ image: "cover.png" }) }), /no such file exists/);
+  assertRejected(validatePlugin({ manifest: goodManifest({ image: "cover.png" }) }), /no such regular file exists/);
 });
 
 test("cover image: the manifest may only name a bare png/jpg/jpeg filename", () => {
@@ -1053,4 +1053,31 @@ test("cover image: outside the pixel window is refused", () => {
     });
     assertRejected(res, /each side must be between/);
   }
+});
+
+test("cover image: a directory or symlink named as the cover is refused, not a crash", POSIX_ONLY, () => {
+  const prDir = makeTempDir();
+  try {
+    const changed = writePlugin(prDir, "plugins/bob/test-pack", {
+      manifest: goodManifest({ image: "cover.png" }),
+      files: { ...GOOD_FILES, "cover.png/x.prompt": "x" },
+    });
+    assertRejected(runValidate({ prDir, changed }), /no such regular file/);
+  } finally {
+    rmDir(prDir);
+  }
+  const linked = makeTempDir();
+  try {
+    const changed = writePlugin(linked, "plugins/bob/test-pack", { manifest: goodManifest({ image: "cover.png" }), files: GOOD_FILES });
+    fs.symlinkSync(path.join(linked, "plugins/bob/test-pack/prompts/hello.prompt"), path.join(linked, "plugins/bob/test-pack/cover.png"));
+    changed.push("plugins/bob/test-pack/cover.png");
+    assertRejected(runValidate({ prDir: linked, changed }), /no such regular file/);
+  } finally {
+    rmDir(linked);
+  }
+});
+
+test("cover image: a mis-cased root image gets the image message, not the content-root one", () => {
+  const res = validatePlugin({ manifest: goodManifest(), files: { ...GOOD_FILES, "cover.PNG": makePng(500, 500) } });
+  assertRejected(res, /not named by manifest\.image/);
 });

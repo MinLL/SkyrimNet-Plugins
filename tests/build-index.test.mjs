@@ -753,3 +753,19 @@ test("the committed index.json matches the schema and the plugins tree", (t) => 
     }
   }
 });
+
+test("a cover that fails the validator's checks, or is not a regular file, is not baked", () => {
+  const repo = initRepo();
+  try {
+    // Too large a canvas: the header says 4000 px wide.
+    writeFile(repo, "plugins/bob/pack/manifest.json", JSON.stringify(bundleManifest({ image: "cover.png" }), null, 2));
+    writeFile(repo, "plugins/bob/pack/prompts/a.prompt", "x\n");
+    writeFile(repo, "plugins/bob/pack/cover.png", makePng(4000, 10));
+    commitAll(repo, "add pack");
+    const { index } = runBuildIndex(repo);
+    assertValidIndex(index);
+    assert.equal(Object.hasOwn(index.plugins[0], "image"), false);
+  } finally {
+    rmDir(repo);
+  }
+});

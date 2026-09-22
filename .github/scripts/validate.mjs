@@ -670,10 +670,11 @@ let imageAbs = null;
 if (declaredImage !== null) {
   if (!isImageName(declaredImage)) {
     // The schema already rejected the shape; nothing more to say.
-  } else if (!fs.existsSync(path.join(pluginAbs, declaredImage))) {
+  } else if (!isRegularFile(path.join(pluginAbs, declaredImage))) {
+    // lstat, not exists: a directory or a symlink named as the cover is not the image.
     addError(
       manifestPath,
-      `manifest.image names '${declaredImage}' but no such file exists at the plugin root. [${IMAGE_CODES.IMAGE_MISSING}]`,
+      `manifest.image names '${declaredImage}' but no such regular file exists at the plugin root. [${IMAGE_CODES.IMAGE_MISSING}]`,
     );
   } else {
     imageAbs = path.join(pluginAbs, declaredImage);
@@ -689,6 +690,14 @@ if (declaredImage !== null) {
 const contentFiles = walkTree(pluginAbs).filter(
   (abs) => abs !== actualManifestAbs && abs !== imageAbs,
 );
+
+function isRegularFile(abs) {
+  try {
+    return fs.lstatSync(abs).isFile();
+  } catch {
+    return false;
+  }
+}
 
 const contents = { triggers: 0, actions: 0, prompts: 0, knowledge: 0, entities: 0 };
 let totalBundleSize = 0;
@@ -708,10 +717,10 @@ for (const abs of contentFiles) {
   // installer applies before anything touches disk.
   const pathCheck = checkContentPath(subPath);
   if (!pathCheck.ok) {
-    if (!subPath.includes("/") && isImageName(subPath)) {
+    if (!subPath.includes("/") && /\.(png|jpe?g)$/i.test(subPath)) {
       addError(
         rel,
-        `Image file '${subPath}' is not named by manifest.image. A plugin ships at most one cover image, declared in the manifest. [${IMAGE_CODES.IMAGE_UNDECLARED}]`,
+        `Image file '${subPath}' is not named by manifest.image. A plugin ships at most one cover image, declared in the manifest as a bare lowercase-extension filename. [${IMAGE_CODES.IMAGE_UNDECLARED}]`,
       );
     } else {
       addError(rel, `Invalid content path [${pathCheck.code}]: ${pathCheck.message}`);

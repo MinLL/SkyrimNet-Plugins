@@ -105,3 +105,30 @@ test("checkImage reports every failing rule at once", () => {
     IMAGE_CODES.IMAGE_DIMENSIONS, IMAGE_CODES.IMAGE_EXT_MISMATCH, IMAGE_CODES.IMAGE_TOO_LARGE,
   ].sort());
 });
+
+test("image names refuse Windows reserved device names, as the path rules do", () => {
+  for (const bad of ["nul.png", "NUL.jpg", "con.jpeg", "com1.png", "lpt0.jpg", "aux.png"]) {
+    assert.equal(isImageName(bad), false, bad);
+  }
+  assert.equal(isImageName("com10.png"), true);
+  assert.deepEqual(codes(checkImage({ name: "nul.png", bytes: makePng(500, 500) })), [IMAGE_CODES.IMAGE_NAME]);
+});
+
+test("an animated PNG (acTL chunk) is refused; a plain PNG with other ancillary chunks is not", () => {
+  const still = makePng(500, 500);
+  // Splice an acTL chunk in after IHDR (8 signature + 25 IHDR bytes).
+  const actl = Buffer.concat([Buffer.from([0, 0, 0, 8]), Buffer.from("acTL", "latin1"), Buffer.alloc(8), Buffer.alloc(4)]);
+  const animated = Buffer.concat([still.subarray(0, 33), actl, still.subarray(33)]);
+  assert.deepEqual(codes(checkImage({ name: "cover.png", bytes: animated })), [IMAGE_CODES.IMAGE_ANIMATED]);
+  const text = Buffer.concat([Buffer.from([0, 0, 0, 4]), Buffer.from("tEXt", "latin1"), Buffer.from("a=b\0", "latin1"), Buffer.alloc(4)]);
+  const withText = Buffer.concat([still.subarray(0, 33), text, still.subarray(33)]);
+  assert.equal(checkImage({ name: "cover.png", bytes: withText }).ok, true);
+});
+
+test("a JPEG frame header shorter than a frame header is not a frame", () => {
+  const bytes = makeJpeg(480, 640);
+  // Lie about the SOF segment length: 2 (no payload).
+  const sof = bytes.indexOf(Buffer.from([0xff, 0xc0]));
+  bytes.writeUInt16BE(2, sof + 2);
+  assert.equal(sniffImage(bytes), null);
+});

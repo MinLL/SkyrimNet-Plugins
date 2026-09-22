@@ -8,9 +8,12 @@
 // image it claims to be without ever executing anything from the PR.
 //
 // PNG and JPEG only. WebP is excluded because the in-game dashboard renders
-// under Ultralight, whose image decoder has no WebP; GIF is excluded to rule
-// out animation. The extension must match the bytes, so a renamed file is
-// refused rather than sniffed into acceptance.
+// under Ultralight, whose image decoder has no WebP; GIF is excluded and an
+// animated PNG (an `acTL` chunk) refused, so a cover is always a still. The
+// extension must match the bytes, so a renamed file is refused rather than
+// sniffed into acceptance.
+
+import { RESERVED_DEVICE_NAMES } from "./content-rules.mjs";
 
 export const IMAGE_MAX_BYTES = 1024 * 1024; // 1 MB
 export const IMAGE_MAX_DIMENSION = 2048; // px, each side
@@ -23,6 +26,7 @@ export const IMAGE_NAME_RE = /^[A-Za-z0-9_-]{1,64}\.(png|jpg|jpeg)$/;
 
 export const IMAGE_CODES = {
   IMAGE_NAME: "IMAGE_NAME",
+  IMAGE_ANIMATED: "IMAGE_ANIMATED",
   IMAGE_MISSING: "IMAGE_MISSING",
   IMAGE_UNDECLARED: "IMAGE_UNDECLARED",
   IMAGE_FORMAT: "IMAGE_FORMAT",
@@ -33,9 +37,15 @@ export const IMAGE_CODES = {
 
 const PNG_SIGNATURE = Buffer.from([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a]);
 
-/** Is this bare filename an acceptable cover-image name? */
+/**
+ * Is this bare filename an acceptable cover-image name? The shared path
+ * rules never see the cover, so their Windows device-name refusal (`nul.png`
+ * is the NUL device, and a checkout with that path fails for the whole tree)
+ * is repeated here.
+ */
 export function isImageName(name) {
-  return typeof name === "string" && IMAGE_NAME_RE.test(name);
+  if (typeof name !== "string" || !IMAGE_NAME_RE.test(name)) return false;
+  return !RESERVED_DEVICE_NAMES.has(name.slice(0, name.indexOf(".")).toUpperCase());
 }
 
 /** The format a filename's extension claims: "png", "jpeg", or null. */
@@ -69,6 +79,23 @@ function sniffPng(buf) {
   return { format: "png", width, height };
 }
 
+/**
+ * An APNG declares itself with an `acTL` chunk between IHDR and the first
+ * IDAT. Walk the chunk list that far; a malformed list reads as "not animated"
+ * and the decoder is left to refuse it.
+ */
+function hasApngControl(buf) {
+  let offset = 8;
+  while (offset + 8 <= buf.length) {
+    const length = buf.readUInt32BE(offset);
+    const type = buf.toString("latin1", offset + 4, offset + 8);
+    if (type === "acTL") return true;
+    if (type === "IDAT" || type === "IEND") return false;
+    offset += 12 + length; // length, type, data, crc
+  }
+  return false;
+}
+
 function sniffJpeg(buf) {
   if (buf.length < 4 || buf[0] !== 0xff || buf[1] !== 0xd8) return null;
   let offset = 2;
@@ -92,8 +119,9 @@ function sniffJpeg(buf) {
     const isSof =
       marker >= 0xc0 && marker <= 0xcf && marker !== 0xc4 && marker !== 0xc8 && marker !== 0xcc;
     if (isSof) {
-      // SOFn: length(2) precision(1) height(2) width(2)
-      if (offset + 9 > buf.length) return null;
+      // SOFn: length(2) precision(1) height(2) width(2) components(1); a frame
+      // header shorter than that is not one.
+      if (length < 8 || offset + 9 > buf.length) return null;
       const height = buf.readUInt16BE(offset + 5);
       const width = buf.readUInt16BE(offset + 7);
       return { format: "jpeg", width, height };
@@ -142,6 +170,10 @@ export function checkImage({ name, bytes }) {
       `'${name}' is not a PNG or JPEG image (the file header does not match either format).`,
     );
     return { ok: false, issues, info: null };
+  }
+
+  if (info.format === "png" && hasApngControl(buf)) {
+    reject(IMAGE_CODES.IMAGE_ANIMATED, `'${name}' is an animated PNG; a cover must be a still image.`);
   }
 
   const claimed = formatFromName(name);

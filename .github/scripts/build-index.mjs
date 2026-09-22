@@ -32,7 +32,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { execFileSync } from "node:child_process";
 
-import { isImageName, sniffImage } from "./lib/image-rules.mjs";
+import { checkImage, isImageName } from "./lib/image-rules.mjs";
 
 const REPO_ROOT = process.cwd();
 const PLUGINS_DIR = path.join(REPO_ROOT, "plugins");
@@ -304,7 +304,8 @@ function materialContent(index) {
 
 /**
  * The index row's `image` object for a plugin, or null when the manifest
- * names none, the file is absent, or the bytes are not a PNG/JPEG.
+ * names none, the file is absent or not a regular file, or the bytes fail
+ * the same checks the validator runs (a direct push to main skips it).
  *
  * `sha` is the blob hash of the working-tree bytes (what main carries after
  * the merge that triggered this build); `commit` is the newest commit that
@@ -313,9 +314,16 @@ function materialContent(index) {
 function pluginImage(pluginDir, relPath, declared) {
   if (!isImageName(declared)) return null;
   const abs = path.join(pluginDir, declared);
-  if (!fs.existsSync(abs) || !fs.statSync(abs).isFile()) return null;
-  const info = sniffImage(fs.readFileSync(abs));
-  if (!info) return null;
+  let regular = false;
+  try {
+    regular = fs.lstatSync(abs).isFile();
+  } catch {
+    regular = false;
+  }
+  if (!regular) return null;
+  const check = checkImage({ name: declared, bytes: fs.readFileSync(abs) });
+  if (!check.ok) return null;
+  const info = check.info;
   const fileRel = `${relPath}/${declared}`;
   const sha = gitFirstLine(["hash-object", "--", fileRel]);
   const commit = gitFirstLine(["log", "-1", "--format=%H", "--", fileRel]);
