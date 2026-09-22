@@ -1037,12 +1037,12 @@ test("cover image: non-image bytes are refused", () => {
 });
 
 test("cover image: over the byte cap is refused", () => {
-  const big = Buffer.concat([makePng(500, 500), Buffer.alloc(1024 * 1024)]);
+  const big = Buffer.concat([makePng(500, 500), Buffer.alloc(5 * 1024 * 1024)]);
   const res = validatePlugin({
     manifest: goodManifest({ image: "cover.png" }),
     files: { ...GOOD_FILES, "cover.png": big },
   });
-  assertRejected(res, /over the 1\.00 MB limit/);
+  assertRejected(res, /over the 5\.00 MB limit/);
 });
 
 test("cover image: outside the pixel window is refused", () => {
