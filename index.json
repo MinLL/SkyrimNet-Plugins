@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-09-22T14:30:51.797Z",
-  "stats_as_of": "2026-09-22T14:30:51.743Z",
+  "generated_at": "2026-09-22T15:27:57.808Z",
+  "stats_as_of": "2026-09-22T15:27:57.675Z",
   "plugins": [
     {
       "id": "plugins/min/belethor-remix",
@@ -195,7 +195,7 @@
       ],
       "external_url": "https://github.com/GoodProvider/SkyrimNet_Leashed/releases/latest",
       "stats": {
-        "downloads": 3,
+        "downloads": 4,
         "endorsements": 0
       }
     },
@@ -224,7 +224,7 @@
       ],
       "external_url": "https://github.com/GoodProvider/SkyrimNet_Leashed/releases/latest",
       "stats": {
-        "downloads": 1,
+        "downloads": 2,
         "endorsements": 0
       }
     },
@@ -547,7 +547,7 @@
       "external_url": "https://github.com/tetherball88/OStimNet/releases/latest",
       "stats": {
         "downloads": 3,
-        "endorsements": 0
+        "endorsements": 1
       }
     },
     {
@@ -578,7 +578,7 @@
       "external_url": "https://github.com/zevck/S.T.F.U",
       "stats": {
         "downloads": 14,
-        "endorsements": 0
+        "endorsements": 1
       }
     },
     {
@@ -973,7 +973,7 @@
         "entities": 0
       },
       "stats": {
-        "downloads": 4,
+        "downloads": 5,
         "endorsements": 0
       }
     },
