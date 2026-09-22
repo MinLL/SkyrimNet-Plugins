@@ -25,6 +25,7 @@ import {
   writeFile,
   writePlugin,
 } from "./helpers/harness.mjs";
+import { makeJpeg, makePng } from "./helpers/images.mjs";
 
 /** Build a PR checkout containing exactly one plugin and validate it. */
 function validatePlugin({ pluginDir = "plugins/bob/test-pack", manifest, files = GOOD_FILES, ...rest }) {
@@ -967,4 +968,89 @@ test("the PR author is never used to resolve code — no node_modules in PR_DIR 
   const res = validatePlugin({ manifest: goodManifest() });
   assert.equal(res.result.success, true, errorMessages(res.result));
   assert.ok(!fs.existsSync(path.join(process.cwd(), "pr-files.txt")));
+});
+
+// ----- Cover image ---------------------------------------------------------
+
+const IMAGE_FILES = { ...GOOD_FILES, "cover.png": makePng(1280, 720) };
+
+test("cover image: a declared PNG at the plugin root is accepted and reported", () => {
+  const res = validatePlugin({ manifest: goodManifest({ image: "cover.png" }), files: IMAGE_FILES });
+  assert.equal(res.result.success, true, errorMessages(res.result));
+  assert.deepEqual(res.result.labels, ["ready-for-agent-review"]);
+  assert.equal(res.result.image_file, "plugins/bob/test-pack/cover.png");
+});
+
+test("cover image: image_file is null when the manifest names none", () => {
+  const res = validatePlugin({ manifest: goodManifest() });
+  assert.equal(res.result.success, true, errorMessages(res.result));
+  assert.equal(res.result.image_file, null);
+});
+
+test("cover image: a listing may carry a JPEG and still routes to manual review", () => {
+  const manifest = goodManifest({
+    type: "listing", external_url: "https://example.org/mod", image: "cover.jpg",
+  });
+  delete manifest.min_skyrimnet_version;
+  const res = validatePlugin({ manifest, files: { "cover.jpg": makeJpeg(800, 600) } });
+  assert.equal(res.result.success, true, errorMessages(res.result));
+  assert.deepEqual(res.result.labels, ["manual-review"]);
+  assert.equal(res.result.image_file, "plugins/bob/test-pack/cover.jpg");
+});
+
+test("cover image: an image file the manifest does not name is refused", () => {
+  const res = validatePlugin({ manifest: goodManifest(), files: IMAGE_FILES });
+  assertRejected(res, /not named by manifest\.image/);
+  assert.equal(res.result.image_file, null);
+});
+
+test("cover image: a second image beside the declared one is refused", () => {
+  const files = { ...IMAGE_FILES, "banner.jpg": makeJpeg(800, 600) };
+  assertRejected(validatePlugin({ manifest: goodManifest({ image: "cover.png" }), files }), /banner\.jpg.*not named/);
+});
+
+test("cover image: a declared image that is not in the tree is refused", () => {
+  assertRejected(validatePlugin({ manifest: goodManifest({ image: "cover.png" }) }), /no such file exists/);
+});
+
+test("cover image: the manifest may only name a bare png/jpg/jpeg filename", () => {
+  for (const image of ["cover.webp", "cover.gif", "assets/cover.png", "cover.PNG", ""]) {
+    assertRejected(validatePlugin({ manifest: goodManifest({ image }), files: IMAGE_FILES }), /image/);
+  }
+});
+
+test("cover image: bytes must match the extension", () => {
+  const res = validatePlugin({
+    manifest: goodManifest({ image: "cover.jpg" }),
+    files: { ...GOOD_FILES, "cover.jpg": makePng(500, 500) },
+  });
+  assertRejected(res, /extension says JPEG/);
+  assert.equal(res.result.image_file, null);
+});
+
+test("cover image: non-image bytes are refused", () => {
+  const res = validatePlugin({
+    manifest: goodManifest({ image: "cover.png" }),
+    files: { ...GOOD_FILES, "cover.png": "<svg/>" },
+  });
+  assertRejected(res, /not a PNG or JPEG/);
+});
+
+test("cover image: over the byte cap is refused", () => {
+  const big = Buffer.concat([makePng(500, 500), Buffer.alloc(1024 * 1024)]);
+  const res = validatePlugin({
+    manifest: goodManifest({ image: "cover.png" }),
+    files: { ...GOOD_FILES, "cover.png": big },
+  });
+  assertRejected(res, /over the 1\.00 MB limit/);
+});
+
+test("cover image: outside the pixel window is refused", () => {
+  for (const [w, h] of [[4000, 100], [100, 4000], [64, 64]]) {
+    const res = validatePlugin({
+      manifest: goodManifest({ image: "cover.jpg" }),
+      files: { ...GOOD_FILES, "cover.jpg": makeJpeg(w, h) },
+    });
+    assertRejected(res, /each side must be between/);
+  }
 });

@@ -60,11 +60,22 @@ test("every plugin in the repo passes validation", async (t) => {
   }
 });
 
+function declaredImage(pluginRoot) {
+  try {
+    const manifest = JSON.parse(fs.readFileSync(path.join(REPO_ROOT, pluginRoot, "manifest.json"), "utf8"));
+    return typeof manifest.image === "string" ? manifest.image : null;
+  } catch {
+    return null;
+  }
+}
+
 test("every content path in the repo satisfies the path rules", () => {
   for (const pluginRoot of plugins) {
+    // The cover image is hub metadata at the plugin root, not a content path.
+    const image = declaredImage(pluginRoot);
     const contentPaths = listFiles(pluginRoot)
       .map((f) => f.slice(pluginRoot.length + 1))
-      .filter((f) => f !== "manifest.json");
+      .filter((f) => f !== "manifest.json" && f !== image);
     for (const rel of contentPaths) {
       const res = checkContentPath(rel);
       assert.equal(res.ok, true, `${pluginRoot}/${rel}: ${res.code} ${res.message}`);
