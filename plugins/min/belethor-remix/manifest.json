@@ -14,7 +14,8 @@
   "icon": "package",
   "mods": [],
   "language": "en",
-  "version": "1.0.1",
-  "min_skyrimnet_version": "0.25.0",
-  "changelog": "Initial release"
+  "image": "cover.png",
+  "version": "1.0.2",
+  "changelog": "Added Image",
+  "min_skyrimnet_version": "0.25.0"
 }
