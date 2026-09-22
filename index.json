@@ -1,40 +1,8 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-09-22T14:01:07.798Z",
-  "stats_as_of": "2026-09-22T14:01:07.666Z",
+  "generated_at": "2026-09-22T14:02:48.651Z",
+  "stats_as_of": "2026-09-22T14:02:48.541Z",
   "plugins": [
-    {
-      "id": "plugins/min/test-discord-integration",
-      "plugin_id": "min.test-discord-integration",
-      "type": "listing",
-      "title": "Test Discord Integration",
-      "tagline": "Testing",
-      "author": "min",
-      "tags": [],
-      "nsfw": false,
-      "icon": "package",
-      "mods": [],
-      "first_published": "2026-09-21T01:16:39Z",
-      "last_updated": "2026-09-21T02:39:16Z",
-      "version": "1.0.1",
-      "history": [
-        {
-          "version": "1.0.1",
-          "commit": "97f550880d2d6da4eca35caa2932f886b81d83c2",
-          "date": "2026-09-21T02:39:16Z"
-        },
-        {
-          "version": "1.0.0",
-          "commit": "69062811cd2b4d0c4a0c25e1381ead2a3e60b884",
-          "date": "2026-09-21T01:16:39Z"
-        }
-      ],
-      "external_url": "https://fateless.ai",
-      "stats": {
-        "downloads": 1,
-        "endorsements": 0
-      }
-    },
     {
       "id": "plugins/min/belethor-remix",
       "plugin_id": "min.belethor-remix",
