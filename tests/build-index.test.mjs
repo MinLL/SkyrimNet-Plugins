@@ -20,6 +20,7 @@ import { execFileSync, spawn, spawnSync } from "node:child_process";
 import { createRequire } from "node:module";
 
 import { BUILD_INDEX_SCRIPT, REPO_ROOT, makeTempDir, rmDir, writeFile } from "./helpers/harness.mjs";
+import { makeJpeg, makePng } from "./helpers/images.mjs";
 
 // ajv lives in the CI scripts' dependency tree (.github/scripts/node_modules);
 // resolve it from there so the test suite needs no second install.
@@ -291,6 +292,74 @@ test("a manifest language is baked into its row without bumping the schema versi
     assert.equal(byId.get("bob.pack").language, "de");
     // Undeclared stays absent, never present-but-empty.
     assert.equal(Object.hasOwn(byId.get("bob.other"), "language"), false);
+  } finally {
+    rmDir(repo);
+  }
+});
+
+test("a cover image is baked with its blob sha, newest commit and pixel size", () => {
+  const repo = initRepo();
+  try {
+    const png = makePng(1280, 720);
+    writeFile(repo, "plugins/bob/pack/manifest.json", JSON.stringify(bundleManifest({ image: "cover.png" }), null, 2));
+    writeFile(repo, "plugins/bob/pack/prompts/a.prompt", "x\n");
+    writeFile(repo, "plugins/bob/pack/cover.png", png);
+    const first = commitAll(repo, "add pack with cover");
+
+    // A later commit that leaves the image alone must not move image.commit:
+    // the raw URL is pinned to the newest commit that touched the FILE.
+    writeFile(repo, "plugins/bob/pack/manifest.json",
+      JSON.stringify(bundleManifest({ image: "cover.png", version: "1.1.0" }), null, 2));
+    const second = commitAll(repo, "bump");
+    assert.notEqual(first, second);
+
+    const { index } = runBuildIndex(repo);
+    assertValidIndex(index);
+    assert.equal(index.schema_version, 2);
+
+    const row = index.plugins[0];
+    assert.equal(row.image.file, "cover.png");
+    assert.equal(row.image.commit, first);
+    assert.equal(row.image.sha, git(repo, ["hash-object", "plugins/bob/pack/cover.png"]));
+    assert.equal(row.image.width, 1280);
+    assert.equal(row.image.height, 720);
+    // The image is hub metadata, not content.
+    assert.equal(row.contents.prompts, 1);
+
+    // Replacing the bytes moves both the sha and the commit.
+    writeFile(repo, "plugins/bob/pack/cover.png", makePng(1280, 720, [0, 0, 0]));
+    const third = commitAll(repo, "new cover");
+    const after = runBuildIndex(repo).index.plugins[0].image;
+    assert.equal(after.commit, third);
+    assert.notEqual(after.sha, row.image.sha);
+  } finally {
+    rmDir(repo);
+  }
+});
+
+test("a cover image that is missing, unnamed or unreadable leaves the row without one", () => {
+  const repo = initRepo();
+  try {
+    // Named but absent.
+    writeFile(repo, "plugins/bob/pack/manifest.json", JSON.stringify(bundleManifest({ image: "cover.png" }), null, 2));
+    writeFile(repo, "plugins/bob/pack/prompts/a.prompt", "x\n");
+    // Present but not named.
+    writeFile(repo, "plugins/bob/other/manifest.json",
+      JSON.stringify(bundleManifest({ id: "bob.other", title: "Bob's Other" }), null, 2));
+    writeFile(repo, "plugins/bob/other/prompts/a.prompt", "x\n");
+    writeFile(repo, "plugins/bob/other/cover.jpg", makeJpeg(800, 600));
+    // Named, present, not an image.
+    writeFile(repo, "plugins/bob/third/manifest.json",
+      JSON.stringify(bundleManifest({ id: "bob.third", title: "Bob's Third", image: "cover.jpg" }), null, 2));
+    writeFile(repo, "plugins/bob/third/prompts/a.prompt", "x\n");
+    writeFile(repo, "plugins/bob/third/cover.jpg", "nope");
+    commitAll(repo, "add packs");
+
+    const { index } = runBuildIndex(repo);
+    assertValidIndex(index);
+    for (const row of index.plugins) {
+      assert.equal(Object.hasOwn(row, "image"), false, row.plugin_id);
+    }
   } finally {
     rmDir(repo);
   }
@@ -682,5 +751,21 @@ test("the committed index.json matches the schema and the plugins tree", (t) => 
       assert.ok(entry.history.length >= 1, `${entry.id} has no history`);
       assert.equal(entry.history[0].version, manifest.version);
     }
+  }
+});
+
+test("a cover that fails the validator's checks, or is not a regular file, is not baked", () => {
+  const repo = initRepo();
+  try {
+    // Too large a canvas: the header says 4000 px wide.
+    writeFile(repo, "plugins/bob/pack/manifest.json", JSON.stringify(bundleManifest({ image: "cover.png" }), null, 2));
+    writeFile(repo, "plugins/bob/pack/prompts/a.prompt", "x\n");
+    writeFile(repo, "plugins/bob/pack/cover.png", makePng(4000, 10));
+    commitAll(repo, "add pack");
+    const { index } = runBuildIndex(repo);
+    assertValidIndex(index);
+    assert.equal(Object.hasOwn(index.plugins[0], "image"), false);
+  } finally {
+    rmDir(repo);
   }
 });

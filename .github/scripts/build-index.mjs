@@ -32,6 +32,8 @@ import fs from "node:fs";
 import path from "node:path";
 import { execFileSync } from "node:child_process";
 
+import { checkImage, isImageName } from "./lib/image-rules.mjs";
+
 const REPO_ROOT = process.cwd();
 const PLUGINS_DIR = path.join(REPO_ROOT, "plugins");
 const INDEX_PATH = path.join(REPO_ROOT, "index.json");
@@ -300,6 +302,35 @@ function materialContent(index) {
   return JSON.stringify(rest);
 }
 
+/**
+ * The index row's `image` object for a plugin, or null when the manifest
+ * names none, the file is absent or not a regular file, or the bytes fail
+ * the same checks the validator runs (a direct push to main skips it).
+ *
+ * `sha` is the blob hash of the working-tree bytes (what main carries after
+ * the merge that triggered this build); `commit` is the newest commit that
+ * touched the file, which is what a commit-pinned raw URL needs.
+ */
+function pluginImage(pluginDir, relPath, declared) {
+  if (!isImageName(declared)) return null;
+  const abs = path.join(pluginDir, declared);
+  let regular = false;
+  try {
+    regular = fs.lstatSync(abs).isFile();
+  } catch {
+    regular = false;
+  }
+  if (!regular) return null;
+  const check = checkImage({ name: declared, bytes: fs.readFileSync(abs) });
+  if (!check.ok) return null;
+  const info = check.info;
+  const fileRel = `${relPath}/${declared}`;
+  const sha = gitFirstLine(["hash-object", "--", fileRel]);
+  const commit = gitFirstLine(["log", "-1", "--format=%H", "--", fileRel]);
+  if (!sha || !commit) return null;
+  return { file: declared, sha, commit, width: info.width, height: info.height };
+}
+
 function countFiles(dir) {
   if (!fs.existsSync(dir)) return 0;
   let count = 0;
@@ -481,6 +512,12 @@ if (!fs.existsSync(PLUGINS_DIR)) {
       if (typeof manifest.language === 'string' && manifest.language.trim()) {
         entry.language = manifest.language.trim().toLowerCase();
       }
+      // Optional cover image: baked with the facts consumers need to fetch
+      // and cache it without reading the manifest. Skipped, not failed, when
+      // the file is missing or unreadable — the validator gates that on the
+      // way in, and a stale row is worse than a plain one.
+      const image = pluginImage(pluginDir, relPath, manifest.image);
+      if (image) entry.image = image;
 
       if (contents !== undefined) {
         entry.contents = contents;

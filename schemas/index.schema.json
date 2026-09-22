@@ -158,6 +158,31 @@
           "pattern": "^[a-z]{2}$",
           "description": "Copied from manifest.json when the manifest declares one; absent otherwise. Bare lowercase ISO 639-1 code ('en', 'de') the content is written in. The dashboard's browse page derives its Language filter from the distinct values present and labels each with its friendly name, so the facet only appears once at least one entry carries the key. Additive within schema v2."
         },
+        "image": {
+          "type": "object",
+          "required": ["file", "sha", "commit", "width", "height"],
+          "additionalProperties": false,
+          "description": "The plugin's cover image, present only when manifest.image names a file that exists and reads as a PNG or JPEG. Consumers build the raw URL themselves: https://raw.githubusercontent.com/{owner}/{repo}/{commit}/{id}/{file} — commit-pinned, so immutable and cacheable forever; `sha` is the git blob hash, the content key for anything that caches or re-uploads the bytes (the Discord bot re-attaches on a sha change). Never installed by the engine, which ignores the key. Additive within schema v2.",
+          "properties": {
+            "file": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9_-]{1,64}\\.(png|jpg|jpeg)$",
+              "description": "manifest.image: the bare filename at the plugin root."
+            },
+            "sha": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{40}$",
+              "description": "git blob sha of the image bytes on main."
+            },
+            "commit": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{40}$",
+              "description": "Newest commit that touched the image file. The raw URL is built against it."
+            },
+            "width": { "type": "integer", "minimum": 1, "description": "Pixel width read from the file header." },
+            "height": { "type": "integer", "minimum": 1, "description": "Pixel height read from the file header." }
+          }
+        },
         "contents": {
           "type": "object",
           "required": ["triggers", "actions", "prompts"],

@@ -31,6 +31,14 @@ good, not whether it is well-formed.
 - `language` is optional. Pick it from the dashboard's list when the content is not written in
   English, or when you want it findable under the browse page's Language filter. It is stored as
   a bare ISO 639-1 code (`de`, `fr`). Leave it unset rather than guessing; unset means undeclared.
+- `image` is optional: one cover image (PNG or JPEG, up to 1 MB, each side 128–2048px) shown on
+  the hub site, in the in-game browse view, and on the plugin's Discord thread. **Must:** it
+  depicts the plugin — a screenshot, the NPC, the mod's own artwork — and contains no outright
+  sexual content (exposed genitals, sex acts) even on an NSFW plugin; suggestive is fine there,
+  but a plugin flagged SFW gets a fully safe-for-work image. **Must:** it shows no real
+  identifiable person, no real-world hate symbol, and no text that is an ad, a URL, or a QR code;
+  a title or watermark is fine. A cover that fails these gets the submission closed with
+  feedback like any other must item.
 
 ## Character prompts (`prompts/characters/*.prompt`)
 

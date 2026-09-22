@@ -13,6 +13,11 @@ name: Delete plugin (admin takedown)
 # Neither gives a maintainer a one-click way to pull a plugin, which is
 # what this workflow is for (DMCA / policy takedowns, spam, broken bundles).
 #
+# What it does not do: the files stay in git history, and raw.githubusercontent.com
+# serves any commit reachable from main — including the commit-pinned URLs the
+# index handed out for the plugin's cover image. A takedown that must purge the
+# bytes needs a history rewrite and a GitHub support request on top of this.
+#
 # Push model is identical to build-index.yml: main is protected, so the
 # commit is pushed with a token minted from the dedicated bot GitHub App
 # whose installation is in the ruleset's bypass list. Every takedown commit

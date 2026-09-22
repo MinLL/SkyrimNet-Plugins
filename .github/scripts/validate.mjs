@@ -39,6 +39,9 @@ import {
   foldCase,
   isReservedAuthorSegment,
 } from "./lib/content-rules.mjs";
+// The one optional cover image (manifest.image): header-only format, size
+// and dimension checks. Hub metadata, never installed, so it has no C++ twin.
+import { IMAGE_CODES, checkImage, isImageName } from "./lib/image-rules.mjs";
 
 // ----- Configuration -------------------------------------------------------
 
@@ -105,6 +108,10 @@ const result = {
   // reviewer (skyrimnet-ops hub-review.yml) so it reviews exactly this dir and
   // never re-walks the PR checkout, which also holds every other plugin.
   plugin_root: null,
+  // Repo-relative path of the cover image the manifest names, once it has
+  // been found on disk (null otherwise). The reviewer workflow excludes it
+  // from the agent byte gate, which measures text content only.
+  image_file: null,
 };
 
 // Set once the plugin directory is known: the PR targets the reserved author
@@ -650,9 +657,47 @@ if (typeof manifest.author === "string") {
 
 // ----- Content files -------------------------------------------------------
 
+// ----- Cover image ----------------------------------------------------------
+//
+// The image is the only file allowed at the plugin root besides manifest.json,
+// and only when the manifest names it. It is excluded from the content walk
+// below (it is not content and the shared path rules would rightly refuse it)
+// and checked here on its own: bytes must be the PNG/JPEG the extension
+// claims, within the size and pixel caps.
+
+const declaredImage = typeof manifest.image === "string" ? manifest.image : null;
+let imageAbs = null;
+if (declaredImage !== null) {
+  if (!isImageName(declaredImage)) {
+    // The schema already rejected the shape; nothing more to say.
+  } else if (!isRegularFile(path.join(pluginAbs, declaredImage))) {
+    // lstat, not exists: a directory or a symlink named as the cover is not the image.
+    addError(
+      manifestPath,
+      `manifest.image names '${declaredImage}' but no such regular file exists at the plugin root. [${IMAGE_CODES.IMAGE_MISSING}]`,
+    );
+  } else {
+    imageAbs = path.join(pluginAbs, declaredImage);
+    const rel = toPosix(path.relative(env.PR_DIR, imageAbs));
+    const check = checkImage({ name: declaredImage, bytes: fs.readFileSync(imageAbs) });
+    for (const issue of check.issues) {
+      addError(rel, `Invalid cover image [${issue.code}]: ${issue.message}`);
+    }
+    if (check.ok) result.image_file = rel;
+  }
+}
+
 const contentFiles = walkTree(pluginAbs).filter(
-  (abs) => abs !== actualManifestAbs,
+  (abs) => abs !== actualManifestAbs && abs !== imageAbs,
 );
+
+function isRegularFile(abs) {
+  try {
+    return fs.lstatSync(abs).isFile();
+  } catch {
+    return false;
+  }
+}
 
 const contents = { triggers: 0, actions: 0, prompts: 0, knowledge: 0, entities: 0 };
 let totalBundleSize = 0;
@@ -672,7 +717,14 @@ for (const abs of contentFiles) {
   // installer applies before anything touches disk.
   const pathCheck = checkContentPath(subPath);
   if (!pathCheck.ok) {
-    addError(rel, `Invalid content path [${pathCheck.code}]: ${pathCheck.message}`);
+    if (!subPath.includes("/") && /\.(png|jpe?g)$/i.test(subPath)) {
+      addError(
+        rel,
+        `Image file '${subPath}' is not named by manifest.image. A plugin ships at most one cover image, declared in the manifest as a bare lowercase-extension filename. [${IMAGE_CODES.IMAGE_UNDECLARED}]`,
+      );
+    } else {
+      addError(rel, `Invalid content path [${pathCheck.code}]: ${pathCheck.message}`);
+    }
     continue;
   }
 
@@ -880,7 +932,8 @@ function formatBytes(n) {
 
 // ----- Bundle-wide checks --------------------------------------------------
 
-const totalFileCount = contentFiles.length + 1; // +1 for manifest.json
+const totalFileCount = contentFiles.length + 1 + (imageAbs ? 1 : 0); // +1 for manifest.json, +1 for the image
+if (imageAbs) totalBundleSize += fs.statSync(imageAbs).size;
 
 if (totalFileCount > BUNDLE_FILE_COUNT_LIMIT) {
   addError(
