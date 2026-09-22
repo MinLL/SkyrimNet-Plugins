@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-09-22T01:01:47.392Z",
-  "stats_as_of": "2026-09-22T01:01:47.284Z",
+  "generated_at": "2026-09-22T14:01:07.798Z",
+  "stats_as_of": "2026-09-22T14:01:07.666Z",
   "plugins": [
     {
       "id": "plugins/min/test-discord-integration",
@@ -32,42 +32,6 @@
       "external_url": "https://fateless.ai",
       "stats": {
         "downloads": 1,
-        "endorsements": 0
-      }
-    },
-    {
-      "id": "plugins/min/saucy-appetite",
-      "plugin_id": "min.saucy-appetite",
-      "type": "bundle",
-      "title": "Saucy Appetite",
-      "tagline": "Romantic Interests and Preferences",
-      "author": "min",
-      "tags": [],
-      "nsfw": true,
-      "icon": "package",
-      "mods": [],
-      "first_published": "2026-09-21T02:37:04Z",
-      "last_updated": "2026-09-21T02:37:04Z",
-      "version": "1.0.0",
-      "min_skyrimnet_version": "0.25.0",
-      "history": [
-        {
-          "version": "1.0.0",
-          "commit": "6415dcfeb17efbd7ab3e160ccc13c9b25e504c6b",
-          "date": "2026-09-21T02:37:04Z",
-          "changelog": "Initial release"
-        }
-      ],
-      "contents": {
-        "triggers": 0,
-        "actions": 0,
-        "prompts": 1,
-        "bios": 0,
-        "knowledge": 0,
-        "entities": 0
-      },
-      "stats": {
-        "downloads": 0,
         "endorsements": 0
       }
     },
@@ -425,7 +389,7 @@
       ],
       "external_url": "https://github.com/Severause/SeverActions/releases/tag/v3.9.14-beta25",
       "stats": {
-        "downloads": 5,
+        "downloads": 6,
         "endorsements": 0
       }
     },
