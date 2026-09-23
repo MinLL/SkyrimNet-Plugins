@@ -114,15 +114,13 @@ test("a YAML value is never echoed raw: a list or mapping is described, a long s
 });
 
 for (const root of ["items", "spells"]) {
-  test(`${root}: 'enabled' and the old 'npc_usable' are refused in favour of show_in_prompts`, () => {
+  test(`${root}: 'enabled' is refused in favour of show_in_prompts, which must be a boolean`, () => {
     const record = (fields) => checkRecord(root, { form: SKYRIM_FORM, ...fields }, `${root}/${SKYRIM_STEM}.yaml`);
     assertOk(record({}));
     assertOk(record({ show_in_prompts: false }));
     assertOk(record({ show_in_prompts: true }));
     assertCode(record({ enabled: false }), RECORD_CODES.ENABLED_NOT_ACTIVATION, /not whether the form appears in NPC prompts\. Say 'show_in_prompts: false' instead\.$/);
     assertCode(record({ enabled: true }), RECORD_CODES.ENABLED_NOT_ACTIVATION, /show_in_prompts: true/);
-    assertCode(record({ npc_usable: false }), RECORD_CODES.NPC_USABLE_RENAMED, /^'npc_usable' is the old name of 'show_in_prompts'[^\n]*Say 'show_in_prompts: false' instead\.$/);
-    assertCode(record({ npc_usable: true }), RECORD_CODES.NPC_USABLE_RENAMED, /show_in_prompts: true/);
     assertCode(record({ show_in_prompts: "no" }), RECORD_CODES.SHOW_IN_PROMPTS_NOT_BOOL, /^'show_in_prompts' must be true or false\.$/);
     assertCode(record({ show_in_prompts: 1 }), RECORD_CODES.SHOW_IN_PROMPTS_NOT_BOOL);
   });

@@ -22,7 +22,6 @@ export const RECORD_CODES = {
   FORM_NOT_STEM: "FORM_NOT_STEM",
   ENABLED_NOT_ACTIVATION: "ENABLED_NOT_ACTIVATION",
   SHOW_IN_PROMPTS_NOT_BOOL: "SHOW_IN_PROMPTS_NOT_BOOL",
-  NPC_USABLE_RENAMED: "NPC_USABLE_RENAMED",
   SLUG_NOT_STEM: "SLUG_NOT_STEM",
   NPC_REF_LOAD_ORDER: "NPC_REF_LOAD_ORDER",
   NPC_REF_INVALID: "NPC_REF_INVALID",
@@ -59,7 +58,6 @@ export const IDENTITY_REF_FIELDS = Object.freeze({ link: ["identityA", "identity
 
 const FORM_FIELD = "form";
 const SHOW_IN_PROMPTS_FIELD = "show_in_prompts";
-const NPC_USABLE_FIELD = "npc_usable"; // the field's name before the engine renamed it
 const TRANSLATOR_GLOBAL_STEM = "global";
 const PRIORITY_FIELD = "priority";
 const PATTERN_FIELD = "pattern";
@@ -242,7 +240,7 @@ function checkPattern(doc, kind, push) {
 }
 
 // `show_in_prompts` (true when omitted) says whether the item or spell appears in NPC equipment and spell lists
-// in prompts; `enabled` is record activation, and `npc_usable` is the field's old name.
+// in prompts; `enabled` is record activation.
 function checkShowInPrompts(doc, root, push) {
   const spell = (value) => `'${SHOW_IN_PROMPTS_FIELD}: ${value === false ? "false" : "true"}'`;
   if (doc.enabled !== undefined) {
@@ -250,13 +248,6 @@ function checkShowInPrompts(doc, root, push) {
       RECORD_CODES.ENABLED_NOT_ACTIVATION,
       `'enabled' in a ${root}/ file means record activation (the user's on/off toggle), not whether the form ` +
         `appears in NPC prompts. Say ${spell(doc.enabled)} instead.`,
-    );
-  }
-  if (doc[NPC_USABLE_FIELD] !== undefined) {
-    push(
-      RECORD_CODES.NPC_USABLE_RENAMED,
-      `'${NPC_USABLE_FIELD}' is the old name of '${SHOW_IN_PROMPTS_FIELD}'; the engine ignores it. ` +
-        `Say ${spell(doc[NPC_USABLE_FIELD])} instead.`,
     );
   }
   if (doc[SHOW_IN_PROMPTS_FIELD] !== undefined && typeof doc[SHOW_IN_PROMPTS_FIELD] !== "boolean") {
