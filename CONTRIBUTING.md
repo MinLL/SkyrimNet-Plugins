@@ -115,7 +115,7 @@ A few rules the validator enforces:
 - **Identity links name an NPC as `npc:Plugin.esp:0xLocalID`** (`identityA`/`identityB` on a link, `from`/`to` on a succession). The runtime form id spelling, `npc:0A012345`, depends on load order and is rejected.
 - **A dialogue or TTS rule needs a `pattern`**: a non-empty regular expression string of at most 1024 bytes (the engine's cap) that compiles; the validator compiles it as a JavaScript `RegExp`, a coarse check for the engine's `std::regex`.
 - **`priority` on a filter rule or translator rule is an integer** (lower runs first; 100 when omitted). A filter contribution's six list fields (`FactionWhitelist`, `FactionBlacklist`, `RaceWhitelist`, `RaceBlacklist`, `GenderWhitelist`, `GenderBlacklist`) and a dialogue-action `whitelist`/`blacklist` are lists of strings.
-- **An instruction's `category`** is one of `quest`, `follower`, `merchant`, `trainer`, `carriage`, `innkeeper`, `bard`, `marriage`, `crime`, `other`.
+- **An instruction's `category`** is optional; when present it overrides the line's own classification and is one of `quest`, `follower`, `merchant`, `trainer`, `carriage`, `innkeeper`, `bard`, `marriage`, `crime`, `other`.
 - **64 KB per voice-effect recipe, 32 KB per record elsewhere.**
 - None of these roots force manual review.
 

@@ -340,13 +340,10 @@ const CHECKS = {
       checkStringList(doc, "blacklist", push);
     } else if (kind === "instruction") {
       pushStemCheck("key", doc.key, subPath, push);
+      // `category` is optional: absent or empty leaves the line's own classification.
       const category = typeof doc.category === "string" ? foldCase(doc.category) : null;
-      if (doc.category === undefined) {
-        push(
-          RECORD_CODES.CATEGORY_UNKNOWN,
-          `An instruction needs a 'category': one of ${DIALOGUE_ACTION_CATEGORIES.join(", ")}.`,
-        );
-      } else if (category === null || !DIALOGUE_ACTION_CATEGORIES.includes(category)) {
+      if (doc.category === undefined || doc.category === null || category === "") return;
+      if (category === null || !DIALOGUE_ACTION_CATEGORIES.includes(category)) {
         push(
           RECORD_CODES.CATEGORY_UNKNOWN,
           `category is ${quoteValue(doc.category)}, not a dialogue-action category. Use one of ` +

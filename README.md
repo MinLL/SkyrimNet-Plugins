@@ -69,7 +69,7 @@ One directory per content root. The validator checks each file's extension, its 
 | `identity/` | `.yaml` | slug of `name` (`kind: link`, the default, or `succession`); NPCs as `npc:Plugin.esp:0xLocalID` | Beta 25 (0.25.0) | yes | 32 KB |
 | `filters/` | `.yaml` | `kind: actor` / `memory` contributions: any stem; `kind: dialogue_rule` / `tts_rule`: `id`, a non-empty `pattern` (a regular expression of at most 1024 bytes), integer `priority` | Beta 25 (0.25.0) | yes | 32 KB |
 | `translator/` | `.yaml` | `kind: npc`: form stem of `form` (the actor base); `faction` / `race`: `entityEditorId`; `global`: `global.yaml`; integer `priority` | Beta 25 (0.25.0) | yes | 32 KB |
-| `dialogue_actions/` | `.yaml` | `kind: lists` contributions: any stem; `kind: instruction`: `key`, with `category` one of `quest`, `follower`, `merchant`, `trainer`, `carriage`, `innkeeper`, `bard`, `marriage`, `crime`, `other` | Beta 25 (0.25.0) | yes | 32 KB |
+| `dialogue_actions/` | `.yaml` | `kind: lists` contributions: any stem; `kind: instruction`: `key`, with an optional `category` of `quest`, `follower`, `merchant`, `trainer`, `carriage`, `innkeeper`, `bard`, `marriage`, `crime`, `other` | Beta 25 (0.25.0) | yes | 32 KB |
 
 **Filename stem.** For a root identified by `name`, `id`, `key` or `entityEditorId`, the stem is the filename up to its **first** dot (`draugr.yaml` → `draugr`, `foo.entity.yaml` → `foo`), compared case-insensitively.
 

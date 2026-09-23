@@ -286,7 +286,7 @@ test("dialogue_actions: a lists contribution carries string lists under any stem
   assertCode(checkRecord("dialogue_actions", { kind: "rules" }, "dialogue_actions/x.yaml"), RECORD_CODES.KIND_UNKNOWN);
 });
 
-test("dialogue_actions: an instruction is keyed on its TIF script name and names a category", () => {
+test("dialogue_actions: an instruction is keyed on its TIF script name; a category, when present, is one of the ten", () => {
   const good = { kind: "instruction", key: "TIF__000D9B53", name: "Rent a room", text: "Offer the room.", category: "innkeeper", enabled: true };
   assertOk(checkRecord("dialogue_actions", good, "dialogue_actions/TIF__000D9B53.yaml"));
   assertOk(checkRecord("dialogue_actions", { ...good, category: "Innkeeper" }, "dialogue_actions/tif__000d9b53.yaml"));
@@ -294,7 +294,9 @@ test("dialogue_actions: an instruction is keyed on its TIF script name and names
   assertCode(checkRecord("dialogue_actions", { ...good, key: undefined }, "dialogue_actions/TIF__000D9B53.yaml"), CODES.NAME_MISSING, /'key'/);
   const badCategory = checkRecord("dialogue_actions", { ...good, category: "lodging" }, "dialogue_actions/TIF__000D9B53.yaml");
   assertCode(badCategory, RECORD_CODES.CATEGORY_UNKNOWN, /quest, follower, merchant, trainer, carriage, innkeeper, bard, marriage, crime, other/);
-  assertCode(checkRecord("dialogue_actions", { ...good, category: undefined }, "dialogue_actions/TIF__000D9B53.yaml"), RECORD_CODES.CATEGORY_UNKNOWN);
+  for (const category of [undefined, null, ""]) {
+    assert.equal(checkRecord("dialogue_actions", { ...good, category }, "dialogue_actions/TIF__000D9B53.yaml").ok, true);
+  }
   assertCode(checkRecord("dialogue_actions", { ...good, category: 3 }, "dialogue_actions/TIF__000D9B53.yaml"), RECORD_CODES.CATEGORY_UNKNOWN);
 });
 
