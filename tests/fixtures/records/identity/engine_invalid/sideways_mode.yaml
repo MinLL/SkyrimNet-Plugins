@@ -1,0 +1,6 @@
+# refuse-engine: mode 'sideways' is not one of off, bidirectional, a_sees_b, b_sees_a
+kind: link
+name: Sideways Mode
+identityA: virtual:Alice
+identityB: npc:Skyrim.esm:0x01A66D
+mode: sideways

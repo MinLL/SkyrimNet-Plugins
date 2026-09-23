@@ -1,0 +1,8 @@
+# refuse-engine: stage 0: unknown stage type 'nope' (the engine's stage schema; the hub does not read stages)
+id: unknown_stage
+name: Unknown Stage
+sample: null
+stages:
+  - type: nope
+    params:
+      amount: 1.0

@@ -1,0 +1,2 @@
+# refuse-engine: no 'resolved_name' field (the name is the record's whole payload; the hub checks only the form)
+form: MyMod.esp|0x000456

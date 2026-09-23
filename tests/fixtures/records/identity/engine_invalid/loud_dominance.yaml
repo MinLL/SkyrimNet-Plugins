@@ -1,0 +1,6 @@
+# refuse-engine: dominance 'loud' is not one of blended, host_led, contested, entity_led
+kind: link
+name: Loud Dominance
+identityA: virtual:Alice
+identityB: npc:Skyrim.esm:0x01A66D
+dominance: loud

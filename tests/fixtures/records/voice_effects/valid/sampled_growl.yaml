@@ -1,4 +1,4 @@
-# why: sample is a plain filename under voice_effects/samples/, never a path
+# why: sample is a plain filename under voice_effects/samples/
 id: sampled_growl
 name: Sampled Growl
 sample: growl.wav
