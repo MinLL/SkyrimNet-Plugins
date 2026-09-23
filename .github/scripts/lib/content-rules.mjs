@@ -45,8 +45,12 @@ export const CODES = {
 
 // ----- Constants -----------------------------------------------------------
 
-// `minEngine` of a root no SkyrimNet release reads yet: every plugin shipping it is refused.
+// `minEngine` of a root no SkyrimNet release reads yet: every plugin shipping it is refused. No row carries it
+// today; a root added ahead of its release does.
 export const RESERVED_MIN_ENGINE = "reserved";
+
+// The release that reads the eight config-system roots.
+export const CONFIG_ROOTS_MIN_ENGINE = "0.25.0";
 
 // One row per content root; pairs with the engine's table in ContentPaths.cpp. `minEngine` is null
 // (ungated), RESERVED_MIN_ENGINE, or the oldest release that reads the root. Record rules: record-rules.mjs.
@@ -56,14 +60,14 @@ export const ROOT_TABLE = Object.freeze([
   { segment: "actions", extension: ".yaml", minEngine: null }, // `name` == stem
   { segment: "knowledge", extension: ".sknpack", minEngine: null },
   { segment: "entities", extension: ".entity.yaml", minEngine: null }, // stem is before the first dot
-  { segment: "voice_effects", extension: ".yaml", minEngine: RESERVED_MIN_ENGINE }, // `id` == stem
-  { segment: "items", extension: ".yaml", minEngine: RESERVED_MIN_ENGINE }, // formStem(form) == stem
-  { segment: "spells", extension: ".yaml", minEngine: RESERVED_MIN_ENGINE }, // formStem(form) == stem
-  { segment: "furniture", extension: ".yaml", minEngine: RESERVED_MIN_ENGINE }, // formStem(form) == stem
-  { segment: "identity", extension: ".yaml", minEngine: RESERVED_MIN_ENGINE }, // slugOf(name) == stem
-  { segment: "filters", extension: ".yaml", minEngine: RESERVED_MIN_ENGINE }, // by `kind`
-  { segment: "translator", extension: ".yaml", minEngine: RESERVED_MIN_ENGINE }, // by `kind`
-  { segment: "dialogue_actions", extension: ".yaml", minEngine: RESERVED_MIN_ENGINE }, // by `kind`
+  { segment: "voice_effects", extension: ".yaml", minEngine: CONFIG_ROOTS_MIN_ENGINE }, // `id` == stem
+  { segment: "items", extension: ".yaml", minEngine: CONFIG_ROOTS_MIN_ENGINE }, // formStem(form) == stem
+  { segment: "spells", extension: ".yaml", minEngine: CONFIG_ROOTS_MIN_ENGINE }, // formStem(form) == stem
+  { segment: "furniture", extension: ".yaml", minEngine: CONFIG_ROOTS_MIN_ENGINE }, // formStem(form) == stem
+  { segment: "identity", extension: ".yaml", minEngine: CONFIG_ROOTS_MIN_ENGINE }, // slugOf(name) == stem
+  { segment: "filters", extension: ".yaml", minEngine: CONFIG_ROOTS_MIN_ENGINE }, // by `kind`
+  { segment: "translator", extension: ".yaml", minEngine: CONFIG_ROOTS_MIN_ENGINE }, // by `kind`
+  { segment: "dialogue_actions", extension: ".yaml", minEngine: CONFIG_ROOTS_MIN_ENGINE }, // by `kind`
 ]);
 
 // Content roots accepted by the hub, in table order.

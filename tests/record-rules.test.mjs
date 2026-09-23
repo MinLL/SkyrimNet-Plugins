@@ -10,6 +10,7 @@ import {
   FILTER_LIST_FIELDS,
   IDENTITY_REF_FIELDS,
   KINDS_BY_ROOT,
+  MAX_PATTERN_LENGTH,
   RECORD_CODES,
   RECORD_ROOTS,
   checkRecord,
@@ -113,14 +114,17 @@ test("a YAML value is never echoed raw: a list or mapping is described, a long s
 });
 
 for (const root of ["items", "spells"]) {
-  test(`${root}: 'enabled' is refused in favour of npc_usable`, () => {
-    assertOk(checkRecord(root, { form: SKYRIM_FORM, npc_usable: false }, `${root}/${SKYRIM_STEM}.yaml`));
-    assertOk(checkRecord(root, { form: SKYRIM_FORM, npc_usable: true }, `${root}/${SKYRIM_STEM}.yaml`));
-    const off = checkRecord(root, { form: SKYRIM_FORM, enabled: false }, `${root}/${SKYRIM_STEM}.yaml`);
-    assertCode(off, RECORD_CODES.ENABLED_NOT_ACTIVATION, /npc_usable: false/);
-    const on = checkRecord(root, { form: SKYRIM_FORM, enabled: true }, `${root}/${SKYRIM_STEM}.yaml`);
-    assertCode(on, RECORD_CODES.ENABLED_NOT_ACTIVATION, /npc_usable: true/);
-    assertCode(checkRecord(root, { form: SKYRIM_FORM, npc_usable: "no" }, `${root}/${SKYRIM_STEM}.yaml`), RECORD_CODES.NPC_USABLE_NOT_BOOL);
+  test(`${root}: 'enabled' and the old 'npc_usable' are refused in favour of show_in_prompts`, () => {
+    const record = (fields) => checkRecord(root, { form: SKYRIM_FORM, ...fields }, `${root}/${SKYRIM_STEM}.yaml`);
+    assertOk(record({}));
+    assertOk(record({ show_in_prompts: false }));
+    assertOk(record({ show_in_prompts: true }));
+    assertCode(record({ enabled: false }), RECORD_CODES.ENABLED_NOT_ACTIVATION, /not whether the form appears in NPC prompts\. Say 'show_in_prompts: false' instead\.$/);
+    assertCode(record({ enabled: true }), RECORD_CODES.ENABLED_NOT_ACTIVATION, /show_in_prompts: true/);
+    assertCode(record({ npc_usable: false }), RECORD_CODES.NPC_USABLE_RENAMED, /^'npc_usable' is the old name of 'show_in_prompts'[^\n]*Say 'show_in_prompts: false' instead\.$/);
+    assertCode(record({ npc_usable: true }), RECORD_CODES.NPC_USABLE_RENAMED, /show_in_prompts: true/);
+    assertCode(record({ show_in_prompts: "no" }), RECORD_CODES.SHOW_IN_PROMPTS_NOT_BOOL, /^'show_in_prompts' must be true or false\.$/);
+    assertCode(record({ show_in_prompts: 1 }), RECORD_CODES.SHOW_IN_PROMPTS_NOT_BOOL);
   });
 }
 
@@ -178,8 +182,29 @@ test("filters: kind is required; contributions take any stem, rules need id == s
   assertOk(checkRecord("filters", { kind: "tts_rule", id: "Numbers", pattern: "\\d+" }, "filters/numbers.yaml"));
   assertCode(checkRecord("filters", { RaceWhitelist: [] }, "filters/x.yaml"), RECORD_CODES.KIND_MISSING, /actor, memory, dialogue_rule, tts_rule/);
   assertCode(checkRecord("filters", { kind: "npc" }, "filters/x.yaml"), RECORD_CODES.KIND_UNKNOWN);
-  assertCode(checkRecord("filters", { kind: "dialogue_rule", id: "other" }, "filters/strip_grunts.yaml"), CODES.NAME_NOT_STEM, /id 'other'/);
+  assertCode(checkRecord("filters", { kind: "dialogue_rule", id: "other", pattern: "x" }, "filters/strip_grunts.yaml"), CODES.NAME_NOT_STEM, /id 'other'/);
   assertCode(checkRecord("filters", { kind: "tts_rule", pattern: "x" }, "filters/numbers.yaml"), CODES.NAME_MISSING);
+});
+
+test("filter rules need a pattern: a non-empty string within the engine's byte cap that compiles", () => {
+  assert.equal(MAX_PATTERN_LENGTH, 1024);
+  for (const kind of ["dialogue_rule", "tts_rule"]) {
+    const rule = (fields) => checkRecord("filters", { kind, id: "x", ...fields }, "filters/x.yaml");
+    assertOk(rule({ pattern: "^ugh" }));
+    assertOk(rule({ pattern: "\\d+" }));
+    assertOk(rule({ pattern: "a".repeat(MAX_PATTERN_LENGTH) }));
+    assertCode(rule({}), RECORD_CODES.PATTERN_MISSING, new RegExp(`^A '${kind}' needs a 'pattern' field: a non-empty regular expression string\\.$`));
+    assertCode(rule({ pattern: "" }), RECORD_CODES.PATTERN_MISSING, /needs a 'pattern' field[^\n]*, not ''\.$/);
+    assertCode(rule({ pattern: 42 }), RECORD_CODES.PATTERN_MISSING, /not the number 42\.$/);
+    assertCode(rule({ pattern: ["^ugh"] }), RECORD_CODES.PATTERN_MISSING, /not a list\.$/);
+    assertCode(rule({ pattern: "(ugh" }), RECORD_CODES.PATTERN_INVALID, /^'pattern' '\(ugh' does not compile: /);
+    assertCode(rule({ pattern: "a".repeat(MAX_PATTERN_LENGTH + 1) }), RECORD_CODES.PATTERN_TOO_LONG, /^'pattern' is 1025 bytes, over the 1024 byte limit/);
+    // The cap is in UTF-8 bytes, as the engine measures it; an over-long pattern is not compiled.
+    assertCode(rule({ pattern: "\u00e9".repeat(513) }), RECORD_CODES.PATTERN_TOO_LONG, /is 1026 bytes/);
+    assert.deepEqual(codes(rule({ pattern: "(".repeat(MAX_PATTERN_LENGTH + 1) })), [RECORD_CODES.PATTERN_TOO_LONG]);
+  }
+  // Contributions carry no pattern; the field is not checked there.
+  assertOk(checkRecord("filters", { kind: "actor", pattern: 42 }, "filters/x.yaml"));
 });
 
 test("filters: a contribution's six list fields must be lists of strings", () => {
@@ -197,13 +222,13 @@ test("filters: a contribution's six list fields must be lists of strings", () =>
     }
   }
   // A rule's list-named field is not a contribution list.
-  assertOk(checkRecord("filters", { kind: "dialogue_rule", id: "x", RaceWhitelist: "no" }, "filters/x.yaml"));
+  assertOk(checkRecord("filters", { kind: "dialogue_rule", id: "x", pattern: "x", RaceWhitelist: "no" }, "filters/x.yaml"));
 });
 
 test("filter rules and translator records carry an integer priority when they carry one", () => {
   for (const doc of [
-    { kind: "dialogue_rule", id: "x" },
-    { kind: "tts_rule", id: "x" },
+    { kind: "dialogue_rule", id: "x", pattern: "x" },
+    { kind: "tts_rule", id: "x", pattern: "x" },
   ]) {
     assertOk(checkRecord("filters", { ...doc, priority: 10 }, "filters/x.yaml"));
     assertOk(checkRecord("filters", { ...doc, priority: 0 }, "filters/x.yaml"));
@@ -274,8 +299,8 @@ test("dialogue_actions: an instruction is keyed on its TIF script name and names
 });
 
 test("every issue is reported, not just the first", () => {
-  const res = checkRecord("spells", { enabled: false, npc_usable: "no" }, "spells/x.yaml");
+  const res = checkRecord("spells", { enabled: false, show_in_prompts: "no" }, "spells/x.yaml");
   assert.deepEqual(codes(res).sort(), [
-    RECORD_CODES.ENABLED_NOT_ACTIVATION, RECORD_CODES.FORM_MISSING, RECORD_CODES.NPC_USABLE_NOT_BOOL,
+    RECORD_CODES.ENABLED_NOT_ACTIVATION, RECORD_CODES.FORM_MISSING, RECORD_CODES.SHOW_IN_PROMPTS_NOT_BOOL,
   ].sort());
 });
