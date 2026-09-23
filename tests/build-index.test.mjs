@@ -20,6 +20,7 @@ import { execFileSync, spawn, spawnSync } from "node:child_process";
 import { createRequire } from "node:module";
 
 import { BUILD_INDEX_SCRIPT, REPO_ROOT, makeTempDir, rmDir, writeFile } from "./helpers/harness.mjs";
+import { CONTENT_ROOTS } from "../.github/scripts/lib/content-rules.mjs";
 import { makeJpeg, makePng } from "./helpers/images.mjs";
 
 // ajv lives in the CI scripts' dependency tree (.github/scripts/node_modules);
@@ -86,6 +87,12 @@ function bundleManifest(overrides = {}) {
     min_skyrimnet_version: "0.25.0",
     ...overrides,
   };
+}
+
+/** A `contents` map with every root at zero, for tests to override. */
+function contentsOf(overrides = {}) {
+  const zero = Object.fromEntries(CONTENT_ROOTS.map((root) => [root, 0]));
+  return { ...zero, bios: 0, ...overrides };
 }
 
 function buildIndexSpawnOptions(repo, statsUrl) {
@@ -182,7 +189,7 @@ test("emits per-version history newest-first, pinned to the newest commit of eac
     assert.equal(entry.plugin_id, "bob.pack");
     assert.equal(entry.version, "1.1.0");
     assert.equal(entry.min_skyrimnet_version, "0.25.0");
-    assert.deepEqual(entry.contents, { triggers: 0, actions: 0, prompts: 1, bios: 0, knowledge: 0, entities: 0 });
+    assert.deepEqual(entry.contents, contentsOf({ prompts: 1 }));
 
     assert.equal(entry.history.length, 2);
     assert.equal(entry.history[0].version, "1.1.0");
@@ -260,14 +267,7 @@ test("knowledge packs are counted in contents without bumping the schema version
 
     // Additive: the engine hard-rejects any schema_version but 2.
     assert.equal(index.schema_version, 2);
-    assert.deepEqual(index.plugins[0].contents, {
-      triggers: 0,
-      actions: 0,
-      prompts: 1,
-      bios: 0,
-      knowledge: 2,
-      entities: 0,
-    });
+    assert.deepEqual(index.plugins[0].contents, contentsOf({ prompts: 1, knowledge: 2 }));
   } finally {
     rmDir(repo);
   }
@@ -378,14 +378,43 @@ test("virtual entities are counted in contents without bumping the schema versio
     assertValidIndex(index);
 
     assert.equal(index.schema_version, 2);
-    assert.deepEqual(index.plugins[0].contents, {
-      triggers: 0,
-      actions: 0,
-      prompts: 0,
-      bios: 1,
-      knowledge: 0,
-      entities: 2,
-    });
+    assert.deepEqual(index.plugins[0].contents, contentsOf({ bios: 1, entities: 2 }));
+  } finally {
+    rmDir(repo);
+  }
+});
+
+test("the config-system roots are counted in contents, one key per root, no schema bump", () => {
+  const repo = initRepo();
+  try {
+    writeFile(repo, "plugins/bob/pack/manifest.json", JSON.stringify(bundleManifest(), null, 2));
+    writeFile(repo, "plugins/bob/pack/voice_effects/draugr.yaml", "id: draugr\n");
+    writeFile(repo, "plugins/bob/pack/items/skyrim-esm_01396B.yaml", "form: Skyrim.esm|0x01396B\n");
+    writeFile(repo, "plugins/bob/pack/items/nested/skyrim-esm_01396C.yaml", "form: Skyrim.esm|0x01396C\n");
+    writeFile(repo, "plugins/bob/pack/spells/skyrim-esm_012FCD.yaml", "form: Skyrim.esm|0x012FCD\n");
+    writeFile(repo, "plugins/bob/pack/furniture/skyrim-esm_000123.yaml", "form: Skyrim.esm|0x000123\n");
+    writeFile(repo, "plugins/bob/pack/identity/serana_s_shadow.yaml", "name: Serana's Shadow\n");
+    writeFile(repo, "plugins/bob/pack/filters/my_races.yaml", "kind: actor\n");
+    writeFile(repo, "plugins/bob/pack/filters/strip_grunts.yaml", "kind: dialogue_rule\nid: strip_grunts\n");
+    writeFile(repo, "plugins/bob/pack/filters/numbers.yaml", "kind: tts_rule\nid: numbers\n");
+    writeFile(repo, "plugins/bob/pack/translator/global.yaml", "kind: global\n");
+    writeFile(repo, "plugins/bob/pack/dialogue_actions/nff.yaml", "kind: lists\n");
+    commitAll(repo, "add pack with config-system roots");
+
+    const { index } = runBuildIndex(repo);
+    assertValidIndex(index);
+
+    assert.equal(index.schema_version, 2);
+    const contents = index.plugins[0].contents;
+    assert.deepEqual(contents, contentsOf({
+      voice_effects: 1, items: 2, spells: 1, furniture: 1, identity: 1, filters: 3, translator: 1, dialogue_actions: 1,
+    }));
+    // Key order: the original three, bios, then the rest in table order, so a
+    // rebuild of an existing index only appends keys.
+    assert.deepEqual(Object.keys(contents), [
+      "triggers", "actions", "prompts", "bios", "knowledge", "entities",
+      "voice_effects", "items", "spells", "furniture", "identity", "filters", "translator", "dialogue_actions",
+    ]);
   } finally {
     rmDir(repo);
   }
@@ -480,7 +509,7 @@ test("character bios count as `bios`, not `prompts`", () => {
 
     const entry = index.plugins[0];
     // prompts excludes the two under prompts/characters/; bios counts them.
-    assert.deepEqual(entry.contents, { triggers: 0, actions: 0, prompts: 1, bios: 2, knowledge: 0, entities: 0 });
+    assert.deepEqual(entry.contents, contentsOf({ prompts: 1, bios: 2 }));
   } finally {
     rmDir(repo);
   }

@@ -1,37 +1,12 @@
 #!/usr/bin/env node
-// SkyrimNet Plugins — index builder
-//
-// Walks every plugins/{author}/{slug}/manifest.json, extracts the fields
-// the dashboard needs for the browse page, counts content files, derives
-// first_published, last_updated and the version `history` (bundles, and any
-// listing that declares a version) from git history, embeds moderation state
-// from hidden.json + curated.json into
-// each entry, and writes index.json.
-//
-// `history` is what makes install / update / rollback work without any hub
-// API: each entry pins a published version to the newest commit that carried
-// it, and the in-game installer fetches the plugin subtree at that SHA
-// (rollback is the same code path with an older SHA). Requires full git
-// history — build-index.yml checks out with fetch-depth: 0.
-//
-// Moderation files (hidden.json / curated.json) remain the source-of-
-// truth and are still hand-edited (or moderation-tool-edited) on main.
-// build-index just bakes their state into the per-plugin entries so
-// the dashboard only has to fetch one file. The trigger paths in
-// build-index.yml include both moderation files, so any edit to them
-// runs this script and refreshes the index.
-//
-// Popularity (`stats`: download and endorsement counts) is baked the same
-// way, from fateless.ai's public stats document, on the hourly cron in
-// build-index.yml — see "Popularity stats" below for the fail-soft rule and
-// the no-op guard that keeps a quiet hour from committing anything.
-//
-// Zero external dependencies — only Node built-ins.
+// Writes index.json from every plugins/{author}/{slug}/manifest.json: browse fields, content counts, git-derived
+// dates and version history (needs fetch-depth: 0), hidden.json/curated.json state and fateless stats. Node built-ins only.
 
 import fs from "node:fs";
 import path from "node:path";
 import { execFileSync } from "node:child_process";
 
+import { CONTENT_ROOTS } from "./lib/content-rules.mjs";
 import { checkImage, isImageName } from "./lib/image-rules.mjs";
 
 const REPO_ROOT = process.cwd();
@@ -88,15 +63,8 @@ function gitFirstLine(args) {
   return line || null;
 }
 
-/**
- * Published version history for one plugin, newest first.
- *
- * Walks the commits touching the plugin directory from newest to oldest and
- * records the FIRST commit seen for each distinct manifest version — i.e. the
- * newest commit at which the plugin carried that version. That is the copy a
- * rollback should restore: the hub permits same-version republishes, so the
- * last commit of a version is its final content.
- */
+// Published version history for one plugin, newest first: each version pinned to the newest commit that
+// carried it (same-version republishes are permitted, so the last commit of a version is its final content).
 function pluginHistory(relPath) {
   const log = git([
     "log",
@@ -179,12 +147,8 @@ function statsPair(raw) {
   };
 }
 
-/**
- * The live stats document, reduced to Map<plugin_id, {downloads, endorsements}>
- * plus its generated_at, or null on ANY failure (the caller falls back).
- * Keys are case-folded on the way in: plugin_id is lowercase by contract on
- * both sides, and a stray uppercase key must not orphan a plugin's counts.
- */
+// The live stats document as Map<plugin_id (case-folded), {downloads, endorsements}> plus its generated_at,
+// or null on any failure (the caller falls back).
 async function fetchStats() {
   if (STATS_DISABLED) {
     console.error("stats: SKYRIMNET_HUB_STATS_URL=none — skipping the fetch");
@@ -230,10 +194,7 @@ async function fetchStats() {
   return { generatedAt, byId };
 }
 
-/**
- * The index.json already on disk, parsed, or null. Serves two purposes: the
- * stats fallback above, and the no-op guard at the bottom of the file.
- */
+// The index.json already on disk, parsed, or null: the stats fallback and the no-op guard read it.
 function readPreviousIndex() {
   if (!fs.existsSync(INDEX_PATH)) return null;
   try {
@@ -256,14 +217,8 @@ function previousStats(prev) {
   return { asOf: typeof prev.stats_as_of === "string" ? prev.stats_as_of : null, byId };
 }
 
-/**
- * Attach `stats` to every entry. Returns the stats_as_of to write.
- *
- * Live document: every entry gets a stats object — zeros for ids the
- * document does not know, which is the truthful figure for a plugin nobody
- * has installed or endorsed yet. Fallback: only entries the previous index
- * knew get one (see the section comment).
- */
+// Attaches `stats` to every entry and returns the stats_as_of to write: from the live document every entry
+// gets one (zeros for unknown ids); from the fallback only entries the previous index knew.
 async function applyStats(entries, prev) {
   const live = await fetchStats();
   if (live) {
@@ -290,27 +245,14 @@ async function applyStats(entries, prev) {
   return carried.asOf;
 }
 
-/**
- * The index minus the two timestamps that change on every run. Used by the
- * no-op guard: on the hourly cron nothing material usually changes, and a
- * timestamp-only rewrite would turn into a bot commit every hour — the
- * workflow's "no diff, no push" step can only stay cheap if this script
- * leaves an unchanged index alone.
- */
+// The index minus the two per-run timestamps, so the no-op guard leaves an unchanged index alone on the hourly cron.
 function materialContent(index) {
   const { generated_at: _g, stats_as_of: _s, ...rest } = index;
   return JSON.stringify(rest);
 }
 
-/**
- * The index row's `image` object for a plugin, or null when the manifest
- * names none, the file is absent or not a regular file, or the bytes fail
- * the same checks the validator runs (a direct push to main skips it).
- *
- * `sha` is the blob hash of the working-tree bytes (what main carries after
- * the merge that triggered this build); `commit` is the newest commit that
- * touched the file, which is what a commit-pinned raw URL needs.
- */
+// The index row's `image` for a plugin (`sha` of the working-tree bytes, `commit` the newest touching the file),
+// or null when the manifest names none, the file is missing, or the bytes fail the validator's checks.
 function pluginImage(pluginDir, relPath, declared) {
   if (!isImageName(declared)) return null;
   const abs = path.join(pluginDir, declared);
@@ -343,6 +285,23 @@ function countFiles(dir) {
     }
   }
   return count;
+}
+
+// Content file counts, one key per content root plus `bios` (files under prompts/characters/, excluded from
+// `prompts`). Keys are CONTENTS_HEAD, `bios`, then the remaining roots in table order.
+const CONTENTS_HEAD = ["triggers", "actions", "prompts"];
+function countContents(pluginDir) {
+  const promptsDir = path.join(pluginDir, "prompts");
+  const biosCount = countFiles(path.join(promptsDir, "characters"));
+  const countRoot = (root) =>
+    root === "prompts" ? countFiles(promptsDir) - biosCount : countFiles(path.join(pluginDir, root));
+  const contents = {};
+  for (const root of CONTENTS_HEAD) contents[root] = countRoot(root);
+  contents.bios = biosCount;
+  for (const root of CONTENT_ROOTS) {
+    if (!CONTENTS_HEAD.includes(root)) contents[root] = countRoot(root);
+  }
+  return contents;
 }
 
 // ----- Load moderation state ------------------------------------------------
@@ -437,24 +396,7 @@ if (!fs.existsSync(PLUGINS_DIR)) {
         gitFirstLine(["log", "--reverse", "--format=%aI", "--", relPath]);
       const lastUpdated = gitFirstLine(["log", "-1", "--format=%aI", "--", relPath]);
 
-      // Count content files, one key per content root: prompts, triggers,
-      // actions, knowledge packs and virtual entities.
-      //
-      // Character bios live in prompts/characters/. They are their own
-      // category (Character Packs) rather than generic prompts, so count them
-      // separately as `bios` and exclude them from the `prompts` count — a
-      // pack of bios is not a prompt plugin. countFiles(prompts) is recursive,
-      // so the plain prompts count is the total minus the bios under it.
-      const promptsDir = path.join(pluginDir, "prompts");
-      const biosCount = countFiles(path.join(promptsDir, "characters"));
-      const contents = manifest.type === "bundle" ? {
-        triggers: countFiles(path.join(pluginDir, "triggers")),
-        actions: countFiles(path.join(pluginDir, "actions")),
-        prompts: countFiles(promptsDir) - biosCount,
-        bios: biosCount,
-        knowledge: countFiles(path.join(pluginDir, "knowledge")),
-        entities: countFiles(path.join(pluginDir, "entities")),
-      } : undefined;
+      const contents = manifest.type === "bundle" ? countContents(pluginDir) : undefined;
 
       // Build mods array (name + file + required)
       const mods = Array.isArray(manifest.mods)

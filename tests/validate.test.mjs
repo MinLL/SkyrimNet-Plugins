@@ -1181,3 +1181,230 @@ test("cover image: a mis-cased root image gets the image message, not the conten
   const res = validatePlugin({ manifest: goodManifest(), files: { ...GOOD_FILES, "cover.PNG": makePng(500, 500) } });
   assertRejected(res, /not named by manifest\.image/);
 });
+
+// ----- Config-system roots (one record per file) ----------------------------
+// Each root's record rules run end to end here (unit tests: record-rules.test.mjs). Every one of these roots
+// opens at 0.25.0 in ROOT_TABLE, which goodManifest declares, so a record that passes leaves no error.
+
+const GATED_ROOT_RE = /\[ROOT_MIN_VERSION\]$/;
+
+function acceptsRecord(files, manifest = goodManifest()) {
+  const res = validatePlugin({ manifest, files });
+  assert.equal(res.result.success, true, errorMessages(res.result));
+  assert.deepEqual(res.result.errors, []);
+  return res;
+}
+
+test("a gated root needs min_skyrimnet_version of at least 0.25.0, naming the root and both versions", () => {
+  const files = { "spells/skyrim-esm_012FCD.yaml": "form: Skyrim.esm|0x012FCD\n" };
+  const res = validatePlugin({ manifest: goodManifest({ min_skyrimnet_version: "0.24.0" }), files });
+  assertRejected(
+    res,
+    /Files under spells\/ need SkyrimNet 0\.25\.0 or newer, but manifest\.min_skyrimnet_version is '0\.24\.0'\. Raise it to at least 0\.25\.0\. \[ROOT_MIN_VERSION\]/,
+  );
+  assert.equal(res.result.errors.length, 1);
+  assert.equal(res.result.errors[0].file, "plugins/bob/test-pack/manifest.json");
+  for (const declared of ["0.25.0", "0.25.1", "9.0.0"]) {
+    acceptsRecord(files, goodManifest({ min_skyrimnet_version: declared }));
+  }
+});
+
+test("voice_effects: a recipe whose id is the stem passes its record rules", () => {
+  acceptsRecord({ "voice_effects/draugr.yaml": "id: draugr\nname: Draugr\nchain: []\n" });
+  acceptsRecord({ "voice_effects/nested/ve_1a2b3c.yaml": "id: ve_1a2b3c\n" });
+});
+
+test("voice_effects: a recipe whose id is not the stem is refused", () => {
+  assertRejected(
+    validatePlugin({ manifest: goodManifest(), files: { "voice_effects/narrator_reverb.yaml": "id: narrator_effect\n" } }),
+    /id 'narrator_effect' does not match the filename stem 'narrator_reverb'/,
+  );
+  assertRejected(
+    validatePlugin({ manifest: goodManifest(), files: { "voice_effects/draugr.yaml": "name: Draugr\n" } }),
+    /no 'id' field/,
+  );
+});
+
+test("items: a record at its form stem is accepted; enabled and npc_usable are refused naming show_in_prompts", () => {
+  acceptsRecord({ "items/skyrim-esm_01396B.yaml": "form: Skyrim.esm|0x01396B\ncustomName: Wuuthrad\nshow_in_prompts: false\n" });
+  assertRejected(
+    validatePlugin({ manifest: goodManifest(), files: { "items/skyrim-esm_01396B.yaml": "form: Skyrim.esm|0x01396B\nenabled: false\n" } }),
+    /'enabled' in a items\/ file means record activation[^\n]*show_in_prompts: false[^\n]*\[ENABLED_NOT_ACTIVATION\]/,
+  );
+  assertRejected(
+    validatePlugin({ manifest: goodManifest(), files: { "items/skyrim-esm_01396B.yaml": "form: Skyrim.esm|0x01396B\nnpc_usable: false\n" } }),
+    /'npc_usable' is the old name of 'show_in_prompts'[^\n]*show_in_prompts: false[^\n]*\[NPC_USABLE_RENAMED\]/,
+  );
+  assertRejected(
+    validatePlugin({ manifest: goodManifest(), files: { "items/wuuthrad.yaml": "form: Skyrim.esm|0x01396B\n" } }),
+    /stem 'wuuthrad' is not the stem of form 'Skyrim.esm\|0x01396B', which is 'skyrim-esm_01396B'/,
+  );
+});
+
+test("spells: a record at its form stem is accepted; a bad form reference is refused", () => {
+  acceptsRecord({ "spells/skyrim-esm_012FCD.yaml": "form: Skyrim.esm|0x012FCD\ncustomName: Flames\n" });
+  assertRejected(
+    validatePlugin({ manifest: goodManifest(), files: { "spells/skyrim-esm_012FCD.yaml": "form: 0x012FCD\n" } }),
+    // YAML reads the bare hex as the integer 77773; the message says to quote it.
+    /form is the number 77773, not a form reference[^\n]*as a quoted string\. \[FORM_INVALID\]/,
+  );
+  assertRejected(
+    validatePlugin({ manifest: goodManifest(), files: { "spells/skyrim-esm_012FCD.yaml": "form: Skyrim.esm|0x012FCD\nenabled: true\n" } }),
+    /show_in_prompts: true/,
+  );
+});
+
+test("the original roots carry no per-root minimum", () => {
+  const res = validatePlugin({ manifest: goodManifest({ min_skyrimnet_version: "0.24.0" }) });
+  assert.equal(res.result.success, true, errorMessages(res.result));
+  assert.deepEqual(res.result.labels, ["ready-for-agent-review"]);
+});
+
+test("a plugin mixing two gated roots reports the gate once per root", () => {
+  const res = validatePlugin({
+    manifest: goodManifest({ min_skyrimnet_version: "0.24.0" }),
+    files: {
+      "spells/skyrim-esm_012FCD.yaml": "form: Skyrim.esm|0x012FCD\n",
+      "voice_effects/draugr.yaml": "id: draugr\n",
+    },
+  });
+  assertRejected(res);
+  const gates = res.result.errors.filter((e) => GATED_ROOT_RE.test(e.message));
+  assert.equal(gates.length, 2);
+  assert.ok(gates.some((e) => /spells\//.test(e.message)));
+  assert.ok(gates.some((e) => /voice_effects\//.test(e.message)));
+});
+
+test("furniture: a record at its form stem is accepted; a missing form is refused", () => {
+  acceptsRecord({ "furniture/skyrim-esm_000123.yaml": "form: Skyrim.esm|0x000123\nresolved_name: Counter\n" });
+  assertRejected(
+    validatePlugin({ manifest: goodManifest(), files: { "furniture/skyrim-esm_000123.yaml": "resolved_name: Counter\n" } }),
+    /needs a 'form' field of the form 'Plugin\.esp\|0x01396B'[^\n]*\[FORM_MISSING\]/,
+  );
+});
+
+test("identity: a link at the slug of its name is accepted; an unknown kind is refused", () => {
+  acceptsRecord({ "identity/serana_s_shadow.yaml": "name: Serana's Shadow\nidentityA: virtual:Shadow\nidentityB: npc:Dawnguard.esm:0x002B74\n" });
+  acceptsRecord({ "identity/line_of_kings.yaml": "kind: succession\nname: Line of Kings\nfrom: npc:Skyrim.esm:0x0350B8\nto: npc:Skyrim.esm:0x0656E2\n" });
+  assertRejected(
+    validatePlugin({ manifest: goodManifest(), files: { "identity/serana_s_shadow.yaml": "name: Serana's Shadow\nidentityA: virtual:Shadow\nidentityB: npc:0A002B74\n" } }),
+    /identityB 'npc:0A002B74' is a runtime form id, which depends on load order\. Spell it 'npc:<Plugin\.esp>:0x002B74'[^\n]*\[NPC_REF_LOAD_ORDER\]/,
+  );
+  assertRejected(
+    validatePlugin({ manifest: goodManifest(), files: { "identity/shadow.yaml": "name: Serana's Shadow\n" } }),
+    /stem 'shadow' is not the slug of name 'Serana's Shadow', which is 'serana_s_shadow'[^\n]*\[SLUG_NOT_STEM\]/,
+  );
+  assertRejected(
+    validatePlugin({ manifest: goodManifest(), files: { "identity/x.yaml": "kind: merge\nname: x\n" } }),
+    /kind is 'merge', not one a identity\/ file may carry\. Use one of link, succession/,
+  );
+});
+
+test("filters: contributions and rules are accepted; a file without a kind is refused", () => {
+  acceptsRecord({
+    "filters/my_races.yaml": "kind: actor\nRaceWhitelist: [KhajiitRace]\n",
+    "filters/memory.yaml": "kind: memory\nFactionBlacklist: []\n",
+    "filters/strip_grunts.yaml": "kind: dialogue_rule\nid: strip_grunts\npattern: '^ugh'\nreplacement: ''\npriority: 10\n",
+    "filters/numbers.yaml": "kind: tts_rule\nid: numbers\npattern: '\\d+'\nreplacement: ''\n",
+  });
+  assertRejected(
+    validatePlugin({ manifest: goodManifest(), files: { "filters/my_races.yaml": "RaceWhitelist: [KhajiitRace]\n" } }),
+    /Files under filters\/ need a 'kind' field: one of actor, memory, dialogue_rule, tts_rule[^\n]*\[KIND_MISSING\]/,
+  );
+  assertRejected(
+    validatePlugin({ manifest: goodManifest(), files: { "filters/strip_grunts.yaml": "kind: dialogue_rule\nid: grunts\npattern: x\n" } }),
+    /id 'grunts' does not match the filename stem 'strip_grunts'/,
+  );
+  assertRejected(
+    validatePlugin({ manifest: goodManifest(), files: { "filters/numbers.yaml": "kind: tts_rule\nid: numbers\n" } }),
+    /A 'tts_rule' needs a 'pattern' field: a non-empty regular expression string\. \[PATTERN_MISSING\]/,
+  );
+  assertRejected(
+    validatePlugin({ manifest: goodManifest(), files: { "filters/numbers.yaml": "kind: tts_rule\nid: numbers\npattern: '[0-9'\n" } }),
+    /'pattern' '\[0-9' does not compile: [^\n]*\[PATTERN_INVALID\]/,
+  );
+});
+
+test("translator: an npc rule needs the actor base's form; faction, race and global take their own stems", () => {
+  acceptsRecord({
+    "translator/skyrim-esm_013BBF.yaml": "kind: npc\nform: Skyrim.esm|0x013BBF\nspeechPattern: Speaks in riddles.\n",
+    "translator/thalmorfaction.yaml": "kind: faction\nentityEditorId: ThalmorFaction\nspeechPattern: Haughty.\n",
+    "translator/khajiitrace.yaml": "kind: race\nentityEditorId: KhajiitRace\nspeechPattern: This one.\n",
+    "translator/global.yaml": "kind: global\nspeechPattern: Old Norse cadence.\n",
+  });
+  assertRejected(
+    validatePlugin({ manifest: goodManifest(), files: { "translator/serana_a2c.yaml": "kind: npc\nentityId: serana_a2c\nspeechPattern: x\n" } }),
+    /A 'kind: npc' translator rule is keyed on the actor base and needs a 'form' field[^\n]*\[FORM_MISSING\]/,
+  );
+  assertRejected(
+    validatePlugin({ manifest: goodManifest(), files: { "translator/everyone.yaml": "kind: global\nspeechPattern: x\n" } }),
+    /lives at translator\/global\.yaml, not 'everyone'[^\n]*\[GLOBAL_NOT_STEM\]/,
+  );
+});
+
+test("dialogue_actions: a lists contribution and an instruction are accepted; a bad category lists the ten", () => {
+  acceptsRecord({
+    "dialogue_actions/nff_defaults.yaml": "kind: lists\nblacklist:\n  - nwsFollowerController\n  - TIF__000C3698\n",
+    "dialogue_actions/TIF__000D9B53.yaml":
+      "kind: instruction\nkey: TIF__000D9B53\nname: Rent a room\ntext: Offer the room.\ncategory: innkeeper\nenabled: true\n",
+  });
+  assertRejected(
+    validatePlugin({
+      manifest: goodManifest(),
+      files: { "dialogue_actions/TIF__000D9B53.yaml": "kind: instruction\nkey: TIF__000D9B53\ntext: x\ncategory: lodging\n" },
+    }),
+    /category is 'lodging', not a dialogue-action category\. Use one of quest, follower, merchant, trainer, carriage, innkeeper, bard, marriage, crime, other\. \[CATEGORY_UNKNOWN\]/,
+  );
+  assertRejected(
+    validatePlugin({
+      manifest: goodManifest(),
+      files: { "dialogue_actions/rent_a_room.yaml": "kind: instruction\nkey: TIF__000D9B53\ntext: x\ncategory: innkeeper\n" },
+    }),
+    /key 'TIF__000D9B53' does not match the filename stem 'rent_a_room'/,
+  );
+  assertRejected(
+    validatePlugin({ manifest: goodManifest(), files: { "dialogue_actions/nff.yaml": "kind: lists\nblacklist: nwsFollowerController\n" } }),
+    /'blacklist' must be a list of strings[^\n]*\[LIST_NOT_STRINGS\]/,
+  );
+});
+
+test("record roots: a file that is not a YAML mapping, or does not parse, is refused", () => {
+  assertRejected(
+    validatePlugin({ manifest: goodManifest(), files: { "voice_effects/draugr.yaml": "- just\n- a list\n" } }),
+    /voice_effects files must contain a YAML mapping at the top level/,
+  );
+  assertRejected(
+    validatePlugin({ manifest: goodManifest(), files: { "items/skyrim-esm_01396B.yaml": "form: [unclosed\n" } }),
+    /YAML parse error/,
+  );
+});
+
+test("record roots: 64 KB per voice-effect recipe, 32 KB per record elsewhere", () => {
+  const filler = (bytes) => `id: draugr\ncomment: "${"x".repeat(bytes)}"\n`;
+  acceptsRecord({ "voice_effects/draugr.yaml": filler(48 * 1024) });
+  assertRejected(
+    validatePlugin({ manifest: goodManifest(), files: { "voice_effects/draugr.yaml": filler(64 * 1024) } }),
+    /exceeds the 64\.0 KB per-file limit for voice_effects\/ files/,
+  );
+  const item = (bytes) => `form: Skyrim.esm|0x01396B\ncomment: "${"x".repeat(bytes)}"\n`;
+  assertRejected(
+    validatePlugin({ manifest: goodManifest(), files: { "items/skyrim-esm_01396B.yaml": item(32 * 1024) } }),
+    /exceeds the 32\.0 KB per-file limit for items\/ files/,
+  );
+});
+
+test("record roots: the wrong extension is refused by the path rules", () => {
+  assertRejected(
+    validatePlugin({ manifest: goodManifest(), files: { "spells/skyrim-esm_012FCD.yml": "form: Skyrim.esm|0x012FCD\n" } }),
+    /\[BAD_EXTENSION\]/,
+  );
+});
+
+test("a listing that ships a record file is refused as content", () => {
+  const manifest = goodManifest({ type: "listing", external_url: "https://example.org/mod" });
+  delete manifest.min_skyrimnet_version;
+  assertRejected(
+    validatePlugin({ manifest, files: { "voice_effects/draugr.yaml": "id: draugr\n" } }),
+    /Listing plugins must not contain any content files, but this plugin has 1/,
+  );
+});
