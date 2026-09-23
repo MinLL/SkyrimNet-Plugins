@@ -6,7 +6,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { execFileSync } from "node:child_process";
 
-import { CONTENT_ROOTS } from "./lib/content-rules.mjs";
+import { CATEGORY_BY_ROOT, CONTENT_ROOTS } from "./lib/content-rules.mjs";
 import { checkImage, isImageName } from "./lib/image-rules.mjs";
 
 const REPO_ROOT = process.cwd();
@@ -287,8 +287,8 @@ function countFiles(dir) {
   return count;
 }
 
-// Content file counts, one key per content root plus `bios` (files under prompts/characters/, excluded from
-// `prompts`). Keys are CONTENTS_HEAD, `bios`, then the remaining roots in table order.
+// Content file counts per category (ROOT_TABLE's `category`), plus `bios` (files under prompts/characters/,
+// excluded from `prompts`). Keys are CONTENTS_HEAD, `bios`, then the remaining categories in table order.
 const CONTENTS_HEAD = ["triggers", "actions", "prompts"];
 function countContents(pluginDir) {
   const promptsDir = path.join(pluginDir, "prompts");
@@ -296,10 +296,11 @@ function countContents(pluginDir) {
   const countRoot = (root) =>
     root === "prompts" ? countFiles(promptsDir) - biosCount : countFiles(path.join(pluginDir, root));
   const contents = {};
-  for (const root of CONTENTS_HEAD) contents[root] = countRoot(root);
+  for (const category of CONTENTS_HEAD) contents[category] = 0;
   contents.bios = biosCount;
   for (const root of CONTENT_ROOTS) {
-    if (!CONTENTS_HEAD.includes(root)) contents[root] = countRoot(root);
+    const category = CATEGORY_BY_ROOT[root];
+    contents[category] = (contents[category] ?? 0) + countRoot(root);
   }
   return contents;
 }

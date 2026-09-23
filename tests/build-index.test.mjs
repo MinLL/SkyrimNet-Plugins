@@ -20,7 +20,7 @@ import { execFileSync, spawn, spawnSync } from "node:child_process";
 import { createRequire } from "node:module";
 
 import { BUILD_INDEX_SCRIPT, REPO_ROOT, makeTempDir, rmDir, writeFile } from "./helpers/harness.mjs";
-import { CONTENT_ROOTS } from "../.github/scripts/lib/content-rules.mjs";
+import { CATEGORY_BY_ROOT } from "../.github/scripts/lib/content-rules.mjs";
 import { makeJpeg, makePng } from "./helpers/images.mjs";
 
 // ajv lives in the CI scripts' dependency tree (.github/scripts/node_modules);
@@ -89,9 +89,9 @@ function bundleManifest(overrides = {}) {
   };
 }
 
-/** A `contents` map with every root at zero, for tests to override. */
+/** A `contents` map with every category at zero, for tests to override. */
 function contentsOf(overrides = {}) {
-  const zero = Object.fromEntries(CONTENT_ROOTS.map((root) => [root, 0]));
+  const zero = Object.fromEntries(Object.values(CATEGORY_BY_ROOT).map((category) => [category, 0]));
   return { ...zero, bios: 0, ...overrides };
 }
 
@@ -384,7 +384,7 @@ test("virtual entities are counted in contents without bumping the schema versio
   }
 });
 
-test("the config-system roots are counted in contents, one key per root, no schema bump", () => {
+test("the config-system roots are counted together under contents.config, no schema bump", () => {
   const repo = initRepo();
   try {
     writeFile(repo, "plugins/bob/pack/manifest.json", JSON.stringify(bundleManifest(), null, 2));
@@ -406,15 +406,9 @@ test("the config-system roots are counted in contents, one key per root, no sche
 
     assert.equal(index.schema_version, 2);
     const contents = index.plugins[0].contents;
-    assert.deepEqual(contents, contentsOf({
-      voice_effects: 1, items: 2, spells: 1, furniture: 1, identity: 1, filters: 3, translator: 1, dialogue_actions: 1,
-    }));
-    // Key order: the original three, bios, then the rest in table order, so a
-    // rebuild of an existing index only appends keys.
-    assert.deepEqual(Object.keys(contents), [
-      "triggers", "actions", "prompts", "bios", "knowledge", "entities",
-      "voice_effects", "items", "spells", "furniture", "identity", "filters", "translator", "dialogue_actions",
-    ]);
+    assert.deepEqual(contents, contentsOf({ config: 11 }));
+    // Key order: the original three, bios, then the remaining categories in table order.
+    assert.deepEqual(Object.keys(contents), ["triggers", "actions", "prompts", "bios", "knowledge", "entities", "config"]);
   } finally {
     rmDir(repo);
   }

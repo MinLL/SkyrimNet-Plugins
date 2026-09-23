@@ -53,21 +53,22 @@ export const RESERVED_MIN_ENGINE = "reserved";
 export const CONFIG_ROOTS_MIN_ENGINE = "0.25.0";
 
 // One row per content root; pairs with the engine's table in ContentPaths.cpp. `minEngine` is null
-// (ungated), RESERVED_MIN_ENGINE, or the oldest release that reads the root. Record rules: record-rules.mjs.
+// (ungated), RESERVED_MIN_ENGINE, or the oldest release that reads the root. `category` is the index's
+// `contents` key the root's files count toward. Record rules: record-rules.mjs.
 export const ROOT_TABLE = Object.freeze([
-  { segment: "prompts", extension: ".prompt", minEngine: null },
-  { segment: "triggers", extension: ".yaml", minEngine: null }, // `name` == stem
-  { segment: "actions", extension: ".yaml", minEngine: null }, // `name` == stem
-  { segment: "knowledge", extension: ".sknpack", minEngine: null },
-  { segment: "entities", extension: ".entity.yaml", minEngine: null }, // stem is before the first dot
-  { segment: "voice_effects", extension: ".yaml", minEngine: CONFIG_ROOTS_MIN_ENGINE }, // `id` == stem
-  { segment: "items", extension: ".yaml", minEngine: CONFIG_ROOTS_MIN_ENGINE }, // formStem(form) == stem
-  { segment: "spells", extension: ".yaml", minEngine: CONFIG_ROOTS_MIN_ENGINE }, // formStem(form) == stem
-  { segment: "furniture", extension: ".yaml", minEngine: CONFIG_ROOTS_MIN_ENGINE }, // formStem(form) == stem
-  { segment: "identity", extension: ".yaml", minEngine: CONFIG_ROOTS_MIN_ENGINE }, // slugOf(name) == stem
-  { segment: "filters", extension: ".yaml", minEngine: CONFIG_ROOTS_MIN_ENGINE }, // by `kind`
-  { segment: "translator", extension: ".yaml", minEngine: CONFIG_ROOTS_MIN_ENGINE }, // by `kind`
-  { segment: "dialogue_actions", extension: ".yaml", minEngine: CONFIG_ROOTS_MIN_ENGINE }, // by `kind`
+  { segment: "prompts", category: "prompts", extension: ".prompt", minEngine: null },
+  { segment: "triggers", category: "triggers", extension: ".yaml", minEngine: null }, // `name` == stem
+  { segment: "actions", category: "actions", extension: ".yaml", minEngine: null }, // `name` == stem
+  { segment: "knowledge", category: "knowledge", extension: ".sknpack", minEngine: null },
+  { segment: "entities", category: "entities", extension: ".entity.yaml", minEngine: null }, // stem is before the first dot
+  { segment: "voice_effects", category: "config", extension: ".yaml", minEngine: CONFIG_ROOTS_MIN_ENGINE }, // `id` == stem
+  { segment: "items", category: "config", extension: ".yaml", minEngine: CONFIG_ROOTS_MIN_ENGINE }, // formStem(form) == stem
+  { segment: "spells", category: "config", extension: ".yaml", minEngine: CONFIG_ROOTS_MIN_ENGINE }, // formStem(form) == stem
+  { segment: "furniture", category: "config", extension: ".yaml", minEngine: CONFIG_ROOTS_MIN_ENGINE }, // formStem(form) == stem
+  { segment: "identity", category: "config", extension: ".yaml", minEngine: CONFIG_ROOTS_MIN_ENGINE }, // slugOf(name) == stem
+  { segment: "filters", category: "config", extension: ".yaml", minEngine: CONFIG_ROOTS_MIN_ENGINE }, // by `kind`
+  { segment: "translator", category: "config", extension: ".yaml", minEngine: CONFIG_ROOTS_MIN_ENGINE }, // by `kind`
+  { segment: "dialogue_actions", category: "config", extension: ".yaml", minEngine: CONFIG_ROOTS_MIN_ENGINE }, // by `kind`
 ]);
 
 // Content roots accepted by the hub, in table order.
@@ -75,6 +76,9 @@ export const CONTENT_ROOTS = ROOT_TABLE.map((row) => row.segment);
 
 // Per-root extension, matched as an exact case-sensitive suffix of the final segment.
 export const EXTENSION_BY_ROOT = Object.fromEntries(ROOT_TABLE.map((row) => [row.segment, row.extension]));
+
+// Per-root `contents` category.
+export const CATEGORY_BY_ROOT = Object.fromEntries(ROOT_TABLE.map((row) => [row.segment, row.category]));
 
 // Per-root `minEngine`, as the table spells it.
 export const ROOT_MIN_ENGINE = Object.fromEntries(ROOT_TABLE.map((row) => [row.segment, row.minEngine]));
