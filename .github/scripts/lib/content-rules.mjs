@@ -17,6 +17,11 @@
 //   §4        — manifest identity: `id` = {author}.{slug}, strict semver,
 //               `min_skyrimnet_version` required for bundles
 //
+// The root table (ROOT_TABLE) is the hub's half of the engine's table in
+// ContentPaths.cpp: segment, extension, identity field and the release that
+// scans the root. Form references (form-ref.mjs) and what goes inside a record
+// file (record-rules.mjs) build on it.
+//
 // Every rejection carries a stable machine code (see CODES). The test corpus
 // in tests/fixtures/path-cases.json asserts against those codes, and the C++
 // port is expected to consume the same corpus so both sides provably reject
@@ -59,30 +64,66 @@ export const CODES = {
   // trigger/action in-file name
   NAME_MISSING: "NAME_MISSING",
   NAME_NOT_STEM: "NAME_NOT_STEM",
+  // per-root minimum engine release
+  ROOT_MIN_VERSION: "ROOT_MIN_VERSION",
 };
 
 // ----- Constants -----------------------------------------------------------
 
-// Content roots accepted by the hub (§5 step 3 / §1 scope). `knowledge/` is
-// onboarded: the engine-side port accepts it (`ContentRoot::Knowledge`), the
-// installer installs `.sknpack` files like any other content, and
-// `KnowledgeStoreSync` projects them into the per-save database. `entities/`
-// likewise: one `.entity.yaml` per virtual NPC (`ContentRoot::VirtualEntities`),
-// loaded by `VirtualEntityRegistry` on the same reload path as triggers.
-export const CONTENT_ROOTS = ["prompts", "triggers", "actions", "knowledge", "entities"];
+// The SkyrimNet release that ships the config-system roots (voice effects,
+// items, spells, furniture, identity, filters, translator, dialogue actions).
+// A plugin using one must declare at least this `min_skyrimnet_version`.
+export const NEW_ROOTS_MIN_ENGINE = "0.25.0";
+
+// The identity a record's filename stem must equal, per root.
+//   none       the path alone is the identity (prompts, knowledge, entities)
+//   name       in-file `name` == stem, case-insensitively (triggers, actions)
+//   id         in-file `id` == stem, case-insensitively
+//   form       in-file `form` is a FormRef and formStem(form) == stem, exactly
+//   kind       decided by the record's `kind` (see record-rules.mjs)
+export const IDENTITY = {
+  NONE: "none",
+  NAME: "name",
+  ID: "id",
+  FORM: "form",
+  KIND: "kind",
+};
+
+// One row per content root, the hub's half of the root table the engine keeps
+// in ContentPaths.cpp. `segment` is the directory under the plugin, `extension`
+// the exact suffix its files carry, `identityField` the stem rule, `minEngine`
+// the oldest SkyrimNet release that scans the root (null: no gate beyond the
+// manifest's own `min_skyrimnet_version` rules).
+export const ROOT_TABLE = Object.freeze([
+  { segment: "prompts", extension: ".prompt", identityField: IDENTITY.NONE, minEngine: null },
+  { segment: "triggers", extension: ".yaml", identityField: IDENTITY.NAME, minEngine: null },
+  { segment: "actions", extension: ".yaml", identityField: IDENTITY.NAME, minEngine: null },
+  { segment: "knowledge", extension: ".sknpack", identityField: IDENTITY.NONE, minEngine: null },
+  // Stems read before the FIRST dot, so `entities/foo.entity.yaml` has stem
+  // `foo` on both sides.
+  { segment: "entities", extension: ".entity.yaml", identityField: IDENTITY.NONE, minEngine: null },
+  { segment: "voice_effects", extension: ".yaml", identityField: IDENTITY.ID, minEngine: NEW_ROOTS_MIN_ENGINE },
+  { segment: "items", extension: ".yaml", identityField: IDENTITY.FORM, minEngine: NEW_ROOTS_MIN_ENGINE },
+  { segment: "spells", extension: ".yaml", identityField: IDENTITY.FORM, minEngine: NEW_ROOTS_MIN_ENGINE },
+  { segment: "furniture", extension: ".yaml", identityField: IDENTITY.FORM, minEngine: NEW_ROOTS_MIN_ENGINE },
+  { segment: "identity", extension: ".yaml", identityField: IDENTITY.KIND, minEngine: NEW_ROOTS_MIN_ENGINE },
+  { segment: "filters", extension: ".yaml", identityField: IDENTITY.KIND, minEngine: NEW_ROOTS_MIN_ENGINE },
+  { segment: "translator", extension: ".yaml", identityField: IDENTITY.KIND, minEngine: NEW_ROOTS_MIN_ENGINE },
+  { segment: "dialogue_actions", extension: ".yaml", identityField: IDENTITY.KIND, minEngine: NEW_ROOTS_MIN_ENGINE },
+]);
+
+// Content roots accepted by the hub (§5 step 3 / §1 scope), in table order.
+export const CONTENT_ROOTS = ROOT_TABLE.map((row) => row.segment);
 
 // Per-root extension whitelist. Matched as an EXACT (byte-for-byte, case
 // sensitive) suffix on the raw final segment — `.PROMPT`, `.yml`,
 // `.prompt.bak` and `.yaml.txt` all fail.
-export const EXTENSION_BY_ROOT = {
-  prompts: ".prompt",
-  triggers: ".yaml",
-  actions: ".yaml",
-  knowledge: ".sknpack",
-  // Stems read before the FIRST dot, so `entities/foo.entity.yaml` has stem
-  // `foo` on both sides.
-  entities: ".entity.yaml",
-};
+export const EXTENSION_BY_ROOT = Object.fromEntries(ROOT_TABLE.map((row) => [row.segment, row.extension]));
+
+// Per-root minimum engine release; null where the root carries no gate.
+export const ROOT_MIN_ENGINE = Object.fromEntries(ROOT_TABLE.map((row) => [row.segment, row.minEngine]));
+
+export const IDENTITY_BY_ROOT = Object.fromEntries(ROOT_TABLE.map((row) => [row.segment, row.identityField]));
 
 // Reserved plugin-id author segment (§2 / decision 12). `skyrimnet` and
 // anything prefixed `skyrimnet-` is official-content-only. Slugs and titles
@@ -132,6 +173,27 @@ export function foldCase(s) {
 
 export function isStrictSemver(v) {
   return typeof v === "string" && SEMVER_RE.test(v);
+}
+
+/**
+ * Numeric MAJOR.MINOR.PATCH order of two strict-semver strings: negative,
+ * zero or positive. A pre-release sorts below its release; build metadata is
+ * ignored, as semver.org says.
+ */
+export function compareSemver(a, b) {
+  const pa = SEMVER_RE.exec(a);
+  const pb = SEMVER_RE.exec(b);
+  if (!pa || !pb) throw new TypeError(`compareSemver needs strict semver, got '${a}' and '${b}'`);
+  for (let i = 1; i <= 3; i++) {
+    const d = Number(pa[i]) - Number(pb[i]);
+    if (d !== 0) return d;
+  }
+  const preA = pa[4] ?? null;
+  const preB = pb[4] ?? null;
+  if (preA === preB) return 0;
+  if (preA === null) return 1;
+  if (preB === null) return -1;
+  return preA < preB ? -1 : 1;
 }
 
 /** Filename stem: everything before the FIRST dot of the final segment. */
@@ -319,15 +381,46 @@ export function findPathCollisions(paths) {
  * identity, the name's casing is the author's (and the LLM's) to keep.
  */
 export function checkNameMatchesStem(name, filenameOrPath) {
+  return checkFieldMatchesStem("name", name, filenameOrPath);
+}
+
+/**
+ * The general form: in-file `field` (a non-empty string) must equal the
+ * filename stem case-insensitively. Voice-effect `id`, rule `id`, instruction
+ * `key` and translator `entityEditorId` all use it.
+ */
+export function checkFieldMatchesStem(field, value, filenameOrPath) {
   const stem = stemOf(filenameOrPath);
-  if (typeof name !== "string" || name.length === 0) {
-    return reject(CODES.NAME_MISSING, "File has no 'name' field.");
+  if (typeof value !== "string" || value.length === 0) {
+    return reject(CODES.NAME_MISSING, `File has no '${field}' field.`);
   }
-  if (foldCase(name) !== foldCase(stem)) {
+  if (foldCase(value) !== foldCase(stem)) {
     return reject(
       CODES.NAME_NOT_STEM,
-      `In-file name '${name}' does not match the filename stem '${stem}' ` +
-        `(compared case-insensitively). The filename is the identity — rename the file or the name so they match.`,
+      `In-file ${field} '${value}' does not match the filename stem '${stem}' ` +
+        `(compared case-insensitively). The filename is the identity — rename the file or the ${field} so they match.`,
+    );
+  }
+  return ok();
+}
+
+// ----- Per-root minimum engine release ------------------------------------
+
+/**
+ * A plugin that ships files under `root` must declare a
+ * `min_skyrimnet_version` of at least the root's `minEngine`. The engine
+ * gates nothing here: an older build refuses the whole install on the unknown
+ * root, so the hub keeps such a plugin from being published at all.
+ * `minVersion` that is not strict semver is left to the manifest rules.
+ */
+export function checkRootMinEngine(root, minVersion) {
+  const required = ROOT_MIN_ENGINE[root] ?? null;
+  if (required === null || !isStrictSemver(minVersion)) return ok();
+  if (compareSemver(minVersion, required) < 0) {
+    return reject(
+      CODES.ROOT_MIN_VERSION,
+      `Files under ${root}/ need SkyrimNet ${required} or newer, but manifest.min_skyrimnet_version ` +
+        `is '${minVersion}'. Raise it to at least ${required}.`,
     );
   }
   return ok();

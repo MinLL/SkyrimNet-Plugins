@@ -1,0 +1,269 @@
+{
+  "description": "stem = {prefix}{marker}{hash}_{LOCALID6}: fold A-Z of the full filename; the extension is everything from the LAST dot; prefix is the name minus extension with every byte outside [a-z0-9_] replaced by _ ('-' included), cut at 40 bytes without splitting a UTF-8 sequence; marker is -esm/-esl for those extensions, nothing for .esp; when any byte was replaced, the prefix was truncated or empty, or the extension is not .esp/.esm/.esl, append -{fnv1a32 of the folded full filename, 8 lowercase hex}; LOCALID6 is six uppercase hex digits. key = folded plugin + '|0x' + LOCALID6. toString = plugin as written + '|0x' + LOCALID6.",
+  "hash": "FNV-1a 32-bit, offset 0x811c9dc5, prime 0x01000193, over UTF-8 bytes",
+  "stemCases": [
+    {
+      "plugin": "MyMod.esp",
+      "localId": "0x000123",
+      "expectedStem": "mymod_000123",
+      "expectedKey": "mymod.esp|0x000123",
+      "expectedToString": "MyMod.esp|0x000123",
+      "note": "plain ASCII .esp: folded, no marker, no hash"
+    },
+    {
+      "plugin": "Skyrim.esm",
+      "localId": "0x01396B",
+      "expectedStem": "skyrim-esm_01396B",
+      "expectedKey": "skyrim.esm|0x01396B",
+      "expectedToString": "Skyrim.esm|0x01396B",
+      "note": ".esm carries the -esm marker"
+    },
+    {
+      "plugin": "SKYRIM.ESM",
+      "localId": "0x01396B",
+      "expectedStem": "skyrim-esm_01396B",
+      "expectedKey": "skyrim.esm|0x01396B",
+      "expectedToString": "SKYRIM.ESM|0x01396B",
+      "note": "the whole filename is ASCII-folded before anything else"
+    },
+    {
+      "plugin": "MyLight.esl",
+      "localId": "0x000ABC",
+      "expectedStem": "mylight-esl_000ABC",
+      "expectedKey": "mylight.esl|0x000ABC",
+      "expectedToString": "MyLight.esl|0x000ABC",
+      "note": ".esl carries the -esl marker; ESL local ids are 12-bit and still print six digits"
+    },
+    {
+      "plugin": "Small.esl",
+      "localId": "0x000FFF",
+      "expectedStem": "small-esl_000FFF",
+      "expectedKey": "small.esl|0x000FFF",
+      "expectedToString": "Small.esl|0x000FFF",
+      "note": "largest 12-bit ESL local id"
+    },
+    {
+      "plugin": "Mod_A.esp",
+      "localId": "0x000123",
+      "expectedStem": "mod_a_000123",
+      "expectedKey": "mod_a.esp|0x000123",
+      "expectedToString": "Mod_A.esp|0x000123",
+      "note": "underscore is in the charset: no byte replaced, no hash"
+    },
+    {
+      "plugin": "Mod A.esp",
+      "localId": "0x000123",
+      "expectedStem": "mod_a-a44f2ca6_000123",
+      "expectedKey": "mod a.esp|0x000123",
+      "expectedToString": "Mod A.esp|0x000123",
+      "note": "space replaced by _ so the hash is appended (hash of the folded full filename)"
+    },
+    {
+      "plugin": "Foo-esm.esp",
+      "localId": "0x000123",
+      "expectedStem": "foo_esm-6efe9853_000123",
+      "expectedKey": "foo-esm.esp|0x000123",
+      "expectedToString": "Foo-esm.esp|0x000123",
+      "note": "- counts as replaced: hashed, so it cannot collide with Foo.esm"
+    },
+    {
+      "plugin": "Foo.esm",
+      "localId": "0x000123",
+      "expectedStem": "foo-esm_000123",
+      "expectedKey": "foo.esm|0x000123",
+      "expectedToString": "Foo.esm|0x000123",
+      "note": "the .esm twin of Foo-esm.esp: marker, no hash"
+    },
+    {
+      "plugin": "Beyond Skyrim - Bruma.esp",
+      "localId": "0x00A1B2",
+      "expectedStem": "beyond_skyrim___bruma-05ef865d_00A1B2",
+      "expectedKey": "beyond skyrim - bruma.esp|0x00A1B2",
+      "expectedToString": "Beyond Skyrim - Bruma.esp|0x00A1B2",
+      "note": "spaces and a hyphen: every replaced byte becomes _, one hash"
+    },
+    {
+      "plugin": "Мод.esp",
+      "localId": "0x000123",
+      "expectedStem": "______-4077c7b5_000123",
+      "expectedKey": "Мод.esp|0x000123",
+      "expectedToString": "Мод.esp|0x000123",
+      "note": "Cyrillic name: each UTF-8 byte outside [a-z0-9_] is one _ (6 bytes), hash distinguishes"
+    },
+    {
+      "plugin": "天空.esp",
+      "localId": "0x000123",
+      "expectedStem": "______-52272995_000123",
+      "expectedKey": "天空.esp|0x000123",
+      "expectedToString": "天空.esp|0x000123",
+      "note": "CJK name, 6 bytes: same underscores as the next case, different hash"
+    },
+    {
+      "plugin": "龙裔.esp",
+      "localId": "0x000123",
+      "expectedStem": "______-f5237486_000123",
+      "expectedKey": "龙裔.esp|0x000123",
+      "expectedToString": "龙裔.esp|0x000123",
+      "note": "CJK name, 6 bytes: same underscores as the previous case, different hash"
+    },
+    {
+      "plugin": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.esp",
+      "localId": "0x000123",
+      "expectedStem": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb_000123",
+      "expectedKey": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.esp|0x000123",
+      "expectedToString": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.esp|0x000123",
+      "note": "exactly 40 bytes: not truncated, no hash"
+    },
+    {
+      "plugin": "ccccccccccccccccccccccccccccccccccccccccc.esp",
+      "localId": "0x000123",
+      "expectedStem": "cccccccccccccccccccccccccccccccccccccccc-aa48ef08_000123",
+      "expectedKey": "ccccccccccccccccccccccccccccccccccccccccc.esp|0x000123",
+      "expectedToString": "ccccccccccccccccccccccccccccccccccccccccc.esp|0x000123",
+      "note": "41 bytes: truncated to 40, hash appended"
+    },
+    {
+      "plugin": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.esp",
+      "localId": "0x000123",
+      "expectedStem": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa-e77ff3d3_000123",
+      "expectedKey": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.esp|0x000123",
+      "expectedToString": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.esp|0x000123",
+      "note": "60-byte name: truncated to 40 bytes, hash of the full folded filename"
+    },
+    {
+      "plugin": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaéz.esp",
+      "localId": "0x000123",
+      "expectedStem": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa-474c9a1e_000123",
+      "expectedKey": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaéz.esp|0x000123",
+      "expectedToString": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaéz.esp|0x000123",
+      "note": "the 40-byte cut would split the 2-byte é: the cut backs off to 39 bytes, hash appended"
+    },
+    {
+      "plugin": "Unofficial Skyrim Special Edition Patch.esp",
+      "localId": "0x0BCD12",
+      "expectedStem": "unofficial_skyrim_special_edition_patch-d64f5d13_0BCD12",
+      "expectedKey": "unofficial skyrim special edition patch.esp|0x0BCD12",
+      "expectedToString": "Unofficial Skyrim Special Edition Patch.esp|0x0BCD12",
+      "note": "spaces and truncation together"
+    },
+    {
+      "plugin": "Weird.txt",
+      "localId": "0x000001",
+      "expectedStem": "weird-ee242690_000001",
+      "expectedKey": "weird.txt|0x000001",
+      "expectedToString": "Weird.txt|0x000001",
+      "note": "not a plugin extension: no marker, hash forced"
+    },
+    {
+      "plugin": "NoExtension",
+      "localId": "0x000001",
+      "expectedStem": "noextension-40ec61cb_000001",
+      "expectedKey": "noextension|0x000001",
+      "expectedToString": "NoExtension|0x000001",
+      "note": "no extension at all: no marker, hash forced"
+    },
+    {
+      "plugin": "My.Mod.esp",
+      "localId": "0x000123",
+      "expectedStem": "my_mod-11340897_000123",
+      "expectedKey": "my.mod.esp|0x000123",
+      "expectedToString": "My.Mod.esp|0x000123",
+      "note": "inner dot: the extension splits at the LAST dot, so the dot in the name is a replaced byte and the hash is appended"
+    }
+  ],
+  "parseCases": [
+    {
+      "input": "Skyrim.esm|0x01396B",
+      "plugin": "Skyrim.esm",
+      "localId": "0x01396B",
+      "expectedToString": "Skyrim.esm|0x01396B",
+      "note": "canonical spelling round-trips"
+    },
+    {
+      "input": "skyrim.esm|01396b",
+      "plugin": "skyrim.esm",
+      "localId": "0x01396B",
+      "expectedToString": "skyrim.esm|0x01396B",
+      "note": "0x prefix optional, hex case-insensitive; ToString re-emits the canonical form"
+    },
+    {
+      "input": "  Skyrim.esm | 0x1  ",
+      "plugin": "Skyrim.esm",
+      "localId": "0x000001",
+      "expectedToString": "Skyrim.esm|0x000001",
+      "note": "outer and inner whitespace trimmed; short hex zero-padded on output"
+    },
+    {
+      "input": "Mod A.esp|0xFFFFFF",
+      "plugin": "Mod A.esp",
+      "localId": "0xFFFFFF",
+      "expectedToString": "Mod A.esp|0xFFFFFF",
+      "note": "plugin case and spaces preserved; largest 24-bit local id"
+    },
+    {
+      "input": "Мод.esp|0x10",
+      "plugin": "Мод.esp",
+      "localId": "0x000010",
+      "expectedToString": "Мод.esp|0x000010",
+      "note": "non-ASCII plugin name preserved byte for byte"
+    }
+  ],
+  "malformedCases": [
+    {
+      "input": "",
+      "note": "empty"
+    },
+    {
+      "input": "Skyrim.esm",
+      "note": "no separator"
+    },
+    {
+      "input": "|0x123",
+      "note": "empty plugin"
+    },
+    {
+      "input": "Skyrim.esm|",
+      "note": "empty local id"
+    },
+    {
+      "input": "Skyrim.esm|0x",
+      "note": "prefix only"
+    },
+    {
+      "input": "Skyrim.esm|0xZZ",
+      "note": "non-hex digits"
+    },
+    {
+      "input": "Skyrim.esm|0x1000000",
+      "note": "exceeds 24 bits"
+    },
+    {
+      "input": "Skyrim.esm|0x123456789",
+      "note": "too many digits"
+    },
+    {
+      "input": "Skyrim.esm|-0x1",
+      "note": "sign"
+    },
+    {
+      "input": "Skyrim.esm|0x12|0x34",
+      "note": "a second separator"
+    },
+    {
+      "input": "Skyrim.esm|0x1 extra",
+      "note": "trailing garbage"
+    },
+    {
+      "input": "Sky/rim.esm|0x1",
+      "note": "path separator in the plugin name"
+    },
+    {
+      "input": "Sky\\rim.esm|0x1",
+      "note": "backslash in the plugin name"
+    },
+    {
+      "input": ".esp|0x1",
+      "note": "a bare extension: no name before the last dot, refused by Parse"
+    }
+  ]
+}
