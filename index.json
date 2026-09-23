@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-09-23T01:34:30.369Z",
-  "stats_as_of": "2026-09-23T01:34:30.312Z",
+  "generated_at": "2026-09-23T01:51:16.908Z",
+  "stats_as_of": "2026-09-23T01:51:16.784Z",
   "plugins": [
     {
       "id": "plugins/min/belethor-remix",
@@ -64,6 +64,38 @@
       }
     },
     {
+      "id": "plugins/goodprovider/skyrimnet-sexlab",
+      "plugin_id": "goodprovider.skyrimnet-sexlab",
+      "type": "listing",
+      "title": "SkyrimNet SexLab",
+      "tagline": "Supports SexLab animations",
+      "author": "goodprovider",
+      "tags": [
+        "sex",
+        "nswf",
+        "sexlab",
+        "actions"
+      ],
+      "nsfw": true,
+      "icon": "heart",
+      "mods": [],
+      "first_published": "2026-09-13T21:55:00Z",
+      "last_updated": "2026-09-22T15:07:37Z",
+      "version": "0.35.0",
+      "history": [
+        {
+          "version": "0.35.0",
+          "commit": "1af165806434614aba1db2183a5762a8b3a03452",
+          "date": "2026-09-22T15:07:37Z"
+        }
+      ],
+      "external_url": "https://github.com/GoodProvider/SkyrimNet_SexLab/releases/latest",
+      "stats": {
+        "downloads": 4,
+        "endorsements": 0
+      }
+    },
+    {
       "id": "plugins/meimaxmei/discord-integration-test",
       "plugin_id": "meimaxmei.discord-integration-test",
       "type": "bundle",
@@ -103,7 +135,7 @@
         "entities": 0
       },
       "stats": {
-        "downloads": 0,
+        "downloads": 1,
         "endorsements": 0
       }
     },
@@ -183,38 +215,6 @@
       },
       "stats": {
         "downloads": 0,
-        "endorsements": 0
-      }
-    },
-    {
-      "id": "plugins/goodprovider/skyrimnet-sexlab",
-      "plugin_id": "goodprovider.skyrimnet-sexlab",
-      "type": "listing",
-      "title": "SkyrimNet SexLab",
-      "tagline": "Supports SexLab animations",
-      "author": "goodprovider",
-      "tags": [
-        "sex",
-        "nswf",
-        "sexlab",
-        "actions"
-      ],
-      "nsfw": true,
-      "icon": "heart",
-      "mods": [],
-      "first_published": "2026-09-13T21:55:00Z",
-      "last_updated": "2026-09-19T14:35:33Z",
-      "version": "0.35.0",
-      "history": [
-        {
-          "version": "0.35.0",
-          "commit": "e762b480c7b95fa8f3de3e8fef5340baab82cda8",
-          "date": "2026-09-19T14:35:33Z"
-        }
-      ],
-      "external_url": "https://github.com/GoodProvider/SkyrimNet_Leashed/releases/latest",
-      "stats": {
-        "downloads": 4,
         "endorsements": 0
       }
     },
