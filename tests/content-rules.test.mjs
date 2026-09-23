@@ -14,9 +14,8 @@ import {
   CODES,
   CONTENT_ROOTS,
   EXTENSION_BY_ROOT,
-  IDENTITY,
-  IDENTITY_BY_ROOT,
-  NEW_ROOTS_MIN_ENGINE,
+  MAX_QUOTED_VALUE_LENGTH,
+  RESERVED_MIN_ENGINE,
   ROOT_MIN_ENGINE,
   ROOT_TABLE,
   checkContentPath,
@@ -29,6 +28,7 @@ import {
   foldCase,
   isReservedAuthorSegment,
   isStrictSemver,
+  quoteValue,
   stemOf,
 } from "../.github/scripts/lib/content-rules.mjs";
 import {
@@ -209,22 +209,20 @@ const NEW_ROOTS = [
 
 test("the root table has the five original roots and the eight config-system roots", () => {
   assert.deepEqual(CONTENT_ROOTS, ["prompts", "triggers", "actions", "knowledge", "entities", ...NEW_ROOTS]);
-  const identities = new Set(Object.values(IDENTITY));
   for (const row of ROOT_TABLE) {
-    assert.ok(identities.has(row.identityField), `${row.segment} has an unknown identity rule`);
-    assert.ok(row.minEngine === null || isStrictSemver(row.minEngine), `${row.segment} minEngine`);
+    assert.ok(
+      row.minEngine === null || row.minEngine === RESERVED_MIN_ENGINE || isStrictSemver(row.minEngine),
+      `${row.segment} minEngine`,
+    );
     assert.equal(EXTENSION_BY_ROOT[row.segment], row.extension);
     assert.equal(ROOT_MIN_ENGINE[row.segment], row.minEngine);
-    assert.equal(IDENTITY_BY_ROOT[row.segment], row.identityField);
+  }
+  for (const root of ["prompts", "triggers", "actions", "knowledge", "entities"]) {
+    assert.equal(ROOT_MIN_ENGINE[root], null);
   }
   for (const root of NEW_ROOTS) {
-    assert.equal(ROOT_MIN_ENGINE[root], NEW_ROOTS_MIN_ENGINE);
+    assert.equal(ROOT_MIN_ENGINE[root], RESERVED_MIN_ENGINE);
     assert.equal(EXTENSION_BY_ROOT[root], ".yaml");
-  }
-  assert.deepEqual(IDENTITY_BY_ROOT.voice_effects, IDENTITY.ID);
-  for (const root of ["items", "spells", "furniture"]) assert.equal(IDENTITY_BY_ROOT[root], IDENTITY.FORM);
-  for (const root of ["identity", "filters", "translator", "dialogue_actions"]) {
-    assert.equal(IDENTITY_BY_ROOT[root], IDENTITY.KIND);
   }
 });
 
@@ -250,21 +248,62 @@ test("semver comparison is numeric, pre-release sorts below release", () => {
   assert.throws(() => compareSemver("1.0", "1.0.0"), TypeError);
 });
 
-test("per-root minimum: a gated root needs at least its release, an ungated root needs nothing", () => {
-  const tooLow = checkRootMinEngine("spells", "0.24.0");
+test("semver pre-release identifiers compare dot by dot, numerically where numeric, as Core's CompareSemVer", () => {
+  assert.ok(compareSemver("1.0.0-rc.9", "1.0.0-rc.10") < 0);
+  assert.ok(compareSemver("1.0.0-alpha", "1.0.0-alpha.1") < 0);
+  assert.ok(compareSemver("1.0.0-rc.1", "1.0.0") < 0);
+  assert.ok(compareSemver("1.0.0-alpha.1", "1.0.0-alpha.beta") < 0);
+  assert.ok(compareSemver("1.0.0-alpha.beta", "1.0.0-beta") < 0);
+  assert.ok(compareSemver("1.0.0-beta.11", "1.0.0-beta.2") > 0);
+  assert.ok(compareSemver("1.0.0-beta.2", "1.0.0-rc.1") < 0);
+  assert.equal(compareSemver("1.0.0-rc.1", "1.0.0-rc.1"), 0);
+  assert.equal(compareSemver("1.0.0-rc.1+a", "1.0.0-rc.1+b"), 0);
+});
+
+test("per-root minimum: a reserved root is refused whatever the manifest declares", () => {
+  for (const root of NEW_ROOTS) {
+    for (const declared of ["0.24.0", "0.25.0", "9.0.0", undefined]) {
+      const res = checkRootMinEngine(root, declared);
+      assert.equal(res.code, CODES.ROOT_RESERVED, `${root} ${declared}`);
+      assert.match(res.message, new RegExp(`no SkyrimNet release reads ${root}/`));
+    }
+  }
+});
+
+test("per-root minimum: a versioned root needs at least its release, an ungated root needs nothing", () => {
+  const table = { spells: "0.25.0", prompts: null };
+  const tooLow = checkRootMinEngine("spells", "0.24.0", table);
   assert.equal(tooLow.ok, false);
   assert.equal(tooLow.code, CODES.ROOT_MIN_VERSION);
   assert.match(tooLow.message, /spells\//);
-  assert.match(tooLow.message, new RegExp(NEW_ROOTS_MIN_ENGINE.replace(/\./g, "\\.")));
+  assert.match(tooLow.message, /0\.25\.0/);
   assert.match(tooLow.message, /'0\.24\.0'/);
-  assert.equal(checkRootMinEngine("spells", NEW_ROOTS_MIN_ENGINE).ok, true);
-  assert.equal(checkRootMinEngine("spells", "9.0.0").ok, true);
+  assert.equal(checkRootMinEngine("spells", "0.25.0-rc.1", table).code, CODES.ROOT_MIN_VERSION);
+  assert.equal(checkRootMinEngine("spells", "0.25.0", table).ok, true);
+  assert.equal(checkRootMinEngine("spells", "9.0.0", table).ok, true);
+  assert.equal(checkRootMinEngine("prompts", "0.1.0", table).ok, true);
+  assert.equal(checkRootMinEngine("unknown", "0.1.0", table).ok, true);
   for (const root of ["prompts", "triggers", "actions", "knowledge", "entities"]) {
     assert.equal(checkRootMinEngine(root, "0.1.0").ok, true, root);
   }
   // A version the manifest rules already reject is not this rule's business.
-  assert.equal(checkRootMinEngine("spells", "0-19-0-0").ok, true);
-  assert.equal(checkRootMinEngine("spells", undefined).ok, true);
+  assert.equal(checkRootMinEngine("spells", "0-19-0-0", table).ok, true);
+  assert.equal(checkRootMinEngine("spells", undefined, table).ok, true);
+});
+
+test("quoteValue quotes a short string and describes anything else by shape", () => {
+  assert.equal(quoteValue("draugr"), "'draugr'");
+  const long = "x".repeat(MAX_QUOTED_VALUE_LENGTH + 20);
+  assert.equal(quoteValue(long), `'${"x".repeat(MAX_QUOTED_VALUE_LENGTH)}…'`);
+  assert.equal(quoteValue(["a", "b"]), "a list");
+  assert.equal(quoteValue({ a: 1 }), "a mapping");
+  assert.equal(quoteValue(77773), "the number 77773");
+  assert.equal(quoteValue(true), "the boolean true");
+  assert.equal(quoteValue(null), "nothing");
+  const res = checkFieldMatchesStem("id", long, "voice_effects/draugr.yaml");
+  assert.equal(res.code, CODES.NAME_NOT_STEM);
+  assert.ok(res.message.includes("…"));
+  assert.ok(!res.message.includes(long));
 });
 
 test("field==stem generalizes name==stem: any field, case-insensitively", () => {
@@ -285,9 +324,9 @@ test("field==stem generalizes name==stem: any field, case-insensitively", () => 
 test("form-ref corpus is the engine's copy", () => {
   // The literal counts pin the copy: a fixture that gained or lost a case on
   // one side fails here until the other side is synced by hand.
-  assert.equal(formRefCorpus.stemCases.length, 21);
+  assert.equal(formRefCorpus.stemCases.length, 22);
   assert.equal(formRefCorpus.parseCases.length, 5);
-  assert.equal(formRefCorpus.malformedCases.length, 14);
+  assert.equal(formRefCorpus.malformedCases.length, 15);
   assert.match(formRefCorpus.hash, /FNV-1a 32-bit/);
 });
 
@@ -337,4 +376,11 @@ test("stem prefix never splits a UTF-8 sequence at the 40-byte cut", () => {
   assert.match(stem, /^a{39}-[0-9a-f]{8}_000123$/);
   // An ESL id prints six digits like any other; the mask keeps 24 bits.
   assert.equal(formStem({ plugin: "x.esl", localId: 0xfff }), "x-esl_000FFF");
+});
+
+test("parseFormRef trims only space, tab, CR and LF, as Core's TrimWhitespace", () => {
+  assert.deepEqual(parseFormRef("\t Skyrim.esm \r\n| 0x1 \n"), { plugin: "Skyrim.esm", localId: 1 });
+  assert.deepEqual(parseFormRef("Skyrim.esm |0x1"), { plugin: "Skyrim.esm ", localId: 1 });
+  assert.equal(parseFormRef("\u000BSkyrim.esm|0x1"), null);
+  assert.equal(parseFormRef("Skyrim.esm|0x1 "), null);
 });

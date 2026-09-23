@@ -1,21 +1,22 @@
-// SkyrimNet Plugins — FormRef: one form reference, one normalizer
-//
-// Mirrors SkyrimNet's Content::FormRef (include/Content/FormRef.h) byte for
-// byte: the spelling a record file carries (`Plugin.esp|0x01396B`), its map
-// key, and the filename stem the engine derives from it. Dependency-free
-// beyond the ASCII fold shared with the path rules, so the C++ side and this
-// file can be pinned by one corpus, tests/fixtures/form-ref-cases.json.
+// Mirror of SkyrimNet's Content::FormRef (src/Content/FormRef.cpp): the `Plugin.esp|0x01396B` spelling,
+// its map key and its filename stem, pinned on both sides by tests/fixtures/form-ref-cases.json.
 
 import { foldCase } from "./content-rules.mjs";
 
 const FORM_REF_SEPARATOR = "|";
 const LOCAL_ID_MASK = 0x00ffffff;
+export const ESL_LOCAL_ID_MASK = 0x00000fff;
 const MAX_LOCAL_ID_HEX_DIGITS = 8;
+const LOCAL_ID_HEX_DIGITS = 6;
 const STEM_PREFIX_BYTES = 40;
 const FNV1A32_OFFSET = 0x811c9dc5;
 const FNV1A32_PRIME = 0x01000193;
 
 const STEM_EXTENSION_MARKERS = { ".esp": "", ".esm": "-esm", ".esl": "-esl" };
+const ESL_EXTENSION = ".esl";
+
+// Core's TrimWhitespace: space, tab, CR and LF only.
+const OUTER_WHITESPACE_RE = /^[ \t\r\n]+|[ \t\r\n]+$/g;
 
 /** FNV-1a 32-bit over UTF-8 bytes, as 8 lowercase hex digits. */
 export function fnv1a32Hex(text) {
@@ -26,8 +27,13 @@ export function fnv1a32Hex(text) {
   return h.toString(16).padStart(8, "0");
 }
 
+/** The 24-bit local id as six upper-case hex digits. */
+export function localIdHex(localId) {
+  return (localId & LOCAL_ID_MASK).toString(16).toUpperCase().padStart(LOCAL_ID_HEX_DIGITS, "0");
+}
+
 function localIdSuffix(localId) {
-  return `${FORM_REF_SEPARATOR}0x${(localId & LOCAL_ID_MASK).toString(16).toUpperCase().padStart(6, "0")}`;
+  return `${FORM_REF_SEPARATOR}0x${localIdHex(localId)}`;
 }
 
 /** `Plugin.esp|0x01396B`, the plugin as written: the canonical spelling for file bodies. */
@@ -40,19 +46,31 @@ export function formRefKey({ plugin, localId }) {
   return foldCase(plugin) + localIdSuffix(localId);
 }
 
-/**
- * Parse `Plugin.esp|0x01396B` into { plugin, localId } or null. Outer
- * whitespace is trimmed, `0x` is optional, hex case is free; a missing or
- * doubled separator, an empty half, a non-hex or over-24-bit id, or a plugin
- * containing a path separator or being a bare extension all refuse.
- */
+/** The plugin's extension from its last dot, ASCII-folded; empty without a dot. */
+export function pluginExtension(plugin) {
+  const folded = foldCase(plugin);
+  const dot = folded.lastIndexOf(".");
+  return dot === -1 ? "" : folded.slice(dot);
+}
+
+/** True when the plugin is an `.esl` file, whose local ids are 12 bits. */
+export function isEslPlugin(plugin) {
+  return pluginExtension(plugin) === ESL_EXTENSION;
+}
+
+function trimOuter(text) {
+  return text.replace(OUTER_WHITESPACE_RE, "");
+}
+
+// `Plugin.esp|0x01396B` to { plugin, localId } or null: outer [ \t\r\n] trimmed, `0x` optional, hex case
+// free; a missing or doubled separator, an empty half, a non-hex or over-24-bit id or a bad plugin name refuse.
 export function parseFormRef(text) {
   if (typeof text !== "string") return null;
-  const trimmed = text.trim();
+  const trimmed = trimOuter(text);
   const bar = trimmed.indexOf(FORM_REF_SEPARATOR);
   if (bar === -1) return null;
-  const plugin = trimmed.slice(0, bar).trim();
-  const id = trimmed.slice(bar + 1).trim();
+  const plugin = trimOuter(trimmed.slice(0, bar));
+  const id = trimOuter(trimmed.slice(bar + 1));
   if (!isPluginNameShaped(plugin)) return null;
   const localId = parseLocalId(id);
   if (localId === null) return null;
@@ -77,19 +95,12 @@ function parseLocalId(text) {
   return value > LOCAL_ID_MASK ? null : value;
 }
 
-/**
- * Filename stem of a FormRef: `{prefix}{-esm|-esl}{-fnv1a32}_{LOCALID6}`.
- * The prefix is the ASCII-folded plugin name minus its extension (split on the
- * LAST dot), every byte outside [a-z0-9_] replaced by `_`, cut at 40 UTF-8
- * bytes without splitting a sequence. The hash of the folded full filename is
- * appended when a byte was replaced, the prefix was cut or is empty, or the
- * extension is not .esp/.esm/.esl.
- */
+// Filename stem `{prefix}{-esm|-esl}{-fnv1a32}_{LOCALID6}`: the folded name before the last dot with bytes outside
+// [a-z0-9_] as `_`, cut at 40 bytes; the hash of the folded full filename when a byte was replaced, the prefix was cut or empty, or the extension is not .esp/.esm/.esl.
 export function formStem({ plugin, localId }) {
   const folded = foldCase(plugin);
-  const dot = folded.lastIndexOf(".");
-  const name = dot === -1 ? folded : folded.slice(0, dot);
-  const extension = dot === -1 ? "" : folded.slice(dot);
+  const extension = pluginExtension(plugin);
+  const name = folded.slice(0, folded.length - extension.length);
 
   let needHash = false;
   let marker = STEM_EXTENSION_MARKERS[extension];
@@ -119,6 +130,5 @@ export function formStem({ plugin, localId }) {
   if (prefix.length === 0) needHash = true;
 
   const hash = needHash ? `-${fnv1a32Hex(folded)}` : "";
-  const id = (localId & LOCAL_ID_MASK).toString(16).toUpperCase().padStart(6, "0");
-  return `${prefix}${marker}${hash}_${id}`;
+  return `${prefix}${marker}${hash}_${localIdHex(localId)}`;
 }
