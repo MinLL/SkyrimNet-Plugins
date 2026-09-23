@@ -15,6 +15,9 @@
   "nsfw": false,
   "icon": "brain",
   "mods": [],
-  "version": "0.1.0",
+  "language": "en",
+  "image": "cover.png",
+  "version": "0.1.1",
+  "changelog": "- Added plugin cover image",
   "min_skyrimnet_version": "0.25.0"
 }
