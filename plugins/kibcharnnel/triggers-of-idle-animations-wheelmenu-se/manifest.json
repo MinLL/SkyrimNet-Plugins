@@ -3,7 +3,7 @@
   "type": "bundle",
   "title": "Triggers of Idle Animations WheelMenu SE",
   "tagline": "Use WheelMenu to perfome and everyone around you will react!",
-  "description": "You need to download this mod:\n\nYou can dance, you can clap your hands, you can taund and you can do many other emotes! NPC's around you will react to it!",
+  "description": "You need to download this mod:\n\n\nYou can dance, you can clap your hands, you can taund and you can do many other emotes! NPC's around you will react to it!",
   "author": "kibcharnnel",
   "tags": [
     "triggers trigger animation reaction emotes"
@@ -18,5 +18,6 @@
     }
   ],
   "version": "1.0.0",
+  "changelog": "Link to the mod was missing",
   "min_skyrimnet_version": "0.25.0"
 }
