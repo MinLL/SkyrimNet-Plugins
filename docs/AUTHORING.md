@@ -115,6 +115,26 @@ good, not whether it is well-formed.
   NPCs hear and may react). Pick `private` for anything that would be strange for a bystander
   to overhear.
 
+## Config-system records (`voice_effects/`, `items/`, `spells/`, `furniture/`, `identity/`, `filters/`, `translator/`, `dialogue_actions/`)
+
+One record per `.yaml` file; the validator has already checked the filename is the record's
+identity, the `kind`, the `min_skyrimnet_version` gate and the caps (README, "Content roots").
+What is left to judge:
+
+- **Must:** a record names a form the plugin's listed mods provide, or a vanilla one.
+  `form: "Skyrim.esm|0x01396B"` and the four DLC masters need no `mods` entry; a third-party
+  plugin in a `form`, a `filters/` list or a `dialogue_actions/` list should appear in `mods`.
+- **Must:** `customName`, `customDescription`, `resolved_name`, translator `speechPattern` and
+  instruction `text` are in-world prose in the same class as a prompt, and are reviewed as one.
+- `filters/` `kind: actor` and `kind: memory` files, and `dialogue_actions/` `kind: lists`
+  files, are unioned with the user's own lists. A `RaceWhitelist` or `whitelist` entry widens
+  what may speak or fire; that is the point for a mod's own races and quests, and a concern
+  when it names vanilla content the plugin has no business touching.
+- A `spells/` or `items/` record with `npc_usable: false` stops NPCs using that form. Fine for a
+  mod's own player-only spells; flag a plugin that switches off vanilla equipment wholesale.
+- `identity/` links give a virtual entity a body (`npc:`) or move memories between two
+  identities. Both identities should be the plugin's own or clearly named in the description.
+
 ## Things that are always fine
 
 Dark themes, violence, gore, crude language, in-universe prejudice between Skyrim's races, morally

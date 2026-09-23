@@ -9,6 +9,7 @@ A **plugin** is a bundle containing any combination of:
 - **Actions** (`.yaml`) — YAML definitions that let NPCs execute Papyrus mod functions in response to dialogue
 - **Knowledge packs** (`.sknpack`) — collections of world knowledge entries that NPCs recall when a condition matches (a rumour, a piece of lore, a fact about your mod)
 - **Virtual entities** (`.entity.yaml`) — bodiless NPCs (a spirit, a voice in the player's head, a radio host) with a name, a voice and a conversation mode, paired with a character prompt for their bio
+- **Config-system records** (`.yaml`, one record per file) — voice effect recipes, item and spell customizations, furniture names, identity links, actor/memory filter lists and text-filter rules, translator speech rules, and dialogue-action lists and instructions. See [Content roots](#content-roots) for the release each needs.
 
 Plugins often work together as a bundle (e.g. an action paired with a trigger that invokes it and a prompt that teaches NPCs when to use it), but any subset is valid — a pure prompt pack, a trigger-only submission or a lone knowledge pack is perfectly fine.
 
@@ -38,9 +39,39 @@ plugins/
       prompts/*.prompt        # optional
       knowledge/*.sknpack     # optional
       entities/*.entity.yaml  # optional
+      voice_effects/*.yaml    # optional, one record per file (see Content roots)
+      items/*.yaml
+      spells/*.yaml
+      furniture/*.yaml
+      identity/*.yaml
+      filters/*.yaml
+      translator/*.yaml
+      dialogue_actions/*.yaml
 ```
 
-Each plugin lives in its own directory under the author's GitHub username. The `manifest.json` describes the plugin and is required; the five content subdirectories are all optional.
+Each plugin lives in its own directory under the author's GitHub username. The `manifest.json` describes the plugin and is required; every content subdirectory is optional.
+
+### Content roots
+
+One directory per content root. The validator checks each file's extension, its identity (the field whose value must equal the filename stem, so the path is the record's one identity) and, for the config-system roots, that the manifest's `min_skyrimnet_version` is at least the release that scans the root — an older SkyrimNet refuses the whole install on a root it does not know.
+
+| Root | Extension | Identity (`== filename stem`) | Minimum release | Per-file cap |
+|---|---|---|---|---|
+| `prompts/` | `.prompt` | the path | — | — |
+| `triggers/` | `.yaml` | `name` | — | 32 KB |
+| `actions/` | `.yaml` | `name` | — | 32 KB |
+| `knowledge/` | `.sknpack` | the path (entries by `key`) | — | 1 MB |
+| `entities/` | `.entity.yaml` | the path (records by `entityName`) | — | 32 KB |
+| `voice_effects/` | `.yaml` | `id` | 0.25.0 | 64 KB |
+| `items/` | `.yaml` | form stem of `form` (`Plugin.esp\|0x01396B`); `npc_usable`, never `enabled` | 0.25.0 | 32 KB |
+| `spells/` | `.yaml` | form stem of `form`; `npc_usable`, never `enabled` | 0.25.0 | 32 KB |
+| `furniture/` | `.yaml` | form stem of `form` | 0.25.0 | 32 KB |
+| `identity/` | `.yaml` | slug of `name` (`kind: link`, the default, or `succession`) | 0.25.0 | 32 KB |
+| `filters/` | `.yaml` | `kind: actor` / `memory` contributions: any stem; `kind: dialogue_rule` / `tts_rule`: `id` | 0.25.0 | 32 KB |
+| `translator/` | `.yaml` | `kind: npc`: form stem of `form` (the actor base); `faction` / `race`: `entityEditorId`; `global`: `global.yaml` | 0.25.0 | 32 KB |
+| `dialogue_actions/` | `.yaml` | `kind: lists` contributions: any stem; `kind: instruction`: `key`, with `category` one of `quest`, `follower`, `merchant`, `trainer`, `carriage`, `innkeeper`, `bard`, `marriage`, `crime`, `other` | 0.25.0 | 32 KB |
+
+The **form stem** of `Plugin.esp|0x01396B` is `{plugin name, lowercased, non-[a-z0-9_] bytes as _}{-esm|-esl}{-fnv1a32 hash when anything was replaced or cut}_{local id, six upper hex}`: `Skyrim.esm|0x01396B` is `skyrim-esm_01396B`, `Mod A.esp|0x000123` is `mod_a-a44f2ca6_000123`. The dashboard names the files; `formStem()` in `.github/scripts/lib/form-ref.mjs` is the rule, pinned by `tests/fixtures/form-ref-cases.json` on both sides. Name, `id` and `key` identities compare case-insensitively; the form stem compares exactly.
 
 ### Official content (`plugins/skyrimnet/`)
 
