@@ -171,11 +171,11 @@
       "note": "inner dot: the extension splits at the LAST dot, so the dot in the name is a replaced byte and the hash is appended"
     },
     {
-      "plugin": "Skyrim.esm ",
+      "plugin": "Skyrim.esm\u00a0",
       "localId": "0x000001",
       "expectedStem": "skyrim-0ce14739_000001",
-      "expectedKey": "skyrim.esm |0x000001",
-      "expectedToString": "Skyrim.esm |0x000001",
+      "expectedKey": "skyrim.esm\u00a0|0x000001",
+      "expectedToString": "Skyrim.esm\u00a0|0x000001",
       "note": "a no-break space (U+00A0) before the separator is not trimmed: it stays in the plugin name, makes the extension .esm+NBSP, so no marker and the hash"
     }
   ],
