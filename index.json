@@ -1,8 +1,63 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-09-23T16:32:31.747Z",
-  "stats_as_of": "2026-09-23T16:32:31.599Z",
+  "generated_at": "2026-09-23T16:50:13.950Z",
+  "stats_as_of": "2026-09-23T16:50:13.876Z",
   "plugins": [
+    {
+      "id": "plugins/phospheneoverdrive/alchemist-knowledge",
+      "plugin_id": "phospheneoverdrive.alchemist-knowledge",
+      "type": "bundle",
+      "title": "Alchemist Knowledge",
+      "tagline": "Gives apothecaries practical knowledge of ingredients, effects, and valuable recipes.",
+      "author": "phospheneoverdrive",
+      "tags": [
+        "alchemy",
+        "apothecaries",
+        "ingredients",
+        "potions",
+        "world knowledge"
+      ],
+      "nsfw": false,
+      "icon": "brain",
+      "mods": [],
+      "first_published": "2026-09-13T04:40:41Z",
+      "last_updated": "2026-09-23T16:49:53Z",
+      "version": "0.1.1",
+      "min_skyrimnet_version": "0.25.0",
+      "history": [
+        {
+          "version": "0.1.1",
+          "commit": "c398d27c42b4dbf0c78812e261a169d698de1e0b",
+          "date": "2026-09-23T16:49:53Z",
+          "changelog": "- Added plugin cover image"
+        },
+        {
+          "version": "0.1.0",
+          "commit": "b9bca86f0634d566cfa1f7c7e2d5844696c06660",
+          "date": "2026-09-13T04:40:41Z"
+        }
+      ],
+      "language": "en",
+      "image": {
+        "file": "cover.png",
+        "sha": "ba7bcb2f1e3df7e5df8bb41e0260feee6a2c8ca1",
+        "commit": "c398d27c42b4dbf0c78812e261a169d698de1e0b",
+        "width": 1672,
+        "height": 941
+      },
+      "contents": {
+        "triggers": 0,
+        "actions": 0,
+        "prompts": 0,
+        "bios": 0,
+        "knowledge": 1,
+        "entities": 0
+      },
+      "stats": {
+        "downloads": 4,
+        "endorsements": 0
+      }
+    },
     {
       "id": "plugins/kibcharnnel/triggers-of-idle-animations-wheelmenu-se",
       "plugin_id": "kibcharnnel.triggers-of-idle-animations-wheelmenu-se",
@@ -139,7 +194,7 @@
       ],
       "external_url": "https://github.com/tetherball88/OStimNet/releases/latest",
       "stats": {
-        "downloads": 3,
+        "downloads": 4,
         "endorsements": 1
       }
     },
@@ -468,47 +523,6 @@
       },
       "stats": {
         "downloads": 1,
-        "endorsements": 0
-      }
-    },
-    {
-      "id": "plugins/phospheneoverdrive/alchemist-knowledge",
-      "plugin_id": "phospheneoverdrive.alchemist-knowledge",
-      "type": "bundle",
-      "title": "Alchemist Knowledge",
-      "tagline": "Gives apothecaries practical knowledge of ingredients, effects, and valuable recipes.",
-      "author": "phospheneoverdrive",
-      "tags": [
-        "alchemy",
-        "apothecaries",
-        "ingredients",
-        "potions",
-        "world knowledge"
-      ],
-      "nsfw": false,
-      "icon": "brain",
-      "mods": [],
-      "first_published": "2026-09-13T04:40:41Z",
-      "last_updated": "2026-09-13T04:40:41Z",
-      "version": "0.1.0",
-      "min_skyrimnet_version": "0.25.0",
-      "history": [
-        {
-          "version": "0.1.0",
-          "commit": "b9bca86f0634d566cfa1f7c7e2d5844696c06660",
-          "date": "2026-09-13T04:40:41Z"
-        }
-      ],
-      "contents": {
-        "triggers": 0,
-        "actions": 0,
-        "prompts": 0,
-        "bios": 0,
-        "knowledge": 1,
-        "entities": 0
-      },
-      "stats": {
-        "downloads": 3,
         "endorsements": 0
       }
     },
