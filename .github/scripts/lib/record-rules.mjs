@@ -1,5 +1,5 @@
 // Per-root rules for what a record file carries: the field that must equal the filename stem, `kind`,
-// `npc_usable`, list fields, `priority`, a rule's `pattern` and `npc:` references. Pure functions; validate.mjs
+// `show_in_prompts`, list fields, `priority`, a rule's `pattern` and `npc:` references. Pure functions; validate.mjs
 // wires them to files.
 
 import { CODES, checkFieldMatchesStem, foldCase, quoteValue, stemOf } from "./content-rules.mjs";
@@ -21,7 +21,8 @@ export const RECORD_CODES = {
   FORM_ESL_WIDTH: "FORM_ESL_WIDTH",
   FORM_NOT_STEM: "FORM_NOT_STEM",
   ENABLED_NOT_ACTIVATION: "ENABLED_NOT_ACTIVATION",
-  NPC_USABLE_NOT_BOOL: "NPC_USABLE_NOT_BOOL",
+  SHOW_IN_PROMPTS_NOT_BOOL: "SHOW_IN_PROMPTS_NOT_BOOL",
+  NPC_USABLE_RENAMED: "NPC_USABLE_RENAMED",
   SLUG_NOT_STEM: "SLUG_NOT_STEM",
   NPC_REF_LOAD_ORDER: "NPC_REF_LOAD_ORDER",
   NPC_REF_INVALID: "NPC_REF_INVALID",
@@ -57,7 +58,8 @@ export const FILTER_LIST_FIELDS = Object.freeze([
 export const IDENTITY_REF_FIELDS = Object.freeze({ link: ["identityA", "identityB"], succession: ["from", "to"] });
 
 const FORM_FIELD = "form";
-const NPC_USABLE_FIELD = "npc_usable";
+const SHOW_IN_PROMPTS_FIELD = "show_in_prompts";
+const NPC_USABLE_FIELD = "npc_usable"; // the field's name before the engine renamed it
 const TRANSLATOR_GLOBAL_STEM = "global";
 const PRIORITY_FIELD = "priority";
 const PATTERN_FIELD = "pattern";
@@ -239,16 +241,26 @@ function checkPattern(doc, kind, push) {
   }
 }
 
-function checkNpcUsable(doc, root, push) {
+// `show_in_prompts` (true when omitted) says whether the item or spell appears in NPC equipment and spell lists
+// in prompts; `enabled` is record activation, and `npc_usable` is the field's old name.
+function checkShowInPrompts(doc, root, push) {
+  const spell = (value) => `'${SHOW_IN_PROMPTS_FIELD}: ${value === false ? "false" : "true"}'`;
   if (doc.enabled !== undefined) {
     push(
       RECORD_CODES.ENABLED_NOT_ACTIVATION,
-      `'enabled' in a ${root}/ file means record activation (the user's on/off toggle), not whether NPCs ` +
-        `may use the form. Say '${NPC_USABLE_FIELD}: ${doc.enabled === false ? "false" : "true"}' instead.`,
+      `'enabled' in a ${root}/ file means record activation (the user's on/off toggle), not whether the form ` +
+        `appears in NPC prompts. Say ${spell(doc.enabled)} instead.`,
     );
   }
-  if (doc[NPC_USABLE_FIELD] !== undefined && typeof doc[NPC_USABLE_FIELD] !== "boolean") {
-    push(RECORD_CODES.NPC_USABLE_NOT_BOOL, `'${NPC_USABLE_FIELD}' must be true or false.`);
+  if (doc[NPC_USABLE_FIELD] !== undefined) {
+    push(
+      RECORD_CODES.NPC_USABLE_RENAMED,
+      `'${NPC_USABLE_FIELD}' is the old name of '${SHOW_IN_PROMPTS_FIELD}'; the engine ignores it. ` +
+        `Say ${spell(doc[NPC_USABLE_FIELD])} instead.`,
+    );
+  }
+  if (doc[SHOW_IN_PROMPTS_FIELD] !== undefined && typeof doc[SHOW_IN_PROMPTS_FIELD] !== "boolean") {
+    push(RECORD_CODES.SHOW_IN_PROMPTS_NOT_BOOL, `'${SHOW_IN_PROMPTS_FIELD}' must be true or false.`);
   }
 }
 
@@ -259,12 +271,12 @@ const CHECKS = {
 
   items(doc, subPath, push) {
     checkFormIdentity(doc, subPath, push, "An item customization");
-    checkNpcUsable(doc, "items", push);
+    checkShowInPrompts(doc, "items", push);
   },
 
   spells(doc, subPath, push) {
     checkFormIdentity(doc, subPath, push, "A spell customization");
-    checkNpcUsable(doc, "spells", push);
+    checkShowInPrompts(doc, "spells", push);
   },
 
   furniture(doc, subPath, push) {

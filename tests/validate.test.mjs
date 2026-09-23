@@ -1129,11 +1129,15 @@ test("voice_effects: a recipe whose id is not the stem is refused", () => {
   );
 });
 
-test("items: a record at its form stem is accepted; enabled is refused naming npc_usable", () => {
-  acceptsRecord({ "items/skyrim-esm_01396B.yaml": "form: Skyrim.esm|0x01396B\ncustomName: Wuuthrad\nnpc_usable: false\n" });
+test("items: a record at its form stem is accepted; enabled and npc_usable are refused naming show_in_prompts", () => {
+  acceptsRecord({ "items/skyrim-esm_01396B.yaml": "form: Skyrim.esm|0x01396B\ncustomName: Wuuthrad\nshow_in_prompts: false\n" });
   assertRejected(
     validatePlugin({ manifest: goodManifest(), files: { "items/skyrim-esm_01396B.yaml": "form: Skyrim.esm|0x01396B\nenabled: false\n" } }),
-    /'enabled' in a items\/ file means record activation[^\n]*npc_usable: false[^\n]*\[ENABLED_NOT_ACTIVATION\]/,
+    /'enabled' in a items\/ file means record activation[^\n]*show_in_prompts: false[^\n]*\[ENABLED_NOT_ACTIVATION\]/,
+  );
+  assertRejected(
+    validatePlugin({ manifest: goodManifest(), files: { "items/skyrim-esm_01396B.yaml": "form: Skyrim.esm|0x01396B\nnpc_usable: false\n" } }),
+    /'npc_usable' is the old name of 'show_in_prompts'[^\n]*show_in_prompts: false[^\n]*\[NPC_USABLE_RENAMED\]/,
   );
   assertRejected(
     validatePlugin({ manifest: goodManifest(), files: { "items/wuuthrad.yaml": "form: Skyrim.esm|0x01396B\n" } }),
@@ -1150,7 +1154,7 @@ test("spells: a record at its form stem is accepted; a bad form reference is ref
   );
   assertRejected(
     validatePlugin({ manifest: goodManifest(), files: { "spells/skyrim-esm_012FCD.yaml": "form: Skyrim.esm|0x012FCD\nenabled: true\n" } }),
-    /npc_usable: true/,
+    /show_in_prompts: true/,
   );
 });
 

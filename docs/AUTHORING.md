@@ -130,8 +130,9 @@ left to judge:
   files, are unioned with the user's own lists. A `RaceWhitelist` or `whitelist` entry widens
   what may speak or fire; that is the point for a mod's own races and quests, and a concern
   when it names vanilla content the plugin has no business touching.
-- A `spells/` or `items/` record with `npc_usable: false` stops NPCs using that form. Fine for a
-  mod's own player-only spells; flag a plugin that switches off vanilla equipment wholesale.
+- A `spells/` or `items/` record with `show_in_prompts: false` hides that form from NPC equipment
+  and spell lists in prompts. Fine for a mod's own player-only spells; flag a plugin that hides
+  vanilla equipment wholesale.
 - `identity/` links give a virtual entity a body (`npc:`) or move memories between two
   identities. Both identities should be the plugin's own or clearly named in the description.
 

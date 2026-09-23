@@ -63,8 +63,8 @@ One directory per content root. The validator checks each file's extension, its 
 | `knowledge/` | `.sknpack` | the path (entries by `key`) | Beta 25 (0.25.0) | no | 1 MB |
 | `entities/` | `.entity.yaml` | the path (records by `entityName`) | Beta 25 (0.25.0) | no | 32 KB |
 | `voice_effects/` | `.yaml` | `id` | Beta 25 (0.25.0) | yes | 64 KB |
-| `items/` | `.yaml` | form stem of `form` (`Plugin.esp\|0x01396B`); `npc_usable`, never `enabled` | Beta 25 (0.25.0) | yes | 32 KB |
-| `spells/` | `.yaml` | form stem of `form`; `npc_usable`, never `enabled` | Beta 25 (0.25.0) | yes | 32 KB |
+| `items/` | `.yaml` | form stem of `form` (`Plugin.esp\|0x01396B`); `show_in_prompts`, never `enabled` | Beta 25 (0.25.0) | yes | 32 KB |
+| `spells/` | `.yaml` | form stem of `form`; `show_in_prompts`, never `enabled` | Beta 25 (0.25.0) | yes | 32 KB |
 | `furniture/` | `.yaml` | form stem of `form` | Beta 25 (0.25.0) | yes | 32 KB |
 | `identity/` | `.yaml` | slug of `name` (`kind: link`, the default, or `succession`); NPCs as `npc:Plugin.esp:0xLocalID` | Beta 25 (0.25.0) | yes | 32 KB |
 | `filters/` | `.yaml` | `kind: actor` / `memory` contributions: any stem; `kind: dialogue_rule` / `tts_rule`: `id`, a non-empty `pattern` (a regular expression of at most 1024 bytes), integer `priority` | Beta 25 (0.25.0) | yes | 32 KB |
