@@ -53,7 +53,7 @@ Each plugin lives in its own directory under the author's GitHub username. The `
 
 ### Content roots
 
-One directory per content root. The validator checks each file's extension, its identity (the field whose value must equal the filename stem, so the path is the record's one identity) and, for a hub-gated root, the release: a plugin may ship a root only when its manifest's `min_skyrimnet_version` is at least the SkyrimNet release that reads the root, because an older SkyrimNet refuses the whole install on a root it does not know. A root marked **not yet released** is reserved — no SkyrimNet release reads it, and a plugin shipping one is refused. Each root opens when the SkyrimNet release that reads it ships and the hub's `ROOT_TABLE` row is set to that version.
+One directory per content root. The validator checks each file's extension, its identity (the field whose value must equal the filename stem, so the path is the record's one identity) and, for a hub-gated root, the release: a plugin may ship a root only when its manifest's `min_skyrimnet_version` is at least the SkyrimNet release that reads the root, because an older SkyrimNet refuses the whole install on a root it does not know. Beta 25 (0.25.0) reads every root below; the eight config-system roots are hub-gated at it. A root added ahead of the release that reads it is marked reserved in the hub's `ROOT_TABLE` and refused until that row is set to the release.
 
 | Root | Extension | Identity (`== filename stem`) | Release | Hub-gated | Per-file cap |
 |---|---|---|---|---|---|
@@ -62,14 +62,14 @@ One directory per content root. The validator checks each file's extension, its 
 | `actions/` | `.yaml` | `name` | Beta 25 (0.25.0) | no | 32 KB |
 | `knowledge/` | `.sknpack` | the path (entries by `key`) | Beta 25 (0.25.0) | no | 1 MB |
 | `entities/` | `.entity.yaml` | the path (records by `entityName`) | Beta 25 (0.25.0) | no | 32 KB |
-| `voice_effects/` | `.yaml` | `id` | not yet released | yes | 64 KB |
-| `items/` | `.yaml` | form stem of `form` (`Plugin.esp\|0x01396B`); `npc_usable`, never `enabled` | not yet released | yes | 32 KB |
-| `spells/` | `.yaml` | form stem of `form`; `npc_usable`, never `enabled` | not yet released | yes | 32 KB |
-| `furniture/` | `.yaml` | form stem of `form` | not yet released | yes | 32 KB |
-| `identity/` | `.yaml` | slug of `name` (`kind: link`, the default, or `succession`); NPCs as `npc:Plugin.esp:0xLocalID` | not yet released | yes | 32 KB |
-| `filters/` | `.yaml` | `kind: actor` / `memory` contributions: any stem; `kind: dialogue_rule` / `tts_rule`: `id`, integer `priority` | not yet released | yes | 32 KB |
-| `translator/` | `.yaml` | `kind: npc`: form stem of `form` (the actor base); `faction` / `race`: `entityEditorId`; `global`: `global.yaml`; integer `priority` | not yet released | yes | 32 KB |
-| `dialogue_actions/` | `.yaml` | `kind: lists` contributions: any stem; `kind: instruction`: `key`, with `category` one of `quest`, `follower`, `merchant`, `trainer`, `carriage`, `innkeeper`, `bard`, `marriage`, `crime`, `other` | not yet released | yes | 32 KB |
+| `voice_effects/` | `.yaml` | `id` | Beta 25 (0.25.0) | yes | 64 KB |
+| `items/` | `.yaml` | form stem of `form` (`Plugin.esp\|0x01396B`); `npc_usable`, never `enabled` | Beta 25 (0.25.0) | yes | 32 KB |
+| `spells/` | `.yaml` | form stem of `form`; `npc_usable`, never `enabled` | Beta 25 (0.25.0) | yes | 32 KB |
+| `furniture/` | `.yaml` | form stem of `form` | Beta 25 (0.25.0) | yes | 32 KB |
+| `identity/` | `.yaml` | slug of `name` (`kind: link`, the default, or `succession`); NPCs as `npc:Plugin.esp:0xLocalID` | Beta 25 (0.25.0) | yes | 32 KB |
+| `filters/` | `.yaml` | `kind: actor` / `memory` contributions: any stem; `kind: dialogue_rule` / `tts_rule`: `id`, integer `priority` | Beta 25 (0.25.0) | yes | 32 KB |
+| `translator/` | `.yaml` | `kind: npc`: form stem of `form` (the actor base); `faction` / `race`: `entityEditorId`; `global`: `global.yaml`; integer `priority` | Beta 25 (0.25.0) | yes | 32 KB |
+| `dialogue_actions/` | `.yaml` | `kind: lists` contributions: any stem; `kind: instruction`: `key`, with `category` one of `quest`, `follower`, `merchant`, `trainer`, `carriage`, `innkeeper`, `bard`, `marriage`, `crime`, `other` | Beta 25 (0.25.0) | yes | 32 KB |
 
 **Filename stem.** For a root identified by `name`, `id`, `key` or `entityEditorId`, the stem is the filename up to its **first** dot (`draugr.yaml` → `draugr`, `foo.entity.yaml` → `foo`), compared case-insensitively.
 

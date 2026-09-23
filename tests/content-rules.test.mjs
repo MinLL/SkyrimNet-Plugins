@@ -15,6 +15,7 @@ import {
   CONTENT_ROOTS,
   EXTENSION_BY_ROOT,
   MAX_QUOTED_VALUE_LENGTH,
+  CONFIG_ROOTS_MIN_ENGINE,
   RESERVED_MIN_ENGINE,
   ROOT_MIN_ENGINE,
   ROOT_TABLE,
@@ -220,8 +221,9 @@ test("the root table has the five original roots and the eight config-system roo
   for (const root of ["prompts", "triggers", "actions", "knowledge", "entities"]) {
     assert.equal(ROOT_MIN_ENGINE[root], null);
   }
+  assert.equal(CONFIG_ROOTS_MIN_ENGINE, "0.25.0");
   for (const root of NEW_ROOTS) {
-    assert.equal(ROOT_MIN_ENGINE[root], RESERVED_MIN_ENGINE);
+    assert.equal(ROOT_MIN_ENGINE[root], CONFIG_ROOTS_MIN_ENGINE);
     assert.equal(EXTENSION_BY_ROOT[root], ".yaml");
   }
 });
@@ -260,13 +262,20 @@ test("semver pre-release identifiers compare dot by dot, numerically where numer
   assert.equal(compareSemver("1.0.0-rc.1+a", "1.0.0-rc.1+b"), 0);
 });
 
+// No ROOT_TABLE row is reserved today; the branch is pinned through a test-only table.
 test("per-root minimum: a reserved root is refused whatever the manifest declares", () => {
+  const table = { future: RESERVED_MIN_ENGINE };
+  for (const declared of ["0.24.0", "0.25.0", "9.0.0", undefined]) {
+    const res = checkRootMinEngine("future", declared, table);
+    assert.equal(res.code, CODES.ROOT_RESERVED, `${declared}`);
+    assert.match(res.message, /no SkyrimNet release reads future\//);
+  }
+});
+
+test("per-root minimum: the eight config-system roots need 0.25.0", () => {
   for (const root of NEW_ROOTS) {
-    for (const declared of ["0.24.0", "0.25.0", "9.0.0", undefined]) {
-      const res = checkRootMinEngine(root, declared);
-      assert.equal(res.code, CODES.ROOT_RESERVED, `${root} ${declared}`);
-      assert.match(res.message, new RegExp(`no SkyrimNet release reads ${root}/`));
-    }
+    assert.equal(checkRootMinEngine(root, "0.24.0").code, CODES.ROOT_MIN_VERSION, root);
+    assert.equal(checkRootMinEngine(root, "0.25.0").ok, true, root);
   }
 });
 

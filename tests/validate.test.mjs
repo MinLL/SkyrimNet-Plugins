@@ -1088,26 +1088,28 @@ test("cover image: a mis-cased root image gets the image message, not the conten
 
 // ----- Config-system roots (one record per file) ----------------------------
 // Each root's record rules run end to end here (unit tests: record-rules.test.mjs). Every one of these roots
-// is reserved in ROOT_TABLE, so a record that passes leaves exactly the per-root ROOT_RESERVED refusal.
+// opens at 0.25.0 in ROOT_TABLE, which goodManifest declares, so a record that passes leaves no error.
 
-const RESERVED_ROOT_RE = /\[ROOT_RESERVED\]$/;
+const GATED_ROOT_RE = /\[ROOT_MIN_VERSION\]$/;
 
 function acceptsRecord(files, manifest = goodManifest()) {
   const res = validatePlugin({ manifest, files });
-  const other = res.result.errors.filter((e) => !RESERVED_ROOT_RE.test(e.message));
-  assert.deepEqual(other, [], errorMessages(res.result));
-  const roots = new Set(Object.keys(files).map((file) => file.split("/")[0]));
-  assert.equal(res.result.errors.length, roots.size, errorMessages(res.result));
+  assert.equal(res.result.success, true, errorMessages(res.result));
+  assert.deepEqual(res.result.errors, []);
   return res;
 }
 
-test("a reserved root is refused whatever min_skyrimnet_version declares, naming the root", () => {
+test("a gated root needs min_skyrimnet_version of at least 0.25.0, naming the root and both versions", () => {
   const files = { "spells/skyrim-esm_012FCD.yaml": "form: Skyrim.esm|0x012FCD\n" };
-  for (const declared of ["0.24.0", "0.25.0", "9.0.0"]) {
-    const res = validatePlugin({ manifest: goodManifest({ min_skyrimnet_version: declared }), files });
-    assertRejected(res, /Files under spells\/ cannot be published yet: no SkyrimNet release reads spells\/\.[^\n]*\[ROOT_RESERVED\]/);
-    assert.equal(res.result.errors.length, 1);
-    assert.equal(res.result.errors[0].file, "plugins/bob/test-pack/manifest.json");
+  const res = validatePlugin({ manifest: goodManifest({ min_skyrimnet_version: "0.24.0" }), files });
+  assertRejected(
+    res,
+    /Files under spells\/ need SkyrimNet 0\.25\.0 or newer, but manifest\.min_skyrimnet_version is '0\.24\.0'\. Raise it to at least 0\.25\.0\. \[ROOT_MIN_VERSION\]/,
+  );
+  assert.equal(res.result.errors.length, 1);
+  assert.equal(res.result.errors[0].file, "plugins/bob/test-pack/manifest.json");
+  for (const declared of ["0.25.0", "0.25.1", "9.0.0"]) {
+    acceptsRecord(files, goodManifest({ min_skyrimnet_version: declared }));
   }
 });
 
@@ -1167,7 +1169,7 @@ test("a plugin mixing two gated roots reports the gate once per root", () => {
     },
   });
   assertRejected(res);
-  const gates = res.result.errors.filter((e) => RESERVED_ROOT_RE.test(e.message));
+  const gates = res.result.errors.filter((e) => GATED_ROOT_RE.test(e.message));
   assert.equal(gates.length, 2);
   assert.ok(gates.some((e) => /spells\//.test(e.message)));
   assert.ok(gates.some((e) => /voice_effects\//.test(e.message)));
