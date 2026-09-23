@@ -32,6 +32,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { execFileSync } from "node:child_process";
 
+import { CONTENT_ROOTS } from "./lib/content-rules.mjs";
 import { checkImage, isImageName } from "./lib/image-rules.mjs";
 
 const REPO_ROOT = process.cwd();
@@ -345,6 +346,28 @@ function countFiles(dir) {
   return count;
 }
 
+// Content file counts, one key per content root (CONTENT_ROOTS) plus `bios`.
+//
+// Character bios live in prompts/characters/. They are their own category
+// (Character Packs) rather than generic prompts, so they are counted as `bios`
+// and excluded from `prompts`: countFiles(prompts) is recursive, so the plain
+// prompts count is the total minus the bios under it. Key order keeps the
+// three original roots and `bios` first, then the rest in table order.
+const CONTENTS_HEAD = ["triggers", "actions", "prompts"];
+function countContents(pluginDir) {
+  const promptsDir = path.join(pluginDir, "prompts");
+  const biosCount = countFiles(path.join(promptsDir, "characters"));
+  const countRoot = (root) =>
+    root === "prompts" ? countFiles(promptsDir) - biosCount : countFiles(path.join(pluginDir, root));
+  const contents = {};
+  for (const root of CONTENTS_HEAD) contents[root] = countRoot(root);
+  contents.bios = biosCount;
+  for (const root of CONTENT_ROOTS) {
+    if (!CONTENTS_HEAD.includes(root)) contents[root] = countRoot(root);
+  }
+  return contents;
+}
+
 // ----- Load moderation state ------------------------------------------------
 
 // Map<pluginId, { reason, hidden_at, moderator? }> — full entry preserved
@@ -437,24 +460,7 @@ if (!fs.existsSync(PLUGINS_DIR)) {
         gitFirstLine(["log", "--reverse", "--format=%aI", "--", relPath]);
       const lastUpdated = gitFirstLine(["log", "-1", "--format=%aI", "--", relPath]);
 
-      // Count content files, one key per content root: prompts, triggers,
-      // actions, knowledge packs and virtual entities.
-      //
-      // Character bios live in prompts/characters/. They are their own
-      // category (Character Packs) rather than generic prompts, so count them
-      // separately as `bios` and exclude them from the `prompts` count — a
-      // pack of bios is not a prompt plugin. countFiles(prompts) is recursive,
-      // so the plain prompts count is the total minus the bios under it.
-      const promptsDir = path.join(pluginDir, "prompts");
-      const biosCount = countFiles(path.join(promptsDir, "characters"));
-      const contents = manifest.type === "bundle" ? {
-        triggers: countFiles(path.join(pluginDir, "triggers")),
-        actions: countFiles(path.join(pluginDir, "actions")),
-        prompts: countFiles(promptsDir) - biosCount,
-        bios: biosCount,
-        knowledge: countFiles(path.join(pluginDir, "knowledge")),
-        entities: countFiles(path.join(pluginDir, "entities")),
-      } : undefined;
+      const contents = manifest.type === "bundle" ? countContents(pluginDir) : undefined;
 
       // Build mods array (name + file + required)
       const mods = Array.isArray(manifest.mods)
