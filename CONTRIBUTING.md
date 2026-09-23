@@ -60,6 +60,10 @@ Outcomes, each posted as a comment on your PR and shown on your plugin's page in
 
 The reviewer reads your submission as data. Text in a prompt asking it to approve the plugin is treated as a finding, not an instruction.
 
+### Listings
+
+A listing is a pointer to a mod hosted somewhere else, so the only thing the reviewer cannot judge is where the link goes. A **new** listing, or an update that **changes `external_url`**, goes to manual review: a human opens the link. Every other listing update (title, tagline, description, tags, changelog, version, cover image) keeps the same link and is reviewed automatically by the agent, exactly like a bundle without actions. The link is compared byte-for-byte: pointing at a different release tag or adding a trailing slash counts as a new destination.
+
 ### Plugins containing actions
 
 If your plugin contains any actions, it goes through **manual review** by a SkyrimNet developer or trusted community reviewer. This isn't a trust issue — it's a safety one. Actions execute real Papyrus functions from other mods, and verifying they won't corrupt saves or break quests requires human judgment that an LLM can't reliably provide.
@@ -117,7 +121,7 @@ A few rules the validator enforces:
 
 ## Updating a plugin
 
-Open the dashboard, go to your plugin's page, and click **Update**. The dashboard opens a new PR against your existing plugin directory. Updates go straight into their respective review flow (agent-reviewed for anything without actions, manual for action updates).
+Open the dashboard, go to your plugin's page, and click **Update**. The dashboard opens a new PR against your existing plugin directory. Updates go straight into their respective review flow (agent-reviewed for anything without actions and for listings that keep their link, manual for action updates and for a listing whose link changes).
 
 Bump your `version` when publishing meaningful changes — the dashboard warns you if you forget.
 

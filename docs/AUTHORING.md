@@ -28,6 +28,10 @@ good, not whether it is well-formed.
   a history, so do not paste previous entries into it. A listing carries one too, attached to the
   `version` it declares; the note describes that version of the externally hosted mod.
 - `tags` are search terms. Three to six specific ones beat a dozen generic ones.
+- A **listing** is judged on the same fields: `title`, `tagline`, `description`, `nsfw`,
+  `changelog`, `tags` and the cover image. `mods` and `requirements` describe what the hosted
+  mod needs and may be empty; there are no content files, and the reviewer never opens or judges
+  `external_url` (a new or changed link is always a human's decision, before this guide applies).
 - `language` is optional. Pick it from the dashboard's list when the content is not written in
   English, or when you want it findable under the browse page's Language filter. It is stored as
   a bare ISO 639-1 code (`de`, `fr`). Leave it unset rather than guessing; unset means undeclared.

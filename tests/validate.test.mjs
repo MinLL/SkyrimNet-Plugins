@@ -126,26 +126,112 @@ test("happy path: mixed-case author directory case-folds onto a lowercase id", (
   assert.equal(res.result.success, true, errorMessages(res.result));
 });
 
-test("happy path: listing with no content files passes and routes to manual review", () => {
+// ----- Listings --------------------------------------------------------------
+//
+// A listing is a pointer. Where it points is the only thing the agent cannot
+// judge (no network), so a NEW listing and a changed external_url always go to
+// a human. An update that keeps the link is prose plus at most a cover image,
+// and takes the agent path like any bundle without actions.
+
+const LISTING_MANIFEST = {
+  id: "bob.some-external-mod",
+  type: "listing",
+  title: "Bob's External Mod Listing",
+  tagline: "Hosted elsewhere.",
+  description: "A listing entry.",
+  author: "bob",
+  tags: [],
+  nsfw: false,
+  icon: "package",
+  mods: [],
+  external_url: "https://example.com/mod",
+};
+const LISTING_ON_MAIN = {
+  plugins: { "plugins/bob/some-external-mod": { manifest: LISTING_MANIFEST, files: {} } },
+};
+
+/** Run a PR against a base that already carries LISTING_ON_MAIN (or `base`). */
+function validateListingUpdate(manifest, { base = LISTING_ON_MAIN, files = {}, ...runOpts } = {}) {
+  const baseDir = makeBaseDir(base);
+  const prDir = makeTempDir();
+  try {
+    const changed = writePlugin(prDir, "plugins/bob/some-external-mod", { manifest, files });
+    return runValidate({ baseDir, prDir, changed, ...runOpts });
+  } finally {
+    rmDir(prDir);
+    rmDir(baseDir);
+  }
+}
+
+test("happy path: a new listing with no content files passes and routes to manual review", () => {
   const res = validatePlugin({
     pluginDir: "plugins/bob/some-external-mod",
-    manifest: {
-      id: "bob.some-external-mod",
-      type: "listing",
-      title: "Bob's External Mod Listing",
-      tagline: "Hosted elsewhere.",
-      description: "A listing entry.",
-      author: "bob",
-      tags: [],
-      nsfw: false,
-      icon: "package",
-      mods: [],
-      external_url: "https://example.com/mod",
-    },
+    manifest: LISTING_MANIFEST,
     files: {},
   });
   assert.equal(res.result.success, true, errorMessages(res.result));
   assert.deepEqual(res.result.labels, ["manual-review"]);
+  assert.match(res.result.manualReason, /new listings are always reviewed by a human/i);
+});
+
+test("listing update that keeps external_url routes to agent review", () => {
+  const res = validateListingUpdate({
+    ...LISTING_MANIFEST,
+    title: "Bob's External Mod Listing, Renamed",
+    tagline: "Still hosted elsewhere.",
+    description: "A listing entry with a longer description.",
+    tags: ["immersion"],
+    version: "1.2.0",
+    changelog: "Now supports the latest release.",
+  });
+  assert.equal(res.result.success, true, errorMessages(res.result));
+  assert.deepEqual(res.result.labels, ["ready-for-agent-review"]);
+  assert.equal(res.result.plugin_root, "plugins/bob/some-external-mod");
+});
+
+test("listing update that changes external_url routes to manual review", () => {
+  const res = validateListingUpdate({ ...LISTING_MANIFEST, external_url: "https://example.com/mod-v2" });
+  assert.equal(res.result.success, true, errorMessages(res.result));
+  assert.deepEqual(res.result.labels, ["manual-review"]);
+  assert.match(res.result.manualReason, /changes the listing's `external_url`/i);
+});
+
+test("listing update: the external_url comparison is exact (a trailing slash is a new destination)", () => {
+  const res = validateListingUpdate({ ...LISTING_MANIFEST, external_url: "https://example.com/mod/" });
+  assert.equal(res.result.success, true, errorMessages(res.result));
+  assert.deepEqual(res.result.labels, ["manual-review"]);
+});
+
+test("a listing whose base manifest is unreadable is treated as new (manual review)", () => {
+  const corruptOnMain = {
+    plugins: { "plugins/bob/some-external-mod": { manifest: "{ not json", files: {} } },
+  };
+  const res = validateListingUpdate(LISTING_MANIFEST, { base: corruptOnMain });
+  assert.equal(res.result.success, true, errorMessages(res.result));
+  assert.deepEqual(res.result.labels, ["manual-review"]);
+  assert.match(res.result.manualReason, /new listings/i);
+});
+
+test("converting a bundle on main into a listing is a new listing (manual review)", () => {
+  const bundleOnMain = {
+    plugins: {
+      "plugins/bob/some-external-mod": {
+        manifest: goodManifest({ id: "bob.some-external-mod", title: "Bob's External Mod Listing" }),
+        files: GOOD_FILES,
+      },
+    },
+  };
+  const res = validateListingUpdate(LISTING_MANIFEST, { base: bundleOnMain });
+  assert.equal(res.result.success, true, errorMessages(res.result));
+  assert.deepEqual(res.result.labels, ["manual-review"]);
+  assert.match(res.result.manualReason, /new listings/i);
+});
+
+test("a same-url listing update opened outside the dashboard still routes to manual review", () => {
+  const res = validateListingUpdate({ ...LISTING_MANIFEST, tagline: "Edited by hand." }, { prAuthor: "somebody", prBody: "" });
+  assert.equal(res.result.success, true, errorMessages(res.result));
+  assert.deepEqual(res.result.labels, ["manual-review"]);
+  assert.match(res.result.manualReason, /opened manually/i);
 });
 
 test("non-dashboard submissions still validate but route to manual review", () => {
@@ -987,7 +1073,7 @@ test("cover image: image_file is null when the manifest names none", () => {
   assert.equal(res.result.image_file, null);
 });
 
-test("cover image: a listing may carry a JPEG and still routes to manual review", () => {
+test("cover image: a new listing may carry a JPEG and still routes to manual review", () => {
   const manifest = goodManifest({
     type: "listing", external_url: "https://example.org/mod", image: "cover.jpg",
   });
@@ -996,6 +1082,16 @@ test("cover image: a listing may carry a JPEG and still routes to manual review"
   assert.equal(res.result.success, true, errorMessages(res.result));
   assert.deepEqual(res.result.labels, ["manual-review"]);
   assert.equal(res.result.image_file, "plugins/bob/test-pack/cover.jpg");
+});
+
+test("cover image: adding one to a listing that keeps its link goes to the agent, image_file set", () => {
+  const res = validateListingUpdate(
+    { ...LISTING_MANIFEST, image: "cover.jpg" },
+    { files: { "cover.jpg": makeJpeg(1280, 720) } },
+  );
+  assert.equal(res.result.success, true, errorMessages(res.result));
+  assert.deepEqual(res.result.labels, ["ready-for-agent-review"]);
+  assert.equal(res.result.image_file, "plugins/bob/some-external-mod/cover.jpg");
 });
 
 test("cover image: an image file the manifest does not name is refused", () => {

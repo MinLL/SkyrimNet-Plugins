@@ -88,6 +88,7 @@ Submissions go through one of two flows depending on what they contain:
 
 - **Anything without actions** — reviewed automatically by SkyrimNet's reviewer (a Claude agent run from the maintainer's private automation repo, never from this repo's own Actions). It checks for spam, forbidden content, obfuscation, accuracy of the NSFW flag, and then the authoring guide in [docs/AUTHORING.md](docs/AUTHORING.md). Approved submissions auto-merge; a submission that needs changes is closed with feedback so you can republish from the dashboard.
 - **Any actions included** — reviewed manually by a SkyrimNet developer or trusted community member. Manual review can take up to a week. This is not a trust issue — Papyrus has no access control, and verifying an action is safe against save corruption requires human judgment.
+- **Listings** — a new listing, or an update that changes its `external_url`, is reviewed manually: the reviewer checks where the link goes, which the agent cannot. An update that keeps the same link (title, tagline, description, tags, changelog, version, cover image) is reviewed automatically like any bundle without actions.
 
 ## NSFW content
 

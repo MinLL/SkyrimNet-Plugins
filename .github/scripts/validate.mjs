@@ -103,6 +103,15 @@ const result = {
 // can run from the early-exit paths before the identity section assigns it.
 let isOfficialPath = false;
 
+// Set once the manifest is parsed and the PR is a listing: how this listing
+// relates to the one on the base branch. "same-url" is the only value that
+// lets a listing reach the agent; the other two are a human's call.
+//   null          - not a listing
+//   "new"         - no listing at this path on main
+//   "url-changed" - on main, but external_url differs
+//   "same-url"    - on main with the identical external_url
+let listingUpdate = null;
+
 function addError(file, message) {
   result.errors.push({ file, message });
   // Emit GitHub Actions annotation so it shows inline in the PR diff
@@ -627,10 +636,33 @@ if (typeof manifest.author === "string") {
   }
 }
 
-// Listings are now supported and route to manual-review (see routeOrFail
-// below). The schema enforces that listings have an external_url and no
-// content files, so the structural checks above already catch malformed
-// listing submissions — nothing to gate here.
+// Listings. The schema enforces external_url and the content-file gate below
+// refuses files, so structurally there is nothing more to check. What decides
+// the route is the link: a listing is a pointer, and where it points is the
+// one thing only a human can vet (the agent has no network). A NEW listing,
+// or one whose external_url changes, is therefore always routed to a human
+// (see routeOrFail). An update that keeps the link byte-for-byte changes only
+// prose (title, tagline, description, tags, changelog, version, the nsfw
+// flag) and at most a cover image, the same class of content the agent
+// already reviews for bundles, so it takes the agent path. The comparison is
+// exact: a trailing slash, a different release tag, or a host change is a new
+// destination.
+if (manifest.type === "listing") {
+  let baseManifest = null;
+  try {
+    baseManifest = JSON.parse(fs.readFileSync(path.join(env.BASE_DIR, pluginRoot, "manifest.json"), "utf8"));
+  } catch {
+    baseManifest = null; // absent or unreadable on main: a new listing
+  }
+  if (baseManifest === null || baseManifest.type !== "listing" || typeof baseManifest.external_url !== "string") {
+    listingUpdate = "new";
+  } else if (baseManifest.external_url !== manifest.external_url) {
+    listingUpdate = "url-changed";
+  } else {
+    listingUpdate = "same-url";
+  }
+  console.log(`Listing '${pluginRoot}': ${listingUpdate}`);
+}
 
 // Slug consistency (re-slugifying the manifest title and comparing to the
 // directory name) used to live here, but it was dropped because the dashboard
@@ -1083,13 +1115,15 @@ function routeOrFail() {
     return;
   }
 
-  if (manifest.type === "listing") {
-    // Should have been caught by the listing gate above, but belt-and-suspenders
+  if (manifest.type === "listing" && listingUpdate !== "same-url") {
     result.labels = ["manual-review"];
-    result.manualReason = "Listing plugins are always manually reviewed.";
+    result.manualReason =
+      listingUpdate === "url-changed"
+        ? "This PR changes the listing's `external_url`. A listing is a pointer, and a new destination is always checked by a human before it goes live. Updates that keep the same link are reviewed automatically."
+        : "New listings are always reviewed by a human, who checks where the link goes. Later updates that keep the same `external_url` are reviewed automatically.";
     return;
   }
 
-  // Anything without actions: knowledge, entities and records are prose in a prompt's class for the agent reviewer.
+  // Anything without actions (knowledge, entities, records, or a listing that keeps its link) goes to the agent reviewer.
   result.labels = ["ready-for-agent-review"];
 }
