@@ -15,7 +15,7 @@
   "mods": [],
   "language": "en",
   "image": "cover.png",
-  "version": "1.0.2",
-  "changelog": "Added Image",
+  "version": "1.0.3",
+  "changelog": "Replace image with proper aspect ratio version",
   "min_skyrimnet_version": "0.25.0"
 }
