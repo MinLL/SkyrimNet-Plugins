@@ -26,7 +26,6 @@ import {
   writePlugin,
 } from "./helpers/harness.mjs";
 import { makeJpeg, makePng } from "./helpers/images.mjs";
-import { NEW_ROOTS_MIN_ENGINE } from "../.github/scripts/lib/content-rules.mjs";
 
 /** Build a PR checkout containing exactly one plugin and validate it. */
 function validatePlugin({ pluginDir = "plugins/bob/test-pack", manifest, files = GOOD_FILES, ...rest }) {
@@ -1088,22 +1087,31 @@ test("cover image: a mis-cased root image gets the image message, not the conten
 });
 
 // ----- Config-system roots (one record per file) ----------------------------
-//
-// voice_effects, items, spells, furniture, identity, filters, translator and
-// dialogue_actions. Each root's identity rule is checked end to end here; the
-// rules themselves are unit-tested in record-rules.test.mjs.
+// Each root's record rules run end to end here (unit tests: record-rules.test.mjs). Every one of these roots
+// is reserved in ROOT_TABLE, so a record that passes leaves exactly the per-root ROOT_RESERVED refusal.
 
-const RECORD_MIN_ENGINE = NEW_ROOTS_MIN_ENGINE;
-const RECORD_MIN_ENGINE_RE = new RegExp(RECORD_MIN_ENGINE.replace(/\./g, "\\."));
+const RESERVED_ROOT_RE = /\[ROOT_RESERVED\]$/;
 
 function acceptsRecord(files, manifest = goodManifest()) {
   const res = validatePlugin({ manifest, files });
-  assert.equal(res.result.success, true, errorMessages(res.result));
-  assert.deepEqual(res.result.labels, ["ready-for-agent-review"]);
+  const other = res.result.errors.filter((e) => !RESERVED_ROOT_RE.test(e.message));
+  assert.deepEqual(other, [], errorMessages(res.result));
+  const roots = new Set(Object.keys(files).map((file) => file.split("/")[0]));
+  assert.equal(res.result.errors.length, roots.size, errorMessages(res.result));
   return res;
 }
 
-test("voice_effects: a recipe whose id is the stem is accepted and agent-reviewed", () => {
+test("a reserved root is refused whatever min_skyrimnet_version declares, naming the root", () => {
+  const files = { "spells/skyrim-esm_012FCD.yaml": "form: Skyrim.esm|0x012FCD\n" };
+  for (const declared of ["0.24.0", "0.25.0", "9.0.0"]) {
+    const res = validatePlugin({ manifest: goodManifest({ min_skyrimnet_version: declared }), files });
+    assertRejected(res, /Files under spells\/ cannot be published yet: no SkyrimNet release reads spells\/\.[^\n]*\[ROOT_RESERVED\]/);
+    assert.equal(res.result.errors.length, 1);
+    assert.equal(res.result.errors[0].file, "plugins/bob/test-pack/manifest.json");
+  }
+});
+
+test("voice_effects: a recipe whose id is the stem passes its record rules", () => {
   acceptsRecord({ "voice_effects/draugr.yaml": "id: draugr\nname: Draugr\nchain: []\n" });
   acceptsRecord({ "voice_effects/nested/ve_1a2b3c.yaml": "id: ve_1a2b3c\n" });
 });
@@ -1136,7 +1144,7 @@ test("spells: a record at its form stem is accepted; a bad form reference is ref
   assertRejected(
     validatePlugin({ manifest: goodManifest(), files: { "spells/skyrim-esm_012FCD.yaml": "form: 0x012FCD\n" } }),
     // YAML reads the bare hex as the integer 77773; the message says to quote it.
-    /form 77773 is not a form reference[^\n]*as a quoted string\. \[FORM_INVALID\]/,
+    /form is the number 77773, not a form reference[^\n]*as a quoted string\. \[FORM_INVALID\]/,
   );
   assertRejected(
     validatePlugin({ manifest: goodManifest(), files: { "spells/skyrim-esm_012FCD.yaml": "form: Skyrim.esm|0x012FCD\nenabled: true\n" } }),
@@ -1144,21 +1152,10 @@ test("spells: a record at its form stem is accepted; a bad form reference is ref
   );
 });
 
-test("spells: a plugin declaring a min_skyrimnet_version below the root's release is refused, naming the version", () => {
-  const files = { "spells/skyrim-esm_012FCD.yaml": "form: Skyrim.esm|0x012FCD\n" };
-  const res = validatePlugin({ manifest: goodManifest({ min_skyrimnet_version: "0.24.0" }), files });
-  assertRejected(res, /Files under spells\/ need SkyrimNet 0\.25\.0 or newer, but manifest\.min_skyrimnet_version is '0\.24\.0'/);
-  assert.match(errorMessages(res.result), RECORD_MIN_ENGINE_RE);
-  assert.match(errorMessages(res.result), /\[ROOT_MIN_VERSION\]/);
-  assert.equal(res.result.errors[0].file, "plugins/bob/test-pack/manifest.json");
-  // Exactly the root's release passes; so does anything newer.
-  acceptsRecord(files, goodManifest({ min_skyrimnet_version: RECORD_MIN_ENGINE }));
-  acceptsRecord(files, goodManifest({ min_skyrimnet_version: "1.0.0" }));
-});
-
 test("the original roots carry no per-root minimum", () => {
   const res = validatePlugin({ manifest: goodManifest({ min_skyrimnet_version: "0.24.0" }) });
   assert.equal(res.result.success, true, errorMessages(res.result));
+  assert.deepEqual(res.result.labels, ["ready-for-agent-review"]);
 });
 
 test("a plugin mixing two gated roots reports the gate once per root", () => {
@@ -1170,7 +1167,7 @@ test("a plugin mixing two gated roots reports the gate once per root", () => {
     },
   });
   assertRejected(res);
-  const gates = res.result.errors.filter((e) => /\[ROOT_MIN_VERSION\]/.test(e.message));
+  const gates = res.result.errors.filter((e) => RESERVED_ROOT_RE.test(e.message));
   assert.equal(gates.length, 2);
   assert.ok(gates.some((e) => /spells\//.test(e.message)));
   assert.ok(gates.some((e) => /voice_effects\//.test(e.message)));
@@ -1185,15 +1182,19 @@ test("furniture: a record at its form stem is accepted; a missing form is refuse
 });
 
 test("identity: a link at the slug of its name is accepted; an unknown kind is refused", () => {
-  acceptsRecord({ "identity/serana_s_shadow.yaml": "name: Serana's Shadow\nnpc: Dawnguard.esm|0x002B74\nvirtual: Shadow\n" });
-  acceptsRecord({ "identity/line_of_kings.yaml": "kind: succession\nname: Line of Kings\nfrom: a\nto: b\n" });
+  acceptsRecord({ "identity/serana_s_shadow.yaml": "name: Serana's Shadow\nidentityA: virtual:Shadow\nidentityB: npc:Dawnguard.esm:0x002B74\n" });
+  acceptsRecord({ "identity/line_of_kings.yaml": "kind: succession\nname: Line of Kings\nfrom: npc:Skyrim.esm:0x0350B8\nto: npc:Skyrim.esm:0x0656E2\n" });
+  assertRejected(
+    validatePlugin({ manifest: goodManifest(), files: { "identity/serana_s_shadow.yaml": "name: Serana's Shadow\nidentityA: virtual:Shadow\nidentityB: npc:0A002B74\n" } }),
+    /identityB 'npc:0A002B74' is a runtime form id, which depends on load order\. Spell it 'npc:<Plugin\.esp>:0x002B74'[^\n]*\[NPC_REF_LOAD_ORDER\]/,
+  );
   assertRejected(
     validatePlugin({ manifest: goodManifest(), files: { "identity/shadow.yaml": "name: Serana's Shadow\n" } }),
     /stem 'shadow' is not the slug of name 'Serana's Shadow', which is 'serana_s_shadow'[^\n]*\[SLUG_NOT_STEM\]/,
   );
   assertRejected(
     validatePlugin({ manifest: goodManifest(), files: { "identity/x.yaml": "kind: merge\nname: x\n" } }),
-    /kind 'merge' is not one a identity\/ file may carry\. Use one of link, succession/,
+    /kind is 'merge', not one a identity\/ file may carry\. Use one of link, succession/,
   );
 });
 
@@ -1242,7 +1243,7 @@ test("dialogue_actions: a lists contribution and an instruction are accepted; a 
       manifest: goodManifest(),
       files: { "dialogue_actions/TIF__000D9B53.yaml": "kind: instruction\nkey: TIF__000D9B53\ntext: x\ncategory: lodging\n" },
     }),
-    /category 'lodging' is not a dialogue-action category\. Use one of quest, follower, merchant, trainer, carriage, innkeeper, bard, marriage, crime, other\. \[CATEGORY_UNKNOWN\]/,
+    /category is 'lodging', not a dialogue-action category\. Use one of quest, follower, merchant, trainer, carriage, innkeeper, bard, marriage, crime, other\. \[CATEGORY_UNKNOWN\]/,
   );
   assertRejected(
     validatePlugin({

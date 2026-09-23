@@ -1,23 +1,6 @@
 #!/usr/bin/env node
-// SkyrimNet Plugins — structural validator
-//
-// Runs on every dashboard pull request from the private skyrimnet-ops repo
-// (.github/workflows/hub-review.yml there), which checks this file out from
-// main and never from the PR. Consumes:
-//   - BASE_DIR:      path to the base branch checkout (trusted — schemas, index.json, etc.)
-//   - PR_DIR:        path to the PR head checkout (untrusted — only plugins/ is sparse-checked-out)
-//   - PR_FILES_FILE: path to a newline-separated list of files this PR changes (written by
-//                    the workflow from the GitHub API). The validator uses this instead of
-//                    walking PR_DIR so unchanged plugins aren't flagged as part of the submission.
-//   - PR_AUTHOR:     GitHub login of the PR author (used to detect bot vs manual submissions)
-//   - PR_BODY:       PR description body (used to detect dashboard-submitted vs manual PRs)
-//   - PR_NUMBER:     PR number (informational, for log output)
-//   - RESULT_FILE:   absolute path to write the JSON result to (workflow reads this for labels/comments)
-//
-// Never consumes anything from the PR side that could influence execution:
-// no require(), no eval(), no dynamic imports of PR files. The PR is treated
-// as pure data to be read and structurally validated against schemas loaded
-// from BASE_DIR.
+// Structural validator run by skyrimnet-ops' hub-review.yml from main (env: BASE_DIR trusted, PR_DIR untrusted,
+// PR_FILES_FILE, PR_AUTHOR, PR_BODY, PR_NUMBER, RESULT_FILE); the PR side is data only, never executed.
 
 import fs from "node:fs";
 import path from "node:path";
@@ -25,10 +8,7 @@ import Ajv from "ajv/dist/2020.js";
 import addFormats from "ajv-formats";
 import yaml from "js-yaml";
 
-// Structural rules shared with the C++ installer (see
-// lib/content-rules.mjs and tests/fixtures/path-cases.json). Everything
-// path- and identity-shaped lives there so both sides reject the same
-// attacks; this file only wires the rules to PR data and reporting.
+// Path and identity rules shared with the C++ installer; this file wires them to PR data and reporting.
 import {
   CODES,
   CONTENT_ROOTS,
@@ -41,37 +21,26 @@ import {
   foldCase,
   isReservedAuthorSegment,
 } from "./lib/content-rules.mjs";
-// One-record-per-file roots: which in-file field is the identity, `kind`
-// values, the spell/item `npc_usable` flag, dialogue-action categories.
+// What one record file carries, per one-record-per-file root.
 import { RECORD_ROOTS, checkRecord } from "./lib/record-rules.mjs";
-// The one optional cover image (manifest.image): header-only format, size
-// and dimension checks. Hub metadata, never installed, so it has no C++ twin.
+// The one optional cover image (manifest.image): hub metadata, never installed, so it has no C++ twin.
 import { IMAGE_CODES, checkImage, isImageName } from "./lib/image-rules.mjs";
 
 // ----- Configuration -------------------------------------------------------
 
+// One YAML record (a trigger, an action, an entity, a config-system record): a handful of scalars.
+const RECORD_FILE_CAP = 32 * 1024;
+
+// Per-file caps in bytes; prompts have only the bundle-level cap.
 const PER_FILE_SIZE_LIMITS = {
-  // bytes; matches memory's locked size policy
-  trigger: 32 * 1024,
-  action: 32 * 1024,
-  // Knowledge packs are whole collections of entries, so they get a far larger
-  // cap — 1 MB, matching MAX_FILE_BYTES on the fateless publish path so a pack
-  // the dashboard accepts is a pack this validator accepts. Authors with more
-  // than that split the pack across several .sknpack files.
+  trigger: RECORD_FILE_CAP,
+  action: RECORD_FILE_CAP,
+  // Whole collections of entries; matches MAX_FILE_BYTES on the fateless publish path.
   knowledge: 1024 * 1024,
-  // One virtual-NPC record: seven scalar fields. Same cap as a trigger.
-  entity: 32 * 1024,
-  // prompts have no per-file cap (only bundle-level applies)
-  // A voice-effect recipe carries a whole effect chain; the other record roots
-  // are a handful of scalars each, capped like a trigger.
-  voice_effects: 64 * 1024,
-  items: 32 * 1024,
-  spells: 32 * 1024,
-  furniture: 32 * 1024,
-  identity: 32 * 1024,
-  filters: 32 * 1024,
-  translator: 32 * 1024,
-  dialogue_actions: 32 * 1024,
+  entity: RECORD_FILE_CAP,
+  ...Object.fromEntries(RECORD_ROOTS.map((root) => [root, RECORD_FILE_CAP])),
+  // A recipe carries a whole effect chain.
+  voice_effects: 2 * RECORD_FILE_CAP,
 };
 
 // Virtual entities the engine itself defines. The engine honours only the
@@ -778,9 +747,7 @@ for (const collision of findPathCollisions(contentPaths)) {
   );
 }
 
-// Per-root minimum engine release. An older SkyrimNet refuses the whole
-// install on a root it does not know, so a plugin using one must declare a
-// min_skyrimnet_version the root's release satisfies.
+// Per-root minimum engine release: a reserved root refuses, a versioned one needs min_skyrimnet_version at least it.
 if (manifest.type !== "listing") {
   for (const root of CONTENT_ROOTS) {
     if (contents[root] === 0) continue;
@@ -789,28 +756,33 @@ if (manifest.type !== "listing") {
   }
 }
 
-function validateYamlFile(rel, abs, subPath, stat, kind) {
-  const limit = PER_FILE_SIZE_LIMITS[kind];
-  if (limit && stat.size > limit) {
+// The size cap and YAML parse every YAML content file starts with: the document, or undefined after an error.
+// `what` names the file class in the cap message ("trigger", "entity", "items/").
+function loadYamlRecord(rel, abs, stat, limit, what) {
+  if (stat.size > limit) {
     addError(
       rel,
-      `File is ${formatBytes(stat.size)}, exceeds the ${formatBytes(limit)} per-file limit for ${kind} files.`,
+      `File is ${formatBytes(stat.size)}, exceeds the ${formatBytes(limit)} per-file limit for ${what} files.`,
     );
-    return;
+    return undefined;
   }
-  // Parse only. Structural validation of trigger/action YAML is handled by
-  // SkyrimNet's own in-game validators before the dashboard opens the PR —
-  // we trust that pipeline and don't re-check the shape here. The one field
-  // we DO check is `name`: path is the only identity in the content store, so
-  // the in-file name must equal the filename stem (§2, decision 5).
-  let doc;
   try {
-    doc = yaml.load(fs.readFileSync(abs, "utf8"));
+    return yaml.load(fs.readFileSync(abs, "utf8"));
   } catch (e) {
     addError(rel, `YAML parse error: ${e.message}`);
-    return;
+    return undefined;
   }
-  if (doc === null || typeof doc !== "object" || Array.isArray(doc)) {
+}
+
+function isYamlMapping(doc) {
+  return doc !== null && typeof doc === "object" && !Array.isArray(doc);
+}
+
+// Triggers and actions: the engine validated the shape before the dashboard opened the PR; `name` == stem is checked.
+function validateYamlFile(rel, abs, subPath, stat, kind) {
+  const doc = loadYamlRecord(rel, abs, stat, PER_FILE_SIZE_LIMITS[kind], kind);
+  if (doc === undefined) return;
+  if (!isYamlMapping(doc)) {
     addError(rel, `${kind} files must contain a YAML mapping at the top level.`);
     return;
   }
@@ -884,33 +856,12 @@ function validateKnowledgeFile(rel, abs, stat) {
   }
 }
 
-// Virtual entities (`entities/*.entity.yaml`), one record per virtual NPC.
-// Like triggers and actions the shape is the dashboard's to get right and the
-// engine parses it tolerantly, so this is parse-only plus the things the engine
-// would otherwise swallow silently: a record with no `entityName` never loads,
-// a plugin's copy of a fixed entity is ignored on load, an unknown
-// `conversationMode` becomes `private`, and two records naming the same entity
-// collapse to whichever loads last. There is no name==stem contract — the
-// engine keys records by `entityName` and derives the filename from it, so
-// checkNameMatchesStem does not apply.
+// Virtual entities, keyed by `entityName` (no name==stem contract): what the engine would otherwise swallow silently,
+// a record without a name, a plugin's copy of a fixed entity, an unknown conversationMode, two records naming one entity.
 function validateEntityFile(rel, abs, stat, seenNames) {
-  const limit = PER_FILE_SIZE_LIMITS.entity;
-  if (stat.size > limit) {
-    addError(
-      rel,
-      `File is ${formatBytes(stat.size)}, exceeds the ${formatBytes(limit)} per-file limit for entity files.`,
-    );
-    return;
-  }
-
-  let doc;
-  try {
-    doc = yaml.load(fs.readFileSync(abs, "utf8"));
-  } catch (e) {
-    addError(rel, `YAML parse error: ${e.message}`);
-    return;
-  }
-  if (doc === null || typeof doc !== "object" || Array.isArray(doc)) {
+  const doc = loadYamlRecord(rel, abs, stat, PER_FILE_SIZE_LIMITS.entity, "entity");
+  if (doc === undefined) return;
+  if (!isYamlMapping(doc)) {
     addError(rel, "entity files must contain a YAML mapping at the top level.");
     return;
   }
@@ -950,26 +901,10 @@ function validateEntityFile(rel, abs, stat, seenNames) {
   seenNames.set(key, rel);
 }
 
-// One-record-per-file roots (voice_effects, items, spells, furniture, identity,
-// filters, translator, dialogue_actions): the size cap, a YAML parse, and the
-// per-root record rules in lib/record-rules.mjs.
+// One-record-per-file roots: the per-root record rules in lib/record-rules.mjs.
 function validateRecordFile(rel, abs, subPath, stat, root) {
-  const limit = PER_FILE_SIZE_LIMITS[root];
-  if (stat.size > limit) {
-    addError(
-      rel,
-      `File is ${formatBytes(stat.size)}, exceeds the ${formatBytes(limit)} per-file limit for ${root}/ files.`,
-    );
-    return;
-  }
-
-  let doc;
-  try {
-    doc = yaml.load(fs.readFileSync(abs, "utf8"));
-  } catch (e) {
-    addError(rel, `YAML parse error: ${e.message}`);
-    return;
-  }
+  const doc = loadYamlRecord(rel, abs, stat, PER_FILE_SIZE_LIMITS[root], `${root}/`);
+  if (doc === undefined) return;
   for (const issue of checkRecord(root, doc, subPath).issues) {
     addError(rel, `${issue.message} [${issue.code}]`);
   }
@@ -1080,17 +1015,8 @@ try {
   addWarning(null, `Could not check plugin id uniqueness: ${e.message}`);
 }
 
-/**
- * Every plugin id already present on the base branch, as
- * Map<'plugins/{author}/{slug}', case-folded '{author}.{slug}'>.
- *
- * Read primarily from the base checkout's directory tree rather than
- * index.json: the index is rebuilt only *after* a plugin merges, so a plugin
- * that landed minutes ago would be missing from it. Ids are derived from the
- * path, which is sound because every validated manifest's id case-folds onto
- * its own path. index.json is merged in as a belt-and-suspenders second
- * source.
- */
+// Every plugin id on the base branch as Map<'plugins/{author}/{slug}', folded '{author}.{slug}'>, from the base
+// checkout's tree (index.json is rebuilt only after a merge) with index.json merged in as a second source.
 function knownPluginIds() {
   const ids = new Map();
 
@@ -1164,11 +1090,6 @@ function routeOrFail() {
     return;
   }
 
-  // Pure triggers/prompts/knowledge/entities — agent review path. Knowledge
-  // packs do NOT force a human: the agent reviewer already knows how to scan
-  // .sknpack entries, and a pack's content is prose in the same class as a
-  // prompt. Neither do virtual entities: a record is a name, a voice and a
-  // conversation mode, and the entity's bio is a character prompt the agent
-  // reviews like any other. Only actions force manual review.
+  // Anything without actions: knowledge, entities and records are prose in a prompt's class for the agent reviewer.
   result.labels = ["ready-for-agent-review"];
 }

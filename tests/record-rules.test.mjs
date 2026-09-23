@@ -1,16 +1,14 @@
-// Unit tests for the per-root record rules in .github/scripts/lib/record-rules.mjs.
-//
-// One passing and one failing document per rule, checked on the parsed
-// document directly; tests/validate.test.mjs runs the same rules end to end
-// through validate.mjs against files on disk.
+// Unit tests for .github/scripts/lib/record-rules.mjs on parsed documents: a passing and a failing
+// document per rule. tests/validate.test.mjs runs the same rules end to end against files on disk.
 
 import test from "node:test";
 import assert from "node:assert/strict";
 
-import { CODES, IDENTITY_BY_ROOT } from "../.github/scripts/lib/content-rules.mjs";
+import { CODES } from "../.github/scripts/lib/content-rules.mjs";
 import {
-  DEFAULT_KIND_BY_ROOT,
   DIALOGUE_ACTION_CATEGORIES,
+  FILTER_LIST_FIELDS,
+  IDENTITY_REF_FIELDS,
   KINDS_BY_ROOT,
   RECORD_CODES,
   RECORD_ROOTS,
@@ -41,12 +39,11 @@ function assertCode(res, code, needle) {
   }
 }
 
-test("the record roots are exactly the table rows with a per-root identity", () => {
+test("the record roots are the eight config-system roots", () => {
   assert.deepEqual(
     [...RECORD_ROOTS].sort(),
     ["dialogue_actions", "filters", "furniture", "identity", "items", "spells", "translator", "voice_effects"],
   );
-  for (const root of RECORD_ROOTS) assert.notEqual(IDENTITY_BY_ROOT[root], undefined);
   assert.throws(() => checkRecord("triggers", { name: "x" }, "triggers/x.yaml"), TypeError);
 });
 
@@ -83,7 +80,37 @@ for (const root of ["items", "spells", "furniture"]) {
     assertCode(checkRecord(root, { form: "0x01396B" }, `${root}/${SKYRIM_STEM}.yaml`), RECORD_CODES.FORM_INVALID);
     assertCode(checkRecord(root, { form: ".esp|0x1" }, `${root}/${SKYRIM_STEM}.yaml`), RECORD_CODES.FORM_INVALID);
   });
+
+  test(`${root}: an .esl plugin's local id is 12 bits`, () => {
+    assertOk(checkRecord(root, { form: "MyLight.esl|0xFFF" }, `${root}/mylight-esl_000FFF.yaml`));
+    const wide = checkRecord(root, { form: "MyLight.esl|0x01ABCD" }, `${root}/mylight-esl_01ABCD.yaml`);
+    assertCode(wide, RECORD_CODES.FORM_ESL_WIDTH, /12 bits\. Drop the load-order digits: 'MyLight\.esl\|0x000BCD'/);
+    assert.equal(wide.issues.length, 1);
+    // An .esp with the same id is a full-width 24-bit id.
+    assertOk(checkRecord(root, { form: "MyMod.esp|0x01ABCD" }, `${root}/mymod_01ABCD.yaml`));
+  });
 }
+
+test("a YAML value is never echoed raw: a list or mapping is described, a long string is cut", () => {
+  const list = checkRecord("items", { form: ["Skyrim.esm", "0x01396B"] }, `items/${SKYRIM_STEM}.yaml`);
+  assertCode(list, RECORD_CODES.FORM_INVALID, /^form is a list, not a form reference/);
+  const mapping = checkRecord("items", { form: { plugin: "Skyrim.esm" } }, `items/${SKYRIM_STEM}.yaml`);
+  assertCode(mapping, RECORD_CODES.FORM_INVALID, /^form is a mapping, not a form reference/);
+  const number = checkRecord("items", { form: 77773 }, `items/${SKYRIM_STEM}.yaml`);
+  assertCode(number, RECORD_CODES.FORM_INVALID, /^form is the number 77773, not a form reference[^\n]*as a quoted string\.$/);
+  const kind = checkRecord("filters", { kind: ["actor"] }, "filters/x.yaml");
+  assertCode(kind, RECORD_CODES.KIND_UNKNOWN, /^kind is a list, not one a filters\/ file may carry/);
+  const category = checkRecord(
+    "dialogue_actions",
+    { kind: "instruction", key: "x", category: { a: 1 } },
+    "dialogue_actions/x.yaml",
+  );
+  assertCode(category, RECORD_CODES.CATEGORY_UNKNOWN, /^category is a mapping, not a dialogue-action category/);
+  const long = "Long Name ".repeat(20);
+  const name = checkRecord("identity", { name: long }, "identity/x.yaml");
+  assertCode(name, RECORD_CODES.SLUG_NOT_STEM, /'(Long Name ){8}…'/);
+  assert.ok(!name.issues[0].message.includes(long));
+});
 
 for (const root of ["items", "spells"]) {
   test(`${root}: 'enabled' is refused in favour of npc_usable`, () => {
@@ -112,15 +139,33 @@ test("slugOf folds to lowercase and collapses runs outside [a-z0-9] to one under
 });
 
 test("identity: the stem is the slug of the link name; kind defaults to link", () => {
-  assert.equal(DEFAULT_KIND_BY_ROOT.identity, "link");
   assert.deepEqual(KINDS_BY_ROOT.identity, ["link", "succession"]);
-  assertOk(checkRecord("identity", { name: "Serana's Shadow", npc: "Dawnguard.esm|0x002B74" }, "identity/serana_s_shadow.yaml"));
+  assertOk(checkRecord("identity", { name: "Serana's Shadow", identityA: "virtual:Shadow", identityB: "npc:Dawnguard.esm:0x002B74" }, "identity/serana_s_shadow.yaml"));
   assertOk(checkRecord("identity", { kind: "link", name: "Whispering Voice" }, "identity/Whispering_Voice.yaml"));
-  assertOk(checkRecord("identity", { kind: "succession", name: "Line of Kings", from: "a", to: "b" }, "identity/line_of_kings.yaml"));
+  assertOk(checkRecord("identity", { kind: "succession", name: "Line of Kings", from: "npc:Skyrim.esm:0x0350B8", to: "npc:Skyrim.esm:0x0656E2" }, "identity/line_of_kings.yaml"));
   assertCode(checkRecord("identity", { name: "Serana's Shadow" }, "identity/shadow.yaml"), RECORD_CODES.SLUG_NOT_STEM, /'serana_s_shadow'/);
   assertCode(checkRecord("identity", { name: "Мод" }, "identity/mod.yaml"), RECORD_CODES.SLUG_NOT_STEM, /no slug/);
   assertCode(checkRecord("identity", { kind: "link" }, "identity/x.yaml"), CODES.NAME_MISSING);
-  assertCode(checkRecord("identity", { kind: "merge", name: "x" }, "identity/x.yaml"), RECORD_CODES.KIND_UNKNOWN, /link, succession/);
+  assertCode(checkRecord("identity", { kind: "merge", name: "x" }, "identity/x.yaml"), RECORD_CODES.KIND_UNKNOWN, /kind is 'merge'[^\n]*link, succession/);
+});
+
+test("identity: an npc: reference is npc:Plugin.esp:0xLocalID; the runtime-id spelling is refused", () => {
+  assert.deepEqual(IDENTITY_REF_FIELDS, { link: ["identityA", "identityB"], succession: ["from", "to"] });
+  const link = (fields) => checkRecord("identity", { name: "L", ...fields }, "identity/l.yaml");
+  assertOk(link({ identityA: "npc:Skyrim.esm:0x01A66D", identityB: "npc: Dawnguard.esm : 2B74" }));
+  assertOk(link({ identityA: "npc:MyLight.esl:0xFFF" }));
+  const legacy = link({ identityA: "npc:0A012345" });
+  assertCode(legacy, RECORD_CODES.NPC_REF_LOAD_ORDER, /^identityA 'npc:0A012345' is a runtime form id[^\n]*'npc:<Plugin\.esp>:0x012345'/);
+  assertCode(link({ identityB: "npc:0xFE01ABCD" }), RECORD_CODES.NPC_REF_LOAD_ORDER, /identityB[^\n]*'npc:<Plugin\.esp>:0x000BCD'/);
+  assertCode(link({ identityA: "npc:serana" }), RECORD_CODES.NPC_REF_LOAD_ORDER, /'npc:Plugin\.esp:0xLocalID'/);
+  assertCode(link({ identityA: "npc:Skyrim.esm:0x0A01A66D" }), RECORD_CODES.NPC_REF_INVALID, /^identityA 'npc:Skyrim\.esm:0x0A01A66D' is not an NPC reference/);
+  assertCode(link({ identityA: "npc::0x1" }), RECORD_CODES.NPC_REF_INVALID);
+  assertCode(link({ identityA: "npc:MyLight.esl:0x01ABCD" }), RECORD_CODES.FORM_ESL_WIDTH, /Drop the load-order digits: 'npc:MyLight\.esl:0x000BCD'/);
+  // Succession fields get the same check; other spellings and non-strings are not this rule's business.
+  const succession = (fields) => checkRecord("identity", { kind: "succession", name: "S", ...fields }, "identity/s.yaml");
+  assertCode(succession({ from: "npc:0350B8", to: "npc:Skyrim.esm:0x0656E2" }), RECORD_CODES.NPC_REF_LOAD_ORDER, /^from /);
+  assertOk(succession({ from: "virtual:Old King", to: 42 }));
+  assertOk(link({ identityA: "npc:0A012345", kind: "succession" }));
 });
 
 // ----- filters: contributions any stem, rules id == stem -------------------
@@ -135,6 +180,45 @@ test("filters: kind is required; contributions take any stem, rules need id == s
   assertCode(checkRecord("filters", { kind: "npc" }, "filters/x.yaml"), RECORD_CODES.KIND_UNKNOWN);
   assertCode(checkRecord("filters", { kind: "dialogue_rule", id: "other" }, "filters/strip_grunts.yaml"), CODES.NAME_NOT_STEM, /id 'other'/);
   assertCode(checkRecord("filters", { kind: "tts_rule", pattern: "x" }, "filters/numbers.yaml"), CODES.NAME_MISSING);
+});
+
+test("filters: a contribution's six list fields must be lists of strings", () => {
+  assert.deepEqual(FILTER_LIST_FIELDS, [
+    "FactionWhitelist", "FactionBlacklist", "RaceWhitelist", "RaceBlacklist", "GenderWhitelist", "GenderBlacklist",
+  ]);
+  for (const kind of ["actor", "memory"]) {
+    const all = Object.fromEntries(FILTER_LIST_FIELDS.map((f) => [f, ["x"]]));
+    assertOk(checkRecord("filters", { kind, ...all }, "filters/x.yaml"));
+    for (const field of FILTER_LIST_FIELDS) {
+      const scalar = checkRecord("filters", { kind, [field]: "KhajiitRace" }, "filters/x.yaml");
+      assertCode(scalar, RECORD_CODES.LIST_NOT_STRINGS, new RegExp(`^'${field}' must be a list of strings, not 'KhajiitRace'\\.$`));
+      assertCode(checkRecord("filters", { kind, [field]: { a: 1 } }, "filters/x.yaml"), RECORD_CODES.LIST_NOT_STRINGS, /not a mapping/);
+      assertCode(checkRecord("filters", { kind, [field]: ["a", 2] }, "filters/x.yaml"), RECORD_CODES.LIST_NOT_STRINGS, /entry 2 is the number 2/);
+    }
+  }
+  // A rule's list-named field is not a contribution list.
+  assertOk(checkRecord("filters", { kind: "dialogue_rule", id: "x", RaceWhitelist: "no" }, "filters/x.yaml"));
+});
+
+test("filter rules and translator records carry an integer priority when they carry one", () => {
+  for (const doc of [
+    { kind: "dialogue_rule", id: "x" },
+    { kind: "tts_rule", id: "x" },
+  ]) {
+    assertOk(checkRecord("filters", { ...doc, priority: 10 }, "filters/x.yaml"));
+    assertOk(checkRecord("filters", { ...doc, priority: 0 }, "filters/x.yaml"));
+    assertOk(checkRecord("filters", { ...doc, priority: -5 }, "filters/x.yaml"));
+    assertOk(checkRecord("filters", doc, "filters/x.yaml"));
+    assertCode(checkRecord("filters", { ...doc, priority: 1.5 }, "filters/x.yaml"), RECORD_CODES.PRIORITY_NOT_INTEGER, /'priority' must be an integer[^\n]*the number 1\.5/);
+    assertCode(checkRecord("filters", { ...doc, priority: "10" }, "filters/x.yaml"), RECORD_CODES.PRIORITY_NOT_INTEGER, /'10'/);
+  }
+  // Contributions carry no priority; the field is not checked there.
+  assertOk(checkRecord("filters", { kind: "actor", priority: "x" }, "filters/x.yaml"));
+  assertOk(checkRecord("translator", { kind: "global", priority: 100 }, "translator/global.yaml"));
+  assertOk(checkRecord("translator", { kind: "faction", entityEditorId: "X", priority: 1 }, "translator/x.yaml"));
+  assertOk(checkRecord("translator", { kind: "npc", form: SKYRIM_FORM, priority: 1 }, `translator/${SKYRIM_STEM}.yaml`));
+  assertCode(checkRecord("translator", { kind: "global", priority: true }, "translator/global.yaml"), RECORD_CODES.PRIORITY_NOT_INTEGER, /the boolean true/);
+  assertCode(checkRecord("translator", { kind: "race", entityEditorId: "X", priority: [1] }, "translator/x.yaml"), RECORD_CODES.PRIORITY_NOT_INTEGER, /a list/);
 });
 
 // ----- translator: npc form stem, faction/race editor id, one global --------
