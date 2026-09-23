@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-09-23T01:51:16.908Z",
-  "stats_as_of": "2026-09-23T01:51:16.784Z",
+  "generated_at": "2026-09-23T02:17:44.945Z",
+  "stats_as_of": "2026-09-23T02:17:44.848Z",
   "plugins": [
     {
       "id": "plugins/min/belethor-remix",
@@ -61,6 +61,42 @@
       "stats": {
         "downloads": 0,
         "endorsements": 0
+      }
+    },
+    {
+      "id": "plugins/tetherball88/ostimnet",
+      "plugin_id": "tetherball88.ostimnet",
+      "type": "listing",
+      "title": "OStimNet",
+      "tagline": "Intimate encounter AI framework integration for OStim and SkyrimNet.",
+      "author": "tetherball88",
+      "tags": [
+        "ostim",
+        "animation",
+        "adult"
+      ],
+      "nsfw": true,
+      "icon": "heart",
+      "mods": [],
+      "first_published": "2026-09-12T06:44:36-08:00",
+      "last_updated": "2026-09-22T16:50:23Z",
+      "version": "2.5.0",
+      "history": [
+        {
+          "version": "2.5.0",
+          "commit": "848511b0043af159e8cc6259cbe16fd90bdd6449",
+          "date": "2026-09-22T16:50:23Z"
+        },
+        {
+          "version": "2.4.2",
+          "commit": "6beaea6234d873a19a83b6da3003d65d0c5982ab",
+          "date": "2026-09-12T06:44:36-08:00"
+        }
+      ],
+      "external_url": "https://github.com/tetherball88/OStimNet/releases/latest",
+      "stats": {
+        "downloads": 3,
+        "endorsements": 1
       }
     },
     {
@@ -536,37 +572,6 @@
       "stats": {
         "downloads": 3,
         "endorsements": 0
-      }
-    },
-    {
-      "id": "plugins/tetherball88/ostimnet",
-      "plugin_id": "tetherball88.ostimnet",
-      "type": "listing",
-      "title": "OStimNet",
-      "tagline": "Intimate encounter AI framework integration for OStim and SkyrimNet.",
-      "author": "tetherball88",
-      "tags": [
-        "ostim",
-        "animation",
-        "adult"
-      ],
-      "nsfw": true,
-      "icon": "heart",
-      "mods": [],
-      "first_published": "2026-09-12T06:44:36-08:00",
-      "last_updated": "2026-09-12T06:44:36-08:00",
-      "version": "2.4.2",
-      "history": [
-        {
-          "version": "2.4.2",
-          "commit": "6beaea6234d873a19a83b6da3003d65d0c5982ab",
-          "date": "2026-09-12T06:44:36-08:00"
-        }
-      ],
-      "external_url": "https://github.com/tetherball88/OStimNet/releases/latest",
-      "stats": {
-        "downloads": 3,
-        "endorsements": 1
       }
     },
     {
