@@ -53,25 +53,27 @@ Each plugin lives in its own directory under the author's GitHub username. The `
 
 ### Content roots
 
-One directory per content root. The validator checks each file's extension, its identity (the field whose value must equal the filename stem, so the path is the record's one identity) and, for the config-system roots, that the manifest's `min_skyrimnet_version` is at least the release that scans the root — an older SkyrimNet refuses the whole install on a root it does not know.
+One directory per content root. The validator checks each file's extension, its identity (the field whose value must equal the filename stem, so the path is the record's one identity) and, for a hub-gated root, the release: a plugin may ship a root only when its manifest's `min_skyrimnet_version` is at least the SkyrimNet release that reads the root, because an older SkyrimNet refuses the whole install on a root it does not know. A root marked **not yet released** is reserved — no SkyrimNet release reads it, and a plugin shipping one is refused. Each root opens when the SkyrimNet release that reads it ships and the hub's `ROOT_TABLE` row is set to that version.
 
-| Root | Extension | Identity (`== filename stem`) | Minimum release | Per-file cap |
-|---|---|---|---|---|
-| `prompts/` | `.prompt` | the path | — | — |
-| `triggers/` | `.yaml` | `name` | — | 32 KB |
-| `actions/` | `.yaml` | `name` | — | 32 KB |
-| `knowledge/` | `.sknpack` | the path (entries by `key`) | — | 1 MB |
-| `entities/` | `.entity.yaml` | the path (records by `entityName`) | — | 32 KB |
-| `voice_effects/` | `.yaml` | `id` | 0.25.0 | 64 KB |
-| `items/` | `.yaml` | form stem of `form` (`Plugin.esp\|0x01396B`); `npc_usable`, never `enabled` | 0.25.0 | 32 KB |
-| `spells/` | `.yaml` | form stem of `form`; `npc_usable`, never `enabled` | 0.25.0 | 32 KB |
-| `furniture/` | `.yaml` | form stem of `form` | 0.25.0 | 32 KB |
-| `identity/` | `.yaml` | slug of `name` (`kind: link`, the default, or `succession`) | 0.25.0 | 32 KB |
-| `filters/` | `.yaml` | `kind: actor` / `memory` contributions: any stem; `kind: dialogue_rule` / `tts_rule`: `id` | 0.25.0 | 32 KB |
-| `translator/` | `.yaml` | `kind: npc`: form stem of `form` (the actor base); `faction` / `race`: `entityEditorId`; `global`: `global.yaml` | 0.25.0 | 32 KB |
-| `dialogue_actions/` | `.yaml` | `kind: lists` contributions: any stem; `kind: instruction`: `key`, with `category` one of `quest`, `follower`, `merchant`, `trainer`, `carriage`, `innkeeper`, `bard`, `marriage`, `crime`, `other` | 0.25.0 | 32 KB |
+| Root | Extension | Identity (`== filename stem`) | Release | Hub-gated | Per-file cap |
+|---|---|---|---|---|---|
+| `prompts/` | `.prompt` | the path | Beta 25 (0.25.0) | no | — |
+| `triggers/` | `.yaml` | `name` | Beta 25 (0.25.0) | no | 32 KB |
+| `actions/` | `.yaml` | `name` | Beta 25 (0.25.0) | no | 32 KB |
+| `knowledge/` | `.sknpack` | the path (entries by `key`) | Beta 25 (0.25.0) | no | 1 MB |
+| `entities/` | `.entity.yaml` | the path (records by `entityName`) | Beta 25 (0.25.0) | no | 32 KB |
+| `voice_effects/` | `.yaml` | `id` | not yet released | yes | 64 KB |
+| `items/` | `.yaml` | form stem of `form` (`Plugin.esp\|0x01396B`); `npc_usable`, never `enabled` | not yet released | yes | 32 KB |
+| `spells/` | `.yaml` | form stem of `form`; `npc_usable`, never `enabled` | not yet released | yes | 32 KB |
+| `furniture/` | `.yaml` | form stem of `form` | not yet released | yes | 32 KB |
+| `identity/` | `.yaml` | slug of `name` (`kind: link`, the default, or `succession`); NPCs as `npc:Plugin.esp:0xLocalID` | not yet released | yes | 32 KB |
+| `filters/` | `.yaml` | `kind: actor` / `memory` contributions: any stem; `kind: dialogue_rule` / `tts_rule`: `id`, integer `priority` | not yet released | yes | 32 KB |
+| `translator/` | `.yaml` | `kind: npc`: form stem of `form` (the actor base); `faction` / `race`: `entityEditorId`; `global`: `global.yaml`; integer `priority` | not yet released | yes | 32 KB |
+| `dialogue_actions/` | `.yaml` | `kind: lists` contributions: any stem; `kind: instruction`: `key`, with `category` one of `quest`, `follower`, `merchant`, `trainer`, `carriage`, `innkeeper`, `bard`, `marriage`, `crime`, `other` | not yet released | yes | 32 KB |
 
-The **form stem** of `Plugin.esp|0x01396B` is `{plugin name, lowercased, non-[a-z0-9_] bytes as _}{-esm|-esl}{-fnv1a32 hash when anything was replaced or cut}_{local id, six upper hex}`: `Skyrim.esm|0x01396B` is `skyrim-esm_01396B`, `Mod A.esp|0x000123` is `mod_a-a44f2ca6_000123`. The dashboard names the files; `formStem()` in `.github/scripts/lib/form-ref.mjs` is the rule, pinned by `tests/fixtures/form-ref-cases.json` on both sides. Name, `id` and `key` identities compare case-insensitively; the form stem compares exactly.
+**Filename stem.** For a root identified by `name`, `id`, `key` or `entityEditorId`, the stem is the filename up to its **first** dot (`draugr.yaml` → `draugr`, `foo.entity.yaml` → `foo`), compared case-insensitively.
+
+**Form stem.** A form-keyed record's filename is derived from its `form: "Plugin.esp|0x01396B"` (the defining plugin's full filename, `|`, the plugin-relative id) and compares exactly. The plugin filename is split at its **last** dot. The stem is the name, ASCII-lowercased with every byte outside `a-z0-9_` replaced by `_` and cut at 40 UTF-8 bytes; then `-esm` or `-esl` for those extensions; then, when any of these hold — a byte was replaced, the name was cut, the name is empty, or the extension is not `.esp`/`.esm`/`.esl` — `-` and the FNV-1a 32-bit hash (8 lowercase hex digits) of the folded **full** filename, extension included; then `_` and the local id as six upper-case hex digits. `Skyrim.esm|0x01396B` → `skyrim-esm_01396B`; `Mod A.esp|0x000123` → `mod_a-a44f2ca6_000123`. The dashboard names these files; `formStem()` in `.github/scripts/lib/form-ref.mjs` is the rule, pinned by `tests/fixtures/form-ref-cases.json` on both sides. An `.esl` file's local id is 12 bits (at most `0xFFF`) and a wider one is refused; an ESL-flagged `.esp` cannot be told from its name, so the validator does not check its width — write its 12-bit id as the dashboard does.
 
 ### Official content (`plugins/skyrimnet/`)
 
@@ -84,7 +86,7 @@ The author segment `skyrimnet` (and the `skyrimnet-` prefix) is reserved for Sky
 
 Submissions go through one of two flows depending on what they contain:
 
-- **Trigger, prompt, knowledge or virtual-entity content only** — reviewed automatically by SkyrimNet's reviewer (a Claude agent run from the maintainer's private automation repo, never from this repo's own Actions). It checks for spam, forbidden content, obfuscation, accuracy of the NSFW flag, and then the authoring guide in [docs/AUTHORING.md](docs/AUTHORING.md). Approved submissions auto-merge; a submission that needs changes is closed with feedback so you can republish from the dashboard.
+- **Anything without actions** — reviewed automatically by SkyrimNet's reviewer (a Claude agent run from the maintainer's private automation repo, never from this repo's own Actions). It checks for spam, forbidden content, obfuscation, accuracy of the NSFW flag, and then the authoring guide in [docs/AUTHORING.md](docs/AUTHORING.md). Approved submissions auto-merge; a submission that needs changes is closed with feedback so you can republish from the dashboard.
 - **Any actions included** — reviewed manually by a SkyrimNet developer or trusted community member. Manual review can take up to a week. This is not a trust issue — Papyrus has no access control, and verifying an action is safe against save corruption requires human judgment.
 
 ## NSFW content

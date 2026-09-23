@@ -41,7 +41,7 @@ Every submission runs through an automated validation pipeline. After that, ther
 
 ### Plugins without actions
 
-If your plugin contains only triggers, prompts, knowledge packs and/or virtual entities (no actions), it's reviewed automatically by SkyrimNet's reviewer, a Claude agent. It checks, in order:
+If your plugin contains no actions, whatever else it ships, it's reviewed automatically by SkyrimNet's reviewer, a Claude agent. It checks, in order:
 
 - Spam or low-effort content (an unreadable title, tagline, or description is enough)
 - Forbidden content: sexual content involving minors, real-person targeting, real-world slurs
@@ -100,15 +100,17 @@ A few rules the validator enforces:
 
 ## Config-system records
 
-A plugin may ship the customizations that used to live only in a user's own config: **voice effect recipes** (`voice_effects/`), **item and spell customizations** (`items/`, `spells/`), **furniture names** (`furniture/`), **identity links** (`identity/`), **actor and memory filter lists and text-filter rules** (`filters/`), **translator speech rules** (`translator/`) and **dialogue-action lists and instructions** (`dialogue_actions/`). One record per `.yaml` file; the dashboard's page for each system packages them. The README's [Content roots](README.md#content-roots) table lists every root's identity field and cap.
+A plugin may ship the customizations a user otherwise keeps in their own config: **voice effect recipes** (`voice_effects/`), **item and spell customizations** (`items/`, `spells/`), **furniture names** (`furniture/`), **identity links** (`identity/`), **actor and memory filter lists and text-filter rules** (`filters/`), **translator speech rules** (`translator/`) and **dialogue-action lists and instructions** (`dialogue_actions/`). One record per `.yaml` file; the dashboard's page for each system packages them. The README's [Content roots](README.md#content-roots) table lists every root's identity field, release and cap.
 
 A few rules the validator enforces:
 
-- **The filename is the record's identity.** Voice effects: `id`; dialogue and TTS rules: `id`; instructions: `key`; identity links: the slug of `name`; faction and race translator rules: `entityEditorId`; the one global translator rule: `global.yaml`. Compared case-insensitively. Item, spell, furniture and NPC translator records are keyed by a form reference, `form: "Plugin.esp|0x01396B"` (the defining plugin's full filename and the plugin-relative id), and the filename is that reference's **form stem** (`skyrim-esm_01396B` for `Skyrim.esm|0x01396B`), exactly. Let the dashboard name the files.
+- **These eight roots are reserved until the SkyrimNet release that reads each one ships**; the hub refuses a plugin that ships one, whatever its `min_skyrimnet_version`. Each root opens when that release ships and the hub's `ROOT_TABLE` row is set to its version; from then on `min_skyrimnet_version` must be at least that version, because an older SkyrimNet refuses the whole install on a root it does not know.
+- **The filename is the record's identity.** Voice effects: `id`; dialogue and TTS rules: `id`; instructions: `key`; identity links: the slug of `name`; faction and race translator rules: `entityEditorId`; the one global translator rule: `global.yaml`. Compared case-insensitively against the filename up to its first dot. Item, spell, furniture and NPC translator records are keyed by a form reference, `form: "Plugin.esp|0x01396B"` (the defining plugin's full filename and the plugin-relative id), and the filename is that reference's **form stem** (`skyrim-esm_01396B` for `Skyrim.esm|0x01396B`), exactly. Let the dashboard name the files.
 - **`kind` discriminates within a root.** `identity/`: `link` (the default) or `succession`. `filters/`: `actor` or `memory` (list contributions, any filename) or `dialogue_rule` / `tts_rule`. `translator/`: `npc`, `faction`, `race` or `global`. `dialogue_actions/`: `lists` (a contribution, any filename) or `instruction`.
-- **`enabled:` means the user's on/off toggle**, on every root. Spell and item records say whether NPCs may use the form with `npc_usable: true|false`; a spell or item file carrying `enabled` is rejected.
+- **`enabled:` means the user's on/off toggle** wherever a record carries it. Spell and item records say whether NPCs may use the form with `npc_usable: true|false`; a spell or item file carrying `enabled` is rejected.
+- **Identity links name an NPC as `npc:Plugin.esp:0xLocalID`** (`identityA`/`identityB` on a link, `from`/`to` on a succession). The runtime form id spelling, `npc:0A012345`, depends on load order and is rejected.
+- **`priority` on a filter rule or translator rule is an integer** (lower runs first; 100 when omitted). A filter contribution's six list fields (`FactionWhitelist`, `FactionBlacklist`, `RaceWhitelist`, `RaceBlacklist`, `GenderWhitelist`, `GenderBlacklist`) and a dialogue-action `whitelist`/`blacklist` are lists of strings.
 - **An instruction's `category`** is one of `quest`, `follower`, `merchant`, `trainer`, `carriage`, `innkeeper`, `bard`, `marriage`, `crime`, `other`.
-- **`min_skyrimnet_version` must be at least 0.25.0** when the plugin ships any of these roots. An older SkyrimNet refuses the whole install on a root it does not know, so the hub refuses to publish such a plugin for it.
 - **64 KB per voice-effect recipe, 32 KB per record elsewhere.**
 - None of these roots force manual review.
 

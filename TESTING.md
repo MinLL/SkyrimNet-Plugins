@@ -39,8 +39,8 @@ platform by the corpus test below. The runner prints them as
 | `tests/fixtures/path-cases.json` | **The shared rejection corpus.** Data, not code — see below. |
 | `tests/fixtures/form-ref-cases.json` | **The shared FormRef corpus**: expected stem, key and canonical spelling per form reference, plus the malformed inputs `parseFormRef` refuses. A verbatim copy of SkyrimNet-Core's `tests/test_data/form-ref-cases.json`; the engine's `FormRef` suite runs the same file, and the two are synced by hand. `content-rules.test.mjs` asserts the case counts, so a stale copy fails loudly. |
 | `tests/content-rules.test.mjs` | Runs the path corpus against `.github/scripts/lib/content-rules.mjs` and the FormRef corpus against `.github/scripts/lib/form-ref.mjs`, plus the root table (`ROOT_TABLE` and what derives from it), `compareSemver`, the per-root minimum gate and `checkFieldMatchesStem`. |
-| `tests/record-rules.test.mjs` | Unit tests for `.github/scripts/lib/record-rules.mjs`: per config-system root, a passing and a failing document for every rule (identity field, `kind`, `npc_usable`, dialogue-action categories, the translator `form`). |
-| `tests/validate.test.mjs` | End-to-end runs of `validate.mjs` against synthetic PR checkouts: happy paths, one case per rejection class, PR-shape routing (infra-only, mixed, multi-plugin, manual vs dashboard), the official-content rule (an existing `plugins/skyrimnet/*` pack accepts an update PR and routes to manual review; a new reserved-author pack is still refused), and every config-system root through the real script (accepted record, refused record, the per-root size cap, the `min_skyrimnet_version` gate). |
+| `tests/record-rules.test.mjs` | Unit tests for `.github/scripts/lib/record-rules.mjs`: per config-system root, a passing and a failing document for every rule (identity field, `kind`, `npc_usable`, dialogue-action categories, the translator `form`, ESL id width, `npc:` references, filter list fields, `priority`, value echoing in messages). |
+| `tests/validate.test.mjs` | End-to-end runs of `validate.mjs` against synthetic PR checkouts: happy paths, one case per rejection class, PR-shape routing (infra-only, mixed, multi-plugin, manual vs dashboard), the official-content rule (an existing `plugins/skyrimnet/*` pack accepts an update PR and routes to manual review; a new reserved-author pack is still refused), and every config-system root through the real script (a record that passes its rules, a refused record, the per-root size cap, the reserved-root refusal). |
 | `tests/build-index.test.mjs` | End-to-end runs of `build-index.mjs` against throwaway git repos with real multi-commit plugin histories; asserts `history` shape, ordering and cap, and validates every emitted index against `schemas/index.schema.json`. Also checks the committed `index.json` is neither stale nor schema-invalid. The popularity `stats` bake runs against a throwaway local HTTP server standing in for fateless.ai (live attach, zeros for unknown ids, clamping, carry-forward on failure, omission with nothing to carry, and the timestamp-only no-op guard). Every run pins `SKYRIMNET_HUB_STATS_URL` — default `none`, which skips the fetch — so the suite never reaches the real fateless.ai. |
 | `tests/repo-tree.test.mjs` | Replays every plugin currently in `plugins/` through `validate.mjs`. Catches "we tightened a rule and forgot to migrate the entries already in the repo". |
 | `tests/helpers/harness.mjs` | Builds synthetic PR checkouts and runs the real scripts the way skyrimnet-ops' `hub-review.yml` does (trusted `BASE_DIR`, untrusted `PR_DIR`, `status\tfilename` list). |
@@ -126,10 +126,9 @@ every rule below is evaluated on a segment before moving to the next segment:
 14. `UNKNOWN_ROOT` — first segment is not a `segment` of `ROOT_TABLE` in
     `content-rules.mjs` (`prompts`, `triggers`, `actions`, `knowledge`,
     `entities`, `voice_effects`, `items`, `spells`, `furniture`, `identity`,
-    `filters`, `translator`, `dialogue_actions`). The engine's table in
-    `ContentPaths.cpp` gains a row per root as each system's loader lands, so
-    the shared corpus carries no cases for a root the engine does not scan yet;
-    those live in `content-rules.test.mjs` until both tables agree.
+    `filters`, `translator`, `dialogue_actions`). The shared corpus carries
+    cases only for roots the engine's table in `ContentPaths.cpp` also has;
+    cases for the remaining roots live in `content-rules.test.mjs`.
 15. `NO_FILE_IN_ROOT` — fewer than two segments (a root with no file in it).
 16. `BAD_EXTENSION` — the final segment does not end with the root's extension
     as an **exact, case-sensitive suffix** (`prompts` → `.prompt`, `knowledge`
@@ -151,11 +150,12 @@ ASCII case-folded forms are equal are a `PATH_COLLISION`.
 Structural rules that the installer also needs belong in
 `.github/scripts/lib/content-rules.mjs`, with a new code in `CODES`, cases in the
 corpus, and a message that tells the author what to do. A new content root is one
-`ROOT_TABLE` row there (segment, extension, identity field, minimum engine
-release); `CONTENT_ROOTS`, `EXTENSION_BY_ROOT`, `ROOT_MIN_ENGINE`, the validator's
-counts, `build-index.mjs`'s counts and the root-table test derive from it, and
-`schemas/index.schema.json`'s `contents` needs the matching key by hand. Rules about
-what is inside a record file (which field is the identity, `kind` values) belong in
+`ROOT_TABLE` row there (segment, extension, minimum engine release: `null`,
+`"reserved"` or a version); `CONTENT_ROOTS`, `EXTENSION_BY_ROOT`, `ROOT_MIN_ENGINE`,
+the validator's counts, `build-index.mjs`'s counts and the root-table test derive
+from it, and `schemas/index.schema.json`'s `contents` needs the matching key by
+hand. Rules about what is inside a record file (which field is the identity, `kind`
+values, `npc:` references, `priority`) belong in
 `.github/scripts/lib/record-rules.mjs`, keyed by root. Rules that only make sense on
 the hub (PR shape, bans, title uniqueness, review routing, size caps) stay in
 `validate.mjs`.

@@ -118,8 +118,8 @@ good, not whether it is well-formed.
 ## Config-system records (`voice_effects/`, `items/`, `spells/`, `furniture/`, `identity/`, `filters/`, `translator/`, `dialogue_actions/`)
 
 One record per `.yaml` file; the validator has already checked the filename is the record's
-identity, the `kind`, the `min_skyrimnet_version` gate and the caps (README, "Content roots").
-What is left to judge:
+identity, the `kind`, the root's release gate and the caps (README, "Content roots"). What is
+left to judge:
 
 - **Must:** a record names a form the plugin's listed mods provide, or a vanilla one.
   `form: "Skyrim.esm|0x01396B"` and the four DLC masters need no `mods` entry; a third-party
