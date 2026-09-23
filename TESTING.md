@@ -150,11 +150,11 @@ ASCII case-folded forms are equal are a `PATH_COLLISION`.
 Structural rules that the installer also needs belong in
 `.github/scripts/lib/content-rules.mjs`, with a new code in `CODES`, cases in the
 corpus, and a message that tells the author what to do. A new content root is one
-`ROOT_TABLE` row there (segment, extension, minimum engine release: `null`,
-`"reserved"` or a version); `CONTENT_ROOTS`, `EXTENSION_BY_ROOT`, `ROOT_MIN_ENGINE`,
-the validator's counts, `build-index.mjs`'s counts and the root-table test derive
-from it, and `schemas/index.schema.json`'s `contents` needs the matching key by
-hand. Rules about what is inside a record file (which field is the identity, `kind`
+`ROOT_TABLE` row there (segment, `contents` category, extension, minimum engine
+release: `null`, `"reserved"` or a version); `CONTENT_ROOTS`, `CATEGORY_BY_ROOT`,
+`EXTENSION_BY_ROOT`, `ROOT_MIN_ENGINE`, the validator's counts, `build-index.mjs`'s
+counts and the root-table test derive from it. A new category also needs its key in
+`schemas/index.schema.json`'s `contents`, by hand. Rules about what is inside a record file (which field is the identity, `kind`
 values, `npc:` references, `priority`) belong in
 `.github/scripts/lib/record-rules.mjs`, keyed by root. Rules that only make sense on
 the hub (PR shape, bans, title uniqueness, review routing, size caps) stay in

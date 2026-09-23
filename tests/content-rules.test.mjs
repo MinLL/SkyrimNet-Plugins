@@ -12,6 +12,7 @@ import { fileURLToPath } from "node:url";
 
 import {
   CODES,
+  CATEGORY_BY_ROOT,
   CONTENT_ROOTS,
   EXTENSION_BY_ROOT,
   MAX_QUOTED_VALUE_LENGTH,
@@ -217,10 +218,13 @@ test("the root table has the five original roots and the eight config-system roo
     );
     assert.equal(EXTENSION_BY_ROOT[row.segment], row.extension);
     assert.equal(ROOT_MIN_ENGINE[row.segment], row.minEngine);
+    assert.equal(CATEGORY_BY_ROOT[row.segment], row.category);
   }
   for (const root of ["prompts", "triggers", "actions", "knowledge", "entities"]) {
     assert.equal(ROOT_MIN_ENGINE[root], null);
+    assert.equal(CATEGORY_BY_ROOT[root], root);
   }
+  for (const root of NEW_ROOTS) assert.equal(CATEGORY_BY_ROOT[root], "config");
   assert.equal(CONFIG_ROOTS_MIN_ENGINE, "0.25.0");
   for (const root of NEW_ROOTS) {
     assert.equal(ROOT_MIN_ENGINE[root], CONFIG_ROOTS_MIN_ENGINE);
