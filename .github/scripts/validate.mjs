@@ -31,14 +31,19 @@ import yaml from "js-yaml";
 // attacks; this file only wires the rules to PR data and reporting.
 import {
   CODES,
+  CONTENT_ROOTS,
   PATH_SEGMENT_RE,
   checkContentPath,
   checkManifestIdentity,
   checkNameMatchesStem,
+  checkRootMinEngine,
   findPathCollisions,
   foldCase,
   isReservedAuthorSegment,
 } from "./lib/content-rules.mjs";
+// One-record-per-file roots: which in-file field is the identity, `kind`
+// values, the spell/item `npc_usable` flag, dialogue-action categories.
+import { RECORD_ROOTS, checkRecord } from "./lib/record-rules.mjs";
 // The one optional cover image (manifest.image): header-only format, size
 // and dimension checks. Hub metadata, never installed, so it has no C++ twin.
 import { IMAGE_CODES, checkImage, isImageName } from "./lib/image-rules.mjs";
@@ -57,6 +62,16 @@ const PER_FILE_SIZE_LIMITS = {
   // One virtual-NPC record: seven scalar fields. Same cap as a trigger.
   entity: 32 * 1024,
   // prompts have no per-file cap (only bundle-level applies)
+  // A voice-effect recipe carries a whole effect chain; the other record roots
+  // are a handful of scalars each, capped like a trigger.
+  voice_effects: 64 * 1024,
+  items: 32 * 1024,
+  spells: 32 * 1024,
+  furniture: 32 * 1024,
+  identity: 32 * 1024,
+  filters: 32 * 1024,
+  translator: 32 * 1024,
+  dialogue_actions: 32 * 1024,
 };
 
 // Virtual entities the engine itself defines. The engine honours only the
@@ -699,7 +714,7 @@ function isRegularFile(abs) {
   }
 }
 
-const contents = { triggers: 0, actions: 0, prompts: 0, knowledge: 0, entities: 0 };
+const contents = Object.fromEntries(CONTENT_ROOTS.map((root) => [root, 0]));
 let totalBundleSize = 0;
 const contentPaths = [];
 const seenEntityNames = new Map();
@@ -728,28 +743,28 @@ for (const abs of contentFiles) {
     continue;
   }
 
-  switch (subPath.split("/")[0]) {
+  const root = subPath.split("/")[0];
+  switch (root) {
     case "triggers":
       validateYamlFile(rel, abs, subPath, stat, "trigger");
-      contents.triggers++;
       break;
     case "actions":
       validateYamlFile(rel, abs, subPath, stat, "action");
-      contents.actions++;
       break;
     case "prompts":
       validatePromptFile(rel, abs, stat);
-      contents.prompts++;
       break;
     case "knowledge":
       validateKnowledgeFile(rel, abs, stat);
-      contents.knowledge++;
       break;
     case "entities":
       validateEntityFile(rel, abs, stat, seenEntityNames);
-      contents.entities++;
+      break;
+    default:
+      if (RECORD_ROOTS.includes(root)) validateRecordFile(rel, abs, subPath, stat, root);
       break;
   }
+  contents[root]++;
 }
 
 // Case-folded path collisions within the plugin. Windows filesystems are
@@ -761,6 +776,17 @@ for (const collision of findPathCollisions(contentPaths)) {
     `Files collide when compared case-insensitively (they would overwrite each other on Windows): ` +
       collision.paths.map((p) => `'${p}'`).join(", "),
   );
+}
+
+// Per-root minimum engine release. An older SkyrimNet refuses the whole
+// install on a root it does not know, so a plugin using one must declare a
+// min_skyrimnet_version the root's release satisfies.
+if (manifest.type !== "listing") {
+  for (const root of CONTENT_ROOTS) {
+    if (contents[root] === 0) continue;
+    const gate = checkRootMinEngine(root, manifest.min_skyrimnet_version);
+    if (!gate.ok) addError(manifestPath, `${gate.message} [${gate.code}]`);
+  }
 }
 
 function validateYamlFile(rel, abs, subPath, stat, kind) {
@@ -924,6 +950,31 @@ function validateEntityFile(rel, abs, stat, seenNames) {
   seenNames.set(key, rel);
 }
 
+// One-record-per-file roots (voice_effects, items, spells, furniture, identity,
+// filters, translator, dialogue_actions): the size cap, a YAML parse, and the
+// per-root record rules in lib/record-rules.mjs.
+function validateRecordFile(rel, abs, subPath, stat, root) {
+  const limit = PER_FILE_SIZE_LIMITS[root];
+  if (stat.size > limit) {
+    addError(
+      rel,
+      `File is ${formatBytes(stat.size)}, exceeds the ${formatBytes(limit)} per-file limit for ${root}/ files.`,
+    );
+    return;
+  }
+
+  let doc;
+  try {
+    doc = yaml.load(fs.readFileSync(abs, "utf8"));
+  } catch (e) {
+    addError(rel, `YAML parse error: ${e.message}`);
+    return;
+  }
+  for (const issue of checkRecord(root, doc, subPath).issues) {
+    addError(rel, `${issue.message} [${issue.code}]`);
+  }
+}
+
 function formatBytes(n) {
   if (n < 1024) return `${n} B`;
   if (n < 1024 * 1024) return `${(n / 1024).toFixed(1)} KB`;
@@ -959,8 +1010,7 @@ if (contents.actions > 0 && !manifest.invocation) {
 
 // Listing plugins must have no content
 if (manifest.type === "listing") {
-  const contentCount =
-    contents.triggers + contents.actions + contents.prompts + contents.knowledge + contents.entities;
+  const contentCount = Object.values(contents).reduce((sum, n) => sum + n, 0);
   if (contentCount > 0) {
     addError(
       manifestPath,
