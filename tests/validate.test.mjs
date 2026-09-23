@@ -992,7 +992,7 @@ test("cover image: a listing may carry a JPEG and still routes to manual review"
     type: "listing", external_url: "https://example.org/mod", image: "cover.jpg",
   });
   delete manifest.min_skyrimnet_version;
-  const res = validatePlugin({ manifest, files: { "cover.jpg": makeJpeg(800, 600) } });
+  const res = validatePlugin({ manifest, files: { "cover.jpg": makeJpeg(1280, 720) } });
   assert.equal(res.result.success, true, errorMessages(res.result));
   assert.deepEqual(res.result.labels, ["manual-review"]);
   assert.equal(res.result.image_file, "plugins/bob/test-pack/cover.jpg");
@@ -1045,14 +1045,18 @@ test("cover image: over the byte cap is refused", () => {
   assertRejected(res, /over the 5\.00 MB limit/);
 });
 
-test("cover image: outside the pixel window is refused", () => {
-  for (const [w, h] of [[4000, 100], [100, 4000], [64, 64]]) {
+test("cover image: not 16:9, or outside the width window, is refused", () => {
+  const check = (w, h, re) => {
     const res = validatePlugin({
       manifest: goodManifest({ image: "cover.jpg" }),
       files: { ...GOOD_FILES, "cover.jpg": makeJpeg(w, h) },
     });
-    assertRejected(res, /each side must be between/);
-  }
+    assertRejected(res, re);
+  };
+  check(1122, 1402, /not 16:9/);
+  check(4000, 100, /not 16:9/);
+  check(320, 180, /width must be between/);
+  check(4000, 2250, /width must be between/);
 });
 
 test("cover image: a directory or symlink named as the cover is refused, not a crash", POSIX_ONLY, () => {

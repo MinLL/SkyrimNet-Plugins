@@ -31,7 +31,8 @@ good, not whether it is well-formed.
 - `language` is optional. Pick it from the dashboard's list when the content is not written in
   English, or when you want it findable under the browse page's Language filter. It is stored as
   a bare ISO 639-1 code (`de`, `fr`). Leave it unset rather than guessing; unset means undeclared.
-- `image` is optional: one cover image (PNG or JPEG, up to 5 MB, each side 128–2048px) shown on
+- `image` is optional: one cover image (PNG or JPEG, 16:9 — for example 1280×720 or 1920×1080 —
+  640–2048px wide, up to 5 MB) shown on
   the hub site, in the in-game browse view, and on the plugin's Discord thread. **Must:** it
   depicts the plugin — a screenshot, the NPC, the mod's own artwork — and contains no outright
   sexual content (exposed genitals, sex acts) even on an NSFW plugin; suggestive is fine there,

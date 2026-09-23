@@ -94,7 +94,7 @@
     "image": {
       "type": "string",
       "pattern": "^[A-Za-z0-9_-]{1,64}\\.(png|jpg|jpeg)$",
-      "description": "Optional. Filename of the plugin's one cover image, which sits at the plugin root beside manifest.json (no directories). PNG or JPEG, at most 5 MB, each side 128–2048px; validate.mjs checks the bytes against the extension and refuses an image file the manifest does not name. It is hub metadata, not content: the engine never installs it, and index.json carries its blob sha, commit, and pixel size so the hub site, the in-game browse view and the Discord bot can show it without fetching the manifest. Reviewed by the automated reviewer under the image rules in docs/AUTHORING.md."
+      "description": "Optional. Filename of the plugin's one cover image, which sits at the plugin root beside manifest.json (no directories). PNG or JPEG, 16:9 (within 1%; for example 1280×720 or 1920×1080), 640–2048px wide, at most 5 MB; validate.mjs checks the bytes against the extension and refuses an image file the manifest does not name. It is hub metadata, not content: the engine never installs it, and index.json carries its blob sha, commit, and pixel size so the hub site, the in-game browse view and the Discord bot can show it without fetching the manifest. Reviewed by the automated reviewer under the image rules in docs/AUTHORING.md."
     },
     "mods": {
       "type": "array",
