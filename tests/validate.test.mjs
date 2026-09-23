@@ -1212,8 +1212,16 @@ test("filters: contributions and rules are accepted; a file without a kind is re
     /Files under filters\/ need a 'kind' field: one of actor, memory, dialogue_rule, tts_rule[^\n]*\[KIND_MISSING\]/,
   );
   assertRejected(
-    validatePlugin({ manifest: goodManifest(), files: { "filters/strip_grunts.yaml": "kind: dialogue_rule\nid: grunts\n" } }),
+    validatePlugin({ manifest: goodManifest(), files: { "filters/strip_grunts.yaml": "kind: dialogue_rule\nid: grunts\npattern: x\n" } }),
     /id 'grunts' does not match the filename stem 'strip_grunts'/,
+  );
+  assertRejected(
+    validatePlugin({ manifest: goodManifest(), files: { "filters/numbers.yaml": "kind: tts_rule\nid: numbers\n" } }),
+    /A 'tts_rule' needs a 'pattern' field: a non-empty regular expression string\. \[PATTERN_MISSING\]/,
+  );
+  assertRejected(
+    validatePlugin({ manifest: goodManifest(), files: { "filters/numbers.yaml": "kind: tts_rule\nid: numbers\npattern: '[0-9'\n" } }),
+    /'pattern' '\[0-9' does not compile: [^\n]*\[PATTERN_INVALID\]/,
   );
 });
 

@@ -10,6 +10,7 @@ import {
   FILTER_LIST_FIELDS,
   IDENTITY_REF_FIELDS,
   KINDS_BY_ROOT,
+  MAX_PATTERN_LENGTH,
   RECORD_CODES,
   RECORD_ROOTS,
   checkRecord,
@@ -178,8 +179,29 @@ test("filters: kind is required; contributions take any stem, rules need id == s
   assertOk(checkRecord("filters", { kind: "tts_rule", id: "Numbers", pattern: "\\d+" }, "filters/numbers.yaml"));
   assertCode(checkRecord("filters", { RaceWhitelist: [] }, "filters/x.yaml"), RECORD_CODES.KIND_MISSING, /actor, memory, dialogue_rule, tts_rule/);
   assertCode(checkRecord("filters", { kind: "npc" }, "filters/x.yaml"), RECORD_CODES.KIND_UNKNOWN);
-  assertCode(checkRecord("filters", { kind: "dialogue_rule", id: "other" }, "filters/strip_grunts.yaml"), CODES.NAME_NOT_STEM, /id 'other'/);
+  assertCode(checkRecord("filters", { kind: "dialogue_rule", id: "other", pattern: "x" }, "filters/strip_grunts.yaml"), CODES.NAME_NOT_STEM, /id 'other'/);
   assertCode(checkRecord("filters", { kind: "tts_rule", pattern: "x" }, "filters/numbers.yaml"), CODES.NAME_MISSING);
+});
+
+test("filter rules need a pattern: a non-empty string within the engine's byte cap that compiles", () => {
+  assert.equal(MAX_PATTERN_LENGTH, 1024);
+  for (const kind of ["dialogue_rule", "tts_rule"]) {
+    const rule = (fields) => checkRecord("filters", { kind, id: "x", ...fields }, "filters/x.yaml");
+    assertOk(rule({ pattern: "^ugh" }));
+    assertOk(rule({ pattern: "\\d+" }));
+    assertOk(rule({ pattern: "a".repeat(MAX_PATTERN_LENGTH) }));
+    assertCode(rule({}), RECORD_CODES.PATTERN_MISSING, new RegExp(`^A '${kind}' needs a 'pattern' field: a non-empty regular expression string\\.$`));
+    assertCode(rule({ pattern: "" }), RECORD_CODES.PATTERN_MISSING, /needs a 'pattern' field[^\n]*, not ''\.$/);
+    assertCode(rule({ pattern: 42 }), RECORD_CODES.PATTERN_MISSING, /not the number 42\.$/);
+    assertCode(rule({ pattern: ["^ugh"] }), RECORD_CODES.PATTERN_MISSING, /not a list\.$/);
+    assertCode(rule({ pattern: "(ugh" }), RECORD_CODES.PATTERN_INVALID, /^'pattern' '\(ugh' does not compile: /);
+    assertCode(rule({ pattern: "a".repeat(MAX_PATTERN_LENGTH + 1) }), RECORD_CODES.PATTERN_TOO_LONG, /^'pattern' is 1025 bytes, over the 1024 byte limit/);
+    // The cap is in UTF-8 bytes, as the engine measures it; an over-long pattern is not compiled.
+    assertCode(rule({ pattern: "\u00e9".repeat(513) }), RECORD_CODES.PATTERN_TOO_LONG, /is 1026 bytes/);
+    assert.deepEqual(codes(rule({ pattern: "(".repeat(MAX_PATTERN_LENGTH + 1) })), [RECORD_CODES.PATTERN_TOO_LONG]);
+  }
+  // Contributions carry no pattern; the field is not checked there.
+  assertOk(checkRecord("filters", { kind: "actor", pattern: 42 }, "filters/x.yaml"));
 });
 
 test("filters: a contribution's six list fields must be lists of strings", () => {
@@ -197,13 +219,13 @@ test("filters: a contribution's six list fields must be lists of strings", () =>
     }
   }
   // A rule's list-named field is not a contribution list.
-  assertOk(checkRecord("filters", { kind: "dialogue_rule", id: "x", RaceWhitelist: "no" }, "filters/x.yaml"));
+  assertOk(checkRecord("filters", { kind: "dialogue_rule", id: "x", pattern: "x", RaceWhitelist: "no" }, "filters/x.yaml"));
 });
 
 test("filter rules and translator records carry an integer priority when they carry one", () => {
   for (const doc of [
-    { kind: "dialogue_rule", id: "x" },
-    { kind: "tts_rule", id: "x" },
+    { kind: "dialogue_rule", id: "x", pattern: "x" },
+    { kind: "tts_rule", id: "x", pattern: "x" },
   ]) {
     assertOk(checkRecord("filters", { ...doc, priority: 10 }, "filters/x.yaml"));
     assertOk(checkRecord("filters", { ...doc, priority: 0 }, "filters/x.yaml"));

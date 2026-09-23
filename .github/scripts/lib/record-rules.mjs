@@ -1,5 +1,6 @@
 // Per-root rules for what a record file carries: the field that must equal the filename stem, `kind`,
-// `npc_usable`, list fields, `priority` and `npc:` references. Pure functions; validate.mjs wires them to files.
+// `npc_usable`, list fields, `priority`, a rule's `pattern` and `npc:` references. Pure functions; validate.mjs
+// wires them to files.
 
 import { CODES, checkFieldMatchesStem, foldCase, quoteValue, stemOf } from "./content-rules.mjs";
 import {
@@ -28,6 +29,9 @@ export const RECORD_CODES = {
   CATEGORY_UNKNOWN: "CATEGORY_UNKNOWN",
   LIST_NOT_STRINGS: "LIST_NOT_STRINGS",
   PRIORITY_NOT_INTEGER: "PRIORITY_NOT_INTEGER",
+  PATTERN_MISSING: "PATTERN_MISSING",
+  PATTERN_TOO_LONG: "PATTERN_TOO_LONG",
+  PATTERN_INVALID: "PATTERN_INVALID",
 };
 
 // The ten dialogue-action categories, as DialogueActionsConfig::Categories() names them.
@@ -56,6 +60,9 @@ const FORM_FIELD = "form";
 const NPC_USABLE_FIELD = "npc_usable";
 const TRANSLATOR_GLOBAL_STEM = "global";
 const PRIORITY_FIELD = "priority";
+const PATTERN_FIELD = "pattern";
+// The engine's FilterRecords::kMaxPatternLength, in UTF-8 bytes.
+export const MAX_PATTERN_LENGTH = 1024;
 const NPC_REF_PREFIX = "npc:";
 const NPC_REF_SPELLING = "npc:Plugin.esp:0xLocalID";
 const RUNTIME_ID_MASK = 0x00ffffff;
@@ -205,6 +212,33 @@ function checkPriority(doc, push) {
   }
 }
 
+// A rule's `pattern`: a non-empty string within the engine's byte cap that compiles. `new RegExp` is a coarse
+// stand-in for the engine's std::regex; it catches the unbalanced and the malformed, not every dialect gap.
+function checkPattern(doc, kind, push) {
+  const value = doc[PATTERN_FIELD];
+  if (typeof value !== "string" || value.length === 0) {
+    push(
+      RECORD_CODES.PATTERN_MISSING,
+      `A '${kind}' needs a '${PATTERN_FIELD}' field: a non-empty regular expression string` +
+        (value === undefined ? "." : `, not ${quoteValue(value)}.`),
+    );
+    return;
+  }
+  const bytes = new TextEncoder().encode(value).length;
+  if (bytes > MAX_PATTERN_LENGTH) {
+    push(
+      RECORD_CODES.PATTERN_TOO_LONG,
+      `'${PATTERN_FIELD}' is ${bytes} bytes, over the ${MAX_PATTERN_LENGTH} byte limit the engine applies.`,
+    );
+    return;
+  }
+  try {
+    new RegExp(value);
+  } catch (err) {
+    push(RECORD_CODES.PATTERN_INVALID, `'${PATTERN_FIELD}' ${quoteValue(value)} does not compile: ${err.message}`);
+  }
+}
+
 function checkNpcUsable(doc, root, push) {
   if (doc.enabled !== undefined) {
     push(
@@ -263,6 +297,7 @@ const CHECKS = {
       for (const field of FILTER_LIST_FIELDS) checkStringList(doc, field, push);
     } else if (kind === "dialogue_rule" || kind === "tts_rule") {
       pushStemCheck("id", doc.id, subPath, push);
+      checkPattern(doc, kind, push);
       checkPriority(doc, push);
     }
   },
