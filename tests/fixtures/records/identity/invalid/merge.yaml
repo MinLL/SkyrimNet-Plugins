@@ -1,0 +1,6 @@
+# refuse: KIND_UNKNOWN
+# why: an identity file is a link or a succession
+kind: merge
+name: Merge
+identityA: virtual:A
+identityB: virtual:B

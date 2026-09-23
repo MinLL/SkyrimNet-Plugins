@@ -1,0 +1,6 @@
+# refuse: SLUG_NOT_STEM
+# why: a name with no letters or digits has no slug and cannot name a file
+kind: link
+name: Мод
+identityA: virtual:A
+identityB: virtual:B

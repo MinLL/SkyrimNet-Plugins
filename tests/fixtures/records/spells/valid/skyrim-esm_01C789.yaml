@@ -1,0 +1,4 @@
+# why: show_in_prompts false hides the spell from NPC spell lists in prompts; the record itself stays active
+form: Skyrim.esm|0x01C789
+originalName: Sparks
+show_in_prompts: false

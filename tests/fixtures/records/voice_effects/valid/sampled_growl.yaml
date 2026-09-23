@@ -1,0 +1,8 @@
+# why: sample is a plain filename under voice_effects/samples/, never a path
+id: sampled_growl
+name: Sampled Growl
+sample: growl.wav
+stages:
+  - type: gain
+    params:
+      gain_db: -3.0

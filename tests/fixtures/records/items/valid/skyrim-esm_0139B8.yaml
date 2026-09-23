@@ -1,0 +1,6 @@
+# why: show_in_prompts false hides the item from NPC equipment lists in prompts; the record itself stays active
+form: Skyrim.esm|0x0139B8
+originalName: Steel Sword
+customName: Dull Blade
+customDescription: Too blunt to matter.
+show_in_prompts: false

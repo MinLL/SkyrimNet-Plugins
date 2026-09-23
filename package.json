@@ -8,7 +8,7 @@
     "node": ">=20"
   },
   "scripts": {
-    "test": "node --test tests/content-rules.test.mjs tests/record-rules.test.mjs tests/image-rules.test.mjs tests/validate.test.mjs tests/build-index.test.mjs tests/repo-tree.test.mjs",
+    "test": "node --test tests/content-rules.test.mjs tests/record-rules.test.mjs tests/record-corpus.test.mjs tests/image-rules.test.mjs tests/validate.test.mjs tests/build-index.test.mjs tests/repo-tree.test.mjs",
     "build-index": "node .github/scripts/build-index.mjs"
   }
 }

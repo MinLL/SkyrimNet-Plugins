@@ -1,0 +1,8 @@
+# why: an npc: ref into an .esl plugin carries a 12-bit id
+kind: link
+name: Light Touch
+identityA: virtual:Touch
+identityB: npc:MyLight.esl:0x000FFF
+mode: bidirectional
+dominance: host_led
+awareness: mutual

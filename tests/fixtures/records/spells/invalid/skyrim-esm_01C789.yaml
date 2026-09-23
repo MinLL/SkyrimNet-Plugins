@@ -1,0 +1,4 @@
+# refuse: ENABLED_NOT_ACTIVATION
+# why: enabled in a record is activation, even when true; the payload flag is show_in_prompts
+form: Skyrim.esm|0x01C789
+enabled: true

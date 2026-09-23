@@ -1,0 +1,5 @@
+# refuse: PATTERN_INVALID
+# why: a pattern must compile
+kind: tts_rule
+id: unbalanced
+pattern: "(ugh"

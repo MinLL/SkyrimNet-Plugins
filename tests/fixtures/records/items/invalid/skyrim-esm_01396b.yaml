@@ -1,0 +1,3 @@
+# refuse: FORM_NOT_STEM
+# why: the form stem is exact, not case-folded: the engine derives the filename, so its case is not the author's
+form: Skyrim.esm|0x01396B

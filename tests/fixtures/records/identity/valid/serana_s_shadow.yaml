@@ -1,0 +1,9 @@
+# why: a link: the stem is the slug of name; typed refs (virtual:<Entity>, npc:Plugin.esp:0xLocalID); mode, dominance, awareness
+kind: link
+name: Serana's Shadow
+identityA: virtual:Shadow
+identityB: npc:Dawnguard.esm:0x002B74
+mode: bidirectional
+dominance: host_led
+awareness: mutual
+note: One being in two bodies.

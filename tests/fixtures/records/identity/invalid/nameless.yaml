@@ -1,0 +1,5 @@
+# refuse: NAME_MISSING
+# why: the slug of name is the identity; without a name there is no file to live at
+kind: link
+identityA: virtual:A
+identityB: virtual:B

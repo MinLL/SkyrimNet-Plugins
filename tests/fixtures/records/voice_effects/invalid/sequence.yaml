@@ -1,0 +1,4 @@
+# refuse: NOT_A_MAPPING
+# why: a record file is a YAML mapping
+- id: sequence
+- name: Sequence

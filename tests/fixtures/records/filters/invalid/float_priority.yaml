@@ -1,0 +1,6 @@
+# refuse: PRIORITY_NOT_INTEGER
+# why: priority is an integer
+kind: dialogue_rule
+id: float_priority
+pattern: ^x$
+priority: 1.5

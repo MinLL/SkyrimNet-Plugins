@@ -1,0 +1,6 @@
+# refuse: SLUG_NOT_STEM
+# why: the filename is the slug of the name, not a name chosen by hand
+kind: link
+name: Serana's Shadow
+identityA: virtual:Shadow
+identityB: npc:Dawnguard.esm:0x002B74

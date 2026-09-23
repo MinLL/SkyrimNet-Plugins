@@ -1,0 +1,6 @@
+# why: an actor contribution: any stem, any subset of the six list fields; unioned across active contributions
+kind: actor
+RaceWhitelist:
+  - KhajiitRace
+FactionBlacklist:
+  - BanditFaction

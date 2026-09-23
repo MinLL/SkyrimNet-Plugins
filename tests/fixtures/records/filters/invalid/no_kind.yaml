@@ -1,0 +1,4 @@
+# refuse: KIND_MISSING
+# why: a filters file says what it is: actor, memory, dialogue_rule or tts_rule
+RaceWhitelist:
+  - KhajiitRace

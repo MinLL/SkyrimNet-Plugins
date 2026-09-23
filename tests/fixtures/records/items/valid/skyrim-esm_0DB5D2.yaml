@@ -1,0 +1,2 @@
+# why: a record may carry only its form; every payload field is optional and show_in_prompts defaults to true
+form: Skyrim.esm|0x0DB5D2

@@ -1,0 +1,6 @@
+# refuse: NPC_REF_LOAD_ORDER
+# why: succession refs get the same rule as link refs
+kind: succession
+name: Old Line
+from: npc:0350B8
+to: npc:Skyrim.esm:0x0656E2

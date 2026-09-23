@@ -1,0 +1,5 @@
+# refuse: ENABLED_NOT_ACTIVATION
+# why: enabled in a record is activation (the user's toggle), never 'NPCs may use it'; the payload flag is show_in_prompts
+form: Skyrim.esm|0x0139B8
+customName: Off Sword
+enabled: false
