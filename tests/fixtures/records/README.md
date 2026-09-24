@@ -18,9 +18,9 @@ local edit. `ai_docs/TESTING_RECORD_CORPUS.md` in SkyrimNet-Core describes the g
 
 ## Where the base copies came from
 
-- `voice_effects/`, `furniture/`, `filters/`: SkyrimNet-GamePlugin `main` at `0895c5fd1ed13e779870e52e4b40cbb6d175a4cf`
+- `voice_effects/`, `furniture/`: SkyrimNet-GamePlugin `main` at `0895c5fd1ed13e779870e52e4b40cbb6d175a4cf`
   (`plugins/skyrimnet/base/<root>/`).
-- `dialogue_actions/skyrimnet_defaults.yaml`: SkyrimNet-GamePlugin PR #622 (`feat/base-dialogue-actions-defaults`)
-  at `81b33f0922c9a4ee08b5c560e4132e3d3479b686`.
+- `filters/`, `dialogue_actions/`: SkyrimNet-GamePlugin PR #622 (`feat/base-dialogue-actions-defaults`)
+  at `c07f07f0bc88692f5b2e95d94d1da9f285421aad`.
 
 Compared as git blobs (LF); the working copies carry the checkout's line endings.
