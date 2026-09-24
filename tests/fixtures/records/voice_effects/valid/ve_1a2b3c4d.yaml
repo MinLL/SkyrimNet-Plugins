@@ -1,0 +1,8 @@
+# why: an opaque pre-library id is kept as the identity and names the file; ids, not filenames, are the cosave contract
+id: ve_1a2b3c4d
+name: My Custom Voice
+sample: null
+stages:
+  - type: pitch_shift
+    params:
+      semitones: -2.0

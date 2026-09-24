@@ -1,0 +1,5 @@
+# why: a TTS rule with no priority runs at the default 100, after every migrated chain
+kind: tts_rule
+id: expand_doctor
+pattern: Dr\.
+replacement: Doctor

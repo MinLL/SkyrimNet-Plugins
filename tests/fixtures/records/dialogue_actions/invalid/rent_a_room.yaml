@@ -1,0 +1,5 @@
+# refuse: NAME_NOT_STEM
+# why: the filename is the identity; the key must be the stem
+kind: instruction
+key: TIF__000D9B53
+text: x

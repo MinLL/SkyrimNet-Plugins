@@ -1,0 +1,4 @@
+# refuse: KIND_MISSING
+# why: a dialogue_actions file says what it is: lists or instruction
+blacklist:
+  - nwsFollowerController

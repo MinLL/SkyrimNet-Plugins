@@ -1,0 +1,6 @@
+# refuse: FORM_ESL_WIDTH
+# why: an .esl plugin's ids are 12 bits; a wider id still carries load-order digits
+kind: link
+name: Wide Light
+identityA: npc:MyLight.esl:0x01ABCD
+identityB: virtual:B

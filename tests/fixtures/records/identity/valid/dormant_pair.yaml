@@ -1,0 +1,8 @@
+# why: mode off is a valid record; the link rebuild drops it, resolution does not
+kind: link
+name: Dormant Pair
+identityA: virtual:Dormant
+identityB: virtual:Pair
+mode: off
+dominance: host_led
+awareness: mutual

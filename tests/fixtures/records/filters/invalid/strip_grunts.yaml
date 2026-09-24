@@ -1,0 +1,5 @@
+# refuse: NAME_NOT_STEM
+# why: the filename is the identity; a rule's id must be the stem
+kind: dialogue_rule
+id: other
+pattern: ^ugh

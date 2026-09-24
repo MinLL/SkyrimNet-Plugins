@@ -1,0 +1,4 @@
+# refuse: LIST_NOT_STRINGS
+# why: a list field is a list of strings, not one string
+kind: lists
+blacklist: nwsFollowerController

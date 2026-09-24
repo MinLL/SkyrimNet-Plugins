@@ -1,0 +1,6 @@
+# refuse: NPC_REF_LOAD_ORDER
+# why: unquoted, the text is still a nonzero runtime form id; it depends on load order, the same rule as the quoted spelling
+kind: link
+name: Bare Runtime Number
+identityA: virtual:Alice
+identityB: 0x0001A66D

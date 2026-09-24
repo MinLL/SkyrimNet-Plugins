@@ -1,0 +1,4 @@
+# refuse: SHOW_IN_PROMPTS_NOT_BOOL
+# why: show_in_prompts is true or false
+form: Skyrim.esm|0x0DB5D2
+show_in_prompts: maybe

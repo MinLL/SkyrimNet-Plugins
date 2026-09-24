@@ -1,0 +1,3 @@
+# why: a plugin name with a byte outside [a-z0-9_] takes the FNV-1a hash of the folded filename in its stem
+form: Mod A.esp|0x000123
+resolved_name: Workbench

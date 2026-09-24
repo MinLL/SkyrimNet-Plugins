@@ -1,0 +1,5 @@
+# refuse: PATTERN_MISSING
+# why: a rule without a pattern matches nothing
+kind: dialogue_rule
+id: no_pattern
+replacement: ""

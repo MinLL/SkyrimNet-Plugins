@@ -1,0 +1,6 @@
+# refuse: LIST_NOT_STRINGS
+# why: every entry of a list field is a string
+kind: memory
+FactionBlacklist:
+  - BanditFaction
+  - race: DogRace

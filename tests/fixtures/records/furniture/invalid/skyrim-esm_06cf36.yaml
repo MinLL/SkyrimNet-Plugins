@@ -1,0 +1,4 @@
+# refuse: FORM_NOT_STEM
+# why: the form stem is exact, not case-folded
+form: Skyrim.esm|0x06CF36
+resolved_name: Counter

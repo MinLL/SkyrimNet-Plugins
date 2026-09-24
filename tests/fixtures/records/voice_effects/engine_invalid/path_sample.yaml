@@ -1,0 +1,8 @@
+# refuse-engine: sample is a plain filename under voice_effects/samples/; a path is refused (the hub does not read sample)
+id: path_sample
+name: Path Sample
+sample: ../samples/growl.wav
+stages:
+  - type: gain
+    params:
+      gain_db: -3.0

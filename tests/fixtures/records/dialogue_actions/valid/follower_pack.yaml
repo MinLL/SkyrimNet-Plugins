@@ -1,0 +1,9 @@
+# why: a lists contribution: entries in the formats the engine classifies (a bare TIF script name or quest editor id, a plugin file, plugin|EditorID, plugin|FormKey)
+kind: lists
+whitelist:
+  - TIF__0200ABCD
+  - "Skyrim.esm|1EA20"
+blacklist:
+  - MyFollowerController
+  - FollowerMod.esp
+  - "MyMod.esp|MyQuest"

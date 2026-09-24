@@ -1,0 +1,6 @@
+# why: a dialogue rule: id equals the stem; pattern, replacement (empty skips the line) and an explicit priority (lower runs first)
+kind: dialogue_rule
+id: skip_greeting
+pattern: ^Hello
+replacement: ""
+priority: 30

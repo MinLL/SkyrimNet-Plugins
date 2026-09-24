@@ -1,0 +1,7 @@
+# why: enabled false is record activation; instructions keep the word
+kind: instruction
+key: TIF__0001A2B3
+name: Rent a room
+text: Only at night.
+category: innkeeper
+enabled: false

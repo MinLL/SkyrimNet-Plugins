@@ -1,0 +1,5 @@
+# why: a succession: one person across two NPC records, from and to as npc: refs
+kind: succession
+name: Line of Kings
+from: npc:Skyrim.esm:0x0350B8
+to: npc:Skyrim.esm:0x0656E2

@@ -1,0 +1,6 @@
+# refuse-engine: stage 0: gain: missing required param 'gain_db' (every stage type names its required params)
+id: missing_param
+name: Missing Param
+sample: null
+stages:
+  - type: gain

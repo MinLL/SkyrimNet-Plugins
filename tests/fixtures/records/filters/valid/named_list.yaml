@@ -1,0 +1,6 @@
+# why: a contribution may carry a display name and description, shown in the dashboard's list of lists
+kind: actor
+name: Khajiit merchants talk
+description: Lets the caravan Khajiit speak in whitelist-only mode.
+RaceWhitelist:
+  - KhajiitRace

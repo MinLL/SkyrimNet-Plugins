@@ -114,15 +114,13 @@ test("a YAML value is never echoed raw: a list or mapping is described, a long s
 });
 
 for (const root of ["items", "spells"]) {
-  test(`${root}: 'enabled' and the old 'npc_usable' are refused in favour of show_in_prompts`, () => {
+  test(`${root}: 'enabled' is refused in favour of show_in_prompts, which must be a boolean`, () => {
     const record = (fields) => checkRecord(root, { form: SKYRIM_FORM, ...fields }, `${root}/${SKYRIM_STEM}.yaml`);
     assertOk(record({}));
     assertOk(record({ show_in_prompts: false }));
     assertOk(record({ show_in_prompts: true }));
     assertCode(record({ enabled: false }), RECORD_CODES.ENABLED_NOT_ACTIVATION, /not whether the form appears in NPC prompts\. Say 'show_in_prompts: false' instead\.$/);
     assertCode(record({ enabled: true }), RECORD_CODES.ENABLED_NOT_ACTIVATION, /show_in_prompts: true/);
-    assertCode(record({ npc_usable: false }), RECORD_CODES.NPC_USABLE_RENAMED, /^'npc_usable' is the old name of 'show_in_prompts'[^\n]*Say 'show_in_prompts: false' instead\.$/);
-    assertCode(record({ npc_usable: true }), RECORD_CODES.NPC_USABLE_RENAMED, /show_in_prompts: true/);
     assertCode(record({ show_in_prompts: "no" }), RECORD_CODES.SHOW_IN_PROMPTS_NOT_BOOL, /^'show_in_prompts' must be true or false\.$/);
     assertCode(record({ show_in_prompts: 1 }), RECORD_CODES.SHOW_IN_PROMPTS_NOT_BOOL);
   });
@@ -165,11 +163,35 @@ test("identity: an npc: reference is npc:Plugin.esp:0xLocalID; the runtime-id sp
   assertCode(link({ identityA: "npc:Skyrim.esm:0x0A01A66D" }), RECORD_CODES.NPC_REF_INVALID, /^identityA 'npc:Skyrim\.esm:0x0A01A66D' is not an NPC reference/);
   assertCode(link({ identityA: "npc::0x1" }), RECORD_CODES.NPC_REF_INVALID);
   assertCode(link({ identityA: "npc:MyLight.esl:0x01ABCD" }), RECORD_CODES.FORM_ESL_WIDTH, /Drop the load-order digits: 'npc:MyLight\.esl:0x000BCD'/);
-  // Succession fields get the same check; other spellings and non-strings are not this rule's business.
+  // Succession fields get the same check; virtual refs, bare names and non-scalar values are not this rule's business.
   const succession = (fields) => checkRecord("identity", { kind: "succession", name: "S", ...fields }, "identity/s.yaml");
   assertCode(succession({ from: "npc:0350B8", to: "npc:Skyrim.esm:0x0656E2" }), RECORD_CODES.NPC_REF_LOAD_ORDER, /^from /);
-  assertOk(succession({ from: "virtual:Old King", to: 42 }));
+  assertOk(succession({ from: "virtual:Old King", to: "Old King" }));
+  assertOk(link({ identityA: "virtual:0x0001A66D", identityB: "Serana" }));
+  assertOk(link({ identityA: "0", identityB: "0x" }));
+  assertOk(link({ identityA: "12abc", identityB: "089" }));
+  assertOk(link({ identityA: null, identityB: ["npc:0A012345"] }));
   assertOk(link({ identityA: "npc:0A012345", kind: "succession" }));
+});
+
+test("identity: a prefix-less number is a runtime form id to the engine and is refused", () => {
+  const link = (fields) => checkRecord("identity", { name: "L", ...fields }, "identity/l.yaml");
+  assertCode(
+    link({ identityA: "0x0001A66D" }),
+    RECORD_CODES.NPC_REF_LOAD_ORDER,
+    /^identityA '0x0001A66D' is a runtime form id, which depends on load order\. Spell it 'npc:<Plugin\.esp>:0x01A66D': the defining plugin's filename and the plugin-relative id\.$/,
+  );
+  assertCode(link({ identityB: " 108141 " }), RECORD_CODES.NPC_REF_LOAD_ORDER, /^identityB ' 108141 '[^\n]*'npc:<Plugin\.esp>:0x01A66D'/);
+  assertCode(link({ identityA: "0xFE01ABCD" }), RECORD_CODES.NPC_REF_LOAD_ORDER, /'npc:<Plugin\.esp>:0x000BCD'/);
+  assertCode(link({ identityA: "0x0A012345" }), RECORD_CODES.NPC_REF_LOAD_ORDER, /'npc:<Plugin\.esp>:0x012345'/);
+  assertCode(link({ identityA: "0777" }), RECORD_CODES.NPC_REF_LOAD_ORDER, /'npc:<Plugin\.esp>:0x0001FF'/);
+  // A YAML number is refused whatever its value.
+  assertCode(link({ identityA: 108141 }), RECORD_CODES.NPC_REF_LOAD_ORDER, /^identityA the number 108141 is a runtime form id[^\n]*'npc:<Plugin\.esp>:0x01A66D'/);
+  assertCode(link({ identityB: 0 }), RECORD_CODES.NPC_REF_LOAD_ORDER, /'npc:Plugin\.esp:0xLocalID'/);
+  assertCode(link({ identityB: 1.5 }), RECORD_CODES.NPC_REF_LOAD_ORDER, /'npc:Plugin\.esp:0xLocalID'/);
+  const succession = (fields) => checkRecord("identity", { kind: "succession", name: "S", ...fields }, "identity/s.yaml");
+  assertCode(succession({ from: "npc:Skyrim.esm:0x0350B8", to: 42 }), RECORD_CODES.NPC_REF_LOAD_ORDER, /^to the number 42 [^\n]*'npc:<Plugin\.esp>:0x00002A'/);
+  assertCode(succession({ from: "0x0350B8", to: "npc:Skyrim.esm:0x0656E2" }), RECORD_CODES.NPC_REF_LOAD_ORDER, /^from '0x0350B8'/);
 });
 
 // ----- filters: contributions any stem, rules id == stem -------------------
@@ -286,7 +308,7 @@ test("dialogue_actions: a lists contribution carries string lists under any stem
   assertCode(checkRecord("dialogue_actions", { kind: "rules" }, "dialogue_actions/x.yaml"), RECORD_CODES.KIND_UNKNOWN);
 });
 
-test("dialogue_actions: an instruction is keyed on its TIF script name and names a category", () => {
+test("dialogue_actions: an instruction is keyed on its TIF script name; a category, when present, is one of the ten", () => {
   const good = { kind: "instruction", key: "TIF__000D9B53", name: "Rent a room", text: "Offer the room.", category: "innkeeper", enabled: true };
   assertOk(checkRecord("dialogue_actions", good, "dialogue_actions/TIF__000D9B53.yaml"));
   assertOk(checkRecord("dialogue_actions", { ...good, category: "Innkeeper" }, "dialogue_actions/tif__000d9b53.yaml"));
@@ -294,7 +316,9 @@ test("dialogue_actions: an instruction is keyed on its TIF script name and names
   assertCode(checkRecord("dialogue_actions", { ...good, key: undefined }, "dialogue_actions/TIF__000D9B53.yaml"), CODES.NAME_MISSING, /'key'/);
   const badCategory = checkRecord("dialogue_actions", { ...good, category: "lodging" }, "dialogue_actions/TIF__000D9B53.yaml");
   assertCode(badCategory, RECORD_CODES.CATEGORY_UNKNOWN, /quest, follower, merchant, trainer, carriage, innkeeper, bard, marriage, crime, other/);
-  assertCode(checkRecord("dialogue_actions", { ...good, category: undefined }, "dialogue_actions/TIF__000D9B53.yaml"), RECORD_CODES.CATEGORY_UNKNOWN);
+  for (const category of [undefined, null, ""]) {
+    assert.equal(checkRecord("dialogue_actions", { ...good, category }, "dialogue_actions/TIF__000D9B53.yaml").ok, true);
+  }
   assertCode(checkRecord("dialogue_actions", { ...good, category: 3 }, "dialogue_actions/TIF__000D9B53.yaml"), RECORD_CODES.CATEGORY_UNKNOWN);
 });
 

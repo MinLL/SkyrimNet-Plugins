@@ -1,0 +1,6 @@
+# refuse: NPC_REF_INVALID
+# why: an npc: ref is 'npc:Plugin.esp:0xLocalID'; a non-hex id is not one
+kind: link
+name: Bad Ref
+identityA: npc:Skyrim.esm:zzz
+identityB: virtual:B

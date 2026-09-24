@@ -1,0 +1,14 @@
+# why: the six list fields by name
+kind: actor
+FactionWhitelist:
+  - PaarthurnaxFaction
+FactionBlacklist:
+  - BanditFaction
+RaceWhitelist:
+  - KhajiitRace
+RaceBlacklist:
+  - DogRace
+GenderWhitelist:
+  - Female
+GenderBlacklist:
+  - Male

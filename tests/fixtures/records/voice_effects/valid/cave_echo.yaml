@@ -1,0 +1,21 @@
+# why: a recipe: id equals the stem; name, an optional sample, and an ordered stage chain in the engine's stage schema
+id: cave_echo
+name: Cave Echo
+sample: null
+stages:
+  - type: echo
+    params:
+      delay_ms: 320
+      feedback: 0.25
+      wet: 0.4
+  - type: reverb
+    params:
+      room_size: 0.8
+      decay: 0.7
+      wet: 0.45
+  - type: eq
+    params:
+      mode: high
+      freq_hz: 300.0
+      q: 0.7
+      gain_db: -2.0

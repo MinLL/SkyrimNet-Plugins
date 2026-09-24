@@ -1,0 +1,6 @@
+# refuse-engine: awareness 'psychic' is not one of mutual, entity_only
+kind: link
+name: Psychic Awareness
+identityA: virtual:Alice
+identityB: npc:Skyrim.esm:0x01A66D
+awareness: psychic

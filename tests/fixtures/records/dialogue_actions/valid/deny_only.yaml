@@ -1,0 +1,4 @@
+# why: a contribution may carry only one of the two lists
+kind: lists
+blacklist:
+  - nwsFollowerController

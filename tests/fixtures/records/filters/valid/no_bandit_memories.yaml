@@ -1,0 +1,4 @@
+# why: a memory contribution has the same six list fields
+kind: memory
+FactionBlacklist:
+  - BanditFaction

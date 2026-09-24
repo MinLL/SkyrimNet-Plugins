@@ -1,0 +1,4 @@
+# why: an .esl plugin's id is 12 bits and still prints six digits
+form: MyLight.esl|0x000801
+originalName: Lesser Ward
+customName: Small Ward

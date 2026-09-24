@@ -1,0 +1,3 @@
+# refuse: FORM_ESL_WIDTH
+# why: an .esl plugin's ids are 12 bits; a wider id still carries load-order digits
+form: MyLight.esl|0x01ABCD

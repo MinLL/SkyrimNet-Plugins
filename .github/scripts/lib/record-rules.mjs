@@ -22,7 +22,6 @@ export const RECORD_CODES = {
   FORM_NOT_STEM: "FORM_NOT_STEM",
   ENABLED_NOT_ACTIVATION: "ENABLED_NOT_ACTIVATION",
   SHOW_IN_PROMPTS_NOT_BOOL: "SHOW_IN_PROMPTS_NOT_BOOL",
-  NPC_USABLE_RENAMED: "NPC_USABLE_RENAMED",
   SLUG_NOT_STEM: "SLUG_NOT_STEM",
   NPC_REF_LOAD_ORDER: "NPC_REF_LOAD_ORDER",
   NPC_REF_INVALID: "NPC_REF_INVALID",
@@ -54,12 +53,11 @@ export const FILTER_LIST_FIELDS = Object.freeze([
   "FactionWhitelist", "FactionBlacklist", "RaceWhitelist", "RaceBlacklist", "GenderWhitelist", "GenderBlacklist",
 ]);
 
-// The identity-link fields that may hold an `npc:` reference, per kind.
+// The identity-link fields that hold an identity ref (`npc:`, `virtual:` or a bare virtual name), per kind.
 export const IDENTITY_REF_FIELDS = Object.freeze({ link: ["identityA", "identityB"], succession: ["from", "to"] });
 
 const FORM_FIELD = "form";
 const SHOW_IN_PROMPTS_FIELD = "show_in_prompts";
-const NPC_USABLE_FIELD = "npc_usable"; // the field's name before the engine renamed it
 const TRANSLATOR_GLOBAL_STEM = "global";
 const PRIORITY_FIELD = "priority";
 const PATTERN_FIELD = "pattern";
@@ -148,29 +146,64 @@ function npcRefToString({ plugin, localId }) {
   return `${NPC_REF_PREFIX}${plugin}:0x${localIdHex(localId)}`;
 }
 
-/** The plugin-relative id a runtime form id spells (FE-prefixed: 12 bits, else 24); null when it is not hex. */
-function localIdOfRuntimeId(text) {
-  const digits = /^0[xX]/.test(text) ? text.slice(2) : text;
-  if (!/^[0-9a-fA-F]{1,8}$/.test(digits)) return null;
-  const value = parseInt(digits, 16);
+/** The plugin-relative id a runtime form id value spells (FE-prefixed: 12 bits, else 24). */
+function localIdOfRuntimeValue(value) {
   if (value <= RUNTIME_ID_MASK) return value;
   const prefix = (value & RUNTIME_PREFIX_MASK) >>> 0;
   return prefix === RUNTIME_ESL_PREFIX ? value & ESL_LOCAL_ID_MASK : value & RUNTIME_ID_MASK;
 }
 
-/** An `npc:` reference is `npc:Plugin.esp:0xLocalID`; the plugin and id are a FormRef split at the last colon. */
+/** The plugin-relative id a runtime form id spells (FE-prefixed: 12 bits, else 24); null when it is not hex. */
+function localIdOfRuntimeId(text) {
+  const digits = /^0[xX]/.test(text) ? text.slice(2) : text;
+  if (!/^[0-9a-fA-F]{1,8}$/.test(digits)) return null;
+  return localIdOfRuntimeValue(parseInt(digits, 16));
+}
+
+/**
+ * The value of a prefix-less ref the engine reads as a runtime form id, or null. Mirrors FormRef::ParseRuntimeFormId
+ * (strtoull base 0: '0x' hex, leading-'0' octal, else decimal; whole string; at most 32 bits) and
+ * IdentityLinkManager::ParseIdentityRef, which takes a nonzero one as an NPC FormID and anything else as a virtual name.
+ */
+function bareRuntimeIdValue(text) {
+  const t = text.trim();
+  let value;
+  if (/^0[xX][0-9a-fA-F]+$/.test(t)) value = parseInt(t.slice(2), 16);
+  else if (/^0[0-7]*$/.test(t)) value = parseInt(t, 8);
+  else if (/^[1-9][0-9]*$/.test(t)) value = Number(t);
+  else return null;
+  return value > 0 && value <= 0xffffffff ? value : null;
+}
+
+function loadOrderMessage(field, value, localId) {
+  const spelling = localId === null ? `'${NPC_REF_SPELLING}'` : `'npc:<Plugin.esp>:0x${localIdHex(localId)}'`;
+  return (
+    `${field} ${quoteValue(value)} is a runtime form id, which depends on load order. Spell it ${spelling}: ` +
+    `the defining plugin's filename and the plugin-relative id.`
+  );
+}
+
+/**
+ * An identity ref is `npc:Plugin.esp:0xLocalID` (the plugin and id a FormRef split at the last colon), `virtual:Name`,
+ * or a prefix-less virtual name. A prefix-less number, as a string or a YAML number, is a runtime form id to the
+ * engine, which depends on load order, so it is refused.
+ */
 function checkNpcRef(field, value, push) {
-  if (typeof value !== "string" || !value.startsWith(NPC_REF_PREFIX)) return;
+  if (typeof value === "number") {
+    const localId = Number.isInteger(value) && value > 0 && value <= 0xffffffff ? localIdOfRuntimeValue(value) : null;
+    push(RECORD_CODES.NPC_REF_LOAD_ORDER, loadOrderMessage(field, value, localId));
+    return;
+  }
+  if (typeof value !== "string") return;
+  if (!value.startsWith(NPC_REF_PREFIX)) {
+    const bare = bareRuntimeIdValue(value);
+    if (bare !== null) push(RECORD_CODES.NPC_REF_LOAD_ORDER, loadOrderMessage(field, value, localIdOfRuntimeValue(bare)));
+    return;
+  }
   const body = value.slice(NPC_REF_PREFIX.length);
   const lastColon = body.lastIndexOf(":");
   if (lastColon === -1) {
-    const localId = localIdOfRuntimeId(body);
-    const spelling = localId === null ? `'${NPC_REF_SPELLING}'` : `'npc:<Plugin.esp>:0x${localIdHex(localId)}'`;
-    push(
-      RECORD_CODES.NPC_REF_LOAD_ORDER,
-      `${field} ${quoteValue(value)} is a runtime form id, which depends on load order. Spell it ${spelling}: ` +
-        `the defining plugin's filename and the plugin-relative id.`,
-    );
+    push(RECORD_CODES.NPC_REF_LOAD_ORDER, loadOrderMessage(field, value, localIdOfRuntimeId(body)));
     return;
   }
   const ref = parseFormRef(`${body.slice(0, lastColon)}|${body.slice(lastColon + 1)}`);
@@ -242,7 +275,7 @@ function checkPattern(doc, kind, push) {
 }
 
 // `show_in_prompts` (true when omitted) says whether the item or spell appears in NPC equipment and spell lists
-// in prompts; `enabled` is record activation, and `npc_usable` is the field's old name.
+// in prompts; `enabled` is record activation.
 function checkShowInPrompts(doc, root, push) {
   const spell = (value) => `'${SHOW_IN_PROMPTS_FIELD}: ${value === false ? "false" : "true"}'`;
   if (doc.enabled !== undefined) {
@@ -250,13 +283,6 @@ function checkShowInPrompts(doc, root, push) {
       RECORD_CODES.ENABLED_NOT_ACTIVATION,
       `'enabled' in a ${root}/ file means record activation (the user's on/off toggle), not whether the form ` +
         `appears in NPC prompts. Say ${spell(doc.enabled)} instead.`,
-    );
-  }
-  if (doc[NPC_USABLE_FIELD] !== undefined) {
-    push(
-      RECORD_CODES.NPC_USABLE_RENAMED,
-      `'${NPC_USABLE_FIELD}' is the old name of '${SHOW_IN_PROMPTS_FIELD}'; the engine ignores it. ` +
-        `Say ${spell(doc[NPC_USABLE_FIELD])} instead.`,
     );
   }
   if (doc[SHOW_IN_PROMPTS_FIELD] !== undefined && typeof doc[SHOW_IN_PROMPTS_FIELD] !== "boolean") {
@@ -340,13 +366,10 @@ const CHECKS = {
       checkStringList(doc, "blacklist", push);
     } else if (kind === "instruction") {
       pushStemCheck("key", doc.key, subPath, push);
+      // `category` is optional: absent or empty leaves the line's own classification.
       const category = typeof doc.category === "string" ? foldCase(doc.category) : null;
-      if (doc.category === undefined) {
-        push(
-          RECORD_CODES.CATEGORY_UNKNOWN,
-          `An instruction needs a 'category': one of ${DIALOGUE_ACTION_CATEGORIES.join(", ")}.`,
-        );
-      } else if (category === null || !DIALOGUE_ACTION_CATEGORIES.includes(category)) {
+      if (doc.category === undefined || doc.category === null || category === "") return;
+      if (category === null || !DIALOGUE_ACTION_CATEGORIES.includes(category)) {
         push(
           RECORD_CODES.CATEGORY_UNKNOWN,
           `category is ${quoteValue(doc.category)}, not a dialogue-action category. Use one of ` +
