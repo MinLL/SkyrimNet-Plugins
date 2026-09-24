@@ -1,0 +1,4 @@
+# refuse: FORM_INVALID
+# why: a form is 'Plugin.esp|0x01396B'; a plugin alone is not a form reference
+form: Skyrim.esm
+customName: No Id

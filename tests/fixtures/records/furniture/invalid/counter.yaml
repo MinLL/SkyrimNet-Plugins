@@ -1,0 +1,4 @@
+# refuse: FORM_NOT_STEM
+# why: the filename is the identity and is derived from the form, never chosen by hand
+form: Skyrim.esm|0x06CF36
+resolved_name: Counter

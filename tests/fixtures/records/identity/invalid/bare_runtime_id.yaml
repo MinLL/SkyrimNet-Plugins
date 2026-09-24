@@ -1,0 +1,6 @@
+# refuse: NPC_REF_LOAD_ORDER
+# why: a prefix-less number is a runtime form id to the engine, which depends on load order; a ref names the defining plugin and the plugin-relative id
+kind: link
+name: Bare Runtime Id
+identityA: virtual:Alice
+identityB: "0x0001A66D"

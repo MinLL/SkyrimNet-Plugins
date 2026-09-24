@@ -1,0 +1,6 @@
+# refuse: NPC_REF_INVALID
+# why: a full runtime id behind a plugin name is not a plugin-relative id; the load-order digits do not belong in a file
+kind: link
+name: Masked Runtime Ref
+identityA: virtual:Alice
+identityB: npc:Skyrim.esm:0x0A01A66D

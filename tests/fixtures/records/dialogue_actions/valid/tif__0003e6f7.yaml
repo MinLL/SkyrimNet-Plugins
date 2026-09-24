@@ -1,0 +1,6 @@
+# why: the key and the filename stem compare ASCII-case-insensitively, and so does the category
+kind: instruction
+key: TIF__0003E6F7
+name: Haggle
+text: Haggle first.
+category: Merchant

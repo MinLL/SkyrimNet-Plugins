@@ -1,0 +1,9 @@
+# why: a fallback name for a text with no slug; the text stays as the label the surfaces show
+kind: link
+name: link_2
+label: "???"
+identityA: virtual:A
+identityB: virtual:B
+mode: bidirectional
+dominance: host_led
+awareness: mutual

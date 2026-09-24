@@ -1,0 +1,4 @@
+# refuse: FORM_INVALID
+# why: a form is 'Plugin.esp|0x01396B'; a bare id names no plugin
+form: 0x012FCD
+customName: No Plugin

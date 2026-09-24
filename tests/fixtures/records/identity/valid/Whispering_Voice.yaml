@@ -1,0 +1,8 @@
+# why: the slug of name and the filename stem compare ASCII-case-insensitively
+kind: link
+name: Whispering Voice
+identityA: virtual:Whisper
+identityB: virtual:Voice
+mode: a_sees_b
+dominance: contested
+awareness: mutual

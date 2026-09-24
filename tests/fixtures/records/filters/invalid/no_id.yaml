@@ -1,0 +1,4 @@
+# refuse: NAME_MISSING
+# why: a rule's id is its identity
+kind: tts_rule
+pattern: x

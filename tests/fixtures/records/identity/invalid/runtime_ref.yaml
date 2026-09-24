@@ -1,0 +1,6 @@
+# refuse: NPC_REF_LOAD_ORDER
+# why: a runtime form id depends on load order; a ref names the defining plugin and the plugin-relative id
+kind: link
+name: Runtime Ref
+identityA: virtual:Alice
+identityB: npc:0x0001A66D

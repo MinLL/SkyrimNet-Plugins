@@ -1,0 +1,6 @@
+# why: a lists contribution may carry a display name and description
+kind: lists
+name: My follower mod
+description: Keeps the LLM away from my follower mod's controller lines.
+blacklist:
+  - MyFollowerController

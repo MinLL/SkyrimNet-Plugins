@@ -1,0 +1,9 @@
+# why: the id and the filename stem compare ASCII-case-insensitively
+id: frost_atronach
+name: Frost Atronach
+sample: null
+stages:
+  - type: whisper
+    params:
+      noise_db: -30.0
+      mix: 0.2

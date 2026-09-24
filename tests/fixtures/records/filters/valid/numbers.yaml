@@ -1,0 +1,5 @@
+# why: a rule's id and the filename stem compare ASCII-case-insensitively
+kind: tts_rule
+id: Numbers
+pattern: \d+
+replacement: ""

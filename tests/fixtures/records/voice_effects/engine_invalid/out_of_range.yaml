@@ -1,0 +1,10 @@
+# refuse-engine: stage 0: echo: feedback must be in [0, 0.95] (the engine's stage parameter ranges)
+id: out_of_range
+name: Out Of Range
+sample: null
+stages:
+  - type: echo
+    params:
+      delay_ms: 100
+      feedback: 1.5
+      wet: 0.5

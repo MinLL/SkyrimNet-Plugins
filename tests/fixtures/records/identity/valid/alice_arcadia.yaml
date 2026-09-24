@@ -1,0 +1,11 @@
+# why: kind defaults to link; the free-text framing and conduct fields are optional
+name: Alice Arcadia
+identityA: virtual:Alice
+identityB: npc:Skyrim.esm:0x01A66D
+mode: a_sees_b
+dominance: entity_led
+awareness: entity_only
+framingEntity: Alice remembers being Arcadia.
+framingBody: Arcadia does not know.
+conductEntity: Speak as Alice.
+conductBody: Speak as Arcadia.

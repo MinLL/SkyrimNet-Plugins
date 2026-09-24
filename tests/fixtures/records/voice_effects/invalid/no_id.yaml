@@ -1,0 +1,5 @@
+# refuse: NAME_MISSING
+# why: the id is the identity; a recipe without one has no file to live at
+name: Nameless
+sample: null
+stages: []

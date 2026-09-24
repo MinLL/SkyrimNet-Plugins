@@ -1,0 +1,5 @@
+# refuse: NAME_MISSING
+# why: an instruction's key is its identity
+kind: instruction
+name: Keyless
+text: x

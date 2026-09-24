@@ -1,0 +1,11 @@
+# refuse: NAME_NOT_STEM
+# why: the filename is the identity; an id that is not the stem is refused (the pre-library narrator_reverb.yaml carried narrator_effect)
+id: narrator_effect
+name: Narrator Effect
+sample: null
+stages:
+  - type: echo
+    params:
+      delay_ms: 200
+      feedback: 0.05
+      wet: 0.35

@@ -1,0 +1,5 @@
+# refuse: ENABLED_NOT_ACTIVATION
+# engine: loads
+# why: the hub refuses enabled on a spell even when true; the engine reads it as record activation (this record is on)
+form: Skyrim.esm|0x01C789
+enabled: true

@@ -1,0 +1,4 @@
+# refuse: SHOW_IN_PROMPTS_NOT_BOOL
+# why: show_in_prompts is true or false
+form: MyLight.esl|0x000801
+show_in_prompts: maybe

@@ -1,0 +1,6 @@
+# refuse: ENABLED_NOT_ACTIVATION
+# engine: loads
+# why: the hub refuses enabled on an item so an author who meant the old 'NPCs may use it' flag is told about show_in_prompts; the engine reads it as record activation (this record is off)
+form: Skyrim.esm|0x0139B8
+customName: Off Sword
+enabled: false

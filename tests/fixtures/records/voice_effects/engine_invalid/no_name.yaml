@@ -1,0 +1,7 @@
+# refuse-engine: recipe name must not be empty (the hub checks only the id)
+id: no_name
+sample: null
+stages:
+  - type: gain
+    params:
+      gain_db: -3.0
