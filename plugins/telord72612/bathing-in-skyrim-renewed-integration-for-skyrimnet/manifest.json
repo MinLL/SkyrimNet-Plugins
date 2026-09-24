@@ -1,0 +1,57 @@
+{
+  "id": "telord72612.bathing-in-skyrim-renewed-integration-for-skyrimnet",
+  "type": "listing",
+  "title": "Bathing in Skyrim Renewed integration for SkyrimNet",
+  "tagline": "Action for NPC to find water and go to it, bath in it or request proper items for it, and Awareness prompt for dirtiness level and bathing action.",
+  "description": "Plugins that add action and awareness for \"Bathing in Skyrim Renewed\".\nAdd action for NPC to find and travel to water, take bath or request for the missing component for cleaning themself and dual action for cleaned the player or other NPC thru \"Wash Me\" if installed.\nAdd awareness of dirtiness level thru SeverAction's survival prompt and allow NPC's to know when they bath and with who, and surrounding NPC to also be aware of who is bathing close by.\nAll dirtiness variable and bathing requirement are directly linked to BiSR, so dirtiness level and speed of it is done in BiSR MCM menu.",
+  "author": "telord72612",
+  "tags": [
+    "Action"
+  ],
+  "nsfw": false,
+  "icon": "scroll",
+  "mods": [
+    {
+      "name": "Skyrim.esm",
+      "file": "skyrim.esm",
+      "required": true
+    },
+    {
+      "name": "Update.esm",
+      "file": "update.esm",
+      "required": true
+    },
+    {
+      "name": "Dragonborn.esm",
+      "file": "dragonborn.esm",
+      "required": true
+    },
+    {
+      "name": "HearthFires.esm",
+      "file": "hearthfires.esm",
+      "required": true
+    },
+    {
+      "name": "Dawnguard.esm",
+      "file": "dawnguard.esm",
+      "required": true
+    },
+    {
+      "name": "Bathing in Skyrim.esp",
+      "file": "bathing in skyrim.esp",
+      "required": true
+    },
+    {
+      "name": "Bathing in Skyrim - Wash Me.esp",
+      "file": "bathing in skyrim - wash me.esp",
+      "required": false
+    },
+    {
+      "name": "SeverActions.esp",
+      "file": "severactions.esp",
+      "required": true
+    }
+  ],
+  "external_url": "https://github.com/Telord72612/Bathing-in-Skyrim-SN-SA-Plugins/releases/tag/V2.5",
+  "version": "2.5"
+}
