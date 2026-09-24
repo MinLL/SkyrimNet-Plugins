@@ -1,5 +1,0 @@
-# refuse-engine: a link to the player (Skyrim.esm 0x000007, the player base; 0x000014 is the reference) would leak the player's private context into NPC prompts
-kind: link
-name: Player Shadow
-identityA: virtual:Alice
-identityB: npc:Skyrim.esm:0x000007
