@@ -1,8 +1,58 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-09-24T05:29:40.568Z",
-  "stats_as_of": "2026-09-24T05:29:40.520Z",
+  "generated_at": "2026-09-24T06:36:42.752Z",
+  "stats_as_of": "2026-09-24T06:36:42.692Z",
   "plugins": [
+    {
+      "id": "plugins/telord72612/devious-awareness-base",
+      "plugin_id": "telord72612.devious-awareness-base",
+      "type": "listing",
+      "title": "Devious Awareness Base",
+      "tagline": "Plugins that recognize Devious Device and ZaZ gears worn by NPC and send awareness for deprived state and restriction, worn device, effect with accumulating scale and result.",
+      "author": "telord72612",
+      "tags": [
+        "Prompt"
+      ],
+      "nsfw": true,
+      "icon": "package",
+      "mods": [
+        {
+          "name": "Devious Devices - Assets.esm",
+          "file": "devious devices - assets.esm",
+          "required": true
+        },
+        {
+          "name": "Devious Devices - Integration.esm",
+          "file": "devious devices - integration.esm",
+          "required": true
+        },
+        {
+          "name": "Devious Devices - Expansion.esm",
+          "file": "devious devices - expansion.esm",
+          "required": true
+        },
+        {
+          "name": "Devious Devices - Contraptions.esm",
+          "file": "devious devices - contraptions.esm",
+          "required": true
+        }
+      ],
+      "first_published": "2026-09-24T04:44:57Z",
+      "last_updated": "2026-09-24T04:44:57Z",
+      "version": "1.0.0",
+      "history": [
+        {
+          "version": "1.0.0",
+          "commit": "c3ea0becac14be7f438c51130a78893b003b0d60",
+          "date": "2026-09-24T04:44:57Z"
+        }
+      ],
+      "external_url": "https://github.com/Telord72612/SkyrimNet-Devious-Awareness-Base/releases/tag/v1.0.0",
+      "stats": {
+        "downloads": 0,
+        "endorsements": 0
+      }
+    },
     {
       "id": "plugins/phospheneoverdrive/alchemist-knowledge",
       "plugin_id": "phospheneoverdrive.alchemist-knowledge",
@@ -802,7 +852,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 18,
+        "downloads": 19,
         "endorsements": 0
       }
     },
@@ -1027,7 +1077,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 7,
+        "downloads": 8,
         "endorsements": 0
       }
     },
@@ -1792,7 +1842,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 8,
+        "downloads": 9,
         "endorsements": 0
       }
     },
@@ -2512,7 +2562,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 14,
+        "downloads": 15,
         "endorsements": 0
       }
     },
@@ -3547,7 +3597,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 0,
+        "downloads": 1,
         "endorsements": 0
       }
     },
@@ -6217,7 +6267,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 12,
+        "downloads": 13,
         "endorsements": 0
       }
     },
@@ -6307,7 +6357,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 0,
+        "downloads": 1,
         "endorsements": 0
       }
     },
@@ -7972,7 +8022,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 0,
+        "downloads": 1,
         "endorsements": 0
       }
     },
@@ -9097,7 +9147,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 6,
+        "downloads": 7,
         "endorsements": 0
       }
     },
@@ -9637,7 +9687,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 15,
+        "downloads": 16,
         "endorsements": 0
       }
     },
