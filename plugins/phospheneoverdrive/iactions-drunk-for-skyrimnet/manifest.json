@@ -13,6 +13,8 @@
   "nsfw": false,
   "icon": "zap",
   "mods": [],
+  "image": "cover.png",
   "external_url": "https://github.com/Gerkinfeltser/iActions/releases",
-  "version": "0.6.6"
+  "version": "0.6.7",
+  "changelog": "Added cover image"
 }
