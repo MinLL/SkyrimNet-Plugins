@@ -1,0 +1,6 @@
+# refuse: NPC_REF_LOAD_ORDER
+# why: an unquoted number in a ref field is a runtime form id too, whatever the YAML type; it depends on load order
+kind: link
+name: Bare Runtime Number
+identityA: virtual:Alice
+identityB: 0x0001A66D

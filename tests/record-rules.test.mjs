@@ -163,11 +163,35 @@ test("identity: an npc: reference is npc:Plugin.esp:0xLocalID; the runtime-id sp
   assertCode(link({ identityA: "npc:Skyrim.esm:0x0A01A66D" }), RECORD_CODES.NPC_REF_INVALID, /^identityA 'npc:Skyrim\.esm:0x0A01A66D' is not an NPC reference/);
   assertCode(link({ identityA: "npc::0x1" }), RECORD_CODES.NPC_REF_INVALID);
   assertCode(link({ identityA: "npc:MyLight.esl:0x01ABCD" }), RECORD_CODES.FORM_ESL_WIDTH, /Drop the load-order digits: 'npc:MyLight\.esl:0x000BCD'/);
-  // Succession fields get the same check; other spellings and non-strings are not this rule's business.
+  // Succession fields get the same check; virtual refs, bare names and non-scalar values are not this rule's business.
   const succession = (fields) => checkRecord("identity", { kind: "succession", name: "S", ...fields }, "identity/s.yaml");
   assertCode(succession({ from: "npc:0350B8", to: "npc:Skyrim.esm:0x0656E2" }), RECORD_CODES.NPC_REF_LOAD_ORDER, /^from /);
-  assertOk(succession({ from: "virtual:Old King", to: 42 }));
+  assertOk(succession({ from: "virtual:Old King", to: "Old King" }));
+  assertOk(link({ identityA: "virtual:0x0001A66D", identityB: "Serana" }));
+  assertOk(link({ identityA: "0", identityB: "0x" }));
+  assertOk(link({ identityA: "12abc", identityB: "089" }));
+  assertOk(link({ identityA: null, identityB: ["npc:0A012345"] }));
   assertOk(link({ identityA: "npc:0A012345", kind: "succession" }));
+});
+
+test("identity: a prefix-less number is a runtime form id to the engine and is refused", () => {
+  const link = (fields) => checkRecord("identity", { name: "L", ...fields }, "identity/l.yaml");
+  assertCode(
+    link({ identityA: "0x0001A66D" }),
+    RECORD_CODES.NPC_REF_LOAD_ORDER,
+    /^identityA '0x0001A66D' is a runtime form id, which depends on load order\. Spell it 'npc:<Plugin\.esp>:0x01A66D': the defining plugin's filename and the plugin-relative id\.$/,
+  );
+  assertCode(link({ identityB: " 108141 " }), RECORD_CODES.NPC_REF_LOAD_ORDER, /^identityB ' 108141 '[^\n]*'npc:<Plugin\.esp>:0x01A66D'/);
+  assertCode(link({ identityA: "0xFE01ABCD" }), RECORD_CODES.NPC_REF_LOAD_ORDER, /'npc:<Plugin\.esp>:0x000BCD'/);
+  assertCode(link({ identityA: "0x0A012345" }), RECORD_CODES.NPC_REF_LOAD_ORDER, /'npc:<Plugin\.esp>:0x012345'/);
+  assertCode(link({ identityA: "0777" }), RECORD_CODES.NPC_REF_LOAD_ORDER, /'npc:<Plugin\.esp>:0x0001FF'/);
+  // A YAML number is refused whatever its value.
+  assertCode(link({ identityA: 108141 }), RECORD_CODES.NPC_REF_LOAD_ORDER, /^identityA the number 108141 is a runtime form id[^\n]*'npc:<Plugin\.esp>:0x01A66D'/);
+  assertCode(link({ identityB: 0 }), RECORD_CODES.NPC_REF_LOAD_ORDER, /'npc:Plugin\.esp:0xLocalID'/);
+  assertCode(link({ identityB: 1.5 }), RECORD_CODES.NPC_REF_LOAD_ORDER, /'npc:Plugin\.esp:0xLocalID'/);
+  const succession = (fields) => checkRecord("identity", { kind: "succession", name: "S", ...fields }, "identity/s.yaml");
+  assertCode(succession({ from: "npc:Skyrim.esm:0x0350B8", to: 42 }), RECORD_CODES.NPC_REF_LOAD_ORDER, /^to the number 42 [^\n]*'npc:<Plugin\.esp>:0x00002A'/);
+  assertCode(succession({ from: "0x0350B8", to: "npc:Skyrim.esm:0x0656E2" }), RECORD_CODES.NPC_REF_LOAD_ORDER, /^from '0x0350B8'/);
 });
 
 // ----- filters: contributions any stem, rules id == stem -------------------
