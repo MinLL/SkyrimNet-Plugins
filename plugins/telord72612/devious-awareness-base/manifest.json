@@ -1,0 +1,37 @@
+{
+  "id": "telord72612.devious-awareness-base",
+  "type": "listing",
+  "title": "Devious Awareness Base",
+  "tagline": "Plugins that recognize Devious Device and ZaZ gears worn by NPC and send awareness for deprived state and restriction, worn device, effect with accumulating scale and result.",
+  "description": "An awareness layer that tells SkyrimNet's LLM what restraint gear an NPC is actually wearing, what it is doing to her body, and what anyone else can see of it. 1,221 Devious Devices records, 222 from ZaZ Animation Pack, plus Diary of Mine, in 37 device classes.\nSkyrim SE / AE / VR — one DLL.\n\nNo action. Only prompt for awareness.\n\nSTATE: tell a NPC what state they are in every prompt, just before they must give their answer. Ex: gag ball will tell a NPC how they should talk, in every prompt, as long as the device is worn. Once a device is removed, a prompt for three turn will replace the restrictive one to tell the NPC they are now free and can speak, just before they render their answer, for proper LLM roleplay.\n\nWORN DEVICE: All device are removed from the normal equipment list and have their own category in the LLM prompt. The NPC wearing them are told what they are, how long they been on and what pain or effect they now give. Onlooking NPC will have a similar prompt but only explaining what the device look like, and only if this is a visible device. A plug won't be seen by other NPC if the wearer is dress up, but the NPC wearing the plug will be full aware.\n\nEFFECT AND SCALE: Device worn that create effect will have those effect escalate with time and number. An armbinder will have a description in \"Worn Device\" that will change with time as to give more discomfort and pain. Some cuff or wrist shackle won't create as much pain as a Yoke with time. Effect range from pain and dampness, to arousal and chafing.\n\nLAYER: Device are worn on different layer of the body. Outer layer can be seen all the time by other NPC even when dressed. Under layer device need to be naked for other to see them.\n\nCLIMAX and EVENTS: Some device create climax and situation. SoulGem Plug raise arousal and create Climax once arousal 100 is reached. Shock plug will shock the NPC in the same situation. Blindfold NPC will trip and won't use ranged weapon. Gag NPC won't cast spell. NPC wearing pain device long enough will fall to their knee on removal. All events are sent to the LLM for awareness.\n\nBase requirement is DD NG and SkyrimNet.\nMore on the GitHub",
+  "author": "telord72612",
+  "tags": [
+    "Prompt"
+  ],
+  "nsfw": true,
+  "icon": "package",
+  "mods": [
+    {
+      "name": "Devious Devices - Assets.esm",
+      "file": "devious devices - assets.esm",
+      "required": true
+    },
+    {
+      "name": "Devious Devices - Integration.esm",
+      "file": "devious devices - integration.esm",
+      "required": true
+    },
+    {
+      "name": "Devious Devices - Expansion.esm",
+      "file": "devious devices - expansion.esm",
+      "required": true
+    },
+    {
+      "name": "Devious Devices - Contraptions.esm",
+      "file": "devious devices - contraptions.esm",
+      "required": true
+    }
+  ],
+  "external_url": "https://github.com/Telord72612/SkyrimNet-Devious-Awareness-Base/releases/tag/v1.0.0",
+  "version": "1.0.0"
+}
