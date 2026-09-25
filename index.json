@@ -1,8 +1,53 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-09-25T13:33:43.778Z",
-  "stats_as_of": "2026-09-25T13:33:43.668Z",
+  "generated_at": "2026-09-25T13:34:52.305Z",
+  "stats_as_of": "2026-09-25T13:34:52.254Z",
   "plugins": [
+    {
+      "id": "plugins/deadohiosky/relationships",
+      "plugin_id": "deadohiosky.relationships",
+      "type": "listing",
+      "title": "Relationships",
+      "tagline": "Build relationships naturally and organically in a world where every character is unique",
+      "author": "deadohiosky",
+      "tags": [
+        "relationship",
+        "romance",
+        "love",
+        "friendship"
+      ],
+      "nsfw": false,
+      "icon": "heart",
+      "mods": [],
+      "first_published": "2026-09-19T13:07:18Z",
+      "last_updated": "2026-09-25T13:34:31Z",
+      "version": "1.7.0",
+      "history": [
+        {
+          "version": "1.7.0",
+          "commit": "6d6a1647d84fe59afadd365fb53da7350e49f6b4",
+          "date": "2026-09-25T13:34:31Z",
+          "changelog": "Tuned initial relationship seeding to take time spent together into account so experiencing a dense day of activity before initial doesn't over-seed the relationship into more advanced stages. Strangers are truly strangers, no matter how busy you were together."
+        },
+        {
+          "version": "1.6.0",
+          "commit": "c85c6ccc57131d57506c2fec2391f48ebddd859b",
+          "date": "2026-09-19T13:07:18Z"
+        }
+      ],
+      "external_url": "https://github.com/deadohiosky48/SkyrimNet-Relationships",
+      "image": {
+        "file": "cover.png",
+        "sha": "d859f6dcafc5b4b4c60c4236164c1f698bf1fcd4",
+        "commit": "6d6a1647d84fe59afadd365fb53da7350e49f6b4",
+        "width": 1536,
+        "height": 864
+      },
+      "stats": {
+        "downloads": 4,
+        "endorsements": 0
+      }
+    },
     {
       "id": "plugins/deadohiosky/kinship",
       "plugin_id": "deadohiosky.kinship",
@@ -397,38 +442,6 @@
       "external_url": "https://github.com/GoodProvider/SkyrimNet_Leashed/releases/latest",
       "stats": {
         "downloads": 3,
-        "endorsements": 0
-      }
-    },
-    {
-      "id": "plugins/deadohiosky/relationships",
-      "plugin_id": "deadohiosky.relationships",
-      "type": "listing",
-      "title": "Relationships",
-      "tagline": "Build relationships naturally and organically in a world where every character is unique",
-      "author": "deadohiosky",
-      "tags": [
-        "relationship",
-        "romance",
-        "love",
-        "friendship"
-      ],
-      "nsfw": false,
-      "icon": "heart",
-      "mods": [],
-      "first_published": "2026-09-19T13:07:18Z",
-      "last_updated": "2026-09-19T13:07:18Z",
-      "version": "1.6.0",
-      "history": [
-        {
-          "version": "1.6.0",
-          "commit": "c85c6ccc57131d57506c2fec2391f48ebddd859b",
-          "date": "2026-09-19T13:07:18Z"
-        }
-      ],
-      "external_url": "https://github.com/deadohiosky48/SkyrimNet-Relationships",
-      "stats": {
-        "downloads": 4,
         "endorsements": 0
       }
     },
