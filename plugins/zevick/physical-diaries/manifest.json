@@ -1,0 +1,19 @@
+{
+  "id": "zevick.physical-diaries",
+  "type": "listing",
+  "title": "Physical Diaries",
+  "tagline": "Adds diary book items to NPC's inventories to read SkyrimNet diaries in game",
+  "description": "## Physical Diary Books\n\nEach NPC that writes diary entries will have a physical diary book in their inventory. The entries are formatted by in-game date and use a handwriting font.\n## Multi-Volume Support\n\nWhen a diary fills up, it seals itself and a fresh volume begins. Sealed volumes stay in the NPC's inventory alongside newer ones, giving you a complete history to read. The number of entries per volume can be configured in the MCM.\n## Theft & Return System\n\nStealing an NPC's diary has consequences. The NPC will be aware their diary is missing when writing a new entry. Returning the diary before their next entry clears the record entirely — they'll never know it was taken. Taking a followers diary by trading items will trigger a response making the NPC aware that you took it.\n## Automatic Updates\n\nWhen an NPC writes a new entry, their physical diary updates to include it. If they fill the current volume, a new one is created automatically. This happens in the background without any player action needed.",
+  "author": "zevick",
+  "tags": [
+    "diary",
+    "journal",
+    "book"
+  ],
+  "nsfw": false,
+  "icon": "diary",
+  "mods": [],
+  "external_url": "https://github.com/zevck/SkyrimNet-Physical-Diaries",
+  "version": "1.1.0",
+  "changelog": "Initial release"
+}
