@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-09-25T13:34:52.305Z",
-  "stats_as_of": "2026-09-25T13:34:52.254Z",
+  "generated_at": "2026-09-25T18:33:12.642Z",
+  "stats_as_of": "2026-09-25T18:33:12.507Z",
   "plugins": [
     {
       "id": "plugins/deadohiosky/relationships",
@@ -44,7 +44,7 @@
         "height": 864
       },
       "stats": {
-        "downloads": 4,
+        "downloads": 5,
         "endorsements": 0
       }
     },
@@ -516,7 +516,7 @@
       ],
       "external_url": "https://github.com/Oldcustard/Wintersun-Skyrimnet-Integration/releases",
       "stats": {
-        "downloads": 5,
+        "downloads": 7,
         "endorsements": 0
       }
     },
@@ -629,7 +629,7 @@
       ],
       "external_url": "https://github.com/Gerkinfeltser/iActions/releases",
       "stats": {
-        "downloads": 4,
+        "downloads": 5,
         "endorsements": 0
       }
     },
@@ -661,7 +661,7 @@
       ],
       "external_url": "https://github.com/johnsonjoe1/SkyrimNetMessagelessImmersion/releases",
       "stats": {
-        "downloads": 4,
+        "downloads": 5,
         "endorsements": 0
       }
     },
@@ -692,7 +692,7 @@
       ],
       "external_url": "https://github.com/zevck/S.T.F.U",
       "stats": {
-        "downloads": 14,
+        "downloads": 15,
         "endorsements": 1
       }
     },
