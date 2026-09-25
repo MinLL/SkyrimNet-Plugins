@@ -13,6 +13,8 @@
   "nsfw": false,
   "icon": "characters",
   "mods": [],
+  "language": "en",
   "external_url": "https://github.com/deadohiosky48/SkyrimNet-Kinship",
-  "version": "1.9.4"
+  "version": "1.9.5",
+  "changelog": "A couple of relatively minor bug fixes, including an edge case where the father is sometimes not written to the child record at birth even though Kinship knew who the father was."
 }
