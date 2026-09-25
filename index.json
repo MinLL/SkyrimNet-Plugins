@@ -1,8 +1,51 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-09-25T09:32:18.818Z",
-  "stats_as_of": "2026-09-25T09:32:18.765Z",
+  "generated_at": "2026-09-25T13:33:43.778Z",
+  "stats_as_of": "2026-09-25T13:33:43.668Z",
   "plugins": [
+    {
+      "id": "plugins/deadohiosky/kinship",
+      "plugin_id": "deadohiosky.kinship",
+      "type": "listing",
+      "title": "Kinship",
+      "tagline": "Have unlimited children and make SkyrimNet aware of them and their familial relationships",
+      "author": "deadohiosky",
+      "tags": [
+        "children",
+        "family",
+        "bloodline"
+      ],
+      "nsfw": false,
+      "icon": "characters",
+      "mods": [],
+      "first_published": "2026-09-19T12:22:14Z",
+      "last_updated": "2026-09-25T13:33:26Z",
+      "version": "1.9.5",
+      "history": [
+        {
+          "version": "1.9.5",
+          "commit": "6756e2e4eb839bf325dde848f00840db9a0fdd6a",
+          "date": "2026-09-25T13:33:26Z",
+          "changelog": "A couple of relatively minor bug fixes, including an edge case where the father is sometimes not written to the child record at birth even though Kinship knew who the father was."
+        },
+        {
+          "version": "1.9.4",
+          "commit": "2a111d61f697705542c979f7d5dc96fe657d4dab",
+          "date": "2026-09-20T19:04:11Z"
+        },
+        {
+          "version": "1.9.3",
+          "commit": "31efbda09c1641469b20b70f814d6e94affc7756",
+          "date": "2026-09-19T12:22:14Z"
+        }
+      ],
+      "external_url": "https://github.com/deadohiosky48/SkyrimNet-Kinship",
+      "language": "en",
+      "stats": {
+        "downloads": 0,
+        "endorsements": 0
+      }
+    },
     {
       "id": "plugins/telord72612/devious-awareness-base",
       "plugin_id": "telord72612.devious-awareness-base",
@@ -325,42 +368,6 @@
       },
       "stats": {
         "downloads": 1,
-        "endorsements": 0
-      }
-    },
-    {
-      "id": "plugins/deadohiosky/kinship",
-      "plugin_id": "deadohiosky.kinship",
-      "type": "listing",
-      "title": "Kinship",
-      "tagline": "Have unlimited children and make SkyrimNet aware of them and their familial relationships",
-      "author": "deadohiosky",
-      "tags": [
-        "children",
-        "family",
-        "bloodline"
-      ],
-      "nsfw": false,
-      "icon": "characters",
-      "mods": [],
-      "first_published": "2026-09-19T12:22:14Z",
-      "last_updated": "2026-09-20T19:04:11Z",
-      "version": "1.9.4",
-      "history": [
-        {
-          "version": "1.9.4",
-          "commit": "2a111d61f697705542c979f7d5dc96fe657d4dab",
-          "date": "2026-09-20T19:04:11Z"
-        },
-        {
-          "version": "1.9.3",
-          "commit": "31efbda09c1641469b20b70f814d6e94affc7756",
-          "date": "2026-09-19T12:22:14Z"
-        }
-      ],
-      "external_url": "https://github.com/deadohiosky48/SkyrimNet-Kinship",
-      "stats": {
-        "downloads": 0,
         "endorsements": 0
       }
     },
