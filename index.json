@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-09-24T21:26:38.065Z",
-  "stats_as_of": "2026-09-24T21:26:37.951Z",
+  "generated_at": "2026-09-25T02:36:21.941Z",
+  "stats_as_of": "2026-09-25T02:36:21.809Z",
   "plugins": [
     {
       "id": "plugins/telord72612/devious-awareness-base",
@@ -578,7 +578,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1,
+        "downloads": 2,
         "endorsements": 0
       }
     },
