@@ -1,0 +1,21 @@
+{
+  "id": "tetherball88.lover-s-ledger",
+  "type": "listing",
+  "title": "Lover's Ledger",
+  "tagline": "Relationship and encounter statistics ledger for SkyrimNet character bios.",
+  "description": "## What this mod does?\n\nTracks OStim interactions between npcs and record all ositm related information: npcs encounters, lovers, positions, etc... Caluclates based on data scores for lovers.\n\n## How does it integrates with SkyrimNet?\n\nIt adds a few context pieces to tell SkyrimNet npc's sexual history, their lovers and npc's preferences like if they prefer couple encounters, group encounters, sexual preferences, etc...",
+  "author": "tetherball88",
+  "tags": [
+    "lovers",
+    "relationships",
+    "romance",
+    "character_bio",
+    "bio",
+    "immersion"
+  ],
+  "nsfw": true,
+  "icon": "package",
+  "mods": [],
+  "external_url": "https://github.com/tetherball88/Lover-s-Ledger/releases/latest",
+  "version": "1.1.0"
+}
