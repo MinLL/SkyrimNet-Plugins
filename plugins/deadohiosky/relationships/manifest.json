@@ -14,6 +14,8 @@
   "nsfw": false,
   "icon": "heart",
   "mods": [],
+  "image": "cover.png",
   "external_url": "https://github.com/deadohiosky48/SkyrimNet-Relationships",
-  "version": "1.6.0"
+  "version": "1.7.0",
+  "changelog": "Tuned initial relationship seeding to take time spent together into account so experiencing a dense day of activity before initial doesn't over-seed the relationship into more advanced stages. Strangers are truly strangers, no matter how busy you were together."
 }
