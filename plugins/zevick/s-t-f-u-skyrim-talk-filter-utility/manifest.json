@@ -1,0 +1,20 @@
+{
+  "id": "zevick.s-t-f-u-skyrim-talk-filter-utility",
+  "type": "listing",
+  "title": "S.T.F.U - Skyrim Talk Filter Utility",
+  "tagline": "Skyrim Talk Filter Utility silences tedious frequent utterances",
+  "description": "Skyrim Talk Filter Utility gives you full control over what dialogue you hear in game. Stop repetitive NPC chatter for polluting SkyrimNet's context or interrupting conversations.\n\n## Features\n- **Intuitive UI** for viewing all dialogue that plays in game. Block whatever you want instantly.\n- **Soft Blocking**: block audio/subtitles from certain dialogue to essentially block it without preventing important scripts from executing. Soft blocked dialogue does not get logged by SkyrimNet *(recommended)*\n- **Hard Blocking**: block dialogue from playing at all. Useful for scenes with packages you want to prevent. Can potentially block scripts, use carefully.\n- **Subtype Filtering**: block all dialogue belonging to certain subtypes for broad dialogue blocking.\n- **Whitelist**: prevent certain dialogue from being blocked under any circumstances to create rule exceptions.\\n- **Actor & Faction Filtering**: When blacklisting or whitelisting you can create rules for specific actors or factions.\n- **Persistent & Immediate**: Your blacklist and whitelist is stored in an external database that persists between saves. Changes take place immediately, no need to restart.\n\n- **Lite Mode**: If you can't use the PrismaUI menu (or don't want to) you can block dialogue by viewing the STFU_DialogueLog.txt file and adding the topics to the YAMLs. Click \\\"Import from YAML\\\" in the MCM to import the entries into the database. See the github page for more details.\n\n## Requirements\n- SkyUI (for MCM)\n- PrismaUI (for UI)\n- SKSE\n- Address Library\n- powerofthree's Tweaks",
+  "author": "zevick",
+  "tags": [
+    "stfu",
+    "dialogue",
+    "filter"
+  ],
+  "nsfw": false,
+  "icon": "dialogue",
+  "mods": [],
+  "image": "cover.jpg",
+  "external_url": "https://github.com/zevck/S.T.F.U",
+  "version": "1.2.0",
+  "changelog": "## Before you update\n- **New requirement:** [powerofthree's Tweaks](https://www.nexusmods.com/skyrimspecialedition/mods/51073) replaces Native EditorID Fix.\n- **41 scenes were removed from the pre-included list** because blocking them could potentially break quests or strand NPCs. Existing installs keep them until you delete them from the Blacklist tab, or clear your scene blacklist and re-import.\n\nS.T.F.U has been updated to the latest version of commonlibsse-NG. It should work on all versions, but 1.7.X is untested.\n## Fixes\n- Blacklist and whitelist entries now keep working after load-order changes.\n- Actor filters no longer mix up NPCs with the same name.\n- Each scene toggle (ambient, follower commentary, bard songs, blacklist) now controls its own scenes.\n- Removed pre-included scenes stay removed instead of being re-imported every launch.\n- If a game update moves the subtitle/response code, STFU skips those hooks and logs an error instead of crashing.\n- Freeze/crash shortly after loading a save.\n- VR crash during dialogue with the STFU menu open.\n- Jarl Laila and Anuriel getting stuck in Mistveil Keep.\n- Your own hard-blocked scenes playing when \"Block Ambient Scenes\" was off.\n- Scene blocks intermittently failing on AE.\n- Some entries added from History never matching.\n- Editing a blacklist entry erasing its faction filters.\n- Editing a whitelist entry adding a bogus \"actorFilterFormIDs\" actor (remove that chip if you see it).\n- \"Block Follower Commentary\" checkbox showing the opposite state.\n- Empty recent-actors list in the edit window.\n- Notes and names with quotes or line breaks being cut off.\n- YAML FormKeys not working for ESL plugins.\n- Repeated follower lines now show up again in History, and only the chosen reply to a follower command is logged.\n## Other\n- STFU is now licensed under GPL-3.0."
+}
