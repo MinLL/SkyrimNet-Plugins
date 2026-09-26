@@ -1,8 +1,43 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-09-26T04:17:17.107Z",
-  "stats_as_of": "2026-09-26T04:17:16.983Z",
+  "generated_at": "2026-09-26T04:36:27.944Z",
+  "stats_as_of": "2026-09-26T04:36:27.830Z",
   "plugins": [
+    {
+      "id": "plugins/telord72612/vr-touch-events-v3-4",
+      "plugin_id": "telord72612.vr-touch-events-v3-4",
+      "type": "listing",
+      "title": "VR Touch Events V3.4",
+      "tagline": "A plugins for SkyrimNet that expose the player's contact to the LLM for awareness.",
+      "author": "telord72612",
+      "tags": [
+        "Awareness",
+        "Prompt"
+      ],
+      "nsfw": false,
+      "icon": "package",
+      "mods": [],
+      "first_published": "2026-09-26T04:24:01Z",
+      "last_updated": "2026-09-26T04:24:01Z",
+      "version": "3.4.0",
+      "history": [
+        {
+          "version": "3.4.0",
+          "commit": "f40eb3f15f1a22ef3663a8f2e583d5849ae4a0f6",
+          "date": "2026-09-26T04:24:01Z",
+          "changelog": "Beta25 Release"
+        }
+      ],
+      "external_url": "https://github.com/Telord72612/VRTouchEvents/releases/tag/V3.4.0",
+      "languages": [
+        "en"
+      ],
+      "language": "en",
+      "stats": {
+        "downloads": 0,
+        "endorsements": 0
+      }
+    },
     {
       "id": "plugins/phospheneoverdrive/lore-accurate-dagoth-ur-follower-bios",
       "plugin_id": "phospheneoverdrive.lore-accurate-dagoth-ur-follower-bios",
