@@ -1439,3 +1439,79 @@ test("a listing that ships a record file is refused as content", () => {
     /Listing plugins must not contain any content files, but this plugin has 1/,
   );
 });
+
+// ----- Removed and renamed files are scoped too (issue: mixed add+remove) ---
+
+/** A PR that adds bob's plugin and also lists `removed` paths. */
+function validateWithRemovals(removed) {
+  const prDir = makeTempDir();
+  try {
+    const changed = writePlugin(prDir, "plugins/bob/test-pack", { manifest: goodManifest(), files: GOOD_FILES });
+    return runValidate({ prDir, changed, removed });
+  } finally {
+    rmDir(prDir);
+  }
+}
+
+test("rejects a PR that adds its own plugin while removing another author's files", () => {
+  // The review only reads the submitter's directory, so the deletion would ride the merge.
+  assertRejected(validateWithRemovals(["plugins/victim/pack/manifest.json", "plugins/victim/pack/prompts/a.prompt"]), /2 plugin directories/);
+});
+
+test("rejects a rename out of another author's plugin into the submitter's", () => {
+  // hub-review.yml lists a rename's previous_filename as a removed row.
+  assertRejected(validateWithRemovals(["plugins/victim/pack/prompts/stolen.prompt"]), /plugins\/victim\/pack/);
+});
+
+test("rejects a removal outside plugins/ riding along with plugin content", () => {
+  assertRejected(validateWithRemovals([".github/workflows/tests.yml"]), /mixes plugin files/);
+});
+
+test("still accepts an update that removes a file inside its own plugin", () => {
+  const res = validateWithRemovals(["plugins/bob/test-pack/prompts/old.prompt"]);
+  assert.equal(res.result.success, true, errorMessages(res.result));
+  assert.deepEqual(res.result.labels, ["ready-for-agent-review"]);
+});
+
+// ----- bans.json matches the way the dashboard does ------------------------
+
+function validateWithBans(bans) {
+  const baseDir = makeBaseDir();
+  try {
+    fs.writeFileSync(path.join(baseDir, "bans.json"), JSON.stringify({ schema_version: 1, bans }));
+    return validatePlugin({ manifest: goodManifest(), baseDir });
+  } finally {
+    rmDir(baseDir);
+  }
+}
+
+test("a ban matches regardless of case, and `_` matches `-`, like the dashboard's", () => {
+  // The test pack's author is `bob`; a display-cased entry used to ban nobody.
+  assertRejected(validateWithBans([{ author: "Bob", reason: "spam" }]), /banned.*spam/);
+  assertRejected(validateWithBans([{ author: " BOB " }]), /banned/);
+
+  const baseDir = makeBaseDir();
+  try {
+    fs.writeFileSync(path.join(baseDir, "bans.json"), JSON.stringify({ schema_version: 1, bans: [{ author: "bob_x" }] }));
+    const res = validatePlugin({
+      pluginDir: "plugins/bob-x/test-pack",
+      manifest: goodManifest({ id: "bob-x.test-pack", author: "bob-x" }),
+      baseDir,
+    });
+    assertRejected(res, /banned/);
+  } finally {
+    rmDir(baseDir);
+  }
+});
+
+test("a ban given as a bare string or a `username` entry counts, as it does on the dashboard", () => {
+  assertRejected(validateWithBans(["bob"]), /banned/);
+  assertRejected(validateWithBans([{ username: "bob" }]), /banned/);
+});
+
+test("an expired ban, or someone else's, does not block", () => {
+  for (const bans of [[{ author: "bob", expires_at: "2000-01-01T00:00:00Z" }], [{ author: "bobby" }], [{ author: "" }], [{}]]) {
+    const res = validateWithBans(bans);
+    assert.equal(res.result.success, true, `${JSON.stringify(bans)}: ${errorMessages(res.result)}`);
+  }
+});

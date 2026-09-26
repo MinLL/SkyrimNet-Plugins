@@ -234,14 +234,28 @@ if (fs.existsSync(bansPath)) {
   }
 }
 
+// The fateless dashboard reads this same bans.json (guards.ts banReason) to
+// refuse a banned account before it can open a PR, and it matches loosely:
+// a bare string, `username` or `author`, trimmed, lowercased, `_` folded to
+// `-`. Match the same way here, so one entry bans the same person in both
+// places -- a verbatim compare let `Bob` or `bob_x` through while `bob` or
+// `bob-x` was banned.
+function banKey(name) {
+  return String(name).trim().toLowerCase().replace(/_/g, "-");
+}
+
 function activeBanFor(author) {
   const now = Date.now();
-  return bans.find((b) => {
-    if (b?.author !== author) return false;
-    if (b.expires_at == null) return true;
-    const expiry = Date.parse(b.expires_at);
-    return Number.isFinite(expiry) ? expiry > now : true;
-  });
+  const key = banKey(author);
+  return bans
+    .map((b) => (typeof b === "string" ? { author: b } : b))
+    .find((b) => {
+      const name = b?.username ?? b?.author;
+      if (typeof name !== "string" || name.trim() === "" || banKey(name) !== key) return false;
+      if (b.expires_at == null) return true;
+      const expiry = Date.parse(b.expires_at);
+      return Number.isFinite(expiry) ? expiry > now : true;
+    });
 }
 
 // ----- Detect manual vs dashboard PR --------------------------------------
@@ -508,7 +522,12 @@ function walkTree(root) {
 
 const pluginRoots = new Set();
 
-for (const rel of changedFiles) {
+// Removed files are scoped exactly like added and modified ones. Checking only
+// `changedFiles` let a PR add its own plugin while deleting another author's:
+// the review saw only the submitter's directory, and the merge deleted the
+// victim's. hub-review.yml lists a rename's old path as a removal too, so a
+// file moved out of someone else's plugin counts here as well.
+for (const rel of allFiles) {
   // Reject any file not under plugins/
   if (!rel.startsWith("plugins/")) {
     addError(rel, `File is outside plugins/. Infrastructure changes must be made directly by maintainers, not via PR.`);
