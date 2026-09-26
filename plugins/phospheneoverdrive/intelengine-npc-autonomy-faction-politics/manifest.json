@@ -1,0 +1,27 @@
+{
+  "id": "phospheneoverdrive.intelengine-npc-autonomy-faction-politics",
+  "type": "listing",
+  "title": "IntelEngine — NPC Autonomy & Faction Politics",
+  "tagline": "Give Skyrim’s NPCs agency—tasks, schedules, autonomous stories, and faction politics.",
+  "description": "IntelEngine gives Skyrim’s NPCs the ability to act autonomously through SkyrimNet. NPCs can travel, deliver messages, fetch or escort people, schedule meetings and tasks, spread gossip, pursue personal storylines, and participate in an evolving faction-politics system.\n\nOriginally created by **Galanx**. Release **3.5.1** was updated by **PhospheneOverdrive** solely to restore compatibility with **SkyrimNet Beta 25**. No gameplay systems, features, balance, prompts, or intended behavior were changed; the existing actions and prompts were only reorganized into Beta 25’s new plugin format.\n\n**Requires SkyrimNet Beta 25 or newer. Not compatible with Beta 24 or earlier.**",
+  "author": "phospheneoverdrive",
+  "tags": [
+    "actions",
+    "autonomy",
+    "immersion",
+    "storytelling",
+    "scheduling",
+    "travel",
+    "quests",
+    "faction politics",
+    "world simulation"
+  ],
+  "nsfw": false,
+  "icon": "gamemaster",
+  "mods": [],
+  "language": "en",
+  "image": "cover.png",
+  "external_url": "https://github.com/Gerkinfeltser/IntelEngine-GamePlugin/releases/tag/v3.5.1",
+  "version": "3.5.1",
+  "changelog": "Release for use with SkyrimNet Beta 25"
+}
