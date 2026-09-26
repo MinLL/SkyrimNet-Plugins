@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-09-26T20:27:18.756Z",
-  "stats_as_of": "2026-09-26T20:27:18.592Z",
+  "generated_at": "2026-09-26T21:26:25.002Z",
+  "stats_as_of": "2026-09-26T21:26:24.944Z",
   "plugins": [
     {
       "id": "plugins/whyregister/conduit-awareness",
@@ -170,7 +170,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 0,
+        "downloads": 1,
         "endorsements": 0
       }
     },
@@ -584,7 +584,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 3,
+        "downloads": 4,
         "endorsements": 0
       }
     },
@@ -1538,7 +1538,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 9,
+        "downloads": 10,
         "endorsements": 0
       }
     },
@@ -5063,7 +5063,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2,
+        "downloads": 3,
         "endorsements": 0
       }
     },
@@ -8303,7 +8303,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 0,
+        "downloads": 1,
         "endorsements": 0
       }
     },
