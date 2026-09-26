@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-09-26T05:48:15.827Z",
-  "stats_as_of": "2026-09-26T05:48:15.730Z",
+  "generated_at": "2026-09-26T07:43:36.807Z",
+  "stats_as_of": "2026-09-26T07:43:36.705Z",
   "plugins": [
     {
       "id": "plugins/tetherball88/ostimnet",
@@ -644,70 +644,6 @@
         "triggers": 70,
         "actions": 0,
         "prompts": 0,
-        "bios": 0,
-        "knowledge": 0,
-        "entities": 0,
-        "config": 0
-      },
-      "stats": {
-        "downloads": 0,
-        "endorsements": 0
-      }
-    },
-    {
-      "id": "plugins/min/belethor-remix",
-      "plugin_id": "min.belethor-remix",
-      "type": "bundle",
-      "title": "Nords are Jerks redux",
-      "tagline": "Nords - Jerks!",
-      "author": "min",
-      "tags": [
-        "nords",
-        "stormcloaks",
-        "jerks"
-      ],
-      "nsfw": false,
-      "icon": "package",
-      "mods": [],
-      "first_published": "2026-09-21T02:17:40Z",
-      "last_updated": "2026-09-23T01:33:35Z",
-      "version": "1.0.3",
-      "min_skyrimnet_version": "0.25.0",
-      "history": [
-        {
-          "version": "1.0.3",
-          "commit": "bd92f238d5520795d85eedeade921bbcab72d66f",
-          "date": "2026-09-23T01:33:35Z",
-          "changelog": "Replace image with proper aspect ratio version"
-        },
-        {
-          "version": "1.0.2",
-          "commit": "8c6ae7f271ff2445303ed9bfcec384848538a2e8",
-          "date": "2026-09-22T23:16:02Z",
-          "changelog": "Added Image"
-        },
-        {
-          "version": "1.0.1",
-          "commit": "ec521591814dd488dc446900c3040aa09f633ca1",
-          "date": "2026-09-21T02:17:40Z",
-          "changelog": "Initial release"
-        }
-      ],
-      "languages": [
-        "en"
-      ],
-      "language": "en",
-      "image": {
-        "file": "cover.png",
-        "sha": "3eff6c69a38ff0670d184597d4ae2d57f3e89cc8",
-        "commit": "bd92f238d5520795d85eedeade921bbcab72d66f",
-        "width": 1672,
-        "height": 941
-      },
-      "contents": {
-        "triggers": 0,
-        "actions": 0,
-        "prompts": 1,
         "bios": 0,
         "knowledge": 0,
         "entities": 0,

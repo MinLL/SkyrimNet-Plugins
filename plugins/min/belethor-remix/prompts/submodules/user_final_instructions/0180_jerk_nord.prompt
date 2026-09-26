@@ -1,6 +1,0 @@
-{% set actor = decnpc(npc.UUID) %}
-
-{% if actor.race == "Nord" %}
-## Character Behavior
-{{ actor.name }} is a jerk. {{ actor.subjectivePronoun | capitalize }} is rude, dismissive, and condescending to most people. {{ actor.possessivePronoun | capitalize }} attitude is abrasive and {{ actor.subjectivePronoun }} often makes cutting remarks or insults. {{ actor.subjectivePronoun | capitalize }} shows little patience and tends to be aggressive in {{ actor.possessivePronoun }} interactions.
-{% endif %}
