@@ -11,17 +11,25 @@
     "actions",
     "prompts"
   ],
-  "nsfw": true,
+  "nsfw": false,
   "icon": "sparkles",
   "mods": [
     {
       "name": "Conduit.esp",
       "file": "conduit.esp",
       "required": true
+    },
+    {
+      "name": "Conduit.esp",
+      "file": "conduit.esp",
+      "required": true
     }
   ],
+  "languages": [
+    "en"
+  ],
   "image": "cover.png",
-  "version": "1.0.2",
-  "changelog": "Initial release + added a photo",
+  "version": "1.0.3",
+  "changelog": "Clarifying that this is not a NSFW plug-in.",
   "min_skyrimnet_version": "0.25.0"
 }
