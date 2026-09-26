@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-09-26T22:41:12.653Z",
-  "stats_as_of": "2026-09-26T22:41:12.526Z",
+  "generated_at": "2026-09-26T22:48:32.997Z",
+  "stats_as_of": "2026-09-26T22:44:44.072Z",
   "plugins": [
     {
       "id": "plugins/zevick/s-t-f-u-skyrim-talk-filter-utility",
@@ -19,13 +19,13 @@
       "icon": "dialogue",
       "mods": [],
       "first_published": "2026-08-20T09:09:54Z",
-      "last_updated": "2026-09-26T22:39:47Z",
+      "last_updated": "2026-09-26T22:48:12Z",
       "version": "1.2.0",
       "history": [
         {
           "version": "1.2.0",
-          "commit": "f97b43f1ff35e5f7140be27dda4776fc177af8a0",
-          "date": "2026-09-26T22:39:47Z",
+          "commit": "4defc0f0f704b14dca78eb57a3d4a52b102a6270",
+          "date": "2026-09-26T22:48:12Z",
           "changelog": "## Before you update\n- **New requirement:** [powerofthree's Tweaks](https://www.nexusmods.com/skyrimspecialedition/mods/51073) replaces Native EditorID Fix.\n- **41 scenes were removed from the pre-included list** because blocking them could potentially break quests or strand NPCs. Existing installs keep them until you delete them from the Blacklist tab, or clear your scene blacklist and re-import.\n\nS.T.F.U has been updated to the latest version of commonlibsse-NG. It should work on all versions, but 1.7.X is untested.\n## Fixes\n- Blacklist and whitelist entries now keep working after load-order changes.\n- Actor filters no longer mix up NPCs with the same name.\n- Each scene toggle (ambient, follower commentary, bard songs, blacklist) now controls its own scenes.\n- Removed pre-included scenes stay removed instead of being re-imported every launch.\n- If a game update moves the subtitle/response code, STFU skips those hooks and logs an error instead of crashing.\n- Freeze/crash shortly after loading a save.\n- VR crash during dialogue with the STFU menu open.\n- Jarl Laila and Anuriel getting stuck in Mistveil Keep.\n- Your own hard-blocked scenes playing when \"Block Ambient Scenes\" was off.\n- Scene blocks intermittently failing on AE.\n- Some entries added from History never matching.\n- Editing a blacklist entry erasing its faction filters.\n- Editing a whitelist entry adding a bogus \"actorFilterFormIDs\" actor (remove that chip if you see it).\n- \"Block Follower Commentary\" checkbox showing the opposite state.\n- Empty recent-actors list in the edit window.\n- Notes and names with quotes or line breaks being cut off.\n- YAML FormKeys not working for ESL plugins.\n- Repeated follower lines now show up again in History, and only the chosen reply to a follower command is logged.\n## Other\n- STFU is now licensed under GPL-3.0."
         },
         {
@@ -925,7 +925,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 12,
+        "downloads": 13,
         "endorsements": 0
       }
     },
@@ -1191,7 +1191,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 27,
+        "downloads": 28,
         "endorsements": 0
       }
     },
@@ -1236,7 +1236,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 10,
+        "downloads": 11,
         "endorsements": 0
       }
     },
@@ -1326,7 +1326,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 32,
+        "downloads": 33,
         "endorsements": 0
       }
     },
@@ -1551,7 +1551,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 17,
+        "downloads": 18,
         "endorsements": 0
       }
     },
