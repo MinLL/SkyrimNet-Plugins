@@ -1,0 +1,22 @@
+name: conduit_weapon_cast_persistent
+description: >-
+  Always logs Conduit weapon conduction into the persistent event stream
+  so later dialogue and memory can know it happened. No cinematic spam.
+eventCriteria:
+  eventType: spell_cast
+  schemaConditions:
+    - fieldPath: spell_editor_id
+      operator: equals
+      value: CSTE__Conduit
+audience: nearby_npcs
+response:
+  type: persistent_generic
+  content: >-
+    {{ player.name }} forced a held spell down into a weapon — a short-lived
+    conducted charge on the steel, not a permanent enchantment. Element is
+    whatever spell was driven in; do not invent one here.
+enabled: true
+interrupt: false
+probability: 1
+cooldownSeconds: 0
+priority: 9
