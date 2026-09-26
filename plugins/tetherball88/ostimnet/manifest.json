@@ -13,6 +13,8 @@
   "nsfw": true,
   "icon": "heart",
   "mods": [],
+  "image": "cover.png",
   "external_url": "https://github.com/tetherball88/OStimNet/releases/latest",
-  "version": "2.5.0"
+  "version": "2.5.0",
+  "changelog": "replaced cover image"
 }
