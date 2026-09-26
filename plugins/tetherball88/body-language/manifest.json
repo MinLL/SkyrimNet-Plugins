@@ -1,0 +1,21 @@
+{
+  "id": "tetherball88.body-language",
+  "type": "listing",
+  "title": "Body Language",
+  "tagline": "Context-aware NPC body descriptions powered by OBody NG, RSV, and TNG.",
+  "description": "# Body Language 🎭\n\n✨ A Skyrim SKSE plugin that integrates with SkyrimNet to generate rich, context-aware body descriptions for every NPC. It reads live body data from OBody NG, enriches it with muscularity hints and skin complexion details from Racial Skin Variance, and adds height and T.N.G (The New Gentleman) details — all surfaced to SkyrimNet's prompt templates automatically.\n\n> 💡 **Note:** The mod ships with pre-generated descriptions for popular BodySlide presets. Unknown presets are detected and their descriptions computed automatically on each game load using your installed BodySlide XML files.\n\n## Requirements 📋\n\n- SkyrimNet *(v0.25.0 or later)*\n- OBody NG (tested on 4.3.7)\n- The New Gentleman *(optional, tested on 4.2.3)*\n- Racial Skin Variance - SPID *(optional)*\n - BnP - RSV patch\n - **ATTENTION**: You need to configure `SKSE\\Plugins\\BodyLanguage.ini` to provide pathes to RSV and BnP original archives you downloaded from Nexus Mods!!!\n\n## Features ✨\n\n- 🔄 **Automatic preset scanning** — on every game load the plugin reads your BodySlide XML preset files and computes body keyword descriptions for every installed preset. No manual steps required.\n- 🎯 **Context-aware descriptions** — different wording is used depending on whether an actor is clothed or naked, and whether the description is full (for bios) or short (for inline dialogue).\n- 👗 **Supported body types:** BHUNP 💃, CBBE 3BA 👒, HIMBO 💪\n- 💪 **RSV muscularity detection** — if Racial Skin Variance is installed, the active body normal map is identified and used to adjust the physique keyword (e.g. a `boxer` normal map shifts the description toward muscular).\n- 🎨 **RSV skin complexion detection** — when the BnP RSV diffuse patch is installed, the active body diffuse texture is identified and a complexion sentence is prepended to the naked full-body description (e.g. frost-nip, freckles, scars, veins, tanlines).\n- 📏 **Height descriptions** — each actor's height multiplier is mapped to a tier (towering / tall / above average / average / short / diminutive) with configurable thresholds.\n- 🔞 **TNG genital descriptions** — when The New Gentleman is active and the actor is unclothed, a size + anatomy descriptor is appended to the prompt. Racial size multipliers are applied automatically.",
+  "author": "tetherball88",
+  "tags": [
+    "body",
+    "descriptions",
+    "obody",
+    "npc",
+    "immersion",
+    "appearance"
+  ],
+  "nsfw": true,
+  "icon": "package",
+  "mods": [],
+  "external_url": "https://github.com/tetherball88/BodyLanguage/releases/latest",
+  "version": "1.0.3"
+}
