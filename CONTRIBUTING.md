@@ -104,7 +104,7 @@ A few rules the validator enforces:
 
 ## Config-system records
 
-A plugin may ship the customizations a user otherwise keeps in their own config: **voice effect recipes** (`voice_effects/`), **item and spell customizations** (`items/`, `spells/`), **furniture names** (`furniture/`), **identity links** (`identity/`), **actor and memory filter lists and text-filter rules** (`filters/`), **translator speech rules** (`translator/`) and **dialogue-action lists and instructions** (`dialogue_actions/`). One record per `.yaml` file; the dashboard's page for each system packages them. The README's [Content roots](README.md#content-roots) table lists every root's identity field, release and cap.
+A plugin may ship the customizations a user otherwise keeps in their own config: **voice effect recipes** (`voice_effects/`), **item and spell customizations** (`items/`, `spells/`), **furniture names** (`furniture/`), **identity links** (`identity/`), **actor and memory filter lists and text-filter rules** (`filters/`), **translator speech rules** (`translator/`) and **dialogue-action lists and instructions** (`dialogue_actions/`). One record per `.yaml` file; the dashboard's page for each system packages them. The README's [Content roots](README.md#content-roots) table lists every root's identity field, release and cap. A plugin's own Settings page schema goes in `settings/{Name}.yaml`; that root is reserved until the SkyrimNet release that reads it ships.
 
 A few rules the validator enforces:
 

@@ -41,6 +41,8 @@ const PER_FILE_SIZE_LIMITS = {
   ...Object.fromEntries(RECORD_ROOTS.map((root) => [root, RECORD_FILE_CAP])),
   // A recipe carries a whole effect chain.
   voice_effects: 2 * RECORD_FILE_CAP,
+  // A plugin's whole Settings page: every field with its description and options.
+  settings: 2 * RECORD_FILE_CAP,
 };
 
 // Virtual entities the engine itself defines. The engine honours only the
@@ -761,6 +763,9 @@ for (const abs of contentFiles) {
     case "entities":
       validateEntityFile(rel, abs, stat, seenEntityNames);
       break;
+    case "settings":
+      validateSettingsFile(rel, abs, subPath, stat);
+      break;
     default:
       if (RECORD_ROOTS.includes(root)) validateRecordFile(rel, abs, subPath, stat, root);
       break;
@@ -821,6 +826,24 @@ function validateYamlFile(rel, abs, subPath, stat, kind) {
   const nameCheck = checkNameMatchesStem(doc.name, subPath);
   if (!nameCheck.ok) {
     addError(rel, nameCheck.message);
+  }
+}
+
+// A plugin settings schema (`settings/{Name}.yaml`, registered as `Plugin_{Name}`): the engine reads any mapping,
+// so only the shape is checked here. The engine reads only `settings/{Name}.yaml` with a plain `{Name}`, which
+// becomes the config's name. The pattern is local: the main loop runs before a top-level const here initializes.
+function validateSettingsFile(rel, abs, subPath, stat) {
+  if (!/^settings\/[A-Za-z0-9_-]+\.yaml$/.test(subPath)) {
+    addError(
+      rel,
+      "Settings schemas must sit directly under settings/ as {Name}.yaml, {Name} being letters, digits, '_' and '-' (it becomes the config name).",
+    );
+    return;
+  }
+  const doc = loadYamlRecord(rel, abs, stat, PER_FILE_SIZE_LIMITS.settings, "settings/");
+  if (doc === undefined) return;
+  if (!isYamlMapping(doc)) {
+    addError(rel, "settings files must contain a YAML mapping at the top level.");
   }
 }
 

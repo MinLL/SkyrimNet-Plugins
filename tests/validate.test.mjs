@@ -1221,6 +1221,29 @@ test("a gated root needs min_skyrimnet_version of at least 0.25.0, naming the ro
   }
 });
 
+// ----- Plugin settings schemas (settings/) ------------------------------------
+// Reserved until the SkyrimNet release that reads them ships, so any plugin carrying one is refused today.
+
+test("settings: a schema is refused while the root is reserved", () => {
+  const res = validatePlugin({
+    manifest: goodManifest(),
+    files: { ...GOOD_FILES, "settings/MyPlugin.yaml": "plugin:\n  name: My Plugin\nschema:\n  fields: []\n" },
+  });
+  assertRejected(res, /\[ROOT_RESERVED\]/);
+  assert.equal(res.result.errors.length, 1);
+});
+
+test("settings: a nested or dotted name, or a non-mapping, is refused on its own", () => {
+  for (const [path, body, needle] of [
+    ["settings/sub/MyPlugin.yaml", "plugin: {}\n", /directly under settings\//],
+    ["settings/My.Plugin.yaml", "plugin: {}\n", /directly under settings\//],
+    ["settings/MyPlugin.yaml", "- a\n- list\n", /YAML mapping/],
+  ]) {
+    const res = validatePlugin({ manifest: goodManifest(), files: { ...GOOD_FILES, [path]: body } });
+    assertRejected(res, needle);
+  }
+});
+
 test("voice_effects: a recipe whose id is the stem passes its record rules", () => {
   acceptsRecord({ "voice_effects/draugr.yaml": "id: draugr\nname: Draugr\nchain: []\n" });
   acceptsRecord({ "voice_effects/nested/ve_1a2b3c.yaml": "id: ve_1a2b3c\n" });
