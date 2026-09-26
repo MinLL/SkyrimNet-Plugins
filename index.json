@@ -1,8 +1,52 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-09-26T05:35:11.681Z",
-  "stats_as_of": "2026-09-26T05:31:07.608Z",
+  "generated_at": "2026-09-26T05:48:15.827Z",
+  "stats_as_of": "2026-09-26T05:48:15.730Z",
   "plugins": [
+    {
+      "id": "plugins/tetherball88/ostimnet",
+      "plugin_id": "tetherball88.ostimnet",
+      "type": "listing",
+      "title": "OStimNet",
+      "tagline": "Intimate encounter AI framework integration for OStim and SkyrimNet.",
+      "author": "tetherball88",
+      "tags": [
+        "ostim",
+        "animation",
+        "adult"
+      ],
+      "nsfw": true,
+      "icon": "heart",
+      "mods": [],
+      "first_published": "2026-09-12T06:44:36-08:00",
+      "last_updated": "2026-09-26T05:47:57Z",
+      "version": "2.5.0",
+      "history": [
+        {
+          "version": "2.5.0",
+          "commit": "6d53bf9f8ee01c6aca1b0d6fdef004ef2fa02b62",
+          "date": "2026-09-26T05:47:57Z",
+          "changelog": "replaced cover image"
+        },
+        {
+          "version": "2.4.2",
+          "commit": "6beaea6234d873a19a83b6da3003d65d0c5982ab",
+          "date": "2026-09-12T06:44:36-08:00"
+        }
+      ],
+      "external_url": "https://github.com/tetherball88/OStimNet/releases/latest",
+      "image": {
+        "file": "cover.png",
+        "sha": "24935e170bd427bf1791e1330315a5a711f7e715",
+        "commit": "6d53bf9f8ee01c6aca1b0d6fdef004ef2fa02b62",
+        "width": 2048,
+        "height": 1152
+      },
+      "stats": {
+        "downloads": 5,
+        "endorsements": 1
+      }
+    },
     {
       "id": "plugins/tetherball88/m-a-r-a-s-marry-anyone-rule-all-skyrim",
       "plugin_id": "tetherball88.m-a-r-a-s-marry-anyone-rule-all-skyrim",
@@ -672,42 +716,6 @@
       "stats": {
         "downloads": 0,
         "endorsements": 0
-      }
-    },
-    {
-      "id": "plugins/tetherball88/ostimnet",
-      "plugin_id": "tetherball88.ostimnet",
-      "type": "listing",
-      "title": "OStimNet",
-      "tagline": "Intimate encounter AI framework integration for OStim and SkyrimNet.",
-      "author": "tetherball88",
-      "tags": [
-        "ostim",
-        "animation",
-        "adult"
-      ],
-      "nsfw": true,
-      "icon": "heart",
-      "mods": [],
-      "first_published": "2026-09-12T06:44:36-08:00",
-      "last_updated": "2026-09-22T16:50:23Z",
-      "version": "2.5.0",
-      "history": [
-        {
-          "version": "2.5.0",
-          "commit": "848511b0043af159e8cc6259cbe16fd90bdd6449",
-          "date": "2026-09-22T16:50:23Z"
-        },
-        {
-          "version": "2.4.2",
-          "commit": "6beaea6234d873a19a83b6da3003d65d0c5982ab",
-          "date": "2026-09-12T06:44:36-08:00"
-        }
-      ],
-      "external_url": "https://github.com/tetherball88/OStimNet/releases/latest",
-      "stats": {
-        "downloads": 5,
-        "endorsements": 1
       }
     },
     {
