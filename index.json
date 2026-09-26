@@ -1,8 +1,54 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-09-26T04:36:27.944Z",
-  "stats_as_of": "2026-09-26T04:36:27.830Z",
+  "generated_at": "2026-09-26T05:28:04.872Z",
+  "stats_as_of": "2026-09-26T05:28:04.763Z",
   "plugins": [
+    {
+      "id": "plugins/tetherball88/body-language",
+      "plugin_id": "tetherball88.body-language",
+      "type": "listing",
+      "title": "Body Language",
+      "tagline": "Context-aware NPC body descriptions powered by OBody NG, RSV, and TNG.",
+      "author": "tetherball88",
+      "tags": [
+        "body",
+        "descriptions",
+        "obody",
+        "npc",
+        "immersion",
+        "appearance"
+      ],
+      "nsfw": true,
+      "icon": "package",
+      "mods": [],
+      "first_published": "2026-09-25T20:55:01Z",
+      "last_updated": "2026-09-26T05:27:36Z",
+      "version": "1.0.3",
+      "history": [
+        {
+          "version": "1.0.3",
+          "commit": "8cc13e9228cd3c4f0e55fc484b1789ac73f3ab0f",
+          "date": "2026-09-26T05:27:36Z",
+          "changelog": "replaced cover image"
+        }
+      ],
+      "external_url": "https://github.com/tetherball88/BodyLanguage/releases/latest",
+      "languages": [
+        "en"
+      ],
+      "language": "en",
+      "image": {
+        "file": "cover.png",
+        "sha": "c4e9aec48dc2a7bef5e4a401e8241e1f5acfdf50",
+        "commit": "8cc13e9228cd3c4f0e55fc484b1789ac73f3ab0f",
+        "width": 2048,
+        "height": 1152
+      },
+      "stats": {
+        "downloads": 0,
+        "endorsements": 0
+      }
+    },
     {
       "id": "plugins/telord72612/vr-touch-events-v3-4",
       "plugin_id": "telord72612.vr-touch-events-v3-4",
@@ -231,40 +277,6 @@
         }
       ],
       "external_url": "https://github.com/tetherball88/Lover-s-Ledger/releases/latest",
-      "stats": {
-        "downloads": 0,
-        "endorsements": 0
-      }
-    },
-    {
-      "id": "plugins/tetherball88/body-language",
-      "plugin_id": "tetherball88.body-language",
-      "type": "listing",
-      "title": "Body Language",
-      "tagline": "Context-aware NPC body descriptions powered by OBody NG, RSV, and TNG.",
-      "author": "tetherball88",
-      "tags": [
-        "body",
-        "descriptions",
-        "obody",
-        "npc",
-        "immersion",
-        "appearance"
-      ],
-      "nsfw": true,
-      "icon": "package",
-      "mods": [],
-      "first_published": "2026-09-25T20:55:01Z",
-      "last_updated": "2026-09-25T20:55:01Z",
-      "version": "1.0.3",
-      "history": [
-        {
-          "version": "1.0.3",
-          "commit": "701a8fc1ea99ca3245be2e49f3e3ce8d9d8cc748",
-          "date": "2026-09-25T20:55:01Z"
-        }
-      ],
-      "external_url": "https://github.com/tetherball88/BodyLanguage/releases/latest",
       "stats": {
         "downloads": 0,
         "endorsements": 0
