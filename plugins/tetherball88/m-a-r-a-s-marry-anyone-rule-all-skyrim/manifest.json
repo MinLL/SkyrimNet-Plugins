@@ -14,6 +14,8 @@
   "nsfw": false,
   "icon": "characters",
   "mods": [],
+  "image": "cover.png",
   "external_url": "https://github.com/tetherball88/maras/releases/latest",
-  "version": "0.11.0"
+  "version": "0.11.0",
+  "changelog": "replaced cover image"
 }
