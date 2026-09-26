@@ -96,6 +96,23 @@ Submissions go through one of two flows depending on what they contain:
 - **Any actions included** — reviewed manually by a SkyrimNet developer or trusted community member. Manual review can take up to a week. This is not a trust issue — Papyrus has no access control, and verifying an action is safe against save corruption requires human judgment.
 - **Listings** — a new listing, or an update that changes its `external_url`, is reviewed manually: the reviewer checks where the link goes, which the agent cannot. An update that keeps the same link (title, tagline, description, tags, changelog, version, cover image) is reviewed automatically like any bundle without actions.
 
+### Bans (maintainers)
+
+`bans.json` on `main` is the one ban list. Two checks read it: the fateless
+dashboard refuses a banned account before it can open a PR, and the validator
+fails any PR whose manifest author is banned. Edit this file only; there is no
+second list to keep in sync.
+
+```json
+{ "schema_version": 1, "bans": [{ "author": "someone", "reason": "spam", "expires_at": "2027-01-01T00:00:00Z" }] }
+```
+
+An entry may also be a bare string or use `username` instead of `author`.
+Names match case-insensitively with `_` and `-` treated alike, so `Some_One`
+bans `some-one`. `expires_at` is optional. The validator honours it; the
+dashboard currently does not, so an expired entry still blocks publishing from
+the dashboard until it is removed.
+
 ## NSFW content
 
 NSFW plugins are allowed and live in a gated section of the dashboard (off by default). Every manifest must declare `"nsfw": true|false` accurately — mismatches are an automatic reject reason.
