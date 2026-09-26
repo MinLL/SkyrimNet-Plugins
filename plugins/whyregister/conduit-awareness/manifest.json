@@ -18,14 +18,10 @@
       "name": "Conduit.esp",
       "file": "conduit.esp",
       "required": true
-    },
-    {
-      "name": "Conduit.esp",
-      "file": "conduit.esp",
-      "required": true
     }
   ],
-  "version": "1.0.1",
-  "changelog": "Initial release",
+  "image": "cover.png",
+  "version": "1.0.2",
+  "changelog": "Initial release + added a photo",
   "min_skyrimnet_version": "0.25.0"
 }
