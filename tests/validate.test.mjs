@@ -63,6 +63,12 @@ test("happy path: a manifest declaring a language is accepted", () => {
   assert.deepEqual(res.result.labels, ["ready-for-agent-review"]);
 });
 
+test("happy path: a manifest declaring several languages is accepted", () => {
+  const res = validatePlugin({ manifest: goodManifest({ languages: ["de", "fr"] }) });
+  assert.equal(res.result.success, true, errorMessages(res.result));
+  assert.deepEqual(res.result.labels, ["ready-for-agent-review"]);
+});
+
 test("happy path: a manifest carrying a changelog is accepted", () => {
   const res = validatePlugin({ manifest: goodManifest({ changelog: "Added Lydia's banter." }) });
   assert.equal(res.result.success, true, errorMessages(res.result));
@@ -91,6 +97,12 @@ test("a listing's changelog needs a version to attach to", () => {
 test("rejects a language that is not a bare lowercase ISO 639-1 code", () => {
   for (const language of ["German", "DE", "de-DE", ""]) {
     assertRejected(validatePlugin({ manifest: goodManifest({ language }) }), /language/);
+  }
+});
+
+test("rejects a languages list that is empty, repeats a code, or holds a malformed one", () => {
+  for (const languages of [[], ["de", "de"], ["de", "DE"], ["de-DE"], "de"]) {
+    assertRejected(validatePlugin({ manifest: goodManifest({ languages }) }), /languages/);
   }
 });
 

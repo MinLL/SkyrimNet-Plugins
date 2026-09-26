@@ -76,10 +76,17 @@
       "maxLength": 2000,
       "description": "What changed in THIS version, written by the author at publish time and rendered as restricted markdown. Describes one version only: the full per-version history is assembled by build-index.mjs, which reads the manifest as it stood at each version's commit and copies this field into the matching index.json history entry, so a note needs a `version` to attach to. The dashboard requires it on every publish, bundle or listing (prefilled with 'Initial release' for a first submission, refused after a version bump until it changes), and requires a listing's version with it; the schema keeps both optional so manifests published before the field existed still validate."
     },
+    "languages": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": { "type": "string", "pattern": "^[a-z]{2}$" },
+      "description": "Optional. The languages the content is written in, as bare lowercase ISO 639-1 codes ('en', 'de'), most prominent first. The dashboard offers a fixed list of codes with friendly names and omits the key when nothing is chosen, so it is never present-but-empty. The schema pins the shape, not the membership: which codes the list offers is a dashboard concern, so adding a language never needs a schema change here. Baked into index.json so the browse page's Language filter matches the plugin under any of them without fetching manifests. Absent means undeclared, not English."
+    },
     "language": {
       "type": "string",
       "pattern": "^[a-z]{2}$",
-      "description": "Optional. The language the content is written in, as a bare lowercase ISO 639-1 code ('en', 'de'). The dashboard offers a fixed list of codes with friendly names and omits the key when nothing is chosen, so it is never present-but-blank. The schema pins the shape, not the membership: which codes the list offers is a dashboard concern, so adding a language never needs a schema change here. Copied into index.json so the browse page can offer a Language filter without fetching manifests. Absent means undeclared, not English."
+      "description": "Legacy single-language form of `languages`, written by dashboards before multi-language support. Still accepted and read as one more entry after `languages`; new manifests use `languages`."
     },
     "nsfw": {
       "type": "boolean",

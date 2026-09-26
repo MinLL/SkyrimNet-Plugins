@@ -289,9 +289,31 @@ test("a manifest language is baked into its row without bumping the schema versi
 
     const byId = new Map(index.plugins.map((p) => [p.plugin_id, p]));
     // Trimmed and lowercased on the way in, so the row matches the bare-code shape the schema pins.
+    assert.deepEqual(byId.get("bob.pack").languages, ["de"]);
     assert.equal(byId.get("bob.pack").language, "de");
     // Undeclared stays absent, never present-but-empty.
+    assert.equal(Object.hasOwn(byId.get("bob.other"), "languages"), false);
     assert.equal(Object.hasOwn(byId.get("bob.other"), "language"), false);
+  } finally {
+    rmDir(repo);
+  }
+});
+
+test("a manifest's languages are baked in order, with the first repeated as the legacy language", () => {
+  const repo = initRepo();
+  try {
+    writeFile(repo, "plugins/bob/pack/manifest.json",
+      JSON.stringify(bundleManifest({ languages: ["fr", "de"], language: "de" }), null, 2));
+    writeFile(repo, "plugins/bob/pack/prompts/a.prompt", "x\n");
+    commitAll(repo, "add pack");
+
+    const { index } = runBuildIndex(repo);
+    assertValidIndex(index);
+    assert.equal(index.schema_version, 2);
+    const row = index.plugins.find((p) => p.plugin_id === "bob.pack");
+    assert.deepEqual(row.languages, ["fr", "de"]);
+    // Dashboards that predate `languages` read only this key.
+    assert.equal(row.language, "fr");
   } finally {
     rmDir(repo);
   }

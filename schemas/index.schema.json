@@ -153,10 +153,17 @@
           "maxLength": 50,
           "description": "Copied from manifest.json. Key into the dashboard's Lucide icon registry; rendered as the browse-card thumbnail."
         },
+        "languages": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "type": "string", "pattern": "^[a-z]{2}$" },
+          "description": "Baked from manifest.json's `languages`, then its legacy `language`, when either declares one; absent otherwise. Bare lowercase ISO 639-1 codes ('en', 'de') the content is written in, in manifest order. The dashboard's browse page derives its Language filter from the distinct codes present, labels each with its friendly name, and matches a row under any of its codes, so the facet only appears once at least one entry carries a language. Additive within schema v2."
+        },
         "language": {
           "type": "string",
           "pattern": "^[a-z]{2}$",
-          "description": "Copied from manifest.json when the manifest declares one; absent otherwise. Bare lowercase ISO 639-1 code ('en', 'de') the content is written in. The dashboard's browse page derives its Language filter from the distinct values present and labels each with its friendly name, so the facet only appears once at least one entry carries the key. Additive within schema v2."
+          "description": "The first code of `languages`, present exactly when it is. Kept for dashboards released before `languages`, which read only this key and match a row under this one code. Additive within schema v2."
         },
         "image": {
           "type": "object",
