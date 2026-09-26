@@ -18,16 +18,14 @@
   "icon": "mask",
   "mods": [
     {
-      "name": "(LORE ACCURATE) Dagoth Ur Follower",
-      "file": "du01dagothurfollower.esp",
-      "required": true
-    },
-    {
       "name": "DU01DagothUrFollower.esp",
       "file": "du01dagothurfollower.esp",
       "required": true
     }
   ],
-  "version": "0.1.0",
+  "language": "en",
+  "image": "cover.png",
+  "version": "0.1.1",
+  "changelog": "Added cover image",
   "min_skyrimnet_version": "0.25.0"
 }
