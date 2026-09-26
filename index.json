@@ -1,8 +1,50 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-09-26T05:28:04.872Z",
-  "stats_as_of": "2026-09-26T05:28:04.763Z",
+  "generated_at": "2026-09-26T05:29:37.814Z",
+  "stats_as_of": "2026-09-26T05:29:37.706Z",
   "plugins": [
+    {
+      "id": "plugins/tetherball88/lover-s-ledger",
+      "plugin_id": "tetherball88.lover-s-ledger",
+      "type": "listing",
+      "title": "Lover's Ledger",
+      "tagline": "Relationship and encounter statistics ledger for SkyrimNet character bios.",
+      "author": "tetherball88",
+      "tags": [
+        "lovers",
+        "relationships",
+        "romance",
+        "character_bio",
+        "bio",
+        "immersion"
+      ],
+      "nsfw": true,
+      "icon": "package",
+      "mods": [],
+      "first_published": "2026-09-25T20:59:41Z",
+      "last_updated": "2026-09-26T05:29:19Z",
+      "version": "1.1.0",
+      "history": [
+        {
+          "version": "1.1.0",
+          "commit": "db140787601000c79da91fc3c853e8e8ea79aaf3",
+          "date": "2026-09-26T05:29:19Z",
+          "changelog": "replaced cover image"
+        }
+      ],
+      "external_url": "https://github.com/tetherball88/Lover-s-Ledger/releases/latest",
+      "image": {
+        "file": "cover.png",
+        "sha": "918bd08de169a3c9ab3905e6ad6a79a852454105",
+        "commit": "db140787601000c79da91fc3c853e8e8ea79aaf3",
+        "width": 2048,
+        "height": 1152
+      },
+      "stats": {
+        "downloads": 0,
+        "endorsements": 0
+      }
+    },
     {
       "id": "plugins/tetherball88/body-language",
       "plugin_id": "tetherball88.body-language",
@@ -243,40 +285,6 @@
         "width": 1672,
         "height": 941
       },
-      "stats": {
-        "downloads": 0,
-        "endorsements": 0
-      }
-    },
-    {
-      "id": "plugins/tetherball88/lover-s-ledger",
-      "plugin_id": "tetherball88.lover-s-ledger",
-      "type": "listing",
-      "title": "Lover's Ledger",
-      "tagline": "Relationship and encounter statistics ledger for SkyrimNet character bios.",
-      "author": "tetherball88",
-      "tags": [
-        "lovers",
-        "relationships",
-        "romance",
-        "character_bio",
-        "bio",
-        "immersion"
-      ],
-      "nsfw": true,
-      "icon": "package",
-      "mods": [],
-      "first_published": "2026-09-25T20:59:41Z",
-      "last_updated": "2026-09-25T20:59:41Z",
-      "version": "1.1.0",
-      "history": [
-        {
-          "version": "1.1.0",
-          "commit": "6aae31fa52018ffc569b0c75cfb37d49e2b29337",
-          "date": "2026-09-25T20:59:41Z"
-        }
-      ],
-      "external_url": "https://github.com/tetherball88/Lover-s-Ledger/releases/latest",
       "stats": {
         "downloads": 0,
         "endorsements": 0
