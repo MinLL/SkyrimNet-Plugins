@@ -1,0 +1,19 @@
+{
+  "id": "tetherball88.m-a-r-a-s-marry-anyone-rule-all-skyrim",
+  "type": "listing",
+  "title": "M.A.R.A.S – Marry Anyone, Rule All Skyrim",
+  "tagline": "Dynamic marriage and relationship management with SkyrimNet integration.",
+  "description": "## M.A.R.A.S – Marry Anyone, Rule All Skyrim 💍🐉\n\nV2 in progress - which will allow relationships between npcs, adds new relationship types(lover, dating), children support, open relationship and cheating mechanics, fertility mods integration with possible paternity secrets.\n\nIt is not just SKyrimNet integration it is full mod with mechanics changes and SkyrimNet(though can work without it as well) native support.\n\nM.A.R.A.S (Marry Anyone, Rule All Skyrim) is a dynamic, **ESL-flagged light** marriage overhaul that lets you **marry literally anyone** in Skyrim—jarls, bandits, necromancers, that one shopkeeper who keeps ripping you off… you name it. Build relationships, juggle multiple spouses, unlock powerful buffs, and try not to emotionally (or politically) destabilize the entire province in the process. The mod itself is **SFW**, but it can hook into NSFW/relationship frameworks if *you* choose to install them. With great love comes great responsibility… and occasionally, great chaos. 😇\n\n#### SkyrimNet Integration: Smarter, Chattier, More Alive 💬\n\nM.A.R.A.S runs great without SkyrimNet, but together they’re kind of a power couple:\n\n1. **Conversation-Based Proposals**\n2. **Voices for Everyone**\n3. **AI-Driven Relationship Actions (with Safety Nets)**\n\nResult: your marriages feel more like relationships and less like menu options.",
+  "author": "tetherball88",
+  "tags": [
+    "marriage",
+    "relationships",
+    "immersion",
+    "character_bio"
+  ],
+  "nsfw": false,
+  "icon": "characters",
+  "mods": [],
+  "external_url": "https://github.com/tetherball88/maras/releases/latest",
+  "version": "0.11.0"
+}
