@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-09-26T03:25:07.358Z",
-  "stats_as_of": "2026-09-26T03:25:07.259Z",
+  "generated_at": "2026-09-26T04:17:17.107Z",
+  "stats_as_of": "2026-09-26T04:17:16.983Z",
   "plugins": [
     {
       "id": "plugins/phospheneoverdrive/lore-accurate-dagoth-ur-follower-bios",
@@ -115,6 +115,55 @@
       },
       "stats": {
         "downloads": 5,
+        "endorsements": 0
+      }
+    },
+    {
+      "id": "plugins/phospheneoverdrive/intelengine-npc-autonomy-faction-politics",
+      "plugin_id": "phospheneoverdrive.intelengine-npc-autonomy-faction-politics",
+      "type": "listing",
+      "title": "IntelEngine — NPC Autonomy & Faction Politics",
+      "tagline": "Give Skyrim’s NPCs agency—tasks, schedules, autonomous stories, and faction politics.",
+      "author": "phospheneoverdrive",
+      "tags": [
+        "actions",
+        "autonomy",
+        "immersion",
+        "storytelling",
+        "scheduling",
+        "travel",
+        "quests",
+        "faction politics",
+        "world simulation"
+      ],
+      "nsfw": false,
+      "icon": "gamemaster",
+      "mods": [],
+      "first_published": "2026-09-26T03:14:31Z",
+      "last_updated": "2026-09-26T03:14:31Z",
+      "version": "3.5.1",
+      "history": [
+        {
+          "version": "3.5.1",
+          "commit": "e21dc4d0cd90657841180582f569a72ef8322f11",
+          "date": "2026-09-26T03:14:31Z",
+          "changelog": "Release for use with SkyrimNet Beta 25"
+        }
+      ],
+      "external_url": "https://github.com/Gerkinfeltser/IntelEngine-GamePlugin/releases/tag/v3.5.1",
+      "languages": [
+        "en"
+      ],
+      "language": "en",
+      "image": {
+        "file": "cover.png",
+        "sha": "2481c81c05b48de522dea56a269a1803f5be32f9",
+        "commit": "e21dc4d0cd90657841180582f569a72ef8322f11",
+        "width": 1672,
+        "height": 941
+      },
+      "stats": {
+        "downloads": 0,
         "endorsements": 0
       }
     },
