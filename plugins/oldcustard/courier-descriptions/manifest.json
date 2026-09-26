@@ -1,0 +1,25 @@
+{
+  "id": "oldcustard.courier-descriptions",
+  "type": "listing",
+  "title": "Courier Descriptions",
+  "tagline": "The courier describes whoever handed him your mail, in his own voice, without ever reading the letter.",
+  "description": "When the vanilla courier delivers something he has no \"who sent it\" line for, he now adds one: a line written at delivery time and spoken in his own voice, between *\"Let's see here...\"* and *\"Looks like that's it.\"*\n\n> *\"Redguard barmaid from the Mare gave me this, sounding desperate.\"*\n>\n> *\"Jarl Balgruuf handed me this himself, looking like he had something heavy on his mind.\"*\n>\n> *\"Someone with a very hard stare handed this to me, and wouldn't say another word.\"*\n\n- **He never reads your mail.** The letter is used only to work out what sort of person sent it. He describes *them* (how they looked, how they paid, how they seemed) and never what the letter says.\n- **He recognises the well-known.** When a letter names its sender, he describes the actual person, drawing on their SkyrimNet bio. A Jarl he knows on sight, an innkeeper he can place by trade, and a private citizen stays a stranger.\n- **He doesn't make things up.** With no sender to go on, he describes the handover instead (the payment, the meeting place, the refusal to give a name), so nothing he says can be contradicted later.\n- **He stays quiet when he already has a line.** Deliveries he voices himself, such as Calcelmo's note, the Dark Brotherhood's letter, inheritances and mod-added letters with their own recordings, are left alone. The mod works this out from your game data, so it covers mods it has never heard of.\n- **It's real dialogue**, not narration: his own voice type, lip sync, subtitles and spatial audio. It also works with the Lilly and The Courier Crew courier replacers.\n\n### Requirements\n\n- **SkyrimNet Beta 25, rc12 or later.** On earlier release candidates his line can play after the goodbye.\n- SKSE, Address Library for SKSE Plugins and Fuz Ro D-oh.\n- **Settings → Voice → \"Enable TTS For Silent NPCs\"** must be on, or his line shows as a subtitle with no voice.\n\n### Settings\n\nUnder **Courier Descriptions** in the WebUI:\n- **Debug Mode** shows progress on screen and enables a console test delivery.\n- **Enable AI Fallback**: turn it off to get a plain, generic line with no LLM call.\n- **LLM Variant** picks which SkyrimNet LLM variant writes the line.",
+  "author": "oldcustard",
+  "tags": [
+    "dialouge",
+    "voice",
+    "vanilla-npcs",
+    "immersion",
+    "courier"
+  ],
+  "nsfw": false,
+  "icon": "scroll",
+  "mods": [],
+  "languages": [
+    "en"
+  ],
+  "image": "cover.png",
+  "external_url": "https://github.com/Oldcustard/CourierDescriptions/releases",
+  "version": "1.2.0",
+  "changelog": "Initial plugin-hub release"
+}
