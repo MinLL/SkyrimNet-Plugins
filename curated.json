@@ -1,4 +1,6 @@
 {
   "schema_version": 1,
-  "curated": []
+  "curated": [
+    { "id": "plugins/severause/severactions" }
+  ]
 }
