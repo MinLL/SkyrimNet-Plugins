@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-09-26T13:34:45.185Z",
-  "stats_as_of": "2026-09-26T13:34:45.010Z",
+  "generated_at": "2026-09-26T13:38:43.026Z",
+  "stats_as_of": "2026-09-26T13:38:42.901Z",
   "plugins": [
     {
       "id": "plugins/oldcustard/wintersun-skyrimnet-integration",
@@ -50,6 +50,51 @@
       },
       "stats": {
         "downloads": 7,
+        "endorsements": 0
+      }
+    },
+    {
+      "id": "plugins/oldcustard/courier-descriptions",
+      "plugin_id": "oldcustard.courier-descriptions",
+      "type": "listing",
+      "title": "Courier Descriptions",
+      "tagline": "The courier describes whoever handed him your mail, in his own voice, without ever reading the letter.",
+      "author": "oldcustard",
+      "tags": [
+        "dialouge",
+        "voice",
+        "vanilla-npcs",
+        "immersion",
+        "courier"
+      ],
+      "nsfw": false,
+      "icon": "scroll",
+      "mods": [],
+      "first_published": "2026-09-26T13:28:53Z",
+      "last_updated": "2026-09-26T13:28:53Z",
+      "version": "1.2.0",
+      "history": [
+        {
+          "version": "1.2.0",
+          "commit": "acb18e80cec0bf91bbabf6b9629bcc3a2949c496",
+          "date": "2026-09-26T13:28:53Z",
+          "changelog": "Initial plugin-hub release"
+        }
+      ],
+      "external_url": "https://github.com/Oldcustard/CourierDescriptions/releases",
+      "languages": [
+        "en"
+      ],
+      "language": "en",
+      "image": {
+        "file": "cover.png",
+        "sha": "b7c96acc5dab93f56375f50d7c162b62ca5f58a2",
+        "commit": "acb18e80cec0bf91bbabf6b9629bcc3a2949c496",
+        "width": 1672,
+        "height": 941
+      },
+      "stats": {
+        "downloads": 0,
         "endorsements": 0
       }
     },
