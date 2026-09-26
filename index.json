@@ -1,8 +1,56 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-09-26T01:13:22.445Z",
-  "stats_as_of": "2026-09-26T01:13:22.346Z",
+  "generated_at": "2026-09-26T03:20:51.755Z",
+  "stats_as_of": "2026-09-26T03:20:51.641Z",
   "plugins": [
+    {
+      "id": "plugins/phospheneoverdrive/iactions-drunk-for-skyrimnet",
+      "plugin_id": "phospheneoverdrive.iactions-drunk-for-skyrimnet",
+      "type": "listing",
+      "title": "iActions [Drunk+] for SkyrimNet",
+      "tagline": "NPC drinking, intoxication, food, exchange, and related actions for SkyrimNet.",
+      "author": "phospheneoverdrive",
+      "tags": [
+        "dialogue",
+        "immersion",
+        "actions"
+      ],
+      "nsfw": false,
+      "icon": "zap",
+      "mods": [],
+      "first_published": "2026-09-12T21:07:45Z",
+      "last_updated": "2026-09-26T03:20:33Z",
+      "version": "0.6.7",
+      "history": [
+        {
+          "version": "0.6.7",
+          "commit": "e1a0c1437781a994574baf4c862c322271092969",
+          "date": "2026-09-26T03:20:33Z",
+          "changelog": "Cover image added"
+        },
+        {
+          "version": "0.6.6",
+          "commit": "30146b7520a66fca43d6dd69e14beff1f649073c",
+          "date": "2026-09-12T21:07:45Z"
+        }
+      ],
+      "external_url": "https://github.com/Gerkinfeltser/iActions/releases",
+      "languages": [
+        "en"
+      ],
+      "language": "en",
+      "image": {
+        "file": "cover.png",
+        "sha": "c29ff8cf79c041bec811b7e553618dc0a8016fbd",
+        "commit": "e1a0c1437781a994574baf4c862c322271092969",
+        "width": 1672,
+        "height": 941
+      },
+      "stats": {
+        "downloads": 5,
+        "endorsements": 0
+      }
+    },
     {
       "id": "plugins/tetherball88/lover-s-ledger",
       "plugin_id": "tetherball88.lover-s-ledger",
@@ -676,37 +724,6 @@
       },
       "stats": {
         "downloads": 2,
-        "endorsements": 0
-      }
-    },
-    {
-      "id": "plugins/phospheneoverdrive/iactions-drunk-for-skyrimnet",
-      "plugin_id": "phospheneoverdrive.iactions-drunk-for-skyrimnet",
-      "type": "listing",
-      "title": "iActions [Drunk+] for SkyrimNet",
-      "tagline": "NPC drinking, intoxication, food, exchange, and related actions for SkyrimNet.",
-      "author": "phospheneoverdrive",
-      "tags": [
-        "dialogue",
-        "immersion",
-        "actions"
-      ],
-      "nsfw": false,
-      "icon": "zap",
-      "mods": [],
-      "first_published": "2026-09-12T21:07:45Z",
-      "last_updated": "2026-09-12T21:07:45Z",
-      "version": "0.6.6",
-      "history": [
-        {
-          "version": "0.6.6",
-          "commit": "30146b7520a66fca43d6dd69e14beff1f649073c",
-          "date": "2026-09-12T21:07:45Z"
-        }
-      ],
-      "external_url": "https://github.com/Gerkinfeltser/iActions/releases",
-      "stats": {
-        "downloads": 5,
         "endorsements": 0
       }
     },
