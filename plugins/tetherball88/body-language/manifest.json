@@ -16,6 +16,9 @@
   "nsfw": true,
   "icon": "package",
   "mods": [],
+  "language": "en",
+  "image": "cover.png",
   "external_url": "https://github.com/tetherball88/BodyLanguage/releases/latest",
-  "version": "1.0.3"
+  "version": "1.0.3",
+  "changelog": "replaced cover image"
 }
