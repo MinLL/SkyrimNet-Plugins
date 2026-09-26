@@ -32,9 +32,10 @@ good, not whether it is well-formed.
   `changelog`, `tags` and the cover image. `mods` and `requirements` describe what the hosted
   mod needs and may be empty; there are no content files, and the reviewer never opens or judges
   `external_url` (a new or changed link is always a human's decision, before this guide applies).
-- `language` is optional. Pick it from the dashboard's list when the content is not written in
-  English, or when you want it findable under the browse page's Language filter. It is stored as
-  a bare ISO 639-1 code (`de`, `fr`). Leave it unset rather than guessing; unset means undeclared.
+- `languages` is optional. Pick every language the content is written in from the dashboard's
+  list; the browse page's Language filter finds the plugin under any of them. Each is stored as a
+  bare ISO 639-1 code (`["de", "fr"]`). Leave it unset rather than guessing; unset means
+  undeclared. Manifests from older dashboards carry a single `language` instead, which still counts.
 - `image` is optional: one cover image (PNG or JPEG, 16:9 — for example 1280×720 or 1920×1080 —
   640–2048px wide, up to 5 MB) shown on
   the hub site, in the in-game browse view, and on the plugin's Discord thread. **Must:** it

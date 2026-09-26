@@ -251,6 +251,17 @@ function materialContent(index) {
   return JSON.stringify(rest);
 }
 
+// A manifest's `languages`, then its legacy `language`, trimmed and lowercased with blanks and repeats dropped.
+function manifestLanguages(manifest) {
+  const raw = [...(Array.isArray(manifest.languages) ? manifest.languages : []), manifest.language];
+  const codes = [];
+  for (const value of raw) {
+    const code = typeof value === 'string' ? value.trim().toLowerCase() : '';
+    if (code && !codes.includes(code)) codes.push(code);
+  }
+  return codes;
+}
+
 // The index row's `image` for a plugin (`sha` of the working-tree bytes, `commit` the newest touching the file),
 // or null when the manifest names none, the file is missing, or the bytes fail the validator's checks.
 function pluginImage(pluginDir, relPath, declared) {
@@ -451,9 +462,11 @@ if (!fs.existsSync(PLUGINS_DIR)) {
         entry.external_url = manifest.external_url;
       }
       // Optional; the browse page's Language facet appears only once some row carries it.
-      // Lowercased so the row matches the bare-code shape the schema pins.
-      if (typeof manifest.language === 'string' && manifest.language.trim()) {
-        entry.language = manifest.language.trim().toLowerCase();
+      // `language` repeats the first code for dashboards that predate `languages`.
+      const languages = manifestLanguages(manifest);
+      if (languages.length > 0) {
+        entry.languages = languages;
+        entry.language = languages[0];
       }
       // Optional cover image: baked with the facts consumers need to fetch
       // and cache it without reading the manifest. Skipped, not failed, when
