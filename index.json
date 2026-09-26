@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-09-26T22:26:16.841Z",
-  "stats_as_of": "2026-09-26T22:26:16.709Z",
+  "generated_at": "2026-09-26T22:26:46.735Z",
+  "stats_as_of": "2026-09-26T22:25:17.011Z",
   "plugins": [
     {
       "id": "plugins/whyregister/conduit-awareness",
@@ -75,7 +75,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 8,
+        "downloads": 7,
         "endorsements": 0
       }
     },
@@ -517,7 +517,7 @@
       ],
       "language": "en",
       "stats": {
-        "downloads": 2,
+        "downloads": 1,
         "endorsements": 0
       }
     },
@@ -881,7 +881,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 7,
+        "downloads": 6,
         "endorsements": 0
       }
     },
@@ -1107,37 +1107,6 @@
       }
     },
     {
-      "id": "plugins/zevick/s-t-f-u-skyrim-talk-filter-utility",
-      "plugin_id": "zevick.s-t-f-u-skyrim-talk-filter-utility",
-      "type": "listing",
-      "title": "S.T.F.U - Skyrim Talk Filter Utility",
-      "tagline": "S.T.F.U silences tedious frequent utterances",
-      "author": "zevick",
-      "tags": [
-        "stfu",
-        "dialogue",
-        "filter"
-      ],
-      "nsfw": false,
-      "icon": "dialogue",
-      "mods": [],
-      "first_published": "2026-08-20T09:09:54Z",
-      "last_updated": "2026-08-20T09:09:54Z",
-      "version": "1.1.0",
-      "history": [
-        {
-          "version": "1.1.0",
-          "commit": "8961aed30bfcfbfc1a3f45d372a8b0ae23e86b6d",
-          "date": "2026-08-20T09:09:54Z"
-        }
-      ],
-      "external_url": "https://github.com/zevck/S.T.F.U",
-      "stats": {
-        "downloads": 15,
-        "endorsements": 1
-      }
-    },
-    {
       "id": "plugins/skyrimnet/bios-018auri",
       "plugin_id": "skyrimnet.bios-018auri",
       "type": "bundle",
@@ -1268,7 +1237,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1,
+        "downloads": 0,
         "endorsements": 0
       }
     },
