@@ -1,8 +1,69 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-09-26T13:18:15.852Z",
-  "stats_as_of": "2026-09-26T13:18:15.738Z",
+  "generated_at": "2026-09-26T13:21:35.110Z",
+  "stats_as_of": "2026-09-26T13:21:35.002Z",
   "plugins": [
+    {
+      "id": "plugins/whyregister/conduit-awareness",
+      "plugin_id": "whyregister.conduit-awareness",
+      "type": "bundle",
+      "title": "Conduit Awareness",
+      "tagline": "Conduit Awareness in Skyrimnet. Prompt plug triggers",
+      "author": "whyregister",
+      "tags": [
+        "conduit",
+        "spells",
+        "actions",
+        "prompts"
+      ],
+      "nsfw": true,
+      "icon": "sparkles",
+      "mods": [
+        {
+          "name": "Conduit.esp",
+          "file": "conduit.esp",
+          "required": true
+        }
+      ],
+      "first_published": "2026-09-12T06:44:11-08:00",
+      "last_updated": "2026-09-26T13:21:16Z",
+      "version": "1.0.2",
+      "min_skyrimnet_version": "0.25.0",
+      "history": [
+        {
+          "version": "1.0.2",
+          "commit": "2375f199e6072715db4657b0e00cb8214aef48c5",
+          "date": "2026-09-26T13:21:16Z",
+          "changelog": "Initial release + added a photo"
+        },
+        {
+          "version": "1.0.1",
+          "commit": "8639130424cf8b13d36f334384b7b5bdc6c96ece",
+          "date": "2026-09-26T13:08:36Z",
+          "changelog": "Initial release"
+        }
+      ],
+      "image": {
+        "file": "cover.png",
+        "sha": "2937531f182b6c7beecff05168dc9d029d887b40",
+        "commit": "2375f199e6072715db4657b0e00cb8214aef48c5",
+        "width": 1672,
+        "height": 941
+      },
+      "contents": {
+        "triggers": 2,
+        "actions": 0,
+        "prompts": 1,
+        "bios": 0,
+        "knowledge": 0,
+        "entities": 0,
+        "config": 0
+      },
+      "stats": {
+        "downloads": 7,
+        "endorsements": 0
+      }
+    },
     {
       "id": "plugins/whyregister/spellsiphon-awareness",
       "plugin_id": "whyregister.spellsiphon-awareness",
@@ -60,59 +121,6 @@
       },
       "stats": {
         "downloads": 0,
-        "endorsements": 0
-      }
-    },
-    {
-      "id": "plugins/whyregister/conduit-awareness",
-      "plugin_id": "whyregister.conduit-awareness",
-      "type": "bundle",
-      "title": "Conduit Awareness",
-      "tagline": "Conduit Awareness in Skyrimnet. Prompt plug triggers",
-      "author": "whyregister",
-      "tags": [
-        "conduit",
-        "spells",
-        "actions",
-        "prompts"
-      ],
-      "nsfw": true,
-      "icon": "sparkles",
-      "mods": [
-        {
-          "name": "Conduit.esp",
-          "file": "conduit.esp",
-          "required": true
-        },
-        {
-          "name": "Conduit.esp",
-          "file": "conduit.esp",
-          "required": true
-        }
-      ],
-      "first_published": "2026-09-12T06:44:11-08:00",
-      "last_updated": "2026-09-26T13:08:36Z",
-      "version": "1.0.1",
-      "min_skyrimnet_version": "0.25.0",
-      "history": [
-        {
-          "version": "1.0.1",
-          "commit": "8639130424cf8b13d36f334384b7b5bdc6c96ece",
-          "date": "2026-09-26T13:08:36Z",
-          "changelog": "Initial release"
-        }
-      ],
-      "contents": {
-        "triggers": 2,
-        "actions": 0,
-        "prompts": 1,
-        "bios": 0,
-        "knowledge": 0,
-        "entities": 0,
-        "config": 0
-      },
-      "stats": {
-        "downloads": 7,
         "endorsements": 0
       }
     },
