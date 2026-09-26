@@ -1,0 +1,29 @@
+name: spellsiphon_life_discharge_persistent
+description: >-
+  Logs player Life Discharge bolt (KSSC_SparkDischargeBolt / Tri Bolt).
+
+eventCriteria:
+  eventType: spell_cast
+  schemaConditions:
+    - fieldPath: spell_editor_id
+      operator: equals
+      value: KSSC_SparkDischargeBolt
+    - fieldPath: actor
+      operator: equals
+      value: "{{ player.name }}"
+      caseSensitive: false
+
+response:
+  type: persistent_generic
+  content: >-
+    {{ player.name }} discharged a siphoned Life charge — spark leaping
+    out in a hard bolt. Record the Discharge act only. Do not lecture on
+    drawing or combos.
+
+audience: nearby_npcs
+
+enabled: true
+interrupt: false
+probability: 0.8
+cooldownSeconds: 8
+priority: 9

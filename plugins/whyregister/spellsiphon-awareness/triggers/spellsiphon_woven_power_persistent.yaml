@@ -1,0 +1,30 @@
+name: spellsiphon_woven_power_persistent
+description: >-
+  Logs player Woven Power (KSSC_WovenPower only).
+
+eventCriteria:
+  eventType: spell_cast
+  schemaConditions:
+    - fieldPath: spell_editor_id
+      operator: equals
+      value: KSSC_WovenPower
+    - fieldPath: actor
+      operator: equals
+      value: "{{ player.name }}"
+      caseSensitive: false
+
+response:
+  type: persistent_generic
+  content: >-
+    {{ player.name }} used Woven Power — weaving a banked siphoned charge
+    into a finishing combat surge. Record the Woven Power act only. Do not
+    invent World, Life, or Death unless the scene already makes the element
+    obvious. No lectures on drawing or combos.
+
+audience: nearby_npcs
+
+enabled: true
+interrupt: false
+probability: 0.8
+cooldownSeconds: 8
+priority: 9

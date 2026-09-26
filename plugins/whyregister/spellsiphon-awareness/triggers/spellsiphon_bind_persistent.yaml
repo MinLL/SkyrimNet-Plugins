@@ -1,0 +1,30 @@
+name: spellsiphon_bind_persistent
+description: >-
+  Logs Spellsiphon Bind (player KSSC_BindSpell only; not ScriptTrigger).
+
+eventCriteria:
+  eventType: spell_cast
+  schemaConditions:
+    - fieldPath: spell_editor_id
+      operator: equals
+      value: KSSC_BindSpell
+    - fieldPath: actor
+      operator: equals
+      value: "{{ player.name }}"
+      caseSensitive: false
+
+response:
+  type: persistent_generic
+  content: >-
+    {{ player.name }} used Bind — a siphoned combat technique that shapes
+    drawn magic into a weapon-form or bound armament. Record the Bind act
+    only. Do not invent World, Life, or Death unless the scene already
+    makes the element obvious. No lectures on drawing or combos.
+
+audience: nearby_npcs
+
+enabled: true
+interrupt: false
+probability: 0.8
+cooldownSeconds: 8
+priority: 9

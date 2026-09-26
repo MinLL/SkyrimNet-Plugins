@@ -1,0 +1,27 @@
+name: spellsiphon_death_discharge_narration
+description: Occasional narration for player Death Discharge.
+
+eventCriteria:
+  eventType: spell_cast
+  schemaConditions:
+    - fieldPath: spell_editor_id
+      operator: equals
+      value: KSSC_DeathDischarge
+    - fieldPath: actor
+      operator: equals
+      value: "{{ player.name }}"
+      caseSensitive: false
+
+response:
+  type: direct_narration
+  content: >-
+    {{ player.name }} breaks a banked Death charge loose — frost cracking
+    through the fight. One tight beat only. Do not name out-of-world systems.
+
+audience: nearby_npcs
+
+enabled: true
+interrupt: false
+probability: 0.2
+cooldownSeconds: 120
+priority: 8

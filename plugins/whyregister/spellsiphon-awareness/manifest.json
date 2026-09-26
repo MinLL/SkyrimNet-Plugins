@@ -1,0 +1,31 @@
+{
+  "id": "whyregister.spellsiphon-awareness",
+  "type": "bundle",
+  "title": "Spellsiphon Awareness",
+  "tagline": "Spellsiphon Awareness - Prompts and tiggers bundle",
+  "description": "Makes Spellsiphon's siphoned combat readable to SkyrimNet NPCs.\n\nWhile you hold, attune, or weapon-charge World, Life, or Death, nearby speakers\nget a short observational bio block (no combo lectures, no mod names). Payoff\nmoments — Bind, Discharge, and Woven Power — always log as persistent events;\nrare narration can fire when someone is present to see it.\n\nDraw concentration, Ward spam, and utility swaps (Reverse / Refocus / Reshape)\nare intentionally not hooked.\n\nREQUIREMENTS\n- SkyrimNet\n- Spellsiphon - Immersive Combat (Spellsiphon.esp)",
+  "author": "whyregister",
+  "tags": [
+    "Spellsiphon",
+    "spells",
+    "awareness",
+    "prompts",
+    "triggers"
+  ],
+  "nsfw": false,
+  "icon": "package",
+  "mods": [
+    {
+      "name": "Spellsiphon.esp",
+      "file": "spellsiphon.esp",
+      "required": true
+    }
+  ],
+  "languages": [
+    "en"
+  ],
+  "image": "cover.png",
+  "version": "1.0.0",
+  "changelog": "Initial release",
+  "min_skyrimnet_version": "0.25.0"
+}

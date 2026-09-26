@@ -1,0 +1,28 @@
+name: spellsiphon_world_discharge_narration
+description: Occasional narration for player World Discharge (Suspended World).
+
+eventCriteria:
+  eventType: spell_cast
+  schemaConditions:
+    - fieldPath: spell_editor_id
+      operator: equals
+      value: KSSC_WorldDischargeTimeSlow
+    - fieldPath: actor
+      operator: equals
+      value: "{{ player.name }}"
+      caseSensitive: false
+
+response:
+  type: direct_narration
+  content: >-
+    {{ player.name }} breaks a banked World charge loose — heat and slowed
+    air cracking through the fight. One tight beat only. Do not name
+    out-of-world systems.
+
+audience: nearby_npcs
+
+enabled: true
+interrupt: false
+probability: 0.2
+cooldownSeconds: 120
+priority: 8
