@@ -1,0 +1,42 @@
+{% if render_mode == "transform" or render_mode == "full" or render_mode == "thoughts" or render_mode == "target" %}
+{# Conduit — short-term weapon infusion awareness.
+When the player has conducted a spell into a weapon (Conduit.esp), nearby
+speakers can notice the live weapon effect. Element comes from the active
+MainEff MGEF. Keep it observational — no mod names, no system dumps.
+Safe when Conduit.esp is not loaded: all has_magic_effect checks return
+false, conduit_kind stays empty, and the block produces nothing. #}
+{% if actorUUID and actorUUID != 0 and exists("player") and isValidActor(player.UUID) and actorUUID != player.UUID %}
+{% set pUUID = player.UUID %}
+{% set conduit_kind = "" %}
+{% if has_magic_effect(pUUID, "CSTE_Fire__MainEff") %}
+{% set conduit_kind = "fire" %}
+{% elif has_magic_effect(pUUID, "CSTE_Frost__MainEff") %}
+{% set conduit_kind = "frost" %}
+{% elif has_magic_effect(pUUID, "CSTE_Shock__MainEff") %}
+{% set conduit_kind = "shock" %}
+{% elif has_magic_effect(pUUID, "CSTE_Healing__MainEff") %}
+{% set conduit_kind = "healing" %}
+{% elif has_magic_effect(pUUID, "CSTE_Arcane__MainEff") %}
+{% set conduit_kind = "arcane" %}
+{% elif has_magic_effect(pUUID, "CSTE__ConduitEff") %}
+{% set conduit_kind = "arcane" %}
+{% endif %}
+{% if conduit_kind != "" %}
+{% set pName = decnpc(pUUID).name %}
+## Conducted Weapon
+{{ pName }} has forced a spell through a held weapon — the blade or haft is carrying live magic for a short while (a temporary conduction, not a permanent enchantment).
+{% if conduit_kind == "fire" %}
+What you can tell: heat-shimmer, flame licking the weapon, strikes that want to ignite.
+{% elif conduit_kind == "frost" %}
+What you can tell: a bitter cold along the weapon, ice-bright edges, hits that crack and chill.
+{% elif conduit_kind == "shock" %}
+What you can tell: sparks crawling the metal, a storm-taut charge, blows that snap with lightning.
+{% elif conduit_kind == "healing" %}
+What you can tell: a pale, solemn light on the weapon — judgement-bright, as if meant for the dead and the damned.
+{% else %}
+What you can tell: raw arcane force wound into the weapon — odd warps of light, echoes that do not belong to ordinary steel.
+{% endif %}
+If it fits, you may remark on the conducted weapon the way you'd notice any dangerous magic in someone's hands. Do not lecture about how it works, invent lasting enchantments, or name out-of-world systems. Keep it brief and natural.
+{% endif %}
+{% endif %}
+{% endif %}
