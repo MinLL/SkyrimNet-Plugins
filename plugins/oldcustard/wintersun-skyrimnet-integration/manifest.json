@@ -15,6 +15,11 @@
   "nsfw": false,
   "icon": "world",
   "mods": [],
+  "languages": [
+    "en"
+  ],
+  "image": "cover.png",
   "external_url": "https://github.com/Oldcustard/Wintersun-Skyrimnet-Integration/releases",
-  "version": "3.0.0"
+  "version": "3.0.1",
+  "changelog": "Added listing image"
 }
