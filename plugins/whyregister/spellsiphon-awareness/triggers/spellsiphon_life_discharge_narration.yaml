@@ -1,0 +1,27 @@
+name: spellsiphon_life_discharge_narration
+description: Occasional narration for player Life Discharge (Tri Bolt).
+
+eventCriteria:
+  eventType: spell_cast
+  schemaConditions:
+    - fieldPath: spell_editor_id
+      operator: equals
+      value: KSSC_SparkDischargeBolt
+    - fieldPath: actor
+      operator: equals
+      value: "{{ player.name }}"
+      caseSensitive: false
+
+response:
+  type: direct_narration
+  content: >-
+    {{ player.name }} breaks a banked Life charge loose — spark cracking
+    through the fight. One tight beat only. Do not name out-of-world systems.
+
+audience: nearby_npcs
+
+enabled: true
+interrupt: false
+probability: 0.2
+cooldownSeconds: 120
+priority: 8

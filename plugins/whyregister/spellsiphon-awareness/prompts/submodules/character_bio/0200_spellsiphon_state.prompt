@@ -1,0 +1,70 @@
+{% if render_mode == "transform" or render_mode == "full" or render_mode == "thoughts" or render_mode == "target" %}
+{# Spellsiphon — held-element / attunement / weapon-charge awareness.
+When the player is carrying a siphoned World, Life, or Death charge
+(Spellsiphon.esp), nearby speakers can notice it. Prefer Dominant, then
+Attunement, then weapon enhance / bound shaders. Keep it observational —
+no mod names, no combo lectures, no system dumps.
+Safe when Spellsiphon.esp is not loaded: all has_magic_effect checks return
+false, siphon_kind stays empty, and the block produces nothing.
+Life is SparkDominant in the ESP; treat it as living/vital force in prose. #}
+{% if actorUUID and actorUUID != 0 and exists("player") and isValidActor(player.UUID) and actorUUID != player.UUID %}
+{% set pUUID = player.UUID %}
+{% set siphon_kind = "" %}
+{% set siphon_mode = "" %}
+{# --- Dominant held element (strongest, most visible) --- #}
+{% if has_magic_effect(pUUID, "KSSC_WorldDominantME") %}
+{% set siphon_kind = "world" %}
+{% set siphon_mode = "held" %}
+{% elif has_magic_effect(pUUID, "KSSC_SparkDominantME") %}
+{% set siphon_kind = "life" %}
+{% set siphon_mode = "held" %}
+{% elif has_magic_effect(pUUID, "KSSC_DeathDominantME") %}
+{% set siphon_kind = "death" %}
+{% set siphon_mode = "held" %}
+{# --- Attunement (combo readiness) --- #}
+{% elif has_magic_effect(pUUID, "KSSC_Attunement_WorldME") %}
+{% set siphon_kind = "world" %}
+{% set siphon_mode = "attuned" %}
+{% elif has_magic_effect(pUUID, "KSSC_Attunement_LifeME") %}
+{% set siphon_kind = "life" %}
+{% set siphon_mode = "attuned" %}
+{% elif has_magic_effect(pUUID, "KSSC_Attunement_DeathME") %}
+{% set siphon_kind = "death" %}
+{% set siphon_mode = "attuned" %}
+{# --- Weapon / bound charge (imbue-like; distinct from Conduit conduction) --- #}
+{% elif has_magic_effect(pUUID, "KSSC_WeaponEnhance_WorldME") or has_magic_effect(pUUID, "KSSC_BoundWeaponShadersME_World") %}
+{% set siphon_kind = "world" %}
+{% set siphon_mode = "weapon" %}
+{% elif has_magic_effect(pUUID, "KSSC_WeaponEnhance_LifeME") or has_magic_effect(pUUID, "KSSC_BoundWeaponShadersME_Life") %}
+{% set siphon_kind = "life" %}
+{% set siphon_mode = "weapon" %}
+{% elif has_magic_effect(pUUID, "KSSC_WeaponEnhance_DeathME") or has_magic_effect(pUUID, "KSSC_BoundWeaponShadersME_Death") %}
+{% set siphon_kind = "death" %}
+{% set siphon_mode = "weapon" %}
+{% elif has_magic_effect(pUUID, "KSSC_WeaponEnhance_NeutralME") %}
+{% set siphon_kind = "arcane" %}
+{% set siphon_mode = "weapon" %}
+{% endif %}
+{% if siphon_kind != "" %}
+{% set pName = decnpc(pUUID).name %}
+## Siphoned Magic
+{% if siphon_mode == "held" %}
+{{ pName }} is holding a raw siphoned charge — magic pulled from the world, the living, or the dead, still unsettled in {{ pName }}'s grip.
+{% elif siphon_mode == "attuned" %}
+{{ pName }} is attuned to a siphoned element — the charge is banked and ready, not spent yet.
+{% else %}
+{{ pName }}'s weapon (or bound armament) carries a siphoned elemental charge — a drawn force laid onto steel, not an ordinary shop enchantment.
+{% endif %}
+{% if siphon_kind == "world" %}
+What you can tell: heat and grit in the air, a volcanic / earthen pull, strikes that want to burn or shatter stone.
+{% elif siphon_kind == "life" %}
+What you can tell: a living current — green-white vitality, a pull toward breath and blood, magic that feels stolen from the living.
+{% elif siphon_kind == "death" %}
+What you can tell: a cold hush, ash-grey drain, the sense of graves and stillness riding every motion.
+{% else %}
+What you can tell: odd bound light on the weapon — charged, but not clearly fire, frost, or storm.
+{% endif %}
+If it fits, you may remark on the siphoned charge the way you'd notice any dangerous magic gathering around someone. Do not lecture about drawing, binding, or combos. Do not invent permanent enchantments. Do not name out-of-world systems. Keep it brief and natural.
+{% endif %}
+{% endif %}
+{% endif %}

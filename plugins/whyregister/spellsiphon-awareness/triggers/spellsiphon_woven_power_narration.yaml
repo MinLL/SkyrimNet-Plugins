@@ -1,0 +1,29 @@
+name: spellsiphon_woven_power_narration
+description: Occasional narration for player Woven Power.
+
+eventCriteria:
+  eventType: spell_cast
+  schemaConditions:
+    - fieldPath: spell_editor_id
+      operator: equals
+      value: KSSC_WovenPower
+    - fieldPath: actor
+      operator: equals
+      value: "{{ player.name }}"
+      caseSensitive: false
+
+response:
+  type: direct_narration
+  content: >-
+    {{ player.name }} weaves a siphoned charge into Woven Power — a finishing
+    surge cracking through the fight. One tight beat only: the flash of the
+    act, not a lesson. Do not invent which element it is unless the scene
+    already shows it. Do not name out-of-world systems.
+
+audience: nearby_npcs
+
+enabled: true
+interrupt: false
+probability: 0.2
+cooldownSeconds: 120
+priority: 8

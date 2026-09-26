@@ -1,0 +1,30 @@
+name: spellsiphon_bind_narration
+description: >-
+  Occasional nearby narration for player Bind (KSSC_BindSpell only).
+
+eventCriteria:
+  eventType: spell_cast
+  schemaConditions:
+    - fieldPath: spell_editor_id
+      operator: equals
+      value: KSSC_BindSpell
+    - fieldPath: actor
+      operator: equals
+      value: "{{ player.name }}"
+      caseSensitive: false
+
+response:
+  type: direct_narration
+  content: >-
+    {{ player.name }} snaps Bind into the open — drawn magic answering as
+    steel or bound armament. One tight beat only: the flash of the act,
+    not a lesson. Do not invent which element it is unless the scene
+    already shows it. Do not name out-of-world systems.
+
+audience: nearby_npcs
+
+enabled: true
+interrupt: false
+probability: 0.2
+cooldownSeconds: 120
+priority: 8
