@@ -1,0 +1,19 @@
+{
+  "id": "telord72612.vr-touch-events-v3-4",
+  "type": "listing",
+  "title": "VR Touch Events V3.4",
+  "tagline": "A plugins for SkyrimNet that expose the player's contact to the LLM for awareness.",
+  "description": "VRTouchEvents is the plugins I created for SKyrimNet to push contact information between Player and NPC to the LLM for a more immersive roleplay. VRTE does multiple thing, including:\n-28 reaction categories drawn from the 107 named capsules (head, face, ear, lips, mouth, throat wall, neck, shoulder, chest, left breast, right breast, belly, waist, hips, backside, groin, clitoris, vaginal, cervix, uterus, anal, rectum, arms, hands, legs, feet, tail base, tail tip)\n-differentiate between a finger, an open hand, a fist or a grab\n-detect if the NPC is grabbed by one or both hand, touched with a weapon or a held object, and will tell what the name of the object\n-detecting pression of the contact so hovering, resting, pressing and going inside are all different things.\n-a delay and priority system, according to location of the contact and what the NPC is wearing (naked, clothes, LArmor or HArmor)\n-it's own choking mechanism that include alarm for the NPC, the NPC around, pass out at 15 sec and death at 25sec hold\nan arousal system with some facial reaction on certain intimate contact, according to the LLM mood and relations with the player\n-kissing recognition with head node\n-equip/unequip recognition thru gesture\n-and push/shove/feet sweep mechanism\n\nVRTouchEvent use Precision Physic Bodies to recognize all those feature.",
+  "author": "telord72612",
+  "tags": [
+    "Awareness",
+    "Prompt"
+  ],
+  "nsfw": false,
+  "icon": "package",
+  "mods": [],
+  "language": "en",
+  "external_url": "https://github.com/Telord72612/VRTouchEvents/releases/tag/V3.4.0",
+  "version": "3.4.0",
+  "changelog": "Beta25 Release"
+}
