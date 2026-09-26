@@ -141,6 +141,16 @@ left to judge:
 - `identity/` links give a virtual entity a body (`npc:`) or move memories between two
   identities. Both identities should be the plugin's own or clearly named in the description.
 
+## Plugin settings schemas (`settings/`)
+
+A `settings/{Name}.yaml` file defines the plugin's own page under the user's Settings: fields,
+their defaults, and optional LLM `variants` (endpoint, model). The validator checks the path and
+that it is a YAML mapping. What is left to judge:
+
+- **Must:** field labels, descriptions and options describe the plugin's own settings.
+- A `variants` entry's default `endpoint` sends the user's requests to that host; it should be a
+  well-known provider or clearly explained in the description.
+
 ## Things that are always fine
 
 Dark themes, violence, gore, crude language, in-universe prejudice between Skyrim's races, morally

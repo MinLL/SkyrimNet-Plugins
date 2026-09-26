@@ -45,8 +45,8 @@ export const CODES = {
 
 // ----- Constants -----------------------------------------------------------
 
-// `minEngine` of a root no SkyrimNet release reads yet: every plugin shipping it is refused. No row carries it
-// today; a root added ahead of its release does.
+// `minEngine` of a root no SkyrimNet release reads yet: every plugin shipping it is refused. A root added
+// ahead of its release carries it (`settings` today) until the release that reads it ships.
 export const RESERVED_MIN_ENGINE = "reserved";
 
 // The release that reads the eight config-system roots.
@@ -54,7 +54,8 @@ export const CONFIG_ROOTS_MIN_ENGINE = "0.25.0";
 
 // One row per content root; pairs with the engine's table in ContentPaths.cpp. `minEngine` is null
 // (ungated), RESERVED_MIN_ENGINE, or the oldest release that reads the root. `category` is the index's
-// `contents` key the root's files count toward. Record rules: record-rules.mjs.
+// `contents` key the root's files count toward, or null for a mod-internal root that is never advertised.
+// Record rules: record-rules.mjs.
 export const ROOT_TABLE = Object.freeze([
   { segment: "prompts", category: "prompts", extension: ".prompt", minEngine: null },
   { segment: "triggers", category: "triggers", extension: ".yaml", minEngine: null }, // `name` == stem
@@ -69,6 +70,8 @@ export const ROOT_TABLE = Object.freeze([
   { segment: "filters", category: "config", extension: ".yaml", minEngine: CONFIG_ROOTS_MIN_ENGINE }, // by `kind`
   { segment: "translator", category: "config", extension: ".yaml", minEngine: CONFIG_ROOTS_MIN_ENGINE }, // by `kind`
   { segment: "dialogue_actions", category: "config", extension: ".yaml", minEngine: CONFIG_ROOTS_MIN_ENGINE }, // by `kind`
+  // A plugin's own Settings page schema (`Plugin_{stem}`): mod-internal, so no `contents` category.
+  { segment: "settings", category: null, extension: ".yaml", minEngine: RESERVED_MIN_ENGINE },
 ]);
 
 // Content roots accepted by the hub, in table order.
@@ -77,7 +80,7 @@ export const CONTENT_ROOTS = ROOT_TABLE.map((row) => row.segment);
 // Per-root extension, matched as an exact case-sensitive suffix of the final segment.
 export const EXTENSION_BY_ROOT = Object.fromEntries(ROOT_TABLE.map((row) => [row.segment, row.extension]));
 
-// Per-root `contents` category.
+// Per-root `contents` category; null for a root the index does not count.
 export const CATEGORY_BY_ROOT = Object.fromEntries(ROOT_TABLE.map((row) => [row.segment, row.category]));
 
 // Per-root `minEngine`, as the table spells it.

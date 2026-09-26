@@ -128,7 +128,7 @@ every rule below is evaluated on a segment before moving to the next segment:
 14. `UNKNOWN_ROOT` — first segment is not a `segment` of `ROOT_TABLE` in
     `content-rules.mjs` (`prompts`, `triggers`, `actions`, `knowledge`,
     `entities`, `voice_effects`, `items`, `spells`, `furniture`, `identity`,
-    `filters`, `translator`, `dialogue_actions`). The shared corpus carries
+    `filters`, `translator`, `dialogue_actions`, `settings`). The shared corpus carries
     cases only for roots the engine's table in `ContentPaths.cpp` also has;
     cases for the remaining roots live in `content-rules.test.mjs`.
 15. `NO_FILE_IN_ROOT` — fewer than two segments (a root with no file in it).

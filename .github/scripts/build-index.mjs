@@ -311,6 +311,7 @@ function countContents(pluginDir) {
   contents.bios = biosCount;
   for (const root of CONTENT_ROOTS) {
     const category = CATEGORY_BY_ROOT[root];
+    if (category === null) continue; // mod-internal (settings/): never advertised
     contents[category] = (contents[category] ?? 0) + countRoot(root);
   }
   return contents;

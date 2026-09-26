@@ -209,8 +209,8 @@ const NEW_ROOTS = [
   "voice_effects", "items", "spells", "furniture", "identity", "filters", "translator", "dialogue_actions",
 ];
 
-test("the root table has the five original roots and the eight config-system roots", () => {
-  assert.deepEqual(CONTENT_ROOTS, ["prompts", "triggers", "actions", "knowledge", "entities", ...NEW_ROOTS]);
+test("the root table has the five original roots, the eight config-system roots and settings", () => {
+  assert.deepEqual(CONTENT_ROOTS, ["prompts", "triggers", "actions", "knowledge", "entities", ...NEW_ROOTS, "settings"]);
   for (const row of ROOT_TABLE) {
     assert.ok(
       row.minEngine === null || row.minEngine === RESERVED_MIN_ENGINE || isStrictSemver(row.minEngine),
@@ -230,6 +230,10 @@ test("the root table has the five original roots and the eight config-system roo
     assert.equal(ROOT_MIN_ENGINE[root], CONFIG_ROOTS_MIN_ENGINE);
     assert.equal(EXTENSION_BY_ROOT[root], ".yaml");
   }
+  // Plugin settings schemas: mod-internal (no index category), reserved until the release that reads them.
+  assert.equal(CATEGORY_BY_ROOT.settings, null);
+  assert.equal(EXTENSION_BY_ROOT.settings, ".yaml");
+  assert.equal(ROOT_MIN_ENGINE.settings, RESERVED_MIN_ENGINE);
 });
 
 test("a new root's path is accepted and the unknown-root message names every root", () => {
@@ -266,7 +270,7 @@ test("semver pre-release identifiers compare dot by dot, numerically where numer
   assert.equal(compareSemver("1.0.0-rc.1+a", "1.0.0-rc.1+b"), 0);
 });
 
-// No ROOT_TABLE row is reserved today; the branch is pinned through a test-only table.
+// Pinned through a test-only table, so the branch outlives any one reserved row.
 test("per-root minimum: a reserved root is refused whatever the manifest declares", () => {
   const table = { future: RESERVED_MIN_ENGINE };
   for (const declared of ["0.24.0", "0.25.0", "9.0.0", undefined]) {

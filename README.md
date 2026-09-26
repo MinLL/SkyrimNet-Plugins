@@ -47,6 +47,7 @@ plugins/
       filters/*.yaml
       translator/*.yaml
       dialogue_actions/*.yaml
+      settings/*.yaml         # the plugin's own Settings page schema (reserved, see Content roots)
 ```
 
 Each plugin lives in its own directory under the author's GitHub username. The `manifest.json` describes the plugin and is required; every content subdirectory is optional.
@@ -70,6 +71,9 @@ One directory per content root. The validator checks each file's extension, its 
 | `filters/` | `.yaml` | `kind: actor` / `memory` contributions: any stem; `kind: dialogue_rule` / `tts_rule`: `id`, a non-empty `pattern` (a regular expression of at most 1024 bytes), integer `priority` | Beta 25 (0.25.0) | yes | 32 KB |
 | `translator/` | `.yaml` | `kind: npc`: form stem of `form` (the actor base); `faction` / `race`: `entityEditorId`; `global`: `global.yaml`; integer `priority` | Beta 25 (0.25.0) | yes | 32 KB |
 | `dialogue_actions/` | `.yaml` | `kind: lists` contributions: any stem; `kind: instruction`: `key`, with an optional `category` of `quest`, `follower`, `merchant`, `trainer`, `carriage`, `innkeeper`, `bard`, `marriage`, `crime`, `other` | Beta 25 (0.25.0) | yes | 32 KB |
+| `settings/` | `.yaml` | the whole filename before `.yaml` (`[A-Za-z0-9_-]`, directly under `settings/`) names the plugin's `Plugin_{Name}` config; any YAML mapping | reserved | yes | 64 KB |
+
+**Mod-internal roots.** `settings/` carries a plugin's own Settings page schema. It has no `contents` category in `index.json`, so it never shows as a badge or count anywhere the index is read.
 
 **Filename stem.** For a root identified by `name`, `id`, `key` or `entityEditorId`, the stem is the filename up to its **first** dot (`draugr.yaml` → `draugr`, `foo.entity.yaml` → `foo`), compared case-insensitively.
 

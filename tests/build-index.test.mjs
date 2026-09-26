@@ -91,7 +91,8 @@ function bundleManifest(overrides = {}) {
 
 /** A `contents` map with every category at zero, for tests to override. */
 function contentsOf(overrides = {}) {
-  const zero = Object.fromEntries(Object.values(CATEGORY_BY_ROOT).map((category) => [category, 0]));
+  const categories = Object.values(CATEGORY_BY_ROOT).filter((category) => category !== null);
+  const zero = Object.fromEntries(categories.map((category) => [category, 0]));
   return { ...zero, bios: 0, ...overrides };
 }
 
@@ -431,6 +432,26 @@ test("the config-system roots are counted together under contents.config, no sch
     assert.deepEqual(contents, contentsOf({ config: 11 }));
     // Key order: the original three, bios, then the remaining categories in table order.
     assert.deepEqual(Object.keys(contents), ["triggers", "actions", "prompts", "bios", "knowledge", "entities", "config"]);
+  } finally {
+    rmDir(repo);
+  }
+});
+
+test("settings schemas are mod-internal: never counted in contents", () => {
+  const repo = initRepo();
+  try {
+    writeFile(repo, "plugins/bob/pack/manifest.json", JSON.stringify(bundleManifest(), null, 2));
+    writeFile(repo, "plugins/bob/pack/triggers/wave.yaml", "name: wave\n");
+    writeFile(repo, "plugins/bob/pack/settings/MyPlugin.yaml", "plugin:\n  name: My Plugin\n");
+    commitAll(repo, "add pack with a settings schema");
+
+    const { index } = runBuildIndex(repo);
+    assertValidIndex(index);
+
+    const contents = index.plugins[0].contents;
+    assert.deepEqual(contents, contentsOf({ triggers: 1 }));
+    assert.equal(Object.hasOwn(contents, "settings"), false);
+    assert.equal(Object.hasOwn(contents, "null"), false);
   } finally {
     rmDir(repo);
   }
