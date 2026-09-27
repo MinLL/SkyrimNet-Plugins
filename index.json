@@ -1,8 +1,77 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-09-27T13:24:18.430Z",
-  "stats_as_of": "2026-09-27T13:24:18.362Z",
+  "generated_at": "2026-09-27T13:25:19.985Z",
+  "stats_as_of": "2026-09-27T13:22:56.217Z",
   "plugins": [
+    {
+      "id": "plugins/pdusen/knowledge-pack-for-ultimate-college-of-winterhold-more",
+      "plugin_id": "pdusen.knowledge-pack-for-ultimate-college-of-winterhold-more",
+      "type": "bundle",
+      "title": "Knowledge Pack for Ultimate College of Winterhold + More",
+      "tagline": "Adds knowlege specific to Ultimate College of Winterhold and Immersive College NPCs",
+      "author": "pdusen",
+      "tags": [],
+      "nsfw": false,
+      "icon": "world",
+      "mods": [
+        {
+          "name": "UltimateCollege.esp",
+          "file": "ultimatecollege.esp",
+          "required": true
+        },
+        {
+          "name": "OCW_Obscure's_CollegeofWinterhold.esp",
+          "file": "ocw_obscure's_collegeofwinterhold.esp",
+          "required": true
+        },
+        {
+          "name": "ICNs_ImmersiveCollegeNPCs.esp",
+          "file": "icns_immersivecollegenpcs.esp",
+          "required": true
+        },
+        {
+          "name": "CollegeOfWinterholdImmersive.esp",
+          "file": "collegeofwinterholdimmersive.esp",
+          "required": true
+        }
+      ],
+      "first_published": "2026-09-27T13:24:58Z",
+      "last_updated": "2026-09-27T13:24:58Z",
+      "version": "1.0.1",
+      "min_skyrimnet_version": "0.25.0",
+      "history": [
+        {
+          "version": "1.0.1",
+          "commit": "a78b11b8d1d52eb85b338e939ea45cca7a752431",
+          "date": "2026-09-27T13:24:58Z",
+          "changelog": "Initial release"
+        }
+      ],
+      "languages": [
+        "en"
+      ],
+      "language": "en",
+      "image": {
+        "file": "cover.png",
+        "sha": "1fe9bad83b31aa0d70b42ba09d83e241e31c3cf6",
+        "commit": "a78b11b8d1d52eb85b338e939ea45cca7a752431",
+        "width": 1672,
+        "height": 941
+      },
+      "contents": {
+        "triggers": 0,
+        "actions": 0,
+        "prompts": 0,
+        "bios": 0,
+        "knowledge": 1,
+        "entities": 0,
+        "config": 0
+      },
+      "stats": {
+        "downloads": 0,
+        "endorsements": 0
+      }
+    },
     {
       "id": "plugins/pdusen/knowledge-pack-for-the-great-cities-of-jk-s-north-winterhold",
       "plugin_id": "pdusen.knowledge-pack-for-the-great-cities-of-jk-s-north-winterhold",
@@ -4607,7 +4676,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 3,
+        "downloads": 2,
         "endorsements": 0
       }
     },
