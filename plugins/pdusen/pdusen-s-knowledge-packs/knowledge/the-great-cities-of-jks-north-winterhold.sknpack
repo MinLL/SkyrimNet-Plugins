@@ -1,0 +1,243 @@
+{
+  "skyrimnet_knowledge_pack": {
+    "description": "Locations and NPCs added to the city of Winterhold when combining The Great Cities, Cities of the North, and JK's Skyrim",
+    "entries": [
+      {
+        "always_inject": false,
+        "condition_expr": "is_in_faction(actorUUID, \"TownWinterholdFaction\") or is_in_faction(actorUUID, \"CrimeFactionWinterhold\")",
+        "content": "Stonecold Fortress is the Jarl's seat in Winterhold, raised above the ruined city as a cold stone stronghold rather than a simple longhouse. Severe, windswept, and proud, it stands as one of the clearest reminders that Winterhold was once a true capital.",
+        "display_name": "Stonecold Fortress",
+        "emotion": "",
+        "importance": 0.8999999761581421,
+        "key": "stonecold-fortress",
+        "knowledge_key": "loc.winterhold.stonecold_fortress",
+        "location": "",
+        "tags": [
+          "Stonecold Fortress",
+          "Winterhold",
+          "Jarl's seat",
+          "stronghold",
+          "capital",
+          "government"
+        ],
+        "type": "LOCATION"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "is_in_faction(actorUUID, \"TownWinterholdFaction\") or is_in_faction(actorUUID, \"CrimeFactionWinterhold\")",
+        "content": "The Winterhold Guardhouse serves as the town's military and watch station, sheltering the guards from the harsh northern weather while keeping order among the ruins. In a city as broken as Winterhold, even a modest guardhouse carries significant weight against the cold, bandits, wild beasts, and College trouble.",
+        "display_name": "Winterhold Guardhouse",
+        "emotion": "",
+        "importance": 0.6499999761581421,
+        "key": "winterhold-guardhouse",
+        "knowledge_key": "loc.winterhold.guardhouse",
+        "location": "",
+        "tags": [
+          "Winterhold Guardhouse",
+          "Winterhold",
+          "guard station",
+          "watch",
+          "military",
+          "defense"
+        ],
+        "type": "LOCATION"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "is_in_faction(actorUUID, \"TownWinterholdFaction\") or is_in_faction(actorUUID, \"CrimeFactionWinterhold\")",
+        "content": "The Hall of Runes is a place of magical books, study, and trade within Winterhold, distinct from the College even though it naturally draws mages and apprentices. It gives the town itself a stronger connection to scholarship and spellcraft, suggesting that Winterhold's old relationship with magic was not confined only to the College.",
+        "display_name": "Hall of Runes",
+        "emotion": "",
+        "importance": 0.800000011920929,
+        "key": "hall-of-runes",
+        "knowledge_key": "loc.winterhold.hall_of_runes",
+        "location": "",
+        "tags": [
+          "Hall of Runes",
+          "Winterhold",
+          "magic",
+          "books",
+          "scholarship",
+          "spellcraft"
+        ],
+        "type": "LOCATION"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "is_in_faction(actorUUID, \"TownWinterholdFaction\") or is_in_faction(actorUUID, \"CrimeFactionWinterhold\")",
+        "content": "Frostview Hall is a residence in Winterhold. It is a rare sign of civic confidence in a place better known for abandonment, offering a proper home within the remains of the old capital.",
+        "display_name": "Frostview Hall",
+        "emotion": "",
+        "importance": 0.6499999761581421,
+        "key": "frostview-hall",
+        "knowledge_key": "loc.winterhold.frostview_hall",
+        "location": "",
+        "tags": [
+          "Frostview Hall",
+          "Winterhold",
+          "residence",
+          "thane",
+          "property",
+          "home"
+        ],
+        "type": "LOCATION"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "is_in_faction(actorUUID, \"TownWinterholdFaction\") or is_in_faction(actorUUID, \"CrimeFactionWinterhold\")",
+        "content": "The House of Clan Frost-Vein is associated with the Frost-Vein family, one of the named households that gives Winterhold's newer layout a stronger sense of lineage and local identity. In a city obsessed with what was lost, a clan house like this suggests that some families still define themselves by Winterhold's old pride, not merely by its present poverty.",
+        "display_name": "House of Clan Frost-Vein",
+        "emotion": "",
+        "importance": 0.6499999761581421,
+        "key": "house-of-clan-frost-vein",
+        "knowledge_key": "loc.winterhold.frost_vein_house",
+        "location": "",
+        "tags": [
+          "House of Clan Frost-Vein",
+          "Winterhold",
+          "clan",
+          "family",
+          "lineage",
+          "household"
+        ],
+        "type": "LOCATION"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "is_in_faction(actorUUID, \"TownWinterholdFaction\") or is_in_faction(actorUUID, \"CrimeFactionWinterhold\")",
+        "content": "Chayim is one of Winterhold's newer townsfolk, known around town as someone tied closely to the city's surviving civic life and whose presence reminds visitors that Winterhold is more than just the College, the inn, and scattered ruins.",
+        "display_name": "Chayim",
+        "emotion": "",
+        "importance": 0.699999988079071,
+        "key": "chayim",
+        "knowledge_key": "",
+        "location": "",
+        "tags": [
+          "Chayim",
+          "Winterhold",
+          "townsfolk",
+          "civic life"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "is_in_faction(actorUUID, \"TownWinterholdFaction\") or is_in_faction(actorUUID, \"CrimeFactionWinterhold\")",
+        "content": "Euthymia shares a household with Chayim in Winterhold, part of the small population that keeps ordinary life going among the ruins. She represents the quieter side of the city's survival: hearth, home, routine, and endurance.",
+        "display_name": "Euthymia",
+        "emotion": "",
+        "importance": 0.6499999761581421,
+        "key": "euthymia",
+        "knowledge_key": "",
+        "location": "",
+        "tags": [
+          "Euthymia",
+          "Winterhold",
+          "household",
+          "survival"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "is_in_faction(actorUUID, \"TownWinterholdFaction\") or is_in_faction(actorUUID, \"CrimeFactionWinterhold\")",
+        "content": "Frode Snow-Owl is a Winterhold resident whose name carries the old Nordic weight of the city's vanished greatness, a local voice for the idea that Winterhold was once a proud capital and that those who remain have not forgotten what was lost.",
+        "display_name": "Frode Snow-Owl",
+        "emotion": "",
+        "importance": 0.699999988079071,
+        "key": "frode-snow-owl",
+        "knowledge_key": "",
+        "location": "",
+        "tags": [
+          "Frode Snow-Owl",
+          "Winterhold",
+          "heritage",
+          "pride"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "is_in_faction(actorUUID, \"TownWinterholdFaction\") or is_in_faction(actorUUID, \"CrimeFactionWinterhold\")",
+        "content": "Magna Frost-Vein is connected to one of Winterhold's named local households, her family name suggesting a lineage deeply rooted in the frozen hold. She represents the kind of resident who makes Winterhold feel like a battered old city whose surviving families still carry pride, grievance, and memory.",
+        "display_name": "Magna Frost-Vein",
+        "emotion": "",
+        "importance": 0.75,
+        "key": "magna-frost-vein",
+        "knowledge_key": "",
+        "location": "",
+        "tags": [
+          "Magna Frost-Vein",
+          "Frost-Vein",
+          "Winterhold",
+          "family",
+          "household"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "is_in_faction(actorUUID, \"TownWinterholdFaction\") or is_in_faction(actorUUID, \"CrimeFactionWinterhold\")",
+        "content": "Magnar is Winterhold's blacksmith, providing a vital trade the city needs to feel like a living settlement. His forge serves guards, travelers, and townsfolk, suggesting that Winterhold still has enough daily life, danger, and trade to support honest craft.",
+        "display_name": "Magnar",
+        "emotion": "",
+        "importance": 0.8500000238418579,
+        "key": "magnar",
+        "knowledge_key": "",
+        "location": "",
+        "tags": [
+          "Magnar",
+          "blacksmith",
+          "Winterhold",
+          "forge",
+          "trade"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "is_in_faction(actorUUID, \"TownWinterholdFaction\") or is_in_faction(actorUUID, \"CrimeFactionWinterhold\")",
+        "content": "Frida is one of Winterhold's residents, with a home among the rebuilt and reoccupied parts of the city. In a place defined by loss, even an ordinary householder matters as a sign that Winterhold has not entirely surrendered to ruin.",
+        "display_name": "Frida",
+        "emotion": "",
+        "importance": 0.6000000238418579,
+        "key": "frida",
+        "knowledge_key": "",
+        "location": "",
+        "tags": [
+          "Frida",
+          "Winterhold",
+          "resident",
+          "household"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "is_in_faction(actorUUID, \"TownWinterholdFaction\") or is_in_faction(actorUUID, \"CrimeFactionWinterhold\")",
+        "content": "Magnar's Forge is located on the south side of Winterhold, next to the Guardhouse, where the blacksmith Magnar provides essential smithing services to the town and its visitors — repairs, crafting, and supplies for those who need quality metalwork.",
+        "display_name": "Magnar's Forge",
+        "emotion": "",
+        "importance": 0.75,
+        "key": "magnars-forge",
+        "knowledge_key": "location.winterhold.magnars_forge",
+        "location": "",
+        "tags": [
+          "Magnar's Forge",
+          "Winterhold",
+          "blacksmith",
+          "south side",
+          "smithing services",
+          "crafting"
+        ],
+        "type": "LOCATION"
+      }
+    ],
+    "entry_count": 12,
+    "exported_at": "2026-09-27T12:56:50Z",
+    "format_version": 3,
+    "name": "The Great Cities of JK's North - Winterhold",
+    "npc_groups": [],
+    "version": "1.0.1"
+  }
+}

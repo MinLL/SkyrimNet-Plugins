@@ -1,0 +1,19 @@
+{
+  "id": "pdusen.pdusen-s-knowledge-packs",
+  "type": "bundle",
+  "title": "Pdusen's Knowledge Packs",
+  "tagline": "Adds knowledge packs specific to The Great Cities of JK's North (Winterhold) and Ultimate College of Winterhold",
+  "description": "A small collection of Knowledge Packs for the SkyrimNet. Each pack teaches SkyrimNet's NPCs about locations and characters added by specific mods, so those NPCs can talk about their surroundings and neighbors as though they actually live there. Import the `.sknpack` files via SkyrimNet's Web GUI.\n\n**Included Packs:**\n\n- **The Great Cities of JK's North - Winterhold** — covers the rebuilt Winterhold produced by combining\n JK's Skyrim, Great City of Winterhold v4, and Cities of the North - Winterhold via **The Great Cities of\n JK's North - Patch**.\n- **Ultimate College of Winterhold + Immersive College NPCs** — covers the expanded College produced by\n combining Immersive College of Winterhold, Obscure's College of Winterhold, and Immersive College NPCs\n via **Ultimate College of Winterhold - an ICOW and OCW Patch**.",
+  "author": "pdusen",
+  "tags": [],
+  "nsfw": false,
+  "icon": "package",
+  "mods": [],
+  "languages": [
+    "en"
+  ],
+  "image": "cover.png",
+  "version": "1.0.1",
+  "changelog": "Initial release",
+  "min_skyrimnet_version": "0.25.0"
+}
