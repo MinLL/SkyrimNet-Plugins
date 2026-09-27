@@ -9,6 +9,8 @@
   "nsfw": false,
   "icon": "scroll",
   "mods": [],
+  "image": "cover.png",
   "external_url": "https://github.com/Severause/SeverActions/releases/tag/v3.9.14-beta25",
-  "version": "3.9.14"
+  "version": "3.9.14",
+  "changelog": "Added a cover image"
 }
