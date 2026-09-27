@@ -109,9 +109,8 @@ second list to keep in sync.
 
 An entry may also be a bare string or use `username` instead of `author`.
 Names match case-insensitively with `_` and `-` treated alike, so `Some_One`
-bans `some-one`. `expires_at` is optional. The validator honours it; the
-dashboard currently does not, so an expired entry still blocks publishing from
-the dashboard until it is removed.
+bans `some-one`. `expires_at` is optional; once it passes, both checks let the
+entry lapse. A missing or unreadable date means the ban is permanent.
 
 ## NSFW content
 
