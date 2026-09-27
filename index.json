@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-09-27T14:26:59.744Z",
-  "stats_as_of": "2026-09-27T14:26:59.617Z",
+  "generated_at": "2026-09-27T15:10:20.041Z",
+  "stats_as_of": "2026-09-27T15:05:31.447Z",
   "plugins": [
     {
       "id": "plugins/pdusen/knowledge-pack-for-ultimate-college-of-winterhold-more",
@@ -74,7 +74,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 3,
+        "downloads": 4,
         "endorsements": 0
       }
     },
@@ -205,6 +205,82 @@
       }
     },
     {
+      "id": "plugins/naitro2010/skyrimnet-ddudng",
+      "plugin_id": "naitro2010.skyrimnet-ddudng",
+      "type": "listing",
+      "title": "SkyrimNet DDUDNG",
+      "tagline": "DDNG and UDNG integration for SkyrimNet",
+      "author": "naitro2010",
+      "tags": [
+        "DDUDNG",
+        "DDNG",
+        "UDNG",
+        "integration",
+        "Devious",
+        "Devices",
+        "Unforgiving"
+      ],
+      "nsfw": true,
+      "icon": "listing",
+      "mods": [],
+      "first_published": "2026-09-27T12:31:42Z",
+      "last_updated": "2026-09-27T12:31:42Z",
+      "version": "0.12.0",
+      "history": [
+        {
+          "version": "0.12.0",
+          "commit": "59b54b4f694dfc314b90bc78686a7e7804e97bd7",
+          "date": "2026-09-27T12:31:42Z",
+          "changelog": "Beta 25 and 1.7.104 support"
+        }
+      ],
+      "external_url": "https://github.com/naitro2010/SkyrimNet_UDNG/releases/tag/alpha12",
+      "stats": {
+        "downloads": 0,
+        "endorsements": 0
+      }
+    },
+    {
+      "id": "plugins/cleanestpoison/agencyengine",
+      "plugin_id": "cleanestpoison.agencyengine",
+      "type": "listing",
+      "title": "AgencyEngine",
+      "tagline": "Companions with something on their mind. AgencyEngine lets followers speak up unprompted about their goals, relationships, and things they want to do—through SkyrimNet, when the moment fits.",
+      "author": "cleanestpoison",
+      "tags": [
+        "agency",
+        "companions",
+        "followers",
+        "dialogue"
+      ],
+      "nsfw": false,
+      "icon": "ai",
+      "mods": [],
+      "first_published": "2026-09-27T10:32:19Z",
+      "last_updated": "2026-09-27T10:32:19Z",
+      "version": "0.11.1",
+      "history": [
+        {
+          "version": "0.11.1",
+          "commit": "95a5acce232b0ccfd664c354c5cdf5d7e2ea3443",
+          "date": "2026-09-27T10:32:19Z",
+          "changelog": "Initial release to the pluginhub, no new features."
+        }
+      ],
+      "external_url": "https://github.com/cleanestpoison/AgencyEngine",
+      "image": {
+        "file": "cover.png",
+        "sha": "6f5f3424e29fe2c32ab25a73e2f7634546830a0b",
+        "commit": "95a5acce232b0ccfd664c354c5cdf5d7e2ea3443",
+        "width": 1600,
+        "height": 900
+      },
+      "stats": {
+        "downloads": 0,
+        "endorsements": 0
+      }
+    },
+    {
       "id": "plugins/deadohiosky/kinship",
       "plugin_id": "deadohiosky.kinship",
       "type": "listing",
@@ -292,7 +368,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 15,
+        "downloads": 17,
         "endorsements": 2
       }
     },
@@ -412,7 +488,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 34,
+        "downloads": 36,
         "endorsements": 0
       }
     },
@@ -517,7 +593,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 20,
+        "downloads": 22,
         "endorsements": 0
       }
     },
@@ -606,7 +682,7 @@
         "height": 1152
       },
       "stats": {
-        "downloads": 22,
+        "downloads": 23,
         "endorsements": 1
       }
     },
@@ -871,7 +947,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 8,
+        "downloads": 9,
         "endorsements": 0
       }
     },
@@ -919,7 +995,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 12,
+        "downloads": 13,
         "endorsements": 0
       }
     },
@@ -968,7 +1044,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 27,
+        "downloads": 29,
         "endorsements": 2
       }
     },
@@ -1013,7 +1089,7 @@
         "height": 864
       },
       "stats": {
-        "downloads": 29,
+        "downloads": 30,
         "endorsements": 2
       }
     },
@@ -1122,7 +1198,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 65,
+        "downloads": 68,
         "endorsements": 1
       }
     },
@@ -1167,7 +1243,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 20,
+        "downloads": 21,
         "endorsements": 0
       }
     },
@@ -1270,7 +1346,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 37,
+        "downloads": 40,
         "endorsements": 0
       }
     },
@@ -1298,7 +1374,7 @@
       "external_url": "https://github.com/Severause/SeverActions/releases/tag/v3.9.14-beta25",
       "curated": true,
       "stats": {
-        "downloads": 59,
+        "downloads": 63,
         "endorsements": 9
       }
     },
@@ -1343,7 +1419,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 139,
+        "downloads": 145,
         "endorsements": 1
       }
     },
@@ -1388,7 +1464,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 70,
+        "downloads": 72,
         "endorsements": 0
       }
     },
@@ -1478,7 +1554,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 185,
+        "downloads": 192,
         "endorsements": 2
       }
     },
@@ -1703,7 +1779,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 106,
+        "downloads": 112,
         "endorsements": 0
       }
     },
@@ -1928,7 +2004,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 6,
+        "downloads": 7,
         "endorsements": 0
       }
     },
@@ -1973,7 +2049,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 49,
+        "downloads": 53,
         "endorsements": 0
       }
     },
@@ -2063,7 +2139,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 6,
+        "downloads": 7,
         "endorsements": 0
       }
     },
@@ -2198,7 +2274,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 46,
+        "downloads": 50,
         "endorsements": 0
       }
     },
@@ -2243,7 +2319,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 20,
+        "downloads": 21,
         "endorsements": 0
       }
     },
@@ -2468,7 +2544,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 99,
+        "downloads": 102,
         "endorsements": 0
       }
     },
@@ -2828,7 +2904,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 67,
+        "downloads": 69,
         "endorsements": 1
       }
     },
@@ -3098,7 +3174,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 5,
+        "downloads": 6,
         "endorsements": 0
       }
     },
@@ -3188,7 +3264,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 151,
+        "downloads": 156,
         "endorsements": 1
       }
     },
@@ -3233,7 +3309,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 34,
+        "downloads": 35,
         "endorsements": 0
       }
     },
@@ -3323,7 +3399,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 47,
+        "downloads": 49,
         "endorsements": 1
       }
     },
@@ -3368,7 +3444,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 54,
+        "downloads": 57,
         "endorsements": 0
       }
     },
@@ -3413,7 +3489,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 71,
+        "downloads": 74,
         "endorsements": 0
       }
     },
@@ -3503,7 +3579,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 20,
+        "downloads": 22,
         "endorsements": 0
       }
     },
@@ -3548,7 +3624,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 44,
+        "downloads": 45,
         "endorsements": 0
       }
     },
@@ -3683,7 +3759,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1,
+        "downloads": 2,
         "endorsements": 0
       }
     },
@@ -3818,7 +3894,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 14,
+        "downloads": 16,
         "endorsements": 0
       }
     },
@@ -4223,7 +4299,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 42,
+        "downloads": 45,
         "endorsements": 0
       }
     },
@@ -4913,7 +4989,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 64,
+        "downloads": 66,
         "endorsements": 0
       }
     },
@@ -5003,7 +5079,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 10,
+        "downloads": 11,
         "endorsements": 0
       }
     },
@@ -5228,7 +5304,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 31,
+        "downloads": 32,
         "endorsements": 0
       }
     },
@@ -5498,7 +5574,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 23,
+        "downloads": 26,
         "endorsements": 0
       }
     },
@@ -5633,7 +5709,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 83,
+        "downloads": 85,
         "endorsements": 0
       }
     },
@@ -5678,7 +5754,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 36,
+        "downloads": 38,
         "endorsements": 0
       }
     },
@@ -5768,7 +5844,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 103,
+        "downloads": 107,
         "endorsements": 0
       }
     },
@@ -5858,7 +5934,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 144,
+        "downloads": 150,
         "endorsements": 1
       }
     },
@@ -6263,7 +6339,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 31,
+        "downloads": 33,
         "endorsements": 0
       }
     },
@@ -6533,7 +6609,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 7,
+        "downloads": 9,
         "endorsements": 0
       }
     },
@@ -6713,7 +6789,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 36,
+        "downloads": 37,
         "endorsements": 1
       }
     },
@@ -6893,7 +6969,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 134,
+        "downloads": 141,
         "endorsements": 1
       }
     },
@@ -7073,7 +7149,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 6,
+        "downloads": 7,
         "endorsements": 0
       }
     },
@@ -7163,7 +7239,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 137,
+        "downloads": 142,
         "endorsements": 1
       }
     },
@@ -7388,7 +7464,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 14,
+        "downloads": 16,
         "endorsements": 0
       }
     },
@@ -7568,7 +7644,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 25,
+        "downloads": 28,
         "endorsements": 0
       }
     },
@@ -7703,7 +7779,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 83,
+        "downloads": 85,
         "endorsements": 0
       }
     },
@@ -7748,7 +7824,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 62,
+        "downloads": 65,
         "endorsements": 0
       }
     },
@@ -8243,7 +8319,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 40,
+        "downloads": 41,
         "endorsements": 0
       }
     },
@@ -8378,7 +8454,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 18,
+        "downloads": 20,
         "endorsements": 0
       }
     },
@@ -8468,7 +8544,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 21,
+        "downloads": 22,
         "endorsements": 0
       }
     },
@@ -8513,7 +8589,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 100,
+        "downloads": 103,
         "endorsements": 0
       }
     },
@@ -8558,7 +8634,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 18,
+        "downloads": 19,
         "endorsements": 0
       }
     },
@@ -8873,7 +8949,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 15,
+        "downloads": 16,
         "endorsements": 0
       }
     },
@@ -9323,7 +9399,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 35,
+        "downloads": 36,
         "endorsements": 0
       }
     },
@@ -9503,7 +9579,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 43,
+        "downloads": 47,
         "endorsements": 0
       }
     },
@@ -9593,7 +9669,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 19,
+        "downloads": 21,
         "endorsements": 0
       }
     },
@@ -9773,7 +9849,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 84,
+        "downloads": 88,
         "endorsements": 1
       }
     },
@@ -10178,7 +10254,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 39,
+        "downloads": 40,
         "endorsements": 0
       }
     },
@@ -10268,7 +10344,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 3,
+        "downloads": 4,
         "endorsements": 0
       }
     },
@@ -10313,7 +10389,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 171,
+        "downloads": 178,
         "endorsements": 1
       }
     },
@@ -10583,7 +10659,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 47,
+        "downloads": 48,
         "endorsements": 0
       }
     },
