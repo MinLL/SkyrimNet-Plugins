@@ -1,0 +1,35 @@
+{
+  "id": "pdusen.knowledge-pack-for-the-great-cities-of-jk-s-north-winterhold",
+  "type": "bundle",
+  "title": "Knowledge Pack for The Great Cities of JK's North (Winterhold)",
+  "tagline": "Knowledge for the Winterhold changes in The Great Cities of JK's North",
+  "description": "Covers the rebuilt Winterhold produced by combining JK's Skyrim, Great City of Winterhold v4, and Cities of the North - Winterhold via The Great Cities of JK's North - Patch.",
+  "author": "pdusen",
+  "tags": [],
+  "nsfw": false,
+  "icon": "world",
+  "mods": [
+    {
+      "name": "The Great City of Winterhold v4.esp",
+      "file": "the great city of winterhold v4.esp",
+      "required": true
+    },
+    {
+      "name": "The Great Cities of JK's North - Patch.esp",
+      "file": "the great cities of jk's north - patch.esp",
+      "required": true
+    },
+    {
+      "name": "JKs Skyrim.esp",
+      "file": "jks skyrim.esp",
+      "required": true
+    }
+  ],
+  "languages": [
+    "en"
+  ],
+  "image": "cover.png",
+  "version": "1.0.1",
+  "changelog": "Initial release",
+  "min_skyrimnet_version": "0.25.0"
+}
