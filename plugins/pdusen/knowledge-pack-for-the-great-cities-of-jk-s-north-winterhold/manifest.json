@@ -5,7 +5,13 @@
   "tagline": "Knowledge for the Winterhold changes in The Great Cities of JK's North",
   "description": "Covers the rebuilt Winterhold produced by combining JK's Skyrim, Great City of Winterhold v4, and Cities of the North - Winterhold via The Great Cities of JK's North - Patch.",
   "author": "pdusen",
-  "tags": [],
+  "tags": [
+    "winterhold",
+    "great-cities",
+    "location",
+    "city",
+    "knowledge"
+  ],
   "nsfw": false,
   "icon": "world",
   "mods": [
