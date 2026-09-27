@@ -1,8 +1,83 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-09-27T13:32:39.324Z",
-  "stats_as_of": "2026-09-27T13:32:39.223Z",
+  "generated_at": "2026-09-27T13:33:45.013Z",
+  "stats_as_of": "2026-09-27T13:33:44.955Z",
   "plugins": [
+    {
+      "id": "plugins/pdusen/knowledge-pack-for-ultimate-college-of-winterhold-more",
+      "plugin_id": "pdusen.knowledge-pack-for-ultimate-college-of-winterhold-more",
+      "type": "bundle",
+      "title": "Knowledge Pack for Ultimate College of Winterhold + More",
+      "tagline": "Adds knowledge specific to Ultimate College of Winterhold and Immersive College NPCs",
+      "author": "pdusen",
+      "tags": [
+        "college-of-winterhold",
+        "college",
+        "knowledge-pack",
+        "npcs",
+        "location"
+      ],
+      "nsfw": false,
+      "icon": "world",
+      "mods": [
+        {
+          "name": "UltimateCollege.esp",
+          "file": "ultimatecollege.esp",
+          "required": true
+        },
+        {
+          "name": "OCW_Obscure's_CollegeofWinterhold.esp",
+          "file": "ocw_obscure's_collegeofwinterhold.esp",
+          "required": true
+        },
+        {
+          "name": "ICNs_ImmersiveCollegeNPCs.esp",
+          "file": "icns_immersivecollegenpcs.esp",
+          "required": true
+        },
+        {
+          "name": "CollegeOfWinterholdImmersive.esp",
+          "file": "collegeofwinterholdimmersive.esp",
+          "required": true
+        }
+      ],
+      "first_published": "2026-09-27T13:24:58Z",
+      "last_updated": "2026-09-27T13:33:22Z",
+      "version": "1.0.1",
+      "min_skyrimnet_version": "0.25.0",
+      "history": [
+        {
+          "version": "1.0.1",
+          "commit": "0eaf4aecf647226a8fcc7c946fa948cd4807a234",
+          "date": "2026-09-27T13:33:22Z",
+          "changelog": "Initial release"
+        }
+      ],
+      "languages": [
+        "en"
+      ],
+      "language": "en",
+      "image": {
+        "file": "cover.png",
+        "sha": "1fe9bad83b31aa0d70b42ba09d83e241e31c3cf6",
+        "commit": "a78b11b8d1d52eb85b338e939ea45cca7a752431",
+        "width": 1672,
+        "height": 941
+      },
+      "contents": {
+        "triggers": 0,
+        "actions": 0,
+        "prompts": 0,
+        "bios": 0,
+        "knowledge": 1,
+        "entities": 0,
+        "config": 0
+      },
+      "stats": {
+        "downloads": 0,
+        "endorsements": 0
+      }
+    },
     {
       "id": "plugins/pdusen/knowledge-pack-for-the-great-cities-of-jk-s-north-winterhold",
       "plugin_id": "pdusen.knowledge-pack-for-the-great-cities-of-jk-s-north-winterhold",
@@ -56,75 +131,6 @@
         "file": "cover.png",
         "sha": "4df64e1bf3fe0c6b2cfbd579995ca2b9255aff4f",
         "commit": "052da11d98fd7ef43a610a01f4cbdb9d4d8a0735",
-        "width": 1672,
-        "height": 941
-      },
-      "contents": {
-        "triggers": 0,
-        "actions": 0,
-        "prompts": 0,
-        "bios": 0,
-        "knowledge": 1,
-        "entities": 0,
-        "config": 0
-      },
-      "stats": {
-        "downloads": 0,
-        "endorsements": 0
-      }
-    },
-    {
-      "id": "plugins/pdusen/knowledge-pack-for-ultimate-college-of-winterhold-more",
-      "plugin_id": "pdusen.knowledge-pack-for-ultimate-college-of-winterhold-more",
-      "type": "bundle",
-      "title": "Knowledge Pack for Ultimate College of Winterhold + More",
-      "tagline": "Adds knowlege specific to Ultimate College of Winterhold and Immersive College NPCs",
-      "author": "pdusen",
-      "tags": [],
-      "nsfw": false,
-      "icon": "world",
-      "mods": [
-        {
-          "name": "UltimateCollege.esp",
-          "file": "ultimatecollege.esp",
-          "required": true
-        },
-        {
-          "name": "OCW_Obscure's_CollegeofWinterhold.esp",
-          "file": "ocw_obscure's_collegeofwinterhold.esp",
-          "required": true
-        },
-        {
-          "name": "ICNs_ImmersiveCollegeNPCs.esp",
-          "file": "icns_immersivecollegenpcs.esp",
-          "required": true
-        },
-        {
-          "name": "CollegeOfWinterholdImmersive.esp",
-          "file": "collegeofwinterholdimmersive.esp",
-          "required": true
-        }
-      ],
-      "first_published": "2026-09-27T13:24:58Z",
-      "last_updated": "2026-09-27T13:24:58Z",
-      "version": "1.0.1",
-      "min_skyrimnet_version": "0.25.0",
-      "history": [
-        {
-          "version": "1.0.1",
-          "commit": "a78b11b8d1d52eb85b338e939ea45cca7a752431",
-          "date": "2026-09-27T13:24:58Z",
-          "changelog": "Initial release"
-        }
-      ],
-      "languages": [
-        "en"
-      ],
-      "language": "en",
-      "image": {
-        "file": "cover.png",
-        "sha": "1fe9bad83b31aa0d70b42ba09d83e241e31c3cf6",
-        "commit": "a78b11b8d1d52eb85b338e939ea45cca7a752431",
         "width": 1672,
         "height": 941
       },
@@ -1337,7 +1343,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 135,
+        "downloads": 136,
         "endorsements": 1
       }
     },
@@ -1472,7 +1478,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 176,
+        "downloads": 177,
         "endorsements": 2
       }
     },
@@ -2192,7 +2198,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 44,
+        "downloads": 45,
         "endorsements": 0
       }
     },
@@ -2462,7 +2468,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 93,
+        "downloads": 94,
         "endorsements": 0
       }
     },
@@ -2822,7 +2828,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 63,
+        "downloads": 64,
         "endorsements": 1
       }
     },
@@ -3182,7 +3188,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 142,
+        "downloads": 143,
         "endorsements": 1
       }
     },
@@ -5852,7 +5858,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 138,
+        "downloads": 139,
         "endorsements": 1
       }
     },
@@ -6707,7 +6713,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 32,
+        "downloads": 33,
         "endorsements": 1
       }
     },
@@ -7157,7 +7163,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 131,
+        "downloads": 132,
         "endorsements": 1
       }
     },
@@ -7697,7 +7703,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 78,
+        "downloads": 79,
         "endorsements": 0
       }
     },
@@ -9767,7 +9773,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 79,
+        "downloads": 80,
         "endorsements": 1
       }
     },
@@ -10307,7 +10313,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 161,
+        "downloads": 162,
         "endorsements": 1
       }
     },
