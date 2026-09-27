@@ -103,6 +103,8 @@ export function runValidate({
   prAuthor = BOT_AUTHOR,
   prBody = DASHBOARD_MARKER,
   workDir = null,
+  changedFilesCount = null,
+  listedFilesCount = null,
 }) {
   const scratch = workDir ?? makeTempDir("snhub-run-");
   const filesList = path.join(scratch, "pr-files.txt");
@@ -125,6 +127,9 @@ export function runValidate({
       PR_AUTHOR: prAuthor,
       PR_BODY: prBody,
       PR_NUMBER: "1",
+      // The PR's own count of changed files and the listing's; absent when the workflow predates them.
+      PR_CHANGED_FILES: changedFilesCount === null ? "" : String(changedFilesCount),
+      PR_LISTED_FILES: listedFilesCount === null ? "" : String(listedFilesCount),
     },
   });
 

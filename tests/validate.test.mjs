@@ -1515,3 +1515,148 @@ test("an expired ban, or someone else's, does not block", () => {
     assert.equal(res.result.success, true, `${JSON.stringify(bans)}: ${errorMessages(res.result)}`);
   }
 });
+
+// ----- Bundle size and the PR's file listing --------------------------------
+
+/** `count` prompt files, each its own NPC. */
+function promptFiles(count) {
+  return Object.fromEntries(
+    Array.from({ length: count }, (_, i) => [`prompts/characters/npc_${i}.prompt`, `You are NPC ${i}.\n`]),
+  );
+}
+
+test("a plugin of 2,900 files is accepted, its manifest and cover image counted", () => {
+  // 2,898 content files + manifest.json + the cover: the cap is on the whole directory.
+  const files = { ...promptFiles(2898), "cover.png": makePng(1280, 720) };
+  const res = validatePlugin({ manifest: goodManifest({ image: "cover.png" }), files });
+  assert.equal(res.result.success, true, errorMessages(res.result));
+  assert.deepEqual(res.result.labels, ["ready-for-agent-review"]);
+});
+
+test("rejects a plugin over the 2,900-file limit", () => {
+  const files = { ...promptFiles(2899), "cover.png": makePng(1280, 720) };
+  assertRejected(
+    validatePlugin({ manifest: goodManifest({ image: "cover.png" }), files }),
+    /Plugin contains 2901 files, exceeds the 2900 per-bundle limit/,
+  );
+  assertRejected(
+    validatePlugin({ manifest: goodManifest(), files: promptFiles(2900) }),
+    /Plugin contains 2901 files, exceeds the 2900 per-bundle limit/,
+  );
+});
+
+test("rejects a PR whose file listing is at GitHub's 3,000-file limit", () => {
+  // Nothing past the 3,000th file is ever listed, so a listing that long proves nothing
+  // about the rest of the PR: whatever sorts after plugins/ would go unseen.
+  const prDir = makeTempDir();
+  try {
+    const changed = writePlugin(prDir, "plugins/bob/test-pack", { manifest: goodManifest(), files: GOOD_FILES });
+    const olds = (count) => Array.from({ length: count }, (_, i) => `plugins/bob/test-pack/prompts/old_${i}.prompt`);
+    const res = runValidate({ prDir, changed, removed: olds(3000 - changed.length) });
+    assertRejected(res, /This PR changes 3000 or more files\. GitHub lists at most 3000 changed files/);
+    assert.equal(res.result.errors.length, 1);
+
+    // One file fewer is a listing GitHub gave whole.
+    const under = runValidate({ prDir, changed, removed: olds(2999 - changed.length) });
+    assert.equal(under.result.success, true, errorMessages(under.result));
+  } finally {
+    rmDir(prDir);
+  }
+});
+
+test("a listing shorter than the PR's own count is the validator's failure, not the submission's", () => {
+  const prDir = makeTempDir();
+  try {
+    const changed = writePlugin(prDir, "plugins/bob/test-pack", { manifest: goodManifest(), files: GOOD_FILES });
+    const listedFilesCount = changed.length;
+    // No result file: the workflow routes that as validator-error and leaves the PR open.
+    for (const counts of [{ changedFilesCount: listedFilesCount + 1 }, { changedFilesCount: listedFilesCount + 1, listedFilesCount }]) {
+      const res = runValidate({ prDir, changed, ...counts });
+      assert.equal(res.result, null, JSON.stringify(counts));
+      assert.equal(res.status, 2);
+      assert.match(res.stderr, /shorter than the PR's changed_files/);
+    }
+    for (const changedFilesCount of [listedFilesCount, 0]) {
+      const res = runValidate({ prDir, changed, changedFilesCount, listedFilesCount });
+      assert.equal(res.result.success, true, `${changedFilesCount}: ${errorMessages(res.result)}`);
+    }
+    // At the limit the listing's own count decides, whatever the PR declares.
+    assertRejected(
+      runValidate({ prDir, changed, changedFilesCount: 3000, listedFilesCount: 3000 }),
+      /This PR changes 3000 or more files/,
+    );
+    assertRejected(
+      runValidate({ prDir, changed, changedFilesCount: 5394, listedFilesCount: 3000 }),
+      /This PR changes 5394 files/,
+    );
+  } finally {
+    rmDir(prDir);
+  }
+});
+
+test("a rename is two rows and one listed file: the listing's count decides, not the rows", () => {
+  // 1,600 renames inside the plugin: 3,200 rows from a listing of 1,600 files, all of it seen.
+  const prDir = makeTempDir();
+  try {
+    const changed = writePlugin(prDir, "plugins/bob/test-pack", { manifest: goodManifest(), files: promptFiles(1599) });
+    assert.equal(changed.length, 1600);
+    const removed = changed.map((f) => f.replace("/npc_", "/old_npc_").replace("manifest.json", "prompts/old_manifest.prompt"));
+    const res = runValidate({ prDir, changed, removed, changedFilesCount: 1600, listedFilesCount: 1600 });
+    assert.equal(res.result.success, true, errorMessages(res.result));
+    // The same rows with no count from the workflow cannot be told from a cut listing.
+    assertRejected(runValidate({ prDir, changed, removed }), /This PR changes 3000 or more files/);
+  } finally {
+    rmDir(prDir);
+  }
+});
+
+test("an infra-only PR stays infra-only however long its listing", () => {
+  // That route merges nothing by itself, so a cut listing costs it nothing; closing it would
+  // delete a maintainer's branch.
+  const prDir = makeTempDir();
+  try {
+    const changed = Array.from({ length: 3000 }, (_, i) => `tests/fixtures/generated/case_${i}.json`);
+    const res = runValidate({ prDir, changed, changedFilesCount: 3400, listedFilesCount: 3000 });
+    assert.equal(res.result.success, true, errorMessages(res.result));
+    assert.deepEqual(res.result.labels, ["infra-only"]);
+    // What was not listed may be anything, and the comment must not say otherwise.
+    assert.match(res.result.comment, /the listing is incomplete \(3000 listed/);
+    assert.doesNotMatch(res.result.comment, /only modifies repository infrastructure/);
+
+    const whole = runValidate({ prDir, changed: changed.slice(0, 10), changedFilesCount: 10, listedFilesCount: 10 });
+    assert.match(whole.result.comment, /only modifies repository infrastructure/);
+  } finally {
+    rmDir(prDir);
+  }
+});
+
+test("the PR comment names the first errors and counts the rest, under GitHub's comment limit", () => {
+  // One error per file: 2,899 wrong extensions used to make a comment of half a million characters.
+  const files = Object.fromEntries(Array.from({ length: 2899 }, (_, i) => [`prompts/characters/npc_${i}.txt`, "x\n"]));
+  const res = validatePlugin({ manifest: goodManifest(), files });
+  assertRejected(res);
+  assert.ok(res.result.errors.length >= 2899, `${res.result.errors.length} errors`);
+  assert.ok(res.result.comment.length < 65536, `comment is ${res.result.comment.length} characters`);
+  assert.match(res.result.comment, new RegExp(`Validation failed \\(${res.result.errors.length} errors\\)`));
+  assert.match(res.result.comment, new RegExp(`… and ${res.result.errors.length - 50} more\\.`));
+
+  // A single message listing thousands of files is shortened too.
+  const prDir = makeTempDir();
+  try {
+    const changed = writePlugin(prDir, "plugins/bob/test-pack", { manifest: goodManifest(), files: promptFiles(2000) });
+    const mixed = runValidate({ prDir, changed: [...changed, "hidden.json"] });
+    assertRejected(mixed, /mixes plugin files/);
+    assert.ok(mixed.result.comment.length < 65536, `comment is ${mixed.result.comment.length} characters`);
+    assert.match(mixed.result.comment, /message shortened/);
+
+    // A file name is as long as its author made it: sixty listed paths of 4,000 characters.
+    const deep = Array.from({ length: 60 }, (_, i) => `plugins/bad.author/pack/${"d".repeat(200)}/`.repeat(19) + `f${i}.prompt`);
+    const long = runValidate({ prDir, changed: deep });
+    assertRejected(long);
+    assert.ok(long.result.comment.length < 65536, `comment is ${long.result.comment.length} characters`);
+    assert.match(long.result.comment, /^### Validation failed \(\d+ errors\)/);
+    assert.match(long.result.comment, /… \(shortened\)$/);
+  } finally {
+    rmDir(prDir);
+  }
+});
