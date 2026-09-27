@@ -1,0 +1,23 @@
+{
+  "id": "naitro2010.skyrimnet-ddudng",
+  "type": "listing",
+  "title": "SkyrimNet DDUDNG",
+  "tagline": "DDNG and UDNG integration for SkyrimNet",
+  "description": "SkyrimNet DDUDNG adds equip and unequip actions for DDNG and UDNG devices as well as triggers for UDNG events.\nGitHub",
+  "author": "naitro2010",
+  "tags": [
+    "DDUDNG",
+    "DDNG",
+    "UDNG",
+    "integration",
+    "Devious",
+    "Devices",
+    "Unforgiving"
+  ],
+  "nsfw": true,
+  "icon": "listing",
+  "mods": [],
+  "external_url": "https://github.com/naitro2010/SkyrimNet_UDNG/releases/tag/alpha12",
+  "version": "0.12.0",
+  "changelog": "Beta 25 and 1.7.104 support"
+}
