@@ -2,10 +2,16 @@
   "id": "pdusen.knowledge-pack-for-ultimate-college-of-winterhold-more",
   "type": "bundle",
   "title": "Knowledge Pack for Ultimate College of Winterhold + More",
-  "tagline": "Adds knowlege specific to Ultimate College of Winterhold and Immersive College NPCs",
-  "description": "Covers the expanded College produced by\r combining Immersive College of Winterhold, Obscure's College of Winterhold, and Immersive College NPCs\r via Ultimate College of Winterhold - an ICOW and OCW Patch.",
+  "tagline": "Adds knowledge specific to Ultimate College of Winterhold and Immersive College NPCs",
+  "description": "Covers the expanded College produced by combining Immersive College of Winterhold, Obscure's College of Winterhold, and Immersive College NPCs via Ultimate College of Winterhold - an ICOW and OCW Patch.",
   "author": "pdusen",
-  "tags": [],
+  "tags": [
+    "college-of-winterhold",
+    "college",
+    "knowledge-pack",
+    "npcs",
+    "location"
+  ],
   "nsfw": false,
   "icon": "world",
   "mods": [
