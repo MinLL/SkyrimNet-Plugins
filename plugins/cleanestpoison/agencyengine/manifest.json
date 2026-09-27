@@ -1,0 +1,21 @@
+{
+  "id": "cleanestpoison.agencyengine",
+  "type": "listing",
+  "title": "AgencyEngine",
+  "tagline": "Companions with something on their mind. AgencyEngine lets followers speak up unprompted about their goals, relationships, and things they want to do—through SkyrimNet, when the moment fits.",
+  "description": "# AgencyEngine\n**Companions with something on their mind.**\n\nYour followers have goals, opinions, and questions. They shouldn't always need you to start the conversation.\n\n**AgencyEngine lets companions speak up unprompted**—about something they want to pursue, a relationship that matters to them, an experience they'd like to share, or something they've been wondering about you. These moments draw on your companions and what's actually been happening in your playthrough.\n\n## What your companions can bring up\n\nCurrently Four configurable **lenses** give companions different reasons to start a conversation (always open to more ideas for lenses):\n\n- **Aspiration:** Personal goals, neglected priorities, and things they think the party should be taking seriously.\n- **Relationship:** Something left unsaid between a companion and you—or between two companions.\n- **Activity:** A proposal to do something together, such as sharing a drink, sparring, or spending time by the fire.\n- **Curiosity:** A genuine question about your character, rather than another comment about the surroundings.\n\nAgencyEngine supplies the reason to speak. **SkyrimNet writes the actual dialogue**, using the companion's character and context.\n\n## Occasional moments, not constant chatter\n\n**Silence is intentional.** Companions aren't forced to find something to say every time AgencyEngine checks in.\n\nEach lens runs on its own in-game schedule, with additional cooldowns after it produces an impulse. Conversation-aware timing helps companions wait for an exchange to finish, and speaking opportunities are spaced across the party rather than handed out all at once.\n\nNew impulses pause during combat, and sleeping companions aren't selected.\n\n## Tune it to your playthrough\n\nUse **SkyUI MCM** or **SKSE Menu Framework** to:\n\n- Enable or disable individual lenses.\n- Adjust their intervals and cooldowns.\n- Inspect what companions are carrying.\n- Review recent activity and see when a check deliberately produced silence.\n\nBoth interfaces control the same live settings. Prefer not to configure anything? AgencyEngine runs with its shipped defaults.\n\n## What to expect\n\nAgencyEngine is for players who want companions to contribute their own priorities to a playthrough—not just react to the player's latest words.\n\nIt creates **openings for roleplay**, not scripted quests or guaranteed outcomes. A proposal gives you something to respond to.\n\nDialogue and decisions depend on your SkyrimNet setup, character profiles, available context, and language model. AgencyEngine makes additional LLM calls, including checks that result in silence, so your configured provider's usage costs still apply.\n\n## Requirements\n\n- **SkyrimNet Beta 25 rc12 or newer**, configured and working.\n- **SKSE64 or SKSE VR**, with the matching Address Library/runtime support.\n- **Optional:** SkyUI / SkyUI VR or SKSE Menu Framework for in-game configuration.\n- **For the MCM:** Enable the included `AgencyEngine.esp`. Skyrim VR also requires **Skyrim VR ESL** to load this light plugin.\n\n## Getting started\n\nInstall the archive through your mod manager alongside your working SkyrimNet setup. Travel with an awake follower and play normally—there is no need to prompt them into starting a conversation.\n\nLook for **Agency Engine** in your chosen settings interface if you want to adjust the pacing or see what is happening.\n\n**Give your companions room to want something.**",
+  "author": "cleanestpoison",
+  "tags": [
+    "agency",
+    "companions",
+    "followers",
+    "dialogue"
+  ],
+  "nsfw": false,
+  "icon": "ai",
+  "mods": [],
+  "image": "cover.png",
+  "external_url": "https://github.com/cleanestpoison/AgencyEngine",
+  "version": "0.11.1",
+  "changelog": "Initial release to the pluginhub, no new features."
+}
