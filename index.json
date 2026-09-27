@@ -1,8 +1,72 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-09-27T13:19:30.531Z",
-  "stats_as_of": "2026-09-27T13:19:30.413Z",
+  "generated_at": "2026-09-27T13:24:18.430Z",
+  "stats_as_of": "2026-09-27T13:24:18.362Z",
   "plugins": [
+    {
+      "id": "plugins/pdusen/knowledge-pack-for-the-great-cities-of-jk-s-north-winterhold",
+      "plugin_id": "pdusen.knowledge-pack-for-the-great-cities-of-jk-s-north-winterhold",
+      "type": "bundle",
+      "title": "Knowledge Pack for The Great Cities of JK's North (Winterhold)",
+      "tagline": "Knowledge for the Winterhold changes in The Great Cities of JK's North",
+      "author": "pdusen",
+      "tags": [],
+      "nsfw": false,
+      "icon": "world",
+      "mods": [
+        {
+          "name": "The Great City of Winterhold v4.esp",
+          "file": "the great city of winterhold v4.esp",
+          "required": true
+        },
+        {
+          "name": "The Great Cities of JK's North - Patch.esp",
+          "file": "the great cities of jk's north - patch.esp",
+          "required": true
+        },
+        {
+          "name": "JKs Skyrim.esp",
+          "file": "jks skyrim.esp",
+          "required": true
+        }
+      ],
+      "first_published": "2026-09-27T13:23:58Z",
+      "last_updated": "2026-09-27T13:23:58Z",
+      "version": "1.0.1",
+      "min_skyrimnet_version": "0.25.0",
+      "history": [
+        {
+          "version": "1.0.1",
+          "commit": "052da11d98fd7ef43a610a01f4cbdb9d4d8a0735",
+          "date": "2026-09-27T13:23:58Z",
+          "changelog": "Initial release"
+        }
+      ],
+      "languages": [
+        "en"
+      ],
+      "language": "en",
+      "image": {
+        "file": "cover.png",
+        "sha": "4df64e1bf3fe0c6b2cfbd579995ca2b9255aff4f",
+        "commit": "052da11d98fd7ef43a610a01f4cbdb9d4d8a0735",
+        "width": 1672,
+        "height": 941
+      },
+      "contents": {
+        "triggers": 0,
+        "actions": 0,
+        "prompts": 0,
+        "bios": 0,
+        "knowledge": 1,
+        "entities": 0,
+        "config": 0
+      },
+      "stats": {
+        "downloads": 0,
+        "endorsements": 0
+      }
+    },
     {
       "id": "plugins/oldcustard/wintersun-skyrimnet-integration",
       "plugin_id": "oldcustard.wintersun-skyrimnet-integration",
@@ -977,7 +1041,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 59,
+        "downloads": 60,
         "endorsements": 1
       }
     },
@@ -1558,7 +1622,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 100,
+        "downloads": 101,
         "endorsements": 0
       }
     },
@@ -4543,7 +4607,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2,
+        "downloads": 3,
         "endorsements": 0
       }
     },
