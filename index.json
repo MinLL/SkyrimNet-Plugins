@@ -1,8 +1,78 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-09-27T13:26:22.284Z",
-  "stats_as_of": "2026-09-27T13:26:22.168Z",
+  "generated_at": "2026-09-27T13:32:39.324Z",
+  "stats_as_of": "2026-09-27T13:32:39.223Z",
   "plugins": [
+    {
+      "id": "plugins/pdusen/knowledge-pack-for-the-great-cities-of-jk-s-north-winterhold",
+      "plugin_id": "pdusen.knowledge-pack-for-the-great-cities-of-jk-s-north-winterhold",
+      "type": "bundle",
+      "title": "Knowledge Pack for The Great Cities of JK's North (Winterhold)",
+      "tagline": "Knowledge for the Winterhold changes in The Great Cities of JK's North",
+      "author": "pdusen",
+      "tags": [
+        "winterhold",
+        "great-cities",
+        "location",
+        "city",
+        "knowledge"
+      ],
+      "nsfw": false,
+      "icon": "world",
+      "mods": [
+        {
+          "name": "The Great City of Winterhold v4.esp",
+          "file": "the great city of winterhold v4.esp",
+          "required": true
+        },
+        {
+          "name": "The Great Cities of JK's North - Patch.esp",
+          "file": "the great cities of jk's north - patch.esp",
+          "required": true
+        },
+        {
+          "name": "JKs Skyrim.esp",
+          "file": "jks skyrim.esp",
+          "required": true
+        }
+      ],
+      "first_published": "2026-09-27T13:23:58Z",
+      "last_updated": "2026-09-27T13:32:21Z",
+      "version": "1.0.1",
+      "min_skyrimnet_version": "0.25.0",
+      "history": [
+        {
+          "version": "1.0.1",
+          "commit": "2d7220b2e89865974014c12d23b09102bb62d7c5",
+          "date": "2026-09-27T13:32:21Z",
+          "changelog": "Initial release"
+        }
+      ],
+      "languages": [
+        "en"
+      ],
+      "language": "en",
+      "image": {
+        "file": "cover.png",
+        "sha": "4df64e1bf3fe0c6b2cfbd579995ca2b9255aff4f",
+        "commit": "052da11d98fd7ef43a610a01f4cbdb9d4d8a0735",
+        "width": 1672,
+        "height": 941
+      },
+      "contents": {
+        "triggers": 0,
+        "actions": 0,
+        "prompts": 0,
+        "bios": 0,
+        "knowledge": 1,
+        "entities": 0,
+        "config": 0
+      },
+      "stats": {
+        "downloads": 0,
+        "endorsements": 0
+      }
+    },
     {
       "id": "plugins/pdusen/knowledge-pack-for-ultimate-college-of-winterhold-more",
       "plugin_id": "pdusen.knowledge-pack-for-ultimate-college-of-winterhold-more",
@@ -55,70 +125,6 @@
         "file": "cover.png",
         "sha": "1fe9bad83b31aa0d70b42ba09d83e241e31c3cf6",
         "commit": "a78b11b8d1d52eb85b338e939ea45cca7a752431",
-        "width": 1672,
-        "height": 941
-      },
-      "contents": {
-        "triggers": 0,
-        "actions": 0,
-        "prompts": 0,
-        "bios": 0,
-        "knowledge": 1,
-        "entities": 0,
-        "config": 0
-      },
-      "stats": {
-        "downloads": 0,
-        "endorsements": 0
-      }
-    },
-    {
-      "id": "plugins/pdusen/knowledge-pack-for-the-great-cities-of-jk-s-north-winterhold",
-      "plugin_id": "pdusen.knowledge-pack-for-the-great-cities-of-jk-s-north-winterhold",
-      "type": "bundle",
-      "title": "Knowledge Pack for The Great Cities of JK's North (Winterhold)",
-      "tagline": "Knowledge for the Winterhold changes in The Great Cities of JK's North",
-      "author": "pdusen",
-      "tags": [],
-      "nsfw": false,
-      "icon": "world",
-      "mods": [
-        {
-          "name": "The Great City of Winterhold v4.esp",
-          "file": "the great city of winterhold v4.esp",
-          "required": true
-        },
-        {
-          "name": "The Great Cities of JK's North - Patch.esp",
-          "file": "the great cities of jk's north - patch.esp",
-          "required": true
-        },
-        {
-          "name": "JKs Skyrim.esp",
-          "file": "jks skyrim.esp",
-          "required": true
-        }
-      ],
-      "first_published": "2026-09-27T13:23:58Z",
-      "last_updated": "2026-09-27T13:23:58Z",
-      "version": "1.0.1",
-      "min_skyrimnet_version": "0.25.0",
-      "history": [
-        {
-          "version": "1.0.1",
-          "commit": "052da11d98fd7ef43a610a01f4cbdb9d4d8a0735",
-          "date": "2026-09-27T13:23:58Z",
-          "changelog": "Initial release"
-        }
-      ],
-      "languages": [
-        "en"
-      ],
-      "language": "en",
-      "image": {
-        "file": "cover.png",
-        "sha": "4df64e1bf3fe0c6b2cfbd579995ca2b9255aff4f",
-        "commit": "052da11d98fd7ef43a610a01f4cbdb9d4d8a0735",
         "width": 1672,
         "height": 941
       },
@@ -505,7 +511,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 19,
+        "downloads": 20,
         "endorsements": 0
       }
     },
@@ -1051,7 +1057,7 @@
       ],
       "external_url": "https://github.com/Telord72612/SkyrimNet-Devious-Awareness-Base/releases/tag/v1.0.0",
       "stats": {
-        "downloads": 10,
+        "downloads": 11,
         "endorsements": 0
       }
     },
@@ -1258,7 +1264,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 33,
+        "downloads": 35,
         "endorsements": 0
       }
     },
@@ -1286,7 +1292,7 @@
       "external_url": "https://github.com/Severause/SeverActions/releases/tag/v3.9.14-beta25",
       "curated": true,
       "stats": {
-        "downloads": 53,
+        "downloads": 54,
         "endorsements": 8
       }
     },
@@ -1331,7 +1337,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 134,
+        "downloads": 135,
         "endorsements": 1
       }
     },
@@ -1376,7 +1382,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 66,
+        "downloads": 68,
         "endorsements": 0
       }
     },
@@ -1961,7 +1967,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 48,
+        "downloads": 49,
         "endorsements": 0
       }
     },
@@ -2456,7 +2462,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 92,
+        "downloads": 93,
         "endorsements": 0
       }
     },
@@ -3176,7 +3182,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 141,
+        "downloads": 142,
         "endorsements": 1
       }
     },
@@ -5621,7 +5627,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 76,
+        "downloads": 77,
         "endorsements": 0
       }
     },
@@ -8501,7 +8507,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 93,
+        "downloads": 94,
         "endorsements": 0
       }
     },
@@ -9311,7 +9317,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 33,
+        "downloads": 34,
         "endorsements": 0
       }
     },
@@ -9491,7 +9497,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 41,
+        "downloads": 43,
         "endorsements": 0
       }
     },
@@ -10301,7 +10307,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 158,
+        "downloads": 161,
         "endorsements": 1
       }
     },
