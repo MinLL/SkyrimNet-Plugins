@@ -1,0 +1,25 @@
+{
+  "id": "oldcustard.bioforge",
+  "type": "listing",
+  "title": "BioForge",
+  "tagline": "Bulk-generate SkyrimNet bios for every NPC in a location that doesn't have one, reviewed before anything is saved.",
+  "description": "Every NPC without a bio falls back to SkyrimNet's generic template and speaks with no\npersonality of their own. A heavily modded load order has thousands of them, and no\nprebuilt bio pack can cover *your* mod list. **BioForge writes the missing ones, in bulk**,\nfrom what each NPC's own mod gives them: dialogue, factions, outfit, class and where they\nlive and work.\n\n- 🔑 **No API key**: uses the LLM you already set up in SkyrimNet\n- 👀 **Nothing is saved without your review**\n- ⚡ **Live immediately**: committed bios take effect without a restart\n\n### 🤔 Why not SkyrimNet's own bio generator?\n\nThe dashboard generates one character at a time: pick an NPC, generate, save. That's fine\nfor a follower or two, but it doesn't scale to thousands. **BioForge is the bulk tool.**\n\n- 🗺️ **Finds the gaps for you**: scan where you stand, no looking NPCs up one by one\n- 📦 **Whole places at once**: an inn, a street or a village in one press\n- 🤝 **Bios that know each other**: a batch is written together, so neighbours appear in\n each other's relationships, and a per-settlement digest says who runs the town\n- 📋 **One review queue**: read, commit or discard a whole batch from one list\n- 🧩 **Works alongside SkyrimNet**: same LLM setup, saves into the same layer as your\n dashboard edits, and leaves NPCs with a dynamic bio alone\n\n### 🧭 How it works\n\nOpen SKSE Menu Framework's panel and go to **BioForge / Scan**.\n\n1. 🔍 **Scan**: lists nearby NPCs and flags the ones with no bio\n2. ✍️ **Generate**: one NPC, or everyone the scan found\n3. 📖 **Review**: read each bio before it goes anywhere\n4. 🔗 **Refine**: relationships are re-checked once the whole batch exists\n5. ✅ **Commit**: saves the bio into your SkyrimNet overlay\n\n### 📦 Requirements\n\n- SkyrimNet **Beta 25+**\n- SKSE and Address Library for SKSE Plugins\n- SKSE Menu Framework v3\n\nFull details, settings and known issues:",
+  "author": "oldcustard",
+  "tags": [
+    "bios",
+    "characters",
+    "generation",
+    "tools",
+    "npcs"
+  ],
+  "nsfw": false,
+  "icon": "brain",
+  "mods": [],
+  "languages": [
+    "en"
+  ],
+  "image": "cover.png",
+  "external_url": "https://github.com/Oldcustard/BioForge",
+  "version": "1.0.0",
+  "changelog": "Initial release"
+}
