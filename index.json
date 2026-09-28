@@ -1,8 +1,67 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-09-28T13:34:38.413Z",
-  "stats_as_of": "2026-09-28T13:34:38.360Z",
+  "generated_at": "2026-09-28T14:00:15.422Z",
+  "stats_as_of": "2026-09-28T14:00:15.248Z",
   "plugins": [
+    {
+      "id": "plugins/deadohiosky/kinship",
+      "plugin_id": "deadohiosky.kinship",
+      "type": "listing",
+      "title": "Kinship",
+      "tagline": "Have unlimited children and make SkyrimNet aware of them and their familial relationships",
+      "author": "deadohiosky",
+      "tags": [
+        "children",
+        "family",
+        "bloodline"
+      ],
+      "nsfw": false,
+      "icon": "characters",
+      "mods": [],
+      "first_published": "2026-09-19T12:22:14Z",
+      "last_updated": "2026-09-28T13:59:51Z",
+      "version": "1.9.6",
+      "history": [
+        {
+          "version": "1.9.6",
+          "commit": "c86cd3f08088b5524340851e435b26698e85273a",
+          "date": "2026-09-28T13:59:51Z",
+          "changelog": "A bugfix release. Kinship was quietly losing some of what Fertility Mode told it, and filling your script log with errors every in-game hour."
+        },
+        {
+          "version": "1.9.5",
+          "commit": "a74a1163297dc7bb41a9230eb140779195047258",
+          "date": "2026-09-27T09:45:48Z",
+          "changelog": "A couple of relatively minor bug fixes, including an edge case where the father is sometimes not written to the child record at birth even though Kinship knew who the father was."
+        },
+        {
+          "version": "1.9.4",
+          "commit": "2a111d61f697705542c979f7d5dc96fe657d4dab",
+          "date": "2026-09-20T19:04:11Z"
+        },
+        {
+          "version": "1.9.3",
+          "commit": "31efbda09c1641469b20b70f814d6e94affc7756",
+          "date": "2026-09-19T12:22:14Z"
+        }
+      ],
+      "external_url": "https://github.com/deadohiosky48/SkyrimNet-Kinship",
+      "languages": [
+        "en"
+      ],
+      "language": "en",
+      "image": {
+        "file": "cover.png",
+        "sha": "2406abb911929131463f084d04b5fdc0d105ca36",
+        "commit": "a74a1163297dc7bb41a9230eb140779195047258",
+        "width": 1664,
+        "height": 928
+      },
+      "stats": {
+        "downloads": 11,
+        "endorsements": 0
+      }
+    },
     {
       "id": "plugins/oldcustard/bioforge",
       "plugin_id": "oldcustard.bioforge",
@@ -80,7 +139,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 109,
+        "downloads": 111,
         "endorsements": 12
       }
     },
@@ -155,7 +214,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 35,
+        "downloads": 36,
         "endorsements": 0
       }
     },
@@ -225,7 +284,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 41,
+        "downloads": 43,
         "endorsements": 0
       }
     },
@@ -359,59 +418,6 @@
       "stats": {
         "downloads": 28,
         "endorsements": 1
-      }
-    },
-    {
-      "id": "plugins/deadohiosky/kinship",
-      "plugin_id": "deadohiosky.kinship",
-      "type": "listing",
-      "title": "Kinship",
-      "tagline": "Have unlimited children and make SkyrimNet aware of them and their familial relationships",
-      "author": "deadohiosky",
-      "tags": [
-        "children",
-        "family",
-        "bloodline"
-      ],
-      "nsfw": false,
-      "icon": "characters",
-      "mods": [],
-      "first_published": "2026-09-19T12:22:14Z",
-      "last_updated": "2026-09-27T09:45:48Z",
-      "version": "1.9.5",
-      "history": [
-        {
-          "version": "1.9.5",
-          "commit": "a74a1163297dc7bb41a9230eb140779195047258",
-          "date": "2026-09-27T09:45:48Z",
-          "changelog": "A couple of relatively minor bug fixes, including an edge case where the father is sometimes not written to the child record at birth even though Kinship knew who the father was."
-        },
-        {
-          "version": "1.9.4",
-          "commit": "2a111d61f697705542c979f7d5dc96fe657d4dab",
-          "date": "2026-09-20T19:04:11Z"
-        },
-        {
-          "version": "1.9.3",
-          "commit": "31efbda09c1641469b20b70f814d6e94affc7756",
-          "date": "2026-09-19T12:22:14Z"
-        }
-      ],
-      "external_url": "https://github.com/deadohiosky48/SkyrimNet-Kinship",
-      "languages": [
-        "en"
-      ],
-      "language": "en",
-      "image": {
-        "file": "cover.png",
-        "sha": "2406abb911929131463f084d04b5fdc0d105ca36",
-        "commit": "a74a1163297dc7bb41a9230eb140779195047258",
-        "width": 1664,
-        "height": 928
-      },
-      "stats": {
-        "downloads": 11,
-        "endorsements": 0
       }
     },
     {
@@ -569,7 +575,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 52,
+        "downloads": 54,
         "endorsements": 0
       }
     },
@@ -763,7 +769,7 @@
         "height": 1152
       },
       "stats": {
-        "downloads": 30,
+        "downloads": 31,
         "endorsements": 2
       }
     },
@@ -1472,7 +1478,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 219,
+        "downloads": 221,
         "endorsements": 1
       }
     },
@@ -1607,7 +1613,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 356,
+        "downloads": 358,
         "endorsements": 2
       }
     },
@@ -1832,7 +1838,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 186,
+        "downloads": 187,
         "endorsements": 0
       }
     },
@@ -2102,7 +2108,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 86,
+        "downloads": 87,
         "endorsements": 0
       }
     },
@@ -2597,7 +2603,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 168,
+        "downloads": 169,
         "endorsements": 0
       }
     },
@@ -2957,7 +2963,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 130,
+        "downloads": 133,
         "endorsements": 1
       }
     },
@@ -3227,7 +3233,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 8,
+        "downloads": 9,
         "endorsements": 0
       }
     },
@@ -3542,7 +3548,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 118,
+        "downloads": 120,
         "endorsements": 0
       }
     },
@@ -4307,7 +4313,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 14,
+        "downloads": 15,
         "endorsements": 0
       }
     },
@@ -5987,7 +5993,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 239,
+        "downloads": 241,
         "endorsements": 1
       }
     },
@@ -7022,7 +7028,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 237,
+        "downloads": 238,
         "endorsements": 1
       }
     },
@@ -7292,7 +7298,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 222,
+        "downloads": 223,
         "endorsements": 2
       }
     },
@@ -7517,7 +7523,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 31,
+        "downloads": 32,
         "endorsements": 0
       }
     },
@@ -7697,7 +7703,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 48,
+        "downloads": 49,
         "endorsements": 0
       }
     },
@@ -7832,7 +7838,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 141,
+        "downloads": 142,
         "endorsements": 0
       }
     },
@@ -7877,7 +7883,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 97,
+        "downloads": 99,
         "endorsements": 0
       }
     },
@@ -9587,7 +9593,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 30,
+        "downloads": 31,
         "endorsements": 0
       }
     },
@@ -9632,7 +9638,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 80,
+        "downloads": 81,
         "endorsements": 0
       }
     },
@@ -10037,7 +10043,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 16,
+        "downloads": 17,
         "endorsements": 0
       }
     },
@@ -10442,7 +10448,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 300,
+        "downloads": 301,
         "endorsements": 1
       }
     },
@@ -10712,7 +10718,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 74,
+        "downloads": 75,
         "endorsements": 0
       }
     },
