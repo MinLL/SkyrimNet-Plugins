@@ -73,6 +73,8 @@ One directory per content root. The validator checks each file's extension, its 
 | `dialogue_actions/` | `.yaml` | `kind: lists` contributions: any stem; `kind: instruction`: `key`, with an optional `category` of `quest`, `follower`, `merchant`, `trainer`, `carriage`, `innkeeper`, `bard`, `marriage`, `crime`, `other` | Beta 25 (0.25.0) | yes | 32 KB |
 | `settings/` | `.yaml` | the whole filename before `.yaml` (`[A-Za-z0-9_-]`, directly under `settings/`) names the plugin's `Plugin_{Name}` config; any YAML mapping | reserved | yes | 64 KB |
 
+**Whole-plugin caps.** A plugin holds at most **2,900 files** and **16 MB** in total; `manifest.json` and the cover image count toward both. Anything larger belongs on an external mod host, published here as a listing. GitHub lists at most 3,000 changed files for one pull request, so an update that removes and adds 3,000 or more paths at once cannot be checked in full and is refused: split it into smaller updates.
+
 **Mod-internal roots.** `settings/` carries a plugin's own Settings page schema. It has no `contents` category in `index.json`, so it never shows as a badge or count anywhere the index is read.
 
 **Filename stem.** For a root identified by `name`, `id`, `key` or `entityEditorId`, the stem is the filename up to its **first** dot (`draugr.yaml` → `draugr`, `foo.entity.yaml` → `foo`), compared case-insensitively.

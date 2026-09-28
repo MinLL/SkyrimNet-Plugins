@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 // Structural validator run by skyrimnet-ops' hub-review.yml from main (env: BASE_DIR trusted, PR_DIR untrusted,
-// PR_FILES_FILE, PR_AUTHOR, PR_BODY, PR_NUMBER, RESULT_FILE); the PR side is data only, never executed.
+// PR_FILES_FILE, PR_AUTHOR, PR_BODY, PR_NUMBER, RESULT_FILE, and optionally PR_CHANGED_FILES and PR_LISTED_FILES);
+// the PR side is data only, never executed.
 
 import fs from "node:fs";
 import path from "node:path";
@@ -55,8 +56,27 @@ const FIXED_ENTITY_NAMES = new Set(["Player Thoughts", "Narrator", "System Voice
 // entities only; the engine coerces anything else to `private` silently.
 const ENTITY_CONVERSATION_MODES = new Set(["private", "public"]);
 
-const BUNDLE_TOTAL_SIZE_LIMIT = 10 * 1024 * 1024; // 10 MB
-const BUNDLE_FILE_COUNT_LIMIT = 1500;
+// The plugin's content files and its cover image. The fateless publish API
+// (MAX_TREE_BYTES, src/hub/guards.ts) carries the same number.
+const BUNDLE_TOTAL_SIZE_LIMIT = 16 * 1024 * 1024; // 16 MB
+
+// Every file of the plugin: its content, manifest.json and the cover image.
+// Kept under PR_LISTING_LIMIT so a first submission at the cap is always listed
+// whole. The fateless publish API (MAX_TREE_FILES, src/hub/guards.ts) carries the
+// same number, and the engine's packaging endpoint (kPluginFileCap) the same
+// number less the two files it does not count.
+const BUNDLE_FILE_COUNT_LIMIT = 2900;
+
+// GitHub lists at most this many changed files for one pull request and gives no
+// sign when it stops, so a listing this long may be missing its tail.
+const PR_LISTING_LIMIT = 3000;
+
+// GitHub refuses a comment over 65,536 characters, and a plugin of thousands of
+// files can fail in thousands of places. The comment names the first errors and
+// counts the rest; `errors` in the result file and the annotations carry them all.
+const COMMENT_ERROR_LIMIT = 50;
+const COMMENT_ERROR_LENGTH_LIMIT = 1000;
+const COMMENT_LENGTH_LIMIT = 60000;
 
 const DASHBOARD_MARKER = "<!-- skyrimnet-hub: dashboard-submitted -->";
 
@@ -66,6 +86,10 @@ const env = {
   BASE_DIR: requireEnv("BASE_DIR"),
   PR_DIR: requireEnv("PR_DIR"),
   PR_FILES_FILE: requireEnv("PR_FILES_FILE"),
+  // Optional, from the workflow: the pull request's own `changed_files`, and how
+  // many files the listing API returned for it.
+  PR_CHANGED_FILES: process.env.PR_CHANGED_FILES ?? "",
+  PR_LISTED_FILES: process.env.PR_LISTED_FILES ?? "",
   PR_AUTHOR: requireEnv("PR_AUTHOR"),
   PR_BODY: process.env.PR_BODY ?? "",
   PR_NUMBER: process.env.PR_NUMBER ?? "unknown",
@@ -143,8 +167,15 @@ function finish() {
   if (result.errors.length > 0) {
     parts.push(`### Validation failed (${result.errors.length} error${result.errors.length === 1 ? "" : "s"})`);
     parts.push("");
-    for (const err of result.errors) {
-      parts.push(`- **${err.file ?? "(general)"}** — ${err.message}`);
+    for (const err of result.errors.slice(0, COMMENT_ERROR_LIMIT)) {
+      const message =
+        err.message.length > COMMENT_ERROR_LENGTH_LIMIT
+          ? `${err.message.slice(0, COMMENT_ERROR_LENGTH_LIMIT)}\n  … (message shortened)`
+          : err.message;
+      parts.push(`- **${err.file ?? "(general)"}** — ${message}`);
+    }
+    if (result.errors.length > COMMENT_ERROR_LIMIT) {
+      parts.push(`- … and ${result.errors.length - COMMENT_ERROR_LIMIT} more.`);
     }
     parts.push("");
     parts.push("See the inline annotations in the diff for exact locations.");
@@ -164,7 +195,10 @@ function finish() {
     );
   }
   if (parts.length > 0) {
-    result.comment = parts.join("\n");
+    // The last line of defence: a file name is as long as its author made it.
+    const comment = parts.join("\n");
+    result.comment =
+      comment.length > COMMENT_LENGTH_LIMIT ? `${comment.slice(0, COMMENT_LENGTH_LIMIT)}\n\n… (shortened)` : comment;
   }
 
   fs.writeFileSync(env.RESULT_FILE, JSON.stringify(result, null, 2));
@@ -315,11 +349,50 @@ try {
   finish();
 }
 
+const allFiles = [...changedFiles, ...deletedFiles];
+
+// A listing cut short hides every file past the cut from the checks below, and
+// the listing is ordered by path: a file outside plugins/ that sorts after it
+// (schemas/, tests/) would ride a plugin PR unseen. Refused outright, before
+// anything is decided from the part that did arrive. An update can reach the
+// limit where a first submission cannot, since a path that is removed and a path
+// that is added are listed separately.
+//
+// Without the workflow's count the rows stand in for it. A rename is two rows,
+// so the rows are never fewer than the files listed: that can refuse a complete
+// listing, and cannot pass a cut one.
+//
+// A PR with no listed file under plugins/ is left to the infra-only route below:
+// that route never merges anything by itself, cut listing or not.
+const countFrom = (value) => (/^\d+$/.test(value) ? Number(value) : null);
+const declaredFiles = countFrom(env.PR_CHANGED_FILES);
+const listedFiles = countFrom(env.PR_LISTED_FILES) ?? allFiles.length;
+const listingAtLimit = listedFiles >= PR_LISTING_LIMIT;
+const listingShort = declaredFiles !== null && listedFiles < declaredFiles;
+if ((listingAtLimit || listingShort) && allFiles.some((f) => f.startsWith("plugins/"))) {
+  console.log(`PR file listing is incomplete or at the limit (${listedFiles} listed, ${declaredFiles ?? "unknown"} declared).`);
+  if (!listingAtLimit) {
+    // Under the limit and still short of the PR's own count: the listing failed, not the
+    // submission. No result is written, which the workflow reads as the validator's error
+    // and retries, where a validation failure would close a PR that did nothing wrong.
+    console.error("The PR file listing is shorter than the PR's changed_files; not validating a partial listing.");
+    fs.rmSync(env.RESULT_FILE, { force: true });
+    process.exit(2);
+  }
+  const changes = listingShort ? declaredFiles : `${PR_LISTING_LIMIT} or more`;
+  addError(
+    null,
+    `This PR changes ${changes} files. GitHub lists at most ${PR_LISTING_LIMIT} changed files for one pull request, so this one cannot be checked in full. ` +
+      `A plugin may hold up to ${BUNDLE_FILE_COUNT_LIMIT} files; an update that removes and adds ${PR_LISTING_LIMIT} or more paths at once must be split into smaller updates.`,
+  );
+  routeOrFail();
+  finish();
+}
+
 // Deletion PR: every file in the PR is a removal, and they all live under a
 // single plugins/{author}/{slug}/ directory. We route these straight through
 // with a `deletion` label; the reviewer short-circuits it to approve (nothing
 // to scan) and merges.
-const allFiles = [...changedFiles, ...deletedFiles];
 
 // Maintainer infra PR: every file the PR touches (added, modified, or
 // removed) lives OUTSIDE `plugins/`. Typical cases: editing hidden.json,
@@ -333,7 +406,10 @@ const isInfraOnly = allFiles.length > 0 && allFiles.every((f) => !f.startsWith("
 if (isInfraOnly) {
   result.labels.push("infra-only");
   result.manualReason =
-    `This PR only modifies repository infrastructure (not plugin content). ` +
+    (listingAtLimit || listingShort
+      ? `Every file GitHub listed for this PR is repository infrastructure, but the listing is incomplete ` +
+        `(${listedFiles} listed, GitHub lists at most ${PR_LISTING_LIMIT}): the rest of the PR was not seen. `
+      : `This PR only modifies repository infrastructure (not plugin content). `) +
     `The agent-review check is intentionally left red; a repo admin must ` +
     `bypass the failing check to merge.`;
   console.log(
