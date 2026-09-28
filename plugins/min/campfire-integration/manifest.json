@@ -1,0 +1,21 @@
+{
+  "id": "min.campfire-integration",
+  "type": "bundle",
+  "title": "Campfire Integration X",
+  "tagline": "Campfire Integration",
+  "description": "basic campfire integration trigger - let people know when you put down a tent",
+  "author": "min",
+  "tags": [],
+  "nsfw": false,
+  "icon": "package",
+  "mods": [
+    {
+      "name": "Campfire.esm",
+      "file": "campfire.esm",
+      "required": true
+    }
+  ],
+  "version": "1.0.0",
+  "changelog": "Initial release",
+  "min_skyrimnet_version": "0.25.1"
+}

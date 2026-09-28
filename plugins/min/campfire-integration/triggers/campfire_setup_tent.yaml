@@ -1,0 +1,18 @@
+name: campfire_setup_tent
+description: Player sets up a tent
+eventCriteria:
+  eventType: container_changed
+  schemaConditions:
+    - fieldPath: item
+      operator: contains
+      value: " Large Leather Tent"
+    - fieldPath: to_container
+      operator: equals
+      value: World
+      caseSensitive: false
+audience: everyone
+response:
+  type: persistent_generic
+  content: "{{ player.name }} sets up a large leather tent, and prepares to make camp."
+enabled: true
+cooldownSeconds: 30
