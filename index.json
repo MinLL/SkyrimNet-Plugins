@@ -1,51 +1,8 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-09-28T04:48:58.453Z",
-  "stats_as_of": "2026-09-28T04:48:58.387Z",
+  "generated_at": "2026-09-28T04:54:00.762Z",
+  "stats_as_of": "2026-09-28T04:54:00.640Z",
   "plugins": [
-    {
-      "id": "plugins/min/campfire-integration",
-      "plugin_id": "min.campfire-integration",
-      "type": "bundle",
-      "title": "Campfire Integration X",
-      "tagline": "Campfire Integration",
-      "author": "min",
-      "tags": [],
-      "nsfw": false,
-      "icon": "package",
-      "mods": [
-        {
-          "name": "Campfire.esm",
-          "file": "campfire.esm",
-          "required": true
-        }
-      ],
-      "first_published": "2026-09-28T04:48:01Z",
-      "last_updated": "2026-09-28T04:48:01Z",
-      "version": "1.0.0",
-      "min_skyrimnet_version": "0.25.1",
-      "history": [
-        {
-          "version": "1.0.0",
-          "commit": "79d9a8ab4b81913bfbb608cf7000968b48766c38",
-          "date": "2026-09-28T04:48:01Z",
-          "changelog": "Initial release"
-        }
-      ],
-      "contents": {
-        "triggers": 1,
-        "actions": 0,
-        "prompts": 0,
-        "bios": 0,
-        "knowledge": 0,
-        "entities": 0,
-        "config": 0
-      },
-      "stats": {
-        "downloads": 0,
-        "endorsements": 0
-      }
-    },
     {
       "id": "plugins/severause/severactions",
       "plugin_id": "severause.severactions",
