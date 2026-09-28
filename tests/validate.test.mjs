@@ -1545,6 +1545,18 @@ test("rejects a plugin over the 2,900-file limit", () => {
   );
 });
 
+test("a plugin of 16 MB is accepted, and one byte more is refused", () => {
+  // The fateless publish API's MAX_TREE_BYTES: a different number there either refuses what
+  // this admits or opens PRs this closes.
+  const cap = 16 * 1024 * 1024;
+  const atCap = validatePlugin({ manifest: goodManifest(), files: { "prompts/characters/big.prompt": "x".repeat(cap) } });
+  assert.equal(atCap.result.success, true, errorMessages(atCap.result));
+  assertRejected(
+    validatePlugin({ manifest: goodManifest(), files: { "prompts/characters/big.prompt": "x".repeat(cap + 1) } }),
+    /Plugin total size is 16.00 MB, exceeds the 16.00 MB per-bundle limit/,
+  );
+});
+
 test("rejects a PR whose file listing is at GitHub's 3,000-file limit", () => {
   // Nothing past the 3,000th file is ever listed, so a listing that long proves nothing
   // about the rest of the PR: whatever sorts after plugins/ would go unseen.

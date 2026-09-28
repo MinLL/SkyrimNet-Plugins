@@ -56,7 +56,9 @@ const FIXED_ENTITY_NAMES = new Set(["Player Thoughts", "Narrator", "System Voice
 // entities only; the engine coerces anything else to `private` silently.
 const ENTITY_CONVERSATION_MODES = new Set(["private", "public"]);
 
-const BUNDLE_TOTAL_SIZE_LIMIT = 10 * 1024 * 1024; // 10 MB
+// The plugin's content files and its cover image. The fateless publish API
+// (MAX_TREE_BYTES, src/hub/guards.ts) carries the same number.
+const BUNDLE_TOTAL_SIZE_LIMIT = 16 * 1024 * 1024; // 16 MB
 
 // Every file of the plugin: its content, manifest.json and the cover image.
 // Kept under PR_LISTING_LIMIT so a first submission at the cap is always listed
