@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-09-29T17:08:48.509Z",
-  "stats_as_of": "2026-09-29T17:08:48.453Z",
+  "generated_at": "2026-09-29T17:29:06.081Z",
+  "stats_as_of": "2026-09-29T17:29:05.788Z",
   "plugins": [
     {
       "id": "plugins/tetherball88/ostimnet",
@@ -472,7 +472,7 @@
         "height": 900
       },
       "stats": {
-        "downloads": 41,
+        "downloads": 42,
         "endorsements": 1
       }
     },
@@ -1297,8 +1297,8 @@
         "config": 0
       },
       "stats": {
-        "downloads": 124,
-        "endorsements": 2
+        "downloads": 125,
+        "endorsements": 3
       }
     },
     {
