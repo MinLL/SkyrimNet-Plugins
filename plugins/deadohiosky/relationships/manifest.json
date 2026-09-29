@@ -16,6 +16,6 @@
   "mods": [],
   "image": "cover.png",
   "external_url": "https://github.com/deadohiosky48/SkyrimNet-Relationships",
-  "version": "1.7.0",
-  "changelog": "Tuned initial relationship seeding to take time spent together into account so experiencing a dense day of activity before initial doesn't over-seed the relationship into more advanced stages. Strangers are truly strangers, no matter how busy you were together."
+  "version": "1.8.1",
+  "changelog": "Added SeverActions custom bio blocks for indicating what makes a character more or less interested in physical affection in a given moment regardless of overall relationship disposition, considered an experimental feature and is entirely optional. Fixed a few bugs. Ensured that new games wiped the slate clean, which it mostly did except for characters authored in versions older than 1.4.1."
 }
