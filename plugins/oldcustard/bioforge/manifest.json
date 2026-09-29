@@ -20,6 +20,6 @@
   ],
   "image": "cover.png",
   "external_url": "https://github.com/Oldcustard/BioForge",
-  "version": "1.0.0",
-  "changelog": "Initial release"
+  "version": "1.0.1",
+  "changelog": "Bug-fix release for non-English installs and creature scanning.\r\n\r\n## 🐛 Fixes\r\n- 🌍 **NPCs with non-English names are detected correctly** ([#1](https://github.com/Oldcustard/BioForge/issues/1)). Bios for NPCs with Cyrillic (or any non-ASCII) names were never matched to their file, so those NPCs kept showing as needing a bio even when one existed.\r\n- 🏘️ **Regional digests handle non-English names**: those characters are now ranked properly instead of sinking to the bottom, and settlements with non-English names no longer share one cached digest.\r\n- 🐴 **Creatures are no longer scanned.** Named horses such as Shadowmere or a mod's stable horses were being offered bios; anything whose race isn't a person's is now skipped."
 }
