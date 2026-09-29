@@ -1,8 +1,59 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-09-29T07:39:42.757Z",
-  "stats_as_of": "2026-09-29T07:39:42.703Z",
+  "generated_at": "2026-09-29T08:26:31.040Z",
+  "stats_as_of": "2026-09-29T08:26:30.945Z",
   "plugins": [
+    {
+      "id": "plugins/oldcustard/bioforge",
+      "plugin_id": "oldcustard.bioforge",
+      "type": "listing",
+      "title": "BioForge",
+      "tagline": "Bulk-generate SkyrimNet bios for every NPC in a location that doesn't have one, reviewed before anything is saved.",
+      "author": "oldcustard",
+      "tags": [
+        "bios",
+        "characters",
+        "generation",
+        "tools",
+        "npcs"
+      ],
+      "nsfw": false,
+      "icon": "brain",
+      "mods": [],
+      "first_published": "2026-09-28T09:03:26Z",
+      "last_updated": "2026-09-29T08:26:07Z",
+      "version": "1.0.1",
+      "history": [
+        {
+          "version": "1.0.1",
+          "commit": "68130bed1b92bdc6f27f3fb5854d7d61f103fb76",
+          "date": "2026-09-29T08:26:07Z",
+          "changelog": "Bug-fix release for non-English installs and creature scanning.\r\n\r\n## 🐛 Fixes\r\n- 🌍 **NPCs with non-English names are detected correctly** ([#1](https://github.com/Oldcustard/BioForge/issues/1)). Bios for NPCs with Cyrillic (or any non-ASCII) names were never matched to their file, so those NPCs kept showing as needing a bio even when one existed.\r\n- 🏘️ **Regional digests handle non-English names**: those characters are now ranked properly instead of sinking to the bottom, and settlements with non-English names no longer share one cached digest.\r\n- 🐴 **Creatures are no longer scanned.** Named horses such as Shadowmere or a mod's stable horses were being offered bios; anything whose race isn't a person's is now skipped."
+        },
+        {
+          "version": "1.0.0",
+          "commit": "20b8a53d9c4a1c2e76af6217f856f18151841503",
+          "date": "2026-09-28T09:03:26Z",
+          "changelog": "Initial release"
+        }
+      ],
+      "external_url": "https://github.com/Oldcustard/BioForge",
+      "languages": [
+        "en"
+      ],
+      "language": "en",
+      "image": {
+        "file": "cover.png",
+        "sha": "302f6684193c94f7c6cd5cfbdfdf537eff6ddcb6",
+        "commit": "20b8a53d9c4a1c2e76af6217f856f18151841503",
+        "width": 1671,
+        "height": 941
+      },
+      "stats": {
+        "downloads": 13,
+        "endorsements": 1
+      }
+    },
     {
       "id": "plugins/deadohiosky/kinship",
       "plugin_id": "deadohiosky.kinship",
@@ -60,51 +111,6 @@
       "stats": {
         "downloads": 15,
         "endorsements": 0
-      }
-    },
-    {
-      "id": "plugins/oldcustard/bioforge",
-      "plugin_id": "oldcustard.bioforge",
-      "type": "listing",
-      "title": "BioForge",
-      "tagline": "Bulk-generate SkyrimNet bios for every NPC in a location that doesn't have one, reviewed before anything is saved.",
-      "author": "oldcustard",
-      "tags": [
-        "bios",
-        "characters",
-        "generation",
-        "tools",
-        "npcs"
-      ],
-      "nsfw": false,
-      "icon": "brain",
-      "mods": [],
-      "first_published": "2026-09-28T09:03:26Z",
-      "last_updated": "2026-09-28T09:03:26Z",
-      "version": "1.0.0",
-      "history": [
-        {
-          "version": "1.0.0",
-          "commit": "20b8a53d9c4a1c2e76af6217f856f18151841503",
-          "date": "2026-09-28T09:03:26Z",
-          "changelog": "Initial release"
-        }
-      ],
-      "external_url": "https://github.com/Oldcustard/BioForge",
-      "languages": [
-        "en"
-      ],
-      "language": "en",
-      "image": {
-        "file": "cover.png",
-        "sha": "302f6684193c94f7c6cd5cfbdfdf537eff6ddcb6",
-        "commit": "20b8a53d9c4a1c2e76af6217f856f18151841503",
-        "width": 1671,
-        "height": 941
-      },
-      "stats": {
-        "downloads": 13,
-        "endorsements": 1
       }
     },
     {
@@ -416,7 +422,7 @@
         "height": 900
       },
       "stats": {
-        "downloads": 36,
+        "downloads": 37,
         "endorsements": 1
       }
     },
@@ -1082,7 +1088,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 24,
+        "downloads": 25,
         "endorsements": 1
       }
     },
@@ -1391,7 +1397,7 @@
       ],
       "external_url": "https://github.com/GoodProvider/SkyrimNet_Leashed/releases/latest",
       "stats": {
-        "downloads": 16,
+        "downloads": 17,
         "endorsements": 0
       }
     },
@@ -1613,7 +1619,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 426,
+        "downloads": 431,
         "endorsements": 2
       }
     },
@@ -1838,7 +1844,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 222,
+        "downloads": 225,
         "endorsements": 0
       }
     },
@@ -2108,7 +2114,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 101,
+        "downloads": 102,
         "endorsements": 0
       }
     },
@@ -2963,7 +2969,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 182,
+        "downloads": 183,
         "endorsements": 1
       }
     },
@@ -3503,7 +3509,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 106,
+        "downloads": 107,
         "endorsements": 0
       }
     },
@@ -3638,7 +3644,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 42,
+        "downloads": 43,
         "endorsements": 0
       }
     },
@@ -5633,7 +5639,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 45,
+        "downloads": 46,
         "endorsements": 0
       }
     },
@@ -7028,7 +7034,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 287,
+        "downloads": 288,
         "endorsements": 1
       }
     },
@@ -7838,7 +7844,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 171,
+        "downloads": 172,
         "endorsements": 0
       }
     },
@@ -9008,7 +9014,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 24,
+        "downloads": 25,
         "endorsements": 0
       }
     },
@@ -9458,7 +9464,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 62,
+        "downloads": 63,
         "endorsements": 0
       }
     },
@@ -9638,7 +9644,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 98,
+        "downloads": 99,
         "endorsements": 0
       }
     },
@@ -10448,7 +10454,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 372,
+        "downloads": 373,
         "endorsements": 1
       }
     },
