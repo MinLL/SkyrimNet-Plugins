@@ -1,8 +1,51 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-09-30T15:33:19.596Z",
-  "stats_as_of": "2026-09-30T15:33:19.462Z",
+  "generated_at": "2026-09-30T16:20:37.789Z",
+  "stats_as_of": "2026-09-30T16:20:37.347Z",
   "plugins": [
+    {
+      "id": "plugins/jykej/revenge-and-respawn",
+      "plugin_id": "jykej.revenge-and-respawn",
+      "type": "listing",
+      "title": "Revenge and Respawn ",
+      "tagline": "Immersive and configurable death alternative system with SkyrimNet integration.",
+      "author": "jykej",
+      "tags": [
+        "death alternative",
+        "respawn",
+        "revenge"
+      ],
+      "nsfw": false,
+      "icon": "skull",
+      "mods": [],
+      "first_published": "2026-09-30T16:20:12Z",
+      "last_updated": "2026-09-30T16:20:12Z",
+      "version": "1.0.0",
+      "history": [
+        {
+          "version": "1.0.0",
+          "commit": "b3504e4ccb6314f60d13b359bc99dc87393007d9",
+          "date": "2026-09-30T16:20:12Z",
+          "changelog": "Initial release"
+        }
+      ],
+      "external_url": "https://www.nexusmods.com/skyrimspecialedition/mods/193087",
+      "languages": [
+        "en"
+      ],
+      "language": "en",
+      "image": {
+        "file": "cover.jpg",
+        "sha": "f60bf96b45227a8e87de006a5f050a3b53aa75c2",
+        "commit": "b3504e4ccb6314f60d13b359bc99dc87393007d9",
+        "width": 1920,
+        "height": 1080
+      },
+      "stats": {
+        "downloads": 0,
+        "endorsements": 0
+      }
+    },
     {
       "id": "plugins/tetherball88/ostimnet",
       "plugin_id": "tetherball88.ostimnet",
@@ -781,7 +824,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 21,
+        "downloads": 23,
         "endorsements": 0
       }
     },
@@ -1094,7 +1137,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 31,
+        "downloads": 32,
         "endorsements": 1
       }
     },
@@ -1490,7 +1533,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 335,
+        "downloads": 337,
         "endorsements": 1
       }
     },
@@ -1535,7 +1578,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 167,
+        "downloads": 168,
         "endorsements": 0
       }
     },
@@ -1625,7 +1668,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 529,
+        "downloads": 530,
         "endorsements": 2
       }
     },
@@ -1850,7 +1893,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 297,
+        "downloads": 300,
         "endorsements": 0
       }
     },
@@ -2030,7 +2073,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 8,
+        "downloads": 9,
         "endorsements": 0
       }
     },
@@ -2660,7 +2703,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 21,
+        "downloads": 23,
         "endorsements": 0
       }
     },
@@ -2975,7 +3018,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 239,
+        "downloads": 241,
         "endorsements": 1
       }
     },
@@ -3335,7 +3378,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 361,
+        "downloads": 364,
         "endorsements": 1
       }
     },
@@ -3380,7 +3423,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 72,
+        "downloads": 73,
         "endorsements": 0
       }
     },
@@ -4370,7 +4413,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 126,
+        "downloads": 127,
         "endorsements": 0
       }
     },
@@ -5150,7 +5193,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 20,
+        "downloads": 21,
         "endorsements": 0
       }
     },
@@ -5780,7 +5823,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 196,
+        "downloads": 197,
         "endorsements": 0
       }
     },
@@ -5870,7 +5913,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 7,
+        "downloads": 8,
         "endorsements": 0
       }
     },
@@ -6005,7 +6048,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 367,
+        "downloads": 369,
         "endorsements": 1
       }
     },
@@ -6230,7 +6273,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 3,
+        "downloads": 4,
         "endorsements": 0
       }
     },
@@ -6860,7 +6903,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 84,
+        "downloads": 85,
         "endorsements": 1
       }
     },
@@ -6905,7 +6948,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 20,
+        "downloads": 21,
         "endorsements": 0
       }
     },
@@ -7040,7 +7083,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 354,
+        "downloads": 355,
         "endorsements": 1
       }
     },
@@ -7310,7 +7353,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 339,
+        "downloads": 340,
         "endorsements": 2
       }
     },
@@ -8975,7 +9018,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2,
+        "downloads": 3,
         "endorsements": 0
       }
     },
@@ -9020,7 +9063,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 31,
+        "downloads": 32,
         "endorsements": 0
       }
     },
@@ -9650,7 +9693,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 122,
+        "downloads": 124,
         "endorsements": 0
       }
     },
@@ -9920,7 +9963,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 197,
+        "downloads": 199,
         "endorsements": 1
       }
     },
@@ -10460,7 +10503,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 460,
+        "downloads": 461,
         "endorsements": 1
       }
     },
