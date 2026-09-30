@@ -1,0 +1,23 @@
+{
+  "id": "jykej.revenge-and-respawn",
+  "type": "listing",
+  "title": "Revenge and Respawn ",
+  "tagline": "Immersive and configurable death alternative system with SkyrimNet integration.",
+  "description": "Death alternative system with a nemesis revenge loop: when the player is defeated, the killer steals gold and gear, a revenge contract arms, and the player respawns at their bed or the nearest temple. The mod narrates what happened, so your followers know why you're suddenly somewhere else. No more losing your RP progress or explaining what just happened.",
+  "author": "jykej",
+  "tags": [
+    "death alternative",
+    "respawn",
+    "revenge"
+  ],
+  "nsfw": false,
+  "icon": "skull",
+  "mods": [],
+  "languages": [
+    "en"
+  ],
+  "image": "cover.jpg",
+  "external_url": "https://www.nexusmods.com/skyrimspecialedition/mods/193087",
+  "version": "1.0.0",
+  "changelog": "Initial release"
+}
