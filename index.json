@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-09-30T16:20:37.789Z",
-  "stats_as_of": "2026-09-30T16:20:37.347Z",
+  "generated_at": "2026-09-30T16:34:31.699Z",
+  "stats_as_of": "2026-09-30T16:34:31.389Z",
   "plugins": [
     {
       "id": "plugins/jykej/revenge-and-respawn",
@@ -3018,7 +3018,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 241,
+        "downloads": 242,
         "endorsements": 1
       }
     },
