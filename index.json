@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-01T02:46:43.157Z",
-  "stats_as_of": "2026-10-01T02:46:43.044Z",
+  "generated_at": "2026-10-01T02:50:06.369Z",
+  "stats_as_of": "2026-10-01T02:50:06.233Z",
   "plugins": [
     {
       "id": "plugins/pdusen/narrative-engine",
@@ -3024,7 +3024,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 259,
+        "downloads": 260,
         "endorsements": 1
       }
     },
