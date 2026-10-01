@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-01T06:49:44.126Z",
-  "stats_as_of": "2026-10-01T06:49:44.042Z",
+  "generated_at": "2026-10-01T07:40:51.252Z",
+  "stats_as_of": "2026-10-01T07:36:53.835Z",
   "plugins": [
     {
       "id": "plugins/pdusen/narrative-engine",
@@ -283,7 +283,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 189,
+        "downloads": 192,
         "endorsements": 17
       }
     },
@@ -1494,7 +1494,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 85,
+        "downloads": 86,
         "endorsements": 0
       }
     },
@@ -1674,7 +1674,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 596,
+        "downloads": 597,
         "endorsements": 2
       }
     },
@@ -9699,7 +9699,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 141,
+        "downloads": 142,
         "endorsements": 0
       }
     },
@@ -10014,7 +10014,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 39,
+        "downloads": 40,
         "endorsements": 0
       }
     },
