@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-02T05:31:31.811Z",
-  "stats_as_of": "2026-10-02T05:31:31.703Z",
+  "generated_at": "2026-10-02T06:14:11.806Z",
+  "stats_as_of": "2026-10-02T06:14:11.565Z",
   "plugins": [
     {
       "id": "plugins/pdusen/narrative-engine",
@@ -46,6 +46,58 @@
       "stats": {
         "downloads": 55,
         "endorsements": 4
+      }
+    },
+    {
+      "id": "plugins/awesmdiver/skyrimnet-multiproxy",
+      "plugin_id": "awesmdiver.skyrimnet-multiproxy",
+      "type": "listing",
+      "title": "SkyrimNet MultiProxy",
+      "tagline": "Connect your AI of choice to SkyrimNet — set it up once, and it starts every time you play.",
+      "author": "awesmdiver",
+      "tags": [
+        "proxy",
+        "ai providers",
+        "openrouter",
+        "claude",
+        "chatgpt",
+        "gemini",
+        "deepseek",
+        "glm",
+        "ollama",
+        "local ai",
+        "performance",
+        "utility"
+      ],
+      "nsfw": false,
+      "icon": "ai",
+      "mods": [],
+      "first_published": "2026-09-30T19:06:36Z",
+      "last_updated": "2026-09-30T19:06:36Z",
+      "version": "3.1.0",
+      "history": [
+        {
+          "version": "3.1.0",
+          "commit": "9e4e897cfe0589e3a25e2e53abf39e2bbb55cca4",
+          "date": "2026-09-30T19:06:36Z",
+          "changelog": "- **Ready for SkyrimNet Beta 25:** Beta 25 can swap to a backup AI if your primary stalls, or race a second request against a slow one. MultiProxy reports real failures immediately so handoffs trigger cleanly instead of an NPC reading error code out loud! Canceled race requests are cleared away without cluttering your Speeds tab.\r\n- **Voice cues left alone:** Beta 25 uses distinct tags per voice engine, so cues pass through untouched by default. If you use Higgs, toggle `FixHiggsVoiceTags` to keep them clean.\r\n- **Tougher under pressure:** Courtesy of community member Raydonn, dropped connections retry automatically, long chats trim and retry instead of going silent, and scrambled markup tags get repaired before SkyrimNet sees them.\r\n- **Waiting lines:** Also from Raydonn, cap simultaneous requests per provider (`[Concurrency]` in `proxy.ini`) to dodge rate limits. GLM defaults to 6.\r\n- **Full reply log:** Turn on `LogFullReplies` to print complete AI replies directly in your console.\r\n- **Smarter Speeds tab:** Live health cards for each AI, tracking how fast replies start talking, overall speeds, and plain reliability labels, with Dialogue front and center.\r\n\r\n**Fixes**\r\n- **Mod Organizer 2:** The Speeds tab reliably finds SkyrimNet folders on MO2 setups.\r\n- **Faster DeepSeek:** Skips the hidden \"thinking\" step by default, matching GLM.\r\n- **Privacy:** The Speeds tab no longer enables SkyrimNet stats sharing; manage that directly in SkyrimNet's Privacy settings."
+        }
+      ],
+      "external_url": "https://github.com/awesmdiver/skyrimnet-multiproxy",
+      "languages": [
+        "en"
+      ],
+      "language": "en",
+      "image": {
+        "file": "cover.jpg",
+        "sha": "ec432680e8f3c83d7d90f80abc94c4085f5579a9",
+        "commit": "9e4e897cfe0589e3a25e2e53abf39e2bbb55cca4",
+        "width": 1600,
+        "height": 893
+      },
+      "stats": {
+        "downloads": 0,
+        "endorsements": 0
       }
     },
     {
@@ -1539,7 +1591,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 398,
+        "downloads": 399,
         "endorsements": 1
       }
     },
@@ -1584,7 +1636,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 204,
+        "downloads": 205,
         "endorsements": 0
       }
     },
@@ -1674,7 +1726,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 666,
+        "downloads": 667,
         "endorsements": 2
       }
     },
@@ -2394,7 +2446,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 118,
+        "downloads": 119,
         "endorsements": 0
       }
     },
@@ -3024,7 +3076,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 300,
+        "downloads": 301,
         "endorsements": 1
       }
     },
@@ -3384,7 +3436,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 433,
+        "downloads": 434,
         "endorsements": 1
       }
     },
@@ -3519,7 +3571,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 108,
+        "downloads": 109,
         "endorsements": 1
       }
     },
@@ -3564,7 +3616,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 165,
+        "downloads": 166,
         "endorsements": 0
       }
     },
@@ -3744,7 +3796,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 98,
+        "downloads": 99,
         "endorsements": 0
       }
     },
@@ -5109,7 +5161,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 146,
+        "downloads": 147,
         "endorsements": 0
       }
     },
@@ -5694,7 +5746,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 59,
+        "downloads": 60,
         "endorsements": 0
       }
     },
@@ -5829,7 +5881,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 225,
+        "downloads": 226,
         "endorsements": 0
       }
     },
@@ -5964,7 +6016,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 322,
+        "downloads": 323,
         "endorsements": 0
       }
     },
@@ -6054,7 +6106,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 456,
+        "downloads": 457,
         "endorsements": 1
       }
     },
@@ -7089,7 +7141,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 457,
+        "downloads": 458,
         "endorsements": 1
       }
     },
@@ -7359,7 +7411,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 417,
+        "downloads": 418,
         "endorsements": 2
       }
     },
@@ -7899,7 +7951,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 265,
+        "downloads": 266,
         "endorsements": 0
       }
     },
@@ -7944,7 +7996,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 168,
+        "downloads": 169,
         "endorsements": 0
       }
     },
@@ -8439,7 +8491,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 103,
+        "downloads": 104,
         "endorsements": 0
       }
     },
@@ -8709,7 +8761,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 269,
+        "downloads": 270,
         "endorsements": 0
       }
     },
@@ -9969,7 +10021,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 234,
+        "downloads": 235,
         "endorsements": 1
       }
     },
@@ -10374,7 +10426,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 92,
+        "downloads": 93,
         "endorsements": 0
       }
     },
@@ -10509,7 +10561,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 571,
+        "downloads": 572,
         "endorsements": 1
       }
     },
