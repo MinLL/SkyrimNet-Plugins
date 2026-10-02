@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-02T04:35:14.936Z",
-  "stats_as_of": "2026-10-02T04:35:14.871Z",
+  "generated_at": "2026-10-02T05:31:31.811Z",
+  "stats_as_of": "2026-10-02T05:31:31.703Z",
   "plugins": [
     {
       "id": "plugins/pdusen/narrative-engine",
@@ -560,7 +560,7 @@
         "height": 900
       },
       "stats": {
-        "downloads": 64,
+        "downloads": 65,
         "endorsements": 3
       }
     },
@@ -1423,7 +1423,7 @@
       ],
       "external_url": "https://github.com/GoodProvider/SkyrimNet_SexLab/releases/latest",
       "stats": {
-        "downloads": 47,
+        "downloads": 48,
         "endorsements": 0
       }
     },
@@ -1674,7 +1674,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 665,
+        "downloads": 666,
         "endorsements": 2
       }
     },
@@ -1899,7 +1899,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 389,
+        "downloads": 390,
         "endorsements": 0
       }
     },
@@ -6999,7 +6999,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 4,
+        "downloads": 5,
         "endorsements": 0
       }
     },
@@ -10419,7 +10419,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 18,
+        "downloads": 19,
         "endorsements": 0
       }
     },
@@ -10464,7 +10464,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 18,
+        "downloads": 19,
         "endorsements": 0
       }
     },
