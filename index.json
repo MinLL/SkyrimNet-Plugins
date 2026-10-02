@@ -1,8 +1,50 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-02T14:33:39.813Z",
-  "stats_as_of": "2026-10-02T14:33:39.757Z",
+  "generated_at": "2026-10-02T15:27:08.325Z",
+  "stats_as_of": "2026-10-02T15:27:08.200Z",
   "plugins": [
+    {
+      "id": "plugins/severause/severactions",
+      "plugin_id": "severause.severactions",
+      "type": "listing",
+      "title": "SeverActions ",
+      "tagline": "An action, prompt, and behavior pack for SkyrimNet",
+      "author": "severause",
+      "tags": [],
+      "nsfw": false,
+      "icon": "scroll",
+      "mods": [],
+      "first_published": "2026-09-14T10:26:17Z",
+      "last_updated": "2026-10-02T15:26:46Z",
+      "version": "4.0.1",
+      "history": [
+        {
+          "version": "4.0.1",
+          "commit": "274859a71a0cc908296244bb9e627151de0e859a",
+          "date": "2026-10-02T15:26:46Z",
+          "changelog": "4.0 Release - Several fixes and additions, please see the announcement channel for the full changelog"
+        },
+        {
+          "version": "3.9.14",
+          "commit": "cfe54b268475b645084a2b7450af4c26e9c06f90",
+          "date": "2026-09-27T16:10:44Z",
+          "changelog": "Added a cover image"
+        }
+      ],
+      "external_url": "https://github.com/Severause/SeverActions/releases/tag/v4.0.1",
+      "image": {
+        "file": "cover.png",
+        "sha": "c37c0b8a5ca4729ed3ed78776124c54ac32d326d",
+        "commit": "cfe54b268475b645084a2b7450af4c26e9c06f90",
+        "width": 2048,
+        "height": 1146
+      },
+      "curated": true,
+      "stats": {
+        "downloads": 228,
+        "endorsements": 18
+      }
+    },
     {
       "id": "plugins/pdusen/narrative-engine",
       "plugin_id": "pdusen.narrative-engine",
@@ -301,42 +343,6 @@
       "stats": {
         "downloads": 23,
         "endorsements": 1
-      }
-    },
-    {
-      "id": "plugins/severause/severactions",
-      "plugin_id": "severause.severactions",
-      "type": "listing",
-      "title": "SeverActions ",
-      "tagline": "An action, prompt, and behavior pack for SkyrimNet",
-      "author": "severause",
-      "tags": [],
-      "nsfw": false,
-      "icon": "scroll",
-      "mods": [],
-      "first_published": "2026-09-14T10:26:17Z",
-      "last_updated": "2026-09-27T16:10:44Z",
-      "version": "3.9.14",
-      "history": [
-        {
-          "version": "3.9.14",
-          "commit": "cfe54b268475b645084a2b7450af4c26e9c06f90",
-          "date": "2026-09-27T16:10:44Z",
-          "changelog": "Added a cover image"
-        }
-      ],
-      "external_url": "https://github.com/Severause/SeverActions/releases/tag/v3.9.14-beta25",
-      "image": {
-        "file": "cover.png",
-        "sha": "c37c0b8a5ca4729ed3ed78776124c54ac32d326d",
-        "commit": "cfe54b268475b645084a2b7450af4c26e9c06f90",
-        "width": 2048,
-        "height": 1146
-      },
-      "curated": true,
-      "stats": {
-        "downloads": 228,
-        "endorsements": 18
       }
     },
     {
@@ -1289,7 +1295,7 @@
         "height": 864
       },
       "stats": {
-        "downloads": 76,
+        "downloads": 77,
         "endorsements": 4
       }
     },
@@ -1591,7 +1597,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 407,
+        "downloads": 411,
         "endorsements": 1
       }
     },
@@ -1636,7 +1642,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 209,
+        "downloads": 211,
         "endorsements": 0
       }
     },
@@ -1726,7 +1732,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 692,
+        "downloads": 720,
         "endorsements": 2
       }
     },
@@ -1951,7 +1957,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 404,
+        "downloads": 407,
         "endorsements": 0
       }
     },
@@ -2221,7 +2227,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 155,
+        "downloads": 156,
         "endorsements": 0
       }
     },
@@ -2716,7 +2722,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 344,
+        "downloads": 347,
         "endorsements": 0
       }
     },
@@ -3076,7 +3082,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 309,
+        "downloads": 314,
         "endorsements": 1
       }
     },
@@ -3436,7 +3442,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 442,
+        "downloads": 445,
         "endorsements": 1
       }
     },
@@ -3661,7 +3667,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 241,
+        "downloads": 242,
         "endorsements": 0
       }
     },
@@ -3751,7 +3757,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 67,
+        "downloads": 68,
         "endorsements": 0
       }
     },
@@ -4066,7 +4072,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 72,
+        "downloads": 73,
         "endorsements": 0
       }
     },
@@ -4471,7 +4477,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 153,
+        "downloads": 155,
         "endorsements": 0
       }
     },
@@ -5476,7 +5482,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 105,
+        "downloads": 106,
         "endorsements": 0
       }
     },
@@ -5881,7 +5887,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 231,
+        "downloads": 232,
         "endorsements": 0
       }
     },
@@ -5926,7 +5932,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 136,
+        "downloads": 137,
         "endorsements": 0
       }
     },
@@ -6016,7 +6022,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 328,
+        "downloads": 331,
         "endorsements": 0
       }
     },
@@ -6106,7 +6112,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 470,
+        "downloads": 474,
         "endorsements": 1
       }
     },
@@ -6511,7 +6517,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 108,
+        "downloads": 109,
         "endorsements": 0
       }
     },
@@ -6961,7 +6967,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 93,
+        "downloads": 95,
         "endorsements": 1
       }
     },
@@ -7141,7 +7147,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 470,
+        "downloads": 483,
         "endorsements": 1
       }
     },
@@ -7411,7 +7417,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 428,
+        "downloads": 432,
         "endorsements": 2
       }
     },
@@ -7816,7 +7822,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 100,
+        "downloads": 102,
         "endorsements": 0
       }
     },
@@ -7951,7 +7957,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 273,
+        "downloads": 276,
         "endorsements": 0
       }
     },
@@ -7996,7 +8002,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 173,
+        "downloads": 174,
         "endorsements": 0
       }
     },
@@ -8761,7 +8767,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 277,
+        "downloads": 278,
         "endorsements": 0
       }
     },
@@ -10021,7 +10027,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 236,
+        "downloads": 237,
         "endorsements": 1
       }
     },
@@ -10561,7 +10567,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 588,
+        "downloads": 595,
         "endorsements": 1
       }
     },
@@ -10831,7 +10837,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 142,
+        "downloads": 143,
         "endorsements": 0
       }
     },
