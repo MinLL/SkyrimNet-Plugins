@@ -46,11 +46,14 @@ export const CODES = {
 // ----- Constants -----------------------------------------------------------
 
 // `minEngine` of a root no SkyrimNet release reads yet: every plugin shipping it is refused. A root added
-// ahead of its release carries it (`settings` and `config` today) until the release that reads it ships.
+// ahead of its release carries it (`settings` today) until the release that reads it ships.
 export const RESERVED_MIN_ENGINE = "reserved";
 
 // The release that reads the eight config-system roots.
 export const CONFIG_ROOTS_MIN_ENGINE = "0.25.0";
+
+// The release that reads `config/` (engine tunables shipped as data: carry-over audio tag lists).
+export const TUNABLES_ROOT_MIN_ENGINE = "0.26.0";
 
 // One row per content root; pairs with the engine's table in ContentPaths.cpp. `minEngine` is null
 // (ungated), RESERVED_MIN_ENGINE, or the oldest release that reads the root. `category` is the index's
@@ -72,9 +75,9 @@ export const ROOT_TABLE = Object.freeze([
   { segment: "dialogue_actions", category: "config", extension: ".yaml", minEngine: CONFIG_ROOTS_MIN_ENGINE }, // by `kind`
   // A plugin's own Settings page schema (`Plugin_{stem}`): mod-internal, so no `contents` category.
   { segment: "settings", category: null, extension: ".yaml", minEngine: RESERVED_MIN_ENGINE },
-  // Engine tunables shipped as data (carry-over audio tag lists), reserved until the release that reads them.
+  // Engine tunables shipped as data (carry-over audio tag lists).
   // `flat`: files only; a folder under config/ is the pre-library layout (config/triggers/), an unknown root.
-  { segment: "config", category: "config", extension: ".yaml", minEngine: RESERVED_MIN_ENGINE, flat: true }, // by `kind`
+  { segment: "config", category: "config", extension: ".yaml", minEngine: TUNABLES_ROOT_MIN_ENGINE, flat: true }, // by `kind`
 ]);
 
 // Content roots accepted by the hub, in table order.

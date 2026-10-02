@@ -17,6 +17,7 @@ import {
   EXTENSION_BY_ROOT,
   MAX_QUOTED_VALUE_LENGTH,
   CONFIG_ROOTS_MIN_ENGINE,
+  TUNABLES_ROOT_MIN_ENGINE,
   RESERVED_MIN_ENGINE,
   ROOT_MIN_ENGINE,
   ROOT_TABLE,
@@ -234,10 +235,11 @@ test("the root table has the five original roots, the eight config-system roots,
   assert.equal(CATEGORY_BY_ROOT.settings, null);
   assert.equal(EXTENSION_BY_ROOT.settings, ".yaml");
   assert.equal(ROOT_MIN_ENGINE.settings, RESERVED_MIN_ENGINE);
-  // Engine tunables as data: counted as config, reserved until the release that reads them.
+  // Engine tunables as data: counted as config, gated at the release that reads them.
   assert.equal(CATEGORY_BY_ROOT.config, "config");
   assert.equal(EXTENSION_BY_ROOT.config, ".yaml");
-  assert.equal(ROOT_MIN_ENGINE.config, RESERVED_MIN_ENGINE);
+  assert.equal(TUNABLES_ROOT_MIN_ENGINE, "0.26.0");
+  assert.equal(ROOT_MIN_ENGINE.config, TUNABLES_ROOT_MIN_ENGINE);
 });
 
 test("a new root's path is accepted and the unknown-root message names every root", () => {
