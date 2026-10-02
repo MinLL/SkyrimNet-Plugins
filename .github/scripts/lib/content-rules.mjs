@@ -52,6 +52,9 @@ export const RESERVED_MIN_ENGINE = "reserved";
 // The release that reads the eight config-system roots.
 export const CONFIG_ROOTS_MIN_ENGINE = "0.25.0";
 
+// The release that reads `config/` (engine tunables shipped as data: carry-over audio tag lists).
+export const TUNABLES_ROOT_MIN_ENGINE = "0.26.0";
+
 // One row per content root; pairs with the engine's table in ContentPaths.cpp. `minEngine` is null
 // (ungated), RESERVED_MIN_ENGINE, or the oldest release that reads the root. `category` is the index's
 // `contents` key the root's files count toward, or null for a mod-internal root that is never advertised.
@@ -72,6 +75,9 @@ export const ROOT_TABLE = Object.freeze([
   { segment: "dialogue_actions", category: "config", extension: ".yaml", minEngine: CONFIG_ROOTS_MIN_ENGINE }, // by `kind`
   // A plugin's own Settings page schema (`Plugin_{stem}`): mod-internal, so no `contents` category.
   { segment: "settings", category: null, extension: ".yaml", minEngine: RESERVED_MIN_ENGINE },
+  // Engine tunables shipped as data (carry-over audio tag lists).
+  // `flat`: files only; a folder under config/ is the pre-library layout (config/triggers/), an unknown root.
+  { segment: "config", category: "config", extension: ".yaml", minEngine: TUNABLES_ROOT_MIN_ENGINE, flat: true }, // by `kind`
 ]);
 
 // Content roots accepted by the hub, in table order.
@@ -82,6 +88,9 @@ export const EXTENSION_BY_ROOT = Object.fromEntries(ROOT_TABLE.map((row) => [row
 
 // Per-root `contents` category; null for a root the index does not count.
 export const CATEGORY_BY_ROOT = Object.fromEntries(ROOT_TABLE.map((row) => [row.segment, row.category]));
+
+// Roots whose files sit directly under them.
+export const FLAT_ROOTS = new Set(ROOT_TABLE.filter((row) => row.flat).map((row) => row.segment));
 
 // Per-root `minEngine`, as the table spells it.
 export const ROOT_MIN_ENGINE = Object.fromEntries(ROOT_TABLE.map((row) => [row.segment, row.minEngine]));
@@ -297,6 +306,13 @@ export function checkContentPath(rawPath) {
   }
   if (segments.length < 2) {
     return reject(CODES.NO_FILE_IN_ROOT, "Path names a content root but no file inside it.");
+  }
+  if (FLAT_ROOTS.has(root) && segments.length > 2) {
+    return reject(
+      CODES.UNKNOWN_ROOT,
+      `'${root}/${segments[1]}/' is not a content root: ${root}/ holds files only. A folder under it is the ` +
+        "pre-library layout (config/triggers/, config/actions/); convert the pack with the legacy import assistant.",
+    );
   }
 
   const filename = segments[segments.length - 1];

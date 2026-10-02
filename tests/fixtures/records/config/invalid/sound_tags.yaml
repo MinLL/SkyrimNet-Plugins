@@ -1,0 +1,5 @@
+# refuse: KIND_UNKNOWN
+# why: only the kinds the config root defines
+kind: sound_tags
+tags:
+  - laughs

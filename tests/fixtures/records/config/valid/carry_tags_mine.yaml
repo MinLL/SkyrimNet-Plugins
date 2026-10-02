@@ -1,0 +1,7 @@
+# why: a carry_audio_tags contribution: a name, a description and the tags, matched whole without case
+kind: carry_audio_tags
+name: My tags
+description: Tags my characters use.
+tags:
+  - seething
+  - "barely audible"

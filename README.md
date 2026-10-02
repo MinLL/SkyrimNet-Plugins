@@ -48,6 +48,7 @@ plugins/
       translator/*.yaml
       dialogue_actions/*.yaml
       settings/*.yaml         # the plugin's own Settings page schema (reserved, see Content roots)
+      config/*.yaml           # engine data such as carry-over audio tag lists (Beta 26, see Content roots)
 ```
 
 Each plugin lives in its own directory under the author's GitHub username. The `manifest.json` describes the plugin and is required; every content subdirectory is optional.
@@ -72,6 +73,7 @@ One directory per content root. The validator checks each file's extension, its 
 | `translator/` | `.yaml` | `kind: npc`: form stem of `form` (the actor base); `faction` / `race`: `entityEditorId`; `global`: `global.yaml`; integer `priority` | Beta 25 (0.25.0) | yes | 32 KB |
 | `dialogue_actions/` | `.yaml` | `kind: lists` contributions: any stem; `kind: instruction`: `key`, with an optional `category` of `quest`, `follower`, `merchant`, `trainer`, `carriage`, `innkeeper`, `bard`, `marriage`, `crime`, `other` | Beta 25 (0.25.0) | yes | 32 KB |
 | `settings/` | `.yaml` | the whole filename before `.yaml` (`[A-Za-z0-9_-]`, directly under `settings/`) names the plugin's `Plugin_{Name}` config; any YAML mapping | reserved | yes | 64 KB |
+| `config/` | `.yaml` | files only, directly under `config/` (a folder there is the pre-library layout and is refused); `kind:` required: `kind: carry_audio_tags` contributions, any stem, a `tags` string list | Beta 26 (0.26.0) | yes | 32 KB |
 
 **Whole-plugin caps.** A plugin holds at most **2,900 files** and **16 MB** in total; `manifest.json` and the cover image count toward both. Anything larger belongs on an external mod host, published here as a listing. GitHub lists at most 3,000 changed files for one pull request, so an update that removes and adds 3,000 or more paths at once cannot be checked in full and is refused: split it into smaller updates.
 

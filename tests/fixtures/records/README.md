@@ -1,6 +1,6 @@
 # The record corpus
 
-The record contract for the seven config-system roots, mirrored byte for byte between SkyrimNet-Core
+The record contract for the eight config-system roots, mirrored byte for byte between SkyrimNet-Core
 (`tests/test_data/records/`) and SkyrimNet-Plugins (`tests/fixtures/records/`): the two trees must have the
 same git tree id (`git rev-parse HEAD:tests/test_data/records` in SkyrimNet-Core, `HEAD:tests/fixtures/records` in SkyrimNet-Plugins).
 A rule change updates both copies in one change; a fixture that looks wrong is a cross-repo change, never a
@@ -22,5 +22,7 @@ local edit. `ai_docs/TESTING_RECORD_CORPUS.md` in SkyrimNet-Core describes the g
   (`plugins/skyrimnet/base/<root>/`).
 - `filters/`, `dialogue_actions/`: SkyrimNet-GamePlugin PR #622 (`feat/base-dialogue-actions-defaults`)
   at `c07f07f0bc88692f5b2e95d94d1da9f285421aad`.
+- `config/`: SkyrimNet-GamePlugin PR #674 (`feat/base-carry-audio-tags`)
+  at `ef1a470845effe9e412441ee021331e5baab6588`.
 
 Compared as git blobs (LF); the working copies carry the checkout's line endings.

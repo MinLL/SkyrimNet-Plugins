@@ -120,7 +120,7 @@ good, not whether it is well-formed.
   NPCs hear and may react). Pick `private` for anything that would be strange for a bystander
   to overhear.
 
-## Config-system records (`voice_effects/`, `items/`, `spells/`, `furniture/`, `identity/`, `filters/`, `translator/`, `dialogue_actions/`)
+## Config-system records (`voice_effects/`, `items/`, `spells/`, `furniture/`, `identity/`, `filters/`, `translator/`, `dialogue_actions/`, `config/`)
 
 One record per `.yaml` file; the validator has already checked the filename is the record's
 identity, the `kind`, the root's release gate and the caps (README, "Content roots"). What is
@@ -131,8 +131,10 @@ left to judge:
   plugin in a `form`, a `filters/` list or a `dialogue_actions/` list should appear in `mods`.
 - **Must:** `customName`, `customDescription`, `resolved_name`, translator `speechPattern` and
   instruction `text` are in-world prose in the same class as a prompt, and are reviewed as one.
-- `filters/` `kind: actor` and `kind: memory` files, and `dialogue_actions/` `kind: lists`
-  files, are unioned with the user's own lists. A `RaceWhitelist` or `whitelist` entry widens
+- `filters/` `kind: actor` and `kind: memory` files, `dialogue_actions/` `kind: lists`
+  files and `config/` `kind: carry_audio_tags` files are unioned with the user's own lists.
+  A carry-over tag repeats on every sentence of a reply, so a sound (`laughs`, `coughs`) does not
+  belong in one. A `RaceWhitelist` or `whitelist` entry widens
   what may speak or fire; that is the point for a mod's own races and quests, and a concern
   when it names vanilla content the plugin has no business touching.
 - A `spells/` or `items/` record with `show_in_prompts: false` hides that form from NPC equipment
