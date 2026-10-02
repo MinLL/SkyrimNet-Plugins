@@ -11,6 +11,6 @@
   "mods": [],
   "image": "cover.png",
   "external_url": "https://github.com/Severause/SeverActions/releases/tag/v4.0.1",
-  "version": "4.0.1",
-  "changelog": "4.0 Release - Several fixes and additions, please see the announcement channel for the full changelog"
+  "version": "4.0.2",
+  "changelog": "## SeverActions 4.0.2 — Hotfix\n\nUpdates the bundled **Magelight UI to 0.30.3**, which fixes three problems in 4.0.1:\n\n**Fixed: crash at startup with Community Shaders**, or a few minutes into play with ENB or an upscaler (`d3d11.dll` in the crash log)\n**Fixed: crash at startup with ENB** that left no crash log\n**Fixed: menu cut off** on screens under ~1067 pixels tall (1366×768, 1600×900)\n\nIf you made a `Magelight.json` to work around the ENB crash, you can delete it now.\n\n**Installing:** install over 4.0.1 and choose **Replace**. Your saves load as they are."
 }
