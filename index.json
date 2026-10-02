@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-02T10:30:46.794Z",
-  "stats_as_of": "2026-10-02T10:30:46.750Z",
+  "generated_at": "2026-10-02T11:29:28.765Z",
+  "stats_as_of": "2026-10-02T11:29:28.728Z",
   "plugins": [
     {
       "id": "plugins/pdusen/narrative-engine",
@@ -335,7 +335,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 226,
+        "downloads": 227,
         "endorsements": 18
       }
     },
@@ -410,7 +410,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 98,
+        "downloads": 99,
         "endorsements": 0
       }
     },
@@ -1081,7 +1081,7 @@
       "language": "en",
       "stats": {
         "downloads": 21,
-        "endorsements": 0
+        "endorsements": 1
       }
     },
     {
@@ -1546,7 +1546,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 97,
+        "downloads": 98,
         "endorsements": 0
       }
     },
@@ -1726,7 +1726,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 674,
+        "downloads": 675,
         "endorsements": 2
       }
     },
@@ -1951,7 +1951,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 394,
+        "downloads": 395,
         "endorsements": 0
       }
     },
@@ -2446,7 +2446,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 120,
+        "downloads": 121,
         "endorsements": 0
       }
     },
@@ -7141,7 +7141,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 463,
+        "downloads": 464,
         "endorsements": 1
       }
     },
@@ -7951,7 +7951,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 269,
+        "downloads": 270,
         "endorsements": 0
       }
     },
@@ -10561,7 +10561,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 582,
+        "downloads": 583,
         "endorsements": 1
       }
     },
