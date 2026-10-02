@@ -1,0 +1,24 @@
+{
+  "id": "nosimo.nos-inworld-2-audio-tags",
+  "type": "bundle",
+  "title": "Nos Inworld 2 Audio Tags",
+  "tagline": "Audio tagging for inworld 2",
+  "description": "Expressive audio tagging for inworld 2, based on SN 25 audio tag prompt and latest inworld tagging instructions. Feeling cute now, will probably delete when the original tagging gets updated.",
+  "author": "nosimo",
+  "tags": [
+    "inworld",
+    "audio",
+    "tags",
+    "tt2"
+  ],
+  "nsfw": false,
+  "icon": "package",
+  "mods": [],
+  "languages": [
+    "en"
+  ],
+  "image": "cover.png",
+  "version": "1.0.0",
+  "changelog": "Initial release",
+  "min_skyrimnet_version": "0.25.0"
+}
