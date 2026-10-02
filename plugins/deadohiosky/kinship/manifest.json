@@ -18,6 +18,6 @@
   ],
   "image": "cover.png",
   "external_url": "https://github.com/deadohiosky48/SkyrimNet-Kinship",
-  "version": "1.9.6",
-  "changelog": "A bugfix release. Kinship was quietly losing some of what Fertility Mode told it, and filling your script log with errors every in-game hour."
+  "version": "1.9.7",
+  "changelog": "Fix for a Skyrim VR crash. Release 1.9.6 is equivalent for non-VR users."
 }
