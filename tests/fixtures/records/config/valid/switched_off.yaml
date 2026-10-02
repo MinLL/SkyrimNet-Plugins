@@ -1,0 +1,5 @@
+# why: enabled false is record activation; the contribution stays listed and drops out of the union
+kind: carry_audio_tags
+tags:
+  - whispers
+enabled: false

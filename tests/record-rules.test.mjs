@@ -40,10 +40,10 @@ function assertCode(res, code, needle) {
   }
 }
 
-test("the record roots are the eight config-system roots", () => {
+test("the record roots are the eight config-system roots and config", () => {
   assert.deepEqual(
     [...RECORD_ROOTS].sort(),
-    ["dialogue_actions", "filters", "furniture", "identity", "items", "spells", "translator", "voice_effects"],
+    ["config", "dialogue_actions", "filters", "furniture", "identity", "items", "spells", "translator", "voice_effects"],
   );
   assert.throws(() => checkRecord("triggers", { name: "x" }, "triggers/x.yaml"), TypeError);
 });
@@ -320,6 +320,19 @@ test("dialogue_actions: an instruction is keyed on its TIF script name; a catego
     assert.equal(checkRecord("dialogue_actions", { ...good, category }, "dialogue_actions/TIF__000D9B53.yaml").ok, true);
   }
   assertCode(checkRecord("dialogue_actions", { ...good, category: 3 }, "dialogue_actions/TIF__000D9B53.yaml"), RECORD_CODES.CATEGORY_UNKNOWN);
+});
+
+// ----- config: carry_audio_tags contribution ---------------------------------
+
+test("config: a carry_audio_tags contribution carries a string list under any stem", () => {
+  assert.deepEqual(KINDS_BY_ROOT.config, ["carry_audio_tags"]);
+  assertOk(checkRecord("config", { kind: "carry_audio_tags", name: "Volume", tags: ["whispers", "shouting"] }, "config/carry_tags_volume.yaml"));
+  assertOk(checkRecord("config", { kind: "carry_audio_tags" }, "config/empty.yaml"));
+  assertCode(checkRecord("config", { kind: "carry_audio_tags", tags: "whispers" }, "config/x.yaml"), RECORD_CODES.LIST_NOT_STRINGS);
+  assertCode(checkRecord("config", { tags: ["whispers"] }, "config/x.yaml"), RECORD_CODES.KIND_MISSING);
+  // An old-layout settings file is told what it is.
+  assertCode(checkRecord("config", { Whitelist: [] }, "config/ActorFilter.yaml"), RECORD_CODES.KIND_MISSING, /old layout/);
+  assertCode(checkRecord("config", { kind: "sound_tags" }, "config/x.yaml"), RECORD_CODES.KIND_UNKNOWN);
 });
 
 test("every issue is reported, not just the first", () => {

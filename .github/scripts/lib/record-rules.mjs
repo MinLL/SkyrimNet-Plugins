@@ -46,6 +46,7 @@ export const KINDS_BY_ROOT = Object.freeze({
   filters: ["actor", "memory", "dialogue_rule", "tts_rule"],
   translator: ["npc", "faction", "race", "global"],
   dialogue_actions: ["lists", "instruction"],
+  config: ["carry_audio_tags"],
 });
 
 // The six list fields an actor or memory filter contribution may carry.
@@ -377,6 +378,22 @@ const CHECKS = {
         );
       }
     }
+  },
+
+  // A carry_audio_tags contribution: its tags join every other active list's, under any stem.
+  config(doc, subPath, push) {
+    if (doc.kind === undefined) {
+      // A kind-less file here is most often a settings file from the pre-library layout (config/ActorFilter.yaml).
+      push(
+        RECORD_CODES.KIND_MISSING,
+        "Files under config/ need a 'kind' field: one of " + KINDS_BY_ROOT.config.join(", ") + ". A SkyrimNet " +
+          "settings file from the old layout (config/ActorFilter.yaml, config/DialogueActions.yaml) is not plugin " +
+          "content: leave it out, or convert the pack with the legacy import assistant.",
+      );
+      return;
+    }
+    const kind = resolveKind("config", doc, push);
+    if (kind === "carry_audio_tags") checkStringList(doc, "tags", push);
   },
 };
 
