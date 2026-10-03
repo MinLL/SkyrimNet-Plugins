@@ -3,7 +3,7 @@
   "type": "bundle",
   "title": "Nos Inworld 2 Audio Tags",
   "tagline": "Audio tagging for inworld 2",
-  "description": "Expressive audio tagging for inworld 2, based on SN 25 audio tag prompt and latest inworld tagging instructions. Feeling cute now, will probably delete when the original tagging gets updated. FLAGGED NSFW because of a seductive moan text example, its only as unsafe as your install.",
+  "description": "Expressive audio tagging for inworld 2, based on SN 25 audio tag prompt and latest inworld tagging instructions. Feeling cute now, will probably delete when the original tagging gets updated. 1 out of 1 automods now agree it is SFW.",
   "author": "nosimo",
   "tags": [
     "inworld",
@@ -11,13 +11,14 @@
     "tags",
     "tt2"
   ],
-  "nsfw": true,
+  "nsfw": false,
   "icon": "package",
   "mods": [],
   "languages": [
     "en"
   ],
-  "version": "1.0.0",
-  "changelog": "Initial release",
+  "image": "cover.png",
+  "version": "1.0.1",
+  "changelog": "Removed NSFW example",
   "min_skyrimnet_version": "0.25.0"
 }
