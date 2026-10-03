@@ -1,0 +1,22 @@
+{
+  "id": "potoftea.paired-animations",
+  "type": "listing",
+  "title": "Paired Animations",
+  "tagline": "SkyrimNet actions that let characters act on each other physically, with a real two-actor animation playing for it.",
+  "description": "* HugTarget - One character hugs another.\n* ExecuteTarget - A strong enough attacker kills a target outright, openly or from stealth.\n* VampireBiteTarget - A vampire feeds on a character who has verbally agreed to it.",
+  "author": "potoftea",
+  "tags": [
+    "Vampire",
+    "actions"
+  ],
+  "nsfw": false,
+  "icon": "ai",
+  "mods": [],
+  "languages": [
+    "en"
+  ],
+  "image": "cover.png",
+  "external_url": "https://github.com/blackpotoftea/SkyrimNet_PairedAnimations/releases/download/beta-release-0.3/SkyrimNet_PairedAnimations.zip",
+  "version": "0.0.3",
+  "changelog": "Initial release"
+}
