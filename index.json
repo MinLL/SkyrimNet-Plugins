@@ -1,8 +1,67 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-03T01:40:30.938Z",
-  "stats_as_of": "2026-10-03T01:40:30.817Z",
+  "generated_at": "2026-10-03T02:01:55.263Z",
+  "stats_as_of": "2026-10-03T01:59:40.791Z",
   "plugins": [
+    {
+      "id": "plugins/nosimo/nos-inworld-2-audio-tags",
+      "plugin_id": "nosimo.nos-inworld-2-audio-tags",
+      "type": "bundle",
+      "title": "Nos Inworld 2 Audio Tags",
+      "tagline": "Audio tagging for inworld 2",
+      "author": "nosimo",
+      "tags": [
+        "inworld",
+        "audio",
+        "tags",
+        "tt2"
+      ],
+      "nsfw": false,
+      "icon": "package",
+      "mods": [],
+      "first_published": "2026-10-02T23:59:14Z",
+      "last_updated": "2026-10-03T02:01:36Z",
+      "version": "1.0.1",
+      "min_skyrimnet_version": "0.25.0",
+      "history": [
+        {
+          "version": "1.0.1",
+          "commit": "fc3dad764f7bea579b2120a44e47dbec762f60f7",
+          "date": "2026-10-03T02:01:36Z",
+          "changelog": "Removed NSFW example"
+        },
+        {
+          "version": "1.0.0",
+          "commit": "6a9bec5677486237968d14e4832c14eb0a179c4f",
+          "date": "2026-10-02T23:59:14Z",
+          "changelog": "Initial release"
+        }
+      ],
+      "languages": [
+        "en"
+      ],
+      "language": "en",
+      "image": {
+        "file": "cover.png",
+        "sha": "09a87069d4babfa7575d309e5f08db2f852fe0d0",
+        "commit": "fc3dad764f7bea579b2120a44e47dbec762f60f7",
+        "width": 1280,
+        "height": 720
+      },
+      "contents": {
+        "triggers": 0,
+        "actions": 0,
+        "prompts": 1,
+        "bios": 0,
+        "knowledge": 0,
+        "entities": 0,
+        "config": 0
+      },
+      "stats": {
+        "downloads": 2,
+        "endorsements": 0
+      }
+    },
     {
       "id": "plugins/phospheneoverdrive/playersignals-for-skyrimnet",
       "plugin_id": "phospheneoverdrive.playersignals-for-skyrimnet",
@@ -44,52 +103,6 @@
       },
       "stats": {
         "downloads": 0,
-        "endorsements": 0
-      }
-    },
-    {
-      "id": "plugins/nosimo/nos-inworld-2-audio-tags",
-      "plugin_id": "nosimo.nos-inworld-2-audio-tags",
-      "type": "bundle",
-      "title": "Nos Inworld 2 Audio Tags",
-      "tagline": "Audio tagging for inworld 2",
-      "author": "nosimo",
-      "tags": [
-        "inworld",
-        "audio",
-        "tags",
-        "tt2"
-      ],
-      "nsfw": true,
-      "icon": "package",
-      "mods": [],
-      "first_published": "2026-10-02T23:59:14Z",
-      "last_updated": "2026-10-02T23:59:14Z",
-      "version": "1.0.0",
-      "min_skyrimnet_version": "0.25.0",
-      "history": [
-        {
-          "version": "1.0.0",
-          "commit": "6a9bec5677486237968d14e4832c14eb0a179c4f",
-          "date": "2026-10-02T23:59:14Z",
-          "changelog": "Initial release"
-        }
-      ],
-      "languages": [
-        "en"
-      ],
-      "language": "en",
-      "contents": {
-        "triggers": 0,
-        "actions": 0,
-        "prompts": 1,
-        "bios": 0,
-        "knowledge": 0,
-        "entities": 0,
-        "config": 0
-      },
-      "stats": {
-        "downloads": 2,
         "endorsements": 0
       }
     },
@@ -569,7 +582,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 107,
+        "downloads": 108,
         "endorsements": 0
       }
     },
@@ -639,7 +652,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 122,
+        "downloads": 123,
         "endorsements": 0
       }
     },
@@ -1557,7 +1570,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 62,
+        "downloads": 63,
         "endorsements": 0
       }
     },
@@ -1660,7 +1673,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 104,
+        "downloads": 105,
         "endorsements": 0
       }
     },
@@ -2425,7 +2438,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 55,
+        "downloads": 56,
         "endorsements": 0
       }
     },
@@ -2560,7 +2573,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 123,
+        "downloads": 124,
         "endorsements": 0
       }
     },
@@ -3550,7 +3563,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 471,
+        "downloads": 473,
         "endorsements": 1
       }
     },
@@ -3685,7 +3698,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 112,
+        "downloads": 113,
         "endorsements": 1
       }
     },
@@ -3730,7 +3743,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 173,
+        "downloads": 174,
         "endorsements": 0
       }
     },
@@ -3910,7 +3923,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 100,
+        "downloads": 101,
         "endorsements": 0
       }
     },
@@ -4180,7 +4193,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 76,
+        "downloads": 77,
         "endorsements": 0
       }
     },
@@ -5275,7 +5288,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 151,
+        "downloads": 152,
         "endorsements": 0
       }
     },
@@ -5995,7 +6008,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 245,
+        "downloads": 247,
         "endorsements": 0
       }
     },
@@ -6130,7 +6143,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 352,
+        "downloads": 353,
         "endorsements": 0
       }
     },
@@ -6220,7 +6233,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 498,
+        "downloads": 500,
         "endorsements": 1
       }
     },
@@ -7255,7 +7268,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 503,
+        "downloads": 504,
         "endorsements": 1
       }
     },
@@ -7525,7 +7538,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 452,
+        "downloads": 454,
         "endorsements": 2
       }
     },
@@ -8065,7 +8078,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 286,
+        "downloads": 287,
         "endorsements": 0
       }
     },
@@ -8110,7 +8123,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 182,
+        "downloads": 183,
         "endorsements": 0
       }
     },
@@ -8605,7 +8618,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 107,
+        "downloads": 108,
         "endorsements": 0
       }
     },
@@ -8875,7 +8888,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 299,
+        "downloads": 300,
         "endorsements": 0
       }
     },
@@ -10135,7 +10148,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 245,
+        "downloads": 246,
         "endorsements": 1
       }
     },
@@ -10540,7 +10553,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 94,
+        "downloads": 95,
         "endorsements": 0
       }
     },
@@ -10675,7 +10688,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 626,
+        "downloads": 628,
         "endorsements": 1
       }
     },
