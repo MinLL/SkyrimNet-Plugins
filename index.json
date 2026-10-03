@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-03T03:44:43.587Z",
-  "stats_as_of": "2026-10-03T03:44:43.510Z",
+  "generated_at": "2026-10-03T04:37:29.084Z",
+  "stats_as_of": "2026-10-03T04:37:28.952Z",
   "plugins": [
     {
       "id": "plugins/nosimo/nos-inworld-2-audio-tags",
@@ -58,7 +58,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 3,
+        "downloads": 4,
         "endorsements": 0
       }
     },
@@ -1525,7 +1525,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 168,
+        "downloads": 170,
         "endorsements": 3
       }
     },
@@ -1570,7 +1570,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 63,
+        "downloads": 64,
         "endorsements": 0
       }
     },
@@ -1808,7 +1808,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 24,
+        "downloads": 25,
         "endorsements": 0
       }
     },
@@ -2078,7 +2078,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 427,
+        "downloads": 428,
         "endorsements": 0
       }
     },
@@ -3203,7 +3203,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 338,
+        "downloads": 339,
         "endorsements": 1
       }
     },
@@ -3563,7 +3563,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 477,
+        "downloads": 478,
         "endorsements": 1
       }
     },
@@ -3608,7 +3608,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 97,
+        "downloads": 98,
         "endorsements": 0
       }
     },
@@ -4598,7 +4598,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 170,
+        "downloads": 171,
         "endorsements": 0
       }
     },
@@ -6008,7 +6008,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 248,
+        "downloads": 249,
         "endorsements": 0
       }
     },
@@ -7538,7 +7538,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 456,
+        "downloads": 457,
         "endorsements": 2
       }
     },
