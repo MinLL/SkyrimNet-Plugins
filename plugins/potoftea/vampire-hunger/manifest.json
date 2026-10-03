@@ -1,0 +1,23 @@
+{
+  "id": "potoftea.vampire-hunger",
+  "type": "listing",
+  "title": "Vampire Hunger",
+  "tagline": "A Skyrim mod that tracks vampire hunger states and integrates with SkyrimNet for AI-driven character interactions.",
+  "description": "Features\n* Dynamic vampire hunger system with 4 distinct states\n* Real-time hunger tracking for vampire NPCs (Serana, Harkon, Valerica, and others)\n* SkyrimNet integration for AI-aware character behaviors\n* ModEvent support for cross-mod compatibility\n* MCM configuration support\nHunger States\nThe mod tracks vampire hunger on a scale of 0-100 with four distinct states:\n\n* Satiated (0-25): Recently fed, acts normally\n* Thirsty (26-75): Beginning to feel the urge, functions normally but may complain\n* Starving (76-90): Visibly weak, may seek out sleeping NPCs to feed\n* Feral (91-100): Lost control, ignores social norms, may attack on sight",
+  "author": "potoftea",
+  "tags": [
+    "vampire",
+    "prompt",
+    "hunger"
+  ],
+  "nsfw": false,
+  "icon": "dialogue",
+  "mods": [],
+  "languages": [
+    "en"
+  ],
+  "image": "cover.png",
+  "external_url": "https://github.com/blackpotoftea/SkyrimNet_Hunger/releases/download/1.5.0/SkyrimNet_Hunger.zip",
+  "version": "1.5.0",
+  "changelog": "Initial release"
+}
