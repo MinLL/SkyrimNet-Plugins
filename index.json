@@ -1,8 +1,65 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-03T04:37:29.084Z",
-  "stats_as_of": "2026-10-03T04:37:28.952Z",
+  "generated_at": "2026-10-03T05:03:08.840Z",
+  "stats_as_of": "2026-10-03T05:03:08.782Z",
   "plugins": [
+    {
+      "id": "plugins/oldcustard/bioforge",
+      "plugin_id": "oldcustard.bioforge",
+      "type": "listing",
+      "title": "BioForge",
+      "tagline": "Bulk-generate SkyrimNet bios for every NPC in a location that doesn't have one, reviewed before anything is saved.",
+      "author": "oldcustard",
+      "tags": [
+        "bios",
+        "characters",
+        "generation",
+        "tools",
+        "npcs"
+      ],
+      "nsfw": false,
+      "icon": "brain",
+      "mods": [],
+      "first_published": "2026-09-28T09:03:26Z",
+      "last_updated": "2026-10-03T05:02:47Z",
+      "version": "1.0.2",
+      "history": [
+        {
+          "version": "1.0.2",
+          "commit": "4246a2415631b3fc7c1f172b314bd32718851176",
+          "date": "2026-10-03T05:02:47Z",
+          "changelog": "Adds the option to run BioForge on its own LLM.\r\n\r\n## ✨ New\r\n- 🧠 **A separate model for BioForge** ([#4](https://github.com/Oldcustard/BioForge/issues/4)). BioForge now adds a `bioforge` model to SkyrimNet's LLM settings, and a new setting, **Use BioForge's Own LLM**, switches bios, the relationship refine pass and regional digests over to it. It's **off by default**: BioForge keeps using your Character Profile Generation model, exactly as before.\r\n\r\n## ⚠️ Before you turn it on\r\nSet up the `bioforge` model in SkyrimNet's LLM settings first, and raise its **max tokens to about 10,000**. Until it's configured it inherits SkyrimNet's dialogue defaults (4,096 tokens), which cut bios short and make them fail with missing sections."
+        },
+        {
+          "version": "1.0.1",
+          "commit": "68130bed1b92bdc6f27f3fb5854d7d61f103fb76",
+          "date": "2026-09-29T08:26:07Z",
+          "changelog": "Bug-fix release for non-English installs and creature scanning.\r\n\r\n## 🐛 Fixes\r\n- 🌍 **NPCs with non-English names are detected correctly** ([#1](https://github.com/Oldcustard/BioForge/issues/1)). Bios for NPCs with Cyrillic (or any non-ASCII) names were never matched to their file, so those NPCs kept showing as needing a bio even when one existed.\r\n- 🏘️ **Regional digests handle non-English names**: those characters are now ranked properly instead of sinking to the bottom, and settlements with non-English names no longer share one cached digest.\r\n- 🐴 **Creatures are no longer scanned.** Named horses such as Shadowmere or a mod's stable horses were being offered bios; anything whose race isn't a person's is now skipped."
+        },
+        {
+          "version": "1.0.0",
+          "commit": "20b8a53d9c4a1c2e76af6217f856f18151841503",
+          "date": "2026-09-28T09:03:26Z",
+          "changelog": "Initial release"
+        }
+      ],
+      "external_url": "https://github.com/Oldcustard/BioForge",
+      "languages": [
+        "en"
+      ],
+      "language": "en",
+      "image": {
+        "file": "cover.png",
+        "sha": "302f6684193c94f7c6cd5cfbdfdf537eff6ddcb6",
+        "commit": "20b8a53d9c4a1c2e76af6217f856f18151841503",
+        "width": 1671,
+        "height": 941
+      },
+      "stats": {
+        "downloads": 40,
+        "endorsements": 1
+      }
+    },
     {
       "id": "plugins/nosimo/nos-inworld-2-audio-tags",
       "plugin_id": "nosimo.nos-inworld-2-audio-tags",
@@ -58,7 +115,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 4,
+        "downloads": 7,
         "endorsements": 0
       }
     },
@@ -102,7 +159,7 @@
         "height": 936
       },
       "stats": {
-        "downloads": 0,
+        "downloads": 1,
         "endorsements": 0
       }
     },
@@ -458,57 +515,6 @@
       "stats": {
         "downloads": 56,
         "endorsements": 3
-      }
-    },
-    {
-      "id": "plugins/oldcustard/bioforge",
-      "plugin_id": "oldcustard.bioforge",
-      "type": "listing",
-      "title": "BioForge",
-      "tagline": "Bulk-generate SkyrimNet bios for every NPC in a location that doesn't have one, reviewed before anything is saved.",
-      "author": "oldcustard",
-      "tags": [
-        "bios",
-        "characters",
-        "generation",
-        "tools",
-        "npcs"
-      ],
-      "nsfw": false,
-      "icon": "brain",
-      "mods": [],
-      "first_published": "2026-09-28T09:03:26Z",
-      "last_updated": "2026-09-29T08:26:07Z",
-      "version": "1.0.1",
-      "history": [
-        {
-          "version": "1.0.1",
-          "commit": "68130bed1b92bdc6f27f3fb5854d7d61f103fb76",
-          "date": "2026-09-29T08:26:07Z",
-          "changelog": "Bug-fix release for non-English installs and creature scanning.\r\n\r\n## 🐛 Fixes\r\n- 🌍 **NPCs with non-English names are detected correctly** ([#1](https://github.com/Oldcustard/BioForge/issues/1)). Bios for NPCs with Cyrillic (or any non-ASCII) names were never matched to their file, so those NPCs kept showing as needing a bio even when one existed.\r\n- 🏘️ **Regional digests handle non-English names**: those characters are now ranked properly instead of sinking to the bottom, and settlements with non-English names no longer share one cached digest.\r\n- 🐴 **Creatures are no longer scanned.** Named horses such as Shadowmere or a mod's stable horses were being offered bios; anything whose race isn't a person's is now skipped."
-        },
-        {
-          "version": "1.0.0",
-          "commit": "20b8a53d9c4a1c2e76af6217f856f18151841503",
-          "date": "2026-09-28T09:03:26Z",
-          "changelog": "Initial release"
-        }
-      ],
-      "external_url": "https://github.com/Oldcustard/BioForge",
-      "languages": [
-        "en"
-      ],
-      "language": "en",
-      "image": {
-        "file": "cover.png",
-        "sha": "302f6684193c94f7c6cd5cfbdfdf537eff6ddcb6",
-        "commit": "20b8a53d9c4a1c2e76af6217f856f18151841503",
-        "width": 1671,
-        "height": 941
-      },
-      "stats": {
-        "downloads": 40,
-        "endorsements": 1
       }
     },
     {
@@ -1853,7 +1859,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 801,
+        "downloads": 802,
         "endorsements": 2
       }
     },
@@ -2078,7 +2084,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 428,
+        "downloads": 429,
         "endorsements": 0
       }
     },
@@ -2348,7 +2354,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 163,
+        "downloads": 164,
         "endorsements": 0
       }
     },
@@ -2843,7 +2849,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 374,
+        "downloads": 375,
         "endorsements": 0
       }
     },
@@ -3473,7 +3479,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 24,
+        "downloads": 25,
         "endorsements": 0
       }
     },
@@ -3608,7 +3614,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 98,
+        "downloads": 99,
         "endorsements": 0
       }
     },
@@ -3743,7 +3749,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 175,
+        "downloads": 176,
         "endorsements": 0
       }
     },
@@ -5603,7 +5609,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 113,
+        "downloads": 114,
         "endorsements": 0
       }
     },
@@ -5873,7 +5879,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 62,
+        "downloads": 63,
         "endorsements": 0
       }
     },
@@ -6053,7 +6059,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 149,
+        "downloads": 150,
         "endorsements": 0
       }
     },
@@ -6143,7 +6149,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 356,
+        "downloads": 357,
         "endorsements": 0
       }
     },
@@ -7268,7 +7274,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 507,
+        "downloads": 508,
         "endorsements": 1
       }
     },
@@ -8078,7 +8084,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 287,
+        "downloads": 288,
         "endorsements": 0
       }
     },
@@ -8843,7 +8849,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 102,
+        "downloads": 103,
         "endorsements": 0
       }
     },
@@ -9698,7 +9704,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 89,
+        "downloads": 90,
         "endorsements": 0
       }
     },
@@ -10643,7 +10649,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 24,
+        "downloads": 25,
         "endorsements": 0
       }
     },
@@ -10688,7 +10694,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 634,
+        "downloads": 635,
         "endorsements": 1
       }
     },
@@ -10958,7 +10964,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 150,
+        "downloads": 151,
         "endorsements": 0
       }
     },
