@@ -1,8 +1,59 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-03T08:35:26.382Z",
-  "stats_as_of": "2026-10-03T08:35:26.236Z",
+  "generated_at": "2026-10-03T09:03:58.726Z",
+  "stats_as_of": "2026-10-03T09:03:58.645Z",
   "plugins": [
+    {
+      "id": "plugins/johnsonjoe1/skyrimnet-messageless-immersion",
+      "plugin_id": "johnsonjoe1.skyrimnet-messageless-immersion",
+      "type": "listing",
+      "title": "SkyrimNet Messageless Immersion",
+      "tagline": "Immersive player thoughts for game events, status changes, and supported mods.",
+      "author": "johnsonjoe1",
+      "tags": [
+        "immersion",
+        "player-thoughts",
+        "triggers",
+        "SKSE"
+      ],
+      "nsfw": true,
+      "icon": "package",
+      "mods": [],
+      "first_published": "2026-09-12T06:46:39-08:00",
+      "last_updated": "2026-10-03T09:03:35Z",
+      "version": "0.7.1",
+      "history": [
+        {
+          "version": "0.7.1",
+          "commit": "f4a10e99b51c62d97ea335df46b48f6fab952f59",
+          "date": "2026-10-03T09:03:35Z",
+          "changelog": "Added constant whining feature, once hunger, thurst, fatigue or diseases have reached their worst stage.  Lots of fixes and smaller features, see full changelog on the GitHub."
+        },
+        {
+          "version": "0.7.0",
+          "commit": "19d2f569fbb498f3b6f4b0d7cd01435a2afdae04",
+          "date": "2026-09-26T07:56:06Z",
+          "changelog": "This version migrated to CommonLibSSE-NG 0.9.1, which *should* bring compatibility with SkyrimVR as well as Skyrim 1.7.104 (in addition of course to support for Skyrim 1.6.1170, the main development version).  The other versions are *UNTESTED* thought, so feedback on that is very wellcome."
+        },
+        {
+          "version": "0.6.12",
+          "commit": "28a6bbfc2ca32585d9cdb2fe18dd716de27bf962",
+          "date": "2026-09-12T14:51:27Z"
+        }
+      ],
+      "external_url": "https://github.com/johnsonjoe1/SkyrimNetMessagelessImmersion/releases",
+      "image": {
+        "file": "cover.png",
+        "sha": "f455036ec04abf96dfe9dc982a8f56be8ed4c2e7",
+        "commit": "19d2f569fbb498f3b6f4b0d7cd01435a2afdae04",
+        "width": 1672,
+        "height": 941
+      },
+      "stats": {
+        "downloads": 26,
+        "endorsements": 0
+      }
+    },
     {
       "id": "plugins/oldcustard/bioforge",
       "plugin_id": "oldcustard.bioforge",
@@ -115,7 +166,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 13,
+        "downloads": 16,
         "endorsements": 0
       }
     },
@@ -272,7 +323,7 @@
         "height": 928
       },
       "stats": {
-        "downloads": 27,
+        "downloads": 28,
         "endorsements": 1
       }
     },
@@ -323,7 +374,7 @@
         "height": 864
       },
       "stats": {
-        "downloads": 82,
+        "downloads": 83,
         "endorsements": 4
       }
     },
@@ -463,7 +514,7 @@
         "height": 1080
       },
       "stats": {
-        "downloads": 11,
+        "downloads": 12,
         "endorsements": 0
       }
     },
@@ -714,7 +765,7 @@
         "height": 720
       },
       "stats": {
-        "downloads": 20,
+        "downloads": 21,
         "endorsements": 0
       }
     },
@@ -834,7 +885,7 @@
         "height": 1080
       },
       "stats": {
-        "downloads": 56,
+        "downloads": 57,
         "endorsements": 3
       }
     },
@@ -1020,51 +1071,6 @@
       }
     },
     {
-      "id": "plugins/johnsonjoe1/skyrimnet-messageless-immersion",
-      "plugin_id": "johnsonjoe1.skyrimnet-messageless-immersion",
-      "type": "listing",
-      "title": "SkyrimNet Messageless Immersion",
-      "tagline": "Immersive player thoughts for game events, status changes, and supported mods.",
-      "author": "johnsonjoe1",
-      "tags": [
-        "immersion",
-        "player-thoughts",
-        "triggers",
-        "SKSE"
-      ],
-      "nsfw": true,
-      "icon": "package",
-      "mods": [],
-      "first_published": "2026-09-12T06:46:39-08:00",
-      "last_updated": "2026-09-26T07:56:06Z",
-      "version": "0.7.0",
-      "history": [
-        {
-          "version": "0.7.0",
-          "commit": "19d2f569fbb498f3b6f4b0d7cd01435a2afdae04",
-          "date": "2026-09-26T07:56:06Z",
-          "changelog": "This version migrated to CommonLibSSE-NG 0.9.1, which *should* bring compatibility with SkyrimVR as well as Skyrim 1.7.104 (in addition of course to support for Skyrim 1.6.1170, the main development version).  The other versions are *UNTESTED* thought, so feedback on that is very wellcome."
-        },
-        {
-          "version": "0.6.12",
-          "commit": "28a6bbfc2ca32585d9cdb2fe18dd716de27bf962",
-          "date": "2026-09-12T14:51:27Z"
-        }
-      ],
-      "external_url": "https://github.com/johnsonjoe1/SkyrimNetMessagelessImmersion/releases",
-      "image": {
-        "file": "cover.png",
-        "sha": "f455036ec04abf96dfe9dc982a8f56be8ed4c2e7",
-        "commit": "19d2f569fbb498f3b6f4b0d7cd01435a2afdae04",
-        "width": 1672,
-        "height": 941
-      },
-      "stats": {
-        "downloads": 26,
-        "endorsements": 0
-      }
-    },
-    {
       "id": "plugins/tetherball88/m-a-r-a-s-marry-anyone-rule-all-skyrim",
       "plugin_id": "tetherball88.m-a-r-a-s-marry-anyone-rule-all-skyrim",
       "type": "listing",
@@ -1100,7 +1106,7 @@
         "height": 1152
       },
       "stats": {
-        "downloads": 30,
+        "downloads": 31,
         "endorsements": 2
       }
     },
@@ -1373,7 +1379,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 43,
+        "downloads": 44,
         "endorsements": 2
       }
     },
@@ -1472,7 +1478,7 @@
       ],
       "external_url": "https://github.com/Telord72612/SkyrimNet-Devious-Awareness-Base/releases/tag/v1.0.0",
       "stats": {
-        "downloads": 38,
+        "downloads": 39,
         "endorsements": 0
       }
     },
@@ -1531,7 +1537,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 172,
+        "downloads": 173,
         "endorsements": 3
       }
     },
@@ -1724,7 +1730,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 438,
+        "downloads": 440,
         "endorsements": 1
       }
     },
@@ -1859,7 +1865,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 808,
+        "downloads": 810,
         "endorsements": 2
       }
     },
@@ -2084,7 +2090,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 435,
+        "downloads": 437,
         "endorsements": 0
       }
     },
@@ -2849,7 +2855,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 381,
+        "downloads": 382,
         "endorsements": 0
       }
     },
@@ -3569,7 +3575,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 484,
+        "downloads": 485,
         "endorsements": 1
       }
     },
@@ -3749,7 +3755,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 179,
+        "downloads": 181,
         "endorsements": 0
       }
     },
@@ -5384,7 +5390,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 25,
+        "downloads": 26,
         "endorsements": 0
       }
     },
@@ -5609,7 +5615,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 117,
+        "downloads": 118,
         "endorsements": 0
       }
     },
@@ -5924,7 +5930,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 8,
+        "downloads": 9,
         "endorsements": 0
       }
     },
@@ -6059,7 +6065,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 150,
+        "downloads": 151,
         "endorsements": 0
       }
     },
@@ -6149,7 +6155,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 362,
+        "downloads": 364,
         "endorsements": 0
       }
     },
@@ -7274,7 +7280,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 515,
+        "downloads": 518,
         "endorsements": 1
       }
     },
@@ -8084,7 +8090,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 290,
+        "downloads": 292,
         "endorsements": 0
       }
     },
@@ -8849,7 +8855,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 104,
+        "downloads": 105,
         "endorsements": 0
       }
     },
@@ -9254,7 +9260,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 42,
+        "downloads": 43,
         "endorsements": 0
       }
     },
@@ -9704,7 +9710,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 90,
+        "downloads": 91,
         "endorsements": 0
       }
     },
@@ -9884,7 +9890,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 164,
+        "downloads": 165,
         "endorsements": 0
       }
     },
@@ -10694,7 +10700,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 640,
+        "downloads": 644,
         "endorsements": 1
       }
     },
