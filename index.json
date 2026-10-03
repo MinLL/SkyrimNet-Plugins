@@ -1,8 +1,52 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-03T01:04:22.309Z",
-  "stats_as_of": "2026-10-03T01:00:07.904Z",
+  "generated_at": "2026-10-03T01:25:44.269Z",
+  "stats_as_of": "2026-10-03T01:25:44.142Z",
   "plugins": [
+    {
+      "id": "plugins/phospheneoverdrive/playersignals-for-skyrimnet",
+      "plugin_id": "phospheneoverdrive.playersignals-for-skyrimnet",
+      "type": "listing",
+      "title": "PlayerSignals for SkyrimNet",
+      "tagline": "A little less talking, a little more nodding.",
+      "author": "phospheneoverdrive",
+      "tags": [
+        "roleplay",
+        "communication",
+        "immersion",
+        "utility"
+      ],
+      "nsfw": false,
+      "icon": "package",
+      "mods": [],
+      "first_published": "2026-10-03T01:25:26Z",
+      "last_updated": "2026-10-03T01:25:26Z",
+      "version": "0.1.0",
+      "history": [
+        {
+          "version": "0.1.0",
+          "commit": "bf7be0889eb259b8ea57998fe209c965278d7eb5",
+          "date": "2026-10-03T01:25:26Z",
+          "changelog": "Initial limited-test release with a UIExtensions wheel, JSON layout and gesture customization, player-originator targeted/group narration, and an optional intent-authoring helper. In-game testing confirmed the player as originator for all eight gestures in the reviewed session; seven received NPC responses and the final no-audience gesture correctly produced none. A limited removal/cleaned-save load test is documented; comprehensive save compatibility and long-term removal safety remain unverified."
+        }
+      ],
+      "external_url": "https://github.com/Gerkinfeltser/PlayerSignals/releases/latest",
+      "languages": [
+        "en"
+      ],
+      "language": "en",
+      "image": {
+        "file": "cover.png",
+        "sha": "63b5da1958b99922294aade7de538b0c46e48da7",
+        "commit": "bf7be0889eb259b8ea57998fe209c965278d7eb5",
+        "width": 1664,
+        "height": 936
+      },
+      "stats": {
+        "downloads": 0,
+        "endorsements": 0
+      }
+    },
     {
       "id": "plugins/nosimo/nos-inworld-2-audio-tags",
       "plugin_id": "nosimo.nos-inworld-2-audio-tags",
@@ -45,7 +89,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 0,
+        "downloads": 2,
         "endorsements": 0
       }
     },
@@ -93,7 +137,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 241,
+        "downloads": 243,
         "endorsements": 18
       }
     },
@@ -1359,7 +1403,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 76,
+        "downloads": 77,
         "endorsements": 6
       }
     },
@@ -1661,7 +1705,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 428,
+        "downloads": 430,
         "endorsements": 1
       }
     },
@@ -1706,7 +1750,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 218,
+        "downloads": 219,
         "endorsements": 0
       }
     },
@@ -1796,7 +1840,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 768,
+        "downloads": 780,
         "endorsements": 2
       }
     },
@@ -1841,7 +1885,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 11,
+        "downloads": 12,
         "endorsements": 0
       }
     },
@@ -2021,7 +2065,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 422,
+        "downloads": 423,
         "endorsements": 0
       }
     },
@@ -2786,7 +2830,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 367,
+        "downloads": 369,
         "endorsements": 0
       }
     },
@@ -3146,7 +3190,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 336,
+        "downloads": 337,
         "endorsements": 1
       }
     },
@@ -3191,7 +3235,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 21,
+        "downloads": 22,
         "endorsements": 0
       }
     },
@@ -3506,7 +3550,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 470,
+        "downloads": 471,
         "endorsements": 1
       }
     },
@@ -5636,7 +5680,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 14,
+        "downloads": 15,
         "endorsements": 0
       }
     },
@@ -6176,7 +6220,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 495,
+        "downloads": 497,
         "endorsements": 1
       }
     },
@@ -7076,7 +7120,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 24,
+        "downloads": 25,
         "endorsements": 0
       }
     },
@@ -7211,7 +7255,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 501,
+        "downloads": 502,
         "endorsements": 1
       }
     },
@@ -7481,7 +7525,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 450,
+        "downloads": 451,
         "endorsements": 2
       }
     },
@@ -7661,7 +7705,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1,
+        "downloads": 2,
         "endorsements": 0
       }
     },
@@ -7796,7 +7840,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 33,
+        "downloads": 34,
         "endorsements": 0
       }
     },
@@ -8021,7 +8065,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 285,
+        "downloads": 286,
         "endorsements": 0
       }
     },
@@ -8066,7 +8110,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 181,
+        "downloads": 182,
         "endorsements": 0
       }
     },
@@ -9191,7 +9235,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 40,
+        "downloads": 41,
         "endorsements": 0
       }
     },
@@ -9821,7 +9865,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 156,
+        "downloads": 157,
         "endorsements": 0
       }
     },
@@ -10091,7 +10135,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 244,
+        "downloads": 245,
         "endorsements": 1
       }
     },
@@ -10631,7 +10675,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 624,
+        "downloads": 626,
         "endorsements": 1
       }
     },
@@ -11261,7 +11305,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 12,
+        "downloads": 13,
         "endorsements": 0
       }
     }
