@@ -20,6 +20,6 @@
   ],
   "image": "cover.png",
   "external_url": "https://github.com/Oldcustard/BioForge",
-  "version": "1.0.1",
-  "changelog": "Bug-fix release for non-English installs and creature scanning.\r\n\r\n## 🐛 Fixes\r\n- 🌍 **NPCs with non-English names are detected correctly** ([#1](https://github.com/Oldcustard/BioForge/issues/1)). Bios for NPCs with Cyrillic (or any non-ASCII) names were never matched to their file, so those NPCs kept showing as needing a bio even when one existed.\r\n- 🏘️ **Regional digests handle non-English names**: those characters are now ranked properly instead of sinking to the bottom, and settlements with non-English names no longer share one cached digest.\r\n- 🐴 **Creatures are no longer scanned.** Named horses such as Shadowmere or a mod's stable horses were being offered bios; anything whose race isn't a person's is now skipped."
+  "version": "1.0.2",
+  "changelog": "Adds the option to run BioForge on its own LLM.\r\n\r\n## ✨ New\r\n- 🧠 **A separate model for BioForge** ([#4](https://github.com/Oldcustard/BioForge/issues/4)). BioForge now adds a `bioforge` model to SkyrimNet's LLM settings, and a new setting, **Use BioForge's Own LLM**, switches bios, the relationship refine pass and regional digests over to it. It's **off by default**: BioForge keeps using your Character Profile Generation model, exactly as before.\r\n\r\n## ⚠️ Before you turn it on\r\nSet up the `bioforge` model in SkyrimNet's LLM settings first, and raise its **max tokens to about 10,000**. Until it's configured it inherits SkyrimNet's dialogue defaults (4,096 tokens), which cut bios short and make them fail with missing sections."
 }
