@@ -1,8 +1,62 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-04T01:15:01.646Z",
-  "stats_as_of": "2026-10-04T01:15:01.490Z",
+  "generated_at": "2026-10-04T01:35:46.312Z",
+  "stats_as_of": "2026-10-04T01:35:46.212Z",
   "plugins": [
+    {
+      "id": "plugins/severause/severactions",
+      "plugin_id": "severause.severactions",
+      "type": "listing",
+      "title": "SeverActions ",
+      "tagline": "An action, prompt, and behavior pack for SkyrimNet",
+      "author": "severause",
+      "tags": [],
+      "nsfw": false,
+      "icon": "scroll",
+      "mods": [],
+      "first_published": "2026-09-14T10:26:17Z",
+      "last_updated": "2026-10-04T01:35:24Z",
+      "version": "4.1.0",
+      "history": [
+        {
+          "version": "4.1.0",
+          "commit": "5738aa5f161c80a73a312d49fadca75880753ad9",
+          "date": "2026-10-04T01:35:24Z",
+          "changelog": "## SeverActions 4.1.0\nMagelight UI 0.30.5 is included in the SeverActions download and is also available on its own.\n\n**SeverActions 4.1.0**\n- **Wait and Follow work on the first press.** Wait All and Follow All finish in a second or two instead of seeming to do nothing. Each command now undoes only what SeverActions actually put on a follower, which helps custom followers most.\n- **Faster loading.** On a long-running save, SeverActions' startup after a load went from about a minute to about 12 seconds, and commands given right after a load no longer wait 20+ seconds.\n- Companions are no longer pushed back onto their follow package every few seconds.\n- Mouse and gamepad buttons (M3, M4, M5…) work again as the menu and quick wheel keys, and Settings > Hotkeys can capture them.\n- Tracking mode: casual follow works again for NPCs no follower framework leads.\n- The Companions page now shows the framework mode the game is actually using.\n- If Magelight can't draw, the menu and wheel keys now tell you so (and point to Magelight.log) instead of doing nothing.\n- Outfits mirror on CPU rendering: the Live Stage takes over instead of leaving a hole in the menu. In VR it's a dark box.\n\n**Magelight UI 0.30.5** (includes 0.30.4)\n- Menus no longer open invisible with DLSS or frame generation behind NVIDIA Streamline (Community Shaders, Open Shaders).\n- Community Shaders frame generation: the UI shows again.\n- NVIDIA Smooth Motion: opening a menu no longer freezes the game.\n- A lost graphics device turns the overlay off instead of leaving the game paused.\n- A new, sharper cursor, and no more double cursor.\n\n**Installing:** install over 4.0.x with Replace. Saves load as they are. Still needs SkyrimNet 0.25 or newer."
+        },
+        {
+          "version": "4.0.2",
+          "commit": "2cc98ac524e8da504068d8822f40f7d2c12b5b27",
+          "date": "2026-10-02T23:24:33Z",
+          "changelog": "## SeverActions 4.0.2 — Hotfix\n\nUpdates the bundled **Magelight UI to 0.30.3**, which fixes three problems in 4.0.1:\n\n**Fixed: crash at startup with Community Shaders**, or a few minutes into play with ENB or an upscaler (`d3d11.dll` in the crash log)\n**Fixed: crash at startup with ENB** that left no crash log\n**Fixed: menu cut off** on screens under ~1067 pixels tall (1366×768, 1600×900)\n\nIf you made a `Magelight.json` to work around the ENB crash, you can delete it now.\n\n**Installing:** install over 4.0.1 and choose **Replace**. Your saves load as they are."
+        },
+        {
+          "version": "4.0.1",
+          "commit": "274859a71a0cc908296244bb9e627151de0e859a",
+          "date": "2026-10-02T15:26:46Z",
+          "changelog": "4.0 Release - Several fixes and additions, please see the announcement channel for the full changelog"
+        },
+        {
+          "version": "3.9.14",
+          "commit": "cfe54b268475b645084a2b7450af4c26e9c06f90",
+          "date": "2026-09-27T16:10:44Z",
+          "changelog": "Added a cover image"
+        }
+      ],
+      "external_url": "https://github.com/Severause/SeverActions/releases/tag/v4.0.1",
+      "image": {
+        "file": "cover.png",
+        "sha": "c37c0b8a5ca4729ed3ed78776124c54ac32d326d",
+        "commit": "cfe54b268475b645084a2b7450af4c26e9c06f90",
+        "width": 2048,
+        "height": 1146
+      },
+      "curated": true,
+      "stats": {
+        "downloads": 268,
+        "endorsements": 19
+      }
+    },
     {
       "id": "plugins/nosimo/nos-inworld-2-audio-tags",
       "plugin_id": "nosimo.nos-inworld-2-audio-tags",
@@ -67,7 +121,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 46,
+        "downloads": 47,
         "endorsements": 1
       }
     },
@@ -261,7 +315,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 32,
+        "downloads": 33,
         "endorsements": 0
       }
     },
@@ -364,54 +418,6 @@
       "stats": {
         "downloads": 10,
         "endorsements": 0
-      }
-    },
-    {
-      "id": "plugins/severause/severactions",
-      "plugin_id": "severause.severactions",
-      "type": "listing",
-      "title": "SeverActions ",
-      "tagline": "An action, prompt, and behavior pack for SkyrimNet",
-      "author": "severause",
-      "tags": [],
-      "nsfw": false,
-      "icon": "scroll",
-      "mods": [],
-      "first_published": "2026-09-14T10:26:17Z",
-      "last_updated": "2026-10-02T23:24:33Z",
-      "version": "4.0.2",
-      "history": [
-        {
-          "version": "4.0.2",
-          "commit": "2cc98ac524e8da504068d8822f40f7d2c12b5b27",
-          "date": "2026-10-02T23:24:33Z",
-          "changelog": "## SeverActions 4.0.2 — Hotfix\n\nUpdates the bundled **Magelight UI to 0.30.3**, which fixes three problems in 4.0.1:\n\n**Fixed: crash at startup with Community Shaders**, or a few minutes into play with ENB or an upscaler (`d3d11.dll` in the crash log)\n**Fixed: crash at startup with ENB** that left no crash log\n**Fixed: menu cut off** on screens under ~1067 pixels tall (1366×768, 1600×900)\n\nIf you made a `Magelight.json` to work around the ENB crash, you can delete it now.\n\n**Installing:** install over 4.0.1 and choose **Replace**. Your saves load as they are."
-        },
-        {
-          "version": "4.0.1",
-          "commit": "274859a71a0cc908296244bb9e627151de0e859a",
-          "date": "2026-10-02T15:26:46Z",
-          "changelog": "4.0 Release - Several fixes and additions, please see the announcement channel for the full changelog"
-        },
-        {
-          "version": "3.9.14",
-          "commit": "cfe54b268475b645084a2b7450af4c26e9c06f90",
-          "date": "2026-09-27T16:10:44Z",
-          "changelog": "Added a cover image"
-        }
-      ],
-      "external_url": "https://github.com/Severause/SeverActions/releases/tag/v4.0.1",
-      "image": {
-        "file": "cover.png",
-        "sha": "c37c0b8a5ca4729ed3ed78776124c54ac32d326d",
-        "commit": "cfe54b268475b645084a2b7450af4c26e9c06f90",
-        "width": 2048,
-        "height": 1146
-      },
-      "curated": true,
-      "stats": {
-        "downloads": 268,
-        "endorsements": 19
       }
     },
     {
@@ -746,7 +752,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 123,
+        "downloads": 124,
         "endorsements": 0
       }
     },
@@ -948,7 +954,7 @@
         "height": 900
       },
       "stats": {
-        "downloads": 79,
+        "downloads": 80,
         "endorsements": 4
       }
     },
@@ -1750,7 +1756,7 @@
       ],
       "external_url": "https://github.com/GoodProvider/SkyrimNet_Leashed/releases/latest",
       "stats": {
-        "downloads": 30,
+        "downloads": 31,
         "endorsements": 0
       }
     },
@@ -2197,7 +2203,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 489,
+        "downloads": 490,
         "endorsements": 0
       }
     },
@@ -2287,7 +2293,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 10,
+        "downloads": 11,
         "endorsements": 0
       }
     },
@@ -2332,7 +2338,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 12,
+        "downloads": 13,
         "endorsements": 0
       }
     },
@@ -2377,7 +2383,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 16,
+        "downloads": 17,
         "endorsements": 0
       }
     },
