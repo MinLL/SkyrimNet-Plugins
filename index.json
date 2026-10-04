@@ -1,8 +1,45 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-04T19:28:05.490Z",
-  "stats_as_of": "2026-10-04T19:28:05.399Z",
+  "generated_at": "2026-10-04T20:09:29.774Z",
+  "stats_as_of": "2026-10-04T20:09:29.706Z",
   "plugins": [
+    {
+      "id": "plugins/goodprovider/skyrimnet-sexlab",
+      "plugin_id": "goodprovider.skyrimnet-sexlab",
+      "type": "listing",
+      "title": "SkyrimNet SexLab",
+      "tagline": "Supports SexLab animations",
+      "author": "goodprovider",
+      "tags": [
+        "sex",
+        "nswf",
+        "sexlab",
+        "actions"
+      ],
+      "nsfw": true,
+      "icon": "heart",
+      "mods": [],
+      "first_published": "2026-09-13T21:55:00Z",
+      "last_updated": "2026-10-04T20:09:05Z",
+      "version": "0.35.0",
+      "history": [
+        {
+          "version": "0.35.0",
+          "commit": "9ec47a3c5978f4603d4301819ad8895aa6f9a23f",
+          "date": "2026-10-04T20:09:05Z",
+          "changelog": "- **Prisma Hotkey**: new Prisma hotkey overlay with improved ability to animation and control a scene\n- **Scene hotkeys**: when a scene is active the user will be able to effect it using the num lock hotkeys. You can change this mapping in the Plugin seetings. \n    - **hotkey overlay**: there is an optional hotkey overlay which show the current hotkey mapping during a scene\n    - **NPCs can play the arousal mini-game** (when the mini-game is on): they can arouse or calm someone, and an aggressor can allow or deny orgasm. Narration now says how close someone was (\"Though aroused…\", \"Although on the edge…\").\n- **orgasm minigame**: there is now an optional mini-game that allows the user to delay or encourage other actors from orgasming.\n- **Style sets animation speed**: gentle, normal and forceful play slower or faster. Change it with slower / faster, the WebUI style control, or let an NPC change it (new LLM action). The old style hotkey is gone.\n- **Better scene endings**: enjoyment rises more slowly, each stage change gives a small boost, and pausing pauses enjoyment. The lead needs 1 orgasm if male or 1-2 if female (adjustable **Scene ending** settings), then the scene moves to the last stage and waits there until the orgasm dialogue has played. Before the last stage, anyone who hasn't come gets one chance based on how close they are, and their climax is narrated together with the spoken reaction.\n- **Moans follow speaking modifiers**: actors moan only when pleasure or pain is set; gagged or kissing actors stay quiet.\n- **Right animations for the TargetMenu choice**: **cuddle** is now **affection** (romantic, can kiss), and the new **platonic** option is for friends and family. **Sex** picks consensual animations and **rapes** picks anything but affection, aggressive ones first. NPC cuddle / comfort actions no longer start sex animations.\n- **Tag synonyms**: searching by tag also finds its synonyms (\"doggy\" finds \"doggystyle\"), with a **synonyms** pulldown (broad, s"
+        }
+      ],
+      "external_url": "https://github.com/GoodProvider/SkyrimNet_SexLab/releases/latest",
+      "languages": [
+        "en"
+      ],
+      "language": "en",
+      "stats": {
+        "downloads": 60,
+        "endorsements": 0
+      }
+    },
     {
       "id": "plugins/jykej/revenge-and-respawn",
       "plugin_id": "jykej.revenge-and-respawn",
@@ -1712,38 +1749,6 @@
       }
     },
     {
-      "id": "plugins/goodprovider/skyrimnet-sexlab",
-      "plugin_id": "goodprovider.skyrimnet-sexlab",
-      "type": "listing",
-      "title": "SkyrimNet SexLab",
-      "tagline": "Supports SexLab animations",
-      "author": "goodprovider",
-      "tags": [
-        "sex",
-        "nswf",
-        "sexlab",
-        "actions"
-      ],
-      "nsfw": true,
-      "icon": "heart",
-      "mods": [],
-      "first_published": "2026-09-13T21:55:00Z",
-      "last_updated": "2026-09-22T15:07:37Z",
-      "version": "0.35.0",
-      "history": [
-        {
-          "version": "0.35.0",
-          "commit": "1af165806434614aba1db2183a5762a8b3a03452",
-          "date": "2026-09-22T15:07:37Z"
-        }
-      ],
-      "external_url": "https://github.com/GoodProvider/SkyrimNet_SexLab/releases/latest",
-      "stats": {
-        "downloads": 60,
-        "endorsements": 0
-      }
-    },
-    {
       "id": "plugins/goodprovider/skyrimnet-leashed",
       "plugin_id": "goodprovider.skyrimnet-leashed",
       "type": "listing",
@@ -1855,7 +1860,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 511,
+        "downloads": 514,
         "endorsements": 2
       }
     },
@@ -1990,7 +1995,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 982,
+        "downloads": 987,
         "endorsements": 2
       }
     },
@@ -2215,7 +2220,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 525,
+        "downloads": 526,
         "endorsements": 0
       }
     },
@@ -2485,7 +2490,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 193,
+        "downloads": 196,
         "endorsements": 0
       }
     },
@@ -2575,7 +2580,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 66,
+        "downloads": 67,
         "endorsements": 0
       }
     },
@@ -2755,7 +2760,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 71,
+        "downloads": 72,
         "endorsements": 0
       }
     },
@@ -2980,7 +2985,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 440,
+        "downloads": 444,
         "endorsements": 0
       }
     },
@@ -3340,7 +3345,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 417,
+        "downloads": 420,
         "endorsements": 1
       }
     },
@@ -3700,7 +3705,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 555,
+        "downloads": 558,
         "endorsements": 2
       }
     },
@@ -3925,7 +3930,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 309,
+        "downloads": 313,
         "endorsements": 0
       }
     },
@@ -4015,7 +4020,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 86,
+        "downloads": 89,
         "endorsements": 0
       }
     },
@@ -4195,7 +4200,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 12,
+        "downloads": 13,
         "endorsements": 0
       }
     },
@@ -4330,7 +4335,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 92,
+        "downloads": 93,
         "endorsements": 0
       }
     },
@@ -4735,7 +4740,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 190,
+        "downloads": 191,
         "endorsements": 0
       }
     },
@@ -4825,7 +4830,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 14,
+        "downloads": 15,
         "endorsements": 0
       }
     },
@@ -5110,7 +5115,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 12,
+        "downloads": 13,
         "endorsements": 0
       }
     },
@@ -5740,7 +5745,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 142,
+        "downloads": 143,
         "endorsements": 0
       }
     },
@@ -6190,7 +6195,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 178,
+        "downloads": 180,
         "endorsements": 0
       }
     },
@@ -6280,7 +6285,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 434,
+        "downloads": 435,
         "endorsements": 0
       }
     },
@@ -6370,7 +6375,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 598,
+        "downloads": 603,
         "endorsements": 2
       }
     },
@@ -7225,7 +7230,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 122,
+        "downloads": 123,
         "endorsements": 1
       }
     },
@@ -7405,7 +7410,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 603,
+        "downloads": 606,
         "endorsements": 1
       }
     },
@@ -7675,7 +7680,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 539,
+        "downloads": 544,
         "endorsements": 2
       }
     },
@@ -8215,7 +8220,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 344,
+        "downloads": 346,
         "endorsements": 0
       }
     },
@@ -8980,7 +8985,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 122,
+        "downloads": 123,
         "endorsements": 0
       }
     },
@@ -9025,7 +9030,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 344,
+        "downloads": 345,
         "endorsements": 0
       }
     },
@@ -9565,7 +9570,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 47,
+        "downloads": 48,
         "endorsements": 0
       }
     },
@@ -10105,7 +10110,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 80,
+        "downloads": 81,
         "endorsements": 0
       }
     },
@@ -10285,7 +10290,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 285,
+        "downloads": 287,
         "endorsements": 2
       }
     },
@@ -10330,7 +10335,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 64,
+        "downloads": 65,
         "endorsements": 0
       }
     },
@@ -10825,7 +10830,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 758,
+        "downloads": 763,
         "endorsements": 2
       }
     },
@@ -11095,7 +11100,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 179,
+        "downloads": 182,
         "endorsements": 0
       }
     },
