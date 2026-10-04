@@ -3,7 +3,7 @@
   "type": "bundle",
   "title": "Nos 2 Audio Tags",
   "tagline": "Audio tagging for inworld 2, eleven labs",
-  "description": "Expressive audio tagging for inworld 2, based on SN 25 audio tag prompt and latest inworld tagging instructions. Eleven labs support through use of inworld instructions, will look into more specifics for Eleven labs and a seperate section if needed.",
+  "description": "Expressive audio tagging for inworld 2, based on SN 25 audio tag prompt and latest inworld tagging instructions. Eleven labs support with v4 tagging guidelines",
   "author": "nosimo",
   "tags": [
     "inworld",
@@ -21,7 +21,7 @@
     "en"
   ],
   "image": "cover.png",
-  "version": "1.0.3",
-  "changelog": "Rough Eleven lab support using inworld tt2 instructions, will refine as I play with it",
+  "version": "1.1.0",
+  "changelog": "Seperate Eleven labs support based on v4 tagging guidelines",
   "min_skyrimnet_version": "0.26.0"
 }
