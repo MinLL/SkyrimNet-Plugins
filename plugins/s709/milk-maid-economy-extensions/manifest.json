@@ -1,0 +1,101 @@
+{
+  "id": "s709.milk-maid-economy-extensions",
+  "type": "listing",
+  "title": "Milk Maid Economy Extensions",
+  "tagline": "Turns Skyrim into a silly, lewd world where everyone drinks milk, milk makes everyone horny, and breasts grow to hilariously unreasonable proportions. 🥛🍈",
+  "description": "# 🥛 MME EXTENSIONS\n\n**Turns Skyrim into a silly, lewd world where everyone drinks suspiciously stimulating milk, tent poles rise across the province, and breasts grow to hilariously unreasonable proportions. 🥛⛺🍈**\n\nMilk Mod Economy Extensions expands MME with reactions, animations, dynamic events, armor interactions, OStim support, and optional AI integration.\n\nEverything is optional and adjustable through the MCM.\n\n**MME handles the milk. MME Extensions makes Skyrim notice.**\n\n## ⭐ KEY FEATURES\n\n- 🤖 NPC reactions, actions, narration, and roleplay.\n- 🥛 Milk increases production, breast size, and arousal.\n- 📦 Trapped treasure chests with Living, Parasite, and Dwemer armor.\n- 🎬 OStim support alongside the existing SexLab ecosystem.\n- 🍼 Auto self-milking and new ways to become a Milk Maid.\n- 👙 Breast-growth armor stripping and questionable wardrobe upgrades.\n- 💭 Flavor reactions, moaning, animations, and other embarrassing consequences.\n\n## 📦 TRAPPED TREASURE CHESTS\n\nOpening treasure chests can now trigger tentacle hentai.\n\nA chest may trap the player or a nearby allied female follower in Living, Parasite, or Dwemer armor, transform someone into a new Milk Maid, or force an unfortunate adventurer to drink milk and deal with the resulting... enthusiasm.\n\nSupported armor includes **C5Kev's Tentacled Terrors of Tamriel** and the **Devious Dwarven Cuirass**.\n\nThe armor may be powerful, but your breasts might start growing at an alarming rate to fuel your new partner.\n\n🔨 Blacksmiths can remove trapped Dwemer armor.\n🧪 Alchemists and Court Wizards handle Living and Parasite armor.\n\nFollowers can get caught too. **Sharing is caring!**\n\n## 🥛 SKYRIM DRINKS MILK\n\nMilk now has a Viagra-like aphrodisiac effect, increasing blood flow to intimate areas.\n\nNPCs may casually drink it in inns, bars, palaces, towns, and cities, causing suspicious tent poles to appear across Skyrim.\n\nMilk Maids can develop cravings and help themselves too.\n\nApparently milk does a body *very* good.\n\n## 🍼 AUTO SELF-MILKING\n\nLeave a completely full Milk Maid waiting long enough and she may eventually decide to solve the problem herself.\n\n## 🤖 INTEGRATION\n\n lets AI-powered NPCs notice and react to milk drinking, milking, breastfeeding, fullness, Milk Maid creation, trapped armor, restraints, and other MME events.\n\nReactions can include dialogue, actions, notifications, sounds, animations, and narration.\n\nYour companions are no longer contractually obligated to pretend nothing weird is happening.\n\n## 🎬 OStim + SEXLAB\n\nMME Extensions lets OStim take over supported animation gameplay while retaining compatibility with the existing SexLab ecosystem.\n\nPick your preferred flavor of Skyrim debauchery.\n\n## 👙 ARMOR STRIPPING\n\nNear maximum milk capacity, your clothes can start flying off!\n\nBy default, heavier armor goes first, followed by lighter armor and clothing.\n\nCustomize the chaos through the MCM.\n\n## 🐙 EROTIC ARMOR MODIFICATIONS\n\nBlacksmiths, Alchemists, and Court Wizards offer some highly questionable wardrobe upgrades.\n\n- 🔨 Blacksmiths can accommodate larger breasts and hide milking equipment beneath your armor.\n- 🧪 Alchemists and Court Wizards can fit living tentacles underneath it.\n- ⚙️ Blacksmiths can install a kinky Dwemer milking attachment inside your armor.\n- 💉 Tentacles periodically inject aphrodisiac and encourage additional milk production.\n\nYour armor is no longer merely protective equipment.\n\n**It's thirsty.**\n\n## 💭 MILK MAID REACTIONS\n\nMilk Maids occasionally have opinions about all of this.\n\n💬 Flavor notifications\n🔊 Lewd moaning\n🤖 narration and actions\n\nThey react to fullness, milking equipment, Living or Parasite armor, Dwemer machinery, restraints, and other increasingly questionable situations.\n\nSometimes the intrusive thoughts win.\n\n## 🍼 NEW MILK MAIDS\n\nDrinking milk, whether from a cup or straight from a woman's tap, can turn the player or NPCs into Milk Maids.\n\nSkyrim has discovered a very unconventional recruitment program.\n\n## 🧙 REVERSING YOUR EXCESSIVE TITS\n\nMilk Maid progression getting a little out of hand?\n\nCourt Wizards can reverse advanced progression before your armor, balance, and field of vision begin filing formal complaints.\n\n## 🥚 OMANIA INTEGRATION\n\nCompatible pregnancy events provide another route into Milk Maid life.\n\n**Get eggnant. Become a Milk Maid. Regret nothing.**\n\n## ⚙️ QUICK START & PRESETS\n\nWant the nonsense without spending an evening negotiating with MCM sliders?\n\nOptional presets provide easier progression, natural milk production, breast scaling, smoother milking, and starter equipment.\n\n**Install. Configure. Drink milk. Question your decisions later. 🥛**",
+  "author": "s709",
+  "tags": [
+    "milk mod economy",
+    "mme",
+    "sexlab",
+    "ostim",
+    "devious devices"
+  ],
+  "nsfw": true,
+  "icon": "heart",
+  "mods": [
+    {
+      "name": "HearthFires.esm",
+      "file": "hearthfires.esm",
+      "required": true
+    },
+    {
+      "name": "SexLab.esm",
+      "file": "sexlab.esm",
+      "required": true
+    },
+    {
+      "name": "Devious Devices - Assets.esm",
+      "file": "devious devices - assets.esm",
+      "required": false
+    },
+    {
+      "name": "SexLabAroused.esm",
+      "file": "sexlabaroused.esm",
+      "required": false
+    },
+    {
+      "name": "Devious Devices - Integration.esm",
+      "file": "devious devices - integration.esm",
+      "required": false
+    },
+    {
+      "name": "Devious Devices - Expansion.esm",
+      "file": "devious devices - expansion.esm",
+      "required": false
+    },
+    {
+      "name": "Devious Devices - Contraptions.esm",
+      "file": "devious devices - contraptions.esm",
+      "required": false
+    },
+    {
+      "name": "MilkModNEW.esp",
+      "file": "milkmodnew.esp",
+      "required": true
+    },
+    {
+      "name": "MilkModNEW HF.esp",
+      "file": "milkmodnew hf.esp",
+      "required": true
+    },
+    {
+      "name": "SkyrimNet.esp",
+      "file": "skyrimnet.esp",
+      "required": false
+    },
+    {
+      "name": "DwarvenDeviousCuirass.esp",
+      "file": "dwarvendeviouscuirass.esp",
+      "required": false
+    },
+    {
+      "name": "CP_Elsie.esp",
+      "file": "cp_elsie.esp",
+      "required": false
+    },
+    {
+      "name": "C5Kev's Tentacled Terrors Of Tamriel 3BA.esp",
+      "file": "c5kev's tentacled terrors of tamriel 3ba.esp",
+      "required": false
+    },
+    {
+      "name": "OMania.esp",
+      "file": "omania.esp",
+      "required": false
+    },
+    {
+      "name": "SexLab Inflation Framework.esp",
+      "file": "sexlab inflation framework.esp",
+      "required": true
+    }
+  ],
+  "languages": [
+    "en"
+  ],
+  "image": "cover.jpg",
+  "external_url": "https://www.loverslab.com/files/file/50820-mme-milk-mod-economy-extensions/",
+  "version": "1.2.1",
+  "changelog": "## 1.2.1\n\n- 🥛 Silly milk-drinking notifications now play after automatic town milk drinking.\n  - Unique NPCs are more likely to drink than generic NPCs.\n  - Less horny guards.\n\n- 🐙 New introductory stories play the first time Tentacle or Dwemer Armor is fitted by a blacksmith.\n\n- ⚙️ Added a new kinky Dwemer milking attachment that can be fitted inside your armor by a blacksmith.\n\n- 🔓 Followers no longer get permanently stuck in Devious Armor after triggering booby-trapped chests.\n\n- 👙 Added more MCM control over breast-growth armor stripping.\n  - By default, heavier armor strips before lighter armor and clothing.\n\n- 🗣️ Skyrim.Net narration prompts are now sillier."
+}
