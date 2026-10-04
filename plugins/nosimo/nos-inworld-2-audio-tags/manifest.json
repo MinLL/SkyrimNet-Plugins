@@ -1,15 +1,18 @@
 {
   "id": "nosimo.nos-inworld-2-audio-tags",
   "type": "bundle",
-  "title": "Nos Inworld 2 Audio Tags",
-  "tagline": "Audio tagging for inworld 2",
-  "description": "Expressive audio tagging for inworld 2, based on SN 25 audio tag prompt and latest inworld tagging instructions. Feeling cute now, will probably delete when the original tagging gets updated. 1 out of 1 automods now agree it is SFW.",
+  "title": "Nos 2 Audio Tags",
+  "tagline": "Audio tagging for inworld 2, eleven labs",
+  "description": "Expressive audio tagging for inworld 2, based on SN 25 audio tag prompt and latest inworld tagging instructions. Eleven labs support through use of inworld instructions, will look into more specifics for Eleven labs and a seperate section if needed.",
   "author": "nosimo",
   "tags": [
     "inworld",
     "audio",
     "tags",
-    "tt2"
+    "tt2",
+    "eleven",
+    "lab",
+    "elven"
   ],
   "nsfw": false,
   "icon": "package",
@@ -18,7 +21,7 @@
     "en"
   ],
   "image": "cover.png",
-  "version": "1.0.1",
-  "changelog": "Removed NSFW example",
-  "min_skyrimnet_version": "0.25.0"
+  "version": "1.0.3",
+  "changelog": "Rough Eleven lab support using inworld tt2 instructions, will refine as I play with it",
+  "min_skyrimnet_version": "0.26.0"
 }

@@ -8,6 +8,7 @@
   {% set tts_engine = get_actor_tts(npc.UUID) %}
   {% set useHiggsV3Tags = (tts_engine == "higgs" or tts_engine == "higgs_v3") and actor_tags_enabled %}
   {% set useInworld2Tags = (tts_engine == "inworld") and actor_tags_enabled %}
+  {% set useElevenlabTags = (tts_engine == "elevenlabs") and actor_tags_enabled %}
   {% set useChatterboxTags = tts_engine == "chatterbox" and actor_tags_enabled %}
 
   {% set chatterboxEmotionTags = ["[angry]", "[fear]", "[surprised]", "[whispering]", "[advertisement]", "[dramatic]", "[narration]", "[happy]", "[sarcastic]"] %}
@@ -16,7 +17,7 @@
 
   ## Voice Performance Tags
 
-  {% if useInworld2Tags %}
+  {% if useInworld2Tags or useElevenlabTags %}
 
     Use natural-language [steering tags] to direct HOW speech sounds. Shape the performance through **tone, pitch, emotion, volume, pace, rhythm, and vocal style**, combining several dimensions rather than merely naming an emotion. Use the character speech style as a base and let emotions color the style.
 
@@ -155,7 +156,7 @@
   {% endif %}
 
 
-  {% if not useInworld2Tags %}
+  {% if not useInworld2Tags and not useElevenlabTags %}
 
     {% if actor_tags_enabled %}
       **Dialogue{% if thought_mode %}/thoughts{% endif %}:** {{exampleTag1}} I suppose you're right. / Did you see that? {{exampleTag2}} Incredible!
