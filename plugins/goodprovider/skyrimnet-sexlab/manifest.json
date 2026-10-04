@@ -3,7 +3,7 @@
   "type": "listing",
   "title": "SkyrimNet SexLab",
   "tagline": "Supports SexLab animations",
-  "description": "Provides the actions and prompts needed to support sexlab animations in SkyrimNet.\n\n## Required\n\n- SexLab Framework (vanilla or P+; P+ Separate/enjoyment-wait scenes are capped so LLM scenes end)\n- Papyrus MessageBox\n- JContainers v4.2.13.1+\n- SkyUI SE\n- UIExtensions\n - UIExtensions_UITextEntryMenu_with_VR_support (VR)\n- Prisma UI\n - Media Keys Fix\n- Animation utilities: Pandora, XPMSSE, SL Animation Loader, Hug kill move fix for USSEP\n- Ace Animations (cuddle/spooning)",
+  "description": "Provides the actions and prompts needed to support sexlab animations in SkyrimNet.\n\n## Features\n- npc/hotkey can start sex, cuddle, punishment scenes\n- ability add scene descriptions\n- mini-sexgame\n\n## Required\n\n- SexLab Framework (vanilla or P+; P+ Separate/enjoyment-wait scenes are capped so LLM scenes end)\n- Papyrus MessageBox\n- JContainers v4.2.13.1+\n- SkyUI SE\n- UIExtensions\n - UIExtensions_UITextEntryMenu_with_VR_support (VR)\n- Prisma UI\n - Media Keys Fix\n- Animation utilities: Pandora, XPMSSE, SL Animation Loader, Hug kill move fix for USSEP\n- Ace Animations (cuddle/spooning)",
   "author": "goodprovider",
   "tags": [
     "sex",
@@ -14,6 +14,10 @@
   "nsfw": true,
   "icon": "heart",
   "mods": [],
+  "languages": [
+    "en"
+  ],
   "external_url": "https://github.com/GoodProvider/SkyrimNet_SexLab/releases/latest",
-  "version": "0.35.0"
+  "version": "0.35.0",
+  "changelog": "- **Prisma Hotkey**: new Prisma hotkey overlay with improved ability to animation and control a scene\n- **Scene hotkeys**: when a scene is active the user will be able to effect it using the num lock hotkeys. You can change this mapping in the Plugin seetings. \n    - **hotkey overlay**: there is an optional hotkey overlay which show the current hotkey mapping during a scene\n    - **NPCs can play the arousal mini-game** (when the mini-game is on): they can arouse or calm someone, and an aggressor can allow or deny orgasm. Narration now says how close someone was (\"Though aroused…\", \"Although on the edge…\").\n- **orgasm minigame**: there is now an optional mini-game that allows the user to delay or encourage other actors from orgasming.\n- **Style sets animation speed**: gentle, normal and forceful play slower or faster. Change it with slower / faster, the WebUI style control, or let an NPC change it (new LLM action). The old style hotkey is gone.\n- **Better scene endings**: enjoyment rises more slowly, each stage change gives a small boost, and pausing pauses enjoyment. The lead needs 1 orgasm if male or 1-2 if female (adjustable **Scene ending** settings), then the scene moves to the last stage and waits there until the orgasm dialogue has played. Before the last stage, anyone who hasn't come gets one chance based on how close they are, and their climax is narrated together with the spoken reaction.\n- **Moans follow speaking modifiers**: actors moan only when pleasure or pain is set; gagged or kissing actors stay quiet.\n- **Right animations for the TargetMenu choice**: **cuddle** is now **affection** (romantic, can kiss), and the new **platonic** option is for friends and family. **Sex** picks consensual animations and **rapes** picks anything but affection, aggressive ones first. NPC cuddle / comfort actions no longer start sex animations.\n- **Tag synonyms**: searching by tag also finds its synonyms (\"doggy\" finds \"doggystyle\"), with a **synonyms** pulldown (broad, s"
 }
