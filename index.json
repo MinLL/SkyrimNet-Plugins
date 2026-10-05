@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-05T11:30:37.437Z",
-  "stats_as_of": "2026-10-05T11:30:37.315Z",
+  "generated_at": "2026-10-05T12:46:01.977Z",
+  "stats_as_of": "2026-10-05T12:46:01.931Z",
   "plugins": [
     {
       "id": "plugins/urtubesrclogged/battle-summaries",
@@ -42,7 +42,7 @@
         "height": 1080
       },
       "stats": {
-        "downloads": 5,
+        "downloads": 9,
         "endorsements": 0
       }
     },
@@ -102,7 +102,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 310,
+        "downloads": 313,
         "endorsements": 21
       }
     },
@@ -365,7 +365,7 @@
         "height": 1080
       },
       "stats": {
-        "downloads": 21,
+        "downloads": 22,
         "endorsements": 0
       }
     },
@@ -497,7 +497,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 72,
+        "downloads": 73,
         "endorsements": 5
       }
     },
@@ -539,7 +539,7 @@
         "height": 1080
       },
       "stats": {
-        "downloads": 29,
+        "downloads": 32,
         "endorsements": 1
       }
     },
@@ -582,7 +582,7 @@
         "height": 1080
       },
       "stats": {
-        "downloads": 4,
+        "downloads": 5,
         "endorsements": 0
       }
     },
@@ -633,7 +633,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 35,
+        "downloads": 36,
         "endorsements": 0
       }
     },
@@ -690,7 +690,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 48,
+        "downloads": 49,
         "endorsements": 1
       }
     },
@@ -734,7 +734,7 @@
         "height": 936
       },
       "stats": {
-        "downloads": 14,
+        "downloads": 17,
         "endorsements": 0
       }
     },
@@ -850,7 +850,7 @@
         "height": 864
       },
       "stats": {
-        "downloads": 106,
+        "downloads": 107,
         "endorsements": 5
       }
     },
@@ -902,7 +902,7 @@
         "height": 893
       },
       "stats": {
-        "downloads": 8,
+        "downloads": 9,
         "endorsements": 0
       }
     },
@@ -952,7 +952,7 @@
         "height": 1152
       },
       "stats": {
-        "downloads": 71,
+        "downloads": 72,
         "endorsements": 3
       }
     },
@@ -1189,7 +1189,7 @@
       ],
       "external_url": "https://github.com/naitro2010/SkyrimNet_UDNG/releases/tag/alpha12",
       "stats": {
-        "downloads": 65,
+        "downloads": 66,
         "endorsements": 1
       }
     },
@@ -1608,7 +1608,7 @@
       ],
       "language": "en",
       "stats": {
-        "downloads": 34,
+        "downloads": 35,
         "endorsements": 1
       }
     },
@@ -1772,7 +1772,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 98,
+        "downloads": 101,
         "endorsements": 6
       }
     },
@@ -2042,7 +2042,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 532,
+        "downloads": 534,
         "endorsements": 2
       }
     },
@@ -2177,7 +2177,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1018,
+        "downloads": 1023,
         "endorsements": 2
       }
     },
@@ -2402,7 +2402,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 549,
+        "downloads": 551,
         "endorsements": 0
       }
     },
@@ -2672,7 +2672,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 204,
+        "downloads": 205,
         "endorsements": 0
       }
     },
@@ -2762,7 +2762,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 68,
+        "downloads": 69,
         "endorsements": 0
       }
     },
@@ -3167,7 +3167,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 459,
+        "downloads": 460,
         "endorsements": 0
       }
     },
@@ -3527,7 +3527,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 438,
+        "downloads": 439,
         "endorsements": 1
       }
     },
@@ -4067,7 +4067,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 216,
+        "downloads": 217,
         "endorsements": 0
       }
     },
@@ -4112,7 +4112,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 320,
+        "downloads": 321,
         "endorsements": 0
       }
     },
@@ -4967,7 +4967,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 7,
+        "downloads": 8,
         "endorsements": 0
       }
     },
@@ -6467,7 +6467,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 449,
+        "downloads": 451,
         "endorsements": 0
       }
     },
@@ -6557,7 +6557,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 623,
+        "downloads": 625,
         "endorsements": 2
       }
     },
@@ -7592,7 +7592,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 624,
+        "downloads": 627,
         "endorsements": 1
       }
     },
@@ -7862,7 +7862,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 562,
+        "downloads": 563,
         "endorsements": 2
       }
     },
@@ -8402,7 +8402,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 358,
+        "downloads": 360,
         "endorsements": 0
       }
     },
@@ -8447,7 +8447,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 223,
+        "downloads": 224,
         "endorsements": 0
       }
     },
@@ -9572,7 +9572,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 56,
+        "downloads": 57,
         "endorsements": 0
       }
     },
@@ -10022,7 +10022,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 106,
+        "downloads": 107,
         "endorsements": 0
       }
     },
@@ -10202,7 +10202,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 197,
+        "downloads": 198,
         "endorsements": 0
       }
     },
@@ -10517,7 +10517,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 69,
+        "downloads": 70,
         "endorsements": 0
       }
     },
@@ -11012,7 +11012,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 790,
+        "downloads": 793,
         "endorsements": 2
       }
     },
@@ -11282,7 +11282,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 188,
+        "downloads": 189,
         "endorsements": 0
       }
     },
