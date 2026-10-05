@@ -96,7 +96,7 @@
   {% else %}
     - Place one [natural language delivery instruction] per line at the start, when delivery clearly departs from neutral speech.
     - Start with a vocal verb (mumble/whisper/say/sound/shout/sing...) then describe the delivery—emotion, volume, pitch, pace, vocal style—not internal feelings. An instruction persists across the whole line until you replace it with a new tag.
-    - Build expessive instructions by layering these properties in a single [square bracket instruction]. Be concrete, and make the tag fit the meaning of the words.
+    - Build expressive instructions by layering these properties in a single [square bracket instruction]. Be concrete, and make the tag fit the meaning of the words.
 
   | Property | Example phrases |
   |---|---|
