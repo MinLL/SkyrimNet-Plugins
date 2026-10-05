@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-05T07:06:38.100Z",
-  "stats_as_of": "2026-10-05T07:06:37.988Z",
+  "generated_at": "2026-10-05T07:53:44.426Z",
+  "stats_as_of": "2026-10-05T07:53:44.305Z",
   "plugins": [
     {
       "id": "plugins/urtubesrclogged/battle-summaries",
@@ -6332,7 +6332,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 294,
+        "downloads": 295,
         "endorsements": 0
       }
     },
@@ -9212,7 +9212,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 357,
+        "downloads": 358,
         "endorsements": 0
       }
     },
