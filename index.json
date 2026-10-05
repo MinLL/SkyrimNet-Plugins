@@ -1,8 +1,64 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-05T22:02:47.985Z",
-  "stats_as_of": "2026-10-05T22:02:47.919Z",
+  "generated_at": "2026-10-05T22:09:45.831Z",
+  "stats_as_of": "2026-10-05T22:09:45.707Z",
   "plugins": [
+    {
+      "id": "plugins/tetherball88/ostimnet",
+      "plugin_id": "tetherball88.ostimnet",
+      "type": "listing",
+      "title": "OStimNet",
+      "tagline": "Intimate encounter AI framework integration for OStim and SkyrimNet.",
+      "author": "tetherball88",
+      "tags": [
+        "ostim",
+        "animation",
+        "adult"
+      ],
+      "nsfw": true,
+      "icon": "heart",
+      "mods": [],
+      "first_published": "2026-09-12T06:44:36-08:00",
+      "last_updated": "2026-10-05T22:09:21Z",
+      "version": "2.5.4",
+      "history": [
+        {
+          "version": "2.5.4",
+          "commit": "d492cd94f3f219da97c2b0ca51124c2e9ec2fed1",
+          "date": "2026-10-05T22:09:21Z",
+          "changelog": "attempt to improve reset OStimNet state when save was done during OStim scene and then loaded. I highly not recommend saving during OStim scenes it can break your game.\nupdated Billyy's meta tags for ostimnet(intent and position tags, not descriptions!)"
+        },
+        {
+          "version": "2.5.3",
+          "commit": "62c1ab313251a1148723fb97dbc72b55146f5df6",
+          "date": "2026-09-29T17:08:22Z",
+          "changelog": "added Being Female pregnancy and female cycles note - to make female npcs aware of pregnancy risk."
+        },
+        {
+          "version": "2.5.0",
+          "commit": "6d53bf9f8ee01c6aca1b0d6fdef004ef2fa02b62",
+          "date": "2026-09-26T05:47:57Z",
+          "changelog": "replaced cover image"
+        },
+        {
+          "version": "2.4.2",
+          "commit": "6beaea6234d873a19a83b6da3003d65d0c5982ab",
+          "date": "2026-09-12T06:44:36-08:00"
+        }
+      ],
+      "external_url": "https://github.com/tetherball88/OStimNet/releases/latest",
+      "image": {
+        "file": "cover.png",
+        "sha": "24935e170bd427bf1791e1330315a5a711f7e715",
+        "commit": "6d53bf9f8ee01c6aca1b0d6fdef004ef2fa02b62",
+        "width": 2048,
+        "height": 1152
+      },
+      "stats": {
+        "downloads": 75,
+        "endorsements": 3
+      }
+    },
     {
       "id": "plugins/jykej/audio-tags-for-inworld-tts-2",
       "plugin_id": "jykej.audio-tags-for-inworld-tts-2",
@@ -971,56 +1027,6 @@
       "stats": {
         "downloads": 11,
         "endorsements": 0
-      }
-    },
-    {
-      "id": "plugins/tetherball88/ostimnet",
-      "plugin_id": "tetherball88.ostimnet",
-      "type": "listing",
-      "title": "OStimNet",
-      "tagline": "Intimate encounter AI framework integration for OStim and SkyrimNet.",
-      "author": "tetherball88",
-      "tags": [
-        "ostim",
-        "animation",
-        "adult"
-      ],
-      "nsfw": true,
-      "icon": "heart",
-      "mods": [],
-      "first_published": "2026-09-12T06:44:36-08:00",
-      "last_updated": "2026-09-29T17:08:22Z",
-      "version": "2.5.3",
-      "history": [
-        {
-          "version": "2.5.3",
-          "commit": "62c1ab313251a1148723fb97dbc72b55146f5df6",
-          "date": "2026-09-29T17:08:22Z",
-          "changelog": "added Being Female pregnancy and female cycles note - to make female npcs aware of pregnancy risk."
-        },
-        {
-          "version": "2.5.0",
-          "commit": "6d53bf9f8ee01c6aca1b0d6fdef004ef2fa02b62",
-          "date": "2026-09-26T05:47:57Z",
-          "changelog": "replaced cover image"
-        },
-        {
-          "version": "2.4.2",
-          "commit": "6beaea6234d873a19a83b6da3003d65d0c5982ab",
-          "date": "2026-09-12T06:44:36-08:00"
-        }
-      ],
-      "external_url": "https://github.com/tetherball88/OStimNet/releases/latest",
-      "image": {
-        "file": "cover.png",
-        "sha": "24935e170bd427bf1791e1330315a5a711f7e715",
-        "commit": "6d53bf9f8ee01c6aca1b0d6fdef004ef2fa02b62",
-        "width": 2048,
-        "height": 1152
-      },
-      "stats": {
-        "downloads": 75,
-        "endorsements": 3
       }
     },
     {
@@ -3912,7 +3918,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 593,
+        "downloads": 594,
         "endorsements": 2
       }
     },
@@ -4047,7 +4053,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 146,
+        "downloads": 147,
         "endorsements": 1
       }
     },
@@ -6357,7 +6363,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 305,
+        "downloads": 306,
         "endorsements": 0
       }
     },
@@ -6492,7 +6498,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 467,
+        "downloads": 468,
         "endorsements": 0
       }
     },
@@ -6582,7 +6588,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 649,
+        "downloads": 650,
         "endorsements": 2
       }
     },
@@ -7617,7 +7623,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 661,
+        "downloads": 662,
         "endorsements": 1
       }
     },
@@ -7887,7 +7893,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 580,
+        "downloads": 581,
         "endorsements": 2
       }
     },
@@ -8427,7 +8433,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 382,
+        "downloads": 383,
         "endorsements": 0
       }
     },
@@ -8472,7 +8478,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 234,
+        "downloads": 235,
         "endorsements": 0
       }
     },
@@ -8967,7 +8973,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 135,
+        "downloads": 136,
         "endorsements": 0
       }
     },
@@ -9237,7 +9243,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 369,
+        "downloads": 370,
         "endorsements": 0
       }
     },
@@ -9282,7 +9288,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 61,
+        "downloads": 62,
         "endorsements": 0
       }
     },
@@ -10497,7 +10503,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 302,
+        "downloads": 303,
         "endorsements": 2
       }
     },
@@ -10902,7 +10908,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 117,
+        "downloads": 118,
         "endorsements": 0
       }
     },
@@ -11037,7 +11043,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 835,
+        "downloads": 836,
         "endorsements": 2
       }
     },
