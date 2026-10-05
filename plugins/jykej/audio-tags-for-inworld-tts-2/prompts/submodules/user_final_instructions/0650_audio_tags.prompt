@@ -18,7 +18,7 @@
   {% elif useChatterboxTags %}
     Use [square bracket tags] to direct vocal performance. Tags control emotion, delivery, and reactions—the AI voice interprets them contextually.
   {% else %}
-    Use free-form natural language [square bracket tags] to direct vocal performance. Place them before the text they apply to.
+    Use free-form natural language [square bracket tags] to direct vocal performance, like a director coaching a voice actor. Place them before the text they apply to.
   {% endif %}
   
   {% if useHiggsV3Tags %}
@@ -94,17 +94,33 @@
     - I told you not to touch that - [groan] - ever again. [cough]
     - [happy] [clear throat] So… we agree? [chuckle] Great.
   {% else %}
-    - Start with a vocal verb (say/sound/shout/whisper/sing...) then describe the delivery—emotion, volume, pitch, pace, texture, vocal style—not internal feelings.
-    - Combine multiple vocal qualities in single [square bracket instruction] for nuanced delivery. Be specific and concrete.
-    - Emphasize words by CAPITALIZING them.
-    - **Inline non-verbal reactions (These are not free-form tags and must be used exactly as written):** [laugh], [sigh], [clear throat], [breathe], [cough], [yawn]
+    - Place one [natural language delivery instruction] per line at the start, when delivery clearly departs from neutral speech.
+    - Start with a vocal verb (mumble/whisper/say/sound/shout/sing...) then describe the delivery—emotion, volume, pitch, pace, vocal style—not internal feelings. An instruction persists across the whole line until you replace it with a new tag.
+    - Build expessive instructions by layering these properties in a single [square bracket instruction]. Be concrete, and make the tag fit the meaning of the words.
+
+  | Property | Example phrases |
+  |---|---|
+  | Emotion/mood | `say with bitter exhaustion`, `speak with trembling voice`, `say excitedly`, `say playfully` |
+  | Articulation | `articulate clearly`, `say with deliberate pauses` |
+  | Volume | `whisper very quietly`, `very loud` |
+  | Pitch | `say in a low tone`, `say with a rising pitch` |
+  | Speed | `very fast`, `slow gentle pace` |
+  | Vocal style | `whisper in a hushed style`, `sing joyfully`, `shout with force` |
+    - Emphasize words by CAPITALIZING them. Use sparingly. 
+    - **Inline non-verbal reactions (must be used exactly as written)** — insert at the exact moment the sound occurs: [breathe], [sigh], [gasp], [grunt], [moan], [laugh], [giggle], [cry], [sob], [clear throat], [cough], [yawn]
   {% endif %}
   {% if not useHiggsV3Tags and not useChatterboxTags and actor_tags_enabled %}
   **Examples**: 
-    ❌ [internally amused, grunt softly] → ❌ vague internal feeling + invented non-verbal, not vocal delivery
-    ✅ [say cautiously with deliberate pauses in a low voice] I suppose you're right.
-    ✅ [whisper in a hushed style] I've never seen such a majestic creature. [laugh] It's incredible!
-    ✅ [sing joyfully] Because FUN adventures are the ones with you!
+    ❌ Bare emotions like `[sad]` are too vague. ❌ Inner feelings are not vocal delivery!
+    ✅ [whisper in a hushed style] I've never seen such a majestic creature. [gasp] It's incredible!
+    ✅ [shout loudly in a panic] Get back! [grunt] The whole ceiling is coming down!
+    ✅ [say with rising excitement at a faster pace] And THEN he turned around and it was there — right THERE in front of us!
+    ✅ [say with warm affection and a gentle rising tone] You found your way back! [sigh] I knew you would.
+    ✅ [mumble angrily] Like I didn't warn you about this...
+    ✅ [say intensely with commanding tone] The contract is void. You have until morning.
+    ✅ [say cautiously with deliberate pauses in a low voice] I suppose you're right. [sigh]
+    ✅ [sing joyfully] Because fun adventures are the ones with you! [giggle]
+    ✅ [speak with nervous energy slightly too fast] I — yes, I can explain — it's not what it looks like — [clear throat] — where do I even begin.
   {% endif %}
   {% if not actor_tags_enabled and narrator_tags_enabled %}
     Tags only work in *narration*, not dialogue.

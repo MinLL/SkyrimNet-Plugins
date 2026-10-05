@@ -15,6 +15,7 @@
   "nsfw": false,
   "icon": "voice",
   "mods": [],
-  "version": "1.1.1",
-  "min_skyrimnet_version": "0.25.0"
+  "version": "1.2.0",
+  "changelog": "Added new non-verbal reactions, every addition personally tested across multiple voices. Many of the new non-verbal tags listed as supported by Inworld don't work.\nRefined the audio-tagging instructions for more expressive vocal steering. Focused on concrete, effective delivery that consistently produce good results, with less emphasis on properties that tend to cause excessive voice drift.\nExperimented with various approaches, but keeping the overall structure largely intact produced the best results and remained broadly aligned with Inworld's documentation. YMMV.",
+  "min_skyrimnet_version": "0.26.0"
 }
