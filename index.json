@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-05T21:29:32.660Z",
-  "stats_as_of": "2026-10-05T21:29:32.605Z",
+  "generated_at": "2026-10-05T22:02:47.985Z",
+  "stats_as_of": "2026-10-05T22:02:47.919Z",
   "plugins": [
     {
       "id": "plugins/jykej/audio-tags-for-inworld-tts-2",
@@ -21,10 +21,16 @@
       "icon": "voice",
       "mods": [],
       "first_published": "2026-09-14T23:16:39Z",
-      "last_updated": "2026-10-05T14:05:18Z",
-      "version": "1.2.0",
+      "last_updated": "2026-10-05T22:02:21Z",
+      "version": "1.2.1",
       "min_skyrimnet_version": "0.26.0",
       "history": [
+        {
+          "version": "1.2.1",
+          "commit": "e82c60ae04bdbaf7dbd6972a68732424ceb01ae5",
+          "date": "2026-10-05T22:02:21Z",
+          "changelog": "Fixed a minor typo. Added a cover image."
+        },
         {
           "version": "1.2.0",
           "commit": "0694d98d27918b43bec19cf60aa1853685f58920",
@@ -37,6 +43,13 @@
           "date": "2026-09-14T23:47:09Z"
         }
       ],
+      "image": {
+        "file": "cover.jpg",
+        "sha": "214d5b4d7d38aef3268da7a2115ffcffe10d9509",
+        "commit": "e82c60ae04bdbaf7dbd6972a68732424ceb01ae5",
+        "width": 1280,
+        "height": 720
+      },
       "contents": {
         "triggers": 0,
         "actions": 0,
@@ -47,7 +60,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 120,
+        "downloads": 121,
         "endorsements": 0
       }
     },
@@ -1006,7 +1019,7 @@
         "height": 1152
       },
       "stats": {
-        "downloads": 74,
+        "downloads": 75,
         "endorsements": 3
       }
     },
@@ -2054,7 +2067,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 550,
+        "downloads": 553,
         "endorsements": 2
       }
     },
@@ -2099,7 +2112,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 273,
+        "downloads": 274,
         "endorsements": 0
       }
     },
@@ -2189,7 +2202,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1075,
+        "downloads": 1078,
         "endorsements": 2
       }
     },
@@ -2774,7 +2787,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 71,
+        "downloads": 72,
         "endorsements": 0
       }
     },
@@ -3179,7 +3192,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 472,
+        "downloads": 473,
         "endorsements": 0
       }
     },
@@ -3539,7 +3552,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 454,
+        "downloads": 456,
         "endorsements": 1
       }
     },
@@ -3899,7 +3912,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 591,
+        "downloads": 593,
         "endorsements": 2
       }
     },
@@ -3944,7 +3957,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 122,
+        "downloads": 123,
         "endorsements": 0
       }
     },
@@ -4529,7 +4542,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 97,
+        "downloads": 98,
         "endorsements": 0
       }
     },
@@ -5624,7 +5637,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 189,
+        "downloads": 191,
         "endorsements": 0
       }
     },
@@ -5939,7 +5952,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 148,
+        "downloads": 149,
         "endorsements": 0
       }
     },
@@ -6209,7 +6222,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 82,
+        "downloads": 84,
         "endorsements": 0
       }
     },
@@ -6344,7 +6357,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 304,
+        "downloads": 305,
         "endorsements": 0
       }
     },
@@ -6389,7 +6402,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 190,
+        "downloads": 191,
         "endorsements": 0
       }
     },
@@ -6569,7 +6582,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 646,
+        "downloads": 649,
         "endorsements": 2
       }
     },
@@ -7604,7 +7617,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 659,
+        "downloads": 661,
         "endorsements": 1
       }
     },
@@ -7874,7 +7887,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 577,
+        "downloads": 580,
         "endorsements": 2
       }
     },
@@ -8414,7 +8427,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 380,
+        "downloads": 382,
         "endorsements": 0
       }
     },
@@ -9179,7 +9192,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 131,
+        "downloads": 132,
         "endorsements": 0
       }
     },
@@ -10484,7 +10497,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 301,
+        "downloads": 302,
         "endorsements": 2
       }
     },
@@ -11024,7 +11037,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 831,
+        "downloads": 835,
         "endorsements": 2
       }
     },
@@ -11294,7 +11307,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 196,
+        "downloads": 198,
         "endorsements": 0
       }
     },
