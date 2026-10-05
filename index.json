@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-05T01:12:52.224Z",
-  "stats_as_of": "2026-10-05T01:12:52.124Z",
+  "generated_at": "2026-10-05T01:52:03.141Z",
+  "stats_as_of": "2026-10-05T01:52:03.041Z",
   "plugins": [
     {
       "id": "plugins/goodprovider/skyrimnet-sexlab",
@@ -42,7 +42,7 @@
       ],
       "language": "en",
       "stats": {
-        "downloads": 62,
+        "downloads": 64,
         "endorsements": 0
       }
     },
@@ -2038,7 +2038,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 260,
+        "downloads": 261,
         "endorsements": 0
       }
     },
@@ -4063,7 +4063,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 318,
+        "downloads": 319,
         "endorsements": 0
       }
     },
@@ -4873,7 +4873,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 193,
+        "downloads": 194,
         "endorsements": 0
       }
     },
