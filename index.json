@@ -1,8 +1,56 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-05T13:40:53.141Z",
-  "stats_as_of": "2026-10-05T13:40:53.099Z",
+  "generated_at": "2026-10-05T14:05:44.363Z",
+  "stats_as_of": "2026-10-05T14:05:44.284Z",
   "plugins": [
+    {
+      "id": "plugins/jykej/audio-tags-for-inworld-tts-2",
+      "plugin_id": "jykej.audio-tags-for-inworld-tts-2",
+      "type": "bundle",
+      "title": "Audio Tags For Inworld TTS-2",
+      "tagline": "Enables natural language steering capabilities for Inworld TTS-2.",
+      "author": "jykej",
+      "tags": [
+        "inworld",
+        "audio",
+        "audio tags",
+        "TTS",
+        "text-to-speech"
+      ],
+      "nsfw": false,
+      "icon": "voice",
+      "mods": [],
+      "first_published": "2026-09-14T23:16:39Z",
+      "last_updated": "2026-10-05T14:05:18Z",
+      "version": "1.2.0",
+      "min_skyrimnet_version": "0.26.0",
+      "history": [
+        {
+          "version": "1.2.0",
+          "commit": "0694d98d27918b43bec19cf60aa1853685f58920",
+          "date": "2026-10-05T14:05:18Z",
+          "changelog": "Added new non-verbal reactions, every addition personally tested across multiple voices. Many of the new non-verbal tags listed as supported by Inworld don't work.\nRefined the audio-tagging instructions for more expressive vocal steering. Focused on concrete, effective delivery that consistently produce good results, with less emphasis on properties that tend to cause excessive voice drift.\nExperimented with various approaches, but keeping the overall structure largely intact produced the best results and remained broadly aligned with Inworld's documentation. YMMV."
+        },
+        {
+          "version": "1.1.1",
+          "commit": "33e543beb6fbeafaf7b0963723f1bda181d08b62",
+          "date": "2026-09-14T23:47:09Z"
+        }
+      ],
+      "contents": {
+        "triggers": 0,
+        "actions": 0,
+        "prompts": 1,
+        "bios": 0,
+        "knowledge": 0,
+        "entities": 0,
+        "config": 0
+      },
+      "stats": {
+        "downloads": 114,
+        "endorsements": 0
+      }
+    },
     {
       "id": "plugins/deadohiosky/kinship",
       "plugin_id": "deadohiosky.kinship",
@@ -510,7 +558,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 101,
+        "downloads": 103,
         "endorsements": 1
       }
     },
@@ -568,7 +616,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 73,
+        "downloads": 74,
         "endorsements": 5
       }
     },
@@ -761,7 +809,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 49,
+        "downloads": 50,
         "endorsements": 1
       }
     },
@@ -1033,7 +1081,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 136,
+        "downloads": 137,
         "endorsements": 1
       }
     },
@@ -1311,7 +1359,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 110,
+        "downloads": 111,
         "endorsements": 0
       }
     },
@@ -1416,7 +1464,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 86,
+        "downloads": 87,
         "endorsements": 0
       }
     },
@@ -1887,7 +1935,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 203,
+        "downloads": 204,
         "endorsements": 4
       }
     },
@@ -1966,48 +2014,6 @@
       }
     },
     {
-      "id": "plugins/jykej/audio-tags-for-inworld-tts-2",
-      "plugin_id": "jykej.audio-tags-for-inworld-tts-2",
-      "type": "bundle",
-      "title": "Audio Tags For Inworld TTS-2",
-      "tagline": "Enables natural language steering capabilities for Inworld TTS-2.",
-      "author": "jykej",
-      "tags": [
-        "inworld",
-        "audio",
-        "audio tags",
-        "TTS",
-        "text-to-speech"
-      ],
-      "nsfw": false,
-      "icon": "voice",
-      "mods": [],
-      "first_published": "2026-09-14T23:16:39Z",
-      "last_updated": "2026-09-14T23:47:09Z",
-      "version": "1.1.1",
-      "min_skyrimnet_version": "0.25.0",
-      "history": [
-        {
-          "version": "1.1.1",
-          "commit": "33e543beb6fbeafaf7b0963723f1bda181d08b62",
-          "date": "2026-09-14T23:47:09Z"
-        }
-      ],
-      "contents": {
-        "triggers": 0,
-        "actions": 0,
-        "prompts": 1,
-        "bios": 0,
-        "knowledge": 0,
-        "entities": 0,
-        "config": 0
-      },
-      "stats": {
-        "downloads": 114,
-        "endorsements": 0
-      }
-    },
-    {
       "id": "plugins/skyrimnet/bios-018auri",
       "plugin_id": "skyrimnet.bios-018auri",
       "type": "bundle",
@@ -2048,7 +2054,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 537,
+        "downloads": 539,
         "endorsements": 2
       }
     },
@@ -2183,7 +2189,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1028,
+        "downloads": 1031,
         "endorsements": 2
       }
     },
@@ -2408,7 +2414,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 554,
+        "downloads": 555,
         "endorsements": 0
       }
     },
@@ -2678,7 +2684,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 206,
+        "downloads": 207,
         "endorsements": 0
       }
     },
@@ -2903,7 +2909,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 152,
+        "downloads": 153,
         "endorsements": 1
       }
     },
@@ -3173,7 +3179,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 461,
+        "downloads": 463,
         "endorsements": 0
       }
     },
@@ -3533,7 +3539,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 439,
+        "downloads": 440,
         "endorsements": 1
       }
     },
@@ -3803,7 +3809,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 30,
+        "downloads": 31,
         "endorsements": 0
       }
     },
@@ -3893,7 +3899,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 574,
+        "downloads": 576,
         "endorsements": 2
       }
     },
@@ -4028,7 +4034,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 142,
+        "downloads": 143,
         "endorsements": 1
       }
     },
@@ -4073,7 +4079,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 221,
+        "downloads": 222,
         "endorsements": 0
       }
     },
@@ -4118,7 +4124,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 322,
+        "downloads": 323,
         "endorsements": 0
       }
     },
@@ -4208,7 +4214,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 92,
+        "downloads": 93,
         "endorsements": 0
       }
     },
@@ -4343,7 +4349,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 4,
+        "downloads": 5,
         "endorsements": 0
       }
     },
@@ -4568,7 +4574,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 9,
+        "downloads": 10,
         "endorsements": 0
       }
     },
@@ -4928,7 +4934,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 199,
+        "downloads": 200,
         "endorsements": 0
       }
     },
@@ -5618,7 +5624,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 183,
+        "downloads": 184,
         "endorsements": 0
       }
     },
@@ -6203,7 +6209,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 80,
+        "downloads": 81,
         "endorsements": 0
       }
     },
@@ -6473,7 +6479,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 455,
+        "downloads": 456,
         "endorsements": 0
       }
     },
@@ -6563,7 +6569,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 630,
+        "downloads": 633,
         "endorsements": 2
       }
     },
@@ -6878,7 +6884,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 10,
+        "downloads": 11,
         "endorsements": 0
       }
     },
@@ -6968,7 +6974,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 159,
+        "downloads": 160,
         "endorsements": 0
       }
     },
@@ -7013,7 +7019,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 23,
+        "downloads": 24,
         "endorsements": 0
       }
     },
@@ -7058,7 +7064,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 18,
+        "downloads": 19,
         "endorsements": 0
       }
     },
@@ -7598,7 +7604,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 631,
+        "downloads": 634,
         "endorsements": 1
       }
     },
@@ -7868,7 +7874,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 565,
+        "downloads": 567,
         "endorsements": 2
       }
     },
@@ -8273,7 +8279,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 141,
+        "downloads": 143,
         "endorsements": 0
       }
     },
@@ -8408,7 +8414,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 363,
+        "downloads": 364,
         "endorsements": 0
       }
     },
@@ -8453,7 +8459,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 227,
+        "downloads": 229,
         "endorsements": 0
       }
     },
@@ -8948,7 +8954,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 132,
+        "downloads": 133,
         "endorsements": 0
       }
     },
@@ -9083,7 +9089,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 58,
+        "downloads": 59,
         "endorsements": 0
       }
     },
@@ -9263,7 +9269,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 58,
+        "downloads": 59,
         "endorsements": 0
       }
     },
@@ -9308,7 +9314,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 9,
+        "downloads": 10,
         "endorsements": 0
       }
     },
@@ -9578,7 +9584,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 58,
+        "downloads": 59,
         "endorsements": 0
       }
     },
@@ -9668,7 +9674,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 4,
+        "downloads": 5,
         "endorsements": 0
       }
     },
@@ -9758,7 +9764,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 48,
+        "downloads": 49,
         "endorsements": 0
       }
     },
@@ -9983,7 +9989,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 5,
+        "downloads": 6,
         "endorsements": 0
       }
     },
@@ -10163,7 +10169,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 71,
+        "downloads": 73,
         "endorsements": 0
       }
     },
@@ -10208,7 +10214,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 199,
+        "downloads": 200,
         "endorsements": 0
       }
     },
@@ -10478,7 +10484,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 293,
+        "downloads": 295,
         "endorsements": 2
       }
     },
@@ -10703,7 +10709,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 9,
+        "downloads": 10,
         "endorsements": 0
       }
     },
@@ -10883,7 +10889,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 113,
+        "downloads": 114,
         "endorsements": 0
       }
     },
@@ -11018,7 +11024,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 799,
+        "downloads": 801,
         "endorsements": 2
       }
     },
@@ -11063,7 +11069,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 3,
+        "downloads": 4,
         "endorsements": 0
       }
     },
@@ -11288,7 +11294,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 190,
+        "downloads": 192,
         "endorsements": 0
       }
     },
