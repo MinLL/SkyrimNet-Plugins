@@ -1,8 +1,51 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-05T02:48:50.169Z",
+  "generated_at": "2026-10-05T02:53:41.048Z",
   "stats_as_of": "2026-10-05T02:48:50.054Z",
   "plugins": [
+    {
+      "id": "plugins/urtubesrclogged/battle-summaries",
+      "plugin_id": "urtubesrclogged.battle-summaries",
+      "type": "listing",
+      "title": "Battle Summaries",
+      "tagline": "After a fight, NPCs know what really happened: who did what, who nearly died, and who saved whom. Lightweight SKSE plugin.",
+      "author": "urtubesrclogged",
+      "tags": [
+        "DLL",
+        "Combat",
+        "Context"
+      ],
+      "nsfw": false,
+      "icon": "sword",
+      "mods": [],
+      "first_published": "2026-10-05T02:53:19Z",
+      "last_updated": "2026-10-05T02:53:19Z",
+      "version": "1.0.1",
+      "history": [
+        {
+          "version": "1.0.1",
+          "commit": "377833a450b49360812451bf9850e8ed4afb551c",
+          "date": "2026-10-05T02:53:19Z",
+          "changelog": "Initial release"
+        }
+      ],
+      "external_url": "https://github.com/urtubesrclogged/BattleSummaries/releases/latest",
+      "languages": [
+        "en"
+      ],
+      "language": "en",
+      "image": {
+        "file": "cover.png",
+        "sha": "ba07417512c6a8b901f60a51d64f0d1bc24c59e1",
+        "commit": "377833a450b49360812451bf9850e8ed4afb551c",
+        "width": 1920,
+        "height": 1080
+      },
+      "stats": {
+        "downloads": 0,
+        "endorsements": 0
+      }
+    },
     {
       "id": "plugins/severause/severactions",
       "plugin_id": "severause.severactions",
