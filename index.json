@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-05T10:35:17.817Z",
-  "stats_as_of": "2026-10-05T10:35:17.721Z",
+  "generated_at": "2026-10-05T11:30:37.437Z",
+  "stats_as_of": "2026-10-05T11:30:37.315Z",
   "plugins": [
     {
       "id": "plugins/urtubesrclogged/battle-summaries",
@@ -42,7 +42,7 @@
         "height": 1080
       },
       "stats": {
-        "downloads": 4,
+        "downloads": 5,
         "endorsements": 0
       }
     },
@@ -439,7 +439,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 99,
+        "downloads": 101,
         "endorsements": 1
       }
     },
@@ -1027,7 +1027,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 135,
+        "downloads": 136,
         "endorsements": 1
       }
     },
@@ -1097,7 +1097,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 158,
+        "downloads": 159,
         "endorsements": 0
       }
     },
@@ -1772,7 +1772,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 97,
+        "downloads": 98,
         "endorsements": 6
       }
     },
@@ -1955,7 +1955,7 @@
       ],
       "external_url": "https://github.com/GoodProvider/SkyrimNet_Leashed/releases/latest",
       "stats": {
-        "downloads": 35,
+        "downloads": 36,
         "endorsements": 0
       }
     },
@@ -1997,7 +1997,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 113,
+        "downloads": 114,
         "endorsements": 0
       }
     },
@@ -3527,7 +3527,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 436,
+        "downloads": 438,
         "endorsements": 1
       }
     },
@@ -6467,7 +6467,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 448,
+        "downloads": 449,
         "endorsements": 0
       }
     },
@@ -6962,7 +6962,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 157,
+        "downloads": 158,
         "endorsements": 0
       }
     },
