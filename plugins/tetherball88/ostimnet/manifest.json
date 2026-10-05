@@ -15,6 +15,6 @@
   "mods": [],
   "image": "cover.png",
   "external_url": "https://github.com/tetherball88/OStimNet/releases/latest",
-  "version": "2.5.3",
-  "changelog": "added Being Female pregnancy and female cycles note - to make female npcs aware of pregnancy risk."
+  "version": "2.5.4",
+  "changelog": "attempt to improve reset OStimNet state when save was done during OStim scene and then loaded. I highly not recommend saving during OStim scenes it can break your game.\nupdated Billyy's meta tags for ostimnet(intent and position tags, not descriptions!)"
 }
