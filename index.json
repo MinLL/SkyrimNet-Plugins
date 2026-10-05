@@ -1,8 +1,68 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-05T01:52:03.141Z",
-  "stats_as_of": "2026-10-05T01:52:03.041Z",
+  "generated_at": "2026-10-05T02:48:50.169Z",
+  "stats_as_of": "2026-10-05T02:48:50.054Z",
   "plugins": [
+    {
+      "id": "plugins/severause/severactions",
+      "plugin_id": "severause.severactions",
+      "type": "listing",
+      "title": "SeverActions ",
+      "tagline": "An action, prompt, and behavior pack for SkyrimNet",
+      "author": "severause",
+      "tags": [],
+      "nsfw": false,
+      "icon": "scroll",
+      "mods": [],
+      "first_published": "2026-09-14T10:26:17Z",
+      "last_updated": "2026-10-05T02:48:23Z",
+      "version": "4.2.0",
+      "history": [
+        {
+          "version": "4.2.0",
+          "commit": "4d9ccc9039e7651d6aa1836feb02f1fa0e8cbf08",
+          "date": "2026-10-05T02:48:23Z",
+          "changelog": "## **SeverActions v4.2.0** — Colours and Clarity\n- See announcement channel for the full changelog\n\nColour themes, presets that stay on, real control over a follower's built-in spells, a bigger quick wheel, plainer menus and a corrected Russian translation.\n\n:warning: **Before you update**\n- **Replace over 4.1.x** in MO2. The installer's pages and choices are the same, and saves carry over.\n- **FOMOD Plus users:** the installer now always installs the module scripts, so installs that came out missing scripts get all of them.\n- **Magelight UI 0.31.2 is included.** If you also run it as its own mod, let the newer copy win.\n\n:art: **Themes**\n- **Five themes** in Settings > UI Display: The Ledger (today's look), Windhelm Slate, Dwemer Verdigris, Soul Cairn and Jarl's Vellum, a light theme.\n- **Everywhere:** every page, popup and the quick wheel, and the cursor takes the theme's colours too.\n\n:dress: **Outfits**\n- **Presets stay on** after fast travel, sleep and waiting, and a sleep outfit no longer dresses a follower over a preset.(needs further testing)\n- **Situation outfits** No timer on situation switches\n- **Inventory** lists armour freed from a default outfit again, with a Take off button for worn pieces.\n- **Warmth:** 100% means a full set of warm gear, so ordinary armour no longer reads \"Bare\".\n\n:magic_wand: **Spells**\n- **Turn off built-in spells:** switching off a spell on the Spells page really stops a follower casting it, including ones they came with. Built-in spells are marked, and ones shared by other NPCs say why they can't be removed.\n\n:joystick: **Quick wheel and hotkeys**\n- **Twelve slots,** showing only the ones you fill.\n- **Key capture always ends,** and VR warns when the menu chord clashes with another binding.\n\n:moneybag: **Enterprises and off-screen life**\n- **Work marks are back:**"
+        },
+        {
+          "version": "4.1.0",
+          "commit": "5738aa5f161c80a73a312d49fadca75880753ad9",
+          "date": "2026-10-04T01:35:24Z",
+          "changelog": "## SeverActions 4.1.0\nMagelight UI 0.30.5 is included in the SeverActions download and is also available on its own.\n\n**SeverActions 4.1.0**\n- **Wait and Follow work on the first press.** Wait All and Follow All finish in a second or two instead of seeming to do nothing. Each command now undoes only what SeverActions actually put on a follower, which helps custom followers most.\n- **Faster loading.** On a long-running save, SeverActions' startup after a load went from about a minute to about 12 seconds, and commands given right after a load no longer wait 20+ seconds.\n- Companions are no longer pushed back onto their follow package every few seconds.\n- Mouse and gamepad buttons (M3, M4, M5…) work again as the menu and quick wheel keys, and Settings > Hotkeys can capture them.\n- Tracking mode: casual follow works again for NPCs no follower framework leads.\n- The Companions page now shows the framework mode the game is actually using.\n- If Magelight can't draw, the menu and wheel keys now tell you so (and point to Magelight.log) instead of doing nothing.\n- Outfits mirror on CPU rendering: the Live Stage takes over instead of leaving a hole in the menu. In VR it's a dark box.\n\n**Magelight UI 0.30.5** (includes 0.30.4)\n- Menus no longer open invisible with DLSS or frame generation behind NVIDIA Streamline (Community Shaders, Open Shaders).\n- Community Shaders frame generation: the UI shows again.\n- NVIDIA Smooth Motion: opening a menu no longer freezes the game.\n- A lost graphics device turns the overlay off instead of leaving the game paused.\n- A new, sharper cursor, and no more double cursor.\n\n**Installing:** install over 4.0.x with Replace. Saves load as they are. Still needs SkyrimNet 0.25 or newer."
+        },
+        {
+          "version": "4.0.2",
+          "commit": "2cc98ac524e8da504068d8822f40f7d2c12b5b27",
+          "date": "2026-10-02T23:24:33Z",
+          "changelog": "## SeverActions 4.0.2 — Hotfix\n\nUpdates the bundled **Magelight UI to 0.30.3**, which fixes three problems in 4.0.1:\n\n**Fixed: crash at startup with Community Shaders**, or a few minutes into play with ENB or an upscaler (`d3d11.dll` in the crash log)\n**Fixed: crash at startup with ENB** that left no crash log\n**Fixed: menu cut off** on screens under ~1067 pixels tall (1366×768, 1600×900)\n\nIf you made a `Magelight.json` to work around the ENB crash, you can delete it now.\n\n**Installing:** install over 4.0.1 and choose **Replace**. Your saves load as they are."
+        },
+        {
+          "version": "4.0.1",
+          "commit": "274859a71a0cc908296244bb9e627151de0e859a",
+          "date": "2026-10-02T15:26:46Z",
+          "changelog": "4.0 Release - Several fixes and additions, please see the announcement channel for the full changelog"
+        },
+        {
+          "version": "3.9.14",
+          "commit": "cfe54b268475b645084a2b7450af4c26e9c06f90",
+          "date": "2026-09-27T16:10:44Z",
+          "changelog": "Added a cover image"
+        }
+      ],
+      "external_url": "https://github.com/Severause/SeverActions/releases/tag/v4.2.0",
+      "image": {
+        "file": "cover.png",
+        "sha": "c37c0b8a5ca4729ed3ed78776124c54ac32d326d",
+        "commit": "cfe54b268475b645084a2b7450af4c26e9c06f90",
+        "width": 2048,
+        "height": 1146
+      },
+      "curated": true,
+      "stats": {
+        "downloads": 305,
+        "endorsements": 21
+      }
+    },
     {
       "id": "plugins/goodprovider/skyrimnet-sexlab",
       "plugin_id": "goodprovider.skyrimnet-sexlab",
@@ -42,7 +102,7 @@
       ],
       "language": "en",
       "stats": {
-        "downloads": 64,
+        "downloads": 65,
         "endorsements": 0
       }
     },
@@ -338,60 +398,6 @@
       "stats": {
         "downloads": 94,
         "endorsements": 1
-      }
-    },
-    {
-      "id": "plugins/severause/severactions",
-      "plugin_id": "severause.severactions",
-      "type": "listing",
-      "title": "SeverActions ",
-      "tagline": "An action, prompt, and behavior pack for SkyrimNet",
-      "author": "severause",
-      "tags": [],
-      "nsfw": false,
-      "icon": "scroll",
-      "mods": [],
-      "first_published": "2026-09-14T10:26:17Z",
-      "last_updated": "2026-10-04T01:35:24Z",
-      "version": "4.1.0",
-      "history": [
-        {
-          "version": "4.1.0",
-          "commit": "5738aa5f161c80a73a312d49fadca75880753ad9",
-          "date": "2026-10-04T01:35:24Z",
-          "changelog": "## SeverActions 4.1.0\nMagelight UI 0.30.5 is included in the SeverActions download and is also available on its own.\n\n**SeverActions 4.1.0**\n- **Wait and Follow work on the first press.** Wait All and Follow All finish in a second or two instead of seeming to do nothing. Each command now undoes only what SeverActions actually put on a follower, which helps custom followers most.\n- **Faster loading.** On a long-running save, SeverActions' startup after a load went from about a minute to about 12 seconds, and commands given right after a load no longer wait 20+ seconds.\n- Companions are no longer pushed back onto their follow package every few seconds.\n- Mouse and gamepad buttons (M3, M4, M5…) work again as the menu and quick wheel keys, and Settings > Hotkeys can capture them.\n- Tracking mode: casual follow works again for NPCs no follower framework leads.\n- The Companions page now shows the framework mode the game is actually using.\n- If Magelight can't draw, the menu and wheel keys now tell you so (and point to Magelight.log) instead of doing nothing.\n- Outfits mirror on CPU rendering: the Live Stage takes over instead of leaving a hole in the menu. In VR it's a dark box.\n\n**Magelight UI 0.30.5** (includes 0.30.4)\n- Menus no longer open invisible with DLSS or frame generation behind NVIDIA Streamline (Community Shaders, Open Shaders).\n- Community Shaders frame generation: the UI shows again.\n- NVIDIA Smooth Motion: opening a menu no longer freezes the game.\n- A lost graphics device turns the overlay off instead of leaving the game paused.\n- A new, sharper cursor, and no more double cursor.\n\n**Installing:** install over 4.0.x with Replace. Saves load as they are. Still needs SkyrimNet 0.25 or newer."
-        },
-        {
-          "version": "4.0.2",
-          "commit": "2cc98ac524e8da504068d8822f40f7d2c12b5b27",
-          "date": "2026-10-02T23:24:33Z",
-          "changelog": "## SeverActions 4.0.2 — Hotfix\n\nUpdates the bundled **Magelight UI to 0.30.3**, which fixes three problems in 4.0.1:\n\n**Fixed: crash at startup with Community Shaders**, or a few minutes into play with ENB or an upscaler (`d3d11.dll` in the crash log)\n**Fixed: crash at startup with ENB** that left no crash log\n**Fixed: menu cut off** on screens under ~1067 pixels tall (1366×768, 1600×900)\n\nIf you made a `Magelight.json` to work around the ENB crash, you can delete it now.\n\n**Installing:** install over 4.0.1 and choose **Replace**. Your saves load as they are."
-        },
-        {
-          "version": "4.0.1",
-          "commit": "274859a71a0cc908296244bb9e627151de0e859a",
-          "date": "2026-10-02T15:26:46Z",
-          "changelog": "4.0 Release - Several fixes and additions, please see the announcement channel for the full changelog"
-        },
-        {
-          "version": "3.9.14",
-          "commit": "cfe54b268475b645084a2b7450af4c26e9c06f90",
-          "date": "2026-09-27T16:10:44Z",
-          "changelog": "Added a cover image"
-        }
-      ],
-      "external_url": "https://github.com/Severause/SeverActions/releases/tag/v4.0.1",
-      "image": {
-        "file": "cover.png",
-        "sha": "c37c0b8a5ca4729ed3ed78776124c54ac32d326d",
-        "commit": "cfe54b268475b645084a2b7450af4c26e9c06f90",
-        "width": 2048,
-        "height": 1146
-      },
-      "curated": true,
-      "stats": {
-        "downloads": 305,
-        "endorsements": 21
       }
     },
     {
@@ -1559,7 +1565,7 @@
       ],
       "language": "en",
       "stats": {
-        "downloads": 33,
+        "downloads": 34,
         "endorsements": 1
       }
     },
@@ -1993,7 +1999,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 526,
+        "downloads": 527,
         "endorsements": 2
       }
     },
@@ -2128,7 +2134,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 999,
+        "downloads": 1000,
         "endorsements": 2
       }
     },
@@ -2353,7 +2359,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 535,
+        "downloads": 536,
         "endorsements": 0
       }
     },
@@ -2848,7 +2854,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 148,
+        "downloads": 149,
         "endorsements": 1
       }
     },
@@ -3478,7 +3484,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 427,
+        "downloads": 428,
         "endorsements": 1
       }
     },
@@ -3838,7 +3844,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 565,
+        "downloads": 566,
         "endorsements": 2
       }
     },
@@ -4873,7 +4879,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 194,
+        "downloads": 195,
         "endorsements": 0
       }
     },
@@ -6148,7 +6154,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 79,
+        "downloads": 80,
         "endorsements": 0
       }
     },
@@ -6283,7 +6289,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 291,
+        "downloads": 292,
         "endorsements": 0
       }
     },
@@ -6418,7 +6424,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 442,
+        "downloads": 443,
         "endorsements": 0
       }
     },
@@ -6508,7 +6514,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 616,
+        "downloads": 617,
         "endorsements": 2
       }
     },
@@ -7363,7 +7369,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 125,
+        "downloads": 126,
         "endorsements": 1
       }
     },
@@ -7543,7 +7549,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 616,
+        "downloads": 617,
         "endorsements": 1
       }
     },
@@ -7813,7 +7819,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 555,
+        "downloads": 556,
         "endorsements": 2
       }
     },
@@ -8353,7 +8359,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 353,
+        "downloads": 354,
         "endorsements": 0
       }
     },
@@ -9118,7 +9124,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 125,
+        "downloads": 127,
         "endorsements": 0
       }
     },
@@ -9163,7 +9169,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 351,
+        "downloads": 353,
         "endorsements": 0
       }
     },
@@ -10108,7 +10114,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 69,
+        "downloads": 71,
         "endorsements": 0
       }
     },
@@ -10153,7 +10159,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 191,
+        "downloads": 192,
         "endorsements": 0
       }
     },
@@ -10423,7 +10429,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 288,
+        "downloads": 290,
         "endorsements": 2
       }
     },
@@ -10963,7 +10969,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 778,
+        "downloads": 780,
         "endorsements": 2
       }
     },
@@ -11233,7 +11239,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 186,
+        "downloads": 188,
         "endorsements": 0
       }
     },
