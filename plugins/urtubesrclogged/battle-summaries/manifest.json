@@ -1,0 +1,23 @@
+{
+  "id": "urtubesrclogged.battle-summaries",
+  "type": "listing",
+  "title": "Battle Summaries",
+  "tagline": "After a fight, NPCs know what really happened: who did what, who nearly died, and who saved whom. Lightweight SKSE plugin.",
+  "description": "# Battle Summaries\n**Your followers remember the fight the way it went.**\n\nSkyrimNet can give the dialogue model the full event context for a fight: every attack, every spell and more. That is extremely heavy on context, and many dialogue models behave badly with it, so a lot of players leave it turned off (the default). Without that context, SkyrimNet NPCs improvise what happened after a fight: the follower you dragged back from bleedout tells you that you were sloppy and that she never needed your help. There are hundreds of raw events per fight, and with them left out the dialogue model has nothing to go on.\n\nBattle Summaries records each battle near you and gives every NPC a short, factual account of it in place of those raw events, from that NPC's own point of view.\n\n## What each NPC is told\n\n- **Who fought:** both sides, who died and who survived.\n- **Wounds and effort:** how badly each fighter was hurt and how much of the fighting each did, told in words rather than numbers.\n- **Close calls:** who was struck down and bleeding out, or dropped below 15% health, and whose blows did it.\n- **Rescues:** who killed the attacker or did the healing after someone was in danger, stated plainly.\n- **Magic:** harmful effects put on them and by whom (burned, frozen, shocked, poisoned, slowed, paralyzed, drained), and help they were given (healing, magical armor, wards, resistances).\n- **Kills:** per fighter, yours set apart from theirs.\n\nNPCs are told they may feel anything about it that fits their character, but must not deny or reverse what happened or claim deeds that are not theirs.\n\n## How it reaches SkyrimNet\n\n- **During the battle and for six game hours after:** the summary sits in the speaker's own prompt, and nobody else's. Bystanders who stood close enough get a shorter witness account.\n- **Afterwards:** one remembered event per battle worth remembering keeps it in event history and memories.\n\nEasy fights are told in a few lines; hard ones in full. A battle is your party, those who fought it, and those who fought them: wildlife squabbling nearby and bystanders who never traded a blow are left out.\n\n## Requirements\n\n- **SkyrimNet Beta 25 or newer**, configured and working.\n- **SKSE64 or SKSE VR** with the matching Address Library (VR: VR Address Library for SKSEVR).\n\nOne DLL for SE, AE and VR. No plugin slot is used and nothing is stored in the save, so it can be added or removed at any time.\n\n## Good to know\n\n- Developed on Skyrim VR and also run on Skyrim SE 1.5.97. AE (1.6) is built from the same code but has not been tested yet.\n- Settings are in BattleSummaries.ini: the near-death threshold, how long a summary lasts, which battles are remembered, and whether raw damage figures are shown.\n- The wording NPCs receive is a normal SkyrimNet prompt file and can be edited.\n- No extra LLM calls are made: the summary is built from what the game recorded.",
+  "author": "urtubesrclogged",
+  "tags": [
+    "DLL",
+    "Combat",
+    "Context"
+  ],
+  "nsfw": false,
+  "icon": "sword",
+  "mods": [],
+  "languages": [
+    "en"
+  ],
+  "image": "cover.png",
+  "external_url": "https://github.com/urtubesrclogged/BattleSummaries/releases/latest",
+  "version": "1.0.1",
+  "changelog": "Initial release"
+}
