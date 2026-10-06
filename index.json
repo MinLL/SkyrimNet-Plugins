@@ -1,8 +1,48 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-06T03:52:45.562Z",
-  "stats_as_of": "2026-10-06T03:52:45.473Z",
+  "generated_at": "2026-10-06T04:07:59.630Z",
+  "stats_as_of": "2026-10-06T04:07:59.504Z",
   "plugins": [
+    {
+      "id": "plugins/awesmdiver/modpacer",
+      "plugin_id": "awesmdiver.modpacer",
+      "type": "listing",
+      "title": "ModPacer",
+      "tagline": "Easily install new mods and keep them on pace with updates.",
+      "author": "awesmdiver",
+      "tags": [
+        "mod updater",
+        "vortex",
+        "mod organizer 2",
+        "updates"
+      ],
+      "nsfw": false,
+      "icon": "wrench",
+      "mods": [],
+      "first_published": "2026-10-06T04:07:35Z",
+      "last_updated": "2026-10-06T04:07:35Z",
+      "version": "1.0.0",
+      "history": [
+        {
+          "version": "1.0.0",
+          "commit": "e3bc3bf7cbdc250fb980e857933ede27c591c10b",
+          "date": "2026-10-06T04:07:35Z",
+          "changelog": "Initial Release"
+        }
+      ],
+      "external_url": "https://github.com/awesmdiver/modpacer/releases/latest",
+      "image": {
+        "file": "cover.png",
+        "sha": "175af6991604d3810b726c724d7b15a0f62e892f",
+        "commit": "e3bc3bf7cbdc250fb980e857933ede27c591c10b",
+        "width": 1940,
+        "height": 1091
+      },
+      "stats": {
+        "downloads": 0,
+        "endorsements": 0
+      }
+    },
     {
       "id": "plugins/zol/pandorumllm",
       "plugin_id": "zol.pandorumllm",
