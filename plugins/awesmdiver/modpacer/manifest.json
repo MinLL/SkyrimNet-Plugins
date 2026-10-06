@@ -16,6 +16,6 @@
   "mods": [],
   "image": "cover.png",
   "external_url": "https://github.com/awesmdiver/modpacer/releases/latest",
-  "version": "1.1.0",
-  "changelog": "**Mod Organizer 2** users: this update is for you. \n\n- Mod Organizer 2 and Wabbajack modlists are now properly handled.\n- Mod Organizer 2: can now pick your Mod Organizer 2 folder and ModPacer finds your mods and Skyrim folder from it.\n- Added logging, which is on by default, but can be turned off in settings.\n- Tells you when a newer ModPacer is out."
+  "version": "1.1.1",
+  "changelog": "**What's New**\r\n\r\n- **Fixed SkyrimNet Folder Detection:** Resolved an issue where ModPacer could mistakenly select a subfolder created by an add-on instead of the main SkyrimNet directory, resulting in a Could not read content-registry.json error. \r\n\r\n- **Improved Logging:** Setup and installation errors are now accurately captured in the diagnostic log, making troubleshooting and support requests much easier."
 }
