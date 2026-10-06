@@ -1,8 +1,54 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-06T19:33:03.640Z",
-  "stats_as_of": "2026-10-06T19:33:03.532Z",
+  "generated_at": "2026-10-06T19:36:18.441Z",
+  "stats_as_of": "2026-10-06T19:36:18.313Z",
   "plugins": [
+    {
+      "id": "plugins/awesmdiver/modpacer",
+      "plugin_id": "awesmdiver.modpacer",
+      "type": "listing",
+      "title": "ModPacer",
+      "tagline": "Easily install new mods and keep them on pace with updates.",
+      "author": "awesmdiver",
+      "tags": [
+        "mod updater",
+        "vortex",
+        "mod organizer 2",
+        "updates"
+      ],
+      "nsfw": false,
+      "icon": "wrench",
+      "mods": [],
+      "first_published": "2026-10-06T04:07:35Z",
+      "last_updated": "2026-10-06T19:35:56Z",
+      "version": "1.1.0",
+      "history": [
+        {
+          "version": "1.1.0",
+          "commit": "526db56f205786e9ccce8572e9b1b66ca49c7248",
+          "date": "2026-10-06T19:35:56Z",
+          "changelog": "**Mod Organizer 2** users: this update is for you. \n\n- Mod Organizer 2 and Wabbajack modlists are now properly handled.\n- Mod Organizer 2: can now pick your Mod Organizer 2 folder and ModPacer finds your mods and Skyrim folder from it.\n- Added logging, which is on by default, but can be turned off in settings.\n- Tells you when a newer ModPacer is out."
+        },
+        {
+          "version": "1.0.0",
+          "commit": "af3e0b8c3452da83640c639c5166db42530c76df",
+          "date": "2026-10-06T06:13:32Z",
+          "changelog": "Initial Release"
+        }
+      ],
+      "external_url": "https://github.com/awesmdiver/modpacer/releases/latest",
+      "image": {
+        "file": "cover.png",
+        "sha": "175af6991604d3810b726c724d7b15a0f62e892f",
+        "commit": "e3bc3bf7cbdc250fb980e857933ede27c591c10b",
+        "width": 1940,
+        "height": 1091
+      },
+      "stats": {
+        "downloads": 3,
+        "endorsements": 0
+      }
+    },
     {
       "id": "plugins/urtubesrclogged/battle-summaries",
       "plugin_id": "urtubesrclogged.battle-summaries",
@@ -49,52 +95,6 @@
       },
       "stats": {
         "downloads": 23,
-        "endorsements": 0
-      }
-    },
-    {
-      "id": "plugins/awesmdiver/modpacer",
-      "plugin_id": "awesmdiver.modpacer",
-      "type": "listing",
-      "title": "ModPacer",
-      "tagline": "Easily install new mods and keep them on pace with updates.",
-      "author": "awesmdiver",
-      "tags": [
-        "mod updater",
-        "vortex",
-        "mod organizer 2",
-        "updates"
-      ],
-      "nsfw": false,
-      "icon": "wrench",
-      "mods": [],
-      "first_published": "2026-10-06T04:07:35Z",
-      "last_updated": "2026-10-06T19:22:34Z",
-      "version": "1.1.0",
-      "history": [
-        {
-          "version": "1.1.0",
-          "commit": "7929f49da079262f63c645c4ef0613b16cdab866",
-          "date": "2026-10-06T19:22:34Z",
-          "changelog": "**Mod Organizer 2** users: this update is for you. \r\n\r\n- Mod Organizer 2 and Wabbajack modlists are not properly handled.\r\n- Mod Organizer 2: can now pick your Mod Organizer 2 folder and ModPacer finds your mods and Skyrim folder from it.\r\n- Added logging, which is on by default, but can be turned off in settings.\r\n- Tells you when a newer ModPacer is out."
-        },
-        {
-          "version": "1.0.0",
-          "commit": "af3e0b8c3452da83640c639c5166db42530c76df",
-          "date": "2026-10-06T06:13:32Z",
-          "changelog": "Initial Release"
-        }
-      ],
-      "external_url": "https://github.com/awesmdiver/modpacer/releases/latest",
-      "image": {
-        "file": "cover.png",
-        "sha": "175af6991604d3810b726c724d7b15a0f62e892f",
-        "commit": "e3bc3bf7cbdc250fb980e857933ede27c591c10b",
-        "width": 1940,
-        "height": 1091
-      },
-      "stats": {
-        "downloads": 3,
         "endorsements": 0
       }
     },
