@@ -10,7 +10,7 @@
     "Combat",
     "Context"
   ],
-  "nsfw": false,
+  "nsfw": true,
   "icon": "sword",
   "mods": [],
   "languages": [
@@ -18,6 +18,6 @@
   ],
   "image": "cover.png",
   "external_url": "https://github.com/urtubesrclogged/BattleSummaries/releases/latest",
-  "version": "1.0.1",
-  "changelog": "Initial release"
+  "version": "1.1.0",
+  "changelog": "- **Injuries from injury mods.** A fighter who picks up an injury during the battle is told so (\"was injured in this fight and still carries it: Leg Injury\"), and one they already had is told as brought into the fight. Works with Blade and Blunt and Wildcat; any other injury mod that marks its injuries with a keyword can be added in the ini (`[OtherMods] sInjuryKeywords`).\n- **Beheadings and severed limbs.** Told with the kill (\"Lydia beheaded Bandit Chief.\"): Dismembering Framework for limbs, Next-Gen Decapitations for heads, and the game's own beheadings. None of these mods is required.\n- **Innocents and allies slain.** A citizen or guard cut down without ever raising a weapon is told as an innocent, with who killed them, and is no longer counted among the enemies. An ally killed by their own side is told as that.\n- **How long the battle lasted** is told as a figure (\"It lasted 42 seconds.\", \"It lasted about 25 minutes.\").\n- **A battle ends with its enemies.** It no longer stays \"underway\" for as long as the game keeps the party in combat with wildlife that never fought, and time spent in menus is not counted in its length.\n- **Kill credit.** The game names the player for some deaths the player had no part in; a kill now goes to the player only when the player struck the victim.\n\nInjuries and dismemberment can be switched off in `BattleSummaries.ini` (`bInjuries`, `bDismemberment`). Replace the old version when updating; do not merge into it."
 }
