@@ -1,8 +1,48 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-06T09:35:09.286Z",
-  "stats_as_of": "2026-10-06T09:35:09.177Z",
+  "generated_at": "2026-10-06T09:35:44.870Z",
+  "stats_as_of": "2026-10-06T09:35:44.806Z",
   "plugins": [
+    {
+      "id": "plugins/oldcustard/audio-tags-for-universal-translator",
+      "plugin_id": "oldcustard.audio-tags-for-universal-translator",
+      "type": "bundle",
+      "title": "Audio Tags for Universal Translator",
+      "tagline": "Adds audio tags to the universal translator prompt",
+      "author": "oldcustard",
+      "tags": [
+        "universal translator",
+        "audio tags"
+      ],
+      "nsfw": false,
+      "icon": "world",
+      "mods": [],
+      "first_published": "2026-10-06T09:35:21Z",
+      "last_updated": "2026-10-06T09:35:21Z",
+      "version": "1.0.0",
+      "min_skyrimnet_version": "0.26.0",
+      "history": [
+        {
+          "version": "1.0.0",
+          "commit": "ed1602476f934b6be00e8119964197384cd1b841",
+          "date": "2026-10-06T09:35:21Z",
+          "changelog": "Initial release"
+        }
+      ],
+      "contents": {
+        "triggers": 0,
+        "actions": 0,
+        "prompts": 1,
+        "bios": 0,
+        "knowledge": 0,
+        "entities": 0,
+        "config": 0
+      },
+      "stats": {
+        "downloads": 0,
+        "endorsements": 0
+      }
+    },
     {
       "id": "plugins/awesmdiver/modpacer",
       "plugin_id": "awesmdiver.modpacer",
