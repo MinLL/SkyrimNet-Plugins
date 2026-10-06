@@ -19,6 +19,6 @@
   ],
   "image": "cover.png",
   "external_url": "https://github.com/deadohiosky48/SkyrimNet-Relationships",
-  "version": "2.0.1",
-  "changelog": "Dashboard now supports Prisma UI. Meridian UI is still preferred for non-VR users when installed."
+  "version": "2.1.0",
+  "changelog": "**Relationships' custom bio blocks now auto-populated**\nWith SeverActions 4.0.1 or newer, everyone enrolled in Relationships automatically have the mod's custom bio blocks selected by the LLM and applied. This adds more character definition that helps the LLM roleplay their unique personalities. User-chosen/removed blocks always take precedence.\n\n**Everyone you talk to gets enrolled in Relationships**\nNamed people you talk to can join your roster. Guards and other unnamed passers-by aren't. Anyone you remove stays removed. Opt-in feature - turn it on in the plugin settings.\n\n**Dashboard now supports Magelight UI**\nIf you have SeverActions 4.x, you already have Magelight (can also be obtained standalone via Nexus), and the dashboard uses it when Meridian UI isn't installed. In Skyrim VR it's tried first. Prisma UI is the fallback.\n\n**New API for mod authors**\nFor other mod authors: a read-only C++ API that lets your SKSE plugin see each bond's tier, track, commitment, and more, with a callback when they change. See `For other mod authors` in the GitHub README."
 }
