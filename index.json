@@ -1,8 +1,75 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-06T22:30:40.427Z",
-  "stats_as_of": "2026-10-06T22:30:40.259Z",
+  "generated_at": "2026-10-06T22:59:14.335Z",
+  "stats_as_of": "2026-10-06T22:59:14.212Z",
   "plugins": [
+    {
+      "id": "plugins/deadohiosky/relationships",
+      "plugin_id": "deadohiosky.relationships",
+      "type": "listing",
+      "title": "Relationships",
+      "tagline": "Build relationships naturally and organically in a world where every character is unique",
+      "author": "deadohiosky",
+      "tags": [
+        "relationship",
+        "romance",
+        "love",
+        "friendship"
+      ],
+      "nsfw": false,
+      "icon": "heart",
+      "mods": [],
+      "first_published": "2026-09-19T13:07:18Z",
+      "last_updated": "2026-10-06T22:58:40Z",
+      "version": "2.1.0",
+      "history": [
+        {
+          "version": "2.1.0",
+          "commit": "ef4e63856f3f6c1aaa67ab8d41d556d38da488da",
+          "date": "2026-10-06T22:58:40Z",
+          "changelog": "**Relationships' custom bio blocks now auto-populated**\nWith SeverActions 4.0.1 or newer, everyone enrolled in Relationships automatically have the mod's custom bio blocks selected by the LLM and applied. This adds more character definition that helps the LLM roleplay their unique personalities. User-chosen/removed blocks always take precedence.\n\n**Everyone you talk to gets enrolled in Relationships**\nNamed people you talk to can join your roster. Guards and other unnamed passers-by aren't. Anyone you remove stays removed. Opt-in feature - turn it on in the plugin settings.\n\n**Dashboard now supports Magelight UI**\nIf you have SeverActions 4.x, you already have Magelight (can also be obtained standalone via Nexus), and the dashboard uses it when Meridian UI isn't installed. In Skyrim VR it's tried first. Prisma UI is the fallback.\n\n**New API for mod authors**\nFor other mod authors: a read-only C++ API that lets your SKSE plugin see each bond's tier, track, commitment, and more, with a callback when they change. See `For other mod authors` in the GitHub README."
+        },
+        {
+          "version": "2.0.1",
+          "commit": "32730df0667689c46261752a11a62561f44a5ba3",
+          "date": "2026-10-05T16:04:06Z",
+          "changelog": "Dashboard now supports Prisma UI. Meridian UI is still preferred for non-VR users when installed."
+        },
+        {
+          "version": "2.0.0",
+          "commit": "6534d1be4c6f011bdda485188802286b9e4c116d",
+          "date": "2026-10-02T18:10:05Z",
+          "changelog": "**Biggest change since the initial launch!**\n\nRelationships no longer requires or depends on Romantasy. It keeps its own bonds now. If you're upgrading from Relationships 1.x, keep Romantasy installed for your first load: your bonds are brought over once automatically, and after that Romantasy is optional. If you decide to remove Romantasy after that, an optional Romantasy Stub is provided that lets saves that listed it keep loading while disabling its functionality.\n\n**Other changes include:**\n- New UI using Meridian UI\n- NPCs no longer have to be followers/companions to be enrolled and tracked\n- Enroll any NPC via hotkey or UI\n- Your hotkeys need setting again - now with SkyrimNet's key picker and a modifier each, under Hotkeys in the plugin's settings in the SkyrimNet UI"
+        },
+        {
+          "version": "1.7.0",
+          "commit": "6d6a1647d84fe59afadd365fb53da7350e49f6b4",
+          "date": "2026-09-25T13:34:31Z",
+          "changelog": "Tuned initial relationship seeding to take time spent together into account so experiencing a dense day of activity before initial doesn't over-seed the relationship into more advanced stages. Strangers are truly strangers, no matter how busy you were together."
+        },
+        {
+          "version": "1.6.0",
+          "commit": "c85c6ccc57131d57506c2fec2391f48ebddd859b",
+          "date": "2026-09-19T13:07:18Z"
+        }
+      ],
+      "external_url": "https://github.com/deadohiosky48/SkyrimNet-Relationships",
+      "languages": [
+        "en"
+      ],
+      "language": "en",
+      "image": {
+        "file": "cover.png",
+        "sha": "d859f6dcafc5b4b4c60c4236164c1f698bf1fcd4",
+        "commit": "6d6a1647d84fe59afadd365fb53da7350e49f6b4",
+        "width": 1536,
+        "height": 864
+      },
+      "stats": {
+        "downloads": 111,
+        "endorsements": 5
+      }
+    },
     {
       "id": "plugins/awesmdiver/modpacer",
       "plugin_id": "awesmdiver.modpacer",
@@ -152,7 +219,7 @@
         "height": 1080
       },
       "stats": {
-        "downloads": 4,
+        "downloads": 5,
         "endorsements": 0
       }
     },
@@ -192,7 +259,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 10,
+        "downloads": 11,
         "endorsements": 0
       }
     },
@@ -306,7 +373,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 77,
+        "downloads": 78,
         "endorsements": 5
       }
     },
@@ -423,69 +490,8 @@
         "config": 0
       },
       "stats": {
-        "downloads": 131,
+        "downloads": 132,
         "endorsements": 0
-      }
-    },
-    {
-      "id": "plugins/deadohiosky/relationships",
-      "plugin_id": "deadohiosky.relationships",
-      "type": "listing",
-      "title": "Relationships",
-      "tagline": "Build relationships naturally and organically in a world where every character is unique",
-      "author": "deadohiosky",
-      "tags": [
-        "relationship",
-        "romance",
-        "love",
-        "friendship"
-      ],
-      "nsfw": false,
-      "icon": "heart",
-      "mods": [],
-      "first_published": "2026-09-19T13:07:18Z",
-      "last_updated": "2026-10-05T16:04:06Z",
-      "version": "2.0.1",
-      "history": [
-        {
-          "version": "2.0.1",
-          "commit": "32730df0667689c46261752a11a62561f44a5ba3",
-          "date": "2026-10-05T16:04:06Z",
-          "changelog": "Dashboard now supports Prisma UI. Meridian UI is still preferred for non-VR users when installed."
-        },
-        {
-          "version": "2.0.0",
-          "commit": "6534d1be4c6f011bdda485188802286b9e4c116d",
-          "date": "2026-10-02T18:10:05Z",
-          "changelog": "**Biggest change since the initial launch!**\n\nRelationships no longer requires or depends on Romantasy. It keeps its own bonds now. If you're upgrading from Relationships 1.x, keep Romantasy installed for your first load: your bonds are brought over once automatically, and after that Romantasy is optional. If you decide to remove Romantasy after that, an optional Romantasy Stub is provided that lets saves that listed it keep loading while disabling its functionality.\n\n**Other changes include:**\n- New UI using Meridian UI\n- NPCs no longer have to be followers/companions to be enrolled and tracked\n- Enroll any NPC via hotkey or UI\n- Your hotkeys need setting again - now with SkyrimNet's key picker and a modifier each, under Hotkeys in the plugin's settings in the SkyrimNet UI"
-        },
-        {
-          "version": "1.7.0",
-          "commit": "6d6a1647d84fe59afadd365fb53da7350e49f6b4",
-          "date": "2026-09-25T13:34:31Z",
-          "changelog": "Tuned initial relationship seeding to take time spent together into account so experiencing a dense day of activity before initial doesn't over-seed the relationship into more advanced stages. Strangers are truly strangers, no matter how busy you were together."
-        },
-        {
-          "version": "1.6.0",
-          "commit": "c85c6ccc57131d57506c2fec2391f48ebddd859b",
-          "date": "2026-09-19T13:07:18Z"
-        }
-      ],
-      "external_url": "https://github.com/deadohiosky48/SkyrimNet-Relationships",
-      "languages": [
-        "en"
-      ],
-      "language": "en",
-      "image": {
-        "file": "cover.png",
-        "sha": "d859f6dcafc5b4b4c60c4236164c1f698bf1fcd4",
-        "commit": "6d6a1647d84fe59afadd365fb53da7350e49f6b4",
-        "width": 1536,
-        "height": 864
-      },
-      "stats": {
-        "downloads": 111,
-        "endorsements": 5
       }
     },
     {
@@ -615,7 +621,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 340,
+        "downloads": 342,
         "endorsements": 23
       }
     },
@@ -2061,7 +2067,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 111,
+        "downloads": 112,
         "endorsements": 7
       }
     },
@@ -2289,7 +2295,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 588,
+        "downloads": 589,
         "endorsements": 2
       }
     },
@@ -2424,7 +2430,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1149,
+        "downloads": 1151,
         "endorsements": 2
       }
     },
@@ -2649,7 +2655,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 622,
+        "downloads": 624,
         "endorsements": 0
       }
     },
@@ -3189,7 +3195,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 81,
+        "downloads": 82,
         "endorsements": 0
       }
     },
@@ -3414,7 +3420,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 503,
+        "downloads": 504,
         "endorsements": 0
       }
     },
@@ -6714,7 +6720,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 503,
+        "downloads": 505,
         "endorsements": 0
       }
     },
@@ -7839,7 +7845,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 709,
+        "downloads": 710,
         "endorsements": 1
       }
     },
@@ -8424,7 +8430,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 58,
+        "downloads": 59,
         "endorsements": 0
       }
     },
@@ -9594,7 +9600,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 34,
+        "downloads": 35,
         "endorsements": 0
       }
     },
@@ -10404,7 +10410,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 76,
+        "downloads": 77,
         "endorsements": 0
       }
     },
@@ -10449,7 +10455,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 223,
+        "downloads": 224,
         "endorsements": 0
       }
     },
@@ -10854,7 +10860,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 68,
+        "downloads": 69,
         "endorsements": 0
       }
     },
@@ -11259,7 +11265,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 891,
+        "downloads": 892,
         "endorsements": 2
       }
     },
