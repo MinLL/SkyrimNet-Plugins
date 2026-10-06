@@ -1,8 +1,58 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-06T03:37:00.482Z",
-  "stats_as_of": "2026-10-06T03:37:00.386Z",
+  "generated_at": "2026-10-06T03:52:45.562Z",
+  "stats_as_of": "2026-10-06T03:52:45.473Z",
   "plugins": [
+    {
+      "id": "plugins/zol/pandorumllm",
+      "plugin_id": "zol.pandorumllm",
+      "type": "listing",
+      "title": "PandorumLLM",
+      "tagline": "**A versatile browser control panel and proxy tailored for SkyrimNet to run local models via llama.cpp across multiple PCs and Servers in any configuration with a simple click! **",
+      "author": "zol",
+      "tags": [
+        "External plugin",
+        "local servers (LLM",
+        "Decision(JEV))",
+        "TTS",
+        "Song Generator",
+        "Sample and Song Vault",
+        "SkyrimNet provider management",
+        "Server Cards with automatic template generator",
+        "highly customised terminals",
+        "visible thinking and JEV process"
+      ],
+      "nsfw": false,
+      "icon": "ai",
+      "mods": [],
+      "first_published": "2026-10-06T03:52:22Z",
+      "last_updated": "2026-10-06T03:52:22Z",
+      "version": "3.9.1",
+      "history": [
+        {
+          "version": "3.9.1",
+          "commit": "f70a1f018182d8f9a89c27dbf3da854c728694df",
+          "date": "2026-10-06T03:52:22Z",
+          "changelog": "# [v3.91-beta](https://github.com/Pt0l3my/PandorumLLM/releases/tag/v3.91-beta)\n\n### **Audio**\n\n- **Song Generator**\n- **Unified Audio tab**\n- **Unique Song Generator UI**\n- **SkyrimNet SG support**\n- **NPC voiced songs**\n- **Song Vault**\n\n\n### **Decision models (JEV) Support**\n\n- **Native llama.cpp Decision model support**\n- **Decision provider**\n- **Decision Model labels**\n- **JEV UI**\n- **JEV Diagnostics**\n\n\n### **TTS**\n\n- **BreezeTTS 2**\n- **Official Audio.cpp repo**\n\n\n### **UI elements**\n\n- **New Launcher buttons**\n- **Revised Updater/Donwloader UI**\n- And a lot of other minor UI adjustments."
+        }
+      ],
+      "external_url": "https://github.com/Pt0l3my/PandorumLLM",
+      "languages": [
+        "en"
+      ],
+      "language": "en",
+      "image": {
+        "file": "cover.png",
+        "sha": "53fd63d778da6f2d6021537f8424724c13164d72",
+        "commit": "f70a1f018182d8f9a89c27dbf3da854c728694df",
+        "width": 1280,
+        "height": 720
+      },
+      "stats": {
+        "downloads": 0,
+        "endorsements": 0
+      }
+    },
     {
       "id": "plugins/pdusen/narrative-engine",
       "plugin_id": "pdusen.narrative-engine",
@@ -2439,7 +2489,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 585,
+        "downloads": 586,
         "endorsements": 0
       }
     },
@@ -3969,7 +4019,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 125,
+        "downloads": 126,
         "endorsements": 0
       }
     },
@@ -9249,7 +9299,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 374,
+        "downloads": 375,
         "endorsements": 0
       }
     },
@@ -11049,7 +11099,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 846,
+        "downloads": 847,
         "endorsements": 2
       }
     },
