@@ -1,0 +1,21 @@
+{
+  "id": "awesmdiver.modpacer",
+  "type": "listing",
+  "title": "ModPacer",
+  "tagline": "Easily install new mods and keep them on pace with updates.",
+  "description": "## What is ModPacer?\r\n\r\nModPacer is a Windows tool that connects your mod manager to the SkyrimNet Plugin Hub. It runs in your system tray (by the clock) and opens in your web browser. It checks the SkyrimNet mods you have installed, shows which ones have a new version, and lists the Hub mods you do not have yet. One click installs or updates them for you.\r\n\r\nIt works with **Vortex** and **Mod Organizer 2**.\r\n\r\n## Why use it?\r\n\r\nSkyrimNet's plugins come from many different authors, and they do not notify you when they update. Without a tool you would have to visit each mod's page and compare versions by hand.\r\n\r\nModPacer does that for you. Open it, see at a glance what is out of date and what you are missing, and update or install it right there.\r\n\r\n- **With Vortex:** It installs straight in and keeps each mod's place in your collections. Once the included Vortex Bridge is added, Vortex itself does a quick background check every time it starts. If any of your mods have updates, you get a notification inside Vortex. ModPacer does not need to be running for this, and you can turn it off in ModPacer's Settings.\r\n- **With Mod Organizer 2:** It downloads the files into your downloads folder, ready for you to add. It never changes MO2 itself.\r\n\r\n## What you need\r\n\r\n- **Windows.**\r\n- **SkyrimNet** installed.\r\n- **Vortex** or **Mod Organizer 2**.\r\n\r\n## Getting started\r\n\r\n1. **Run the installer.** It installs just for you (no administrator needed). There is a portable zip too.\r\n2. **ModPacer opens in your browser** when the installer finishes. If it doesn't, open it from the tray icon by your clock.\r\n3. **Follow the short guided setup.** If you use Vortex, setup shows you how to add the small Vortex Bridge extension that comes with it (drop its zip onto Vortex's Extensions page).\r\n\r\nBugs and ideas go on the GitHub Issues page. My other free tools are at",
+  "author": "awesmdiver",
+  "tags": [
+    "mod updater",
+    "vortex",
+    "mod organizer 2",
+    "updates"
+  ],
+  "nsfw": false,
+  "icon": "wrench",
+  "mods": [],
+  "image": "cover.png",
+  "external_url": "https://github.com/awesmdiver/modpacer/releases/latest",
+  "version": "1.0.0",
+  "changelog": "Initial Release"
+}
