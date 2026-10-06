@@ -1,0 +1,30 @@
+{
+  "id": "zol.pandorumllm",
+  "type": "listing",
+  "title": "PandorumLLM",
+  "tagline": "**A versatile browser control panel and proxy tailored for SkyrimNet to run local models via llama.cpp across multiple PCs and Servers in any configuration with a simple click! **",
+  "description": "# PandorumLLM\n\n**A versatile browser control panel and proxy tailored for SkyrimNet to run local models via llama.cpp across multiple PCs and Servers in any configuration with a simple click!\n**\n\nOne Python file, no dependencies, no cloud. It starts your servers, routes SkyrimNet's providers to them, and shows you what the models are actually doing while you play.\n\n**:book: Equipped with User guide with curated steps for quick setup and Sampler guide to explain how they work!**\n\n\n### :white_check_mark: Simple server cards, no API, C++ or Python editing required\n\n- User friendly interface and simple layouts.\n- Setup up to 20 servers, each with customized settings.\n- ALL UI based curated runtime parameter entries and toggles per server.\n- No messing and guessing with syntax arguments in files, Server Cards automatically build their template by user settings.\n- Put all your models in one place and select any to run with a couple of clicks.\n- Tensor based filter to distinguish types of .gguf files to tell the user the type of model (LLM, vision, MTP).\n- Launch all servers with a single click!\n- Decision models (JEV) Support.\n\n\n### ⚡️Powerful Proxy tool to manage SkyrimNet jobs (providers)\n\n- Drag & drop system: link GPUs to servers, allocate providers (jobs) to servers, in any configuration.\n- One port per provider, every SkyrimNet job gets its own settings.\n- Per-provider samplers edited on the fly (temp, top-p, top-k, min-p, DRY), 100% llama.cpp compliant injections.\n- Thinking on/off per provider mid-session, no API editing.\n- Dashboard with 3 different terminal views (Proxy, Thinking, Split View), track all generations, see thinking process of the model (the LLM mind!).\n- Read-only remote view from another PC on your LAN (normally off).\n\n\n### :notes: Unique Audio features\n\n- TTS with customizable audio tag panel, automatic calibration and EOC prevention. (HiggsTTS v3, PocketTTS, Moss TTS 1.5 local, Fish Audio S2 Pro, OmniVoice, and many more!)\n- Song Generator fully supports Skyrim bards and their noisy nature to the fullest! (Ace-Step 1.5 Turbo, Minimax Music 3, HeartMula 3B)\n- Song Extractor paired with Song Generator allows bards to sing their lyrics with their own voice! (currently only supported via Ace-Step 1.5 Turbo)\n- Fully customised UI with tailored tools to create songs and use your own LLM servers to write lyrics.\n- Built in Song Vault to store and playback songs. (also in Remote Access view, to listen to your songs from another PC)\n\n\n### :receipt: Requirements\n\n1. Windows with PowerShell 7\n2. Python 3.9+\n3. llama.cpp CUDA b11361+\n4. audio.cpp CUDA v0.9.0+\n5. NVIDIA GPU\n6. SkyrimNet\n\n\n### :wrench: Installation\n\nDownload the latest release .zip file and extract it, run the executable. Refer to built-in guide.",
+  "author": "zol",
+  "tags": [
+    "External plugin",
+    "local servers (LLM",
+    "Decision(JEV))",
+    "TTS",
+    "Song Generator",
+    "Sample and Song Vault",
+    "SkyrimNet provider management",
+    "Server Cards with automatic template generator",
+    "highly customised terminals",
+    "visible thinking and JEV process"
+  ],
+  "nsfw": false,
+  "icon": "ai",
+  "mods": [],
+  "languages": [
+    "en"
+  ],
+  "image": "cover.png",
+  "external_url": "https://github.com/Pt0l3my/PandorumLLM",
+  "version": "3.9.1",
+  "changelog": "# [v3.91-beta](https://github.com/Pt0l3my/PandorumLLM/releases/tag/v3.91-beta)\n\n### **Audio**\n\n- **Song Generator**\n- **Unified Audio tab**\n- **Unique Song Generator UI**\n- **SkyrimNet SG support**\n- **NPC voiced songs**\n- **Song Vault**\n\n\n### **Decision models (JEV) Support**\n\n- **Native llama.cpp Decision model support**\n- **Decision provider**\n- **Decision Model labels**\n- **JEV UI**\n- **JEV Diagnostics**\n\n\n### **TTS**\n\n- **BreezeTTS 2**\n- **Official Audio.cpp repo**\n\n\n### **UI elements**\n\n- **New Launcher buttons**\n- **Revised Updater/Donwloader UI**\n- And a lot of other minor UI adjustments."
+}
