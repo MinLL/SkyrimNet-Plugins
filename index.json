@@ -1,8 +1,54 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-06T04:07:59.630Z",
+  "generated_at": "2026-10-06T04:11:56.324Z",
   "stats_as_of": "2026-10-06T04:07:59.504Z",
   "plugins": [
+    {
+      "id": "plugins/urtubesrclogged/adventurers-guild",
+      "plugin_id": "urtubesrclogged.adventurers-guild",
+      "type": "listing",
+      "title": "Adventurers Guild",
+      "tagline": "An isekai-style adventurers guild: Skyrimnet NPCs know its lore, your rank and your party, and its innkeepers can register and promote you.",
+      "author": "urtubesrclogged",
+      "tags": [
+        "Guild",
+        "Quests",
+        "Rank",
+        "Lore",
+        "Actions",
+        "Followers"
+      ],
+      "nsfw": false,
+      "icon": "scroll",
+      "mods": [],
+      "first_published": "2026-10-06T04:11:35Z",
+      "last_updated": "2026-10-06T04:11:35Z",
+      "version": "1.0.0",
+      "history": [
+        {
+          "version": "1.0.0",
+          "commit": "49ac631e988683f905ca340c67f51b45d671a54a",
+          "date": "2026-10-06T04:11:35Z",
+          "changelog": "Initial release on the plugin hub"
+        }
+      ],
+      "external_url": "https://www.nexusmods.com/skyrimspecialedition/mods/193777",
+      "languages": [
+        "en"
+      ],
+      "language": "en",
+      "image": {
+        "file": "cover.png",
+        "sha": "1916a6971936041af68df1b33f277d92aab3a214",
+        "commit": "49ac631e988683f905ca340c67f51b45d671a54a",
+        "width": 1920,
+        "height": 1080
+      },
+      "stats": {
+        "downloads": 0,
+        "endorsements": 0
+      }
+    },
     {
       "id": "plugins/awesmdiver/modpacer",
       "plugin_id": "awesmdiver.modpacer",
