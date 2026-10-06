@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-06T21:29:00.957Z",
-  "stats_as_of": "2026-10-06T21:29:00.851Z",
+  "generated_at": "2026-10-06T21:49:45.776Z",
+  "stats_as_of": "2026-10-06T21:49:45.687Z",
   "plugins": [
     {
       "id": "plugins/awesmdiver/modpacer",
@@ -20,9 +20,15 @@
       "icon": "wrench",
       "mods": [],
       "first_published": "2026-10-06T04:07:35Z",
-      "last_updated": "2026-10-06T19:35:56Z",
-      "version": "1.1.0",
+      "last_updated": "2026-10-06T21:49:20Z",
+      "version": "1.1.1",
       "history": [
+        {
+          "version": "1.1.1",
+          "commit": "8e3ffa3b13de3c88a900592e03b8a28a44fef98b",
+          "date": "2026-10-06T21:49:20Z",
+          "changelog": "**What's New**\r\n\r\n- **Fixed SkyrimNet Folder Detection:** Resolved an issue where ModPacer could mistakenly select a subfolder created by an add-on instead of the main SkyrimNet directory, resulting in a Could not read content-registry.json error. \r\n\r\n- **Improved Logging:** Setup and installation errors are now accurately captured in the diagnostic log, making troubleshooting and support requests much easier."
+        },
         {
           "version": "1.1.0",
           "commit": "526db56f205786e9ccce8572e9b1b66ca49c7248",
@@ -94,7 +100,7 @@
         "height": 1080
       },
       "stats": {
-        "downloads": 24,
+        "downloads": 25,
         "endorsements": 0
       }
     },
@@ -548,7 +554,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 338,
+        "downloads": 340,
         "endorsements": 23
       }
     },
@@ -2273,7 +2279,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 585,
+        "downloads": 586,
         "endorsements": 2
       }
     },
@@ -2318,7 +2324,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 291,
+        "downloads": 292,
         "endorsements": 0
       }
     },
@@ -2408,7 +2414,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1146,
+        "downloads": 1147,
         "endorsements": 2
       }
     },
@@ -3128,7 +3134,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 172,
+        "downloads": 173,
         "endorsements": 1
       }
     },
@@ -4118,7 +4124,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 628,
+        "downloads": 629,
         "endorsements": 2
       }
     },
@@ -4253,7 +4259,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 158,
+        "downloads": 159,
         "endorsements": 1
       }
     },
@@ -4298,7 +4304,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 244,
+        "downloads": 245,
         "endorsements": 0
       }
     },
@@ -4478,7 +4484,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 133,
+        "downloads": 134,
         "endorsements": 0
       }
     },
@@ -5843,7 +5849,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 205,
+        "downloads": 206,
         "endorsements": 0
       }
     },
@@ -6563,7 +6569,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 323,
+        "downloads": 324,
         "endorsements": 0
       }
     },
@@ -6698,7 +6704,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 499,
+        "downloads": 500,
         "endorsements": 0
       }
     },
@@ -6788,7 +6794,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 691,
+        "downloads": 692,
         "endorsements": 2
       }
     },
@@ -7823,7 +7829,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 706,
+        "downloads": 707,
         "endorsements": 1
       }
     },
@@ -8093,7 +8099,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 615,
+        "downloads": 616,
         "endorsements": 2
       }
     },
@@ -8633,7 +8639,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 409,
+        "downloads": 410,
         "endorsements": 0
       }
     },
@@ -8678,7 +8684,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 255,
+        "downloads": 256,
         "endorsements": 0
       }
     },
@@ -9173,7 +9179,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 147,
+        "downloads": 148,
         "endorsements": 0
       }
     },
@@ -9443,7 +9449,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 391,
+        "downloads": 392,
         "endorsements": 0
       }
     },
@@ -10703,7 +10709,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 323,
+        "downloads": 324,
         "endorsements": 2
       }
     },
@@ -11108,7 +11114,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 125,
+        "downloads": 126,
         "endorsements": 0
       }
     },
@@ -11243,7 +11249,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 889,
+        "downloads": 890,
         "endorsements": 2
       }
     },
