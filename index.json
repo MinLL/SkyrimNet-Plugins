@@ -1,8 +1,48 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-06T05:32:26.600Z",
-  "stats_as_of": "2026-10-06T05:32:26.450Z",
+  "generated_at": "2026-10-06T05:49:22.688Z",
+  "stats_as_of": "2026-10-06T05:49:22.564Z",
   "plugins": [
+    {
+      "id": "plugins/awesmdiver/modpacer",
+      "plugin_id": "awesmdiver.modpacer",
+      "type": "listing",
+      "title": "ModPacer",
+      "tagline": "Easily install new mods and keep them on pace with updates.",
+      "author": "awesmdiver",
+      "tags": [
+        "mod updater",
+        "vortex",
+        "mod organizer 2",
+        "updates"
+      ],
+      "nsfw": false,
+      "icon": "wrench",
+      "mods": [],
+      "first_published": "2026-10-06T04:07:35Z",
+      "last_updated": "2026-10-06T05:49:01Z",
+      "version": "1.0.0",
+      "history": [
+        {
+          "version": "1.0.0",
+          "commit": "9cf9b90f3f0d962ad7ebac7acc5fdddf021dde10",
+          "date": "2026-10-06T05:49:01Z",
+          "changelog": "Initial Release"
+        }
+      ],
+      "external_url": "https://github.com/awesmdiver/modpacer/releases/latest",
+      "image": {
+        "file": "cover.png",
+        "sha": "175af6991604d3810b726c724d7b15a0f62e892f",
+        "commit": "e3bc3bf7cbdc250fb980e857933ede27c591c10b",
+        "width": 1940,
+        "height": 1091
+      },
+      "stats": {
+        "downloads": 0,
+        "endorsements": 0
+      }
+    },
     {
       "id": "plugins/urtubesrclogged/adventurers-guild",
       "plugin_id": "urtubesrclogged.adventurers-guild",
@@ -43,46 +83,6 @@
         "commit": "49ac631e988683f905ca340c67f51b45d671a54a",
         "width": 1920,
         "height": 1080
-      },
-      "stats": {
-        "downloads": 0,
-        "endorsements": 0
-      }
-    },
-    {
-      "id": "plugins/awesmdiver/modpacer",
-      "plugin_id": "awesmdiver.modpacer",
-      "type": "listing",
-      "title": "ModPacer",
-      "tagline": "Easily install new mods and keep them on pace with updates.",
-      "author": "awesmdiver",
-      "tags": [
-        "mod updater",
-        "vortex",
-        "mod organizer 2",
-        "updates"
-      ],
-      "nsfw": false,
-      "icon": "wrench",
-      "mods": [],
-      "first_published": "2026-10-06T04:07:35Z",
-      "last_updated": "2026-10-06T04:07:35Z",
-      "version": "1.0.0",
-      "history": [
-        {
-          "version": "1.0.0",
-          "commit": "e3bc3bf7cbdc250fb980e857933ede27c591c10b",
-          "date": "2026-10-06T04:07:35Z",
-          "changelog": "Initial Release"
-        }
-      ],
-      "external_url": "https://github.com/awesmdiver/modpacer/releases/latest",
-      "image": {
-        "file": "cover.png",
-        "sha": "175af6991604d3810b726c724d7b15a0f62e892f",
-        "commit": "e3bc3bf7cbdc250fb980e857933ede27c591c10b",
-        "width": 1940,
-        "height": 1091
       },
       "stats": {
         "downloads": 0,
@@ -430,7 +430,7 @@
         "height": 1080
       },
       "stats": {
-        "downloads": 19,
+        "downloads": 20,
         "endorsements": 0
       }
     },
@@ -1938,7 +1938,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 49,
+        "downloads": 50,
         "endorsements": 2
       }
     },
@@ -2350,7 +2350,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1087,
+        "downloads": 1088,
         "endorsements": 2
       }
     },
@@ -4060,7 +4060,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 604,
+        "downloads": 605,
         "endorsements": 2
       }
     },
@@ -5095,7 +5095,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 203,
+        "downloads": 204,
         "endorsements": 0
       }
     },
@@ -6100,7 +6100,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 151,
+        "downloads": 152,
         "endorsements": 0
       }
     },
@@ -6370,7 +6370,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 87,
+        "downloads": 88,
         "endorsements": 0
       }
     },
@@ -6730,7 +6730,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 661,
+        "downloads": 662,
         "endorsements": 2
       }
     },
@@ -7765,7 +7765,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 672,
+        "downloads": 673,
         "endorsements": 1
       }
     },
@@ -8035,7 +8035,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 588,
+        "downloads": 589,
         "endorsements": 2
       }
     },
@@ -10375,7 +10375,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 212,
+        "downloads": 213,
         "endorsements": 0
       }
     },
