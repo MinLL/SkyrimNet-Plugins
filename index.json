@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-06T19:22:57.912Z",
-  "stats_as_of": "2026-10-06T19:22:57.802Z",
+  "generated_at": "2026-10-06T19:28:01.884Z",
+  "stats_as_of": "2026-10-06T19:24:43.849Z",
   "plugins": [
     {
       "id": "plugins/awesmdiver/modpacer",
@@ -45,7 +45,7 @@
         "height": 1091
       },
       "stats": {
-        "downloads": 2,
+        "downloads": 3,
         "endorsements": 0
       }
     },
