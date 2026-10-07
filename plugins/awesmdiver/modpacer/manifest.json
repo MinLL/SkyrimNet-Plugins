@@ -16,6 +16,6 @@
   "mods": [],
   "image": "cover.png",
   "external_url": "https://github.com/awesmdiver/modpacer/releases/latest",
-  "version": "1.1.1",
-  "changelog": "**What's New**\r\n\r\n- **Fixed SkyrimNet Folder Detection:** Resolved an issue where ModPacer could mistakenly select a subfolder created by an add-on instead of the main SkyrimNet directory, resulting in a Could not read content-registry.json error. \r\n\r\n- **Improved Logging:** Setup and installation errors are now accurately captured in the diagnostic log, making troubleshooting and support requests much easier."
+  "version": "1.1.4",
+  "changelog": "### What's New\r\n\r\n- **Broader MO2 Detection:** Detects SkyrimNet in Mod Organizer 2's Overwrite and Stock Game folders to support custom modlists like Nolvus and Nordic Souls.\r\n- **Respects MO2 Load Order:** Reads the winning copy of SkyrimNet when multiple exist, and alerts you if the only installed copy is disabled.\r\n- **Improved Add-on Tracking:** Recognizes add-ons as installed whether they are located in the Overwrite folder or any active mod.\r\n- **Flexible Folder Recognition:** Correctly identifies installed MO2 mods even if their folder names differ from their official listing names.\r\n- **Self-Exclusion Fix:** ModPacer no longer incorrectly lists itself under \"Mods not installed.\"\r\n- **Streamlined Alerts:** Provides shorter, clearer messages when SkyrimNet is missing or an add-on hasn't registered.\r\n- **Interactive Setup Fallback:** Prompts you to manually select the SkyrimNet folder during setup if auto-detection fails, rather than halting the installation.\r\n- **True Clean Uninstall:** Choosing \"Delete settings\" during uninstallation now completely removes all ModPacer traces."
 }
