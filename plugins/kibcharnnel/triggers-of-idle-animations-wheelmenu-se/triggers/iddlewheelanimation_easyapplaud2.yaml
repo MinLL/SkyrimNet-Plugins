@@ -13,7 +13,7 @@ eventCriteria:
 audience: nearby_npcs
 response:
   type: direct_narration
-  content: "{{ originator }} makes small claps with his hands"
+  content: "{{ originator }} makes small claps with their hands"
 enabled: true
 cooldownSeconds: 5
 priority: 6
