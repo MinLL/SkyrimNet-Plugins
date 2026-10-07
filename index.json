@@ -1,8 +1,59 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-07T06:48:27.221Z",
-  "stats_as_of": "2026-10-07T06:48:27.138Z",
+  "generated_at": "2026-10-07T07:16:19.125Z",
+  "stats_as_of": "2026-10-07T07:16:19.051Z",
   "plugins": [
+    {
+      "id": "plugins/kibcharnnel/triggers-of-idle-animations-wheelmenu-se",
+      "plugin_id": "kibcharnnel.triggers-of-idle-animations-wheelmenu-se",
+      "type": "bundle",
+      "title": "Triggers of Idle Animations WheelMenu SE",
+      "tagline": "Use WheelMenu to perfome and everyone around you will react!",
+      "author": "kibcharnnel",
+      "tags": [
+        "triggers trigger animation reaction emotes"
+      ],
+      "nsfw": false,
+      "icon": "sparkles",
+      "mods": [
+        {
+          "name": "IdlePlayWheelMenu.esp",
+          "file": "idleplaywheelmenu.esp",
+          "required": true
+        }
+      ],
+      "first_published": "2026-09-20T06:31:24Z",
+      "last_updated": "2026-10-07T07:15:43Z",
+      "version": "1.0.1",
+      "min_skyrimnet_version": "0.26.0",
+      "history": [
+        {
+          "version": "1.0.1",
+          "commit": "9437e2b4f371a5d98d0e0aa9f1f993eb4ac05b4d",
+          "date": "2026-10-07T07:15:43Z",
+          "changelog": "I cannot add a link, but I added a name of a needed plugin."
+        },
+        {
+          "version": "1.0.0",
+          "commit": "95e6db5c95d164121f3c874724c645c7dbec5f27",
+          "date": "2026-09-23T06:13:18Z",
+          "changelog": "Link to the mod was missing"
+        }
+      ],
+      "contents": {
+        "triggers": 70,
+        "actions": 0,
+        "prompts": 0,
+        "bios": 0,
+        "knowledge": 0,
+        "entities": 0,
+        "config": 0
+      },
+      "stats": {
+        "downloads": 75,
+        "endorsements": 0
+      }
+    },
     {
       "id": "plugins/deadohiosky/relationships",
       "plugin_id": "deadohiosky.relationships",
@@ -2178,51 +2229,6 @@
       "stats": {
         "downloads": 218,
         "endorsements": 4
-      }
-    },
-    {
-      "id": "plugins/kibcharnnel/triggers-of-idle-animations-wheelmenu-se",
-      "plugin_id": "kibcharnnel.triggers-of-idle-animations-wheelmenu-se",
-      "type": "bundle",
-      "title": "Triggers of Idle Animations WheelMenu SE",
-      "tagline": "Use WheelMenu to perfome and everyone around you will react!",
-      "author": "kibcharnnel",
-      "tags": [
-        "triggers trigger animation reaction emotes"
-      ],
-      "nsfw": false,
-      "icon": "sparkles",
-      "mods": [
-        {
-          "name": "IdlePlayWheelMenu.esp",
-          "file": "idleplaywheelmenu.esp",
-          "required": true
-        }
-      ],
-      "first_published": "2026-09-20T06:31:24Z",
-      "last_updated": "2026-09-23T06:13:18Z",
-      "version": "1.0.0",
-      "min_skyrimnet_version": "0.25.0",
-      "history": [
-        {
-          "version": "1.0.0",
-          "commit": "95e6db5c95d164121f3c874724c645c7dbec5f27",
-          "date": "2026-09-23T06:13:18Z",
-          "changelog": "Link to the mod was missing"
-        }
-      ],
-      "contents": {
-        "triggers": 70,
-        "actions": 0,
-        "prompts": 0,
-        "bios": 0,
-        "knowledge": 0,
-        "entities": 0,
-        "config": 0
-      },
-      "stats": {
-        "downloads": 75,
-        "endorsements": 0
       }
     },
     {
@@ -6720,7 +6726,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 519,
+        "downloads": 520,
         "endorsements": 0
       }
     },
