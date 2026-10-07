@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-07T02:47:47.880Z",
-  "stats_as_of": "2026-10-07T02:47:47.739Z",
+  "generated_at": "2026-10-07T03:40:27.947Z",
+  "stats_as_of": "2026-10-07T03:40:27.853Z",
   "plugins": [
     {
       "id": "plugins/deadohiosky/relationships",
@@ -66,7 +66,7 @@
         "height": 864
       },
       "stats": {
-        "downloads": 114,
+        "downloads": 115,
         "endorsements": 5
       }
     },
@@ -219,7 +219,7 @@
         "height": 1080
       },
       "stats": {
-        "downloads": 12,
+        "downloads": 13,
         "endorsements": 0
       }
     },
@@ -621,7 +621,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 346,
+        "downloads": 347,
         "endorsements": 24
       }
     },
@@ -2117,7 +2117,7 @@
       ],
       "external_url": "https://github.com/Telord72612/SkyrimNet-Devious-Awareness-Base/releases/tag/v1.0.0",
       "stats": {
-        "downloads": 52,
+        "downloads": 53,
         "endorsements": 2
       }
     },
