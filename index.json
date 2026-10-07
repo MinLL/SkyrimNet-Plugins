@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-07T22:05:06.513Z",
-  "stats_as_of": "2026-10-07T22:05:06.378Z",
+  "generated_at": "2026-10-07T22:29:18.473Z",
+  "stats_as_of": "2026-10-07T22:29:18.338Z",
   "plugins": [
     {
       "id": "plugins/awesmdiver/modpacer",
@@ -547,7 +547,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 147,
+        "downloads": 148,
         "endorsements": 0
       }
     },
@@ -2233,7 +2233,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 227,
+        "downloads": 228,
         "endorsements": 4
       }
     },
