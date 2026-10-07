@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-07T07:16:19.125Z",
-  "stats_as_of": "2026-10-07T07:16:19.051Z",
+  "generated_at": "2026-10-07T07:41:05.279Z",
+  "stats_as_of": "2026-10-07T07:41:05.011Z",
   "plugins": [
     {
       "id": "plugins/kibcharnnel/triggers-of-idle-animations-wheelmenu-se",
@@ -218,7 +218,7 @@
         "height": 1080
       },
       "stats": {
-        "downloads": 33,
+        "downloads": 34,
         "endorsements": 0
       }
     },
@@ -310,7 +310,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 18,
+        "downloads": 19,
         "endorsements": 0
       }
     },
