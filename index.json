@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-08T03:40:36.920Z",
-  "stats_as_of": "2026-10-08T03:40:36.806Z",
+  "generated_at": "2026-10-08T04:37:35.922Z",
+  "stats_as_of": "2026-10-08T04:37:35.787Z",
   "plugins": [
     {
       "id": "plugins/urtubesrclogged/battle-summaries",
@@ -630,7 +630,7 @@
         "height": 928
       },
       "stats": {
-        "downloads": 35,
+        "downloads": 36,
         "endorsements": 1
       }
     },
@@ -690,7 +690,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 367,
+        "downloads": 369,
         "endorsements": 25
       }
     },
@@ -733,7 +733,7 @@
       ],
       "language": "en",
       "stats": {
-        "downloads": 76,
+        "downloads": 77,
         "endorsements": 0
       }
     },
@@ -1391,7 +1391,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 162,
+        "downloads": 163,
         "endorsements": 1
       }
     },
@@ -1461,7 +1461,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 185,
+        "downloads": 186,
         "endorsements": 0
       }
     },
@@ -1553,8 +1553,8 @@
       ],
       "external_url": "https://github.com/naitro2010/SkyrimNet_UDNG/releases/tag/alpha12",
       "stats": {
-        "downloads": 75,
-        "endorsements": 2
+        "downloads": 77,
+        "endorsements": 3
       }
     },
     {
@@ -2319,7 +2319,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 623,
+        "downloads": 624,
         "endorsements": 2
       }
     },
@@ -2679,7 +2679,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 676,
+        "downloads": 677,
         "endorsements": 0
       }
     },
@@ -4389,7 +4389,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 377,
+        "downloads": 378,
         "endorsements": 0
       }
     },
@@ -6744,7 +6744,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 557,
+        "downloads": 558,
         "endorsements": 0
       }
     },
@@ -7869,7 +7869,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 761,
+        "downloads": 762,
         "endorsements": 1
       }
     },
@@ -8454,7 +8454,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 63,
+        "downloads": 64,
         "endorsements": 0
       }
     },
@@ -10884,7 +10884,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 76,
+        "downloads": 77,
         "endorsements": 0
       }
     },
