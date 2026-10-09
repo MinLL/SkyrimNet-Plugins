@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-09T01:51:25.043Z",
-  "stats_as_of": "2026-10-09T01:51:24.967Z",
+  "generated_at": "2026-10-09T02:48:02.083Z",
+  "stats_as_of": "2026-10-09T02:48:01.947Z",
   "plugins": [
     {
       "id": "plugins/urtubesrclogged/battle-summaries",
@@ -54,7 +54,7 @@
         "height": 1080
       },
       "stats": {
-        "downloads": 46,
+        "downloads": 47,
         "endorsements": 0
       }
     },
@@ -112,7 +112,7 @@
         "height": 1080
       },
       "stats": {
-        "downloads": 24,
+        "downloads": 25,
         "endorsements": 0
       }
     },
@@ -328,7 +328,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 38,
+        "downloads": 39,
         "endorsements": 0
       }
     },
@@ -559,7 +559,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 152,
+        "downloads": 153,
         "endorsements": 0
       }
     },
@@ -690,7 +690,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 383,
+        "downloads": 384,
         "endorsements": 25
       }
     },
@@ -1220,7 +1220,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 68,
+        "downloads": 69,
         "endorsements": 1
       }
     },
@@ -1714,7 +1714,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 38,
+        "downloads": 39,
         "endorsements": 1
       }
     },
@@ -3804,7 +3804,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 550,
+        "downloads": 551,
         "endorsements": 1
       }
     },
