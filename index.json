@@ -1,8 +1,63 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-09T19:28:24.948Z",
-  "stats_as_of": "2026-10-09T19:24:40.473Z",
+  "generated_at": "2026-10-09T19:56:35.365Z",
+  "stats_as_of": "2026-10-09T19:56:35.298Z",
   "plugins": [
+    {
+      "id": "plugins/phospheneoverdrive/intelengine-npc-autonomy-faction-politics",
+      "plugin_id": "phospheneoverdrive.intelengine-npc-autonomy-faction-politics",
+      "type": "listing",
+      "title": "IntelEngine — NPC Autonomy & Faction Politics",
+      "tagline": "Give Skyrim’s NPCs agency—tasks, schedules, autonomous stories, and faction politics.",
+      "author": "phospheneoverdrive",
+      "tags": [
+        "actions",
+        "autonomy",
+        "immersion",
+        "storytelling",
+        "scheduling",
+        "travel",
+        "quests",
+        "faction politics",
+        "world simulation"
+      ],
+      "nsfw": false,
+      "icon": "gamemaster",
+      "mods": [],
+      "first_published": "2026-09-26T03:14:31Z",
+      "last_updated": "2026-10-09T19:56:07Z",
+      "version": "3.5.2",
+      "history": [
+        {
+          "version": "3.5.2",
+          "commit": "95fad015e498fa97808d152341a5ce15cbb69f47",
+          "date": "2026-10-09T19:56:07Z",
+          "changelog": "Added support for Skyrim SE/AE versions 1.7.x"
+        },
+        {
+          "version": "3.5.1",
+          "commit": "e21dc4d0cd90657841180582f569a72ef8322f11",
+          "date": "2026-09-26T03:14:31Z",
+          "changelog": "Release for use with SkyrimNet Beta 25"
+        }
+      ],
+      "external_url": "https://github.com/Gerkinfeltser/IntelEngine-GamePlugin/releases/latest",
+      "languages": [
+        "en"
+      ],
+      "language": "en",
+      "image": {
+        "file": "cover.png",
+        "sha": "2481c81c05b48de522dea56a269a1803f5be32f9",
+        "commit": "e21dc4d0cd90657841180582f569a72ef8322f11",
+        "width": 1672,
+        "height": 941
+      },
+      "stats": {
+        "downloads": 139,
+        "endorsements": 8
+      }
+    },
     {
       "id": "plugins/goodprovider/skyrimnet-leashed",
       "plugin_id": "goodprovider.skyrimnet-leashed",
@@ -256,7 +311,7 @@
         "height": 1080
       },
       "stats": {
-        "downloads": 50,
+        "downloads": 51,
         "endorsements": 0
       }
     },
@@ -700,7 +755,7 @@
         "height": 1152
       },
       "stats": {
-        "downloads": 93,
+        "downloads": 94,
         "endorsements": 3
       }
     },
@@ -761,7 +816,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 158,
+        "downloads": 159,
         "endorsements": 0
       }
     },
@@ -892,7 +947,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 398,
+        "downloads": 399,
         "endorsements": 25
       }
     },
@@ -1065,7 +1120,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 155,
+        "downloads": 156,
         "endorsements": 2
       }
     },
@@ -1107,7 +1162,7 @@
         "height": 1080
       },
       "stats": {
-        "downloads": 59,
+        "downloads": 60,
         "endorsements": 1
       }
     },
@@ -1302,7 +1357,7 @@
         "height": 936
       },
       "stats": {
-        "downloads": 30,
+        "downloads": 31,
         "endorsements": 0
       }
     },
@@ -1429,7 +1484,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 177,
+        "downloads": 178,
         "endorsements": 1
       }
     },
@@ -1940,7 +1995,7 @@
         "height": 1152
       },
       "stats": {
-        "downloads": 63,
+        "downloads": 64,
         "endorsements": 0
       }
     },
@@ -2130,55 +2185,6 @@
       }
     },
     {
-      "id": "plugins/phospheneoverdrive/intelengine-npc-autonomy-faction-politics",
-      "plugin_id": "phospheneoverdrive.intelengine-npc-autonomy-faction-politics",
-      "type": "listing",
-      "title": "IntelEngine — NPC Autonomy & Faction Politics",
-      "tagline": "Give Skyrim’s NPCs agency—tasks, schedules, autonomous stories, and faction politics.",
-      "author": "phospheneoverdrive",
-      "tags": [
-        "actions",
-        "autonomy",
-        "immersion",
-        "storytelling",
-        "scheduling",
-        "travel",
-        "quests",
-        "faction politics",
-        "world simulation"
-      ],
-      "nsfw": false,
-      "icon": "gamemaster",
-      "mods": [],
-      "first_published": "2026-09-26T03:14:31Z",
-      "last_updated": "2026-09-26T03:14:31Z",
-      "version": "3.5.1",
-      "history": [
-        {
-          "version": "3.5.1",
-          "commit": "e21dc4d0cd90657841180582f569a72ef8322f11",
-          "date": "2026-09-26T03:14:31Z",
-          "changelog": "Release for use with SkyrimNet Beta 25"
-        }
-      ],
-      "external_url": "https://github.com/Gerkinfeltser/IntelEngine-GamePlugin/releases/tag/v3.5.1",
-      "languages": [
-        "en"
-      ],
-      "language": "en",
-      "image": {
-        "file": "cover.png",
-        "sha": "2481c81c05b48de522dea56a269a1803f5be32f9",
-        "commit": "e21dc4d0cd90657841180582f569a72ef8322f11",
-        "width": 1672,
-        "height": 941
-      },
-      "stats": {
-        "downloads": 137,
-        "endorsements": 8
-      }
-    },
-    {
       "id": "plugins/telord72612/devious-awareness-base",
       "plugin_id": "telord72612.devious-awareness-base",
       "type": "listing",
@@ -2328,7 +2334,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 679,
+        "downloads": 682,
         "endorsements": 2
       }
     },
@@ -2373,7 +2379,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 339,
+        "downloads": 340,
         "endorsements": 0
       }
     },
@@ -2463,7 +2469,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1414,
+        "downloads": 1422,
         "endorsements": 2
       }
     },
@@ -2688,7 +2694,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 732,
+        "downloads": 733,
         "endorsements": 0
       }
     },
@@ -2958,7 +2964,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 262,
+        "downloads": 263,
         "endorsements": 0
       }
     },
@@ -3183,7 +3189,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 191,
+        "downloads": 192,
         "endorsements": 1
       }
     },
@@ -3453,7 +3459,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 590,
+        "downloads": 596,
         "endorsements": 0
       }
     },
@@ -3813,7 +3819,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 566,
+        "downloads": 568,
         "endorsements": 1
       }
     },
@@ -4173,7 +4179,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 722,
+        "downloads": 724,
         "endorsements": 2
       }
     },
@@ -4398,7 +4404,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 409,
+        "downloads": 410,
         "endorsements": 0
       }
     },
@@ -4488,7 +4494,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 117,
+        "downloads": 118,
         "endorsements": 0
       }
     },
@@ -6618,7 +6624,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 376,
+        "downloads": 377,
         "endorsements": 0
       }
     },
@@ -6843,7 +6849,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 808,
+        "downloads": 812,
         "endorsements": 2
       }
     },
@@ -7698,7 +7704,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 148,
+        "downloads": 149,
         "endorsements": 1
       }
     },
@@ -7878,7 +7884,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 833,
+        "downloads": 838,
         "endorsements": 1
       }
     },
@@ -8148,7 +8154,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 711,
+        "downloads": 714,
         "endorsements": 2
       }
     },
@@ -8688,7 +8694,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 489,
+        "downloads": 491,
         "endorsements": 0
       }
     },
@@ -8733,7 +8739,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 292,
+        "downloads": 293,
         "endorsements": 0
       }
     },
@@ -10308,7 +10314,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 148,
+        "downloads": 150,
         "endorsements": 0
       }
     },
@@ -10758,7 +10764,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 374,
+        "downloads": 376,
         "endorsements": 2
       }
     },
@@ -11298,7 +11304,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1042,
+        "downloads": 1046,
         "endorsements": 2
       }
     },
@@ -11568,7 +11574,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 241,
+        "downloads": 242,
         "endorsements": 0
       }
     },
