@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-09T08:41:59.111Z",
-  "stats_as_of": "2026-10-09T08:41:58.968Z",
+  "generated_at": "2026-10-09T09:38:02.503Z",
+  "stats_as_of": "2026-10-09T09:38:02.380Z",
   "plugins": [
     {
       "id": "plugins/s709/milk-maid-economy-extensions",
@@ -439,7 +439,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 41,
+        "downloads": 42,
         "endorsements": 0
       }
     },
@@ -1381,7 +1381,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 174,
+        "downloads": 175,
         "endorsements": 1
       }
     },
@@ -1451,7 +1451,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 198,
+        "downloads": 199,
         "endorsements": 0
       }
     },
@@ -1659,7 +1659,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 129,
+        "downloads": 130,
         "endorsements": 0
       }
     },
@@ -1764,7 +1764,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 103,
+        "downloads": 104,
         "endorsements": 0
       }
     },
@@ -2235,7 +2235,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 237,
+        "downloads": 238,
         "endorsements": 4
       }
     },
@@ -4379,7 +4379,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 400,
+        "downloads": 401,
         "endorsements": 0
       }
     },
