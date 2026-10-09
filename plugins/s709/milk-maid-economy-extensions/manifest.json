@@ -16,11 +16,6 @@
   "icon": "heart",
   "mods": [
     {
-      "name": "HearthFires.esm",
-      "file": "hearthfires.esm",
-      "required": true
-    },
-    {
       "name": "SexLab.esm",
       "file": "sexlab.esm",
       "required": true
@@ -59,11 +54,6 @@
       "name": "MilkModNEW HF.esp",
       "file": "milkmodnew hf.esp",
       "required": true
-    },
-    {
-      "name": "SkyrimNet.esp",
-      "file": "skyrimnet.esp",
-      "required": false
     },
     {
       "name": "DwarvenDeviousCuirass.esp",
