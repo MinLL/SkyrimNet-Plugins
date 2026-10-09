@@ -1,8 +1,50 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-09T16:15:27.994Z",
-  "stats_as_of": "2026-10-09T16:15:27.922Z",
+  "generated_at": "2026-10-09T16:27:11.168Z",
+  "stats_as_of": "2026-10-09T16:27:11.051Z",
   "plugins": [
+    {
+      "id": "plugins/goodprovider/skyrimnet-leashed",
+      "plugin_id": "goodprovider.skyrimnet-leashed",
+      "type": "listing",
+      "title": "SkyrimNet Leashed",
+      "tagline": "Add the ability to leash, be leashed, lead, and be lead while leashed.",
+      "author": "goodprovider",
+      "tags": [
+        "actions"
+      ],
+      "nsfw": true,
+      "icon": "system",
+      "mods": [],
+      "first_published": "2026-09-19T14:34:21Z",
+      "last_updated": "2026-10-09T16:26:46Z",
+      "version": "0.4.2",
+      "history": [
+        {
+          "version": "0.4.2",
+          "commit": "68bdc436523e69f637e1f751f0e83b71d4d513f8",
+          "date": "2026-10-09T16:26:46Z",
+          "changelog": "- The leash panel (`\\` hotkey) is now a vertical menu like SexLab's Target Menu.\r\n- SexLab's Target Menu has a leash option: leash, tie, give, or unleash from there.\r\n- If a leash won't fit (Argonian, Khajiit), the mod tries other leashes, closest match first.\r\n- Devious Devices-bound NPCs keep a visible leash; an optional patch shows collars and ropes.\r\n- Optional beast-race plugin shows leash meshes on Argonians and Khajiit.\r\n- Leashed NPCs knocked down no longer stay stuck on the ground; they get up or are reset.\r\n- When a holder-less leash comes undone, the narration matches what you see.\r\n- On VR the mod never forces third person; a leash that needs it fails and is narrated.\r\n- Spoken lines say \"middle length\" and so on, so distances are not read as leash types.\r\n- Built on CommonLibVR 4.39.5, so match your Address Library to your game version. Now MIT licensed."
+        },
+        {
+          "version": "0.4.1",
+          "commit": "c4f5d9a41b3c2eb1ede237b08df6071671cb9be6",
+          "date": "2026-09-19T14:34:21Z"
+        }
+      ],
+      "external_url": "https://github.com/GoodProvider/SkyrimNet_Leashed/releases/latest",
+      "image": {
+        "file": "cover.png",
+        "sha": "f46afe4a4a39036b0f72dea2156678223719ea14",
+        "commit": "68bdc436523e69f637e1f751f0e83b71d4d513f8",
+        "width": 1280,
+        "height": 720
+      },
+      "stats": {
+        "downloads": 42,
+        "endorsements": 0
+      }
+    },
     {
       "id": "plugins/goodprovider/skyrimnet-sexlab",
       "plugin_id": "goodprovider.skyrimnet-sexlab",
@@ -48,7 +90,7 @@
       ],
       "language": "en",
       "stats": {
-        "downloads": 83,
+        "downloads": 84,
         "endorsements": 0
       }
     },
@@ -330,7 +372,7 @@
         "height": 1091
       },
       "stats": {
-        "downloads": 9,
+        "downloads": 10,
         "endorsements": 0
       }
     },
@@ -488,7 +530,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 44,
+        "downloads": 45,
         "endorsements": 0
       }
     },
@@ -1023,7 +1065,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 153,
+        "downloads": 154,
         "endorsements": 2
       }
     },
@@ -1898,7 +1940,7 @@
         "height": 1152
       },
       "stats": {
-        "downloads": 62,
+        "downloads": 63,
         "endorsements": 0
       }
     },
@@ -2243,35 +2285,6 @@
       "stats": {
         "downloads": 238,
         "endorsements": 4
-      }
-    },
-    {
-      "id": "plugins/goodprovider/skyrimnet-leashed",
-      "plugin_id": "goodprovider.skyrimnet-leashed",
-      "type": "listing",
-      "title": "SkyrimNet Leashed",
-      "tagline": "Add the ability to leash, be leashed, lead, and be lead while leashed.",
-      "author": "goodprovider",
-      "tags": [
-        "actions"
-      ],
-      "nsfw": true,
-      "icon": "system",
-      "mods": [],
-      "first_published": "2026-09-19T14:34:21Z",
-      "last_updated": "2026-09-19T14:34:21Z",
-      "version": "0.4.1",
-      "history": [
-        {
-          "version": "0.4.1",
-          "commit": "c4f5d9a41b3c2eb1ede237b08df6071671cb9be6",
-          "date": "2026-09-19T14:34:21Z"
-        }
-      ],
-      "external_url": "https://github.com/GoodProvider/SkyrimNet_Leashed/releases/latest",
-      "stats": {
-        "downloads": 42,
-        "endorsements": 0
       }
     },
     {
@@ -2675,7 +2688,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 724,
+        "downloads": 725,
         "endorsements": 0
       }
     },
