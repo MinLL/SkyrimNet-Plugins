@@ -11,6 +11,8 @@
   "nsfw": true,
   "icon": "system",
   "mods": [],
+  "image": "cover.png",
   "external_url": "https://github.com/GoodProvider/SkyrimNet_Leashed/releases/latest",
-  "version": "0.4.1"
+  "version": "0.4.2",
+  "changelog": "- The leash panel (`\\` hotkey) is now a vertical menu like SexLab's Target Menu.\r\n- SexLab's Target Menu has a leash option: leash, tie, give, or unleash from there.\r\n- If a leash won't fit (Argonian, Khajiit), the mod tries other leashes, closest match first.\r\n- Devious Devices-bound NPCs keep a visible leash; an optional patch shows collars and ropes.\r\n- Optional beast-race plugin shows leash meshes on Argonians and Khajiit.\r\n- Leashed NPCs knocked down no longer stay stuck on the ground; they get up or are reset.\r\n- When a holder-less leash comes undone, the narration matches what you see.\r\n- On VR the mod never forces third person; a leash that needs it fails and is narrated.\r\n- Spoken lines say \"middle length\" and so on, so distances are not read as leash types.\r\n- Built on CommonLibVR 4.39.5, so match your Address Library to your game version. Now MIT licensed."
 }
