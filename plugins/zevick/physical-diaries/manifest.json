@@ -27,6 +27,6 @@
   ],
   "image": "cover.png",
   "external_url": "https://github.com/zevck/SkyrimNet-Physical-Diaries",
-  "version": "2.0.0",
-  "changelog": "Initial release"
+  "version": "2.0.1",
+  "changelog": "Fixed a conflict with Dynamic Strings Distributor that caused the game to crash."
 }
