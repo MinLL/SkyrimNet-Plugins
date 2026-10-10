@@ -16,6 +16,6 @@
   "mods": [],
   "image": "cover.png",
   "external_url": "https://github.com/johnsonjoe1/SkyrimNetMessagelessImmersion/releases",
-  "version": "0.7.1",
-  "changelog": "Added constant whining feature, once hunger, thurst, fatigue or diseases have reached their worst stage.  Lots of fixes and smaller features, see full changelog on the GitHub."
+  "version": "0.7.2",
+  "changelog": "See full changelog on the GitHub.\nShort summary here:\nAdded inventory thoughts for Waifu cards, low lockpick supplies, and gaining or losing essential keys and tools.\nAdded configurable SLSF fame thresholds and cooldowns, defaulting to 5 points and 300 seconds.\nExpanded Battle Fuck responses and restored Jail Rape comments about other prisoners.\nImproved scene tracking to prevent nearby NPC encounters from suppressing player thoughts incorrectly.\nReduced repeated comments through better timing for YPS, swimming, licenses, and new-game nudity observations.\nLoading or starting a game now resets thought history, fame tracking, and player scene state.\nImproved thought prompts for clearer context and internal reflection without physical-action narration."
 }
