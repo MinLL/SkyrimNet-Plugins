@@ -1,8 +1,56 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-10T20:30:39.634Z",
+  "generated_at": "2026-10-10T20:32:57.711Z",
   "stats_as_of": "2026-10-10T20:30:39.581Z",
   "plugins": [
+    {
+      "id": "plugins/phospheneoverdrive/iactions-drunk-for-skyrimnet",
+      "plugin_id": "phospheneoverdrive.iactions-drunk-for-skyrimnet",
+      "type": "listing",
+      "title": "iActions [Drunk+] for SkyrimNet",
+      "tagline": "NPC drinking, intoxication, food, exchange, and related actions for SkyrimNet.",
+      "author": "phospheneoverdrive",
+      "tags": [
+        "dialogue",
+        "immersion",
+        "actions"
+      ],
+      "nsfw": false,
+      "icon": "zap",
+      "mods": [],
+      "first_published": "2026-09-12T21:07:45Z",
+      "last_updated": "2026-10-10T20:32:32Z",
+      "version": "0.6.7",
+      "history": [
+        {
+          "version": "0.6.7",
+          "commit": "453f385a255cf4313628936b2796f6eded89af85",
+          "date": "2026-10-10T20:32:32Z",
+          "changelog": "## What changes in *LEGIT*(*) v0.6.7\n\n- Version 0.6.7 adds compatibility work for Skyrim **1.5.97, 1.6.640, 1.6.1170, 1.7.99 and 1.7.104**. Support for these versions is still being evaluated; **Skyrim VR is not supported**.\n\n- Drinking, food requests, arrow extraction and sobering are now individual actions rather than grouped under Food and Drink / Health and Recovery. Drinking behavior and save formats are unchanged.\n\n\n### Temporary Skyrim 1.7.x workaround\n\nPapyrus MessageBox has not yet been rebuilt for 1.7.x, so **dialog-based drink and food requests are unavailable**. To use those actions without their choice dialogs, configure the iActions MCM before requesting them:\n\n- **Drunk Behavior → Auto-Take Alcohol: ON** for drinks taken from your inventory. If the toggle is greyed out, enable **Require Alcohol in Inventory** first.\n- **Configuration → Auto-Give Food: ON** for food requests. **Auto-Give Max Food Items** controls the transfer limit.\n\n\n> (*) Previous 0.6.7 was a result of SkyrimNet plugin familiarity growing pain. Sorry for any confusion."
+        },
+        {
+          "version": "0.6.6",
+          "commit": "30146b7520a66fca43d6dd69e14beff1f649073c",
+          "date": "2026-09-12T21:07:45Z"
+        }
+      ],
+      "external_url": "https://github.com/Gerkinfeltser/iActions/releases",
+      "languages": [
+        "en"
+      ],
+      "language": "en",
+      "image": {
+        "file": "cover.png",
+        "sha": "c29ff8cf79c041bec811b7e553618dc0a8016fbd",
+        "commit": "e1a0c1437781a994574baf4c862c322271092969",
+        "width": 1672,
+        "height": 941
+      },
+      "stats": {
+        "downloads": 77,
+        "endorsements": 2
+      }
+    },
     {
       "id": "plugins/johnsonjoe1/skyrimnet-messageless-immersion",
       "plugin_id": "johnsonjoe1.skyrimnet-messageless-immersion",
@@ -2250,54 +2298,6 @@
       "stats": {
         "downloads": 26,
         "endorsements": 0
-      }
-    },
-    {
-      "id": "plugins/phospheneoverdrive/iactions-drunk-for-skyrimnet",
-      "plugin_id": "phospheneoverdrive.iactions-drunk-for-skyrimnet",
-      "type": "listing",
-      "title": "iActions [Drunk+] for SkyrimNet",
-      "tagline": "NPC drinking, intoxication, food, exchange, and related actions for SkyrimNet.",
-      "author": "phospheneoverdrive",
-      "tags": [
-        "dialogue",
-        "immersion",
-        "actions"
-      ],
-      "nsfw": false,
-      "icon": "zap",
-      "mods": [],
-      "first_published": "2026-09-12T21:07:45Z",
-      "last_updated": "2026-09-26T03:20:33Z",
-      "version": "0.6.7",
-      "history": [
-        {
-          "version": "0.6.7",
-          "commit": "e1a0c1437781a994574baf4c862c322271092969",
-          "date": "2026-09-26T03:20:33Z",
-          "changelog": "Cover image added"
-        },
-        {
-          "version": "0.6.6",
-          "commit": "30146b7520a66fca43d6dd69e14beff1f649073c",
-          "date": "2026-09-12T21:07:45Z"
-        }
-      ],
-      "external_url": "https://github.com/Gerkinfeltser/iActions/releases",
-      "languages": [
-        "en"
-      ],
-      "language": "en",
-      "image": {
-        "file": "cover.png",
-        "sha": "c29ff8cf79c041bec811b7e553618dc0a8016fbd",
-        "commit": "e1a0c1437781a994574baf4c862c322271092969",
-        "width": 1672,
-        "height": 941
-      },
-      "stats": {
-        "downloads": 77,
-        "endorsements": 2
       }
     },
     {
