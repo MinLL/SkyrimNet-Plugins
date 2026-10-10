@@ -1,0 +1,32 @@
+{
+  "id": "zevick.physical-letters",
+  "type": "listing",
+  "title": "Physical Letters",
+  "tagline": "Allows you to write and receive letters from NPCs",
+  "description": "# Physical Letters\nA companion mod for SkyrimNet that lets you write letters to NPCs and have them delivered. The recipient reads your letter, remembers it, and replies. NPCs also write to you, and to each other, on their own.\n## Features\n### Writing Letters\nWrite a letter by hand on a sheet of parchment. Every letter starts with a \"To:\" heading and requires the recipient's name and address (e.g. Lydia, 7890 Whiterun).\n\nThe address is comprised of the last 4 digits of the NPCs SkyrimNet UUID and home location. While writing, matching NPC's will autocomplete. If there are multiple NPCs sharing a name, pressing Tab will cycle through them.\n\nThis feature requires Ink & Quill.\n### Crafting\nCraft 3 parchment from 1 roll of paper at a tanning rack, or buy it from general goods merchants.\n### Mailing Letters\nGive a letter to an innkeeper or courier to mail it (20 gold default). Delivery time follows the same speed as fast travel and can be configured in the MCM. A letter to someone who has died or can't be found is returned to sender.\n\nAlternatively, you can hand an NPC the letter in person.\n### Replies\nThe recipient reads your letter through SkyrimNet, remembers it, and may write back. NPCs remember your earlier letters, so a correspondence builds over time. Their reply is delivered by the courier.\n### The Courier\nWhen a letter is scheduled to be delivered to an NPC and you are nearby, the courier will approach the NPC and deliver the letter in person. Distant deliveries are handled off-screen.\n\nWhile traveling the roads of Skyrim, you may encounter the courier out on a delivery. He carries real letters that can be intercepted and read. Pick his pocket, shake him down, or hand him a letter you need delivered.\n### NPCs Write to You\nAbout once a week, someone you know may write to you if they have a reason to: news, gratitude, worry, a favor to ask, or simply missing you. Former followers, your spouse and your children grow more likely to write the longer you've been apart.\n### Letters Between NPCs\nNPCs write to each other too, and their letters are delivered by the courier. Intercept one and you can read it, or hand it to its recipient yourself.\n### Written in Blood\nWith no ink, Ink & Quill lets you write in your own blood. The recipient sees which parts are written in blood, and reacts to it.\n### Localization\nPhysical letters supports all 9 languages officially supported by Skyrim.\n## Requirements\n- SkyrimNet Beta 26+\n- SkyUI\n- SKSE\n- Address Library\n- Ink & Quill",
+  "author": "zevick",
+  "tags": [
+    "physical",
+    "letters",
+    "writing",
+    "courier"
+  ],
+  "nsfw": false,
+  "icon": "scroll",
+  "mods": [],
+  "languages": [
+    "en",
+    "zh",
+    "fr",
+    "de",
+    "it",
+    "ja",
+    "pl",
+    "es",
+    "ru"
+  ],
+  "image": "cover.png",
+  "external_url": "https://github.com/zevck/Physical-Letters",
+  "version": "1.0.0",
+  "changelog": "Initial release"
+}
