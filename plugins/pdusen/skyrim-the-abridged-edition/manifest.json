@@ -1,0 +1,23 @@
+{
+  "id": "pdusen.skyrim-the-abridged-edition",
+  "type": "listing",
+  "title": "Skyrim: The Abridged Edition",
+  "tagline": "Skyrim, but it's a silly place.",
+  "description": "I set out to make a set of modified set of prompts for SkyrimNet that would turn my Skyrim installation into a hilarious self-parody. By that standard, I have failed. What I ended up with instead was a slightly snarkier version of Skyrim where everyone is a little bit more ridiculous, but still takes things somewhat seriously. It's not what I set out to make, but there are occasionally some genuinely hilarious moments.\r\n\r\nI asked if anyone was interested and at least one person said yes, so here it is. I probably won't do much more with this, but if anyone has suggestions for ways to improve the prompts to achieve the level of silliness that I was originally going for, I'm open to trying it out.",
+  "author": "pdusen",
+  "tags": [
+    "sitcom",
+    "parody",
+    "abridged"
+  ],
+  "nsfw": false,
+  "icon": "zap",
+  "mods": [],
+  "languages": [
+    "en"
+  ],
+  "image": "cover.png",
+  "external_url": "https://custom-prompt-overrides-for-skyrimnet-releases.s3.us-east-2.amazonaws.com/skyrim-the-abridged-edition-latest.zip",
+  "version": "1.4.0",
+  "changelog": "Updated to new plugin format"
+}
