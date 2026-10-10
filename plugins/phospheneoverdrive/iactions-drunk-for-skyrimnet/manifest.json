@@ -13,9 +13,11 @@
   "nsfw": false,
   "icon": "zap",
   "mods": [],
-  "language": "en",
+  "languages": [
+    "en"
+  ],
   "image": "cover.png",
   "external_url": "https://github.com/Gerkinfeltser/iActions/releases",
   "version": "0.6.7",
-  "changelog": "Cover image added"
+  "changelog": "## What changes in *LEGIT*(*) v0.6.7\n\n- Version 0.6.7 adds compatibility work for Skyrim **1.5.97, 1.6.640, 1.6.1170, 1.7.99 and 1.7.104**. Support for these versions is still being evaluated; **Skyrim VR is not supported**.\n\n- Drinking, food requests, arrow extraction and sobering are now individual actions rather than grouped under Food and Drink / Health and Recovery. Drinking behavior and save formats are unchanged.\n\n\n### Temporary Skyrim 1.7.x workaround\n\nPapyrus MessageBox has not yet been rebuilt for 1.7.x, so **dialog-based drink and food requests are unavailable**. To use those actions without their choice dialogs, configure the iActions MCM before requesting them:\n\n- **Drunk Behavior → Auto-Take Alcohol: ON** for drinks taken from your inventory. If the toggle is greyed out, enable **Require Alcohol in Inventory** first.\n- **Configuration → Auto-Give Food: ON** for food requests. **Auto-Give Max Food Items** controls the transfer limit.\n\n\n> (*) Previous 0.6.7 was a result of SkyrimNet plugin familiarity growing pain. Sorry for any confusion."
 }
