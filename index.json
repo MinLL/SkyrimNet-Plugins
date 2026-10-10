@@ -1,8 +1,124 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-10T22:29:34.404Z",
-  "stats_as_of": "2026-10-10T22:29:34.282Z",
+  "generated_at": "2026-10-10T22:53:27.490Z",
+  "stats_as_of": "2026-10-10T22:53:27.386Z",
   "plugins": [
+    {
+      "id": "plugins/zevick/physical-letters",
+      "plugin_id": "zevick.physical-letters",
+      "type": "listing",
+      "title": "Physical Letters",
+      "tagline": "Allows you to write and receive letters from NPCs",
+      "author": "zevick",
+      "tags": [
+        "physical",
+        "letters",
+        "writing",
+        "courier"
+      ],
+      "nsfw": false,
+      "icon": "scroll",
+      "mods": [],
+      "first_published": "2026-10-10T02:04:29Z",
+      "last_updated": "2026-10-10T22:53:00Z",
+      "version": "1.0.1",
+      "history": [
+        {
+          "version": "1.0.1",
+          "commit": "c11739f3fbe84746cd9e17d95ba4fc1aee790bdf",
+          "date": "2026-10-10T22:53:00Z",
+          "changelog": "Fixed a conflict with Dynamic Strings Distributor that caused the game to crash."
+        },
+        {
+          "version": "1.0.0",
+          "commit": "64eb0b72f14988d0a2ef77c350d2722f69d07f0d",
+          "date": "2026-10-10T20:15:04Z",
+          "changelog": "Initial release"
+        }
+      ],
+      "external_url": "https://github.com/zevck/Physical-Letters",
+      "languages": [
+        "en",
+        "zh",
+        "fr",
+        "de",
+        "it",
+        "ja",
+        "pl",
+        "es",
+        "ru"
+      ],
+      "language": "en",
+      "image": {
+        "file": "cover.png",
+        "sha": "08790950a699a53fd5fb6922991812597ba09209",
+        "commit": "e86bc6f55a53338c0c5dbf406b0da401f96b44b4",
+        "width": 1672,
+        "height": 941
+      },
+      "stats": {
+        "downloads": 17,
+        "endorsements": 0
+      }
+    },
+    {
+      "id": "plugins/zevick/physical-diaries",
+      "plugin_id": "zevick.physical-diaries",
+      "type": "listing",
+      "title": "Physical Diaries",
+      "tagline": "Adds diary book items to NPC's inventories to read SkyrimNet diaries in game",
+      "author": "zevick",
+      "tags": [
+        "physical",
+        "diaries",
+        "writing",
+        "journal"
+      ],
+      "nsfw": false,
+      "icon": "diary",
+      "mods": [],
+      "first_published": "2026-10-10T02:04:26Z",
+      "last_updated": "2026-10-10T22:52:52Z",
+      "version": "2.0.1",
+      "history": [
+        {
+          "version": "2.0.1",
+          "commit": "878ce51756f4078e60a90635d38ef90eafc3b5dd",
+          "date": "2026-10-10T22:52:52Z",
+          "changelog": "Fixed a conflict with Dynamic Strings Distributor that caused the game to crash."
+        },
+        {
+          "version": "2.0.0",
+          "commit": "9e72de6d1407fd6261052a280882a256d13389dd",
+          "date": "2026-10-10T02:04:26Z",
+          "changelog": "Initial release"
+        }
+      ],
+      "external_url": "https://github.com/zevck/SkyrimNet-Physical-Diaries",
+      "languages": [
+        "en",
+        "zh",
+        "fr",
+        "de",
+        "it",
+        "ja",
+        "pl",
+        "ru",
+        "es"
+      ],
+      "language": "en",
+      "image": {
+        "file": "cover.png",
+        "sha": "cb7bf4a0480a774e07a899596d3508380f5fca26",
+        "commit": "9e72de6d1407fd6261052a280882a256d13389dd",
+        "width": 1672,
+        "height": 941
+      },
+      "stats": {
+        "downloads": 9,
+        "endorsements": 0
+      }
+    },
     {
       "id": "plugins/phospheneoverdrive/iactions-drunk-for-skyrimnet",
       "plugin_id": "phospheneoverdrive.iactions-drunk-for-skyrimnet",
@@ -105,110 +221,6 @@
       },
       "stats": {
         "downloads": 46,
-        "endorsements": 0
-      }
-    },
-    {
-      "id": "plugins/zevick/physical-letters",
-      "plugin_id": "zevick.physical-letters",
-      "type": "listing",
-      "title": "Physical Letters",
-      "tagline": "Allows you to write and receive letters from NPCs",
-      "author": "zevick",
-      "tags": [
-        "physical",
-        "letters",
-        "writing",
-        "courier"
-      ],
-      "nsfw": false,
-      "icon": "scroll",
-      "mods": [],
-      "first_published": "2026-10-10T02:04:29Z",
-      "last_updated": "2026-10-10T20:15:04Z",
-      "version": "1.0.0",
-      "history": [
-        {
-          "version": "1.0.0",
-          "commit": "64eb0b72f14988d0a2ef77c350d2722f69d07f0d",
-          "date": "2026-10-10T20:15:04Z",
-          "changelog": "Initial release"
-        }
-      ],
-      "external_url": "https://github.com/zevck/Physical-Letters",
-      "languages": [
-        "en",
-        "zh",
-        "fr",
-        "de",
-        "it",
-        "ja",
-        "pl",
-        "es",
-        "ru"
-      ],
-      "language": "en",
-      "image": {
-        "file": "cover.png",
-        "sha": "08790950a699a53fd5fb6922991812597ba09209",
-        "commit": "e86bc6f55a53338c0c5dbf406b0da401f96b44b4",
-        "width": 1672,
-        "height": 941
-      },
-      "stats": {
-        "downloads": 17,
-        "endorsements": 0
-      }
-    },
-    {
-      "id": "plugins/zevick/physical-diaries",
-      "plugin_id": "zevick.physical-diaries",
-      "type": "listing",
-      "title": "Physical Diaries",
-      "tagline": "Adds diary book items to NPC's inventories to read SkyrimNet diaries in game",
-      "author": "zevick",
-      "tags": [
-        "physical",
-        "diaries",
-        "writing",
-        "journal"
-      ],
-      "nsfw": false,
-      "icon": "diary",
-      "mods": [],
-      "first_published": "2026-10-10T02:04:26Z",
-      "last_updated": "2026-10-10T02:04:26Z",
-      "version": "2.0.0",
-      "history": [
-        {
-          "version": "2.0.0",
-          "commit": "9e72de6d1407fd6261052a280882a256d13389dd",
-          "date": "2026-10-10T02:04:26Z",
-          "changelog": "Initial release"
-        }
-      ],
-      "external_url": "https://github.com/zevck/SkyrimNet-Physical-Diaries",
-      "languages": [
-        "en",
-        "zh",
-        "fr",
-        "de",
-        "it",
-        "ja",
-        "pl",
-        "ru",
-        "es"
-      ],
-      "language": "en",
-      "image": {
-        "file": "cover.png",
-        "sha": "cb7bf4a0480a774e07a899596d3508380f5fca26",
-        "commit": "9e72de6d1407fd6261052a280882a256d13389dd",
-        "width": 1672,
-        "height": 941
-      },
-      "stats": {
-        "downloads": 9,
         "endorsements": 0
       }
     },
@@ -800,7 +812,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 58,
+        "downloads": 59,
         "endorsements": 0
       }
     },
@@ -1335,7 +1347,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 172,
+        "downloads": 173,
         "endorsements": 2
       }
     },
@@ -1648,7 +1660,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 190,
+        "downloads": 191,
         "endorsements": 1
       }
     },
@@ -1718,7 +1730,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 220,
+        "downloads": 221,
         "endorsements": 0
       }
     },
@@ -2585,7 +2597,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1541,
+        "downloads": 1542,
         "endorsements": 2
       }
     },
@@ -3080,7 +3092,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 274,
+        "downloads": 275,
         "endorsements": 0
       }
     },
@@ -3575,7 +3587,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 639,
+        "downloads": 640,
         "endorsements": 0
       }
     },
@@ -4520,7 +4532,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 447,
+        "downloads": 448,
         "endorsements": 0
       }
     },
@@ -6785,7 +6797,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 268,
+        "downloads": 269,
         "endorsements": 0
       }
     },
@@ -9575,7 +9587,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 176,
+        "downloads": 177,
         "endorsements": 0
       }
     },
@@ -10430,7 +10442,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 155,
+        "downloads": 156,
         "endorsements": 0
       }
     },
@@ -11420,7 +11432,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1122,
+        "downloads": 1123,
         "endorsements": 2
       }
     },
