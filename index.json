@@ -1,8 +1,112 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-10T01:47:41.767Z",
-  "stats_as_of": "2026-10-10T01:47:41.644Z",
+  "generated_at": "2026-10-10T02:04:57.767Z",
+  "stats_as_of": "2026-10-10T02:04:57.681Z",
   "plugins": [
+    {
+      "id": "plugins/zevick/physical-letters",
+      "plugin_id": "zevick.physical-letters",
+      "type": "listing",
+      "title": "Physical Letters",
+      "tagline": "Allows you to write and receive letters from NPCs",
+      "author": "zevick",
+      "tags": [
+        "physical",
+        "letters",
+        "writing",
+        "courier"
+      ],
+      "nsfw": false,
+      "icon": "scroll",
+      "mods": [],
+      "first_published": "2026-10-10T02:04:29Z",
+      "last_updated": "2026-10-10T02:04:29Z",
+      "version": "1.0.0",
+      "history": [
+        {
+          "version": "1.0.0",
+          "commit": "e86bc6f55a53338c0c5dbf406b0da401f96b44b4",
+          "date": "2026-10-10T02:04:29Z",
+          "changelog": "Initial release"
+        }
+      ],
+      "external_url": "https://github.com/zevck/Physical-Letters",
+      "languages": [
+        "en",
+        "zh",
+        "fr",
+        "de",
+        "it",
+        "ja",
+        "pl",
+        "es",
+        "ru"
+      ],
+      "language": "en",
+      "image": {
+        "file": "cover.png",
+        "sha": "08790950a699a53fd5fb6922991812597ba09209",
+        "commit": "e86bc6f55a53338c0c5dbf406b0da401f96b44b4",
+        "width": 1672,
+        "height": 941
+      },
+      "stats": {
+        "downloads": 0,
+        "endorsements": 0
+      }
+    },
+    {
+      "id": "plugins/zevick/physical-diaries",
+      "plugin_id": "zevick.physical-diaries",
+      "type": "listing",
+      "title": "Physical Diaries",
+      "tagline": "Adds diary book items to NPC's inventories to read SkyrimNet diaries in game",
+      "author": "zevick",
+      "tags": [
+        "physical",
+        "diaries",
+        "writing",
+        "journal"
+      ],
+      "nsfw": false,
+      "icon": "diary",
+      "mods": [],
+      "first_published": "2026-10-10T02:04:26Z",
+      "last_updated": "2026-10-10T02:04:26Z",
+      "version": "2.0.0",
+      "history": [
+        {
+          "version": "2.0.0",
+          "commit": "9e72de6d1407fd6261052a280882a256d13389dd",
+          "date": "2026-10-10T02:04:26Z",
+          "changelog": "Initial release"
+        }
+      ],
+      "external_url": "https://github.com/zevck/SkyrimNet-Physical-Diaries",
+      "languages": [
+        "en",
+        "zh",
+        "fr",
+        "de",
+        "it",
+        "ja",
+        "pl",
+        "ru",
+        "es"
+      ],
+      "language": "en",
+      "image": {
+        "file": "cover.png",
+        "sha": "cb7bf4a0480a774e07a899596d3508380f5fca26",
+        "commit": "9e72de6d1407fd6261052a280882a256d13389dd",
+        "width": 1672,
+        "height": 941
+      },
+      "stats": {
+        "downloads": 0,
+        "endorsements": 0
+      }
+    },
     {
       "id": "plugins/urtubesrclogged/adventurers-guild",
       "plugin_id": "urtubesrclogged.adventurers-guild",
@@ -2340,7 +2444,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 698,
+        "downloads": 699,
         "endorsements": 2
       }
     },
@@ -2475,7 +2579,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1439,
+        "downloads": 1440,
         "endorsements": 2
       }
     },
@@ -4185,7 +4289,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 734,
+        "downloads": 735,
         "endorsements": 2
       }
     },
@@ -4365,7 +4469,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 298,
+        "downloads": 299,
         "endorsements": 0
       }
     },
@@ -6495,7 +6599,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 105,
+        "downloads": 106,
         "endorsements": 0
       }
     },
@@ -6765,7 +6869,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 611,
+        "downloads": 612,
         "endorsements": 0
       }
     },
@@ -6855,7 +6959,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 827,
+        "downloads": 828,
         "endorsements": 2
       }
     },
@@ -7260,7 +7364,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 193,
+        "downloads": 194,
         "endorsements": 0
       }
     },
@@ -7890,7 +7994,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 851,
+        "downloads": 852,
         "endorsements": 1
       }
     },
@@ -8160,7 +8264,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 729,
+        "downloads": 730,
         "endorsements": 2
       }
     },
@@ -8565,7 +8669,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 188,
+        "downloads": 189,
         "endorsements": 0
       }
     },
@@ -8745,7 +8849,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 298,
+        "downloads": 299,
         "endorsements": 0
       }
     },
@@ -9375,7 +9479,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 68,
+        "downloads": 69,
         "endorsements": 0
       }
     },
@@ -9555,7 +9659,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 80,
+        "downloads": 81,
         "endorsements": 0
       }
     },
@@ -9870,7 +9974,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 73,
+        "downloads": 74,
         "endorsements": 0
       }
     },
@@ -10455,7 +10559,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 86,
+        "downloads": 87,
         "endorsements": 0
       }
     },
@@ -10500,7 +10604,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 274,
+        "downloads": 275,
         "endorsements": 0
       }
     },
