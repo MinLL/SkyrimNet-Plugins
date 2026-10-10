@@ -27,6 +27,6 @@
   ],
   "image": "cover.png",
   "external_url": "https://github.com/zevck/Physical-Letters",
-  "version": "1.0.0",
-  "changelog": "Initial release"
+  "version": "1.0.1",
+  "changelog": "Fixed a conflict with Dynamic Strings Distributor that caused the game to crash."
 }
