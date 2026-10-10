@@ -1,8 +1,65 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-10T20:15:28.602Z",
-  "stats_as_of": "2026-10-10T20:15:28.476Z",
+  "generated_at": "2026-10-10T20:22:18.924Z",
+  "stats_as_of": "2026-10-10T20:22:18.847Z",
   "plugins": [
+    {
+      "id": "plugins/johnsonjoe1/skyrimnet-messageless-immersion",
+      "plugin_id": "johnsonjoe1.skyrimnet-messageless-immersion",
+      "type": "listing",
+      "title": "SkyrimNet Messageless Immersion",
+      "tagline": "Immersive player thoughts for game events, status changes, and supported mods.",
+      "author": "johnsonjoe1",
+      "tags": [
+        "immersion",
+        "player-thoughts",
+        "triggers",
+        "SKSE"
+      ],
+      "nsfw": true,
+      "icon": "package",
+      "mods": [],
+      "first_published": "2026-09-12T06:46:39-08:00",
+      "last_updated": "2026-10-10T20:21:53Z",
+      "version": "0.7.2",
+      "history": [
+        {
+          "version": "0.7.2",
+          "commit": "ffb287c110a5d54233da2878c19e50ec9682d0fb",
+          "date": "2026-10-10T20:21:53Z",
+          "changelog": "See full changelog on the GitHub.\nShort summary here:\nAdded inventory thoughts for Waifu cards, low lockpick supplies, and gaining or losing essential keys and tools.\nAdded configurable SLSF fame thresholds and cooldowns, defaulting to 5 points and 300 seconds.\nExpanded Battle Fuck responses and restored Jail Rape comments about other prisoners.\nImproved scene tracking to prevent nearby NPC encounters from suppressing player thoughts incorrectly.\nReduced repeated comments through better timing for YPS, swimming, licenses, and new-game nudity observations.\nLoading or starting a game now resets thought history, fame tracking, and player scene state.\nImproved thought prompts for clearer context and internal reflection without physical-action narration."
+        },
+        {
+          "version": "0.7.1",
+          "commit": "f4a10e99b51c62d97ea335df46b48f6fab952f59",
+          "date": "2026-10-03T09:03:35Z",
+          "changelog": "Added constant whining feature, once hunger, thurst, fatigue or diseases have reached their worst stage.  Lots of fixes and smaller features, see full changelog on the GitHub."
+        },
+        {
+          "version": "0.7.0",
+          "commit": "19d2f569fbb498f3b6f4b0d7cd01435a2afdae04",
+          "date": "2026-09-26T07:56:06Z",
+          "changelog": "This version migrated to CommonLibSSE-NG 0.9.1, which *should* bring compatibility with SkyrimVR as well as Skyrim 1.7.104 (in addition of course to support for Skyrim 1.6.1170, the main development version).  The other versions are *UNTESTED* thought, so feedback on that is very wellcome."
+        },
+        {
+          "version": "0.6.12",
+          "commit": "28a6bbfc2ca32585d9cdb2fe18dd716de27bf962",
+          "date": "2026-09-12T14:51:27Z"
+        }
+      ],
+      "external_url": "https://github.com/johnsonjoe1/SkyrimNetMessagelessImmersion/releases",
+      "image": {
+        "file": "cover.png",
+        "sha": "f455036ec04abf96dfe9dc982a8f56be8ed4c2e7",
+        "commit": "19d2f569fbb498f3b6f4b0d7cd01435a2afdae04",
+        "width": 1672,
+        "height": 941
+      },
+      "stats": {
+        "downloads": 44,
+        "endorsements": 0
+      }
+    },
     {
       "id": "plugins/zevick/physical-letters",
       "plugin_id": "zevick.physical-letters",
@@ -695,7 +752,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 56,
+        "downloads": 57,
         "endorsements": 0
       }
     },
@@ -1316,57 +1373,6 @@
       },
       "stats": {
         "downloads": 21,
-        "endorsements": 0
-      }
-    },
-    {
-      "id": "plugins/johnsonjoe1/skyrimnet-messageless-immersion",
-      "plugin_id": "johnsonjoe1.skyrimnet-messageless-immersion",
-      "type": "listing",
-      "title": "SkyrimNet Messageless Immersion",
-      "tagline": "Immersive player thoughts for game events, status changes, and supported mods.",
-      "author": "johnsonjoe1",
-      "tags": [
-        "immersion",
-        "player-thoughts",
-        "triggers",
-        "SKSE"
-      ],
-      "nsfw": true,
-      "icon": "package",
-      "mods": [],
-      "first_published": "2026-09-12T06:46:39-08:00",
-      "last_updated": "2026-10-03T09:03:35Z",
-      "version": "0.7.1",
-      "history": [
-        {
-          "version": "0.7.1",
-          "commit": "f4a10e99b51c62d97ea335df46b48f6fab952f59",
-          "date": "2026-10-03T09:03:35Z",
-          "changelog": "Added constant whining feature, once hunger, thurst, fatigue or diseases have reached their worst stage.  Lots of fixes and smaller features, see full changelog on the GitHub."
-        },
-        {
-          "version": "0.7.0",
-          "commit": "19d2f569fbb498f3b6f4b0d7cd01435a2afdae04",
-          "date": "2026-09-26T07:56:06Z",
-          "changelog": "This version migrated to CommonLibSSE-NG 0.9.1, which *should* bring compatibility with SkyrimVR as well as Skyrim 1.7.104 (in addition of course to support for Skyrim 1.6.1170, the main development version).  The other versions are *UNTESTED* thought, so feedback on that is very wellcome."
-        },
-        {
-          "version": "0.6.12",
-          "commit": "28a6bbfc2ca32585d9cdb2fe18dd716de27bf962",
-          "date": "2026-09-12T14:51:27Z"
-        }
-      ],
-      "external_url": "https://github.com/johnsonjoe1/SkyrimNetMessagelessImmersion/releases",
-      "image": {
-        "file": "cover.png",
-        "sha": "f455036ec04abf96dfe9dc982a8f56be8ed4c2e7",
-        "commit": "19d2f569fbb498f3b6f4b0d7cd01435a2afdae04",
-        "width": 1672,
-        "height": 941
-      },
-      "stats": {
-        "downloads": 44,
         "endorsements": 0
       }
     },
