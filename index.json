@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-11T18:13:55.942Z",
-  "stats_as_of": "2026-10-11T18:13:55.814Z",
+  "generated_at": "2026-10-11T18:36:14.495Z",
+  "stats_as_of": "2026-10-11T18:36:14.399Z",
   "plugins": [
     {
       "id": "plugins/deadohiosky/relationships",
@@ -677,7 +677,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 166,
+        "downloads": 167,
         "endorsements": 9
       }
     },
@@ -6828,7 +6828,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 121,
+        "downloads": 122,
         "endorsements": 0
       }
     },
@@ -8223,7 +8223,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 931,
+        "downloads": 932,
         "endorsements": 1
       }
     },
