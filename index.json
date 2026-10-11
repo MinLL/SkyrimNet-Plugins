@@ -1,8 +1,71 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-11T09:31:53.657Z",
-  "stats_as_of": "2026-10-11T09:31:53.530Z",
+  "generated_at": "2026-10-11T10:04:00.523Z",
+  "stats_as_of": "2026-10-11T10:04:00.461Z",
   "plugins": [
+    {
+      "id": "plugins/johnsonjoe1/skyrimnet-messageless-immersion",
+      "plugin_id": "johnsonjoe1.skyrimnet-messageless-immersion",
+      "type": "listing",
+      "title": "SkyrimNet Messageless Immersion",
+      "tagline": "Immersive player thoughts for game events, status changes, and supported mods.",
+      "author": "johnsonjoe1",
+      "tags": [
+        "immersion",
+        "player-thoughts",
+        "triggers",
+        "SKSE"
+      ],
+      "nsfw": true,
+      "icon": "package",
+      "mods": [],
+      "first_published": "2026-09-12T06:46:39-08:00",
+      "last_updated": "2026-10-11T10:03:34Z",
+      "version": "0.7.3",
+      "history": [
+        {
+          "version": "0.7.3",
+          "commit": "fe92f6170b524c2cfefff711951f6a683c3288a2",
+          "date": "2026-10-11T10:03:34Z",
+          "changelog": "See full changelog on the GitHub.\nShort summary here:\nBetter timing, fewer repeated comments, clearer equipment names, and additional bathing and license thoughts. Changes since 0.7.2:\n\n## New and improved thoughts\n\n- Added a thought when the player starts bathing, with a 180-second cooldown.\n- Added expiration thoughts for weapon, magic, armor, bikini, clothing, crafting, and trading licenses, travel permits, and life insurance. These use the existing shared license-thought cooldown.\n- Added a player thought for the Devious Devices plug-moan broadcast.\n- Equipment names in armor-activation and AND transparency/flashing prompts now omit bracketed annotations and standalone Roman numerals I through VIII, reducing awkward spoken item labels.\n- Furniture thoughts are now eligible from the first use, without an initial cooldown caused by plugin startup.\n\n## Less repetition and better timing\n\n- Lockpick replenishment thoughts now trigger only when you previously had three or fewer lockpicks, instead of fewer than 20. Replenishment and last-three-lockpicks thoughts each have a separate 180-second cooldown; running out of lockpicks still triggers an immediate thought.\n- AND nudity-change thoughts now wait at least 30 seconds after loading a game and have a 40-second cooldown to reduce repeated comments during clothing changes.\n- Fixed SLAC player-scene stage timing: stage thoughts now wait 40 seconds after the scene starts and at least 40 seconds between subsequent comments. Nearby NPC scene starts and endings each have a separate 180-second cooldown.\n- Fixed slap and grope notification cooldowns incorrectly sharing the timer used for approaching SLAC creatures. Slap and grope thoughts now use their own shared 30-second cooldown.\n- Added separate 120-second cooldowns for the application and removal of the Licenses magic-suppression effect.\n- Increased the cooldown between Battle Fuck stripping-stage thoughts from 20 to 40 seconds."
+        },
+        {
+          "version": "0.7.2",
+          "commit": "ffb287c110a5d54233da2878c19e50ec9682d0fb",
+          "date": "2026-10-10T20:21:53Z",
+          "changelog": "See full changelog on the GitHub.\nShort summary here:\nAdded inventory thoughts for Waifu cards, low lockpick supplies, and gaining or losing essential keys and tools.\nAdded configurable SLSF fame thresholds and cooldowns, defaulting to 5 points and 300 seconds.\nExpanded Battle Fuck responses and restored Jail Rape comments about other prisoners.\nImproved scene tracking to prevent nearby NPC encounters from suppressing player thoughts incorrectly.\nReduced repeated comments through better timing for YPS, swimming, licenses, and new-game nudity observations.\nLoading or starting a game now resets thought history, fame tracking, and player scene state.\nImproved thought prompts for clearer context and internal reflection without physical-action narration."
+        },
+        {
+          "version": "0.7.1",
+          "commit": "f4a10e99b51c62d97ea335df46b48f6fab952f59",
+          "date": "2026-10-03T09:03:35Z",
+          "changelog": "Added constant whining feature, once hunger, thurst, fatigue or diseases have reached their worst stage.  Lots of fixes and smaller features, see full changelog on the GitHub."
+        },
+        {
+          "version": "0.7.0",
+          "commit": "19d2f569fbb498f3b6f4b0d7cd01435a2afdae04",
+          "date": "2026-09-26T07:56:06Z",
+          "changelog": "This version migrated to CommonLibSSE-NG 0.9.1, which *should* bring compatibility with SkyrimVR as well as Skyrim 1.7.104 (in addition of course to support for Skyrim 1.6.1170, the main development version).  The other versions are *UNTESTED* thought, so feedback on that is very wellcome."
+        },
+        {
+          "version": "0.6.12",
+          "commit": "28a6bbfc2ca32585d9cdb2fe18dd716de27bf962",
+          "date": "2026-09-12T14:51:27Z"
+        }
+      ],
+      "external_url": "https://github.com/johnsonjoe1/SkyrimNetMessagelessImmersion/releases",
+      "image": {
+        "file": "cover.png",
+        "sha": "f455036ec04abf96dfe9dc982a8f56be8ed4c2e7",
+        "commit": "19d2f569fbb498f3b6f4b0d7cd01435a2afdae04",
+        "width": 1672,
+        "height": 941
+      },
+      "stats": {
+        "downloads": 46,
+        "endorsements": 0
+      }
+    },
     {
       "id": "plugins/severause/severactions",
       "plugin_id": "severause.severactions",
@@ -424,63 +487,6 @@
       "stats": {
         "downloads": 80,
         "endorsements": 2
-      }
-    },
-    {
-      "id": "plugins/johnsonjoe1/skyrimnet-messageless-immersion",
-      "plugin_id": "johnsonjoe1.skyrimnet-messageless-immersion",
-      "type": "listing",
-      "title": "SkyrimNet Messageless Immersion",
-      "tagline": "Immersive player thoughts for game events, status changes, and supported mods.",
-      "author": "johnsonjoe1",
-      "tags": [
-        "immersion",
-        "player-thoughts",
-        "triggers",
-        "SKSE"
-      ],
-      "nsfw": true,
-      "icon": "package",
-      "mods": [],
-      "first_published": "2026-09-12T06:46:39-08:00",
-      "last_updated": "2026-10-10T20:21:53Z",
-      "version": "0.7.2",
-      "history": [
-        {
-          "version": "0.7.2",
-          "commit": "ffb287c110a5d54233da2878c19e50ec9682d0fb",
-          "date": "2026-10-10T20:21:53Z",
-          "changelog": "See full changelog on the GitHub.\nShort summary here:\nAdded inventory thoughts for Waifu cards, low lockpick supplies, and gaining or losing essential keys and tools.\nAdded configurable SLSF fame thresholds and cooldowns, defaulting to 5 points and 300 seconds.\nExpanded Battle Fuck responses and restored Jail Rape comments about other prisoners.\nImproved scene tracking to prevent nearby NPC encounters from suppressing player thoughts incorrectly.\nReduced repeated comments through better timing for YPS, swimming, licenses, and new-game nudity observations.\nLoading or starting a game now resets thought history, fame tracking, and player scene state.\nImproved thought prompts for clearer context and internal reflection without physical-action narration."
-        },
-        {
-          "version": "0.7.1",
-          "commit": "f4a10e99b51c62d97ea335df46b48f6fab952f59",
-          "date": "2026-10-03T09:03:35Z",
-          "changelog": "Added constant whining feature, once hunger, thurst, fatigue or diseases have reached their worst stage.  Lots of fixes and smaller features, see full changelog on the GitHub."
-        },
-        {
-          "version": "0.7.0",
-          "commit": "19d2f569fbb498f3b6f4b0d7cd01435a2afdae04",
-          "date": "2026-09-26T07:56:06Z",
-          "changelog": "This version migrated to CommonLibSSE-NG 0.9.1, which *should* bring compatibility with SkyrimVR as well as Skyrim 1.7.104 (in addition of course to support for Skyrim 1.6.1170, the main development version).  The other versions are *UNTESTED* thought, so feedback on that is very wellcome."
-        },
-        {
-          "version": "0.6.12",
-          "commit": "28a6bbfc2ca32585d9cdb2fe18dd716de27bf962",
-          "date": "2026-09-12T14:51:27Z"
-        }
-      ],
-      "external_url": "https://github.com/johnsonjoe1/SkyrimNetMessagelessImmersion/releases",
-      "image": {
-        "file": "cover.png",
-        "sha": "f455036ec04abf96dfe9dc982a8f56be8ed4c2e7",
-        "commit": "19d2f569fbb498f3b6f4b0d7cd01435a2afdae04",
-        "width": 1672,
-        "height": 941
-      },
-      "stats": {
-        "downloads": 46,
-        "endorsements": 0
       }
     },
     {
@@ -1929,7 +1935,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 226,
+        "downloads": 227,
         "endorsements": 0
       }
     },
