@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-11T01:15:00.144Z",
-  "stats_as_of": "2026-10-11T01:15:00.004Z",
+  "generated_at": "2026-10-11T01:51:21.647Z",
+  "stats_as_of": "2026-10-11T01:51:21.529Z",
   "plugins": [
     {
       "id": "plugins/zevick/alternate-perspective-lore",
@@ -53,7 +53,7 @@
         "config": 4
       },
       "stats": {
-        "downloads": 3,
+        "downloads": 4,
         "endorsements": 0
       }
     },
@@ -2225,7 +2225,7 @@
         "height": 1152
       },
       "stats": {
-        "downloads": 66,
+        "downloads": 67,
         "endorsements": 0
       }
     },
@@ -2516,7 +2516,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 733,
+        "downloads": 734,
         "endorsements": 2
       }
     },
@@ -2561,7 +2561,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 366,
+        "downloads": 367,
         "endorsements": 0
       }
     },
@@ -2651,7 +2651,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1548,
+        "downloads": 1549,
         "endorsements": 2
       }
     },
@@ -4001,7 +4001,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 610,
+        "downloads": 611,
         "endorsements": 1
       }
     },
@@ -4406,7 +4406,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 166,
+        "downloads": 167,
         "endorsements": 0
       }
     },
@@ -4541,7 +4541,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 313,
+        "downloads": 314,
         "endorsements": 0
       }
     },
@@ -5536,7 +5536,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 19,
+        "downloads": 20,
         "endorsements": 0
       }
     },
