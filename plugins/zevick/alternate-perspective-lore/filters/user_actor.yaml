@@ -1,0 +1,5 @@
+kind: actor
+name: Alternate Perspective
+description: Allow The Messenger from Alternate Perspective to speak
+FactionWhitelist:
+  - AP_MessengerFaction

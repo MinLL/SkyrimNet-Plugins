@@ -1,0 +1,26 @@
+{
+  "id": "zevick.alternate-perspective-lore",
+  "type": "bundle",
+  "title": "Alternate Perspective Lore",
+  "tagline": "Lore corrections for users playing with Alternate Perspective",
+  "description": "Some small lore corrections for SkyrimNet users with Alternate Perspective by KrisV777\n\n- Adds a knowledge pack stating whether or not Helgen has been destroyed and the dragons have returned\n- Corrects character bios for vanilla NPCs living in Helgen\n- Adds new bios for NPCs added by Alternate Perspective\n- Enables speech for The Messenger, who guides the player on a path to choose\n- Identity links for Haming and The Messenger\n- Dialogue Actions instruction for The Messenger's starting menu script",
+  "author": "zevick",
+  "tags": [
+    "alternate",
+    "perspective",
+    "lore"
+  ],
+  "nsfw": false,
+  "icon": "scroll",
+  "mods": [
+    {
+      "name": "AlternatePerspective.esp",
+      "file": "alternateperspective.esp",
+      "required": true
+    }
+  ],
+  "image": "cover.png",
+  "version": "1.0.0",
+  "changelog": "Initial release",
+  "min_skyrimnet_version": "0.26.0"
+}

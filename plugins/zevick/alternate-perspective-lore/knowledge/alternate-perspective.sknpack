@@ -1,0 +1,140 @@
+{
+  "skyrimnet_knowledge_pack": {
+    "description": "",
+    "entries": [
+      {
+        "always_inject": false,
+        "condition_expr": "get_quest_stage(\"MQ101\", false) < 10",
+        "content": "Helgen is a thriving town located in Falkreath Hold near the southern border of Skyrim. Its keep is under the control of the Imperial Legion.",
+        "display_name": "Helgen - Standing",
+        "emotion": "",
+        "importance": 0.800000011920929,
+        "key": "helgen-standing",
+        "knowledge_key": "ap.helgen.state",
+        "location": "",
+        "tags": [
+          "Helgen",
+          "Alternate Perspective"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_quest_stage(\"MQ101\", false) >= 10",
+        "content": "Helgen has been destroyed by a dragon attack. The town is ruins, most of its inhabitants did not escape.",
+        "display_name": "Helgen - Destroyed",
+        "emotion": "",
+        "importance": 0.8999999761581421,
+        "key": "helgen-destroyed",
+        "knowledge_key": "ap.helgen.state",
+        "location": "",
+        "tags": [
+          "Helgen",
+          "Alternate Perspective"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_quest_stage(\"MQ101\", false) < 10",
+        "content": "Dragons are creatures of legend and myth, spoken of in ancient texts and old stories. There is no sign of them in the world today—they belong to a bygone age, if they ever existed at all.",
+        "display_name": "Dragons - Legendary Only",
+        "emotion": "",
+        "importance": 0.8500000238418579,
+        "key": "dragons-legendary-only",
+        "knowledge_key": "ap.dragons.state",
+        "location": "",
+        "tags": [
+          "dragons",
+          "legend"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": true,
+        "condition_expr": "actorName == \"The Messenger\" and is_plugin_loaded(\"AP - Missile Additional Starts.esp\")",
+        "content": "There are yet more paths I can offer you. You may find yourself ambushed on the road by bandits, trapped in a spike pit with only the loot of a fallen mercenary, taking up bounties as a hunter of criminals, breaking free from a bandit's cell, raised among the Orc strongholds as Blood-Kin, rescued from sacrifice by the Vigilants of Stendarr, or cast adrift in the wilderness with nothing but your wits. Each beginning demands its own courage.",
+        "display_name": "The Messenger - Additional Starting Paths (Missile Starts)",
+        "emotion": "",
+        "importance": 0.8999999761581421,
+        "key": "the-messenger-additional-starting-paths-missile-starts",
+        "knowledge_key": "",
+        "location": "",
+        "tags": [
+          "Alternate Perspective",
+          "Missile Additional Starts",
+          "starting paths",
+          "additional options",
+          "The Messenger",
+          "character creation"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": true,
+        "condition_expr": "actorName == \"The Messenger\" and is_plugin_loaded(\"Alternate Perspective -- New Beginnings.esp\")",
+        "content": "Should you wish, I can also guide you to other beginnings. You may find yourself struggling with addiction in a skooma den, trapped in a Dwemer ruin by your own curiosity, gathering ingredients as a wilderness alchemist, seeking training at Angi's camp, surviving as a beggar in the streets, locked away in a jail cell, receiving blessings at a temple, praying at a sacred shrine, imprisoned by the Thalmor, rising from the dead as a vampire's victim, traveling as a merchant or mercenary, running with a werewolf pack at Frostmoon Crag, practicing witchcraft in a secluded lair, or fleeing the destruction wrought by a dragon. Each path tests you differently.",
+        "display_name": "The Messenger - Additional Starting Paths (New Beginnings)",
+        "emotion": "",
+        "importance": 0.949999988079071,
+        "key": "the-messenger-additional-starting-paths-new-beginnings",
+        "knowledge_key": "",
+        "location": "",
+        "tags": [
+          "Alternate Perspective",
+          "New Beginnings",
+          "starting paths",
+          "additional options",
+          "The Messenger",
+          "character creation"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": true,
+        "condition_expr": "actorName == \"The Messenger\"",
+        "content": "I offer many paths for those who seek a new beginning in Skyrim. You may arrive at an inn as a traveler, come from overseas at a port, begin as a wanted criminal in the wilderness, wash ashore from a shipwreck, wake in your own home, embrace the curse of vampirism or lycanthropy, join the Forsworn, become part of a guild, or follow The Dragonborn's path through the main quest. Each journey shapes who you become.",
+        "display_name": "The Messenger - Starting Path Options",
+        "emotion": "",
+        "importance": 1.0,
+        "key": "the-messenger-starting-path-options",
+        "knowledge_key": "",
+        "location": "",
+        "tags": [
+          "Alternate Perspective",
+          "starting paths",
+          "character creation",
+          "The Messenger",
+          "quest selection",
+          "new game"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": true,
+        "condition_expr": "actorName == \"The Messenger\"",
+        "content": "I dwell in a place between worlds—a room suspended outside the flow of time and space. It is here that I meet those seeking new beginnings. The door before you does not lead to a single destination, but rather to the path you choose. Step through once you are ready to begin your journey, and you will find yourself exactly where your chosen journey begins. This sanctuary exists for that purpose alone.",
+        "display_name": "The Messenger - The Liminal Inn Room",
+        "emotion": "",
+        "importance": 1.0,
+        "key": "the-messenger-the-liminal-inn-room",
+        "knowledge_key": "",
+        "location": "",
+        "tags": [
+          "The Messenger",
+          "liminal space",
+          "inn room",
+          "character creation",
+          "world building"
+        ],
+        "type": "KNOWLEDGE"
+      }
+    ],
+    "entry_count": 3,
+    "exported_at": "2026-10-10T21:12:46Z",
+    "format_version": 3,
+    "name": "Alternate Perspective",
+    "npc_groups": [],
+    "version": "1.0.0"
+  }
+}
