@@ -1,8 +1,147 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-11T01:51:21.647Z",
+  "generated_at": "2026-10-11T01:53:13.182Z",
   "stats_as_of": "2026-10-11T01:51:21.529Z",
   "plugins": [
+    {
+      "id": "plugins/winterishclover/eirlys-frostblade-skyrimnet-ready-follower",
+      "plugin_id": "winterishclover.eirlys-frostblade-skyrimnet-ready-follower",
+      "type": "listing",
+      "title": "Eirlys Frostblade - SkyrimNet Ready Follower",
+      "tagline": "Meet Eirlys Frostblade, a Nord warrior with an unyielding sense of justice and a mastery of the greatsword. Born in Winterhold amidst magic and turmoil, she pursues a path of righteousness.",
+      "author": "winterishclover",
+      "tags": [
+        "follower"
+      ],
+      "nsfw": false,
+      "icon": "character",
+      "mods": [],
+      "first_published": "2026-10-11T01:52:50Z",
+      "last_updated": "2026-10-11T01:52:50Z",
+      "version": "1.3.0",
+      "history": [
+        {
+          "version": "1.3.0",
+          "commit": "8141b39fa4db20320cc4254a171c0308b29aed2e",
+          "date": "2026-10-11T01:52:50Z",
+          "changelog": "Initial release"
+        }
+      ],
+      "external_url": "https://www.nexusmods.com/skyrimspecialedition/mods/192675",
+      "languages": [
+        "en"
+      ],
+      "language": "en",
+      "image": {
+        "file": "cover.png",
+        "sha": "2f7eb1a313cd53d8f1344980f7f9b9cce309c3d5",
+        "commit": "8141b39fa4db20320cc4254a171c0308b29aed2e",
+        "width": 1620,
+        "height": 911
+      },
+      "stats": {
+        "downloads": 0,
+        "endorsements": 0
+      }
+    },
+    {
+      "id": "plugins/winterishclover/elyse-montclaire-fully-voiced-troth-skyrimnet-breton-follower",
+      "plugin_id": "winterishclover.elyse-montclaire-fully-voiced-troth-skyrimnet-breton-follower",
+      "type": "listing",
+      "title": "Elyse Montclaire - Fully Voiced Troth SkyrimNet Breton Follower",
+      "tagline": "Elyse Montclaire, a disgraced Breton noble turned adept Destruction Mage, seeks redemption and knowledge in Skyrim. Fully voiced and SN ready.",
+      "author": "winterishclover",
+      "tags": [
+        "follower"
+      ],
+      "nsfw": false,
+      "icon": "character",
+      "mods": [],
+      "first_published": "2026-10-11T01:52:39Z",
+      "last_updated": "2026-10-11T01:52:39Z",
+      "version": "1.0.0",
+      "history": [
+        {
+          "version": "1.0.0",
+          "commit": "6fd3e1992d0ad6ad58e3dfc77ce53c70487364e1",
+          "date": "2026-10-11T01:52:39Z",
+          "changelog": "Initial release"
+        }
+      ],
+      "external_url": "https://www.nexusmods.com/skyrimspecialedition/mods/192602",
+      "languages": [
+        "en"
+      ],
+      "language": "en",
+      "stats": {
+        "downloads": 0,
+        "endorsements": 0
+      }
+    },
+    {
+      "id": "plugins/winterishclover/sigrid-windcaller-fully-voiced-troth-nord-follower",
+      "plugin_id": "winterishclover.sigrid-windcaller-fully-voiced-troth-nord-follower",
+      "type": "listing",
+      "title": "Sigrid Windcaller - Fully Voiced Troth Nord Follower",
+      "tagline": "Meet Sigrid Windcaller, a uniquely empathetic Nord spellsword dedicated to exploring Skyrim's ancient history. Fully voiced with 257 dialogue lines and SkyrimNet integration.",
+      "author": "winterishclover",
+      "tags": [
+        "follower"
+      ],
+      "nsfw": false,
+      "icon": "character",
+      "mods": [],
+      "first_published": "2026-10-11T01:52:22Z",
+      "last_updated": "2026-10-11T01:52:22Z",
+      "version": "1.1.0",
+      "history": [
+        {
+          "version": "1.1.0",
+          "commit": "0a02c04572d880f790ccbe2d8f6dbe5fd09f6293",
+          "date": "2026-10-11T01:52:22Z",
+          "changelog": "Initial release"
+        }
+      ],
+      "external_url": "https://www.nexusmods.com/skyrimspecialedition/mods/192654",
+      "languages": [
+        "en"
+      ],
+      "language": "en",
+      "stats": {
+        "downloads": 0,
+        "endorsements": 0
+      }
+    },
+    {
+      "id": "plugins/winterishclover/nera-vathras-fully-voiced-troth-dunmer-follower",
+      "plugin_id": "winterishclover.nera-vathras-fully-voiced-troth-dunmer-follower",
+      "type": "listing",
+      "title": "Nera Vathras - Fully Voiced Troth Dunmer Follower",
+      "tagline": "Meet Nera Vathras, the fiercely independent Dunmer spellsword from Vvardenfell's rugged ashlands. Master of arcane and blade. With 273 voiced lines and SkyrimNet integration.",
+      "author": "winterishclover",
+      "tags": [
+        "follower"
+      ],
+      "nsfw": false,
+      "icon": "character",
+      "mods": [],
+      "first_published": "2026-10-11T01:52:17Z",
+      "last_updated": "2026-10-11T01:52:17Z",
+      "version": "1.1.0",
+      "history": [
+        {
+          "version": "1.1.0",
+          "commit": "71dfd1628340d1b694c1ebeb38c7aaf3a294f35e",
+          "date": "2026-10-11T01:52:17Z",
+          "changelog": "Initial release"
+        }
+      ],
+      "external_url": "https://www.nexusmods.com/skyrimspecialedition/mods/192616",
+      "stats": {
+        "downloads": 0,
+        "endorsements": 0
+      }
+    },
     {
       "id": "plugins/zevick/alternate-perspective-lore",
       "plugin_id": "zevick.alternate-perspective-lore",
