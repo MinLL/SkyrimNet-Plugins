@@ -1,8 +1,66 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-12T00:31:35.466Z",
-  "stats_as_of": "2026-10-12T00:31:35.330Z",
+  "generated_at": "2026-10-12T00:36:30.362Z",
+  "stats_as_of": "2026-10-12T00:34:36.002Z",
   "plugins": [
+    {
+      "id": "plugins/telord72612/devious-awareness-base",
+      "plugin_id": "telord72612.devious-awareness-base",
+      "type": "listing",
+      "title": "Devious Awareness Base",
+      "tagline": "Plugins that recognize Devious Device and ZaZ gears worn by NPC and send awareness for deprived state and restriction, worn device, effect with accumulating scale and result.",
+      "author": "telord72612",
+      "tags": [
+        "Prompt"
+      ],
+      "nsfw": true,
+      "icon": "package",
+      "mods": [
+        {
+          "name": "Devious Devices - Assets.esm",
+          "file": "devious devices - assets.esm",
+          "required": true
+        },
+        {
+          "name": "Devious Devices - Integration.esm",
+          "file": "devious devices - integration.esm",
+          "required": true
+        },
+        {
+          "name": "Devious Devices - Expansion.esm",
+          "file": "devious devices - expansion.esm",
+          "required": true
+        },
+        {
+          "name": "Devious Devices - Contraptions.esm",
+          "file": "devious devices - contraptions.esm",
+          "required": true
+        }
+      ],
+      "first_published": "2026-09-24T04:44:57Z",
+      "last_updated": "2026-10-12T00:36:04Z",
+      "version": "1.0.0",
+      "history": [
+        {
+          "version": "1.0.0",
+          "commit": "fb7b78d7458d2db1a2813cad29606975f27f1b27",
+          "date": "2026-10-12T00:36:04Z",
+          "changelog": "Picture update"
+        }
+      ],
+      "external_url": "https://github.com/Telord72612/SkyrimNet-Devious-Awareness-Base/releases/tag/v1.0.0",
+      "image": {
+        "file": "cover.jpg",
+        "sha": "92e5d6db064867c5dcfa98f576463a160e033202",
+        "commit": "fb7b78d7458d2db1a2813cad29606975f27f1b27",
+        "width": 1792,
+        "height": 1008
+      },
+      "stats": {
+        "downloads": 68,
+        "endorsements": 2
+      }
+    },
     {
       "id": "plugins/telord72612/vr-touch-events-v3-4",
       "plugin_id": "telord72612.vr-touch-events-v3-4",
@@ -2528,56 +2586,6 @@
       "stats": {
         "downloads": 30,
         "endorsements": 0
-      }
-    },
-    {
-      "id": "plugins/telord72612/devious-awareness-base",
-      "plugin_id": "telord72612.devious-awareness-base",
-      "type": "listing",
-      "title": "Devious Awareness Base",
-      "tagline": "Plugins that recognize Devious Device and ZaZ gears worn by NPC and send awareness for deprived state and restriction, worn device, effect with accumulating scale and result.",
-      "author": "telord72612",
-      "tags": [
-        "Prompt"
-      ],
-      "nsfw": true,
-      "icon": "package",
-      "mods": [
-        {
-          "name": "Devious Devices - Assets.esm",
-          "file": "devious devices - assets.esm",
-          "required": true
-        },
-        {
-          "name": "Devious Devices - Integration.esm",
-          "file": "devious devices - integration.esm",
-          "required": true
-        },
-        {
-          "name": "Devious Devices - Expansion.esm",
-          "file": "devious devices - expansion.esm",
-          "required": true
-        },
-        {
-          "name": "Devious Devices - Contraptions.esm",
-          "file": "devious devices - contraptions.esm",
-          "required": true
-        }
-      ],
-      "first_published": "2026-09-24T04:44:57Z",
-      "last_updated": "2026-09-24T04:44:57Z",
-      "version": "1.0.0",
-      "history": [
-        {
-          "version": "1.0.0",
-          "commit": "c3ea0becac14be7f438c51130a78893b003b0d60",
-          "date": "2026-09-24T04:44:57Z"
-        }
-      ],
-      "external_url": "https://github.com/Telord72612/SkyrimNet-Devious-Awareness-Base/releases/tag/v1.0.0",
-      "stats": {
-        "downloads": 68,
-        "endorsements": 2
       }
     },
     {
