@@ -12,7 +12,10 @@
   "nsfw": false,
   "icon": "package",
   "mods": [],
-  "language": "en",
+  "languages": [
+    "en"
+  ],
+  "image": "cover.jpg",
   "external_url": "https://github.com/Telord72612/VRTouchEvents/releases/tag/V3.4.0",
   "version": "3.4.0",
   "changelog": "Beta25 Release"
