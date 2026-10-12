@@ -1,0 +1,21 @@
+{
+  "id": "min.skyrimnet-prompts-cache-enabled",
+  "type": "bundle",
+  "title": "Skyrimnet Prompts - Cache Enabled",
+  "tagline": "Faster, cheaper responses - EXPERIMENTAL",
+  "description": "This set of prompts are structured to utilize cached input, thereby reducing speed and costs. When using this build, I would suggest significantly increasing the size of your number of events in the history, as this is far cheaper with this change.\n\nRequires Beta27-rc4 or newer (Alpha tester only at the time of posting this).",
+  "author": "min",
+  "tags": [
+    "Costs",
+    "Performance",
+    "Cheaper",
+    "Faster",
+    "Speed"
+  ],
+  "nsfw": false,
+  "icon": "package",
+  "mods": [],
+  "version": "1.0.1",
+  "changelog": "Initial release",
+  "min_skyrimnet_version": "0.27.0"
+}
