@@ -1,8 +1,93 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-12T05:19:56.398Z",
-  "stats_as_of": "2026-10-12T05:15:00.711Z",
+  "generated_at": "2026-10-12T05:21:12.060Z",
+  "stats_as_of": "2026-10-12T05:21:11.979Z",
   "plugins": [
+    {
+      "id": "plugins/telord72612/bathing-in-skyrim-renewed-integration-for-skyrimnet",
+      "plugin_id": "telord72612.bathing-in-skyrim-renewed-integration-for-skyrimnet",
+      "type": "listing",
+      "title": "Bathing in Skyrim Renewed integration for SkyrimNet",
+      "tagline": "Action for NPC to find water and go to it, bath in it or request proper items for it, and Awareness prompt for dirtiness level and bathing action.",
+      "author": "telord72612",
+      "tags": [
+        "Action",
+        "Awareness"
+      ],
+      "nsfw": false,
+      "icon": "package",
+      "mods": [],
+      "first_published": "2026-09-26T03:58:04Z",
+      "last_updated": "2026-10-12T05:20:44Z",
+      "version": "2.6.0",
+      "history": [
+        {
+          "version": "2.6.0",
+          "commit": "0f7902f697bb7a05e7b5c1f8ff1f27c00037f9ee",
+          "date": "2026-10-12T05:20:44Z",
+          "changelog": "Fixed an issue where Standpoint wasn't making NPC travel for inside cell."
+        },
+        {
+          "version": "2.5.0",
+          "commit": "e1c8fa32d4f73e3dcefb24ffb6f55c6d5c3400c1",
+          "date": "2026-09-26T03:58:04Z",
+          "changelog": "Initial release"
+        }
+      ],
+      "external_url": "https://github.com/Telord72612/Bathing-in-Skyrim-SN-SA-Plugins/releases/tag/V2.6.0",
+      "languages": [
+        "en"
+      ],
+      "language": "en",
+      "image": {
+        "file": "cover.jpg",
+        "sha": "d08ea5d4651bbdf4db2ba939cf829af89791c25f",
+        "commit": "0f7902f697bb7a05e7b5c1f8ff1f27c00037f9ee",
+        "width": 1792,
+        "height": 1008
+      },
+      "stats": {
+        "downloads": 51,
+        "endorsements": 1
+      }
+    },
+    {
+      "id": "plugins/telord72612/gift-by-hand-vr-awareness",
+      "plugin_id": "telord72612.gift-by-hand-vr-awareness",
+      "type": "listing",
+      "title": "Gift by Hand VR Awareness",
+      "tagline": "Gift by Hand VR event are exposed to the LLM. Beta25 release",
+      "author": "telord72612",
+      "tags": [
+        "Prompt"
+      ],
+      "nsfw": false,
+      "icon": "package",
+      "mods": [],
+      "first_published": "2026-10-12T05:20:41Z",
+      "last_updated": "2026-10-12T05:20:41Z",
+      "version": "1.1.0",
+      "history": [
+        {
+          "version": "1.1.0",
+          "commit": "f9ddd4241b77c156df5c989d45480012920a9bee",
+          "date": "2026-10-12T05:20:41Z",
+          "changelog": "Initial release"
+        }
+      ],
+      "external_url": "https://github.com/Telord72612/VR-Gift-by-Hand-SkuyrimNet-Integration/releases/tag/V1.1.0",
+      "image": {
+        "file": "cover.jpg",
+        "sha": "32de9c452d3bbcb2a44f57466876c7aaf847cb99",
+        "commit": "f9ddd4241b77c156df5c989d45480012920a9bee",
+        "width": 1792,
+        "height": 1008
+      },
+      "stats": {
+        "downloads": 0,
+        "endorsements": 0
+      }
+    },
     {
       "id": "plugins/min/skyrimnet-prompts-cache-enabled",
       "plugin_id": "min.skyrimnet-prompts-cache-enabled",
@@ -2531,41 +2616,6 @@
       }
     },
     {
-      "id": "plugins/telord72612/bathing-in-skyrim-renewed-integration-for-skyrimnet",
-      "plugin_id": "telord72612.bathing-in-skyrim-renewed-integration-for-skyrimnet",
-      "type": "listing",
-      "title": "Bathing in Skyrim Renewed integration for SkyrimNet",
-      "tagline": "Action for NPC to find water and go to it, bath in it or request proper items for it, and Awareness prompt for dirtiness level and bathing action.",
-      "author": "telord72612",
-      "tags": [
-        "Action",
-        "Awareness"
-      ],
-      "nsfw": false,
-      "icon": "package",
-      "mods": [],
-      "first_published": "2026-09-26T03:58:04Z",
-      "last_updated": "2026-09-26T03:58:04Z",
-      "version": "2.5.0",
-      "history": [
-        {
-          "version": "2.5.0",
-          "commit": "e1c8fa32d4f73e3dcefb24ffb6f55c6d5c3400c1",
-          "date": "2026-09-26T03:58:04Z",
-          "changelog": "Initial release"
-        }
-      ],
-      "external_url": "https://github.com/Telord72612/Bathing-in-Skyrim-SN-SA-Plugins/releases/tag/V2.5.0",
-      "languages": [
-        "en"
-      ],
-      "language": "en",
-      "stats": {
-        "downloads": 51,
-        "endorsements": 1
-      }
-    },
-    {
       "id": "plugins/phospheneoverdrive/lore-accurate-dagoth-ur-follower-bios",
       "plugin_id": "phospheneoverdrive.lore-accurate-dagoth-ur-follower-bios",
       "type": "bundle",
@@ -2732,7 +2782,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 789,
+        "downloads": 790,
         "endorsements": 2
       }
     },
@@ -2777,7 +2827,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 389,
+        "downloads": 390,
         "endorsements": 0
       }
     },
@@ -2867,7 +2917,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1642,
+        "downloads": 1643,
         "endorsements": 2
       }
     },
@@ -3362,7 +3412,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 304,
+        "downloads": 305,
         "endorsements": 0
       }
     },
@@ -3857,7 +3907,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 687,
+        "downloads": 688,
         "endorsements": 0
       }
     },
@@ -4757,7 +4807,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 340,
+        "downloads": 341,
         "endorsements": 0
       }
     },
@@ -4802,7 +4852,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 482,
+        "downloads": 483,
         "endorsements": 0
       }
     },
@@ -5567,7 +5617,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 61,
+        "downloads": 62,
         "endorsements": 0
       }
     },
@@ -7247,7 +7297,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 930,
+        "downloads": 931,
         "endorsements": 2
       }
     },
@@ -7652,7 +7702,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 218,
+        "downloads": 219,
         "endorsements": 0
       }
     },
@@ -7697,7 +7747,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 28,
+        "downloads": 29,
         "endorsements": 0
       }
     },
@@ -8102,7 +8152,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 176,
+        "downloads": 177,
         "endorsements": 1
       }
     },
@@ -8282,7 +8332,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 964,
+        "downloads": 965,
         "endorsements": 1
       }
     },
@@ -8552,7 +8602,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 820,
+        "downloads": 821,
         "endorsements": 2
       }
     },
@@ -8687,7 +8737,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 27,
+        "downloads": 28,
         "endorsements": 0
       }
     },
@@ -8957,7 +9007,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 211,
+        "downloads": 212,
         "endorsements": 0
       }
     },
@@ -9092,7 +9142,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 568,
+        "downloads": 569,
         "endorsements": 0
       }
     },
@@ -9137,7 +9187,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 344,
+        "downloads": 345,
         "endorsements": 0
       }
     },
@@ -9632,7 +9682,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 180,
+        "downloads": 181,
         "endorsements": 0
       }
     },
@@ -9947,7 +9997,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 94,
+        "downloads": 95,
         "endorsements": 0
       }
     },
@@ -10262,7 +10312,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 86,
+        "downloads": 87,
         "endorsements": 0
       }
     },
@@ -10847,7 +10897,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 95,
+        "downloads": 96,
         "endorsements": 0
       }
     },
@@ -10892,7 +10942,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 307,
+        "downloads": 308,
         "endorsements": 0
       }
     },
@@ -11702,7 +11752,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1202,
+        "downloads": 1203,
         "endorsements": 2
       }
     },
