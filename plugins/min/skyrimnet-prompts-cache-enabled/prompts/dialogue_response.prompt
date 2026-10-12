@@ -1,0 +1,23 @@
+{# Ordered for prompt caching: the system message and the event history repeat from one reply
+   to the next, so a provider can reuse them; everything that changes turn to turn follows them.
+   The two [ cache ] breakpoints (the system message, the history's last event) take effect where
+   use_caching is on. #}
+[ system ]
+[ cache ]
+You are {{ decnpc(npc.UUID).name }}, a {{ decnpc(npc.UUID).gender }} {{ decnpc(npc.UUID).race }} in Skyrim.
+{{ render_character_profile("stable", npc.UUID) }}
+[ end cache ]
+[ end system ]
+
+{{ render_template("components\\event_history", {"cache_history": true}) }}
+
+[ user ]
+{{ render_subcomponent("system_head", "full", {"stable_split": true}) }}
+{{ render_subcomponent("user_final_instructions", "full") }}
+{% if decnpc(npc.UUID).universalTranslatorSpeechPattern %}
+**Speech Pattern Required:** {{ decnpc(npc.UUID).universalTranslatorSpeechPattern }}
+{% endif %}
+{% if not embed_actions_in_dialogue %}
+Respond in character now.
+{% endif %}
+[ end user ]

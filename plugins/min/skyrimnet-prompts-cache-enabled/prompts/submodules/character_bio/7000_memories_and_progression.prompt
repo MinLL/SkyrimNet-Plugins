@@ -1,0 +1,7 @@
+{% set _profile = render_mode == "stable" or render_mode == "thoughts" or render_mode == "transform" or (render_mode == "full" and not default(stable_split, false)) %}
+{% if _profile or render_mode == "bio_long_term_memories" %}
+    {% if _profile %}
+        ## Long Term Memories and Plot Progression
+    {% endif %}
+    {% block long_term_memories %}{% endblock %}
+{% endif %}
