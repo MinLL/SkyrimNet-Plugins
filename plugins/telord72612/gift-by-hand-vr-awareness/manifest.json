@@ -1,0 +1,18 @@
+{
+  "id": "telord72612.gift-by-hand-vr-awareness",
+  "type": "listing",
+  "title": "Gift by Hand VR Awareness",
+  "tagline": "Gift by Hand VR event are exposed to the LLM. Beta25 release",
+  "description": "This is a small addon for Gift By Hand by zxl381 that pushes events to SkyrimNet and integrates with the Hunger / Drunkenness systems.\n\nGift By Hand is an excellent immersion mod that lets you physically hand items to NPCs (placing them in their inventory or equipping them temporarily/permanently). It also allows you to feed NPCs or give them potions by placing food, alcohol, or potions directly to their mouth.\n\nThis addon bridges Gift by Hand (GbH) with SkyrimNet (SN) for deeper, more reactive NPC interactions in VR",
+  "author": "telord72612",
+  "tags": [
+    "Prompt"
+  ],
+  "nsfw": false,
+  "icon": "package",
+  "mods": [],
+  "image": "cover.jpg",
+  "external_url": "https://github.com/Telord72612/VR-Gift-by-Hand-SkuyrimNet-Integration/releases/tag/V1.1.0",
+  "version": "1.1.0",
+  "changelog": "Initial release"
+}
