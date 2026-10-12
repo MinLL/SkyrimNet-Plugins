@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-12T08:37:41.319Z",
-  "stats_as_of": "2026-10-12T08:37:41.205Z",
+  "generated_at": "2026-10-12T08:56:21.389Z",
+  "stats_as_of": "2026-10-12T08:56:21.285Z",
   "plugins": [
     {
       "id": "plugins/telord72612/bathing-in-skyrim-renewed-integration-for-skyrimnet",
@@ -4267,7 +4267,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 640,
+        "downloads": 641,
         "endorsements": 1
       }
     },
