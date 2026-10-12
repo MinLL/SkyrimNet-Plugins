@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-12T05:15:00.835Z",
+  "generated_at": "2026-10-12T05:19:56.398Z",
   "stats_as_of": "2026-10-12T05:15:00.711Z",
   "plugins": [
     {
@@ -41,6 +41,7 @@
         "entities": 0,
         "config": 0
       },
+      "curated": true,
       "stats": {
         "downloads": 0,
         "endorsements": 0
