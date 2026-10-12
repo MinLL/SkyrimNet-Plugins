@@ -32,6 +32,8 @@
       "required": true
     }
   ],
+  "image": "cover.jpg",
   "external_url": "https://github.com/Telord72612/SkyrimNet-Devious-Awareness-Base/releases/tag/v1.0.0",
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "changelog": "Picture update"
 }
