@@ -12,8 +12,11 @@
   "nsfw": false,
   "icon": "package",
   "mods": [],
-  "language": "en",
-  "external_url": "https://github.com/Telord72612/Bathing-in-Skyrim-SN-SA-Plugins/releases/tag/V2.5.0",
-  "version": "2.5.0",
-  "changelog": "Initial release"
+  "languages": [
+    "en"
+  ],
+  "image": "cover.jpg",
+  "external_url": "https://github.com/Telord72612/Bathing-in-Skyrim-SN-SA-Plugins/releases/tag/V2.6.0",
+  "version": "2.6.0",
+  "changelog": "Fixed an issue where Standpoint wasn't making NPC travel for inside cell."
 }
