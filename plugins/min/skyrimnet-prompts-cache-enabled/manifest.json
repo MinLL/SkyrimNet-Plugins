@@ -3,7 +3,7 @@
   "type": "bundle",
   "title": "Skyrimnet Prompts - Cache Enabled",
   "tagline": "Faster, cheaper responses - EXPERIMENTAL",
-  "description": "This set of prompts are structured to utilize cached input, thereby reducing increasing speed and reducing costs. In tests, this was able to reduce the cost of some models by more than 56% with no observable drop in quality. When using this build, I would suggest significantly increasing the size of your number of events in the history, as this is far cheaper with this change.\n\nRequires Beta27-rc4 or newer (Alpha tester only at the time of posting this).",
+  "description": "This set of prompts are structured to utilize cached input, thereby increasing speed and reducing costs. In tests, this was able to reduce the cost of some models by more than 56% with no observable drop in quality. When using this build, I would suggest significantly increasing the size of your number of events in the history, as this is far cheaper with this change.\n\nThis may not be suitable for all models, and may cause regressions on some (particularly small local models). As such, this is currently experimental.\n\nRequires Beta27-rc4 or newer (Alpha tester only at the time of posting this).",
   "author": "min",
   "tags": [
     "Costs",
@@ -15,7 +15,8 @@
   "nsfw": false,
   "icon": "package",
   "mods": [],
-  "version": "1.0.1",
-  "changelog": "Initial release",
+  "image": "cover.png",
+  "version": "1.0.2",
+  "changelog": "Added a banner, fixed typos in the description",
   "min_skyrimnet_version": "0.27.0"
 }
