@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-12T07:58:33.382Z",
-  "stats_as_of": "2026-10-12T07:58:33.270Z",
+  "generated_at": "2026-10-12T08:37:41.319Z",
+  "stats_as_of": "2026-10-12T08:37:41.205Z",
   "plugins": [
     {
       "id": "plugins/telord72612/bathing-in-skyrim-renewed-integration-for-skyrimnet",
@@ -106,14 +106,14 @@
       "icon": "package",
       "mods": [],
       "first_published": "2026-10-12T05:14:35Z",
-      "last_updated": "2026-10-12T05:14:35Z",
+      "last_updated": "2026-10-12T01:36:59-07:00",
       "version": "1.0.1",
       "min_skyrimnet_version": "0.27.0",
       "history": [
         {
           "version": "1.0.1",
-          "commit": "53130e7f335b0e08a5fa8b049a90a9113e478e6b",
-          "date": "2026-10-12T05:14:35Z",
+          "commit": "008efa73f19426617cb7991da9e08f39ad2f7926",
+          "date": "2026-10-12T01:36:59-07:00",
           "changelog": "Initial release"
         }
       ],
@@ -128,8 +128,8 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 0,
-        "endorsements": 0
+        "downloads": 1,
+        "endorsements": 1
       }
     },
     {
