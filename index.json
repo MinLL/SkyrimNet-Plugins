@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-13T13:41:34.314Z",
-  "stats_as_of": "2026-10-13T13:41:34.210Z",
+  "generated_at": "2026-10-13T14:37:10.936Z",
+  "stats_as_of": "2026-10-13T14:37:10.722Z",
   "plugins": [
     {
       "id": "plugins/zol/pandorumllm",
@@ -96,7 +96,7 @@
       },
       "stats": {
         "downloads": 5,
-        "endorsements": 0
+        "endorsements": 1
       }
     },
     {
@@ -158,7 +158,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 63,
+        "downloads": 64,
         "endorsements": 2
       }
     },
@@ -837,7 +837,7 @@
         "config": 4
       },
       "stats": {
-        "downloads": 58,
+        "downloads": 59,
         "endorsements": 0
       }
     },
@@ -1211,7 +1211,7 @@
       ],
       "language": "en",
       "stats": {
-        "downloads": 109,
+        "downloads": 110,
         "endorsements": 0
       }
     },
@@ -1643,7 +1643,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 179,
+        "downloads": 180,
         "endorsements": 0
       }
     },
@@ -1764,7 +1764,7 @@
         "height": 1080
       },
       "stats": {
-        "downloads": 89,
+        "downloads": 91,
         "endorsements": 3
       }
     },
@@ -1887,7 +1887,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 200,
+        "downloads": 201,
         "endorsements": 3
       }
     },
@@ -2029,7 +2029,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 84,
+        "downloads": 85,
         "endorsements": 3
       }
     },
@@ -2402,7 +2402,7 @@
         "height": 900
       },
       "stats": {
-        "downloads": 131,
+        "downloads": 132,
         "endorsements": 5
       }
     },
@@ -2882,7 +2882,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 813,
+        "downloads": 814,
         "endorsements": 2
       }
     },
@@ -3017,7 +3017,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1699,
+        "downloads": 1700,
         "endorsements": 2
       }
     },
@@ -3242,7 +3242,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 876,
+        "downloads": 878,
         "endorsements": 0
       }
     },
@@ -3512,7 +3512,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 318,
+        "downloads": 319,
         "endorsements": 0
       }
     },
@@ -4727,7 +4727,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 844,
+        "downloads": 846,
         "endorsements": 2
       }
     },
@@ -4907,7 +4907,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 357,
+        "downloads": 359,
         "endorsements": 0
       }
     },
@@ -5357,7 +5357,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 149,
+        "downloads": 150,
         "endorsements": 0
       }
     },
@@ -6452,7 +6452,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 279,
+        "downloads": 280,
         "endorsements": 0
       }
     },
@@ -6767,7 +6767,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 218,
+        "downloads": 219,
         "endorsements": 0
       }
     },
@@ -7397,7 +7397,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 964,
+        "downloads": 965,
         "endorsements": 2
       }
     },
@@ -8432,7 +8432,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 992,
+        "downloads": 993,
         "endorsements": 2
       }
     },
@@ -8702,7 +8702,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 847,
+        "downloads": 848,
         "endorsements": 2
       }
     },
@@ -9242,7 +9242,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 584,
+        "downloads": 585,
         "endorsements": 0
       }
     },
@@ -9287,7 +9287,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 359,
+        "downloads": 360,
         "endorsements": 0
       }
     },
@@ -10052,7 +10052,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 524,
+        "downloads": 525,
         "endorsements": 0
       }
     },
@@ -11042,7 +11042,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 322,
+        "downloads": 323,
         "endorsements": 0
       }
     },
@@ -11267,7 +11267,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 16,
+        "downloads": 17,
         "endorsements": 0
       }
     },
@@ -11852,7 +11852,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1240,
+        "downloads": 1242,
         "endorsements": 2
       }
     },
