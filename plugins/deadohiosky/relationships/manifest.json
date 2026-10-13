@@ -15,10 +15,27 @@
   "icon": "heart",
   "mods": [],
   "languages": [
-    "en"
+    "en",
+    "ar",
+    "zh",
+    "cs",
+    "nl",
+    "fr",
+    "de",
+    "he",
+    "hi",
+    "hu",
+    "it",
+    "ja",
+    "ko",
+    "pl",
+    "pt",
+    "ru",
+    "es",
+    "tr"
   ],
   "image": "cover.png",
   "external_url": "https://github.com/deadohiosky48/SkyrimNet-Relationships",
-  "version": "2.2.1",
-  "changelog": "**HOTFIX - No more Landmarks out of nowhere.** Since 2.2, people nearby get judged when something big happens. If one of them hadn't said a word to you, the judge could still read her diary (which may have been last written to weeks ago), see that she wanted a life with you, and call it a Landmark: the big \"we've decided to be partners\" jump, paid on the spot. A Landmark now needs the two of you to have actually said it to each other."
+  "version": "2.3.0",
+  "changelog": "**Relationships speaks your language.** Pick one under Language in the mod's settings, or leave it on Game to follow Skyrim's. The dashboard, the notices, the question and your answer to it are all in that language. So is everything written for you to read: why someone feels as they do, the line they won't cross, what just happened between you.\r\n\r\n**Eighteen languages.** English, Arabic, Chinese, Czech, Dutch, French, German, Hebrew, Hindi, Hungarian, Italian, Japanese, Korean, Polish, Portuguese, Russian, Spanish and Turkish. In Arabic and Hebrew the dashboard reads right to left.\r\n\r\n**The bio blocks come along.** The blocks Relationships gives characters in SeverActions are written in your language too.\r\n\r\n**These are first drafts.** Every language but English was translated by machine and hasn't been read by a native speaker yet. If something reads wrong, tell us; each language is one file, and fixes are quick. In some scripts, Skyrim's own notice font may show boxes where the dashboard shows the words.\r\n\r\nCharacters already written keep their wording until they're re-authored."
 }
