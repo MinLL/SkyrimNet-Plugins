@@ -3,7 +3,7 @@
   "type": "listing",
   "title": "Political Engine",
   "tagline": "AI-driven politics",
-  "description": "Political Engine 0.6.3 - Experimental release\nAI-driven political correspondence, diplomacy and warfare for SkyrimNet. Exchange letters with jarls, negotiate trade and peace, command troops, and manage territories, resources and buildings through an interactive campaign map.\nBuilt for Skyrim SE 1.6.1170 and SkyrimNet Beta25 and later. English UI with an optional Russian patch.\nContinuation of Political Letters: legacy plugin names are preserved for save compatibility. Back up your save before updating.\nInstall the base archive first, then the Russian patch if needed.",
+  "description": "Political Engine 0.6.4 - Experimental release\nAI-driven political correspondence, diplomacy and warfare for SkyrimNet. Exchange letters with jarls, negotiate trade and peace, command troops, and manage territories, resources and buildings through an interactive campaign map.\nBuilt for Skyrim SE 1.6.1170 and SkyrimNet Beta25 and later. English UI with an optional Russian patch.\nContinuation of Political Letters: legacy plugin names are preserved for save compatibility. Back up your save before updating.\nInstall the base archive first, then the Russian patch if needed.",
   "author": "sixteenth",
   "tags": [],
   "nsfw": false,
@@ -14,7 +14,7 @@
     "ru"
   ],
   "image": "cover.png",
-  "external_url": "https://github.com/L-Sixteenth/Political-Engine-Releases/releases/tag/0.6.3",
-  "version": "0.6.3",
-  "changelog": "Public Release"
+  "external_url": "https://github.com/L-Sixteenth/Political-Engine-Releases/releases/tag/0.6.4",
+  "version": "0.6.4",
+  "changelog": "- Some UI improvements\nyou can now close unnecessary panels on the map screen.\n\n- Patch for VR users\nmaybe FOMOD later...\n\n- You can rename your custom faction now.\nwhy didn't I do this sooner?\n\n- Hotkey-set fixes.\nnow you can set any key you want. I think so...\n\n- Reputation and faction-rank API\nmaybe someone would need it"
 }
