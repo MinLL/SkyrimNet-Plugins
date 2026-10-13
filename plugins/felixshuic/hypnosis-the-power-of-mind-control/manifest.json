@@ -1,0 +1,29 @@
+{
+  "id": "felixshuic.hypnosis-the-power-of-mind-control",
+  "type": "listing",
+  "title": "Hypnosis: The power of mind control",
+  "tagline": "Illusion spells that hypnotize NPCs and let you rewrite who they are",
+  "description": "Hypnosis adds hypnosis spells to the Illusion school. Your SkyrimNet model plays the hypnotized NPC, so every reaction is its own.\n\n## What it does\n\n- **Timed hypnosis.** Murmur, Whisper and Trance put an NPC in a trance for an hour, a few hours or a day. Enthrall holds until you lift it.\n- **Imprint.** The master spell opens a paused window where you rewrite a named NPC. You edit the biography and the memories, and you set how they feel about you. The old self is kept in an item.\n- **Confabula and Amnesia.** One plants a false memory. The other takes chosen memories away.\n- **Awakening.** Ends a trance and undoes the memory spells. With the Personality Imprint in your pack it brings the old personality back.\n\nWhen a spell ends the NPC remembers everything and thinks it was their own idea. People who see you cast keep it as an event in their own history. The target is told nothing.\n\n## Requirements\n\n- SkyrimNet Beta 25 or Beta 26\n- SKSE64 and Address Library\n- PapyrusUtil SE 4.3+\n- SkyUI and MCM Helper\n- PrismaUI for the rewrite window\n\nSeverActions and OStimNet are optional.\n\nBuilt and tested on Skyrim 1.6.1170. Version 1.1.0 is also built for 1.7.99 and 1.7.104. I have no 1.7 install, so reports from there are welcome.\n\n## Settings\n\nThe model settings are on this plugin's page in the dashboard. There you pick the model for drafts and set the wording of each hypnotic state. Gameplay values such as Whisper's duration are in the MCM.\n\nEnglish and Russian are included.",
+  "author": "felixshuic",
+  "tags": [
+    "hypnosis",
+    "illusion",
+    "magic",
+    "spells",
+    "memory",
+    "personality",
+    "roleplay",
+    "npc",
+    "adult"
+  ],
+  "nsfw": true,
+  "icon": "sparkles",
+  "mods": [],
+  "languages": [
+    "en",
+    "ru"
+  ],
+  "external_url": "https://www.nexusmods.com/skyrimspecialedition/mods/194797",
+  "version": "1.1.0",
+  "changelog": "**What's new:**\n\n- **Confabula** (Apprentice). You write one false memory for a named character and they recall it as their own.\n- **Amnesia** (Adept). You pick up to five memories and the character loses them. The number per cast is a setting on the mod's page in the SkyrimNet dashboard.\n- Awakening brings back what Amnesia took and removes what Confabula planted.\n- Tomes for both spells are sold by the Illusion vendors, and you make the staves at the staff enchanter.\n\n**What's fixed:**\n\n- The mod starts on Skyrim 1.7.99 and 1.7.104. In 1.0.1 the game stopped at launch there with \"failed to open address library file\". I have no 1.7 install myself, so please tell me how it goes.\n\n**What's changed:**\n\n- SkyrimNet Beta 26 is supported, and Beta 25 still works.\n- Everyone who sees you cast keeps the moment as an event in their own history - this is now true for every spell. The target gets no such event, so they have nothing to suspect.\n- On Beta 25 a witness gets a memory in place of the event, because that version has no way to add one."
+}
