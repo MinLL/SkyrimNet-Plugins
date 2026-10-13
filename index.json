@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-13T04:47:45.733Z",
-  "stats_as_of": "2026-10-13T04:47:45.561Z",
+  "generated_at": "2026-10-13T05:35:54.404Z",
+  "stats_as_of": "2026-10-13T05:31:59.695Z",
   "plugins": [
     {
       "id": "plugins/min/skyrimnet-prompts-cache-enabled",
@@ -62,7 +62,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 44,
+        "downloads": 46,
         "endorsements": 1
       }
     },
@@ -589,7 +589,7 @@
         "height": 911
       },
       "stats": {
-        "downloads": 9,
+        "downloads": 10,
         "endorsements": 0
       }
     },
@@ -741,7 +741,7 @@
         "config": 4
       },
       "stats": {
-        "downloads": 53,
+        "downloads": 54,
         "endorsements": 0
       }
     },
@@ -1883,7 +1883,7 @@
         "height": 1080
       },
       "stats": {
-        "downloads": 82,
+        "downloads": 83,
         "endorsements": 1
       }
     },
@@ -2154,7 +2154,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 211,
+        "downloads": 212,
         "endorsements": 1
       }
     },
@@ -3196,7 +3196,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 870,
+        "downloads": 871,
         "endorsements": 0
       }
     },
