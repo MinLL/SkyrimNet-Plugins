@@ -1,0 +1,20 @@
+{
+  "id": "sixteenth.political-engine",
+  "type": "listing",
+  "title": "Political Engine",
+  "tagline": "AI-driven politics",
+  "description": "Political Engine 0.6.3 - Experimental release\nAI-driven political correspondence, diplomacy and warfare for SkyrimNet. Exchange letters with jarls, negotiate trade and peace, command troops, and manage territories, resources and buildings through an interactive campaign map.\nBuilt for Skyrim SE 1.6.1170 and SkyrimNet Beta25 and later. English UI with an optional Russian patch.\nContinuation of Political Letters: legacy plugin names are preserved for save compatibility. Back up your save before updating.\nInstall the base archive first, then the Russian patch if needed.",
+  "author": "sixteenth",
+  "tags": [],
+  "nsfw": false,
+  "icon": "gamemaster",
+  "mods": [],
+  "languages": [
+    "en",
+    "ru"
+  ],
+  "image": "cover.png",
+  "external_url": "https://github.com/L-Sixteenth/Political-Engine-Releases/releases/tag/0.6.3",
+  "version": "0.6.3",
+  "changelog": "Public Release"
+}
