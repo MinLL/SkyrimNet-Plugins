@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-13T09:39:04.518Z",
-  "stats_as_of": "2026-10-13T09:39:04.385Z",
+  "generated_at": "2026-10-13T10:35:17.852Z",
+  "stats_as_of": "2026-10-13T10:35:17.803Z",
   "plugins": [
     {
       "id": "plugins/sixteenth/political-engine",
@@ -39,7 +39,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 1,
+        "downloads": 2,
         "endorsements": 0
       }
     },
@@ -102,7 +102,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 56,
+        "downloads": 58,
         "endorsements": 1
       }
     },
@@ -172,7 +172,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 117,
+        "downloads": 118,
         "endorsements": 5
       }
     },
@@ -274,7 +274,7 @@
         "height": 864
       },
       "stats": {
-        "downloads": 162,
+        "downloads": 163,
         "endorsements": 6
       }
     },
@@ -417,7 +417,7 @@
         "height": 1008
       },
       "stats": {
-        "downloads": 71,
+        "downloads": 72,
         "endorsements": 2
       }
     },
@@ -588,7 +588,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 492,
+        "downloads": 493,
         "endorsements": 27
       }
     },
@@ -1321,7 +1321,7 @@
         "height": 1080
       },
       "stats": {
-        "downloads": 79,
+        "downloads": 80,
         "endorsements": 2
       }
     },
@@ -1379,7 +1379,7 @@
         "height": 1091
       },
       "stats": {
-        "downloads": 15,
+        "downloads": 16,
         "endorsements": 1
       }
     },
@@ -2831,7 +2831,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 262,
+        "downloads": 263,
         "endorsements": 4
       }
     },
@@ -3236,7 +3236,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 875,
+        "downloads": 876,
         "endorsements": 0
       }
     },
@@ -4001,7 +4001,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 704,
+        "downloads": 705,
         "endorsements": 0
       }
     },
@@ -4361,7 +4361,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 661,
+        "downloads": 662,
         "endorsements": 1
       }
     },
@@ -10856,7 +10856,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 172,
+        "downloads": 173,
         "endorsements": 0
       }
     },
