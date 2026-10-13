@@ -1,8 +1,97 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-13T16:35:49.424Z",
-  "stats_as_of": "2026-10-13T16:35:49.143Z",
+  "generated_at": "2026-10-13T17:19:45.782Z",
+  "stats_as_of": "2026-10-13T17:19:45.654Z",
   "plugins": [
+    {
+      "id": "plugins/felixshuic/hypnosis-the-power-of-mind-control",
+      "plugin_id": "felixshuic.hypnosis-the-power-of-mind-control",
+      "type": "listing",
+      "title": "Hypnosis: The power of mind control",
+      "tagline": "Illusion spells that hypnotize NPCs and let you rewrite who they are",
+      "author": "felixshuic",
+      "tags": [
+        "hypnosis",
+        "illusion",
+        "magic",
+        "spells",
+        "memory",
+        "personality",
+        "roleplay",
+        "npc",
+        "adult"
+      ],
+      "nsfw": true,
+      "icon": "sparkles",
+      "mods": [],
+      "first_published": "2026-10-13T17:19:25Z",
+      "last_updated": "2026-10-13T17:19:25Z",
+      "version": "1.1.0",
+      "history": [
+        {
+          "version": "1.1.0",
+          "commit": "73b29105c987847870fb993e611b17edbad2780a",
+          "date": "2026-10-13T17:19:25Z",
+          "changelog": "**What's new:**\n\n- **Confabula** (Apprentice). You write one false memory for a named character and they recall it as their own.\n- **Amnesia** (Adept). You pick up to five memories and the character loses them. The number per cast is a setting on the mod's page in the SkyrimNet dashboard.\n- Awakening brings back what Amnesia took and removes what Confabula planted.\n- Tomes for both spells are sold by the Illusion vendors, and you make the staves at the staff enchanter.\n\n**What's fixed:**\n\n- The mod starts on Skyrim 1.7.99 and 1.7.104. In 1.0.1 the game stopped at launch there with \"failed to open address library file\". I have no 1.7 install myself, so please tell me how it goes.\n\n**What's changed:**\n\n- SkyrimNet Beta 26 is supported, and Beta 25 still works.\n- Everyone who sees you cast keeps the moment as an event in their own history - this is now true for every spell. The target gets no such event, so they have nothing to suspect.\n- On Beta 25 a witness gets a memory in place of the event, because that version has no way to add one."
+        }
+      ],
+      "external_url": "https://www.nexusmods.com/skyrimspecialedition/mods/194797",
+      "languages": [
+        "en",
+        "ru"
+      ],
+      "language": "en",
+      "stats": {
+        "downloads": 0,
+        "endorsements": 0
+      }
+    },
+    {
+      "id": "plugins/sixteenth/political-engine",
+      "plugin_id": "sixteenth.political-engine",
+      "type": "listing",
+      "title": "Political Engine",
+      "tagline": "AI-driven politics",
+      "author": "sixteenth",
+      "tags": [],
+      "nsfw": false,
+      "icon": "gamemaster",
+      "mods": [],
+      "first_published": "2026-10-13T05:51:18Z",
+      "last_updated": "2026-10-13T17:19:20Z",
+      "version": "0.6.4",
+      "history": [
+        {
+          "version": "0.6.4",
+          "commit": "0661b34828663cd5f4ba68177ba30c3b7d187e86",
+          "date": "2026-10-13T17:19:20Z",
+          "changelog": "- Some UI improvements\nyou can now close unnecessary panels on the map screen.\n\n- Patch for VR users\nmaybe FOMOD later...\n\n- You can rename your custom faction now.\nwhy didn't I do this sooner?\n\n- Hotkey-set fixes.\nnow you can set any key you want. I think so...\n\n- Reputation and faction-rank API\nmaybe someone would need it"
+        },
+        {
+          "version": "0.6.3",
+          "commit": "7db25f6094c430a416a95553bac01c9ff3b5d8d5",
+          "date": "2026-10-13T05:51:18Z",
+          "changelog": "Public Release"
+        }
+      ],
+      "external_url": "https://github.com/L-Sixteenth/Political-Engine-Releases/releases/tag/0.6.4",
+      "languages": [
+        "en",
+        "ru"
+      ],
+      "language": "en",
+      "image": {
+        "file": "cover.png",
+        "sha": "86da390d447bff712f2385deab6da0ffac74ed42",
+        "commit": "7db25f6094c430a416a95553bac01c9ff3b5d8d5",
+        "width": 1672,
+        "height": 941
+      },
+      "stats": {
+        "downloads": 5,
+        "endorsements": 1
+      }
+    },
     {
       "id": "plugins/zol/pandorumllm",
       "plugin_id": "zol.pandorumllm",
@@ -57,46 +146,6 @@
       "stats": {
         "downloads": 12,
         "endorsements": 0
-      }
-    },
-    {
-      "id": "plugins/sixteenth/political-engine",
-      "plugin_id": "sixteenth.political-engine",
-      "type": "listing",
-      "title": "Political Engine",
-      "tagline": "AI-driven politics",
-      "author": "sixteenth",
-      "tags": [],
-      "nsfw": false,
-      "icon": "gamemaster",
-      "mods": [],
-      "first_published": "2026-10-13T05:51:18Z",
-      "last_updated": "2026-10-13T05:51:18Z",
-      "version": "0.6.3",
-      "history": [
-        {
-          "version": "0.6.3",
-          "commit": "7db25f6094c430a416a95553bac01c9ff3b5d8d5",
-          "date": "2026-10-13T05:51:18Z",
-          "changelog": "Public Release"
-        }
-      ],
-      "external_url": "https://github.com/L-Sixteenth/Political-Engine-Releases/releases/tag/0.6.3",
-      "languages": [
-        "en",
-        "ru"
-      ],
-      "language": "en",
-      "image": {
-        "file": "cover.png",
-        "sha": "86da390d447bff712f2385deab6da0ffac74ed42",
-        "commit": "7db25f6094c430a416a95553bac01c9ff3b5d8d5",
-        "width": 1672,
-        "height": 941
-      },
-      "stats": {
-        "downloads": 5,
-        "endorsements": 1
       }
     },
     {
@@ -158,7 +207,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 65,
+        "downloads": 66,
         "endorsements": 2
       }
     },
@@ -644,7 +693,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 497,
+        "downloads": 498,
         "endorsements": 27
       }
     },
@@ -837,7 +886,7 @@
         "config": 4
       },
       "stats": {
-        "downloads": 60,
+        "downloads": 61,
         "endorsements": 0
       }
     },
@@ -1486,7 +1535,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 100,
+        "downloads": 102,
         "endorsements": 0
       }
     },
@@ -1526,7 +1575,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 80,
+        "downloads": 81,
         "endorsements": 0
       }
     },
@@ -1887,7 +1936,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 202,
+        "downloads": 203,
         "endorsements": 3
       }
     },
@@ -2200,7 +2249,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 218,
+        "downloads": 219,
         "endorsements": 1
       }
     },
@@ -2270,7 +2319,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 254,
+        "downloads": 255,
         "endorsements": 0
       }
     },
@@ -2478,7 +2527,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 157,
+        "downloads": 159,
         "endorsements": 0
       }
     },
@@ -2583,7 +2632,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 120,
+        "downloads": 121,
         "endorsements": 0
       }
     },
@@ -2778,7 +2827,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 30,
+        "downloads": 31,
         "endorsements": 0
       }
     },
@@ -2837,7 +2886,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 265,
+        "downloads": 266,
         "endorsements": 4
       }
     },
@@ -2882,7 +2931,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 816,
+        "downloads": 817,
         "endorsements": 2
       }
     },
@@ -2927,7 +2976,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 405,
+        "downloads": 406,
         "endorsements": 0
       }
     },
@@ -2972,7 +3021,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 42,
+        "downloads": 44,
         "endorsements": 0
       }
     },
@@ -3017,7 +3066,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1703,
+        "downloads": 1704,
         "endorsements": 2
       }
     },
@@ -3062,7 +3111,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 19,
+        "downloads": 20,
         "endorsements": 0
       }
     },
@@ -3107,7 +3156,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 17,
+        "downloads": 18,
         "endorsements": 0
       }
     },
@@ -3152,7 +3201,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 22,
+        "downloads": 23,
         "endorsements": 0
       }
     },
@@ -3197,7 +3246,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 17,
+        "downloads": 19,
         "endorsements": 0
       }
     },
