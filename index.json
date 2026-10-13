@@ -1,8 +1,48 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-13T05:35:54.404Z",
-  "stats_as_of": "2026-10-13T05:31:59.695Z",
+  "generated_at": "2026-10-13T05:51:46.675Z",
+  "stats_as_of": "2026-10-13T05:51:45.061Z",
   "plugins": [
+    {
+      "id": "plugins/sixteenth/political-engine",
+      "plugin_id": "sixteenth.political-engine",
+      "type": "listing",
+      "title": "Political Engine",
+      "tagline": "AI-driven politics",
+      "author": "sixteenth",
+      "tags": [],
+      "nsfw": false,
+      "icon": "gamemaster",
+      "mods": [],
+      "first_published": "2026-10-13T05:51:18Z",
+      "last_updated": "2026-10-13T05:51:18Z",
+      "version": "0.6.3",
+      "history": [
+        {
+          "version": "0.6.3",
+          "commit": "7db25f6094c430a416a95553bac01c9ff3b5d8d5",
+          "date": "2026-10-13T05:51:18Z",
+          "changelog": "Public Release"
+        }
+      ],
+      "external_url": "https://github.com/L-Sixteenth/Political-Engine-Releases/releases/tag/0.6.3",
+      "languages": [
+        "en",
+        "ru"
+      ],
+      "language": "en",
+      "image": {
+        "file": "cover.png",
+        "sha": "86da390d447bff712f2385deab6da0ffac74ed42",
+        "commit": "7db25f6094c430a416a95553bac01c9ff3b5d8d5",
+        "width": 1672,
+        "height": 941
+      },
+      "stats": {
+        "downloads": 0,
+        "endorsements": 0
+      }
+    },
     {
       "id": "plugins/min/skyrimnet-prompts-cache-enabled",
       "plugin_id": "min.skyrimnet-prompts-cache-enabled",
@@ -905,7 +945,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 87,
+        "downloads": 88,
         "endorsements": 2
       }
     },
@@ -1841,7 +1881,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 197,
+        "downloads": 198,
         "endorsements": 3
       }
     },
@@ -1926,7 +1966,7 @@
         "height": 1080
       },
       "stats": {
-        "downloads": 26,
+        "downloads": 27,
         "endorsements": 0
       }
     },
@@ -2027,7 +2067,7 @@
         "height": 936
       },
       "stats": {
-        "downloads": 40,
+        "downloads": 41,
         "endorsements": 0
       }
     },
@@ -2154,7 +2194,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 212,
+        "downloads": 213,
         "endorsements": 1
       }
     },
