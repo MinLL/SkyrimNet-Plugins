@@ -1,8 +1,71 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-13T04:41:46.980Z",
-  "stats_as_of": "2026-10-13T04:41:46.859Z",
+  "generated_at": "2026-10-13T04:47:45.733Z",
+  "stats_as_of": "2026-10-13T04:47:45.561Z",
   "plugins": [
+    {
+      "id": "plugins/min/skyrimnet-prompts-cache-enabled",
+      "plugin_id": "min.skyrimnet-prompts-cache-enabled",
+      "type": "bundle",
+      "title": "Skyrimnet Prompts - Cache Enabled",
+      "tagline": "Faster, cheaper responses - EXPERIMENTAL",
+      "author": "min",
+      "tags": [
+        "Costs",
+        "Performance",
+        "Cheaper",
+        "Faster",
+        "Speed"
+      ],
+      "nsfw": false,
+      "icon": "package",
+      "mods": [],
+      "first_published": "2026-10-12T05:14:35Z",
+      "last_updated": "2026-10-13T04:47:20Z",
+      "version": "1.2.0",
+      "min_skyrimnet_version": "0.27.0",
+      "history": [
+        {
+          "version": "1.2.0",
+          "commit": "bdec1b220ca222e07139ac47ce342988264d6a20",
+          "date": "2026-10-13T04:47:20Z",
+          "changelog": "1.2.0: Added caching support for player dialogue transform / player thoughts prompts.\n1.1.0: the player's own lines (player_dialogue) and thoughts (player_thoughts) are now laid out for prompt caching too, sharing the cached system message with dialogue_response.\n1.0.1: Initial release"
+        },
+        {
+          "version": "1.0.2",
+          "commit": "9b0902962a76c45e85f53122c383e7ec4ffcb38c",
+          "date": "2026-10-12T22:21:27Z",
+          "changelog": "Added a banner, fixed typos in the description"
+        },
+        {
+          "version": "1.0.1",
+          "commit": "008efa73f19426617cb7991da9e08f39ad2f7926",
+          "date": "2026-10-12T01:36:59-07:00",
+          "changelog": "Initial release"
+        }
+      ],
+      "image": {
+        "file": "cover.png",
+        "sha": "1a8c5b306c6a927a6f468f52e79b8d208cdbe326",
+        "commit": "9b0902962a76c45e85f53122c383e7ec4ffcb38c",
+        "width": 1672,
+        "height": 941
+      },
+      "contents": {
+        "triggers": 0,
+        "actions": 0,
+        "prompts": 19,
+        "bios": 0,
+        "knowledge": 0,
+        "entities": 0,
+        "config": 0
+      },
+      "curated": true,
+      "stats": {
+        "downloads": 44,
+        "endorsements": 1
+      }
+    },
     {
       "id": "plugins/pdusen/narrative-engine",
       "plugin_id": "pdusen.narrative-engine",
@@ -173,63 +236,6 @@
       "stats": {
         "downloads": 162,
         "endorsements": 6
-      }
-    },
-    {
-      "id": "plugins/min/skyrimnet-prompts-cache-enabled",
-      "plugin_id": "min.skyrimnet-prompts-cache-enabled",
-      "type": "bundle",
-      "title": "Skyrimnet Prompts - Cache Enabled",
-      "tagline": "Faster, cheaper responses - EXPERIMENTAL",
-      "author": "min",
-      "tags": [
-        "Costs",
-        "Performance",
-        "Cheaper",
-        "Faster",
-        "Speed"
-      ],
-      "nsfw": false,
-      "icon": "package",
-      "mods": [],
-      "first_published": "2026-10-12T05:14:35Z",
-      "last_updated": "2026-10-12T22:21:27Z",
-      "version": "1.0.2",
-      "min_skyrimnet_version": "0.27.0",
-      "history": [
-        {
-          "version": "1.0.2",
-          "commit": "9b0902962a76c45e85f53122c383e7ec4ffcb38c",
-          "date": "2026-10-12T22:21:27Z",
-          "changelog": "Added a banner, fixed typos in the description"
-        },
-        {
-          "version": "1.0.1",
-          "commit": "008efa73f19426617cb7991da9e08f39ad2f7926",
-          "date": "2026-10-12T01:36:59-07:00",
-          "changelog": "Initial release"
-        }
-      ],
-      "image": {
-        "file": "cover.png",
-        "sha": "1a8c5b306c6a927a6f468f52e79b8d208cdbe326",
-        "commit": "9b0902962a76c45e85f53122c383e7ec4ffcb38c",
-        "width": 1672,
-        "height": 941
-      },
-      "contents": {
-        "triggers": 0,
-        "actions": 0,
-        "prompts": 16,
-        "bios": 0,
-        "knowledge": 0,
-        "entities": 0,
-        "config": 0
-      },
-      "curated": true,
-      "stats": {
-        "downloads": 43,
-        "endorsements": 1
       }
     },
     {
@@ -2830,7 +2836,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 805,
+        "downloads": 806,
         "endorsements": 2
       }
     },
@@ -2875,7 +2881,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 398,
+        "downloads": 399,
         "endorsements": 0
       }
     },
@@ -2965,7 +2971,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1689,
+        "downloads": 1690,
         "endorsements": 2
       }
     },
@@ -4675,7 +4681,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 835,
+        "downloads": 836,
         "endorsements": 2
       }
     },
@@ -4810,7 +4816,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 219,
+        "downloads": 220,
         "endorsements": 1
       }
     },
@@ -4855,7 +4861,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 350,
+        "downloads": 351,
         "endorsements": 0
       }
     },
@@ -5035,7 +5041,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 170,
+        "downloads": 171,
         "endorsements": 0
       }
     },
@@ -6400,7 +6406,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 275,
+        "downloads": 276,
         "endorsements": 0
       }
     },
@@ -7120,7 +7126,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 429,
+        "downloads": 430,
         "endorsements": 0
       }
     },
@@ -7255,7 +7261,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 703,
+        "downloads": 704,
         "endorsements": 0
       }
     },
@@ -7345,7 +7351,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 953,
+        "downloads": 954,
         "endorsements": 2
       }
     },
@@ -8380,7 +8386,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 987,
+        "downloads": 988,
         "endorsements": 2
       }
     },
@@ -8650,7 +8656,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 839,
+        "downloads": 840,
         "endorsements": 2
       }
     },
@@ -9190,7 +9196,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 580,
+        "downloads": 581,
         "endorsements": 0
       }
     },
@@ -9235,7 +9241,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 353,
+        "downloads": 354,
         "endorsements": 0
       }
     },
@@ -9730,7 +9736,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 182,
+        "downloads": 183,
         "endorsements": 0
       }
     },
@@ -10000,7 +10006,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 517,
+        "downloads": 518,
         "endorsements": 0
       }
     },
@@ -10945,7 +10951,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 100,
+        "downloads": 101,
         "endorsements": 0
       }
     },
@@ -11260,7 +11266,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 436,
+        "downloads": 437,
         "endorsements": 2
       }
     },
@@ -11665,7 +11671,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 161,
+        "downloads": 162,
         "endorsements": 0
       }
     },
@@ -11800,7 +11806,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1230,
+        "downloads": 1231,
         "endorsements": 2
       }
     },
