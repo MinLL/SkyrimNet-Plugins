@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-13T17:20:12.938Z",
-  "stats_as_of": "2026-10-13T17:20:12.852Z",
+  "generated_at": "2026-10-13T17:30:30.467Z",
+  "stats_as_of": "2026-10-13T17:30:30.179Z",
   "plugins": [
     {
       "id": "plugins/felixshuic/hypnosis-the-power-of-mind-control",
@@ -42,7 +42,7 @@
       ],
       "language": "en",
       "stats": {
-        "downloads": 0,
+        "downloads": 1,
         "endorsements": 0
       }
     },
@@ -379,7 +379,7 @@
         "height": 864
       },
       "stats": {
-        "downloads": 171,
+        "downloads": 172,
         "endorsements": 6
       }
     },
@@ -2174,7 +2174,7 @@
         "height": 893
       },
       "stats": {
-        "downloads": 20,
+        "downloads": 21,
         "endorsements": 0
       }
     },
