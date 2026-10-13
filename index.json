@@ -1,8 +1,69 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-13T22:47:28.276Z",
-  "stats_as_of": "2026-10-13T22:47:28.025Z",
+  "generated_at": "2026-10-13T23:13:54.409Z",
+  "stats_as_of": "2026-10-13T23:13:54.338Z",
   "plugins": [
+    {
+      "id": "plugins/urtubesrclogged/battle-summaries",
+      "plugin_id": "urtubesrclogged.battle-summaries",
+      "type": "listing",
+      "title": "Battle Summaries",
+      "tagline": "After a fight, NPCs know what really happened: who did what, who nearly died, and who saved whom. Lightweight SKSE plugin.",
+      "author": "urtubesrclogged",
+      "tags": [
+        "DLL",
+        "Combat",
+        "Context"
+      ],
+      "nsfw": false,
+      "icon": "sword",
+      "mods": [],
+      "first_published": "2026-10-05T02:53:19Z",
+      "last_updated": "2026-10-13T23:13:28Z",
+      "version": "1.3.0",
+      "history": [
+        {
+          "version": "1.3.0",
+          "commit": "bfe78a93bd7c6af51bde592b172d1c2c8d16b8ac",
+          "date": "2026-10-13T23:13:28Z",
+          "changelog": "**Support for Custom Wording**\n- Every phrase the mod writes can now be reworded: about 150 of them, from \"took solid wounds\" to \"burned by fire\".\n  Want it darker, stricter, or just different? See \"Your own wording\" in the README.\n- Could be useful for translations.\n\n**Bug Fixes and Enhancements**\n- Someone killed without fighting is no longer called \"an innocent\". The summary says they were \"not actively engaged\n  in combat\" and leaves the rest to the story. Thanks to nan0bug00 for the change.\n- An enemy cut down before he could draw his sword no longer counts as someone who wasn't fighting.\n- When the mod can't tell what hurt someone, it says so plainly: a wolf's bite is no longer \"harmful magic\".\n- A spell, potion or weapon is only named when the attacker actually used it. No more odd internal names.\n- Multiple actors with the same name doing the same thing are told once, not three times (example: 3 wolves\n  attacking you)."
+        },
+        {
+          "version": "1.2.0",
+          "commit": "fa7b18624be1f981b8a4f39017b437effad66673",
+          "date": "2026-10-08T02:42:28Z",
+          "changelog": "**Friendly fire**\n- Caught your follower in a fireball? It's now told as an accident, not as an attack on them.\n- Or switch it off entirely and they'll stop bringing it up. (A death by friendly fire is always told.)\n\n**Settings in SkyrimNet**\n- Battle Summaries now has its own page in SkyrimNet's settings, under Plugins. The ini still works.\n\n**Moments**\n- Several enemies killed in one stroke get a mention, with what did it: \"killed 3 at once with Fireball\".\n\n**Fixes**\n- An enemy who happens to kill another enemy no longer \"saves\" your follower's life.\n- Damage done to your own side no longer counts as doing the fighting.\n- \"Killed by someone\" is gone."
+        },
+        {
+          "version": "1.1.0",
+          "commit": "a341941d5e042ace1365e72774969e59f43282ed",
+          "date": "2026-10-06T19:32:37Z",
+          "changelog": "- **Injuries from injury mods.** A fighter who picks up an injury during the battle is told so (\"was injured in this fight and still carries it: Leg Injury\"), and one they already had is told as brought into the fight. Works with Blade and Blunt and Wildcat; any other injury mod that marks its injuries with a keyword can be added in the ini (`[OtherMods] sInjuryKeywords`).\n- **Beheadings and severed limbs.** Told with the kill (\"Lydia beheaded Bandit Chief.\"): Dismembering Framework for limbs, Next-Gen Decapitations for heads, and the game's own beheadings. None of these mods is required.\n- **Innocents and allies slain.** A citizen or guard cut down without ever raising a weapon is told as an innocent, with who killed them, and is no longer counted among the enemies. An ally killed by their own side is told as that.\n- **How long the battle lasted** is told as a figure (\"It lasted 42 seconds.\", \"It lasted about 25 minutes.\").\n- **A battle ends with its enemies.** It no longer stays \"underway\" for as long as the game keeps the party in combat with wildlife that never fought, and time spent in menus is not counted in its length.\n- **Kill credit.** The game names the player for some deaths the player had no part in; a kill now goes to the player only when the player struck the victim.\n\nInjuries and dismemberment can be switched off in `BattleSummaries.ini` (`bInjuries`, `bDismemberment`). Replace the old version when updating; do not merge into it."
+        },
+        {
+          "version": "1.0.1",
+          "commit": "377833a450b49360812451bf9850e8ed4afb551c",
+          "date": "2026-10-05T02:53:19Z",
+          "changelog": "Initial release"
+        }
+      ],
+      "external_url": "https://github.com/urtubesrclogged/BattleSummaries/releases/latest",
+      "languages": [
+        "en"
+      ],
+      "language": "en",
+      "image": {
+        "file": "cover.png",
+        "sha": "ba07417512c6a8b901f60a51d64f0d1bc24c59e1",
+        "commit": "377833a450b49360812451bf9850e8ed4afb551c",
+        "width": 1920,
+        "height": 1080
+      },
+      "stats": {
+        "downloads": 85,
+        "endorsements": 2
+      }
+    },
     {
       "id": "plugins/pdusen/narrative-engine",
       "plugin_id": "pdusen.narrative-engine",
@@ -289,7 +350,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 75,
+        "downloads": 77,
         "endorsements": 2
       }
     },
@@ -1388,61 +1449,6 @@
       }
     },
     {
-      "id": "plugins/urtubesrclogged/battle-summaries",
-      "plugin_id": "urtubesrclogged.battle-summaries",
-      "type": "listing",
-      "title": "Battle Summaries",
-      "tagline": "After a fight, NPCs know what really happened: who did what, who nearly died, and who saved whom. Lightweight SKSE plugin.",
-      "author": "urtubesrclogged",
-      "tags": [
-        "DLL",
-        "Combat",
-        "Context"
-      ],
-      "nsfw": false,
-      "icon": "sword",
-      "mods": [],
-      "first_published": "2026-10-05T02:53:19Z",
-      "last_updated": "2026-10-08T02:42:28Z",
-      "version": "1.2.0",
-      "history": [
-        {
-          "version": "1.2.0",
-          "commit": "fa7b18624be1f981b8a4f39017b437effad66673",
-          "date": "2026-10-08T02:42:28Z",
-          "changelog": "**Friendly fire**\n- Caught your follower in a fireball? It's now told as an accident, not as an attack on them.\n- Or switch it off entirely and they'll stop bringing it up. (A death by friendly fire is always told.)\n\n**Settings in SkyrimNet**\n- Battle Summaries now has its own page in SkyrimNet's settings, under Plugins. The ini still works.\n\n**Moments**\n- Several enemies killed in one stroke get a mention, with what did it: \"killed 3 at once with Fireball\".\n\n**Fixes**\n- An enemy who happens to kill another enemy no longer \"saves\" your follower's life.\n- Damage done to your own side no longer counts as doing the fighting.\n- \"Killed by someone\" is gone."
-        },
-        {
-          "version": "1.1.0",
-          "commit": "a341941d5e042ace1365e72774969e59f43282ed",
-          "date": "2026-10-06T19:32:37Z",
-          "changelog": "- **Injuries from injury mods.** A fighter who picks up an injury during the battle is told so (\"was injured in this fight and still carries it: Leg Injury\"), and one they already had is told as brought into the fight. Works with Blade and Blunt and Wildcat; any other injury mod that marks its injuries with a keyword can be added in the ini (`[OtherMods] sInjuryKeywords`).\n- **Beheadings and severed limbs.** Told with the kill (\"Lydia beheaded Bandit Chief.\"): Dismembering Framework for limbs, Next-Gen Decapitations for heads, and the game's own beheadings. None of these mods is required.\n- **Innocents and allies slain.** A citizen or guard cut down without ever raising a weapon is told as an innocent, with who killed them, and is no longer counted among the enemies. An ally killed by their own side is told as that.\n- **How long the battle lasted** is told as a figure (\"It lasted 42 seconds.\", \"It lasted about 25 minutes.\").\n- **A battle ends with its enemies.** It no longer stays \"underway\" for as long as the game keeps the party in combat with wildlife that never fought, and time spent in menus is not counted in its length.\n- **Kill credit.** The game names the player for some deaths the player had no part in; a kill now goes to the player only when the player struck the victim.\n\nInjuries and dismemberment can be switched off in `BattleSummaries.ini` (`bInjuries`, `bDismemberment`). Replace the old version when updating; do not merge into it."
-        },
-        {
-          "version": "1.0.1",
-          "commit": "377833a450b49360812451bf9850e8ed4afb551c",
-          "date": "2026-10-05T02:53:19Z",
-          "changelog": "Initial release"
-        }
-      ],
-      "external_url": "https://github.com/urtubesrclogged/BattleSummaries/releases/latest",
-      "languages": [
-        "en"
-      ],
-      "language": "en",
-      "image": {
-        "file": "cover.png",
-        "sha": "ba07417512c6a8b901f60a51d64f0d1bc24c59e1",
-        "commit": "377833a450b49360812451bf9850e8ed4afb551c",
-        "width": 1920,
-        "height": 1080
-      },
-      "stats": {
-        "downloads": 85,
-        "endorsements": 2
-      }
-    },
-    {
       "id": "plugins/awesmdiver/modpacer",
       "plugin_id": "awesmdiver.modpacer",
       "type": "listing",
@@ -1948,7 +1954,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 205,
+        "downloads": 206,
         "endorsements": 3
       }
     },
@@ -1990,7 +1996,7 @@
         "height": 1080
       },
       "stats": {
-        "downloads": 89,
+        "downloads": 90,
         "endorsements": 1
       }
     },
@@ -2539,7 +2545,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 160,
+        "downloads": 161,
         "endorsements": 0
       }
     },
@@ -2898,7 +2904,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 267,
+        "downloads": 268,
         "endorsements": 4
       }
     },
@@ -3078,7 +3084,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1729,
+        "downloads": 1730,
         "endorsements": 2
       }
     },
@@ -3303,7 +3309,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 892,
+        "downloads": 895,
         "endorsements": 0
       }
     },
@@ -4068,7 +4074,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 719,
+        "downloads": 720,
         "endorsements": 0
       }
     },
@@ -4428,7 +4434,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 673,
+        "downloads": 674,
         "endorsements": 1
       }
     },
@@ -5013,7 +5019,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 513,
+        "downloads": 514,
         "endorsements": 0
       }
     },
@@ -5103,7 +5109,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 153,
+        "downloads": 154,
         "endorsements": 0
       }
     },
@@ -5283,7 +5289,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 19,
+        "downloads": 20,
         "endorsements": 0
       }
     },
@@ -6198,7 +6204,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 20,
+        "downloads": 21,
         "endorsements": 0
       }
     },
@@ -6828,7 +6834,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 222,
+        "downloads": 223,
         "endorsements": 0
       }
     },
@@ -6918,7 +6924,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 29,
+        "downloads": 30,
         "endorsements": 0
       }
     },
@@ -7233,7 +7239,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 439,
+        "downloads": 440,
         "endorsements": 0
       }
     },
@@ -7368,7 +7374,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 719,
+        "downloads": 720,
         "endorsements": 0
       }
     },
@@ -8493,7 +8499,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1015,
+        "downloads": 1017,
         "endorsements": 2
       }
     },
@@ -9303,7 +9309,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 601,
+        "downloads": 602,
         "endorsements": 0
       }
     },
@@ -10068,7 +10074,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 193,
+        "downloads": 194,
         "endorsements": 0
       }
     },
@@ -11193,7 +11199,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 113,
+        "downloads": 115,
         "endorsements": 0
       }
     },
@@ -11913,7 +11919,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1263,
+        "downloads": 1264,
         "endorsements": 2
       }
     },
