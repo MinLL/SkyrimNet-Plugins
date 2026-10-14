@@ -3,7 +3,7 @@
   "type": "listing",
   "title": "Political Engine",
   "tagline": "AI-driven politics",
-  "description": "Political Engine 0.6.4 - Experimental release\nAI-driven political correspondence, diplomacy and warfare for SkyrimNet. Exchange letters with jarls, negotiate trade and peace, command troops, and manage territories, resources and buildings through an interactive campaign map.\nBuilt for Skyrim SE 1.6.1170 and SkyrimNet Beta25 and later. English UI with an optional Russian patch.\nContinuation of Political Letters: legacy plugin names are preserved for save compatibility. Back up your save before updating.\nInstall the base archive first, then the Russian patch if needed.",
+  "description": "Political Engine 0.6.5 - Experimental release\nAI-driven political correspondence, diplomacy and warfare for SkyrimNet. Exchange letters with jarls, negotiate trade and peace, command troops, and manage territories, resources and buildings through an interactive campaign map.\nBuilt for Skyrim SE 1.6.1170 and SkyrimNet Beta25 and later. English UI with an optional Russian patch.\nContinuation of Political Letters: legacy plugin names are preserved for save compatibility. Back up your save before updating.\nInstall the base archive first, then the Russian patch if needed.",
   "author": "sixteenth",
   "tags": [],
   "nsfw": false,
@@ -14,7 +14,7 @@
     "ru"
   ],
   "image": "cover.png",
-  "external_url": "https://github.com/L-Sixteenth/Political-Engine-Releases/releases/tag/0.6.4",
-  "version": "0.6.4",
-  "changelog": "- Some UI improvements\nyou can now close unnecessary panels on the map screen.\n\n- Patch for VR users\nmaybe FOMOD later...\n\n- You can rename your custom faction now.\nwhy didn't I do this sooner?\n\n- Hotkey-set fixes.\nnow you can set any key you want. I think so...\n\n- Reputation and faction-rank API\nmaybe someone would need it"
+  "external_url": "https://github.com/L-Sixteenth/Political-Engine-Releases/releases/tag/0.6.5",
+  "version": "0.6.5",
+  "changelog": "### Well, I can say it\n## Our first \"Feauture Update\"\n\n_Finally_\n**FOMOD INSTALLER**\n\n**Now you can acquire new territories without armed conflict.**\n  Another Jarl might simply agree to cede some territory to you or even place themselves entirely under your rule. \n  In the latter case, there are two options: a full, formal absorption of the faction or the creation of a puppet state. With the puppet state option, only you and the figurehead ruler would be aware of the agreement and who is truly in charge. In the former case, a record of the transfer of authority becomes a part of World Knowledge.\n  \n**NPC info is now have \"Bio-Block\" form, not just prompt injection.**\n_at least, it should_\n\n**You can now add each NPC to your faction and set their rank.**\n\n**You can now return occupied territories to their owners, even if you have conquered the entire faction.**\n_perhaps today you are the kind type of overlord_\n\n**The occupied territories are marked in a different color.**\n\n**Fixed an issue with constant attempts to place a military camp.**\n_I hope so. If not, these camps can now be disabled in the Settings → General → Regional military camps_\n_disabled by default_\n\n**API is updated**"
 }
