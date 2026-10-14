@@ -16,7 +16,7 @@
   "icon": "package",
   "mods": [],
   "image": "cover.png",
-  "version": "1.2.0",
-  "changelog": "1.2.0: Added caching support for player dialogue transform / player thoughts prompts.\n1.1.0: the player's own lines (player_dialogue) and thoughts (player_thoughts) are now laid out for prompt caching too, sharing the cached system message with dialogue_response.\n1.0.1: Initial release",
+  "version": "1.3.0",
+  "changelog": "1.3.0: the Universal Translator transform (transformers/universal_translator) is laid out for prompt caching too: the NPC's stable profile is the cached system block, identical to dialogue_response's, so the two share a cache entry when they share a model.",
   "min_skyrimnet_version": "0.27.0"
 }
