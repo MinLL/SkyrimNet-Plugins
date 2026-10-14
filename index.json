@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-14T06:45:49.868Z",
-  "stats_as_of": "2026-10-14T06:45:49.733Z",
+  "generated_at": "2026-10-14T07:35:40.313Z",
+  "stats_as_of": "2026-10-14T07:32:36.449Z",
   "plugins": [
     {
       "id": "plugins/awesmdiver/modpacer",
@@ -837,7 +837,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 506,
+        "downloads": 507,
         "endorsements": 27
       }
     },
@@ -3322,7 +3322,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 909,
+        "downloads": 910,
         "endorsements": 0
       }
     },
@@ -7297,7 +7297,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 297,
+        "downloads": 298,
         "endorsements": 0
       }
     },
@@ -10942,7 +10942,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 177,
+        "downloads": 178,
         "endorsements": 0
       }
     },
