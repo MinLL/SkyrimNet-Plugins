@@ -1,8 +1,60 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-14T19:27:22.411Z",
-  "stats_as_of": "2026-10-14T19:27:22.307Z",
+  "generated_at": "2026-10-14T20:26:22.065Z",
+  "stats_as_of": "2026-10-14T20:26:21.960Z",
   "plugins": [
+    {
+      "id": "plugins/sixteenth/political-engine",
+      "plugin_id": "sixteenth.political-engine",
+      "type": "listing",
+      "title": "Political Engine",
+      "tagline": "AI-driven politics",
+      "author": "sixteenth",
+      "tags": [],
+      "nsfw": false,
+      "icon": "gamemaster",
+      "mods": [],
+      "first_published": "2026-10-13T05:51:18Z",
+      "last_updated": "2026-10-14T20:26:00Z",
+      "version": "0.6.5",
+      "history": [
+        {
+          "version": "0.6.5",
+          "commit": "750bc2c1c5b5640a2670fac3143e08fa6e9f6d48",
+          "date": "2026-10-14T20:26:00Z",
+          "changelog": "### Well, I can say it\n## Our first \"Feauture Update\"\n\n_Finally_\n**FOMOD INSTALLER**\n\n**Now you can acquire new territories without armed conflict.**\n  Another Jarl might simply agree to cede some territory to you or even place themselves entirely under your rule. \n  In the latter case, there are two options: a full, formal absorption of the faction or the creation of a puppet state. With the puppet state option, only you and the figurehead ruler would be aware of the agreement and who is truly in charge. In the former case, a record of the transfer of authority becomes a part of World Knowledge.\n  \n**NPC info is now have \"Bio-Block\" form, not just prompt injection.**\n_at least, it should_\n\n**You can now add each NPC to your faction and set their rank.**\n\n**You can now return occupied territories to their owners, even if you have conquered the entire faction.**\n_perhaps today you are the kind type of overlord_\n\n**The occupied territories are marked in a different color.**\n\n**Fixed an issue with constant attempts to place a military camp.**\n_I hope so. If not, these camps can now be disabled in the Settings → General → Regional military camps_\n_disabled by default_\n\n**API is updated**"
+        },
+        {
+          "version": "0.6.4",
+          "commit": "0661b34828663cd5f4ba68177ba30c3b7d187e86",
+          "date": "2026-10-13T17:19:20Z",
+          "changelog": "- Some UI improvements\nyou can now close unnecessary panels on the map screen.\n\n- Patch for VR users\nmaybe FOMOD later...\n\n- You can rename your custom faction now.\nwhy didn't I do this sooner?\n\n- Hotkey-set fixes.\nnow you can set any key you want. I think so...\n\n- Reputation and faction-rank API\nmaybe someone would need it"
+        },
+        {
+          "version": "0.6.3",
+          "commit": "7db25f6094c430a416a95553bac01c9ff3b5d8d5",
+          "date": "2026-10-13T05:51:18Z",
+          "changelog": "Public Release"
+        }
+      ],
+      "external_url": "https://github.com/L-Sixteenth/Political-Engine-Releases/releases/tag/0.6.5",
+      "languages": [
+        "en",
+        "ru"
+      ],
+      "language": "en",
+      "image": {
+        "file": "cover.png",
+        "sha": "86da390d447bff712f2385deab6da0ffac74ed42",
+        "commit": "7db25f6094c430a416a95553bac01c9ff3b5d8d5",
+        "width": 1672,
+        "height": 941
+      },
+      "stats": {
+        "downloads": 21,
+        "endorsements": 1
+      }
+    },
     {
       "id": "plugins/awesmdiver/modpacer",
       "plugin_id": "awesmdiver.modpacer",
@@ -132,7 +184,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 107,
+        "downloads": 112,
         "endorsements": 2
       }
     },
@@ -377,52 +429,6 @@
       "stats": {
         "downloads": 4,
         "endorsements": 0
-      }
-    },
-    {
-      "id": "plugins/sixteenth/political-engine",
-      "plugin_id": "sixteenth.political-engine",
-      "type": "listing",
-      "title": "Political Engine",
-      "tagline": "AI-driven politics",
-      "author": "sixteenth",
-      "tags": [],
-      "nsfw": false,
-      "icon": "gamemaster",
-      "mods": [],
-      "first_published": "2026-10-13T05:51:18Z",
-      "last_updated": "2026-10-13T17:19:20Z",
-      "version": "0.6.4",
-      "history": [
-        {
-          "version": "0.6.4",
-          "commit": "0661b34828663cd5f4ba68177ba30c3b7d187e86",
-          "date": "2026-10-13T17:19:20Z",
-          "changelog": "- Some UI improvements\nyou can now close unnecessary panels on the map screen.\n\n- Patch for VR users\nmaybe FOMOD later...\n\n- You can rename your custom faction now.\nwhy didn't I do this sooner?\n\n- Hotkey-set fixes.\nnow you can set any key you want. I think so...\n\n- Reputation and faction-rank API\nmaybe someone would need it"
-        },
-        {
-          "version": "0.6.3",
-          "commit": "7db25f6094c430a416a95553bac01c9ff3b5d8d5",
-          "date": "2026-10-13T05:51:18Z",
-          "changelog": "Public Release"
-        }
-      ],
-      "external_url": "https://github.com/L-Sixteenth/Political-Engine-Releases/releases/tag/0.6.4",
-      "languages": [
-        "en",
-        "ru"
-      ],
-      "language": "en",
-      "image": {
-        "file": "cover.png",
-        "sha": "86da390d447bff712f2385deab6da0ffac74ed42",
-        "commit": "7db25f6094c430a416a95553bac01c9ff3b5d8d5",
-        "width": 1672,
-        "height": 941
-      },
-      "stats": {
-        "downloads": 21,
-        "endorsements": 1
       }
     },
     {
@@ -837,7 +843,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 515,
+        "downloads": 516,
         "endorsements": 27
       }
     },
@@ -1030,7 +1036,7 @@
         "config": 4
       },
       "stats": {
-        "downloads": 73,
+        "downloads": 75,
         "endorsements": 0
       }
     },
@@ -1146,7 +1152,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 26,
+        "downloads": 27,
         "endorsements": 0
       }
     },
@@ -1662,7 +1668,7 @@
         "height": 1152
       },
       "stats": {
-        "downloads": 132,
+        "downloads": 133,
         "endorsements": 4
       }
     },
@@ -1967,7 +1973,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 211,
+        "downloads": 212,
         "endorsements": 3
       }
     },
@@ -2962,7 +2968,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 847,
+        "downloads": 850,
         "endorsements": 2
       }
     },
@@ -3097,7 +3103,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1785,
+        "downloads": 1786,
         "endorsements": 2
       }
     },
@@ -3322,7 +3328,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 930,
+        "downloads": 931,
         "endorsements": 0
       }
     },
@@ -3682,7 +3688,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 104,
+        "downloads": 105,
         "endorsements": 0
       }
     },
@@ -3862,7 +3868,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 114,
+        "downloads": 115,
         "endorsements": 0
       }
     },
@@ -4087,7 +4093,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 738,
+        "downloads": 739,
         "endorsements": 0
       }
     },
@@ -4582,7 +4588,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 27,
+        "downloads": 28,
         "endorsements": 0
       }
     },
@@ -4627,7 +4633,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 25,
+        "downloads": 26,
         "endorsements": 0
       }
     },
@@ -4807,7 +4813,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 869,
+        "downloads": 873,
         "endorsements": 2
       }
     },
@@ -4852,7 +4858,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 191,
+        "downloads": 193,
         "endorsements": 0
       }
     },
@@ -5032,7 +5038,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 525,
+        "downloads": 526,
         "endorsements": 0
       }
     },
@@ -5122,7 +5128,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 157,
+        "downloads": 158,
         "endorsements": 0
       }
     },
@@ -5437,7 +5443,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 157,
+        "downloads": 158,
         "endorsements": 0
       }
     },
@@ -5842,7 +5848,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 294,
+        "downloads": 295,
         "endorsements": 0
       }
     },
@@ -6532,7 +6538,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 285,
+        "downloads": 287,
         "endorsements": 0
       }
     },
@@ -6622,7 +6628,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 48,
+        "downloads": 49,
         "endorsements": 0
       }
     },
@@ -6847,7 +6853,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 228,
+        "downloads": 229,
         "endorsements": 0
       }
     },
@@ -7477,7 +7483,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1001,
+        "downloads": 1004,
         "endorsements": 2
       }
     },
@@ -7882,7 +7888,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 237,
+        "downloads": 238,
         "endorsements": 0
       }
     },
@@ -8197,7 +8203,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 7,
+        "downloads": 8,
         "endorsements": 0
       }
     },
@@ -8332,7 +8338,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 195,
+        "downloads": 196,
         "endorsements": 1
       }
     },
@@ -8692,7 +8698,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 53,
+        "downloads": 54,
         "endorsements": 0
       }
     },
@@ -8782,7 +8788,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 880,
+        "downloads": 883,
         "endorsements": 2
       }
     },
@@ -9367,7 +9373,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 372,
+        "downloads": 374,
         "endorsements": 0
       }
     },
@@ -10132,7 +10138,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 542,
+        "downloads": 543,
         "endorsements": 0
       }
     },
@@ -10492,7 +10498,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 97,
+        "downloads": 98,
         "endorsements": 0
       }
     },
@@ -11077,7 +11083,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 102,
+        "downloads": 103,
         "endorsements": 0
       }
     },
@@ -11392,7 +11398,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 456,
+        "downloads": 457,
         "endorsements": 2
       }
     },
@@ -11437,7 +11443,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 113,
+        "downloads": 114,
         "endorsements": 0
       }
     },
@@ -11932,7 +11938,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1299,
+        "downloads": 1303,
         "endorsements": 2
       }
     },
