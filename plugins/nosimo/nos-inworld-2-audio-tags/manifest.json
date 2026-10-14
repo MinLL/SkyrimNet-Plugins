@@ -9,19 +9,19 @@
     "inworld",
     "audio",
     "tags",
-    "tt2",
+    "tts",
     "eleven",
     "lab",
     "elven"
   ],
   "nsfw": false,
-  "icon": "package",
+  "icon": "voice",
   "mods": [],
   "languages": [
     "en"
   ],
   "image": "cover.png",
-  "version": "1.1.0",
-  "changelog": "Seperate Eleven labs support based on v4 tagging guidelines",
-  "min_skyrimnet_version": "0.26.0"
+  "version": "1.2.0",
+  "changelog": "Shortened inworld/eleven labs prompt instructions ~50%",
+  "min_skyrimnet_version": "0.27.0"
 }

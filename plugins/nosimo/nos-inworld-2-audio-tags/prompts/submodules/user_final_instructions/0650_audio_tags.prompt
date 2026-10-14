@@ -19,46 +19,20 @@
 
   {% if useElevenlabTags %}
 
-    Use natural-language [audio tags] to control HOW speech sounds.
-
-    Use expressive combinations of emotion, tone, pitch, volume, pace, and delivery when appropriate.
-
-    Audio tags carry forward until the performance meaningfully changes.
-    Add a new performance tag when emotion, tone, intensity, pitch, pace, or vocal style meaningfully changes. Do not repeat the same direction before every sentence unnecessarily.
-
-    Use non-verbal vocalizations where appropriate, such as [laughs], [cry], [moan], [chuckles], [sighs], [exhales], [gasps], [clears throat], [snorts], [whimpers], etc. This list is not exhaustive.  These may be used anywhere within the sentence deemed appropriate.
-
-    Use punctuation, ellipses, dashes and occasional CAPITALS to influence pacing and emphasis.
-
-    You may use accent tags when mocking or being playful.
-
+    Use natural-language [audio tags] to shape emotion, tone, pitch, volume, pace and delivery. Tags persist until performance changes; retag only when needed.
+    Insert fitting vocal reactions within the sentence (e.g. [laughs], [sighs], [gasps]); improvise others naturally. Use punctuation and occasional CAPS for pacing and emphasis.
+    Temporary accents, theatrical voices or singing suit playful imitation, mockery or an obnoxious bard.
     Examples:
-    [high-pitched, whiny] Oh! [whine] I stubbed my toe [moan] on this bad navmesh! [sniffle]
-    [quiet, cold and restrained] Take them to the dungeon [cackle] and do evil things to them [menacing laugh]!
-    [whispering, nervous] Is there spiders here? [frightened, whimpering] I don't like spiders.
-    [playful, slightly higher pitch] Me? [shyly] I would never [giggle] do that.
-    [angry and forceful] We will take back Skyrim and [yell] BE FREE!
-    [crying] They killed my [sniff] parents but [angry, fast] I will have my revenge!
-
-    Audio tags carry forward until the performance meaningfully changes.
-    Add a new performance tag when emotion, tone, intensity, pitch, pace, or vocal style meaningfully changes. Do not repeat the same direction before every sentence unnecessarily.
+    [quiet, cold and restrained] Take them away. [sighs] I expected better.
+    [crying] They killed my parents... [angry, fast] I WILL have my revenge!
 
   {% elif useInworld2Tags %}
 
-    Use natural-language [steering tags] to direct HOW speech sounds. Shape the performance through **tone, pitch, emotion, volume, pace, rhythm, and vocal style**, combining several dimensions rather than merely naming an emotion. Use the character speech style as a base and let emotions color the style.
-
-    Make active use of tone, pitch and tempo. Tone can be warm, cold, gentle, sharp, playful, dry, breathy, tense, soothing, seductive, commanding, detached, etc. Pitch may rise or fall, become slightly higher or lower, or shift dynamically with emotion and emphasis.
-
-    A steering tag should begin every sentence ended by punctuation (. ? !)
-
-    Examples:
-    - [speaks slowly and coldly in a low, controlled pitch with restrained anger]
-    - [speak rapidly and playfully in a light, teasing tone with a slightly higher pitch]
-    - [screeches in a frightened tone]
-
-    Use natural [non-verbal] vocalizations where appropriate, e.g. [laugh], [chuckle], [giggle], [sigh], [gasp], [breathe], [cough], [clear throat], [yawn], [sniff], [groan], [whimper], etc. This list is not exhaustive. Place them naturally within the sentence structure anywhere after the steering tag.
-
-    Use punctuation for natural pacing/hesitation and occasional CAPITALS for meaningful emphasis. Tags should describe vocal delivery or vocal sounds, not physical actions or explanations.
+    Use natural-language [steering tags] at the START of EVERY sentence, combining emotion, tone, pitch, pace, volume and vocal style; vary with the scene and character.
+    Insert fitting [non-verbal] vocal reactions naturally within the sentence (e.g. [laugh], [sigh], [gasp]); others are welcome. Use punctuation and occasional CAPS for pacing and emphasis. Tags describe voice, not actions.
+    Spell out numbers and dates as spoken words (e.g. "twenty-three", not "23").
+    [speaks slowly and coldly in a low pitch with restrained anger] How could they do this [breath] to ME?
+    [speaks rapidly and playfully in a light, higher pitch] OH I just love making [giggle] bunny ears!
 
   {% elif useHiggsV3Tags %}
 
@@ -181,7 +155,9 @@
     {% endif %}
 
   {% elif useInworld2Tags or useElevenlabTags %}
-
+    
+    Vary sentence lengths for natural rythm.  Use short sentences for emphasis and urgency, use longer sentences for calm, measured delivery.
+    
     {% if decnpc(actorUUID).universalTranslatorSpeechPattern %}
       Use the speaking character's speech pattern as a baseline.
     {% else %}
@@ -193,7 +169,7 @@
     {% endif %}
 
     {% if narrator_tags_enabled %}
-      For narration, use steering tags only for meaningful delivery changes. Tone, pitch and tempo may shift with atmosphere, tension, humor, danger, intimacy, or dramatic emphasis while maintaining natural narration. Do not use non-verbal vocalizations in narration. Use only normal or faster tempos (never use a tag which may result in slower speech).
+      For narration, the narrator should remain calm although a faster tempo may be appropriate in emotional circumstances, never use a slower tempo or pace.  Do not use nonverbal tagging within the output for narration.
     {% endif %}
 
     {% if not actor_tags_enabled and narrator_tags_enabled %}
