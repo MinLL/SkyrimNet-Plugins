@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-14T22:05:18.426Z",
-  "stats_as_of": "2026-10-14T22:05:18.257Z",
+  "generated_at": "2026-10-14T22:27:14.476Z",
+  "stats_as_of": "2026-10-14T22:27:10.361Z",
   "plugins": [
     {
       "id": "plugins/nosimo/nos-inworld-2-audio-tags",
@@ -79,7 +79,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 212,
+        "downloads": 214,
         "endorsements": 3
       }
     },
@@ -264,7 +264,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 116,
+        "downloads": 119,
         "endorsements": 2
       }
     },
@@ -1116,7 +1116,7 @@
         "config": 4
       },
       "stats": {
-        "downloads": 75,
+        "downloads": 76,
         "endorsements": 0
       }
     },
@@ -1692,7 +1692,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 87,
+        "downloads": 88,
         "endorsements": 0
       }
     },
@@ -3109,7 +3109,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1796,
+        "downloads": 1797,
         "endorsements": 2
       }
     },
@@ -3334,7 +3334,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 934,
+        "downloads": 935,
         "endorsements": 0
       }
     },
@@ -8524,7 +8524,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1050,
+        "downloads": 1051,
         "endorsements": 2
       }
     },
@@ -9334,7 +9334,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 623,
+        "downloads": 624,
         "endorsements": 0
       }
     },
@@ -11944,7 +11944,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1304,
+        "downloads": 1305,
         "endorsements": 2
       }
     },
