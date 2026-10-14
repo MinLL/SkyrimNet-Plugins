@@ -1,8 +1,88 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-14T21:27:23.690Z",
-  "stats_as_of": "2026-10-14T21:22:29.233Z",
+  "generated_at": "2026-10-14T22:05:18.426Z",
+  "stats_as_of": "2026-10-14T22:05:18.257Z",
   "plugins": [
+    {
+      "id": "plugins/nosimo/nos-inworld-2-audio-tags",
+      "plugin_id": "nosimo.nos-inworld-2-audio-tags",
+      "type": "bundle",
+      "title": "Nos 2 Audio Tags",
+      "tagline": "Audio tagging for inworld 2, eleven labs",
+      "author": "nosimo",
+      "tags": [
+        "inworld",
+        "audio",
+        "tags",
+        "tts",
+        "eleven",
+        "lab",
+        "elven"
+      ],
+      "nsfw": false,
+      "icon": "voice",
+      "mods": [],
+      "first_published": "2026-10-02T23:59:14Z",
+      "last_updated": "2026-10-14T22:04:53Z",
+      "version": "1.2.0",
+      "min_skyrimnet_version": "0.27.0",
+      "history": [
+        {
+          "version": "1.2.0",
+          "commit": "fecb4c8ef2e0bc9bc6bb877c13ea356fbb525d50",
+          "date": "2026-10-14T22:04:53Z",
+          "changelog": "Shortened inworld/eleven labs prompt instructions ~50%"
+        },
+        {
+          "version": "1.1.0",
+          "commit": "848d0d857d5a24756ca448c91d0a6eccf7099428",
+          "date": "2026-10-04T03:36:38Z",
+          "changelog": "Seperate Eleven labs support based on v4 tagging guidelines"
+        },
+        {
+          "version": "1.0.3",
+          "commit": "e7b124a86fa177f192d56d28757be7e68701ab75",
+          "date": "2026-10-04T01:14:43Z",
+          "changelog": "Rough Eleven lab support using inworld tt2 instructions, will refine as I play with it"
+        },
+        {
+          "version": "1.0.1",
+          "commit": "fc3dad764f7bea579b2120a44e47dbec762f60f7",
+          "date": "2026-10-03T02:01:36Z",
+          "changelog": "Removed NSFW example"
+        },
+        {
+          "version": "1.0.0",
+          "commit": "6a9bec5677486237968d14e4832c14eb0a179c4f",
+          "date": "2026-10-02T23:59:14Z",
+          "changelog": "Initial release"
+        }
+      ],
+      "languages": [
+        "en"
+      ],
+      "language": "en",
+      "image": {
+        "file": "cover.png",
+        "sha": "09a87069d4babfa7575d309e5f08db2f852fe0d0",
+        "commit": "fc3dad764f7bea579b2120a44e47dbec762f60f7",
+        "width": 1280,
+        "height": 720
+      },
+      "contents": {
+        "triggers": 0,
+        "actions": 0,
+        "prompts": 1,
+        "bios": 0,
+        "knowledge": 0,
+        "entities": 0,
+        "config": 0
+      },
+      "stats": {
+        "downloads": 212,
+        "endorsements": 3
+      }
+    },
     {
       "id": "plugins/sixteenth/political-engine",
       "plugin_id": "sixteenth.political-engine",
@@ -51,7 +131,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 21,
+        "downloads": 22,
         "endorsements": 1
       }
     },
@@ -184,7 +264,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 114,
+        "downloads": 116,
         "endorsements": 2
       }
     },
@@ -1904,80 +1984,6 @@
       }
     },
     {
-      "id": "plugins/nosimo/nos-inworld-2-audio-tags",
-      "plugin_id": "nosimo.nos-inworld-2-audio-tags",
-      "type": "bundle",
-      "title": "Nos 2 Audio Tags",
-      "tagline": "Audio tagging for inworld 2, eleven labs",
-      "author": "nosimo",
-      "tags": [
-        "inworld",
-        "audio",
-        "tags",
-        "tt2",
-        "eleven",
-        "lab",
-        "elven"
-      ],
-      "nsfw": false,
-      "icon": "package",
-      "mods": [],
-      "first_published": "2026-10-02T23:59:14Z",
-      "last_updated": "2026-10-04T03:36:38Z",
-      "version": "1.1.0",
-      "min_skyrimnet_version": "0.26.0",
-      "history": [
-        {
-          "version": "1.1.0",
-          "commit": "848d0d857d5a24756ca448c91d0a6eccf7099428",
-          "date": "2026-10-04T03:36:38Z",
-          "changelog": "Seperate Eleven labs support based on v4 tagging guidelines"
-        },
-        {
-          "version": "1.0.3",
-          "commit": "e7b124a86fa177f192d56d28757be7e68701ab75",
-          "date": "2026-10-04T01:14:43Z",
-          "changelog": "Rough Eleven lab support using inworld tt2 instructions, will refine as I play with it"
-        },
-        {
-          "version": "1.0.1",
-          "commit": "fc3dad764f7bea579b2120a44e47dbec762f60f7",
-          "date": "2026-10-03T02:01:36Z",
-          "changelog": "Removed NSFW example"
-        },
-        {
-          "version": "1.0.0",
-          "commit": "6a9bec5677486237968d14e4832c14eb0a179c4f",
-          "date": "2026-10-02T23:59:14Z",
-          "changelog": "Initial release"
-        }
-      ],
-      "languages": [
-        "en"
-      ],
-      "language": "en",
-      "image": {
-        "file": "cover.png",
-        "sha": "09a87069d4babfa7575d309e5f08db2f852fe0d0",
-        "commit": "fc3dad764f7bea579b2120a44e47dbec762f60f7",
-        "width": 1280,
-        "height": 720
-      },
-      "contents": {
-        "triggers": 0,
-        "actions": 0,
-        "prompts": 1,
-        "bios": 0,
-        "knowledge": 0,
-        "entities": 0,
-        "config": 0
-      },
-      "stats": {
-        "downloads": 212,
-        "endorsements": 3
-      }
-    },
-    {
       "id": "plugins/potoftea/paired-animations",
       "plugin_id": "potoftea.paired-animations",
       "type": "listing",
@@ -2968,7 +2974,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 851,
+        "downloads": 852,
         "endorsements": 2
       }
     },
@@ -3103,7 +3109,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1793,
+        "downloads": 1796,
         "endorsements": 2
       }
     },
@@ -3823,7 +3829,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 233,
+        "downloads": 234,
         "endorsements": 1
       }
     },
@@ -4453,7 +4459,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 700,
+        "downloads": 702,
         "endorsements": 1
       }
     },
@@ -5893,7 +5899,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 10,
+        "downloads": 11,
         "endorsements": 0
       }
     },
@@ -7123,7 +7129,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 138,
+        "downloads": 139,
         "endorsements": 0
       }
     },
@@ -7483,7 +7489,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1007,
+        "downloads": 1008,
         "endorsements": 2
       }
     },
@@ -8338,7 +8344,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 196,
+        "downloads": 197,
         "endorsements": 1
       }
     },
@@ -8383,7 +8389,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 43,
+        "downloads": 44,
         "endorsements": 0
       }
     },
@@ -8518,7 +8524,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1048,
+        "downloads": 1050,
         "endorsements": 2
       }
     },
@@ -8788,7 +8794,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 885,
+        "downloads": 887,
         "endorsements": 2
       }
     },
@@ -9103,7 +9109,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 87,
+        "downloads": 88,
         "endorsements": 0
       }
     },
@@ -9328,7 +9334,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 622,
+        "downloads": 623,
         "endorsements": 0
       }
     },
@@ -10093,7 +10099,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 198,
+        "downloads": 200,
         "endorsements": 0
       }
     },
@@ -11083,7 +11089,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 103,
+        "downloads": 104,
         "endorsements": 0
       }
     },
@@ -11128,7 +11134,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 337,
+        "downloads": 338,
         "endorsements": 0
       }
     },
@@ -12208,7 +12214,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 300,
+        "downloads": 301,
         "endorsements": 0
       }
     },
