@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-14T03:35:16.837Z",
-  "stats_as_of": "2026-10-14T03:35:16.744Z",
+  "generated_at": "2026-10-14T03:41:13.280Z",
+  "stats_as_of": "2026-10-14T03:41:13.152Z",
   "plugins": [
     {
       "id": "plugins/min/skyrimnet-prompts-cache-enabled",
@@ -128,6 +128,7 @@
         "width": 1920,
         "height": 1080
       },
+      "curated": true,
       "stats": {
         "downloads": 89,
         "endorsements": 2
