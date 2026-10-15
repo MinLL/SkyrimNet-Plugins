@@ -1,8 +1,50 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-14T23:26:22.025Z",
-  "stats_as_of": "2026-10-14T23:24:07.779Z",
+  "generated_at": "2026-10-15T00:04:45.163Z",
+  "stats_as_of": "2026-10-15T00:04:45.045Z",
   "plugins": [
+    {
+      "id": "plugins/telord72612/vr-touch-events-v3-4",
+      "plugin_id": "telord72612.vr-touch-events-v3-4",
+      "type": "listing",
+      "title": "VR Touch Events V3.4",
+      "tagline": "A plugins for SkyrimNet that expose the player's contact to the LLM for awareness.",
+      "author": "telord72612",
+      "tags": [
+        "Awareness",
+        "Prompt"
+      ],
+      "nsfw": true,
+      "icon": "package",
+      "mods": [],
+      "first_published": "2026-09-26T04:24:01Z",
+      "last_updated": "2026-10-15T00:04:18Z",
+      "version": "3.4.0",
+      "history": [
+        {
+          "version": "3.4.0",
+          "commit": "802a5a82288f98c9bf20abb57e608792d5b5db37",
+          "date": "2026-10-15T00:04:18Z",
+          "changelog": "Beta25 Release"
+        }
+      ],
+      "external_url": "https://github.com/Telord72612/VRTouchEvents/releases/tag/V3.4.0",
+      "languages": [
+        "en"
+      ],
+      "language": "en",
+      "image": {
+        "file": "cover.jpg",
+        "sha": "d68741b4ecfb3e8f6fca01995c70babc27e57e4f",
+        "commit": "755266dd3695c5869438b7af720e4ddae7348105",
+        "width": 1792,
+        "height": 1008
+      },
+      "stats": {
+        "downloads": 23,
+        "endorsements": 0
+      }
+    },
     {
       "id": "plugins/nosimo/nos-inworld-2-audio-tags",
       "plugin_id": "nosimo.nos-inworld-2-audio-tags",
@@ -754,48 +796,6 @@
       "stats": {
         "downloads": 74,
         "endorsements": 2
-      }
-    },
-    {
-      "id": "plugins/telord72612/vr-touch-events-v3-4",
-      "plugin_id": "telord72612.vr-touch-events-v3-4",
-      "type": "listing",
-      "title": "VR Touch Events V3.4",
-      "tagline": "A plugins for SkyrimNet that expose the player's contact to the LLM for awareness.",
-      "author": "telord72612",
-      "tags": [
-        "Awareness",
-        "Prompt"
-      ],
-      "nsfw": true,
-      "icon": "package",
-      "mods": [],
-      "first_published": "2026-09-26T04:24:01Z",
-      "last_updated": "2026-10-12T00:31:12Z",
-      "version": "3.4.0",
-      "history": [
-        {
-          "version": "3.4.0",
-          "commit": "755266dd3695c5869438b7af720e4ddae7348105",
-          "date": "2026-10-12T00:31:12Z",
-          "changelog": "Beta25 Release"
-        }
-      ],
-      "external_url": "https://github.com/Telord72612/VRTouchEvents/releases/tag/V3.4.0",
-      "languages": [
-        "en"
-      ],
-      "language": "en",
-      "image": {
-        "file": "cover.jpg",
-        "sha": "d68741b4ecfb3e8f6fca01995c70babc27e57e4f",
-        "commit": "755266dd3695c5869438b7af720e4ddae7348105",
-        "width": 1792,
-        "height": 1008
-      },
-      "stats": {
-        "downloads": 23,
-        "endorsements": 0
       }
     },
     {
@@ -2494,7 +2494,7 @@
         "height": 900
       },
       "stats": {
-        "downloads": 133,
+        "downloads": 134,
         "endorsements": 5
       }
     },
@@ -2929,7 +2929,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 271,
+        "downloads": 272,
         "endorsements": 4
       }
     },
@@ -2974,7 +2974,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 853,
+        "downloads": 855,
         "endorsements": 2
       }
     },
@@ -3019,7 +3019,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 420,
+        "downloads": 421,
         "endorsements": 0
       }
     },
@@ -3109,7 +3109,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1799,
+        "downloads": 1803,
         "endorsements": 2
       }
     },
@@ -3334,7 +3334,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 936,
+        "downloads": 937,
         "endorsements": 0
       }
     },
@@ -3604,7 +3604,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 340,
+        "downloads": 341,
         "endorsements": 0
       }
     },
@@ -3829,7 +3829,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 234,
+        "downloads": 235,
         "endorsements": 1
       }
     },
@@ -4099,7 +4099,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 744,
+        "downloads": 745,
         "endorsements": 0
       }
     },
@@ -4459,7 +4459,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 703,
+        "downloads": 704,
         "endorsements": 1
       }
     },
@@ -4819,7 +4819,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 874,
+        "downloads": 876,
         "endorsements": 2
       }
     },
@@ -5044,7 +5044,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 529,
+        "downloads": 530,
         "endorsements": 0
       }
     },
@@ -5854,7 +5854,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 296,
+        "downloads": 297,
         "endorsements": 0
       }
     },
@@ -7264,7 +7264,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 454,
+        "downloads": 455,
         "endorsements": 0
       }
     },
@@ -7309,7 +7309,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 303,
+        "downloads": 304,
         "endorsements": 0
       }
     },
@@ -7399,7 +7399,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 739,
+        "downloads": 741,
         "endorsements": 0
       }
     },
@@ -7489,7 +7489,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1009,
+        "downloads": 1011,
         "endorsements": 2
       }
     },
@@ -7894,7 +7894,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 239,
+        "downloads": 240,
         "endorsements": 0
       }
     },
@@ -8524,7 +8524,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1052,
+        "downloads": 1054,
         "endorsements": 2
       }
     },
@@ -8794,7 +8794,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 888,
+        "downloads": 889,
         "endorsements": 2
       }
     },
@@ -9109,7 +9109,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 88,
+        "downloads": 89,
         "endorsements": 0
       }
     },
@@ -9199,7 +9199,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 231,
+        "downloads": 232,
         "endorsements": 0
       }
     },
@@ -9334,7 +9334,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 625,
+        "downloads": 626,
         "endorsements": 0
       }
     },
@@ -10144,7 +10144,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 544,
+        "downloads": 546,
         "endorsements": 0
       }
     },
@@ -11539,7 +11539,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 103,
+        "downloads": 104,
         "endorsements": 0
       }
     },
@@ -11944,7 +11944,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1307,
+        "downloads": 1310,
         "endorsements": 2
       }
     },
