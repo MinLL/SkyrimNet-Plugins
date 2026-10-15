@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-15T19:18:32.885Z",
-  "stats_as_of": "2026-10-15T19:18:32.817Z",
+  "generated_at": "2026-10-15T19:25:45.608Z",
+  "stats_as_of": "2026-10-15T19:25:45.529Z",
   "plugins": [
     {
       "id": "plugins/sorcerers-apprentice/convenient-horses-with-mcm-patch-for-severactions",
@@ -3373,7 +3373,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 961,
+        "downloads": 962,
         "endorsements": 0
       }
     },
