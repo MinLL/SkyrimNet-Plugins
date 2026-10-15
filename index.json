@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-15T13:31:52.555Z",
-  "stats_as_of": "2026-10-15T13:31:52.391Z",
+  "generated_at": "2026-10-15T14:31:15.843Z",
+  "stats_as_of": "2026-10-15T14:28:56.594Z",
   "plugins": [
     {
       "id": "plugins/telord72612/vr-touch-events-v3-4",
@@ -121,7 +121,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 237,
+        "downloads": 238,
         "endorsements": 3
       }
     },
@@ -306,7 +306,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 183,
+        "downloads": 186,
         "endorsements": 2
       }
     },
@@ -1116,7 +1116,7 @@
         "config": 4
       },
       "stats": {
-        "downloads": 81,
+        "downloads": 82,
         "endorsements": 0
       }
     },
@@ -1652,7 +1652,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 105,
+        "downloads": 106,
         "endorsements": 0
       }
     },
@@ -1692,7 +1692,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 93,
+        "downloads": 94,
         "endorsements": 0
       }
     },
@@ -3109,7 +3109,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1831,
+        "downloads": 1833,
         "endorsements": 2
       }
     },
@@ -3334,7 +3334,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 952,
+        "downloads": 954,
         "endorsements": 0
       }
     },
@@ -4099,7 +4099,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 762,
+        "downloads": 763,
         "endorsements": 0
       }
     },
@@ -4864,7 +4864,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 195,
+        "downloads": 196,
         "endorsements": 0
       }
     },
@@ -5044,7 +5044,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 542,
+        "downloads": 543,
         "endorsements": 0
       }
     },
@@ -6634,7 +6634,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 49,
+        "downloads": 50,
         "endorsements": 0
       }
     },
@@ -7309,7 +7309,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 309,
+        "downloads": 311,
         "endorsements": 0
       }
     },
@@ -7399,7 +7399,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 756,
+        "downloads": 757,
         "endorsements": 0
       }
     },
@@ -7489,7 +7489,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1027,
+        "downloads": 1028,
         "endorsements": 2
       }
     },
@@ -8524,7 +8524,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1071,
+        "downloads": 1073,
         "endorsements": 2
       }
     },
@@ -9334,7 +9334,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 636,
+        "downloads": 637,
         "endorsements": 0
       }
     },
@@ -10099,7 +10099,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 207,
+        "downloads": 209,
         "endorsements": 0
       }
     },
@@ -10954,7 +10954,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 184,
+        "downloads": 185,
         "endorsements": 0
       }
     },
@@ -11944,7 +11944,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1332,
+        "downloads": 1333,
         "endorsements": 2
       }
     },
