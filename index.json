@@ -1,8 +1,85 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-16T20:29:34.238Z",
-  "stats_as_of": "2026-10-16T20:29:34.105Z",
+  "generated_at": "2026-10-16T21:05:18.977Z",
+  "stats_as_of": "2026-10-16T21:05:18.867Z",
   "plugins": [
+    {
+      "id": "plugins/deadohiosky/kinship",
+      "plugin_id": "deadohiosky.kinship",
+      "type": "listing",
+      "title": "Kinship",
+      "tagline": "Have unlimited children and make SkyrimNet aware of them and their familial relationships",
+      "author": "deadohiosky",
+      "tags": [
+        "children",
+        "family",
+        "bloodline"
+      ],
+      "nsfw": false,
+      "icon": "characters",
+      "mods": [],
+      "first_published": "2026-09-19T12:22:14Z",
+      "last_updated": "2026-10-16T21:04:51Z",
+      "version": "1.9.9",
+      "history": [
+        {
+          "version": "1.9.9",
+          "commit": "808366628e194fe3b5bb67622e8d71a86612a579",
+          "date": "2026-10-16T21:04:51Z",
+          "changelog": "Updated to support AE 1.7.104. Older versions still work. Nothing in your save needs resetting."
+        },
+        {
+          "version": "1.9.8",
+          "commit": "319c2bc45f31b27e3bb7e460ce0514ecf5129733",
+          "date": "2026-10-05T12:50:07Z",
+          "changelog": "Kinship now protects your children's homes if SeverActions loses them. Kinship shows each child's home by asking SeverActions, which is where most homes are kept if you have that plugin. If SeverActions ever loses its saved homes, Kinship used to faithfully copy the blanks, so the panel showed most of your children with no home at all.\n\nThe case that prompted this was downgrading SeverActions to a pre-4.x version mid-playthrough. A newer version saves its data in a format an older version cannot read, so going back and then forward again can lose every home and companion SeverActions had. Avoid downgrading SeverActions from 4.x to 3.x on a save you care about."
+        },
+        {
+          "version": "1.9.7",
+          "commit": "c9680220e0f57bfa8a745bdbf3dee1bad86d3100",
+          "date": "2026-10-02T18:10:54Z",
+          "changelog": "Fix for a Skyrim VR crash. Release 1.9.6 is equivalent for non-VR users."
+        },
+        {
+          "version": "1.9.6",
+          "commit": "c86cd3f08088b5524340851e435b26698e85273a",
+          "date": "2026-09-28T13:59:51Z",
+          "changelog": "A bugfix release. Kinship was quietly losing some of what Fertility Mode told it, and filling your script log with errors every in-game hour."
+        },
+        {
+          "version": "1.9.5",
+          "commit": "a74a1163297dc7bb41a9230eb140779195047258",
+          "date": "2026-09-27T09:45:48Z",
+          "changelog": "A couple of relatively minor bug fixes, including an edge case where the father is sometimes not written to the child record at birth even though Kinship knew who the father was."
+        },
+        {
+          "version": "1.9.4",
+          "commit": "2a111d61f697705542c979f7d5dc96fe657d4dab",
+          "date": "2026-09-20T19:04:11Z"
+        },
+        {
+          "version": "1.9.3",
+          "commit": "31efbda09c1641469b20b70f814d6e94affc7756",
+          "date": "2026-09-19T12:22:14Z"
+        }
+      ],
+      "external_url": "https://github.com/deadohiosky48/SkyrimNet-Kinship",
+      "languages": [
+        "en"
+      ],
+      "language": "en",
+      "image": {
+        "file": "cover.png",
+        "sha": "2406abb911929131463f084d04b5fdc0d105ca36",
+        "commit": "a74a1163297dc7bb41a9230eb140779195047258",
+        "width": 1664,
+        "height": 928
+      },
+      "stats": {
+        "downloads": 54,
+        "endorsements": 2
+      }
+    },
     {
       "id": "plugins/sixteenth/political-engine",
       "plugin_id": "sixteenth.political-engine",
@@ -361,7 +438,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 262,
+        "downloads": 263,
         "endorsements": 3
       }
     },
@@ -494,7 +571,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 279,
+        "downloads": 280,
         "endorsements": 5
       }
     },
@@ -1900,77 +1977,6 @@
       }
     },
     {
-      "id": "plugins/deadohiosky/kinship",
-      "plugin_id": "deadohiosky.kinship",
-      "type": "listing",
-      "title": "Kinship",
-      "tagline": "Have unlimited children and make SkyrimNet aware of them and their familial relationships",
-      "author": "deadohiosky",
-      "tags": [
-        "children",
-        "family",
-        "bloodline"
-      ],
-      "nsfw": false,
-      "icon": "characters",
-      "mods": [],
-      "first_published": "2026-09-19T12:22:14Z",
-      "last_updated": "2026-10-05T12:50:07Z",
-      "version": "1.9.8",
-      "history": [
-        {
-          "version": "1.9.8",
-          "commit": "319c2bc45f31b27e3bb7e460ce0514ecf5129733",
-          "date": "2026-10-05T12:50:07Z",
-          "changelog": "Kinship now protects your children's homes if SeverActions loses them. Kinship shows each child's home by asking SeverActions, which is where most homes are kept if you have that plugin. If SeverActions ever loses its saved homes, Kinship used to faithfully copy the blanks, so the panel showed most of your children with no home at all.\n\nThe case that prompted this was downgrading SeverActions to a pre-4.x version mid-playthrough. A newer version saves its data in a format an older version cannot read, so going back and then forward again can lose every home and companion SeverActions had. Avoid downgrading SeverActions from 4.x to 3.x on a save you care about."
-        },
-        {
-          "version": "1.9.7",
-          "commit": "c9680220e0f57bfa8a745bdbf3dee1bad86d3100",
-          "date": "2026-10-02T18:10:54Z",
-          "changelog": "Fix for a Skyrim VR crash. Release 1.9.6 is equivalent for non-VR users."
-        },
-        {
-          "version": "1.9.6",
-          "commit": "c86cd3f08088b5524340851e435b26698e85273a",
-          "date": "2026-09-28T13:59:51Z",
-          "changelog": "A bugfix release. Kinship was quietly losing some of what Fertility Mode told it, and filling your script log with errors every in-game hour."
-        },
-        {
-          "version": "1.9.5",
-          "commit": "a74a1163297dc7bb41a9230eb140779195047258",
-          "date": "2026-09-27T09:45:48Z",
-          "changelog": "A couple of relatively minor bug fixes, including an edge case where the father is sometimes not written to the child record at birth even though Kinship knew who the father was."
-        },
-        {
-          "version": "1.9.4",
-          "commit": "2a111d61f697705542c979f7d5dc96fe657d4dab",
-          "date": "2026-09-20T19:04:11Z"
-        },
-        {
-          "version": "1.9.3",
-          "commit": "31efbda09c1641469b20b70f814d6e94affc7756",
-          "date": "2026-09-19T12:22:14Z"
-        }
-      ],
-      "external_url": "https://github.com/deadohiosky48/SkyrimNet-Kinship",
-      "languages": [
-        "en"
-      ],
-      "language": "en",
-      "image": {
-        "file": "cover.png",
-        "sha": "2406abb911929131463f084d04b5fdc0d105ca36",
-        "commit": "a74a1163297dc7bb41a9230eb140779195047258",
-        "width": 1664,
-        "height": 928
-      },
-      "stats": {
-        "downloads": 54,
-        "endorsements": 2
-      }
-    },
-    {
       "id": "plugins/zevick/s-t-f-u-skyrim-talk-filter-utility",
       "plugin_id": "zevick.s-t-f-u-skyrim-talk-filter-utility",
       "type": "listing",
@@ -3195,7 +3201,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1907,
+        "downloads": 1908,
         "endorsements": 2
       }
     },
@@ -3420,7 +3426,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 997,
+        "downloads": 998,
         "endorsements": 0
       }
     },
@@ -3690,7 +3696,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 368,
+        "downloads": 369,
         "endorsements": 0
       }
     },
@@ -4185,7 +4191,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 797,
+        "downloads": 798,
         "endorsements": 0
       }
     },
@@ -8610,7 +8616,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1121,
+        "downloads": 1122,
         "endorsements": 2
       }
     },
@@ -9420,7 +9426,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 667,
+        "downloads": 668,
         "endorsements": 0
       }
     },
@@ -12030,7 +12036,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1384,
+        "downloads": 1386,
         "endorsements": 2
       }
     },
