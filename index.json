@@ -1,8 +1,101 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-16T13:31:00.616Z",
-  "stats_as_of": "2026-10-16T13:27:33.103Z",
+  "generated_at": "2026-10-16T13:33:00.577Z",
+  "stats_as_of": "2026-10-16T13:33:00.418Z",
   "plugins": [
+    {
+      "id": "plugins/sixteenth/political-engine",
+      "plugin_id": "sixteenth.political-engine",
+      "type": "listing",
+      "title": "Political Engine",
+      "tagline": "AI-driven politics",
+      "author": "sixteenth",
+      "tags": [],
+      "nsfw": false,
+      "icon": "gamemaster",
+      "mods": [],
+      "first_published": "2026-10-13T05:51:18Z",
+      "last_updated": "2026-10-16T13:32:23Z",
+      "version": "0.6.61",
+      "history": [
+        {
+          "version": "0.6.61",
+          "commit": "16e11155f685d43bfc13d802b21f461a07f88d34",
+          "date": "2026-10-16T13:32:23Z",
+          "changelog": "New in 0.6.6\n\n### Performance and stuttering\n- Numerous changes have been made to the logic for saving and updating information; \n_previously, this had caused frequent, brief freezes on some systems._\n- Closed interfaces no longer build map snapshots. Retrying a deferred offer does not recalculate the entire campaign.\n- Fixed Papyrus array checks, repeated command resets, and unnecessary updates for idle troops.\n_Thanks for your advice, PhospheneOverdrive_\n\n### Relationships and diplomacy\n- Fixed causes of repeated assessments of unchanged relationship history.\n- Improved history fingerprinting and preserved assessment retry/cooldown state across saves.\n- Fixed UTF-8 explanation-length handling, including Cyrillic text.\n- Clarified the distinction between personal affection, reputation, rank, and political authority.\n- Authority-transfer, territorial-concession, and puppet-rule actions now use JobJarlFaction for eligibility. Actual authority and ownership checks remain enforced during execution.\n\n### Trade and NPC construction\n- Added an explicit trade-action format specifying the resource, daily quantity, price per unit, and delivery direction.\n- Up to four agreed trade terms can be submitted through one action and player confirmation.\n- Improved JSON validation and support for opposite-direction deliveries of the same resource.\n- NPC rulers receive economically motivated negotiation opportunities based on stock, demand, treasury funds, and relationships.\n- Persistent trade routes require a proposal, a reply, and validated acceptance. Old conversations do not retroactively create agreements.\n- NPC construction AI (not LLM) considers economic and military needs while reserving development funds and materials.\n- Buildings consume actual gold, resources, and action points.\n\nand more, check 0.6.61 and 0.6.6 changelogs on GitHub"
+        },
+        {
+          "version": "0.6.5",
+          "commit": "750bc2c1c5b5640a2670fac3143e08fa6e9f6d48",
+          "date": "2026-10-14T20:26:00Z",
+          "changelog": "### Well, I can say it\n## Our first \"Feauture Update\"\n\n_Finally_\n**FOMOD INSTALLER**\n\n**Now you can acquire new territories without armed conflict.**\n  Another Jarl might simply agree to cede some territory to you or even place themselves entirely under your rule. \n  In the latter case, there are two options: a full, formal absorption of the faction or the creation of a puppet state. With the puppet state option, only you and the figurehead ruler would be aware of the agreement and who is truly in charge. In the former case, a record of the transfer of authority becomes a part of World Knowledge.\n  \n**NPC info is now have \"Bio-Block\" form, not just prompt injection.**\n_at least, it should_\n\n**You can now add each NPC to your faction and set their rank.**\n\n**You can now return occupied territories to their owners, even if you have conquered the entire faction.**\n_perhaps today you are the kind type of overlord_\n\n**The occupied territories are marked in a different color.**\n\n**Fixed an issue with constant attempts to place a military camp.**\n_I hope so. If not, these camps can now be disabled in the Settings → General → Regional military camps_\n_disabled by default_\n\n**API is updated**"
+        },
+        {
+          "version": "0.6.4",
+          "commit": "0661b34828663cd5f4ba68177ba30c3b7d187e86",
+          "date": "2026-10-13T17:19:20Z",
+          "changelog": "- Some UI improvements\nyou can now close unnecessary panels on the map screen.\n\n- Patch for VR users\nmaybe FOMOD later...\n\n- You can rename your custom faction now.\nwhy didn't I do this sooner?\n\n- Hotkey-set fixes.\nnow you can set any key you want. I think so...\n\n- Reputation and faction-rank API\nmaybe someone would need it"
+        },
+        {
+          "version": "0.6.3",
+          "commit": "7db25f6094c430a416a95553bac01c9ff3b5d8d5",
+          "date": "2026-10-13T05:51:18Z",
+          "changelog": "Public Release"
+        }
+      ],
+      "external_url": "https://github.com/L-Sixteenth/Political-Engine-Releases/releases",
+      "languages": [
+        "en",
+        "ru"
+      ],
+      "language": "en",
+      "image": {
+        "file": "cover.png",
+        "sha": "86da390d447bff712f2385deab6da0ffac74ed42",
+        "commit": "7db25f6094c430a416a95553bac01c9ff3b5d8d5",
+        "width": 1672,
+        "height": 941
+      },
+      "stats": {
+        "downloads": 33,
+        "endorsements": 1
+      }
+    },
+    {
+      "id": "plugins/klassik2k/sncc-skyrimnet-cinematic-camera",
+      "plugin_id": "klassik2k.sncc-skyrimnet-cinematic-camera",
+      "type": "listing",
+      "title": "SNCC - (Skyrimnet Cinematic Camera)",
+      "tagline": "SNCC",
+      "author": "klassik2k",
+      "tags": [],
+      "nsfw": false,
+      "icon": "package",
+      "mods": [],
+      "first_published": "2026-10-16T13:32:07Z",
+      "last_updated": "2026-10-16T13:32:07Z",
+      "version": "1.0.0",
+      "history": [
+        {
+          "version": "1.0.0",
+          "commit": "4739e8bc312f0c7425db919315273e3728a1fa77",
+          "date": "2026-10-16T13:32:07Z",
+          "changelog": "Initial release"
+        }
+      ],
+      "external_url": "https://www.nexusmods.com/skyrimspecialedition/mods/195203?published=1",
+      "image": {
+        "file": "cover.png",
+        "sha": "67b9a0bfcc84bf78266e73a2947fdacd1c921ce2",
+        "commit": "4739e8bc312f0c7425db919315273e3728a1fa77",
+        "width": 1672,
+        "height": 941
+      },
+      "stats": {
+        "downloads": 0,
+        "endorsements": 0
+      }
+    },
     {
       "id": "plugins/deadohiosky/relationships",
       "plugin_id": "deadohiosky.relationships",
@@ -270,58 +363,6 @@
       "stats": {
         "downloads": 257,
         "endorsements": 3
-      }
-    },
-    {
-      "id": "plugins/sixteenth/political-engine",
-      "plugin_id": "sixteenth.political-engine",
-      "type": "listing",
-      "title": "Political Engine",
-      "tagline": "AI-driven politics",
-      "author": "sixteenth",
-      "tags": [],
-      "nsfw": false,
-      "icon": "gamemaster",
-      "mods": [],
-      "first_published": "2026-10-13T05:51:18Z",
-      "last_updated": "2026-10-14T20:26:00Z",
-      "version": "0.6.5",
-      "history": [
-        {
-          "version": "0.6.5",
-          "commit": "750bc2c1c5b5640a2670fac3143e08fa6e9f6d48",
-          "date": "2026-10-14T20:26:00Z",
-          "changelog": "### Well, I can say it\n## Our first \"Feauture Update\"\n\n_Finally_\n**FOMOD INSTALLER**\n\n**Now you can acquire new territories without armed conflict.**\n  Another Jarl might simply agree to cede some territory to you or even place themselves entirely under your rule. \n  In the latter case, there are two options: a full, formal absorption of the faction or the creation of a puppet state. With the puppet state option, only you and the figurehead ruler would be aware of the agreement and who is truly in charge. In the former case, a record of the transfer of authority becomes a part of World Knowledge.\n  \n**NPC info is now have \"Bio-Block\" form, not just prompt injection.**\n_at least, it should_\n\n**You can now add each NPC to your faction and set their rank.**\n\n**You can now return occupied territories to their owners, even if you have conquered the entire faction.**\n_perhaps today you are the kind type of overlord_\n\n**The occupied territories are marked in a different color.**\n\n**Fixed an issue with constant attempts to place a military camp.**\n_I hope so. If not, these camps can now be disabled in the Settings → General → Regional military camps_\n_disabled by default_\n\n**API is updated**"
-        },
-        {
-          "version": "0.6.4",
-          "commit": "0661b34828663cd5f4ba68177ba30c3b7d187e86",
-          "date": "2026-10-13T17:19:20Z",
-          "changelog": "- Some UI improvements\nyou can now close unnecessary panels on the map screen.\n\n- Patch for VR users\nmaybe FOMOD later...\n\n- You can rename your custom faction now.\nwhy didn't I do this sooner?\n\n- Hotkey-set fixes.\nnow you can set any key you want. I think so...\n\n- Reputation and faction-rank API\nmaybe someone would need it"
-        },
-        {
-          "version": "0.6.3",
-          "commit": "7db25f6094c430a416a95553bac01c9ff3b5d8d5",
-          "date": "2026-10-13T05:51:18Z",
-          "changelog": "Public Release"
-        }
-      ],
-      "external_url": "https://github.com/L-Sixteenth/Political-Engine-Releases/releases/tag/0.6.5",
-      "languages": [
-        "en",
-        "ru"
-      ],
-      "language": "en",
-      "image": {
-        "file": "cover.png",
-        "sha": "86da390d447bff712f2385deab6da0ffac74ed42",
-        "commit": "7db25f6094c430a416a95553bac01c9ff3b5d8d5",
-        "width": 1672,
-        "height": 941
-      },
-      "stats": {
-        "downloads": 33,
-        "endorsements": 1
       }
     },
     {
@@ -3154,7 +3195,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1888,
+        "downloads": 1889,
         "endorsements": 2
       }
     },
@@ -3379,7 +3420,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 985,
+        "downloads": 986,
         "endorsements": 0
       }
     },
@@ -4864,7 +4905,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 925,
+        "downloads": 926,
         "endorsements": 2
       }
     },
@@ -5899,7 +5940,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 312,
+        "downloads": 313,
         "endorsements": 0
       }
     },
@@ -6904,7 +6945,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 239,
+        "downloads": 240,
         "endorsements": 0
       }
     },
@@ -7444,7 +7485,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 793,
+        "downloads": 794,
         "endorsements": 0
       }
     },
@@ -7534,7 +7575,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1061,
+        "downloads": 1062,
         "endorsements": 2
       }
     },
@@ -8569,7 +8610,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1109,
+        "downloads": 1110,
         "endorsements": 2
       }
     },
@@ -8839,7 +8880,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 931,
+        "downloads": 932,
         "endorsements": 2
       }
     },
@@ -11179,7 +11220,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 353,
+        "downloads": 354,
         "endorsements": 0
       }
     },
@@ -11269,7 +11310,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 124,
+        "downloads": 125,
         "endorsements": 0
       }
     },
@@ -11449,7 +11490,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 486,
+        "downloads": 487,
         "endorsements": 2
       }
     },
@@ -11989,7 +12030,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1374,
+        "downloads": 1375,
         "endorsements": 2
       }
     },
