@@ -17,7 +17,7 @@
     "en"
   ],
   "image": "cover.png",
-  "external_url": "https://github.com/blackpotoftea/SkyrimNet_Hunger/releases/download/1.5.0/SkyrimNet_Hunger.zip",
-  "version": "1.5.0",
-  "changelog": "Initial release"
+  "external_url": "https://github.com/blackpotoftea/SkyrimNet_Hunger/releases/download/1.5.1/SkyrimNet_Hunger-1.5.1.zip",
+  "version": "1.5.1",
+  "changelog": "Fixes the vampire_hunger event's format templates, which used Handlebars {{#if}} blocks that SkyrimNet's Inja template engine can't parse (parser_error ... expected expression close, got '#'). Hunger changes now render in recent events again. Thanks @Pt0l3my/@Zol"
 }
