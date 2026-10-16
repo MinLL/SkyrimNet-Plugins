@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-16T08:37:12.480Z",
-  "stats_as_of": "2026-10-16T08:37:12.364Z",
+  "generated_at": "2026-10-16T09:31:58.735Z",
+  "stats_as_of": "2026-10-16T09:31:58.603Z",
   "plugins": [
     {
       "id": "plugins/sorcerers-apprentice/convenient-horses-with-mcm-patch-for-severactions",
@@ -38,7 +38,7 @@
         "height": 1080
       },
       "stats": {
-        "downloads": 2,
+        "downloads": 3,
         "endorsements": 0
       }
     },
@@ -345,7 +345,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 253,
+        "downloads": 254,
         "endorsements": 5
       }
     },
@@ -588,7 +588,7 @@
       ],
       "language": "en",
       "stats": {
-        "downloads": 14,
+        "downloads": 15,
         "endorsements": 0
       }
     },
@@ -962,7 +962,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 536,
+        "downloads": 537,
         "endorsements": 28
       }
     },
@@ -1640,7 +1640,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 30,
+        "downloads": 31,
         "endorsements": 0
       }
     },
@@ -3373,7 +3373,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 979,
+        "downloads": 980,
         "endorsements": 0
       }
     },
@@ -4498,7 +4498,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 731,
+        "downloads": 733,
         "endorsements": 1
       }
     },
@@ -4678,7 +4678,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 26,
+        "downloads": 27,
         "endorsements": 0
       }
     },
@@ -5083,7 +5083,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 558,
+        "downloads": 559,
         "endorsements": 0
       }
     },
@@ -7438,7 +7438,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 787,
+        "downloads": 791,
         "endorsements": 0
       }
     },
@@ -8563,7 +8563,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1105,
+        "downloads": 1106,
         "endorsements": 2
       }
     },
@@ -9148,7 +9148,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 93,
+        "downloads": 94,
         "endorsements": 0
       }
     },
@@ -11578,7 +11578,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 107,
+        "downloads": 108,
         "endorsements": 0
       }
     },
