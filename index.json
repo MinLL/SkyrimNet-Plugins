@@ -1,8 +1,116 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-16T11:28:38.387Z",
-  "stats_as_of": "2026-10-16T11:28:38.247Z",
+  "generated_at": "2026-10-16T12:26:52.056Z",
+  "stats_as_of": "2026-10-16T12:26:51.991Z",
   "plugins": [
+    {
+      "id": "plugins/deadohiosky/relationships",
+      "plugin_id": "deadohiosky.relationships",
+      "type": "listing",
+      "title": "Relationships",
+      "tagline": "Build relationships naturally and organically in a world where every character is unique",
+      "author": "deadohiosky",
+      "tags": [
+        "relationship",
+        "romance",
+        "love",
+        "friendship"
+      ],
+      "nsfw": false,
+      "icon": "heart",
+      "mods": [],
+      "first_published": "2026-09-19T13:07:18Z",
+      "last_updated": "2026-10-16T12:26:25Z",
+      "version": "2.4.0",
+      "history": [
+        {
+          "version": "2.4.0",
+          "commit": "992d5e77a5989ec1aaa294fc79b2d4de2e057c09",
+          "date": "2026-10-16T12:26:25Z",
+          "changelog": "**They remember where they stand with you, every time.** Sometimes a close friend or a spouse talked to you like a stranger for no reason. That's fixed. How they feel about you is there in every conversation now, even the first one after you load.\n\n**Old friends aren't strangers.** If you've known someone for months, they won't be treated like someone you met yesterday. And for a history that started before Relationships was installed, open their card and write it under Your history with them: \"Beirand and I have been friends since his apprenticeship in Hammerfell.\" They'll take it as fact, and they'll remember it when you talk.\n\n**Two new Bond Pace settings.** Very Slow for a romance that takes the whole playthrough, Very Fast if you play at a low timescale and want things to move.\n\n**What they call you sticks only when it was actually said.** No more pet names pulled from months-old memories, or garbled ones. Tell someone \"call me Handsome\" and it sticks, even in an otherwise quiet chat. If a name's wrong, Forget what they call you on their card clears it, and they'll stop using it.\n\n**Re-author can start their bio blocks over**, including ones you picked, if you tick the new box.\n\nCharacters stay warm and affectionate while they're not ready for more, and nobody sparks a romance minutes after meeting you.\n\nInstall over 2.3.x with Replace, DLL included; saves carry over. Requires SkyrimNet Beta 25 or newer, SKSE and Address Library. For the dashboard: Meridian UI 1.5.0+, Magelight UI 0.30.5+ or Prisma UI 1.5.1+."
+        },
+        {
+          "version": "2.3.0",
+          "commit": "f20d39ca2ead9a80969317c360c72885f8060ca6",
+          "date": "2026-10-13T00:35:42Z",
+          "changelog": "**Relationships speaks your language.** Pick one under Language in the mod's settings, or leave it on Game to follow Skyrim's. The dashboard, the notices, the question and your answer to it are all in that language. So is everything written for you to read: why someone feels as they do, the line they won't cross, what just happened between you.\r\n\r\n**Eighteen languages.** English, Arabic, Chinese, Czech, Dutch, French, German, Hebrew, Hindi, Hungarian, Italian, Japanese, Korean, Polish, Portuguese, Russian, Spanish and Turkish. In Arabic and Hebrew the dashboard reads right to left.\r\n\r\n**The bio blocks come along.** The blocks Relationships gives characters in SeverActions are written in your language too.\r\n\r\n**These are first drafts.** Every language but English was translated by machine and hasn't been read by a native speaker yet. If something reads wrong, tell us; each language is one file, and fixes are quick. In some scripts, Skyrim's own notice font may show boxes where the dashboard shows the words.\r\n\r\nCharacters already written keep their wording until they're re-authored."
+        },
+        {
+          "version": "2.2.1",
+          "commit": "04c89b72ae7c42570721c7283eecc195201633b0",
+          "date": "2026-10-12T21:44:26Z",
+          "changelog": "**HOTFIX - No more Landmarks out of nowhere.** Since 2.2, people nearby get judged when something big happens. If one of them hadn't said a word to you, the judge could still read her diary (which may have been last written to weeks ago), see that she wanted a life with you, and call it a Landmark: the big \"we've decided to be partners\" jump, paid on the spot. A Landmark now needs the two of you to have actually said it to each other."
+        },
+        {
+          "version": "2.2.0",
+          "commit": "724d677a30ab0d3a21a71f12333b65871c76380c",
+          "date": "2026-10-11T18:13:33Z",
+          "changelog": "**People can turn against you now.** Below Stranger there's Disliked, Resentful and Enemy. Treat someone badly and they cool on you a bit at a time. Break the promise your whole relationship rested on and it drops at once, though never past Resentful in one go. Keep it up after that and they'll get to Enemy. A Resentful wife tells you to your face she wants you gone; she doesn't reach for a knife.\n\n**Witnesses count.** Mistreat someone in front of your partner and your partner judges it too. Someone who storms off mid-argument still gets judged for what was said.\n\n**Making up takes a while.** Someone you've hurt can come round, but it's about twice as slow as the fall. Back at zero with someone you used to be close to, they're Estranged, not a stranger.\n\n**Characters get more bio blocks.** With SeverActions 4.3.0, enrolling a character in Relationships includes automatic selection and application of several custom bio blocks based on the character's existing information. Anything you select yourself is left alone. Turn it off with Choose Other Bio Blocks in the plugin settings if you prefer to not use them or to only set them manually.\n\nBlock changes land straight away, and Drawn To, Expression, Attachment and Appetite allow only one block each since the options are mutually exclusive within those tabs.\n\n**Re-authoring keeps how someone's changed.** It used to wipe out what they'd drifted into.\n\nThe dashboard shows the bad side too, and the background judges no longer read anyone's inventory."
+        },
+        {
+          "version": "2.1.0",
+          "commit": "ef4e63856f3f6c1aaa67ab8d41d556d38da488da",
+          "date": "2026-10-06T22:58:40Z",
+          "changelog": "**Relationships' custom bio blocks now auto-populated**\nWith SeverActions 4.0.1 or newer, everyone enrolled in Relationships automatically have the mod's custom bio blocks selected by the LLM and applied. This adds more character definition that helps the LLM roleplay their unique personalities. User-chosen/removed blocks always take precedence.\n\n**Everyone you talk to gets enrolled in Relationships**\nNamed people you talk to can join your roster. Guards and other unnamed passers-by aren't. Anyone you remove stays removed. Opt-in feature - turn it on in the plugin settings.\n\n**Dashboard now supports Magelight UI**\nIf you have SeverActions 4.x, you already have Magelight (can also be obtained standalone via Nexus), and the dashboard uses it when Meridian UI isn't installed. In Skyrim VR it's tried first. Prisma UI is the fallback.\n\n**New API for mod authors**\nFor other mod authors: a read-only C++ API that lets your SKSE plugin see each bond's tier, track, commitment, and more, with a callback when they change. See `For other mod authors` in the GitHub README."
+        },
+        {
+          "version": "2.0.1",
+          "commit": "32730df0667689c46261752a11a62561f44a5ba3",
+          "date": "2026-10-05T16:04:06Z",
+          "changelog": "Dashboard now supports Prisma UI. Meridian UI is still preferred for non-VR users when installed."
+        },
+        {
+          "version": "2.0.0",
+          "commit": "6534d1be4c6f011bdda485188802286b9e4c116d",
+          "date": "2026-10-02T18:10:05Z",
+          "changelog": "**Biggest change since the initial launch!**\n\nRelationships no longer requires or depends on Romantasy. It keeps its own bonds now. If you're upgrading from Relationships 1.x, keep Romantasy installed for your first load: your bonds are brought over once automatically, and after that Romantasy is optional. If you decide to remove Romantasy after that, an optional Romantasy Stub is provided that lets saves that listed it keep loading while disabling its functionality.\n\n**Other changes include:**\n- New UI using Meridian UI\n- NPCs no longer have to be followers/companions to be enrolled and tracked\n- Enroll any NPC via hotkey or UI\n- Your hotkeys need setting again - now with SkyrimNet's key picker and a modifier each, under Hotkeys in the plugin's settings in the SkyrimNet UI"
+        },
+        {
+          "version": "1.7.0",
+          "commit": "6d6a1647d84fe59afadd365fb53da7350e49f6b4",
+          "date": "2026-09-25T13:34:31Z",
+          "changelog": "Tuned initial relationship seeding to take time spent together into account so experiencing a dense day of activity before initial doesn't over-seed the relationship into more advanced stages. Strangers are truly strangers, no matter how busy you were together."
+        },
+        {
+          "version": "1.6.0",
+          "commit": "c85c6ccc57131d57506c2fec2391f48ebddd859b",
+          "date": "2026-09-19T13:07:18Z"
+        }
+      ],
+      "external_url": "https://github.com/deadohiosky48/SkyrimNet-Relationships",
+      "languages": [
+        "en",
+        "ar",
+        "zh",
+        "cs",
+        "nl",
+        "fr",
+        "de",
+        "he",
+        "hi",
+        "hu",
+        "it",
+        "ja",
+        "ko",
+        "pl",
+        "pt",
+        "ru",
+        "es",
+        "tr"
+      ],
+      "language": "en",
+      "image": {
+        "file": "cover.png",
+        "sha": "d859f6dcafc5b4b4c60c4236164c1f698bf1fcd4",
+        "commit": "6d6a1647d84fe59afadd365fb53da7350e49f6b4",
+        "width": 1536,
+        "height": 864
+      },
+      "stats": {
+        "downloads": 187,
+        "endorsements": 6
+      }
+    },
     {
       "id": "plugins/sorcerers-apprentice/convenient-horses-with-mcm-patch-for-severactions",
       "plugin_id": "sorcerers-apprentice.convenient-horses-with-mcm-patch-for-severactions",
@@ -345,7 +453,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 258,
+        "downloads": 261,
         "endorsements": 5
       }
     },
@@ -407,7 +515,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 121,
+        "downloads": 123,
         "endorsements": 3
       }
     },
@@ -590,108 +698,6 @@
       "stats": {
         "downloads": 15,
         "endorsements": 0
-      }
-    },
-    {
-      "id": "plugins/deadohiosky/relationships",
-      "plugin_id": "deadohiosky.relationships",
-      "type": "listing",
-      "title": "Relationships",
-      "tagline": "Build relationships naturally and organically in a world where every character is unique",
-      "author": "deadohiosky",
-      "tags": [
-        "relationship",
-        "romance",
-        "love",
-        "friendship"
-      ],
-      "nsfw": false,
-      "icon": "heart",
-      "mods": [],
-      "first_published": "2026-09-19T13:07:18Z",
-      "last_updated": "2026-10-13T00:35:42Z",
-      "version": "2.3.0",
-      "history": [
-        {
-          "version": "2.3.0",
-          "commit": "f20d39ca2ead9a80969317c360c72885f8060ca6",
-          "date": "2026-10-13T00:35:42Z",
-          "changelog": "**Relationships speaks your language.** Pick one under Language in the mod's settings, or leave it on Game to follow Skyrim's. The dashboard, the notices, the question and your answer to it are all in that language. So is everything written for you to read: why someone feels as they do, the line they won't cross, what just happened between you.\r\n\r\n**Eighteen languages.** English, Arabic, Chinese, Czech, Dutch, French, German, Hebrew, Hindi, Hungarian, Italian, Japanese, Korean, Polish, Portuguese, Russian, Spanish and Turkish. In Arabic and Hebrew the dashboard reads right to left.\r\n\r\n**The bio blocks come along.** The blocks Relationships gives characters in SeverActions are written in your language too.\r\n\r\n**These are first drafts.** Every language but English was translated by machine and hasn't been read by a native speaker yet. If something reads wrong, tell us; each language is one file, and fixes are quick. In some scripts, Skyrim's own notice font may show boxes where the dashboard shows the words.\r\n\r\nCharacters already written keep their wording until they're re-authored."
-        },
-        {
-          "version": "2.2.1",
-          "commit": "04c89b72ae7c42570721c7283eecc195201633b0",
-          "date": "2026-10-12T21:44:26Z",
-          "changelog": "**HOTFIX - No more Landmarks out of nowhere.** Since 2.2, people nearby get judged when something big happens. If one of them hadn't said a word to you, the judge could still read her diary (which may have been last written to weeks ago), see that she wanted a life with you, and call it a Landmark: the big \"we've decided to be partners\" jump, paid on the spot. A Landmark now needs the two of you to have actually said it to each other."
-        },
-        {
-          "version": "2.2.0",
-          "commit": "724d677a30ab0d3a21a71f12333b65871c76380c",
-          "date": "2026-10-11T18:13:33Z",
-          "changelog": "**People can turn against you now.** Below Stranger there's Disliked, Resentful and Enemy. Treat someone badly and they cool on you a bit at a time. Break the promise your whole relationship rested on and it drops at once, though never past Resentful in one go. Keep it up after that and they'll get to Enemy. A Resentful wife tells you to your face she wants you gone; she doesn't reach for a knife.\n\n**Witnesses count.** Mistreat someone in front of your partner and your partner judges it too. Someone who storms off mid-argument still gets judged for what was said.\n\n**Making up takes a while.** Someone you've hurt can come round, but it's about twice as slow as the fall. Back at zero with someone you used to be close to, they're Estranged, not a stranger.\n\n**Characters get more bio blocks.** With SeverActions 4.3.0, enrolling a character in Relationships includes automatic selection and application of several custom bio blocks based on the character's existing information. Anything you select yourself is left alone. Turn it off with Choose Other Bio Blocks in the plugin settings if you prefer to not use them or to only set them manually.\n\nBlock changes land straight away, and Drawn To, Expression, Attachment and Appetite allow only one block each since the options are mutually exclusive within those tabs.\n\n**Re-authoring keeps how someone's changed.** It used to wipe out what they'd drifted into.\n\nThe dashboard shows the bad side too, and the background judges no longer read anyone's inventory."
-        },
-        {
-          "version": "2.1.0",
-          "commit": "ef4e63856f3f6c1aaa67ab8d41d556d38da488da",
-          "date": "2026-10-06T22:58:40Z",
-          "changelog": "**Relationships' custom bio blocks now auto-populated**\nWith SeverActions 4.0.1 or newer, everyone enrolled in Relationships automatically have the mod's custom bio blocks selected by the LLM and applied. This adds more character definition that helps the LLM roleplay their unique personalities. User-chosen/removed blocks always take precedence.\n\n**Everyone you talk to gets enrolled in Relationships**\nNamed people you talk to can join your roster. Guards and other unnamed passers-by aren't. Anyone you remove stays removed. Opt-in feature - turn it on in the plugin settings.\n\n**Dashboard now supports Magelight UI**\nIf you have SeverActions 4.x, you already have Magelight (can also be obtained standalone via Nexus), and the dashboard uses it when Meridian UI isn't installed. In Skyrim VR it's tried first. Prisma UI is the fallback.\n\n**New API for mod authors**\nFor other mod authors: a read-only C++ API that lets your SKSE plugin see each bond's tier, track, commitment, and more, with a callback when they change. See `For other mod authors` in the GitHub README."
-        },
-        {
-          "version": "2.0.1",
-          "commit": "32730df0667689c46261752a11a62561f44a5ba3",
-          "date": "2026-10-05T16:04:06Z",
-          "changelog": "Dashboard now supports Prisma UI. Meridian UI is still preferred for non-VR users when installed."
-        },
-        {
-          "version": "2.0.0",
-          "commit": "6534d1be4c6f011bdda485188802286b9e4c116d",
-          "date": "2026-10-02T18:10:05Z",
-          "changelog": "**Biggest change since the initial launch!**\n\nRelationships no longer requires or depends on Romantasy. It keeps its own bonds now. If you're upgrading from Relationships 1.x, keep Romantasy installed for your first load: your bonds are brought over once automatically, and after that Romantasy is optional. If you decide to remove Romantasy after that, an optional Romantasy Stub is provided that lets saves that listed it keep loading while disabling its functionality.\n\n**Other changes include:**\n- New UI using Meridian UI\n- NPCs no longer have to be followers/companions to be enrolled and tracked\n- Enroll any NPC via hotkey or UI\n- Your hotkeys need setting again - now with SkyrimNet's key picker and a modifier each, under Hotkeys in the plugin's settings in the SkyrimNet UI"
-        },
-        {
-          "version": "1.7.0",
-          "commit": "6d6a1647d84fe59afadd365fb53da7350e49f6b4",
-          "date": "2026-09-25T13:34:31Z",
-          "changelog": "Tuned initial relationship seeding to take time spent together into account so experiencing a dense day of activity before initial doesn't over-seed the relationship into more advanced stages. Strangers are truly strangers, no matter how busy you were together."
-        },
-        {
-          "version": "1.6.0",
-          "commit": "c85c6ccc57131d57506c2fec2391f48ebddd859b",
-          "date": "2026-09-19T13:07:18Z"
-        }
-      ],
-      "external_url": "https://github.com/deadohiosky48/SkyrimNet-Relationships",
-      "languages": [
-        "en",
-        "ar",
-        "zh",
-        "cs",
-        "nl",
-        "fr",
-        "de",
-        "he",
-        "hi",
-        "hu",
-        "it",
-        "ja",
-        "ko",
-        "pl",
-        "pt",
-        "ru",
-        "es",
-        "tr"
-      ],
-      "language": "en",
-      "image": {
-        "file": "cover.png",
-        "sha": "d859f6dcafc5b4b4c60c4236164c1f698bf1fcd4",
-        "commit": "6d6a1647d84fe59afadd365fb53da7350e49f6b4",
-        "width": 1536,
-        "height": 864
-      },
-      "stats": {
-        "downloads": 187,
-        "endorsements": 6
       }
     },
     {
@@ -1438,7 +1444,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 195,
+        "downloads": 196,
         "endorsements": 9
       }
     },
@@ -3013,7 +3019,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 896,
+        "downloads": 897,
         "endorsements": 2
       }
     },
@@ -3148,7 +3154,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1885,
+        "downloads": 1886,
         "endorsements": 2
       }
     },
@@ -3373,7 +3379,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 981,
+        "downloads": 984,
         "endorsements": 0
       }
     },
@@ -4138,7 +4144,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 786,
+        "downloads": 787,
         "endorsements": 0
       }
     },
@@ -4858,7 +4864,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 924,
+        "downloads": 925,
         "endorsements": 2
       }
     },
@@ -5893,7 +5899,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 311,
+        "downloads": 312,
         "endorsements": 0
       }
     },
@@ -6943,7 +6949,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 9,
+        "downloads": 10,
         "endorsements": 0
       }
     },
@@ -7168,7 +7174,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 141,
+        "downloads": 142,
         "endorsements": 0
       }
     },
@@ -7528,7 +7534,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1060,
+        "downloads": 1061,
         "endorsements": 2
       }
     },
@@ -8563,7 +8569,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1107,
+        "downloads": 1108,
         "endorsements": 2
       }
     },
@@ -8833,7 +8839,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 930,
+        "downloads": 931,
         "endorsements": 2
       }
     },
@@ -10138,7 +10144,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 213,
+        "downloads": 214,
         "endorsements": 0
       }
     },
@@ -10993,7 +10999,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 189,
+        "downloads": 190,
         "endorsements": 0
       }
     },
@@ -11173,7 +11179,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 349,
+        "downloads": 350,
         "endorsements": 0
       }
     },
@@ -11443,7 +11449,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 485,
+        "downloads": 486,
         "endorsements": 2
       }
     },
@@ -11983,7 +11989,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1372,
+        "downloads": 1373,
         "endorsements": 2
       }
     },
