@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-16T14:31:52.337Z",
-  "stats_as_of": "2026-10-16T14:31:52.210Z",
+  "generated_at": "2026-10-16T15:28:06.118Z",
+  "stats_as_of": "2026-10-16T15:28:05.971Z",
   "plugins": [
     {
       "id": "plugins/sixteenth/political-engine",
@@ -57,7 +57,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 34,
+        "downloads": 35,
         "endorsements": 1
       }
     },
@@ -200,7 +200,7 @@
         "height": 864
       },
       "stats": {
-        "downloads": 188,
+        "downloads": 192,
         "endorsements": 6
       }
     },
@@ -494,7 +494,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 265,
+        "downloads": 266,
         "endorsements": 5
       }
     },
@@ -785,7 +785,7 @@
         "height": 1008
       },
       "stats": {
-        "downloads": 65,
+        "downloads": 67,
         "endorsements": 1
       }
     },
@@ -1009,7 +1009,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 541,
+        "downloads": 542,
         "endorsements": 28
       }
     },
@@ -1050,7 +1050,7 @@
         "height": 911
       },
       "stats": {
-        "downloads": 19,
+        "downloads": 20,
         "endorsements": 0
       }
     },
@@ -1118,7 +1118,7 @@
       ],
       "language": "en",
       "stats": {
-        "downloads": 6,
+        "downloads": 7,
         "endorsements": 0
       }
     },
@@ -1148,7 +1148,7 @@
       ],
       "external_url": "https://www.nexusmods.com/skyrimspecialedition/mods/192616",
       "stats": {
-        "downloads": 7,
+        "downloads": 8,
         "endorsements": 0
       }
     },
@@ -1260,7 +1260,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 47,
+        "downloads": 48,
         "endorsements": 2
       }
     },
@@ -2107,7 +2107,7 @@
         "height": 1080
       },
       "stats": {
-        "downloads": 99,
+        "downloads": 100,
         "endorsements": 1
       }
     },
@@ -2150,7 +2150,7 @@
         "height": 1080
       },
       "stats": {
-        "downloads": 31,
+        "downloads": 32,
         "endorsements": 0
       }
     },
@@ -2251,7 +2251,7 @@
         "height": 936
       },
       "stats": {
-        "downloads": 45,
+        "downloads": 46,
         "endorsements": 0
       }
     },
@@ -2656,7 +2656,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 169,
+        "downloads": 170,
         "endorsements": 0
       }
     },
@@ -2701,7 +2701,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 51,
+        "downloads": 52,
         "endorsements": 2
       }
     },
@@ -3420,7 +3420,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 989,
+        "downloads": 990,
         "endorsements": 0
       }
     },
@@ -4545,7 +4545,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 737,
+        "downloads": 738,
         "endorsements": 1
       }
     },
