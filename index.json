@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-16T04:33:11.425Z",
-  "stats_as_of": "2026-10-16T04:33:11.291Z",
+  "generated_at": "2026-10-16T05:29:53.862Z",
+  "stats_as_of": "2026-10-16T05:29:53.788Z",
   "plugins": [
     {
       "id": "plugins/sorcerers-apprentice/convenient-horses-with-mcm-patch-for-severactions",
@@ -345,7 +345,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 248,
+        "downloads": 249,
         "endorsements": 5
       }
     },
@@ -2493,7 +2493,7 @@
       ],
       "external_url": "https://github.com/naitro2010/SkyrimNet_UDNG/releases/tag/alpha12",
       "stats": {
-        "downloads": 94,
+        "downloads": 95,
         "endorsements": 3
       }
     },
@@ -2968,7 +2968,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 283,
+        "downloads": 284,
         "endorsements": 4
       }
     },
