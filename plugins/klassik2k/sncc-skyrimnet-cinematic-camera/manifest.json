@@ -1,0 +1,16 @@
+{
+  "id": "klassik2k.sncc-skyrimnet-cinematic-camera",
+  "type": "listing",
+  "title": "SNCC - (Skyrimnet Cinematic Camera)",
+  "tagline": "SNCC",
+  "description": "SNCC – SkyrimNet Cinematic Camera Compatibility\r\nSNCC is a simple compatibility patch that allows Cinematic Conversation Camera (CCC) to work with SkyrimNet conversations.\r\nNormally, Cinematic Conversation Camera does not recognize SkyrimNet's AI-generated conversations as traditional Skyrim dialogue.\r\nSNCC bridges that gap, allowing you to activate CCC's cinematic camera during SkyrimNet conversations using a hotkey.\r\nFeatures\r\nAdds compatibility between Cinematic Conversation Camera (CCC) and SkyrimNet.\r\nAllows CCC's cinematic camera to be used during SkyrimNet conversations.\r\nF8 – Toggle the cinematic camera on or off.\r\nF9 – Cycle through available camera angles.\r\nSupports CCC's cinematic camera functionality, including cinematic black bars.\r\nRequirements\r\nSkyrim Special Edition\r\nSKSE\r\nSkyrimNet\r\nCinematic Conversation Camera (CCC)\r\nNote: SNCC does not replace Cinematic Conversation Camera. It simply extends its functionality to support SkyrimNet conversations.",
+  "author": "klassik2k",
+  "tags": [],
+  "nsfw": false,
+  "icon": "package",
+  "mods": [],
+  "image": "cover.png",
+  "external_url": "https://www.nexusmods.com/skyrimspecialedition/mods/195203?published=1",
+  "version": "1.0.0",
+  "changelog": "Initial release"
+}
