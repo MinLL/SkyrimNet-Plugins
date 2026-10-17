@@ -1,8 +1,64 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-17T19:23:16.258Z",
-  "stats_as_of": "2026-10-17T19:20:30.900Z",
+  "generated_at": "2026-10-17T19:48:30.892Z",
+  "stats_as_of": "2026-10-17T19:48:30.844Z",
   "plugins": [
+    {
+      "id": "plugins/felixshuic/hypnosis-the-power-of-mind-control",
+      "plugin_id": "felixshuic.hypnosis-the-power-of-mind-control",
+      "type": "listing",
+      "title": "Hypnosis: The power of mind control",
+      "tagline": "Illusion spells that hypnotize NPCs and let you rewrite who they are",
+      "author": "felixshuic",
+      "tags": [
+        "hypnosis",
+        "illusion",
+        "magic",
+        "spells",
+        "memory",
+        "personality",
+        "roleplay",
+        "npc",
+        "adult"
+      ],
+      "nsfw": true,
+      "icon": "sparkles",
+      "mods": [],
+      "first_published": "2026-10-13T17:19:25Z",
+      "last_updated": "2026-10-17T19:48:05Z",
+      "version": "1.1.1",
+      "history": [
+        {
+          "version": "1.1.1",
+          "commit": "218f6d7a46d331125f70d6659baedbe602c9797d",
+          "date": "2026-10-17T19:48:05Z",
+          "changelog": "**What's new:**\n\n- A **Diary page** in the Imprint window. You can change what the character wrote, delete an entry or write a new one. Confabula can also change one diary entry. Awakening puts the diary back as it was.\n- Two new buttons on the **Memories** page ask the model for help. **\"Pick with the model\"** switches off the memories that no longer fit the new personality, or the ones you describe in your own words. Amnesia can use it too, within its limit. **\"Invent with the model\"** turns a few words about what happened into a full memory, written by the same rules SkyrimNet uses for its own memories.\n- You can now set how a rewritten character **feels about other people**. The Attitudes page has a switch that lists everyone the character has memories with.\n- **Hypnotized NPCs look the other way.** While the hypnosis holds they don't report crimes to the guards and stay calm when you steal or fight in front of them. Even a failed pickpocket doesn't make them attack you. A switch in the MCM turns this off if you prefer the old way. Once it ends they react like before.\n- The mod keeps its **log from the last five game starts**, so a bug report after a restart still has the run that went wrong.\n\n**What's changed:**\n\n- **SkyrimNet Beta 27** is supported. Beta 25 and 26 still work. The diary page needs Beta 26 or newer.\n- **SeverActions 4.3.0** is supported. With 4.3.0 the patch needs the \"NPC Familiarity & Reputation\" option of the SeverActions installer."
+        },
+        {
+          "version": "1.1.0",
+          "commit": "73b29105c987847870fb993e611b17edbad2780a",
+          "date": "2026-10-13T17:19:25Z",
+          "changelog": "**What's new:**\n\n- **Confabula** (Apprentice). You write one false memory for a named character and they recall it as their own.\n- **Amnesia** (Adept). You pick up to five memories and the character loses them. The number per cast is a setting on the mod's page in the SkyrimNet dashboard.\n- Awakening brings back what Amnesia took and removes what Confabula planted.\n- Tomes for both spells are sold by the Illusion vendors, and you make the staves at the staff enchanter.\n\n**What's fixed:**\n\n- The mod starts on Skyrim 1.7.99 and 1.7.104. In 1.0.1 the game stopped at launch there with \"failed to open address library file\". I have no 1.7 install myself, so please tell me how it goes.\n\n**What's changed:**\n\n- SkyrimNet Beta 26 is supported, and Beta 25 still works.\n- Everyone who sees you cast keeps the moment as an event in their own history - this is now true for every spell. The target gets no such event, so they have nothing to suspect.\n- On Beta 25 a witness gets a memory in place of the event, because that version has no way to add one."
+        }
+      ],
+      "external_url": "https://www.nexusmods.com/skyrimspecialedition/mods/194797",
+      "languages": [
+        "en",
+        "ru"
+      ],
+      "language": "en",
+      "image": {
+        "file": "cover.png",
+        "sha": "ccd756b3ce8ff274dbaee9a55eae83f870730220",
+        "commit": "218f6d7a46d331125f70d6659baedbe602c9797d",
+        "width": 1280,
+        "height": 720
+      },
+      "stats": {
+        "downloads": 18,
+        "endorsements": 0
+      }
+    },
     {
       "id": "plugins/goodprovider/skyrimnet-sexlab",
       "plugin_id": "goodprovider.skyrimnet-sexlab",
@@ -555,7 +611,7 @@
         "height": 864
       },
       "stats": {
-        "downloads": 206,
+        "downloads": 208,
         "endorsements": 6
       }
     },
@@ -849,7 +905,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 334,
+        "downloads": 335,
         "endorsements": 5
       }
     },
@@ -989,49 +1045,6 @@
       "stats": {
         "downloads": 139,
         "endorsements": 5
-      }
-    },
-    {
-      "id": "plugins/felixshuic/hypnosis-the-power-of-mind-control",
-      "plugin_id": "felixshuic.hypnosis-the-power-of-mind-control",
-      "type": "listing",
-      "title": "Hypnosis: The power of mind control",
-      "tagline": "Illusion spells that hypnotize NPCs and let you rewrite who they are",
-      "author": "felixshuic",
-      "tags": [
-        "hypnosis",
-        "illusion",
-        "magic",
-        "spells",
-        "memory",
-        "personality",
-        "roleplay",
-        "npc",
-        "adult"
-      ],
-      "nsfw": true,
-      "icon": "sparkles",
-      "mods": [],
-      "first_published": "2026-10-13T17:19:25Z",
-      "last_updated": "2026-10-13T17:19:25Z",
-      "version": "1.1.0",
-      "history": [
-        {
-          "version": "1.1.0",
-          "commit": "73b29105c987847870fb993e611b17edbad2780a",
-          "date": "2026-10-13T17:19:25Z",
-          "changelog": "**What's new:**\n\n- **Confabula** (Apprentice). You write one false memory for a named character and they recall it as their own.\n- **Amnesia** (Adept). You pick up to five memories and the character loses them. The number per cast is a setting on the mod's page in the SkyrimNet dashboard.\n- Awakening brings back what Amnesia took and removes what Confabula planted.\n- Tomes for both spells are sold by the Illusion vendors, and you make the staves at the staff enchanter.\n\n**What's fixed:**\n\n- The mod starts on Skyrim 1.7.99 and 1.7.104. In 1.0.1 the game stopped at launch there with \"failed to open address library file\". I have no 1.7 install myself, so please tell me how it goes.\n\n**What's changed:**\n\n- SkyrimNet Beta 26 is supported, and Beta 25 still works.\n- Everyone who sees you cast keeps the moment as an event in their own history - this is now true for every spell. The target gets no such event, so they have nothing to suspect.\n- On Beta 25 a witness gets a memory in place of the event, because that version has no way to add one."
-        }
-      ],
-      "external_url": "https://www.nexusmods.com/skyrimspecialedition/mods/194797",
-      "languages": [
-        "en",
-        "ru"
-      ],
-      "language": "en",
-      "stats": {
-        "downloads": 18,
-        "endorsements": 0
       }
     },
     {
@@ -1659,7 +1672,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 100,
+        "downloads": 101,
         "endorsements": 2
       }
     },
@@ -3148,7 +3161,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 942,
+        "downloads": 944,
         "endorsements": 2
       }
     },
@@ -3283,7 +3296,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2005,
+        "downloads": 2011,
         "endorsements": 2
       }
     },
@@ -3508,7 +3521,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1033,
+        "downloads": 1035,
         "endorsements": 0
       }
     },
@@ -3868,7 +3881,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 118,
+        "downloads": 119,
         "endorsements": 0
       }
     },
@@ -4048,7 +4061,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 128,
+        "downloads": 129,
         "endorsements": 0
       }
     },
@@ -4273,7 +4286,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 833,
+        "downloads": 834,
         "endorsements": 0
       }
     },
@@ -4993,7 +5006,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 969,
+        "downloads": 970,
         "endorsements": 2
       }
     },
@@ -5173,7 +5186,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 427,
+        "downloads": 428,
         "endorsements": 0
       }
     },
@@ -5218,7 +5231,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 594,
+        "downloads": 595,
         "endorsements": 0
       }
     },
@@ -5623,7 +5636,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 169,
+        "downloads": 170,
         "endorsements": 0
       }
     },
@@ -5983,7 +5996,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 77,
+        "downloads": 78,
         "endorsements": 0
       }
     },
@@ -6028,7 +6041,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 331,
+        "downloads": 332,
         "endorsements": 0
       }
     },
@@ -7033,7 +7046,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 252,
+        "downloads": 253,
         "endorsements": 0
       }
     },
@@ -7483,7 +7496,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 344,
+        "downloads": 345,
         "endorsements": 0
       }
     },
@@ -7573,7 +7586,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 828,
+        "downloads": 829,
         "endorsements": 0
       }
     },
@@ -7663,7 +7676,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1117,
+        "downloads": 1119,
         "endorsements": 2
       }
     },
@@ -8698,7 +8711,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1173,
+        "downloads": 1176,
         "endorsements": 2
       }
     },
@@ -8968,7 +8981,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 975,
+        "downloads": 977,
         "endorsements": 2
       }
     },
@@ -9283,7 +9296,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 99,
+        "downloads": 100,
         "endorsements": 0
       }
     },
@@ -9508,7 +9521,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 704,
+        "downloads": 706,
         "endorsements": 0
       }
     },
@@ -10318,7 +10331,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 595,
+        "downloads": 596,
         "endorsements": 0
       }
     },
@@ -11578,7 +11591,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 510,
+        "downloads": 511,
         "endorsements": 2
       }
     },
@@ -11713,7 +11726,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 114,
+        "downloads": 115,
         "endorsements": 0
       }
     },
@@ -12118,7 +12131,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1446,
+        "downloads": 1451,
         "endorsements": 2
       }
     },
