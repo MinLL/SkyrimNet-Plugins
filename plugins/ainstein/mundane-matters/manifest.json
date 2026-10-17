@@ -1,0 +1,25 @@
+{
+  "id": "ainstein.mundane-matters",
+  "type": "listing",
+  "title": "Mundane Matters",
+  "tagline": "NPCs do what they say.(Most of the time)",
+  "description": "SkyrimNet NPCs talk beautifully, but what they say rarely happens. Mundane Matters closes that gap for the small, everyday parts of life.\n\n- Promises kept: when an NPC promises you something, now or later, they really deliver it.\n- The Promises Book: their promises and yours, tracked in one place, with deadlines.\n- Sit together: in a chair, on the edge of a bed, or on the floor when it suits the place.\n- A place to stay: a bed or a bedroll at their home, with your bedroll moved or packed by talking.\n- Meals and drinks: share their table, or buy a round at the inn.\n- Camp together: your companions lay out bedrolls beside you.\n- Looked after: healed, your catch cooked, your gear improved.\n- Gifts, loans and safekeeping: real items change hands, and they remember.\n- Bonds and trust: stranger to friend through what you do together, up to a key to their home or moving in.\n- Meetings: they really turn up where and when they agreed (with IntelEngine).\n\nEverything comes from natural speech, read by meaning, not keywords. If they refuse or only say \"maybe\", nothing happens.\n\nRequires SkyrimNet (beta 25+) and SeverActions. Optional: IntelEngine.",
+  "author": "ainstein",
+  "tags": [
+    "roleplay",
+    "immersion",
+    "npc",
+    "relationships",
+    "dialogue"
+  ],
+  "nsfw": false,
+  "icon": "package",
+  "mods": [],
+  "languages": [
+    "en"
+  ],
+  "image": "cover.png",
+  "external_url": "https://github.com/AinsteinDev/MundaneMatters",
+  "version": "0.2.1",
+  "changelog": "Initial release"
+}
