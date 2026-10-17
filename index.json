@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-17T06:54:10.251Z",
-  "stats_as_of": "2026-10-17T06:54:10.151Z",
+  "generated_at": "2026-10-17T07:28:27.246Z",
+  "stats_as_of": "2026-10-17T07:28:27.145Z",
   "plugins": [
     {
       "id": "plugins/goodprovider/injury-engine",
@@ -2586,7 +2586,7 @@
         "height": 720
       },
       "stats": {
-        "downloads": 43,
+        "downloads": 44,
         "endorsements": 0
       }
     },
@@ -9367,7 +9367,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 245,
+        "downloads": 246,
         "endorsements": 0
       }
     },
@@ -11302,7 +11302,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 364,
+        "downloads": 365,
         "endorsements": 0
       }
     },
