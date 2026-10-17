@@ -1,8 +1,56 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-17T05:28:06.168Z",
-  "stats_as_of": "2026-10-17T05:28:06.041Z",
+  "generated_at": "2026-10-17T05:32:25.090Z",
+  "stats_as_of": "2026-10-17T05:32:25.017Z",
   "plugins": [
+    {
+      "id": "plugins/goodprovider/skyrimnet-leashed",
+      "plugin_id": "goodprovider.skyrimnet-leashed",
+      "type": "listing",
+      "title": "SkyrimNet Leashed",
+      "tagline": "Add the ability to leash, be leashed, lead, and be lead while leashed.",
+      "author": "goodprovider",
+      "tags": [
+        "actions"
+      ],
+      "nsfw": true,
+      "icon": "system",
+      "mods": [],
+      "first_published": "2026-09-19T14:34:21Z",
+      "last_updated": "2026-10-17T05:31:55Z",
+      "version": "0.4.3",
+      "history": [
+        {
+          "version": "0.4.3",
+          "commit": "ee28b13d9087cc90627c8de7db97e560524d4307",
+          "date": "2026-10-17T05:31:55Z",
+          "changelog": "### Injury Engine (optional plugin support) \n\n- Optional Injury Engine: being yanked off your feet scrapes you, dragging adds abrasions. They heal, never kill.\n- With Injury Engine, the yank and its scrapes are narrated as one line (setting \"Falling hurts\").\n- NPCs notice when someone is dragged along by a leash (setting \"Dragging event interval\").\n\n### NPC Struggling \n\n- Struggling against a leash stops on its own after 7 seconds (setting \"Maximum Struggle period\"). It also stops right away when OStim, SexLab, furniture, or a mount takes over the NPC, so their animation is not interrupted."
+        },
+        {
+          "version": "0.4.2",
+          "commit": "68bdc436523e69f637e1f751f0e83b71d4d513f8",
+          "date": "2026-10-09T16:26:46Z",
+          "changelog": "- The leash panel (`\\` hotkey) is now a vertical menu like SexLab's Target Menu.\r\n- SexLab's Target Menu has a leash option: leash, tie, give, or unleash from there.\r\n- If a leash won't fit (Argonian, Khajiit), the mod tries other leashes, closest match first.\r\n- Devious Devices-bound NPCs keep a visible leash; an optional patch shows collars and ropes.\r\n- Optional beast-race plugin shows leash meshes on Argonians and Khajiit.\r\n- Leashed NPCs knocked down no longer stay stuck on the ground; they get up or are reset.\r\n- When a holder-less leash comes undone, the narration matches what you see.\r\n- On VR the mod never forces third person; a leash that needs it fails and is narrated.\r\n- Spoken lines say \"middle length\" and so on, so distances are not read as leash types.\r\n- Built on CommonLibVR 4.39.5, so match your Address Library to your game version. Now MIT licensed."
+        },
+        {
+          "version": "0.4.1",
+          "commit": "c4f5d9a41b3c2eb1ede237b08df6071671cb9be6",
+          "date": "2026-09-19T14:34:21Z"
+        }
+      ],
+      "external_url": "https://github.com/GoodProvider/SkyrimNet_Leashed/releases/latest",
+      "image": {
+        "file": "cover.png",
+        "sha": "f46afe4a4a39036b0f72dea2156678223719ea14",
+        "commit": "68bdc436523e69f637e1f751f0e83b71d4d513f8",
+        "width": 1280,
+        "height": 720
+      },
+      "stats": {
+        "downloads": 56,
+        "endorsements": 0
+      }
+    },
     {
       "id": "plugins/zol/pandorumllm",
       "plugin_id": "zol.pandorumllm",
@@ -1570,48 +1618,6 @@
       "stats": {
         "downloads": 204,
         "endorsements": 9
-      }
-    },
-    {
-      "id": "plugins/goodprovider/skyrimnet-leashed",
-      "plugin_id": "goodprovider.skyrimnet-leashed",
-      "type": "listing",
-      "title": "SkyrimNet Leashed",
-      "tagline": "Add the ability to leash, be leashed, lead, and be lead while leashed.",
-      "author": "goodprovider",
-      "tags": [
-        "actions"
-      ],
-      "nsfw": true,
-      "icon": "system",
-      "mods": [],
-      "first_published": "2026-09-19T14:34:21Z",
-      "last_updated": "2026-10-09T16:26:46Z",
-      "version": "0.4.2",
-      "history": [
-        {
-          "version": "0.4.2",
-          "commit": "68bdc436523e69f637e1f751f0e83b71d4d513f8",
-          "date": "2026-10-09T16:26:46Z",
-          "changelog": "- The leash panel (`\\` hotkey) is now a vertical menu like SexLab's Target Menu.\r\n- SexLab's Target Menu has a leash option: leash, tie, give, or unleash from there.\r\n- If a leash won't fit (Argonian, Khajiit), the mod tries other leashes, closest match first.\r\n- Devious Devices-bound NPCs keep a visible leash; an optional patch shows collars and ropes.\r\n- Optional beast-race plugin shows leash meshes on Argonians and Khajiit.\r\n- Leashed NPCs knocked down no longer stay stuck on the ground; they get up or are reset.\r\n- When a holder-less leash comes undone, the narration matches what you see.\r\n- On VR the mod never forces third person; a leash that needs it fails and is narrated.\r\n- Spoken lines say \"middle length\" and so on, so distances are not read as leash types.\r\n- Built on CommonLibVR 4.39.5, so match your Address Library to your game version. Now MIT licensed."
-        },
-        {
-          "version": "0.4.1",
-          "commit": "c4f5d9a41b3c2eb1ede237b08df6071671cb9be6",
-          "date": "2026-09-19T14:34:21Z"
-        }
-      ],
-      "external_url": "https://github.com/GoodProvider/SkyrimNet_Leashed/releases/latest",
-      "image": {
-        "file": "cover.png",
-        "sha": "f46afe4a4a39036b0f72dea2156678223719ea14",
-        "commit": "68bdc436523e69f637e1f751f0e83b71d4d513f8",
-        "width": 1280,
-        "height": 720
-      },
-      "stats": {
-        "downloads": 56,
-        "endorsements": 0
       }
     },
     {
@@ -3207,7 +3213,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1936,
+        "downloads": 1939,
         "endorsements": 2
       }
     },
@@ -3432,7 +3438,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1009,
+        "downloads": 1011,
         "endorsements": 0
       }
     },
@@ -3702,7 +3708,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 375,
+        "downloads": 376,
         "endorsements": 0
       }
     },
@@ -4557,7 +4563,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 752,
+        "downloads": 753,
         "endorsements": 1
       }
     },
@@ -5142,7 +5148,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 578,
+        "downloads": 579,
         "endorsements": 0
       }
     },
@@ -5952,7 +5958,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 321,
+        "downloads": 322,
         "endorsements": 0
       }
     },
@@ -8622,7 +8628,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1139,
+        "downloads": 1141,
         "endorsements": 2
       }
     },
@@ -9432,7 +9438,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 678,
+        "downloads": 681,
         "endorsements": 0
       }
     },
@@ -10242,7 +10248,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 581,
+        "downloads": 582,
         "endorsements": 0
       }
     },
@@ -11052,7 +11058,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 192,
+        "downloads": 193,
         "endorsements": 0
       }
     },
@@ -12042,7 +12048,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1403,
+        "downloads": 1405,
         "endorsements": 2
       }
     },
