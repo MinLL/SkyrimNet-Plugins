@@ -1,8 +1,102 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-17T06:41:15.571Z",
-  "stats_as_of": "2026-10-17T06:41:15.440Z",
+  "generated_at": "2026-10-17T06:54:10.251Z",
+  "stats_as_of": "2026-10-17T06:54:10.151Z",
   "plugins": [
+    {
+      "id": "plugins/goodprovider/injury-engine",
+      "plugin_id": "goodprovider.injury-engine",
+      "type": "listing",
+      "title": "Injury Engine ",
+      "tagline": "Let them know when how much it hurts (injury 💔, healing ❤️‍🩹, and torture❤️‍🔥)",
+      "author": "goodprovider",
+      "tags": [
+        "injury",
+        "healing",
+        "torture",
+        "damage",
+        "narration"
+      ],
+      "nsfw": true,
+      "icon": "brain",
+      "mods": [],
+      "first_published": "2026-10-17T06:53:48Z",
+      "last_updated": "2026-10-17T06:53:48Z",
+      "version": "0.1.0",
+      "history": [
+        {
+          "version": "0.1.0",
+          "commit": "4ea877a003befdfc573c0fb5df303e4a2126a5f5",
+          "date": "2026-10-17T06:53:48Z",
+          "changelog": "## 0.1.0\n\n### Requirements \n- Requires SkyrimNet 0.25.0, SKSE, Address Library, PapyrusUtil SE and PrismaUI.\n\n### Pain and Healing \n- Every hit wounds a body part: swords, arrows, spells, creatures, falls and torture.\n- Wounds go from light to medium to severe and heal over time, with regeneration and healing magic.\n- Torture, healing, hits and killing blows are narrated, and NPCs see and feel the wounds.\n- Other mods can add injury types and wound or heal body parts.\n\n### Torture \n- Torture (whip, pinch, slap, pull, punch, fire, frost, shock) hurts but can't kill.\n- Victims tortured far enough collapse until they are healed (setting).\n- Craft the padded whip at the forge; \"Add gear to player\" also gives the three torture spells.\n- Torture and lashes don't start fights.\n- NPCs can torture someone with the Torture_Target action.\n- A torture overlay shows a bar per tortured actor and fades out by itself.\n- Optional damageable sexual body parts (setting).\n\n### Real Damage \n- Real damage replaces torture wounds first, so a tortured victim dies only after that.\n\n### Combat start, stop, yield\n- NPCs can offer to stop a fight or yield; offers to you show a Yes / No box.\n- NPCs can start a fight with Start_Fighting."
+        }
+      ],
+      "external_url": "https://github.com/GoodProvider/Injury_Engine/releases/latest",
+      "languages": [
+        "en"
+      ],
+      "language": "en",
+      "image": {
+        "file": "cover.jpg",
+        "sha": "1d425dbc983a5818a3be5d328338e6a513bd728a",
+        "commit": "4ea877a003befdfc573c0fb5df303e4a2126a5f5",
+        "width": 1376,
+        "height": 768
+      },
+      "stats": {
+        "downloads": 0,
+        "endorsements": 0
+      }
+    },
+    {
+      "id": "plugins/potoftea/vampire-hunger",
+      "plugin_id": "potoftea.vampire-hunger",
+      "type": "listing",
+      "title": "Vampire Hunger",
+      "tagline": "A Skyrim mod that tracks vampire hunger states and integrates with SkyrimNet for AI-driven character interactions.",
+      "author": "potoftea",
+      "tags": [
+        "vampire",
+        "prompt",
+        "hunger"
+      ],
+      "nsfw": false,
+      "icon": "dialogue",
+      "mods": [],
+      "first_published": "2026-10-03T16:35:22Z",
+      "last_updated": "2026-10-17T06:53:42Z",
+      "version": "1.5.1",
+      "history": [
+        {
+          "version": "1.5.1",
+          "commit": "cb5bda705b2b384dad5ce1d7e9ddc4c0055f8577",
+          "date": "2026-10-17T06:53:42Z",
+          "changelog": "Fixes the vampire_hunger event's format templates, which used Handlebars {{#if}} blocks that SkyrimNet's Inja template engine can't parse (parser_error ... expected expression close, got '#'). Hunger changes now render in recent events again. Thanks @Pt0l3my/@Zol"
+        },
+        {
+          "version": "1.5.0",
+          "commit": "8ddca682382d1547b181c3b9eb8f2f88491e6002",
+          "date": "2026-10-03T16:35:22Z",
+          "changelog": "Initial release"
+        }
+      ],
+      "external_url": "https://github.com/blackpotoftea/SkyrimNet_Hunger/releases/download/1.5.1/SkyrimNet_Hunger-1.5.1.zip",
+      "languages": [
+        "en"
+      ],
+      "language": "en",
+      "image": {
+        "file": "cover.png",
+        "sha": "dd87f72bd8170319ca7d9f3ec334b08f9dab9369",
+        "commit": "8ddca682382d1547b181c3b9eb8f2f88491e6002",
+        "width": 1920,
+        "height": 1080
+      },
+      "stats": {
+        "downloads": 33,
+        "endorsements": 0
+      }
+    },
     {
       "id": "plugins/goodprovider/skyrimnet-sexlab",
       "plugin_id": "goodprovider.skyrimnet-sexlab",
@@ -61,7 +155,7 @@
         "height": 432
       },
       "stats": {
-        "downloads": 118,
+        "downloads": 119,
         "endorsements": 1
       }
     },
@@ -109,7 +203,7 @@
         "height": 720
       },
       "stats": {
-        "downloads": 56,
+        "downloads": 57,
         "endorsements": 0
       }
     },
@@ -2140,49 +2234,6 @@
       "stats": {
         "downloads": 105,
         "endorsements": 1
-      }
-    },
-    {
-      "id": "plugins/potoftea/vampire-hunger",
-      "plugin_id": "potoftea.vampire-hunger",
-      "type": "listing",
-      "title": "Vampire Hunger",
-      "tagline": "A Skyrim mod that tracks vampire hunger states and integrates with SkyrimNet for AI-driven character interactions.",
-      "author": "potoftea",
-      "tags": [
-        "vampire",
-        "prompt",
-        "hunger"
-      ],
-      "nsfw": false,
-      "icon": "dialogue",
-      "mods": [],
-      "first_published": "2026-10-03T16:35:22Z",
-      "last_updated": "2026-10-03T16:35:22Z",
-      "version": "1.5.0",
-      "history": [
-        {
-          "version": "1.5.0",
-          "commit": "8ddca682382d1547b181c3b9eb8f2f88491e6002",
-          "date": "2026-10-03T16:35:22Z",
-          "changelog": "Initial release"
-        }
-      ],
-      "external_url": "https://github.com/blackpotoftea/SkyrimNet_Hunger/releases/download/1.5.0/SkyrimNet_Hunger.zip",
-      "languages": [
-        "en"
-      ],
-      "language": "en",
-      "image": {
-        "file": "cover.png",
-        "sha": "dd87f72bd8170319ca7d9f3ec334b08f9dab9369",
-        "commit": "8ddca682382d1547b181c3b9eb8f2f88491e6002",
-        "width": 1920,
-        "height": 1080
-      },
-      "stats": {
-        "downloads": 33,
-        "endorsements": 0
       }
     },
     {
