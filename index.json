@@ -1,8 +1,60 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-17T20:27:46.595Z",
-  "stats_as_of": "2026-10-17T20:24:58.021Z",
+  "generated_at": "2026-10-17T21:17:05.915Z",
+  "stats_as_of": "2026-10-17T21:17:05.791Z",
   "plugins": [
+    {
+      "id": "plugins/tetherball88/body-language",
+      "plugin_id": "tetherball88.body-language",
+      "type": "listing",
+      "title": "Body Language",
+      "tagline": "Context-aware NPC body descriptions powered by OBody NG, RSV, and TNG.",
+      "author": "tetherball88",
+      "tags": [
+        "body",
+        "descriptions",
+        "obody",
+        "npc",
+        "immersion",
+        "appearance"
+      ],
+      "nsfw": true,
+      "icon": "package",
+      "mods": [],
+      "first_published": "2026-09-25T20:55:01Z",
+      "last_updated": "2026-10-17T21:16:37Z",
+      "version": "2.0.0",
+      "history": [
+        {
+          "version": "2.0.0",
+          "commit": "5221f74a259dc77ac6db19639e639449285ad0e7",
+          "date": "2026-10-17T21:16:37Z",
+          "changelog": "## v2.0.0\n### Real-Time 3D Geometry & Normal-Map Engine\nComplete rewrite replacing static BodySlide XML preset tables, `.7z` texture archive hashing, and Papyrus scripts with a **real-time, mod-agnostic 3D geometry and normal-map analysis engine** built natively in C++.\n> **Upgrading from v1.x:** `TT_BodyLanguage.esp` has been removed (the mod is now ESP-free). When loading an existing save, Skyrim will warn that `TT_BodyLanguage.esp` is missing—this is expected and completely safe to continue past.\n### Added\n- **Universal 3D Body Mesh & Morph Analysis:** Directly reads `_0.nif`, `_1.nif`, and `.tri` files from Skyrim's VFS/BSAs, slicing any humanoid body replacer (3BA, BHUNP, UNP, UBE, HIMBO, SAM, vanilla, or custom follower bodies) into 10 anatomical rings (80 landmark vertices) and evaluating actor weight, RaceMenu (`skee64`) morphs, and XPMSE bone scales in real time.\n- **Pregnancy vs. Weight Isolation:** Separates localized belly morphs and `NPC Belly` node scaling from overall body mass so pregnant slender/athletic NPCs are not misclassified as overweight.\n- **On-Demand Normal Map Muscularity (`_msn.dds`):** Evaluates abdominal and deltoid normal-map definition at runtime via `DirectXTex` (configurable in `BodyLanguage.ini`) with zero startup archive scanning.\n- **Native C++ TNG & SOS Support (`ttlb_get_genitals`):** Detects *The New Gentleman* (TNG) and *Schlongs of Skyrim* (SOS) sizes and addons natively in C++ while keeping all prose and thresholds user-editable in `0020_genitals.prompt`, `tngAddons.json`, and `geometryThresholds.json`.\n- **SPID Keyword RSV Skin Complexions:** Instant keyword-based Racial Skin Variance (RSV) skin feature descriptions via `0005_skin_features.prompt` and `skinFeatures.json`.\n- **Modular Prompts & Full JSON Customization:** Split `0401_appearance_body_shape.prompt` into modular `body_language` subcomponents (`0001_body`, `0005_skin_features`, `0010_height`, `0020_genitals`) backed by `geometryThresholds.json`, `FemaleParts.jso"
+        },
+        {
+          "version": "1.0.3",
+          "commit": "8cc13e9228cd3c4f0e55fc484b1789ac73f3ab0f",
+          "date": "2026-09-26T05:27:36Z",
+          "changelog": "replaced cover image"
+        }
+      ],
+      "external_url": "https://github.com/tetherball88/BodyLanguage/releases/latest",
+      "languages": [
+        "en"
+      ],
+      "language": "en",
+      "image": {
+        "file": "cover.png",
+        "sha": "c4e9aec48dc2a7bef5e4a401e8241e1f5acfdf50",
+        "commit": "8cc13e9228cd3c4f0e55fc484b1789ac73f3ab0f",
+        "width": 2048,
+        "height": 1152
+      },
+      "stats": {
+        "downloads": 86,
+        "endorsements": 0
+      }
+    },
     {
       "id": "plugins/felixshuic/hypnosis-the-power-of-mind-control",
       "plugin_id": "felixshuic.hypnosis-the-power-of-mind-control",
@@ -265,7 +317,7 @@
         "height": 720
       },
       "stats": {
-        "downloads": 60,
+        "downloads": 61,
         "endorsements": 0
       }
     },
@@ -905,7 +957,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 337,
+        "downloads": 340,
         "endorsements": 5
       }
     },
@@ -1791,7 +1843,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 209,
+        "downloads": 210,
         "endorsements": 9
       }
     },
@@ -2549,7 +2601,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 285,
+        "downloads": 286,
         "endorsements": 0
       }
     },
@@ -2757,7 +2809,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 178,
+        "downloads": 179,
         "endorsements": 0
       }
     },
@@ -2944,54 +2996,8 @@
         "height": 1152
       },
       "stats": {
-        "downloads": 83,
+        "downloads": 84,
         "endorsements": 1
-      }
-    },
-    {
-      "id": "plugins/tetherball88/body-language",
-      "plugin_id": "tetherball88.body-language",
-      "type": "listing",
-      "title": "Body Language",
-      "tagline": "Context-aware NPC body descriptions powered by OBody NG, RSV, and TNG.",
-      "author": "tetherball88",
-      "tags": [
-        "body",
-        "descriptions",
-        "obody",
-        "npc",
-        "immersion",
-        "appearance"
-      ],
-      "nsfw": true,
-      "icon": "package",
-      "mods": [],
-      "first_published": "2026-09-25T20:55:01Z",
-      "last_updated": "2026-09-26T05:27:36Z",
-      "version": "1.0.3",
-      "history": [
-        {
-          "version": "1.0.3",
-          "commit": "8cc13e9228cd3c4f0e55fc484b1789ac73f3ab0f",
-          "date": "2026-09-26T05:27:36Z",
-          "changelog": "replaced cover image"
-        }
-      ],
-      "external_url": "https://github.com/tetherball88/BodyLanguage/releases/latest",
-      "languages": [
-        "en"
-      ],
-      "language": "en",
-      "image": {
-        "file": "cover.png",
-        "sha": "c4e9aec48dc2a7bef5e4a401e8241e1f5acfdf50",
-        "commit": "8cc13e9228cd3c4f0e55fc484b1789ac73f3ab0f",
-        "width": 2048,
-        "height": 1152
-      },
-      "stats": {
-        "downloads": 85,
-        "endorsements": 0
       }
     },
     {
@@ -3161,7 +3167,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 947,
+        "downloads": 948,
         "endorsements": 2
       }
     },
@@ -3206,7 +3212,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 465,
+        "downloads": 467,
         "endorsements": 0
       }
     },
@@ -3296,7 +3302,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2015,
+        "downloads": 2018,
         "endorsements": 2
       }
     },
@@ -3521,7 +3527,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1038,
+        "downloads": 1041,
         "endorsements": 0
       }
     },
@@ -3791,7 +3797,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 388,
+        "downloads": 389,
         "endorsements": 0
       }
     },
@@ -4286,7 +4292,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 843,
+        "downloads": 846,
         "endorsements": 0
       }
     },
@@ -5006,7 +5012,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 974,
+        "downloads": 977,
         "endorsements": 2
       }
     },
@@ -5051,7 +5057,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 212,
+        "downloads": 214,
         "endorsements": 0
       }
     },
@@ -5186,7 +5192,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 428,
+        "downloads": 430,
         "endorsements": 0
       }
     },
@@ -5231,7 +5237,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 597,
+        "downloads": 598,
         "endorsements": 0
       }
     },
@@ -5321,7 +5327,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 174,
+        "downloads": 175,
         "endorsements": 0
       }
     },
@@ -5996,7 +6002,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 78,
+        "downloads": 80,
         "endorsements": 0
       }
     },
@@ -6041,7 +6047,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 334,
+        "downloads": 335,
         "endorsements": 0
       }
     },
@@ -6131,7 +6137,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 31,
+        "downloads": 33,
         "endorsements": 0
       }
     },
@@ -6181,7 +6187,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 25,
+        "downloads": 26,
         "endorsements": 0
       }
     },
@@ -6731,7 +6737,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 318,
+        "downloads": 320,
         "endorsements": 0
       }
     },
@@ -6821,7 +6827,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 54,
+        "downloads": 56,
         "endorsements": 0
       }
     },
@@ -7316,7 +7322,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 149,
+        "downloads": 151,
         "endorsements": 0
       }
     },
@@ -7451,7 +7457,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 499,
+        "downloads": 502,
         "endorsements": 0
       }
     },
@@ -7496,7 +7502,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 346,
+        "downloads": 347,
         "endorsements": 0
       }
     },
@@ -7586,7 +7592,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 831,
+        "downloads": 833,
         "endorsements": 0
       }
     },
@@ -7676,7 +7682,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1125,
+        "downloads": 1128,
         "endorsements": 2
       }
     },
@@ -8531,7 +8537,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 215,
+        "downloads": 217,
         "endorsements": 1
       }
     },
@@ -8711,7 +8717,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1184,
+        "downloads": 1189,
         "endorsements": 2
       }
     },
@@ -8981,7 +8987,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 983,
+        "downloads": 988,
         "endorsements": 2
       }
     },
@@ -9386,7 +9392,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 253,
+        "downloads": 256,
         "endorsements": 0
       }
     },
@@ -9521,7 +9527,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 708,
+        "downloads": 712,
         "endorsements": 0
       }
     },
@@ -9566,7 +9572,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 407,
+        "downloads": 410,
         "endorsements": 0
       }
     },
@@ -10286,7 +10292,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 227,
+        "downloads": 230,
         "endorsements": 0
       }
     },
@@ -10331,7 +10337,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 596,
+        "downloads": 599,
         "endorsements": 0
       }
     },
@@ -10376,7 +10382,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 119,
+        "downloads": 122,
         "endorsements": 0
       }
     },
@@ -10691,7 +10697,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 118,
+        "downloads": 121,
         "endorsements": 0
       }
     },
@@ -11141,7 +11147,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 199,
+        "downloads": 200,
         "endorsements": 0
       }
     },
@@ -11276,7 +11282,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 112,
+        "downloads": 115,
         "endorsements": 0
       }
     },
@@ -11321,7 +11327,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 376,
+        "downloads": 380,
         "endorsements": 0
       }
     },
@@ -11411,7 +11417,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 133,
+        "downloads": 134,
         "endorsements": 0
       }
     },
@@ -11591,7 +11597,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 514,
+        "downloads": 515,
         "endorsements": 2
       }
     },
@@ -11636,7 +11642,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 126,
+        "downloads": 129,
         "endorsements": 0
       }
     },
@@ -12131,7 +12137,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1458,
+        "downloads": 1464,
         "endorsements": 2
       }
     },
@@ -12401,7 +12407,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 332,
+        "downloads": 335,
         "endorsements": 0
       }
     },
