@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-17T21:17:05.915Z",
-  "stats_as_of": "2026-10-17T21:17:05.791Z",
+  "generated_at": "2026-10-17T21:25:17.735Z",
+  "stats_as_of": "2026-10-17T21:25:17.596Z",
   "plugins": [
     {
       "id": "plugins/tetherball88/body-language",
@@ -51,7 +51,7 @@
         "height": 1152
       },
       "stats": {
-        "downloads": 86,
+        "downloads": 87,
         "endorsements": 0
       }
     },
