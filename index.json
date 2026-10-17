@@ -1,8 +1,76 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-17T01:34:53.356Z",
-  "stats_as_of": "2026-10-17T01:34:53.276Z",
+  "generated_at": "2026-10-17T02:03:59.695Z",
+  "stats_as_of": "2026-10-17T02:03:59.588Z",
   "plugins": [
+    {
+      "id": "plugins/zol/pandorumllm",
+      "plugin_id": "zol.pandorumllm",
+      "type": "listing",
+      "title": "PandorumLLM",
+      "tagline": "**A versatile browser control panel and proxy tailored for SkyrimNet to run local models via llama.cpp across multiple PCs and Servers in any configuration with a simple click! **",
+      "author": "zol",
+      "tags": [
+        "External plugin",
+        "local servers (LLM",
+        "Decision(JEV))",
+        "TTS",
+        "Song Generator",
+        "Sample and Song Vault",
+        "SkyrimNet provider management",
+        "Server Cards with automatic template generator",
+        "highly customised terminals",
+        "visible thinking and JEV process"
+      ],
+      "nsfw": false,
+      "icon": "ai",
+      "mods": [],
+      "first_published": "2026-10-06T03:52:22Z",
+      "last_updated": "2026-10-17T02:03:37Z",
+      "version": "3.9.7",
+      "history": [
+        {
+          "version": "3.9.7",
+          "commit": "96641a12b0ec04999215e0c3f73ef860c56fbfe7",
+          "date": "2026-10-17T02:03:37Z",
+          "changelog": "### AMD and Intel GPUs are supported through Vulkan, more TTS support through audio.cpp, and a few bug fixes.\n\n### AMD and Intel GPUs\n- **Detect GPUs finds AMD and Intel cards** beside NVIDIA's, reading Windows and the card's Vulkan driver directly. Nothing extra to install. An integrated GPU found beside a discrete card starts switched off.\n- **The backend follows the card, with nothing to choose.** NVIDIA cards run CUDA, AMD and Intel cards run Vulkan. A server, the TTS or the Song Generator moved to another card switches backend at its next start, hand-written launchers included. Server cards say which backend each one runs.\n- **Each build has its own folder** on Folder Settings and its own install field on Backend Engines. Each field shows its version, which of your cards need it, and a lock while a server is using it. Existing installs stay where they are, as the CUDA builds.\n- **audio.cpp's Vulkan and CPU builds** come in a standard or a portable version. The panel checks your CPU and downloads the one that runs on it. If a build still crashes on a missing CPU instruction, the panel offers the portable build.\n- **Features a card can't use are greyed out, with the reason**:\n  - Clock Hold on AMD and Intel cards\n  - Tensor Parallelism across mixed vendors, and on Vulkan for now\n  - KV cache types Vulkan can't run with flash attention\n- **Two Vulkan switches** for the TTS and the Song Generator: system memory fallback, and no integer dot product.\n- **Start refuses a server whose build isn't installed** and points to Backend Engines. Start fleet skips that server and starts the rest.\n- **Intel cards are best effort**: llama.cpp and audio.cpp mostly test Vulkan on AMD and NVIDIA cards.\n\n### New TTS\n\nIndexTTS-2.5, Qwen3-TTS (Base 1.7B and 0.6B), MioTTS 1.7B, VoxCPM2, DotTTS (update), BreezeTTS 2 (bugfix)"
+        },
+        {
+          "version": "3.9.6",
+          "commit": "2bba764fda34a71b6d99077d50e23629a34ec16c",
+          "date": "2026-10-13T20:01:50Z",
+          "changelog": "Update with built-in updater (next to main UI logo).\n\nPlugin support (providers): BioForge (port 1270) for [BioForge](<https://github.com/Oldcustard/BioForge>), PE-Letters (1271) for [Political Engine](<https://github.com/L-Sixteenth/Political-Engine-Releases>)'s letters, and Rel-Judge (1272) for [Relationships](<https://github.com/deadohiosky48/SkyrimNet-Relationships>)' judgement calls, next to Relationships (existing provider for latter plugin).\n\nUncensored switch: A new tag switch on Hub › LLM. Hugging Face uploaders spell it three ways, so it searches the uncensored, abliterated and abliteration tags, and a model found under any of them is tagged Uncensored. English, or no language named appear in Hub search.\n\nError handling: More specific root cause analysis and instructive error/warning.\n\nServer Cards: Micro-batch warning with one-click fix."
+        },
+        {
+          "version": "3.9.5",
+          "commit": "60724fa13e139e8c75c243d807395540c92f3a7d",
+          "date": "2026-10-13T12:52:04Z",
+          "changelog": "## [v3.95 beta](https://github.com/Pt0l3my/PandorumLLM/releases/tag/v3.95-beta)\n\n\nHub — a new main tab. Hub › LLM searches Hugging Face for models built on nine base models and checks each one's integrity before you download it. Hub › Decision Model downloads llama.cpp's decision models.\n\nTensor parallelism — a server can split its model across several GPUs, with a share per GPU and a measured memory report for each card.\n\nUp to five client PCs — each client gets its own Live Network and server pages on the host, under permissions that both PCs must grant.\n\nSettings tab — Folder Settings, Backend Engines, Permissions and Customization in one place. llama.cpp and audio.cpp now install and update from Backend Engines.\n\nEvery guide in User Guide — Main, Sampler, Decision Model, TTS and SG.\n\nJEV Diagnostics — checks every target decision against the cues SkyrimNet sent with it, and compiles a report you can hand on.\n\nServer Card auto width — Up to twice the default width."
+        },
+        {
+          "version": "3.9.1",
+          "commit": "f70a1f018182d8f9a89c27dbf3da854c728694df",
+          "date": "2026-10-06T03:52:22Z",
+          "changelog": "# [v3.91-beta](https://github.com/Pt0l3my/PandorumLLM/releases/tag/v3.91-beta)\n\n### **Audio**\n\n- **Song Generator**\n- **Unified Audio tab**\n- **Unique Song Generator UI**\n- **SkyrimNet SG support**\n- **NPC voiced songs**\n- **Song Vault**\n\n\n### **Decision models (JEV) Support**\n\n- **Native llama.cpp Decision model support**\n- **Decision provider**\n- **Decision Model labels**\n- **JEV UI**\n- **JEV Diagnostics**\n\n\n### **TTS**\n\n- **BreezeTTS 2**\n- **Official Audio.cpp repo**\n\n\n### **UI elements**\n\n- **New Launcher buttons**\n- **Revised Updater/Donwloader UI**\n- And a lot of other minor UI adjustments."
+        }
+      ],
+      "external_url": "https://github.com/Pt0l3my/PandorumLLM",
+      "languages": [
+        "en"
+      ],
+      "language": "en",
+      "image": {
+        "file": "cover.png",
+        "sha": "53fd63d778da6f2d6021537f8424724c13164d72",
+        "commit": "f70a1f018182d8f9a89c27dbf3da854c728694df",
+        "width": 1280,
+        "height": 720
+      },
+      "stats": {
+        "downloads": 14,
+        "endorsements": 0
+      }
+    },
     {
       "id": "plugins/deadohiosky/kinship",
       "plugin_id": "deadohiosky.kinship",
@@ -571,7 +639,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 297,
+        "downloads": 298,
         "endorsements": 5
       }
     },
@@ -714,68 +782,6 @@
       }
     },
     {
-      "id": "plugins/zol/pandorumllm",
-      "plugin_id": "zol.pandorumllm",
-      "type": "listing",
-      "title": "PandorumLLM",
-      "tagline": "**A versatile browser control panel and proxy tailored for SkyrimNet to run local models via llama.cpp across multiple PCs and Servers in any configuration with a simple click! **",
-      "author": "zol",
-      "tags": [
-        "External plugin",
-        "local servers (LLM",
-        "Decision(JEV))",
-        "TTS",
-        "Song Generator",
-        "Sample and Song Vault",
-        "SkyrimNet provider management",
-        "Server Cards with automatic template generator",
-        "highly customised terminals",
-        "visible thinking and JEV process"
-      ],
-      "nsfw": false,
-      "icon": "ai",
-      "mods": [],
-      "first_published": "2026-10-06T03:52:22Z",
-      "last_updated": "2026-10-13T20:01:50Z",
-      "version": "3.9.6",
-      "history": [
-        {
-          "version": "3.9.6",
-          "commit": "2bba764fda34a71b6d99077d50e23629a34ec16c",
-          "date": "2026-10-13T20:01:50Z",
-          "changelog": "Update with built-in updater (next to main UI logo).\n\nPlugin support (providers): BioForge (port 1270) for [BioForge](<https://github.com/Oldcustard/BioForge>), PE-Letters (1271) for [Political Engine](<https://github.com/L-Sixteenth/Political-Engine-Releases>)'s letters, and Rel-Judge (1272) for [Relationships](<https://github.com/deadohiosky48/SkyrimNet-Relationships>)' judgement calls, next to Relationships (existing provider for latter plugin).\n\nUncensored switch: A new tag switch on Hub › LLM. Hugging Face uploaders spell it three ways, so it searches the uncensored, abliterated and abliteration tags, and a model found under any of them is tagged Uncensored. English, or no language named appear in Hub search.\n\nError handling: More specific root cause analysis and instructive error/warning.\n\nServer Cards: Micro-batch warning with one-click fix."
-        },
-        {
-          "version": "3.9.5",
-          "commit": "60724fa13e139e8c75c243d807395540c92f3a7d",
-          "date": "2026-10-13T12:52:04Z",
-          "changelog": "## [v3.95 beta](https://github.com/Pt0l3my/PandorumLLM/releases/tag/v3.95-beta)\n\n\nHub — a new main tab. Hub › LLM searches Hugging Face for models built on nine base models and checks each one's integrity before you download it. Hub › Decision Model downloads llama.cpp's decision models.\n\nTensor parallelism — a server can split its model across several GPUs, with a share per GPU and a measured memory report for each card.\n\nUp to five client PCs — each client gets its own Live Network and server pages on the host, under permissions that both PCs must grant.\n\nSettings tab — Folder Settings, Backend Engines, Permissions and Customization in one place. llama.cpp and audio.cpp now install and update from Backend Engines.\n\nEvery guide in User Guide — Main, Sampler, Decision Model, TTS and SG.\n\nJEV Diagnostics — checks every target decision against the cues SkyrimNet sent with it, and compiles a report you can hand on.\n\nServer Card auto width — Up to twice the default width."
-        },
-        {
-          "version": "3.9.1",
-          "commit": "f70a1f018182d8f9a89c27dbf3da854c728694df",
-          "date": "2026-10-06T03:52:22Z",
-          "changelog": "# [v3.91-beta](https://github.com/Pt0l3my/PandorumLLM/releases/tag/v3.91-beta)\n\n### **Audio**\n\n- **Song Generator**\n- **Unified Audio tab**\n- **Unique Song Generator UI**\n- **SkyrimNet SG support**\n- **NPC voiced songs**\n- **Song Vault**\n\n\n### **Decision models (JEV) Support**\n\n- **Native llama.cpp Decision model support**\n- **Decision provider**\n- **Decision Model labels**\n- **JEV UI**\n- **JEV Diagnostics**\n\n\n### **TTS**\n\n- **BreezeTTS 2**\n- **Official Audio.cpp repo**\n\n\n### **UI elements**\n\n- **New Launcher buttons**\n- **Revised Updater/Donwloader UI**\n- And a lot of other minor UI adjustments."
-        }
-      ],
-      "external_url": "https://github.com/Pt0l3my/PandorumLLM",
-      "languages": [
-        "en"
-      ],
-      "language": "en",
-      "image": {
-        "file": "cover.png",
-        "sha": "53fd63d778da6f2d6021537f8424724c13164d72",
-        "commit": "f70a1f018182d8f9a89c27dbf3da854c728694df",
-        "width": 1280,
-        "height": 720
-      },
-      "stats": {
-        "downloads": 14,
-        "endorsements": 0
-      }
-    },
-    {
       "id": "plugins/felixshuic/hypnosis-the-power-of-mind-control",
       "plugin_id": "felixshuic.hypnosis-the-power-of-mind-control",
       "type": "listing",
@@ -862,7 +868,7 @@
         "height": 1008
       },
       "stats": {
-        "downloads": 68,
+        "downloads": 69,
         "endorsements": 1
       }
     },
@@ -1279,7 +1285,7 @@
         "config": 4
       },
       "stats": {
-        "downloads": 103,
+        "downloads": 105,
         "endorsements": 0
       }
     },
@@ -1855,7 +1861,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 103,
+        "downloads": 104,
         "endorsements": 0
       }
     },
@@ -2454,7 +2460,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 277,
+        "downloads": 278,
         "endorsements": 0
       }
     },
@@ -3021,7 +3027,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 292,
+        "downloads": 293,
         "endorsements": 4
       }
     },
@@ -3066,7 +3072,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 912,
+        "downloads": 914,
         "endorsements": 2
       }
     },
@@ -3201,7 +3207,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1926,
+        "downloads": 1932,
         "endorsements": 2
       }
     },
@@ -3426,7 +3432,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1005,
+        "downloads": 1006,
         "endorsements": 0
       }
     },
@@ -3696,7 +3702,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 373,
+        "downloads": 374,
         "endorsements": 0
       }
     },
@@ -3966,7 +3972,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 121,
+        "downloads": 122,
         "endorsements": 0
       }
     },
@@ -4191,7 +4197,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 808,
+        "downloads": 809,
         "endorsements": 0
       }
     },
@@ -4956,7 +4962,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 201,
+        "downloads": 202,
         "endorsements": 0
       }
     },
@@ -5136,7 +5142,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 573,
+        "downloads": 574,
         "endorsements": 0
       }
     },
@@ -7221,7 +7227,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 143,
+        "downloads": 144,
         "endorsements": 0
       }
     },
@@ -7401,7 +7407,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 328,
+        "downloads": 330,
         "endorsements": 0
       }
     },
@@ -7446,7 +7452,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 20,
+        "downloads": 21,
         "endorsements": 0
       }
     },
@@ -7581,7 +7587,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1082,
+        "downloads": 1083,
         "endorsements": 2
       }
     },
@@ -8616,7 +8622,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1135,
+        "downloads": 1136,
         "endorsements": 2
       }
     },
@@ -9426,7 +9432,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 677,
+        "downloads": 678,
         "endorsements": 0
       }
     },
@@ -11226,7 +11232,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 363,
+        "downloads": 364,
         "endorsements": 0
       }
     },
@@ -12036,7 +12042,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1401,
+        "downloads": 1402,
         "endorsements": 2
       }
     },
@@ -12306,7 +12312,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 323,
+        "downloads": 324,
         "endorsements": 0
       }
     },
