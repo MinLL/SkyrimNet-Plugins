@@ -1,7 +1,9 @@
 {# Under stable_split the thoughts and book tasks already went out in the system message
    (player_thoughts), so they are not repeated here. The full and transform tasks stay: the
    transform task carries the line to rewrite, which changes with every call. #}
-{% if not (default(stable_split, false) and (render_mode == "thoughts" or render_mode == "book")) %}
+{# task_at_end (passed by dialogue_response): the task goes out at the very end of the prompt,
+   beside the lines to reply to, so it is left out here. #}
+{% if not default(task_at_end, false) and not (default(stable_split, false) and (render_mode == "thoughts" or render_mode == "book")) %}
 ## Task
 {% if render_mode == "transform" %}
 {% if length(promptForDialogue) > 0 %}

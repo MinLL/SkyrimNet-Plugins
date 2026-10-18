@@ -12,10 +12,41 @@ You are {{ decnpc(npc.UUID).name }}, a {{ decnpc(npc.UUID).gender }} {{ decnpc(n
 {{ render_template("components\\event_history", {"cache_history": true}) }}
 
 [ user ]
-{{ render_subcomponent("system_head", "full", {"stable_split": true}) }}
-{{ render_subcomponent("user_final_instructions", "full") }}
+{{ render_subcomponent("system_head", "full", {"stable_split": true, "task_at_end": true}) }}
+{{ render_subcomponent("user_final_instructions", "full", {"combat_at_end": true}) }}
 {% if decnpc(npc.UUID).universalTranslatorSpeechPattern %}
 **Speech Pattern Required:** {{ decnpc(npc.UUID).universalTranslatorSpeechPattern }}
+{% endif %}
+{# The task and the lines said since this NPC last spoke, repeated at the very end.
+   Under the cache layout the instructions above follow the history, so the latest line sits
+   thousands of tokens back and a smaller model can answer an older one instead. Only spoken lines
+   count; the newest five are kept. Only lines said to this NPC are for it to answer: lines between
+   others are marked as overheard, or two companions answer each other's asides turn after turn. In
+   combat the fight comes first. Everything here is uncached. #}
+{% set _lastOwnId = -1 %}
+{% set _pending = 0 %}
+{% set _toYou = 0 %}
+{% if exists("events") %}
+{% for event in events %}{% if event.originatingActor == npc.UUID and (event.type == "dialogue" or event.type == "dialogue_npc") %}{% set _lastOwnId = default(event.id, 0) %}{% endif %}{% endfor %}
+{% for event in events %}{% if default(event.id, 0) > _lastOwnId and event.originatingActor != npc.UUID and (event.type == "dialogue" or event.type == "dialogue_npc" or event.type == "dialogue_player" or event.type == "dialogue_player_text" or event.type == "dialogue_player_stt") %}{% set _pending = _pending + 1 %}{% if event.targetActor == npc.UUID %}{% set _toYou = _toYou + 1 %}{% endif %}{% endif %}{% endfor %}
+{% endif %}
+
+{{ render_template("submodules\\user_final_instructions\\0200_combat_status") }}
+{{ render_template("submodules\\system_head\\0010_instructions", {"stable_split": true}) }}
+{% if _pending > 0 %}
+Said since you last spoke:
+{% set _seen = 0 %}
+{% for event in events %}{% if default(event.id, 0) > _lastOwnId and event.originatingActor != npc.UUID and (event.type == "dialogue" or event.type == "dialogue_npc" or event.type == "dialogue_player" or event.type == "dialogue_player_text" or event.type == "dialogue_player_stt") %}{% set _seen = _seen + 1 %}{% if _seen > _pending - 5 %}
+- {{ get_name(event.originatingActor) }}{% if event.targetActor == npc.UUID %} (to you){% else if isValidActor(event.targetActor) %} (to {{ get_name(event.targetActor) }}){% endif %}: {{ format_event(event, "verbose") }}
+{% endif %}{% endif %}{% endfor %}
+{% if _toYou > 0 %}
+Answer what was said to you, the last line marked (to you) most of all. The other lines were said to someone else: you overheard them, and you need not answer them.
+{% else %}
+None of these were said to you; you overheard them. Speak only to what matters to you right now.
+{% endif %}
+{% endif %}
+{% if is_in_combat(npc.UUID) %}
+You are in combat. Keep it urgent and brief, and about the fight; arguments can wait until it's over.
 {% endif %}
 {% if not embed_actions_in_dialogue %}
 Respond in character now.
