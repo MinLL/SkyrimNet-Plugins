@@ -1,8 +1,70 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-18T03:33:40.568Z",
-  "stats_as_of": "2026-10-18T03:33:40.499Z",
+  "generated_at": "2026-10-18T03:50:55.550Z",
+  "stats_as_of": "2026-10-18T03:50:55.440Z",
   "plugins": [
+    {
+      "id": "plugins/tetherball88/ostimnet",
+      "plugin_id": "tetherball88.ostimnet",
+      "type": "listing",
+      "title": "OStimNet",
+      "tagline": "Intimate encounter AI framework integration for OStim and SkyrimNet.",
+      "author": "tetherball88",
+      "tags": [
+        "ostim",
+        "animation",
+        "adult"
+      ],
+      "nsfw": true,
+      "icon": "heart",
+      "mods": [],
+      "first_published": "2026-09-12T06:44:36-08:00",
+      "last_updated": "2026-10-18T03:50:27Z",
+      "version": "2.5.6",
+      "history": [
+        {
+          "version": "2.5.6",
+          "commit": "af7bd389cff21a7671a283fd675e84dab10c57c6",
+          "date": "2026-10-18T03:50:27Z",
+          "changelog": "Changelog (2.5.6):\n## v2.5.6\n### Added\n\n- **Session mute Papyrus API** — Added global native Papyrus functions on `OStimNet` (`ToggleMute()`, `IsMuted()`, and `SetMuted(bool akMuted)`)\n\n### Fixed\n\n- **Spectator handling across thread continuations (join/swap)** — Fixed spectators being prematurely removed or stuck when an active scene transitions via thread continuation\n- **Thread continuation event prompt rendering** — Added `sex_continue_thread` event rendering (`{{msg}}`) to `ostimnet_event_compact.prompt` and `ostimnet_event_verbose.prompt` so scene continuation events are no longer omitted from SkyrimNet event logs.\n- **External thread start with AI evaluation** — Fixed third-party / external scene starts failing when delegating scene evaluation to AI"
+        },
+        {
+          "version": "2.5.4",
+          "commit": "d492cd94f3f219da97c2b0ca51124c2e9ec2fed1",
+          "date": "2026-10-05T22:09:21Z",
+          "changelog": "attempt to improve reset OStimNet state when save was done during OStim scene and then loaded. I highly not recommend saving during OStim scenes it can break your game.\nupdated Billyy's meta tags for ostimnet(intent and position tags, not descriptions!)"
+        },
+        {
+          "version": "2.5.3",
+          "commit": "62c1ab313251a1148723fb97dbc72b55146f5df6",
+          "date": "2026-09-29T17:08:22Z",
+          "changelog": "added Being Female pregnancy and female cycles note - to make female npcs aware of pregnancy risk."
+        },
+        {
+          "version": "2.5.0",
+          "commit": "6d53bf9f8ee01c6aca1b0d6fdef004ef2fa02b62",
+          "date": "2026-09-26T05:47:57Z",
+          "changelog": "replaced cover image"
+        },
+        {
+          "version": "2.4.2",
+          "commit": "6beaea6234d873a19a83b6da3003d65d0c5982ab",
+          "date": "2026-09-12T06:44:36-08:00"
+        }
+      ],
+      "external_url": "https://github.com/tetherball88/OStimNet/releases/latest",
+      "image": {
+        "file": "cover.png",
+        "sha": "24935e170bd427bf1791e1330315a5a711f7e715",
+        "commit": "6d53bf9f8ee01c6aca1b0d6fdef004ef2fa02b62",
+        "width": 2048,
+        "height": 1152
+      },
+      "stats": {
+        "downloads": 140,
+        "endorsements": 4
+      }
+    },
     {
       "id": "plugins/tetherball88/body-language",
       "plugin_id": "tetherball88.body-language",
@@ -824,7 +886,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 283,
+        "downloads": 285,
         "endorsements": 3
       }
     },
@@ -957,7 +1019,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 350,
+        "downloads": 351,
         "endorsements": 5
       }
     },
@@ -1560,7 +1622,7 @@
         "config": 4
       },
       "stats": {
-        "downloads": 124,
+        "downloads": 125,
         "endorsements": 0
       }
     },
@@ -2005,7 +2067,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 115,
+        "downloads": 116,
         "endorsements": 0
       }
     },
@@ -2045,64 +2107,8 @@
         "config": 0
       },
       "stats": {
-        "downloads": 115,
+        "downloads": 116,
         "endorsements": 0
-      }
-    },
-    {
-      "id": "plugins/tetherball88/ostimnet",
-      "plugin_id": "tetherball88.ostimnet",
-      "type": "listing",
-      "title": "OStimNet",
-      "tagline": "Intimate encounter AI framework integration for OStim and SkyrimNet.",
-      "author": "tetherball88",
-      "tags": [
-        "ostim",
-        "animation",
-        "adult"
-      ],
-      "nsfw": true,
-      "icon": "heart",
-      "mods": [],
-      "first_published": "2026-09-12T06:44:36-08:00",
-      "last_updated": "2026-10-05T22:09:21Z",
-      "version": "2.5.4",
-      "history": [
-        {
-          "version": "2.5.4",
-          "commit": "d492cd94f3f219da97c2b0ca51124c2e9ec2fed1",
-          "date": "2026-10-05T22:09:21Z",
-          "changelog": "attempt to improve reset OStimNet state when save was done during OStim scene and then loaded. I highly not recommend saving during OStim scenes it can break your game.\nupdated Billyy's meta tags for ostimnet(intent and position tags, not descriptions!)"
-        },
-        {
-          "version": "2.5.3",
-          "commit": "62c1ab313251a1148723fb97dbc72b55146f5df6",
-          "date": "2026-09-29T17:08:22Z",
-          "changelog": "added Being Female pregnancy and female cycles note - to make female npcs aware of pregnancy risk."
-        },
-        {
-          "version": "2.5.0",
-          "commit": "6d53bf9f8ee01c6aca1b0d6fdef004ef2fa02b62",
-          "date": "2026-09-26T05:47:57Z",
-          "changelog": "replaced cover image"
-        },
-        {
-          "version": "2.4.2",
-          "commit": "6beaea6234d873a19a83b6da3003d65d0c5982ab",
-          "date": "2026-09-12T06:44:36-08:00"
-        }
-      ],
-      "external_url": "https://github.com/tetherball88/OStimNet/releases/latest",
-      "image": {
-        "file": "cover.png",
-        "sha": "24935e170bd427bf1791e1330315a5a711f7e715",
-        "commit": "6d53bf9f8ee01c6aca1b0d6fdef004ef2fa02b62",
-        "width": 2048,
-        "height": 1152
-      },
-      "stats": {
-        "downloads": 140,
-        "endorsements": 4
       }
     },
     {
@@ -2162,7 +2168,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 209,
+        "downloads": 210,
         "endorsements": 0
       }
     },
@@ -3122,7 +3128,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 305,
+        "downloads": 306,
         "endorsements": 4
       }
     },
