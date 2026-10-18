@@ -1,8 +1,125 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-18T17:24:53.226Z",
-  "stats_as_of": "2026-10-18T17:24:53.099Z",
+  "generated_at": "2026-10-18T17:54:44.599Z",
+  "stats_as_of": "2026-10-18T17:54:44.467Z",
   "plugins": [
+    {
+      "id": "plugins/s709/milk-maid-economy-extensions",
+      "plugin_id": "s709.milk-maid-economy-extensions",
+      "type": "listing",
+      "title": "Milk Maid Economy Extensions",
+      "tagline": "Turns Skyrim into a silly, lewd world where everyone drinks milk, milk makes everyone horny, and breasts grow to hilariously unreasonable proportions. 🥛🍈",
+      "author": "s709",
+      "tags": [
+        "milk mod economy",
+        "mme",
+        "sexlab",
+        "ostim",
+        "devious devices"
+      ],
+      "nsfw": true,
+      "icon": "heart",
+      "mods": [
+        {
+          "name": "SexLab.esm",
+          "file": "sexlab.esm",
+          "required": true
+        },
+        {
+          "name": "Devious Devices - Assets.esm",
+          "file": "devious devices - assets.esm",
+          "required": false
+        },
+        {
+          "name": "SexLabAroused.esm",
+          "file": "sexlabaroused.esm",
+          "required": false
+        },
+        {
+          "name": "Devious Devices - Integration.esm",
+          "file": "devious devices - integration.esm",
+          "required": false
+        },
+        {
+          "name": "Devious Devices - Expansion.esm",
+          "file": "devious devices - expansion.esm",
+          "required": false
+        },
+        {
+          "name": "Devious Devices - Contraptions.esm",
+          "file": "devious devices - contraptions.esm",
+          "required": false
+        },
+        {
+          "name": "MilkModNEW.esp",
+          "file": "milkmodnew.esp",
+          "required": true
+        },
+        {
+          "name": "MilkModNEW HF.esp",
+          "file": "milkmodnew hf.esp",
+          "required": true
+        },
+        {
+          "name": "DwarvenDeviousCuirass.esp",
+          "file": "dwarvendeviouscuirass.esp",
+          "required": false
+        },
+        {
+          "name": "CP_Elsie.esp",
+          "file": "cp_elsie.esp",
+          "required": false
+        },
+        {
+          "name": "C5Kev's Tentacled Terrors Of Tamriel 3BA.esp",
+          "file": "c5kev's tentacled terrors of tamriel 3ba.esp",
+          "required": false
+        },
+        {
+          "name": "OMania.esp",
+          "file": "omania.esp",
+          "required": false
+        },
+        {
+          "name": "SexLab Inflation Framework.esp",
+          "file": "sexlab inflation framework.esp",
+          "required": true
+        }
+      ],
+      "first_published": "2026-10-04T22:25:58Z",
+      "last_updated": "2026-10-18T17:54:17Z",
+      "version": "1.3.1",
+      "history": [
+        {
+          "version": "1.3.1",
+          "commit": "5968d1edb2edea4c1b47a53551b8b2333f314768",
+          "date": "2026-10-18T17:54:17Z",
+          "changelog": "# Skyrim MME Extensions Changelog\n\n## 🌟 Major Features\n\n- 🔥 **SexLab P+ Compatibility:** New FOMOD patch for an upgraded SexLab experience. More pleasure, faster delivery! (Credits: Thorax339)\n- 🥛 **Elsie Lavache Compatibility:** New FOMOD patch extending MME Extensions' erotic breastfeeding features to Elsie's bimbo milkmaids. Also fixes old dialogue tree bugs and Papyrus errors. Those girls deserve some proper attention! (Credits: venomr)\n- 💦 **Arousal Reactions:** New erotic flavor notifications and sounds whenever someone crosses an arousal threshold. Someone's getting a little too excited!\n- 🍒 **Breast Jiggles:** Added lewd breast-jiggling notifications and sound effects. Gravity has never sounded so naughty!\n\n## 🔧 Minor Features\n\n- 🔓 **Armor Removal:** Parasite and similar locking armor can now be removed from followers through the MCM Misc tab or blacksmith dialogue. That's what friends are for!\n- 🎭 **Devious Armor Equip Effects:** Added special animations and story sequences for NPCs equipping devious milk-sucking armor. Getting dressed has become quite the performance!\n- 🔁 **Repeat Performances:** These animations can now repeat with minor variations. Some outfits just love making an entrance!"
+        },
+        {
+          "version": "1.2.1",
+          "commit": "24623bbf5f2223246d8099473a195e5806ce3b98",
+          "date": "2026-10-08T21:13:20-07:00",
+          "changelog": "## 1.2.1\n\n- 🥛 Silly milk-drinking notifications now play after automatic town milk drinking.\n  - Unique NPCs are more likely to drink than generic NPCs.\n  - Less horny guards.\n\n- 🐙 New introductory stories play the first time Tentacle or Dwemer Armor is fitted by a blacksmith.\n\n- ⚙️ Added a new kinky Dwemer milking attachment that can be fitted inside your armor by a blacksmith.\n\n- 🔓 Followers no longer get permanently stuck in Devious Armor after triggering booby-trapped chests.\n\n- 👙 Added more MCM control over breast-growth armor stripping.\n  - By default, heavier armor strips before lighter armor and clothing.\n\n- 🗣️ Skyrim.Net narration prompts are now sillier."
+        }
+      ],
+      "external_url": "https://www.loverslab.com/files/file/50820-mme-milk-mod-economy-extensions/",
+      "languages": [
+        "en"
+      ],
+      "language": "en",
+      "image": {
+        "file": "cover.jpg",
+        "sha": "7631ed82a0d8804365fea90db76f709c680032d3",
+        "commit": "5422f6c046e673790c53fa87412ebd72e75875b9",
+        "width": 1672,
+        "height": 941
+      },
+      "stats": {
+        "downloads": 35,
+        "endorsements": 0
+      }
+    },
     {
       "id": "plugins/urtubesrclogged/battle-summaries",
       "plugin_id": "urtubesrclogged.battle-summaries",
@@ -67,7 +184,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 150,
+        "downloads": 152,
         "endorsements": 3
       }
     },
@@ -142,7 +259,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 372,
+        "downloads": 373,
         "endorsements": 5
       }
     },
@@ -255,7 +372,7 @@
         "height": 1152
       },
       "stats": {
-        "downloads": 147,
+        "downloads": 148,
         "endorsements": 4
       }
     },
@@ -673,7 +790,7 @@
         "height": 928
       },
       "stats": {
-        "downloads": 63,
+        "downloads": 64,
         "endorsements": 2
       }
     },
@@ -1928,117 +2045,6 @@
       }
     },
     {
-      "id": "plugins/s709/milk-maid-economy-extensions",
-      "plugin_id": "s709.milk-maid-economy-extensions",
-      "type": "listing",
-      "title": "Milk Maid Economy Extensions",
-      "tagline": "Turns Skyrim into a silly, lewd world where everyone drinks milk, milk makes everyone horny, and breasts grow to hilariously unreasonable proportions. 🥛🍈",
-      "author": "s709",
-      "tags": [
-        "milk mod economy",
-        "mme",
-        "sexlab",
-        "ostim",
-        "devious devices"
-      ],
-      "nsfw": true,
-      "icon": "heart",
-      "mods": [
-        {
-          "name": "SexLab.esm",
-          "file": "sexlab.esm",
-          "required": true
-        },
-        {
-          "name": "Devious Devices - Assets.esm",
-          "file": "devious devices - assets.esm",
-          "required": false
-        },
-        {
-          "name": "SexLabAroused.esm",
-          "file": "sexlabaroused.esm",
-          "required": false
-        },
-        {
-          "name": "Devious Devices - Integration.esm",
-          "file": "devious devices - integration.esm",
-          "required": false
-        },
-        {
-          "name": "Devious Devices - Expansion.esm",
-          "file": "devious devices - expansion.esm",
-          "required": false
-        },
-        {
-          "name": "Devious Devices - Contraptions.esm",
-          "file": "devious devices - contraptions.esm",
-          "required": false
-        },
-        {
-          "name": "MilkModNEW.esp",
-          "file": "milkmodnew.esp",
-          "required": true
-        },
-        {
-          "name": "MilkModNEW HF.esp",
-          "file": "milkmodnew hf.esp",
-          "required": true
-        },
-        {
-          "name": "DwarvenDeviousCuirass.esp",
-          "file": "dwarvendeviouscuirass.esp",
-          "required": false
-        },
-        {
-          "name": "CP_Elsie.esp",
-          "file": "cp_elsie.esp",
-          "required": false
-        },
-        {
-          "name": "C5Kev's Tentacled Terrors Of Tamriel 3BA.esp",
-          "file": "c5kev's tentacled terrors of tamriel 3ba.esp",
-          "required": false
-        },
-        {
-          "name": "OMania.esp",
-          "file": "omania.esp",
-          "required": false
-        },
-        {
-          "name": "SexLab Inflation Framework.esp",
-          "file": "sexlab inflation framework.esp",
-          "required": true
-        }
-      ],
-      "first_published": "2026-10-04T22:25:58Z",
-      "last_updated": "2026-10-08T21:13:20-07:00",
-      "version": "1.2.1",
-      "history": [
-        {
-          "version": "1.2.1",
-          "commit": "24623bbf5f2223246d8099473a195e5806ce3b98",
-          "date": "2026-10-08T21:13:20-07:00",
-          "changelog": "## 1.2.1\n\n- 🥛 Silly milk-drinking notifications now play after automatic town milk drinking.\n  - Unique NPCs are more likely to drink than generic NPCs.\n  - Less horny guards.\n\n- 🐙 New introductory stories play the first time Tentacle or Dwemer Armor is fitted by a blacksmith.\n\n- ⚙️ Added a new kinky Dwemer milking attachment that can be fitted inside your armor by a blacksmith.\n\n- 🔓 Followers no longer get permanently stuck in Devious Armor after triggering booby-trapped chests.\n\n- 👙 Added more MCM control over breast-growth armor stripping.\n  - By default, heavier armor strips before lighter armor and clothing.\n\n- 🗣️ Skyrim.Net narration prompts are now sillier."
-        }
-      ],
-      "external_url": "https://www.loverslab.com/files/file/50820-mme-milk-mod-economy-extensions/",
-      "languages": [
-        "en"
-      ],
-      "language": "en",
-      "image": {
-        "file": "cover.jpg",
-        "sha": "7631ed82a0d8804365fea90db76f709c680032d3",
-        "commit": "5422f6c046e673790c53fa87412ebd72e75875b9",
-        "width": 1672,
-        "height": 941
-      },
-      "stats": {
-        "downloads": 35,
-        "endorsements": 0
-      }
-    },
-    {
       "id": "plugins/kibcharnnel/triggers-of-idle-animations-wheelmenu-se",
       "plugin_id": "kibcharnnel.triggers-of-idle-animations-wheelmenu-se",
       "type": "bundle",
@@ -2125,7 +2131,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 117,
+        "downloads": 118,
         "endorsements": 0
       }
     },
@@ -2327,7 +2333,7 @@
         "height": 1080
       },
       "stats": {
-        "downloads": 119,
+        "downloads": 120,
         "endorsements": 1
       }
     },
@@ -2878,7 +2884,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 58,
+        "downloads": 59,
         "endorsements": 2
       }
     },
@@ -3191,7 +3197,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 960,
+        "downloads": 961,
         "endorsements": 2
       }
     },
@@ -3236,7 +3242,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 476,
+        "downloads": 477,
         "endorsements": 0
       }
     },
@@ -3326,7 +3332,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2051,
+        "downloads": 2056,
         "endorsements": 2
       }
     },
@@ -3551,7 +3557,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1068,
+        "downloads": 1069,
         "endorsements": 0
       }
     },
@@ -4316,7 +4322,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 861,
+        "downloads": 862,
         "endorsements": 0
       }
     },
@@ -4676,7 +4682,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 787,
+        "downloads": 788,
         "endorsements": 1
       }
     },
@@ -5036,7 +5042,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 991,
+        "downloads": 992,
         "endorsements": 2
       }
     },
@@ -5216,7 +5222,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 436,
+        "downloads": 437,
         "endorsements": 0
       }
     },
@@ -6071,7 +6077,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 340,
+        "downloads": 341,
         "endorsements": 0
       }
     },
@@ -7481,7 +7487,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 511,
+        "downloads": 512,
         "endorsements": 0
       }
     },
@@ -7616,7 +7622,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 851,
+        "downloads": 852,
         "endorsements": 0
       }
     },
@@ -7706,7 +7712,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1146,
+        "downloads": 1147,
         "endorsements": 2
       }
     },
@@ -8111,7 +8117,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 255,
+        "downloads": 256,
         "endorsements": 0
       }
     },
@@ -8741,7 +8747,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1215,
+        "downloads": 1216,
         "endorsements": 2
       }
     },
@@ -9011,7 +9017,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1003,
+        "downloads": 1004,
         "endorsements": 2
       }
     },
@@ -9416,7 +9422,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 261,
+        "downloads": 262,
         "endorsements": 0
       }
     },
@@ -9551,7 +9557,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 731,
+        "downloads": 733,
         "endorsements": 0
       }
     },
@@ -10361,7 +10367,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 607,
+        "downloads": 608,
         "endorsements": 0
       }
     },
@@ -12161,7 +12167,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1489,
+        "downloads": 1491,
         "endorsements": 2
       }
     },
