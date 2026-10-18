@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-18T01:04:30.229Z",
-  "stats_as_of": "2026-10-18T01:04:30.114Z",
+  "generated_at": "2026-10-18T01:37:25.986Z",
+  "stats_as_of": "2026-10-18T01:37:25.868Z",
   "plugins": [
     {
       "id": "plugins/tetherball88/body-language",
@@ -51,7 +51,7 @@
         "height": 1152
       },
       "stats": {
-        "downloads": 89,
+        "downloads": 90,
         "endorsements": 0
       }
     },
@@ -220,7 +220,7 @@
         "height": 768
       },
       "stats": {
-        "downloads": 11,
+        "downloads": 12,
         "endorsements": 0
       }
     },
@@ -957,7 +957,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 348,
+        "downloads": 349,
         "endorsements": 5
       }
     },
@@ -1095,7 +1095,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 139,
+        "downloads": 140,
         "endorsements": 5
       }
     },
@@ -1367,7 +1367,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 569,
+        "downloads": 570,
         "endorsements": 28
       }
     },
@@ -2162,7 +2162,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 208,
+        "downloads": 209,
         "endorsements": 0
       }
     },
@@ -2303,7 +2303,7 @@
         "height": 1080
       },
       "stats": {
-        "downloads": 112,
+        "downloads": 113,
         "endorsements": 1
       }
     },
