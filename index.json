@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-18T14:18:48.930Z",
-  "stats_as_of": "2026-10-18T14:18:48.815Z",
+  "generated_at": "2026-10-18T14:26:51.281Z",
+  "stats_as_of": "2026-10-18T14:26:51.159Z",
   "plugins": [
     {
       "id": "plugins/min/skyrimnet-prompts-cache-enabled",
@@ -3545,7 +3545,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1063,
+        "downloads": 1064,
         "endorsements": 0
       }
     },
@@ -4670,7 +4670,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 784,
+        "downloads": 785,
         "endorsements": 1
       }
     },
@@ -11165,7 +11165,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 202,
+        "downloads": 203,
         "endorsements": 0
       }
     },
