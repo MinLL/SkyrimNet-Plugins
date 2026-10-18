@@ -16,7 +16,7 @@
   "icon": "package",
   "mods": [],
   "image": "cover.png",
-  "version": "1.3.0",
-  "changelog": "1.3.0: the Universal Translator transform (transformers/universal_translator) is laid out for prompt caching too: the NPC's stable profile is the cached system block, identical to dialogue_response's, so the two share a cache entry when they share a model.",
-  "min_skyrimnet_version": "0.27.0"
+  "version": "1.4.3",
+  "changelog": "Reinforced un-responded to events in the prompt to reduce instances in which weaker models responded to old content, and improved coherency during combat.",
+  "min_skyrimnet_version": "0.28.0"
 }

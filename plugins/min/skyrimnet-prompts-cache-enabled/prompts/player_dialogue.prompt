@@ -2,7 +2,7 @@
    repeat from one call to the next, so a provider can reuse them; everything that changes turn to
    turn follows them. The system message is the one dialogue_response sends for the same actor, so
    the player's dialogue, thoughts and NPC replies share one cached prefix. The two [ cache ]
-   breakpoints (the system message, the history's last event) take effect where use_caching is on. #}
+   breakpoints (the system message, the history's last event) take effect where use_caching is on #}
 [ system ]
 [ cache ]
 You are {{ decnpc(npc.UUID).name }}, a {{ decnpc(npc.UUID).gender }} {{ decnpc(npc.UUID).race }} in Skyrim.
