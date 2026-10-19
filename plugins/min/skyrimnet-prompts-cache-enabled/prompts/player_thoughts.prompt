@@ -1,22 +1,21 @@
 {# Ordered for prompt caching, as dialogue_response is: the system message and the event history
    repeat from one call to the next, so a provider can reuse them; everything that changes turn to
-   turn follows them. The system message is the one dialogue_response sends for the same actor, so
-   the player's dialogue, thoughts and NPC replies share one cached prefix. The two [ cache ]
-   breakpoints (the system message, the history's last event) take effect where use_caching is on. #}
+   turn follows them. The system message opens with the profile dialogue_response sends for the same
+   actor, so the player's dialogue, thoughts and NPC replies share one cached prefix; this task's own
+   guidelines follow it. The three [ cache ] breakpoints (the profile, the guidelines, the history's
+   last event) take effect where use_caching is on. #}
 [ system ]
 [ cache ]
 You are {{ decnpc(npc.UUID).name }}, a {{ decnpc(npc.UUID).gender }} {{ decnpc(npc.UUID).race }} in Skyrim.
 {{ render_character_profile("stable", npc.UUID) }}
 [ end cache ]
-{# The task follows the cached profile, outside the cache block: it is static per actor and mode,
-   so the history breakpoint still holds, and the model reads what kind of output this is before
-   the history. Without it, a thought after a long dialogue history comes back shaped like a
-   spoken line. The plugin's 0010_instructions skips the task in the user message for these modes. #}
+[ cache ]
 {% if triggeringEvent and triggeringEvent.type == "book_read" %}
-{{ render_template("submodules\\system_head\\0010_instructions", {"render_mode": "book"}) }}
+{{ render_subcomponent("guidelines", "book") }}
 {% else %}
-{{ render_template("submodules\\system_head\\0010_instructions", {"render_mode": "thoughts"}) }}
+{{ render_subcomponent("guidelines", "thoughts") }}
 {% endif %}
+[ end cache ]
 [ end system ]
 
 {{ render_template("components\\event_history", {"cache_history": true}) }}

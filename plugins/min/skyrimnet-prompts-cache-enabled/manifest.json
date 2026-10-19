@@ -16,7 +16,7 @@
   "icon": "package",
   "mods": [],
   "image": "cover.png",
-  "version": "1.4.3",
-  "changelog": "Reinforced un-responded to events in the prompt to reduce instances in which weaker models responded to old content, and improved coherency during combat.",
+  "version": "1.5.0",
+  "changelog": "1.5.0: more Prompt Caching improvements. Improved support for the Adventurer's Guild plugin, and SeverActions. Note: this temporarily ships an overridden severactions prompt to make it play nicer with the new system. I'll be removing this in a future release after contributing this to SeverActions.",
   "min_skyrimnet_version": "0.28.0"
 }
