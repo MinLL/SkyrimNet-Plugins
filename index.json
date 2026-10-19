@@ -1,8 +1,89 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-19T03:37:50.962Z",
-  "stats_as_of": "2026-10-19T03:34:01.834Z",
+  "generated_at": "2026-10-19T03:48:44.090Z",
+  "stats_as_of": "2026-10-19T03:48:43.980Z",
   "plugins": [
+    {
+      "id": "plugins/min/skyrimnet-prompts-cache-enabled",
+      "plugin_id": "min.skyrimnet-prompts-cache-enabled",
+      "type": "bundle",
+      "title": "Skyrimnet Prompts - Cache Enabled",
+      "tagline": "Faster, cheaper responses - EXPERIMENTAL",
+      "author": "min",
+      "tags": [
+        "Costs",
+        "Performance",
+        "Cheaper",
+        "Faster",
+        "Speed"
+      ],
+      "nsfw": false,
+      "icon": "package",
+      "mods": [],
+      "first_published": "2026-10-12T05:14:35Z",
+      "last_updated": "2026-10-19T03:48:21Z",
+      "version": "1.5.0",
+      "min_skyrimnet_version": "0.28.0",
+      "history": [
+        {
+          "version": "1.5.0",
+          "commit": "425b2544668cf37e5b79ecf2073aec1c0bbd8bc2",
+          "date": "2026-10-19T03:48:21Z",
+          "changelog": "1.5.0: more Prompt Caching improvements. Improved support for the Adventurer's Guild plugin, and SeverActions. Note: this temporarily ships an overridden severactions prompt to make it play nicer with the new system. I'll be removing this in a future release after contributing this to SeverActions."
+        },
+        {
+          "version": "1.4.3",
+          "commit": "4840c3d311e43e453a7a24a958ab673deb4ea6c5",
+          "date": "2026-10-18T14:18:21Z",
+          "changelog": "Reinforced un-responded to events in the prompt to reduce instances in which weaker models responded to old content, and improved coherency during combat."
+        },
+        {
+          "version": "1.3.0",
+          "commit": "636fd96bfe2d698c49e2b62875261db70229431b",
+          "date": "2026-10-14T03:34:45Z",
+          "changelog": "1.3.0: the Universal Translator transform (transformers/universal_translator) is laid out for prompt caching too: the NPC's stable profile is the cached system block, identical to dialogue_response's, so the two share a cache entry when they share a model."
+        },
+        {
+          "version": "1.2.0",
+          "commit": "bdec1b220ca222e07139ac47ce342988264d6a20",
+          "date": "2026-10-13T04:47:20Z",
+          "changelog": "1.2.0: Added caching support for player dialogue transform / player thoughts prompts.\n1.1.0: the player's own lines (player_dialogue) and thoughts (player_thoughts) are now laid out for prompt caching too, sharing the cached system message with dialogue_response.\n1.0.1: Initial release"
+        },
+        {
+          "version": "1.0.2",
+          "commit": "9b0902962a76c45e85f53122c383e7ec4ffcb38c",
+          "date": "2026-10-12T22:21:27Z",
+          "changelog": "Added a banner, fixed typos in the description"
+        },
+        {
+          "version": "1.0.1",
+          "commit": "008efa73f19426617cb7991da9e08f39ad2f7926",
+          "date": "2026-10-12T01:36:59-07:00",
+          "changelog": "Initial release"
+        }
+      ],
+      "image": {
+        "file": "cover.png",
+        "sha": "1a8c5b306c6a927a6f468f52e79b8d208cdbe326",
+        "commit": "9b0902962a76c45e85f53122c383e7ec4ffcb38c",
+        "width": 1672,
+        "height": 941
+      },
+      "contents": {
+        "triggers": 0,
+        "actions": 0,
+        "prompts": 27,
+        "bios": 0,
+        "knowledge": 0,
+        "entities": 0,
+        "config": 0
+      },
+      "curated": true,
+      "stats": {
+        "downloads": 410,
+        "endorsements": 6
+      }
+    },
     {
       "id": "plugins/goodprovider/injury-engine",
       "plugin_id": "goodprovider.injury-engine",
@@ -243,81 +324,6 @@
       "stats": {
         "downloads": 158,
         "endorsements": 3
-      }
-    },
-    {
-      "id": "plugins/min/skyrimnet-prompts-cache-enabled",
-      "plugin_id": "min.skyrimnet-prompts-cache-enabled",
-      "type": "bundle",
-      "title": "Skyrimnet Prompts - Cache Enabled",
-      "tagline": "Faster, cheaper responses - EXPERIMENTAL",
-      "author": "min",
-      "tags": [
-        "Costs",
-        "Performance",
-        "Cheaper",
-        "Faster",
-        "Speed"
-      ],
-      "nsfw": false,
-      "icon": "package",
-      "mods": [],
-      "first_published": "2026-10-12T05:14:35Z",
-      "last_updated": "2026-10-18T14:18:21Z",
-      "version": "1.4.3",
-      "min_skyrimnet_version": "0.28.0",
-      "history": [
-        {
-          "version": "1.4.3",
-          "commit": "4840c3d311e43e453a7a24a958ab673deb4ea6c5",
-          "date": "2026-10-18T14:18:21Z",
-          "changelog": "Reinforced un-responded to events in the prompt to reduce instances in which weaker models responded to old content, and improved coherency during combat."
-        },
-        {
-          "version": "1.3.0",
-          "commit": "636fd96bfe2d698c49e2b62875261db70229431b",
-          "date": "2026-10-14T03:34:45Z",
-          "changelog": "1.3.0: the Universal Translator transform (transformers/universal_translator) is laid out for prompt caching too: the NPC's stable profile is the cached system block, identical to dialogue_response's, so the two share a cache entry when they share a model."
-        },
-        {
-          "version": "1.2.0",
-          "commit": "bdec1b220ca222e07139ac47ce342988264d6a20",
-          "date": "2026-10-13T04:47:20Z",
-          "changelog": "1.2.0: Added caching support for player dialogue transform / player thoughts prompts.\n1.1.0: the player's own lines (player_dialogue) and thoughts (player_thoughts) are now laid out for prompt caching too, sharing the cached system message with dialogue_response.\n1.0.1: Initial release"
-        },
-        {
-          "version": "1.0.2",
-          "commit": "9b0902962a76c45e85f53122c383e7ec4ffcb38c",
-          "date": "2026-10-12T22:21:27Z",
-          "changelog": "Added a banner, fixed typos in the description"
-        },
-        {
-          "version": "1.0.1",
-          "commit": "008efa73f19426617cb7991da9e08f39ad2f7926",
-          "date": "2026-10-12T01:36:59-07:00",
-          "changelog": "Initial release"
-        }
-      ],
-      "image": {
-        "file": "cover.png",
-        "sha": "1a8c5b306c6a927a6f468f52e79b8d208cdbe326",
-        "commit": "9b0902962a76c45e85f53122c383e7ec4ffcb38c",
-        "width": 1672,
-        "height": 941
-      },
-      "contents": {
-        "triggers": 0,
-        "actions": 0,
-        "prompts": 22,
-        "bios": 0,
-        "knowledge": 0,
-        "entities": 0,
-        "config": 0
-      },
-      "curated": true,
-      "stats": {
-        "downloads": 410,
-        "endorsements": 6
       }
     },
     {
