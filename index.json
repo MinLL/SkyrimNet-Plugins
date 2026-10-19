@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-19T06:58:52.352Z",
-  "stats_as_of": "2026-10-19T06:58:52.186Z",
+  "generated_at": "2026-10-19T07:46:02.142Z",
+  "stats_as_of": "2026-10-19T07:46:02.038Z",
   "plugins": [
     {
       "id": "plugins/goodprovider/skyrimnet-sexlab",
@@ -217,7 +217,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 421,
+        "downloads": 423,
         "endorsements": 6
       }
     },
