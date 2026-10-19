@@ -1,12 +1,16 @@
 {# Ordered for prompt caching, as dialogue_response is: the system message and the event history
    repeat from one call to the next, so a provider can reuse them; everything that changes turn to
-   turn follows them. The system message is the one dialogue_response sends for the same actor, so
-   the player's dialogue, thoughts and NPC replies share one cached prefix. The two [ cache ]
-   breakpoints (the system message, the history's last event) take effect where use_caching is on #}
+   turn follows them. The system message opens with the profile dialogue_response sends for the same
+   actor, so the player's dialogue, thoughts and NPC replies share one cached prefix; this task's own
+   guidelines follow it. The three [ cache ] breakpoints (the profile, the guidelines, the history's
+   last event) take effect where use_caching is on. #}
 [ system ]
 [ cache ]
 You are {{ decnpc(npc.UUID).name }}, a {{ decnpc(npc.UUID).gender }} {{ decnpc(npc.UUID).race }} in Skyrim.
 {{ render_character_profile("stable", npc.UUID) }}
+[ end cache ]
+[ cache ]
+{{ render_subcomponent("guidelines", "transform") }}
 [ end cache ]
 [ end system ]
 
@@ -41,5 +45,8 @@ Keep it to 1-2 sentences.
 {% endif %}
 
 {{ render_subcomponent("user_final_instructions", "transform") }}
+{% if is_in_combat(npc.UUID) %}
+You are in combat. Keep it urgent and brief.
+{% endif %}
 Respond in character now.
 [ end user ]
