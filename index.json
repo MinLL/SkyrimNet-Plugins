@@ -1,8 +1,82 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-19T05:34:59.826Z",
-  "stats_as_of": "2026-10-19T05:31:34.706Z",
+  "generated_at": "2026-10-19T05:56:55.854Z",
+  "stats_as_of": "2026-10-19T05:56:55.731Z",
   "plugins": [
+    {
+      "id": "plugins/goodprovider/skyrimnet-sexlab",
+      "plugin_id": "goodprovider.skyrimnet-sexlab",
+      "type": "listing",
+      "title": "SkyrimNet SexLab",
+      "tagline": "Supports SexLab animations",
+      "author": "goodprovider",
+      "tags": [
+        "sex",
+        "nswf",
+        "sexlab",
+        "actions"
+      ],
+      "nsfw": true,
+      "icon": "heart",
+      "mods": [],
+      "first_published": "2026-09-13T21:55:00Z",
+      "last_updated": "2026-10-19T05:56:30Z",
+      "version": "0.36.2",
+      "history": [
+        {
+          "version": "0.36.2",
+          "commit": "dc540726ead42e595119e86bdb43ed199881abdb",
+          "date": "2026-10-19T05:56:30Z",
+          "changelog": "### Victim scene ending\r\n- With a victim, the stage before the last waits for the aggressor's orgasm (Multi-Orgasm Mini-game)\r\n- Everyone else then gets their chance to orgasm with them, and the scene moves to the last stage\r\n- New MCM setting **Longest wait for the aggressor** (Scene ending, default 120 s, 0 = no limit)\r\n- An aggressor's early orgasm no longer ends the scene\r\n\r\n### NPC-only ending hold\r\n- Without the player, the last stage waits half as long for the orgasm dialogue (15 s, not 30)\r\n\r\n### Actor Info view (untested)\r\n- New **Actor Info** view in the WebUI, replacing the Lover's Ledger view\r\n- With TT Lover's Ledger: encounter counts, favorite acts and lovers; click a lover to target them\r\n- Without it: SexLab's stats (sex count, last partner, sexuality, purity, skills)\r\n- Pick an actor's gender (male / female / intersex) for SexLab. OStim still uses the body\r\n- Changing the actor in the ControlPanel keeps the view open and shows the new actor\r\n\r\n### Futa / intersex (untested)\r\n- SexLab P+: a female with a The New Gentleman penis now counts as futa when picking animations\r\n- Intersex actors can fill male or female positions\r\n\r\n### OStim TargetMenu (untested)\r\n- New **OStim** option in the TargetMenu when OStimNet is installed; OStim plays the scene\r\n- Pick who joins, the victim, the method and the intent as usual\r\n\r\n### Aid panel potions (untested)\r\n- The Aid panel remembers what you picked last time\r\n- Potions can be **drunk**\r\n- An NPC offered one (to drink or on the lips) can accept or refuse; a refusal can be punished\r\n- Stamina potions offer drink, lips, ass, pussy and penis\r\n- A potion on ass, pussy, lips or penis during a matching act is shared by both, with narration\r\n- An Aid spell on an undamaged part or someone at full health still shows its effect and is narrated\r\n\r\n### Punish panel (untested)\r\n- A custom reason no longer punishes straight away: OK sets the reason, and Punish starts it\r- An NPC's current mini-game beh"
+        },
+        {
+          "version": "0.36.1",
+          "commit": "4a437bc93e3083b03b414ad1435020a140c32c29",
+          "date": "2026-10-17T15:56:47Z",
+          "changelog": "### AnimDB bug (untested)\n- Fixed: the animation database stayed empty on 0.36.0 (every rebuild \"finished\" with 0 animations). Rebuild it once after updating\n- A failed animation database build now says so instead of \"ready\"\n\n### Dead Actor bug (untested)\n- Fixed: necro animations with a corpse (e.g. FunnyBizness) ended right after starting on SexLab 1.6x"
+        },
+        {
+          "version": "0.36.0",
+          "commit": "1c494bbe67a2169aa802d6df07fb8fac3557db66",
+          "date": "2026-10-17T05:37:42Z",
+          "changelog": "### Injury Engine\n- Injury Engine (optional): Punish wounds a body part, Aid heals it\n- Injury Engine: torture bar per body part; Aid opens on the most hurt part\n- Injury Engine: Punish spells are Flames, Frostbite and Sparks; Hits box for several hits\n- Injury Engine sexual body parts stay off until you agree to enable them\n\n### SexLab P+ (untested)\n- SexLab P+ supported: database, scene endings, pause and stage keys all work \n\n### Force/Punish/Ask/Order \n- Force is now Ask / Order / Punish (Num .): ask or order a change, punish a refusal\n- Punish anyone in any scene, for a reason, by slap, pinch, punch, pull or a spell\n- The punished one answers; the AI decides how they react\n- NPCs can punish too (new Scene Punish action)\n\n### Aid\n- Aid moves to Num Enter; pick who casts and on whom\n- Aid healing spells keep healing up to the points you choose\n\n### NPC strategy \n- Strategies renamed (deny self, deny all, focused, ...) and open to every role\n- Together, Greedy, Forced orgasm, Accept force, Hold back, Cum quick and mental break removed\n- NPCs pick strategies from what was said and what just happened\n- NPCs sense enjoyment as closeness to orgasm, not as arousal\n\n### Disable OrgasmEngine \n- New setting to switch orgasms back to SexLab / SLSO (Enjoyment)\n- Fixed SLSO edging hiding orgasms from other mods\n\n### SLO Arouse \n- SLO Aroused NG: every orgasm now lowers arousal (optional)\n\n### Bug Fixes \n- Fixed actors staying locked (\"Name (locked)\") after loading a save\n- Changing animation mid-scene restarts at stage 1\n\n### WebUI \n- Animation favorites in Scene Creator (★ column and filter)\n- Description Editor: Start button plays the picked animation at once\n- Scene Creator: Start greyed until an animation is selected\n- Fixed Scene Creator opening empty for NPC-started scenes\n- New Clean Cum option and NPC action\n- Bondage panel: Start now changes devices missing from the bundled list\n- Old pre-Beta-25 action and prompt copies removed"
+        },
+        {
+          "version": "0.35.2",
+          "commit": "a7b4aa19c8cfa5b1b03b4b8c9d3443858db3802e",
+          "date": "2026-10-09T16:15:02Z",
+          "changelog": "- New Num * key: AI auto-plays you, or take control of an NPC's scene\r\n- Auto play stays on across scenes and saves until you press Num * again\r\n- Decision model (e.g. Jev) now picks NPC mini-game strategies\r\n- New Orgasm mode pulldown (also in MCM): Together or Mini-game\r\n- Mini-game pacing: no orgasms in the first half; Mutual ends together\r\n- AI-only scenes: last orgasm at second-to-last stage, then a clean end\r\n- Fixed scenes stuck on their last stage forever\r\n- New Aid (Num 0) and Force (Num .) panels; NPCs can use them too\r\n- Aid and Force can target a body part; Force can use weak attack spells\r\n- Aid and Force spells now show their glow, effects and sounds\r\n- Arouse/Calm no longer makes anyone speak\r\n- Hold Shift to arouse/calm the other actor without changing focus\r\n- Arousal never falls below enjoyment during scenes (optional)\r\n- Arousal, cooldowns and edging no longer advance while paused or in a menu\r\n- Animations with sex acts tagged \"sexual\"; affection/platonic skip them\r\n- Scene Creator lists only free actors; blocked ones greyed with reason\r\n- Fixed Scene Creator not letting you add a nearby actor again\r\n- Settings warns on animation DB mismatch; Rebuild DB button added\r\n- Fixed hug narration naming the wrong actor\r\n- NPCs can't hug/kiss/start scenes with actors already in a scene\r\n- Stage keys ignored while SexLab is switching stages\r\n- Menus open much faster; TargetMenu no longer flickers\r\n- Description Editor: actor toggles are per-scene; new Load button\r\n- Leash panel moved to SkyrimNet_Leashed; update it with this version"
+        },
+        {
+          "version": "0.35.1",
+          "commit": "113342611154bac13da488a584ba6e792db03b71",
+          "date": "2026-10-04T23:45:57Z",
+          "changelog": "- **Position hotkeys**: new **PgUp / PgDn** scene keys swap the actors' roles forward / back (rebindable in the Plugin settings). The hotkey overlay grows a column to show them.\r\n- **Narrate position changes**: new option (on by default) narrates the new stage description with the actors in their new roles.\r\n- **Description Editor**: **continue scene** now closes the WebUI after sending its narration.\r\n- **TargetMenu cleanup**: the Stop / Stage / Position / Animation entries are gone from the in-scene Scene menu; the Description Editor and the new position hotkeys cover them. If you install by hand (not a mod manager), delete the four old files `0100_stop`, `0200_stage`, `0300_position` and `0400_animation` from the TargetMenu Scene folder.\r\n- **Deny / allow orgasm**: the Transform option is gone. Denying and allowing are plain events again: \"Bob forbids Nina from orgasming without permission.\" / \"Bob permits Nina to orgasm.\"\r\n- **Hug fix**: a single hug no longer leaves you unable to attack with your weapon (e.g. a whip) afterward. Both people now put their weapons away before hugging.\r\n- **Newer Skyrim support**: the SKSE plugin is rebuilt for Skyrim 1.7.x / 1.7.99 and works with SkyrimNet beta26 rc4.\r\n- **Camera**: locking the free camera (Num 3) mid-scene returns the normal third-person camera with mouse look enabled, and when a scene ends the camera goes back to the mode it was in when the scene began (first person stays first person).\r\n- **Mouse mini-game**: right mouse now arouses and left mouse calms during mini-game scenes by default. Turn **Allow right mouse to arouse and left mouse to calm** off in the Mini-game settings to go back to keys only."
+        },
+        {
+          "version": "0.35.0",
+          "commit": "9ec47a3c5978f4603d4301819ad8895aa6f9a23f",
+          "date": "2026-10-04T20:09:05Z",
+          "changelog": "- **Prisma Hotkey**: new Prisma hotkey overlay with improved ability to animation and control a scene\n- **Scene hotkeys**: when a scene is active the user will be able to effect it using the num lock hotkeys. You can change this mapping in the Plugin seetings. \n    - **hotkey overlay**: there is an optional hotkey overlay which show the current hotkey mapping during a scene\n    - **NPCs can play the arousal mini-game** (when the mini-game is on): they can arouse or calm someone, and an aggressor can allow or deny orgasm. Narration now says how close someone was (\"Though aroused…\", \"Although on the edge…\").\n- **orgasm minigame**: there is now an optional mini-game that allows the user to delay or encourage other actors from orgasming.\n- **Style sets animation speed**: gentle, normal and forceful play slower or faster. Change it with slower / faster, the WebUI style control, or let an NPC change it (new LLM action). The old style hotkey is gone.\n- **Better scene endings**: enjoyment rises more slowly, each stage change gives a small boost, and pausing pauses enjoyment. The lead needs 1 orgasm if male or 1-2 if female (adjustable **Scene ending** settings), then the scene moves to the last stage and waits there until the orgasm dialogue has played. Before the last stage, anyone who hasn't come gets one chance based on how close they are, and their climax is narrated together with the spoken reaction.\n- **Moans follow speaking modifiers**: actors moan only when pleasure or pain is set; gagged or kissing actors stay quiet.\n- **Right animations for the TargetMenu choice**: **cuddle** is now **affection** (romantic, can kiss), and the new **platonic** option is for friends and family. **Sex** picks consensual animations and **rapes** picks anything but affection, aggressive ones first. NPC cuddle / comfort actions no longer start sex animations.\n- **Tag synonyms**: searching by tag also finds its synonyms (\"doggy\" finds \"doggystyle\"), with a **synonyms** pulldown (broad, s"
+        }
+      ],
+      "external_url": "https://github.com/GoodProvider/SkyrimNet_SexLab/releases/latest",
+      "languages": [
+        "en"
+      ],
+      "language": "en",
+      "image": {
+        "file": "cover.png",
+        "sha": "cf485d02b0b93285f188c741f363cf9dc15f6899",
+        "commit": "1c494bbe67a2169aa802d6df07fb8fac3557db66",
+        "width": 768,
+        "height": 432
+      },
+      "stats": {
+        "downloads": 135,
+        "endorsements": 1
+      }
+    },
     {
       "id": "plugins/goodprovider/injury-engine",
       "plugin_id": "goodprovider.injury-engine",
@@ -62,7 +136,7 @@
         "height": 768
       },
       "stats": {
-        "downloads": 24,
+        "downloads": 25,
         "endorsements": 0
       }
     },
@@ -143,7 +217,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 418,
+        "downloads": 420,
         "endorsements": 6
       }
     },
@@ -500,74 +574,6 @@
       "stats": {
         "downloads": 20,
         "endorsements": 0
-      }
-    },
-    {
-      "id": "plugins/goodprovider/skyrimnet-sexlab",
-      "plugin_id": "goodprovider.skyrimnet-sexlab",
-      "type": "listing",
-      "title": "SkyrimNet SexLab",
-      "tagline": "Supports SexLab animations",
-      "author": "goodprovider",
-      "tags": [
-        "sex",
-        "nswf",
-        "sexlab",
-        "actions"
-      ],
-      "nsfw": true,
-      "icon": "heart",
-      "mods": [],
-      "first_published": "2026-09-13T21:55:00Z",
-      "last_updated": "2026-10-17T15:56:47Z",
-      "version": "0.36.1",
-      "history": [
-        {
-          "version": "0.36.1",
-          "commit": "4a437bc93e3083b03b414ad1435020a140c32c29",
-          "date": "2026-10-17T15:56:47Z",
-          "changelog": "### AnimDB bug (untested)\n- Fixed: the animation database stayed empty on 0.36.0 (every rebuild \"finished\" with 0 animations). Rebuild it once after updating\n- A failed animation database build now says so instead of \"ready\"\n\n### Dead Actor bug (untested)\n- Fixed: necro animations with a corpse (e.g. FunnyBizness) ended right after starting on SexLab 1.6x"
-        },
-        {
-          "version": "0.36.0",
-          "commit": "1c494bbe67a2169aa802d6df07fb8fac3557db66",
-          "date": "2026-10-17T05:37:42Z",
-          "changelog": "### Injury Engine\n- Injury Engine (optional): Punish wounds a body part, Aid heals it\n- Injury Engine: torture bar per body part; Aid opens on the most hurt part\n- Injury Engine: Punish spells are Flames, Frostbite and Sparks; Hits box for several hits\n- Injury Engine sexual body parts stay off until you agree to enable them\n\n### SexLab P+ (untested)\n- SexLab P+ supported: database, scene endings, pause and stage keys all work \n\n### Force/Punish/Ask/Order \n- Force is now Ask / Order / Punish (Num .): ask or order a change, punish a refusal\n- Punish anyone in any scene, for a reason, by slap, pinch, punch, pull or a spell\n- The punished one answers; the AI decides how they react\n- NPCs can punish too (new Scene Punish action)\n\n### Aid\n- Aid moves to Num Enter; pick who casts and on whom\n- Aid healing spells keep healing up to the points you choose\n\n### NPC strategy \n- Strategies renamed (deny self, deny all, focused, ...) and open to every role\n- Together, Greedy, Forced orgasm, Accept force, Hold back, Cum quick and mental break removed\n- NPCs pick strategies from what was said and what just happened\n- NPCs sense enjoyment as closeness to orgasm, not as arousal\n\n### Disable OrgasmEngine \n- New setting to switch orgasms back to SexLab / SLSO (Enjoyment)\n- Fixed SLSO edging hiding orgasms from other mods\n\n### SLO Arouse \n- SLO Aroused NG: every orgasm now lowers arousal (optional)\n\n### Bug Fixes \n- Fixed actors staying locked (\"Name (locked)\") after loading a save\n- Changing animation mid-scene restarts at stage 1\n\n### WebUI \n- Animation favorites in Scene Creator (★ column and filter)\n- Description Editor: Start button plays the picked animation at once\n- Scene Creator: Start greyed until an animation is selected\n- Fixed Scene Creator opening empty for NPC-started scenes\n- New Clean Cum option and NPC action\n- Bondage panel: Start now changes devices missing from the bundled list\n- Old pre-Beta-25 action and prompt copies removed"
-        },
-        {
-          "version": "0.35.2",
-          "commit": "a7b4aa19c8cfa5b1b03b4b8c9d3443858db3802e",
-          "date": "2026-10-09T16:15:02Z",
-          "changelog": "- New Num * key: AI auto-plays you, or take control of an NPC's scene\r\n- Auto play stays on across scenes and saves until you press Num * again\r\n- Decision model (e.g. Jev) now picks NPC mini-game strategies\r\n- New Orgasm mode pulldown (also in MCM): Together or Mini-game\r\n- Mini-game pacing: no orgasms in the first half; Mutual ends together\r\n- AI-only scenes: last orgasm at second-to-last stage, then a clean end\r\n- Fixed scenes stuck on their last stage forever\r\n- New Aid (Num 0) and Force (Num .) panels; NPCs can use them too\r\n- Aid and Force can target a body part; Force can use weak attack spells\r\n- Aid and Force spells now show their glow, effects and sounds\r\n- Arouse/Calm no longer makes anyone speak\r\n- Hold Shift to arouse/calm the other actor without changing focus\r\n- Arousal never falls below enjoyment during scenes (optional)\r\n- Arousal, cooldowns and edging no longer advance while paused or in a menu\r\n- Animations with sex acts tagged \"sexual\"; affection/platonic skip them\r\n- Scene Creator lists only free actors; blocked ones greyed with reason\r\n- Fixed Scene Creator not letting you add a nearby actor again\r\n- Settings warns on animation DB mismatch; Rebuild DB button added\r\n- Fixed hug narration naming the wrong actor\r\n- NPCs can't hug/kiss/start scenes with actors already in a scene\r\n- Stage keys ignored while SexLab is switching stages\r\n- Menus open much faster; TargetMenu no longer flickers\r\n- Description Editor: actor toggles are per-scene; new Load button\r\n- Leash panel moved to SkyrimNet_Leashed; update it with this version"
-        },
-        {
-          "version": "0.35.1",
-          "commit": "113342611154bac13da488a584ba6e792db03b71",
-          "date": "2026-10-04T23:45:57Z",
-          "changelog": "- **Position hotkeys**: new **PgUp / PgDn** scene keys swap the actors' roles forward / back (rebindable in the Plugin settings). The hotkey overlay grows a column to show them.\r\n- **Narrate position changes**: new option (on by default) narrates the new stage description with the actors in their new roles.\r\n- **Description Editor**: **continue scene** now closes the WebUI after sending its narration.\r\n- **TargetMenu cleanup**: the Stop / Stage / Position / Animation entries are gone from the in-scene Scene menu; the Description Editor and the new position hotkeys cover them. If you install by hand (not a mod manager), delete the four old files `0100_stop`, `0200_stage`, `0300_position` and `0400_animation` from the TargetMenu Scene folder.\r\n- **Deny / allow orgasm**: the Transform option is gone. Denying and allowing are plain events again: \"Bob forbids Nina from orgasming without permission.\" / \"Bob permits Nina to orgasm.\"\r\n- **Hug fix**: a single hug no longer leaves you unable to attack with your weapon (e.g. a whip) afterward. Both people now put their weapons away before hugging.\r\n- **Newer Skyrim support**: the SKSE plugin is rebuilt for Skyrim 1.7.x / 1.7.99 and works with SkyrimNet beta26 rc4.\r\n- **Camera**: locking the free camera (Num 3) mid-scene returns the normal third-person camera with mouse look enabled, and when a scene ends the camera goes back to the mode it was in when the scene began (first person stays first person).\r\n- **Mouse mini-game**: right mouse now arouses and left mouse calms during mini-game scenes by default. Turn **Allow right mouse to arouse and left mouse to calm** off in the Mini-game settings to go back to keys only."
-        },
-        {
-          "version": "0.35.0",
-          "commit": "9ec47a3c5978f4603d4301819ad8895aa6f9a23f",
-          "date": "2026-10-04T20:09:05Z",
-          "changelog": "- **Prisma Hotkey**: new Prisma hotkey overlay with improved ability to animation and control a scene\n- **Scene hotkeys**: when a scene is active the user will be able to effect it using the num lock hotkeys. You can change this mapping in the Plugin seetings. \n    - **hotkey overlay**: there is an optional hotkey overlay which show the current hotkey mapping during a scene\n    - **NPCs can play the arousal mini-game** (when the mini-game is on): they can arouse or calm someone, and an aggressor can allow or deny orgasm. Narration now says how close someone was (\"Though aroused…\", \"Although on the edge…\").\n- **orgasm minigame**: there is now an optional mini-game that allows the user to delay or encourage other actors from orgasming.\n- **Style sets animation speed**: gentle, normal and forceful play slower or faster. Change it with slower / faster, the WebUI style control, or let an NPC change it (new LLM action). The old style hotkey is gone.\n- **Better scene endings**: enjoyment rises more slowly, each stage change gives a small boost, and pausing pauses enjoyment. The lead needs 1 orgasm if male or 1-2 if female (adjustable **Scene ending** settings), then the scene moves to the last stage and waits there until the orgasm dialogue has played. Before the last stage, anyone who hasn't come gets one chance based on how close they are, and their climax is narrated together with the spoken reaction.\n- **Moans follow speaking modifiers**: actors moan only when pleasure or pain is set; gagged or kissing actors stay quiet.\n- **Right animations for the TargetMenu choice**: **cuddle** is now **affection** (romantic, can kiss), and the new **platonic** option is for friends and family. **Sex** picks consensual animations and **rapes** picks anything but affection, aggressive ones first. NPC cuddle / comfort actions no longer start sex animations.\n- **Tag synonyms**: searching by tag also finds its synonyms (\"doggy\" finds \"doggystyle\"), with a **synonyms** pulldown (broad, s"
-        }
-      ],
-      "external_url": "https://github.com/GoodProvider/SkyrimNet_SexLab/releases/latest",
-      "languages": [
-        "en"
-      ],
-      "language": "en",
-      "image": {
-        "file": "cover.png",
-        "sha": "cf485d02b0b93285f188c741f363cf9dc15f6899",
-        "commit": "1c494bbe67a2169aa802d6df07fb8fac3557db66",
-        "width": 768,
-        "height": 432
-      },
-      "stats": {
-        "downloads": 135,
-        "endorsements": 1
       }
     },
     {
@@ -1453,7 +1459,7 @@
         "height": 1008
       },
       "stats": {
-        "downloads": 87,
+        "downloads": 88,
         "endorsements": 2
       }
     },
@@ -2504,7 +2510,7 @@
         "height": 893
       },
       "stats": {
-        "downloads": 29,
+        "downloads": 30,
         "endorsements": 0
       }
     },
@@ -2741,7 +2747,7 @@
       ],
       "external_url": "https://github.com/naitro2010/SkyrimNet_UDNG/releases/tag/alpha12",
       "stats": {
-        "downloads": 100,
+        "downloads": 101,
         "endorsements": 3
       }
     },
