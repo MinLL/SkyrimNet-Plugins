@@ -20,6 +20,6 @@
   ],
   "image": "cover.jpg",
   "external_url": "https://github.com/GoodProvider/Injury_Engine/releases/latest",
-  "version": "0.1.2",
-  "changelog": "### Fixes\r\n- A buff wearing off (Courage, Fortify Health and the like) no longer counts as a fall or a wound.\r\n- Walking down steps or slopes can no longer be taken for a hard landing.\r\n- Loading a save no longer leaves old torture scenes, heal sessions or truces running.\r\n- Loading a save during an NPC's torture action no longer stops later lashes from counting.\r\n- Punches and weapon hits are judged by the actual swing, not by what is equipped.\r\n- A recent whip lash no longer hides other damage that follows it.\r\n- Torture narration no longer gets cancelled when you look away for a moment.\r\n- Heal start narration is no longer lost while SkyrimNet is still replying.\r\n- The overlay no longer shows an older state after quick updates.\r\n\r\n### Fighting\r\n- An NPC can keep several truces at once, each with its own end time.\r\n- A late answer to an expired truce request is ignored.\r\n\r\n### Wounds\r\n- A mistake in an injury file now skips only that entry instead of the whole file."
+  "version": "0.1.3",
+  "changelog": "### Wounds\r\n- Fully healed characters are described as healed, so followers stop talking about old wounds.\r\n\r\n### Fixes\r\n- Courage or Fortify Health refreshing or wearing off no longer gives a sudden severe wound.\r\n- Light hits (weak weapons, burning spells) now add up to a wound, even with a health buff active."
 }
