@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-20T19:20:03.251Z",
-  "stats_as_of": "2026-10-20T19:20:03.130Z",
+  "generated_at": "2026-10-20T19:27:44.759Z",
+  "stats_as_of": "2026-10-20T19:27:44.597Z",
   "plugins": [
     {
       "id": "plugins/urtubesrclogged/adventurers-guild",
@@ -468,7 +468,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 532,
+        "downloads": 533,
         "endorsements": 9
       }
     },
@@ -3286,7 +3286,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1027,
+        "downloads": 1028,
         "endorsements": 2
       }
     },
@@ -3331,7 +3331,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 506,
+        "downloads": 507,
         "endorsements": 0
       }
     },
@@ -3421,7 +3421,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2195,
+        "downloads": 2196,
         "endorsements": 2
       }
     },
@@ -4411,7 +4411,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 913,
+        "downloads": 914,
         "endorsements": 0
       }
     },
@@ -7801,7 +7801,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1216,
+        "downloads": 1217,
         "endorsements": 2
       }
     },
@@ -8836,7 +8836,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1293,
+        "downloads": 1294,
         "endorsements": 2
       }
     },
@@ -9106,7 +9106,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1069,
+        "downloads": 1070,
         "endorsements": 2
       }
     },
@@ -9646,7 +9646,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 782,
+        "downloads": 783,
         "endorsements": 0
       }
     },
@@ -9691,7 +9691,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 457,
+        "downloads": 458,
         "endorsements": 0
       }
     },
@@ -12256,7 +12256,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1591,
+        "downloads": 1592,
         "endorsements": 2
       }
     },
