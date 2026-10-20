@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-20T20:31:45.152Z",
-  "stats_as_of": "2026-10-20T20:31:45.028Z",
+  "generated_at": "2026-10-20T21:29:00.154Z",
+  "stats_as_of": "2026-10-20T21:28:59.990Z",
   "plugins": [
     {
       "id": "plugins/urtubesrclogged/adventurers-guild",
@@ -110,7 +110,7 @@
         "height": 720
       },
       "stats": {
-        "downloads": 6,
+        "downloads": 7,
         "endorsements": 0
       }
     },
@@ -468,7 +468,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 536,
+        "downloads": 541,
         "endorsements": 9
       }
     },
@@ -653,7 +653,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 177,
+        "downloads": 178,
         "endorsements": 3
       }
     },
@@ -715,8 +715,8 @@
         "height": 1152
       },
       "stats": {
-        "downloads": 162,
-        "endorsements": 4
+        "downloads": 163,
+        "endorsements": 5
       }
     },
     {
@@ -816,7 +816,7 @@
         "height": 1080
       },
       "stats": {
-        "downloads": 40,
+        "downloads": 41,
         "endorsements": 0
       }
     },
@@ -1758,7 +1758,7 @@
         "height": 911
       },
       "stats": {
-        "downloads": 34,
+        "downloads": 35,
         "endorsements": 0
       }
     },
@@ -2720,7 +2720,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 309,
+        "downloads": 310,
         "endorsements": 0
       }
     },
@@ -2928,7 +2928,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 194,
+        "downloads": 195,
         "endorsements": 0
       }
     },
@@ -3286,7 +3286,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1029,
+        "downloads": 1030,
         "endorsements": 2
       }
     },
@@ -3331,7 +3331,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 507,
+        "downloads": 508,
         "endorsements": 0
       }
     },
@@ -3376,7 +3376,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 50,
+        "downloads": 51,
         "endorsements": 0
       }
     },
@@ -3421,7 +3421,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2202,
+        "downloads": 2205,
         "endorsements": 2
       }
     },
@@ -3646,7 +3646,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1157,
+        "downloads": 1158,
         "endorsements": 0
       }
     },
@@ -4411,7 +4411,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 916,
+        "downloads": 918,
         "endorsements": 0
       }
     },
@@ -4771,7 +4771,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 828,
+        "downloads": 830,
         "endorsements": 1
       }
     },
@@ -5131,7 +5131,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1054,
+        "downloads": 1057,
         "endorsements": 2
       }
     },
@@ -5176,7 +5176,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 240,
+        "downloads": 241,
         "endorsements": 0
       }
     },
@@ -5356,7 +5356,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 656,
+        "downloads": 661,
         "endorsements": 0
       }
     },
@@ -5446,7 +5446,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 190,
+        "downloads": 192,
         "endorsements": 0
       }
     },
@@ -5761,7 +5761,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 187,
+        "downloads": 188,
         "endorsements": 0
       }
     },
@@ -6166,7 +6166,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 364,
+        "downloads": 365,
         "endorsements": 0
       }
     },
@@ -7441,7 +7441,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 166,
+        "downloads": 168,
         "endorsements": 0
       }
     },
@@ -7576,7 +7576,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 543,
+        "downloads": 545,
         "endorsements": 0
       }
     },
@@ -7711,7 +7711,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 916,
+        "downloads": 924,
         "endorsements": 0
       }
     },
@@ -7801,7 +7801,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1221,
+        "downloads": 1223,
         "endorsements": 2
       }
     },
@@ -8206,7 +8206,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 271,
+        "downloads": 273,
         "endorsements": 0
       }
     },
@@ -8836,7 +8836,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1298,
+        "downloads": 1304,
         "endorsements": 2
       }
     },
@@ -9106,7 +9106,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1072,
+        "downloads": 1074,
         "endorsements": 2
       }
     },
@@ -9421,7 +9421,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 121,
+        "downloads": 122,
         "endorsements": 0
       }
     },
@@ -9511,7 +9511,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 278,
+        "downloads": 280,
         "endorsements": 0
       }
     },
@@ -9646,7 +9646,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 785,
+        "downloads": 786,
         "endorsements": 0
       }
     },
@@ -9691,7 +9691,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 460,
+        "downloads": 461,
         "endorsements": 0
       }
     },
@@ -10411,7 +10411,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 257,
+        "downloads": 259,
         "endorsements": 0
       }
     },
@@ -10456,7 +10456,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 658,
+        "downloads": 660,
         "endorsements": 0
       }
     },
@@ -11446,7 +11446,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 415,
+        "downloads": 416,
         "endorsements": 0
       }
     },
@@ -11716,7 +11716,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 564,
+        "downloads": 566,
         "endorsements": 2
       }
     },
@@ -11851,7 +11851,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 135,
+        "downloads": 136,
         "endorsements": 0
       }
     },
@@ -12256,7 +12256,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1596,
+        "downloads": 1599,
         "endorsements": 2
       }
     },
@@ -12526,7 +12526,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 363,
+        "downloads": 364,
         "endorsements": 0
       }
     },
