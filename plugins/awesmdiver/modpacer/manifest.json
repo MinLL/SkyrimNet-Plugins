@@ -16,6 +16,6 @@
   "mods": [],
   "image": "cover.png",
   "external_url": "https://github.com/awesmdiver/modpacer/releases/latest",
-  "version": "1.1.6",
-  "changelog": "### What's New\n\n- **Exclude a Mod:** Click Exclude in Mods not installed to stop listing and downloading a mod, and use Settings to view Excluded mods or click Include again.\n- **Better Mod Organizer 2 Detection:** ModPacer now judges each add-on by its own files, so similar-looking folders no longer count as installed and old versions stop showing false updates."
+  "version": "1.1.7",
+  "changelog": "### What's New\n\n- **Hand-Updated Add-ons:** Add-ons you manually update in Mod Organizer 2 now show their true version and no longer prompt for unneeded updates.\n- **Better Version Checks:** ModPacer now correctly compares four-part and beta version numbers, so real updates are no longer missed.\n- **Clearer Logs:** The update log now tracks every download from start to finish, recording the exact version found and where it came from."
 }
