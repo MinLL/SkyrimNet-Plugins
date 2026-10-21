@@ -1,8 +1,47 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-21T15:31:25.161Z",
-  "stats_as_of": "2026-10-21T15:29:32.989Z",
+  "generated_at": "2026-10-21T16:18:16.173Z",
+  "stats_as_of": "2026-10-21T16:18:16.036Z",
   "plugins": [
+    {
+      "id": "plugins/sorcerers-apprentice/callr-to-action",
+      "plugin_id": "sorcerers-apprentice.callr-to-action",
+      "type": "listing",
+      "title": "Callr to Action",
+      "tagline": "Healing your followers increases your relationship with them and they thank you for it.",
+      "author": "sorcerers-apprentice",
+      "tags": [],
+      "nsfw": false,
+      "icon": "listing",
+      "mods": [],
+      "first_published": "2026-10-21T15:34:45Z",
+      "last_updated": "2026-10-21T15:34:45Z",
+      "version": "2.0.0",
+      "history": [
+        {
+          "version": "2.0.0",
+          "commit": "e3caf6dccad142d0354522b83966769c2913d40d",
+          "date": "2026-10-21T15:34:45Z",
+          "changelog": "Original release is for beta 24 and older latest for beta 25+ due to the differrrring folder trees."
+        }
+      ],
+      "external_url": "https://www.nexusmods.com/skyrimspecialedition/mods/190072?tab=descriptionr",
+      "languages": [
+        "en"
+      ],
+      "language": "en",
+      "image": {
+        "file": "cover.jpg",
+        "sha": "67679aff3515caf393b33f6e477c5eebd6dae50a",
+        "commit": "e3caf6dccad142d0354522b83966769c2913d40d",
+        "width": 1280,
+        "height": 720
+      },
+      "stats": {
+        "downloads": 0,
+        "endorsements": 0
+      }
+    },
     {
       "id": "plugins/awesmdiver/modpacer",
       "plugin_id": "awesmdiver.modpacer",
@@ -168,7 +207,7 @@
         "height": 432
       },
       "stats": {
-        "downloads": 171,
+        "downloads": 172,
         "endorsements": 1
       }
     },
@@ -237,7 +276,7 @@
         "height": 768
       },
       "stats": {
-        "downloads": 54,
+        "downloads": 55,
         "endorsements": 0
       }
     },
@@ -410,7 +449,7 @@
         "height": 720
       },
       "stats": {
-        "downloads": 30,
+        "downloads": 31,
         "endorsements": 0
       }
     },
@@ -563,7 +602,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 583,
+        "downloads": 584,
         "endorsements": 9
       }
     },
@@ -810,7 +849,7 @@
         "height": 1152
       },
       "stats": {
-        "downloads": 170,
+        "downloads": 171,
         "endorsements": 5
       }
     },
@@ -2681,7 +2720,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 264,
+        "downloads": 265,
         "endorsements": 1
       }
     },
@@ -3452,7 +3491,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2263,
+        "downloads": 2267,
         "endorsements": 2
       }
     },
@@ -5792,7 +5831,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 194,
+        "downloads": 195,
         "endorsements": 0
       }
     },
@@ -10532,7 +10571,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 137,
+        "downloads": 138,
         "endorsements": 0
       }
     },
@@ -11477,7 +11516,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 422,
+        "downloads": 423,
         "endorsements": 0
       }
     },
@@ -11567,7 +11606,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 147,
+        "downloads": 148,
         "endorsements": 0
       }
     },
