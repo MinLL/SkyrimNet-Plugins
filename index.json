@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-21T05:30:44.971Z",
-  "stats_as_of": "2026-10-21T05:30:44.826Z",
+  "generated_at": "2026-10-21T06:02:58.866Z",
+  "stats_as_of": "2026-10-21T06:02:58.760Z",
   "plugins": [
     {
       "id": "plugins/goodprovider/skyrimnet-sexlab",
@@ -21,9 +21,15 @@
       "icon": "heart",
       "mods": [],
       "first_published": "2026-09-13T21:55:00Z",
-      "last_updated": "2026-10-21T05:15:16Z",
-      "version": "0.36.4",
+      "last_updated": "2026-10-21T06:02:37Z",
+      "version": "0.36.5",
       "history": [
+        {
+          "version": "0.36.5",
+          "commit": "b86ea36835e7df317a9b5a55af48a848930efa81",
+          "date": "2026-10-21T06:02:37Z",
+          "changelog": "### WebUI\r\n- Fixed a lock-up when a sex request arrived with the SkyrimNet dashboard open\r\n- The dashboard (or any other focused menu) now closes before the SexLab dialogue opens"
+        },
         {
           "version": "0.36.4",
           "commit": "e9bf1ab9e197db51ad88626293c359845a37770b",
@@ -225,7 +231,7 @@
         "height": 768
       },
       "stats": {
-        "downloads": 44,
+        "downloads": 45,
         "endorsements": 0
       }
     },
@@ -798,7 +804,7 @@
         "height": 1152
       },
       "stats": {
-        "downloads": 165,
+        "downloads": 166,
         "endorsements": 5
       }
     },
@@ -947,7 +953,7 @@
         "height": 720
       },
       "stats": {
-        "downloads": 74,
+        "downloads": 75,
         "endorsements": 0
       }
     },
@@ -1150,7 +1156,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 68,
+        "downloads": 69,
         "endorsements": 1
       }
     },
@@ -1293,7 +1299,7 @@
         "height": 864
       },
       "stats": {
-        "downloads": 234,
+        "downloads": 236,
         "endorsements": 6
       }
     },
@@ -1374,7 +1380,7 @@
         "height": 1008
       },
       "stats": {
-        "downloads": 26,
+        "downloads": 27,
         "endorsements": 0
       }
     },
@@ -1530,7 +1536,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 153,
+        "downloads": 154,
         "endorsements": 5
       }
     },
@@ -2441,7 +2447,7 @@
         "height": 1080
       },
       "stats": {
-        "downloads": 129,
+        "downloads": 130,
         "endorsements": 1
       }
     },
@@ -2594,7 +2600,7 @@
         "height": 893
       },
       "stats": {
-        "downloads": 32,
+        "downloads": 33,
         "endorsements": 0
       }
     },
@@ -2831,7 +2837,7 @@
       ],
       "external_url": "https://github.com/naitro2010/SkyrimNet_UDNG/releases/tag/alpha12",
       "stats": {
-        "downloads": 103,
+        "downloads": 104,
         "endorsements": 3
       }
     },
@@ -3092,7 +3098,7 @@
         "height": 1152
       },
       "stats": {
-        "downloads": 79,
+        "downloads": 80,
         "endorsements": 2
       }
     },
@@ -3440,7 +3446,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2250,
+        "downloads": 2252,
         "endorsements": 2
       }
     },
@@ -3665,7 +3671,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1168,
+        "downloads": 1169,
         "endorsements": 0
       }
     },
@@ -4790,7 +4796,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 838,
+        "downloads": 839,
         "endorsements": 1
       }
     },
@@ -5330,7 +5336,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 480,
+        "downloads": 481,
         "endorsements": 0
       }
     },
@@ -8855,7 +8861,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1321,
+        "downloads": 1322,
         "endorsements": 2
       }
     },
@@ -9665,7 +9671,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 797,
+        "downloads": 798,
         "endorsements": 0
       }
     },
@@ -10430,7 +10436,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 264,
+        "downloads": 265,
         "endorsements": 0
       }
     },
@@ -11780,7 +11786,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 146,
+        "downloads": 147,
         "endorsements": 0
       }
     },
@@ -12275,7 +12281,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1624,
+        "downloads": 1625,
         "endorsements": 2
       }
     },
