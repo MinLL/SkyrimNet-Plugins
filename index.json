@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-21T04:44:33.630Z",
-  "stats_as_of": "2026-10-21T04:44:33.537Z",
+  "generated_at": "2026-10-21T04:55:50.515Z",
+  "stats_as_of": "2026-10-21T04:52:15.330Z",
   "plugins": [
     {
       "id": "plugins/awesmdiver/modpacer",
@@ -20,13 +20,13 @@
       "icon": "wrench",
       "mods": [],
       "first_published": "2026-10-06T04:07:35Z",
-      "last_updated": "2026-10-21T04:44:08Z",
+      "last_updated": "2026-10-21T04:55:20Z",
       "version": "1.1.6",
       "history": [
         {
           "version": "1.1.6",
-          "commit": "c590202498f58ce5e010fd56733e93ea3c7f688c",
-          "date": "2026-10-21T04:44:08Z",
+          "commit": "49e8226a64561f6efb26f2d2339523af27b29712",
+          "date": "2026-10-21T04:55:20Z",
           "changelog": "### What's New\n\n- **Exclude a Mod:** Click Exclude in Mods not installed to stop listing and downloading a mod, and use Settings to view Excluded mods or click Include again.\n- **Better Mod Organizer 2 Detection:** ModPacer now judges each add-on by its own files, so similar-looking folders no longer count as installed and old versions stop showing false updates."
         },
         {
@@ -3433,7 +3433,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2249,
+        "downloads": 2250,
         "endorsements": 2
       }
     },
@@ -11278,7 +11278,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 221,
+        "downloads": 222,
         "endorsements": 0
       }
     },
