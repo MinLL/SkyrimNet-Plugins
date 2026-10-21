@@ -20,6 +20,6 @@
   ],
   "image": "cover.jpg",
   "external_url": "https://github.com/GoodProvider/Injury_Engine/releases/latest",
-  "version": "0.1.3",
-  "changelog": "### Wounds\r\n- Fully healed characters are described as healed, so followers stop talking about old wounds.\r\n\r\n### Fixes\r\n- Courage or Fortify Health refreshing or wearing off no longer gives a sudden severe wound.\r\n- Light hits (weak weapons, burning spells) now add up to a wound, even with a health buff active."
+  "version": "0.1.4",
+  "changelog": "### Wounds\r\n- Real wounds are measured against max health and staged minor / major / severe.\r\n- New Injury Ranges settings set where real wounds become minor, major and severe.\r\n- Light hits below minor still count but are not narrated.\r\n- A body part can't be hurt worse than the body has lost health.\r\n- Death narration names the hit that actually killed.\r\n\r\n### Gear and settings\r\n- Torture gear is renamed \"Torture Padded Whip\", \"Torture Flames\" and so on, so it sorts together.\r\n- Narration settings are split into \"Narration\" (modes) and \"Narration Options\"."
 }
