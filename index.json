@@ -1,8 +1,77 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-21T02:39:00.782Z",
-  "stats_as_of": "2026-10-21T02:39:00.730Z",
+  "generated_at": "2026-10-21T03:19:52.105Z",
+  "stats_as_of": "2026-10-21T03:19:52.042Z",
   "plugins": [
+    {
+      "id": "plugins/goodprovider/injury-engine",
+      "plugin_id": "goodprovider.injury-engine",
+      "type": "listing",
+      "title": "Injury Engine ",
+      "tagline": "Let them know when how much it hurts (injury 💔, healing ❤️‍🩹, and torture❤️‍🔥)",
+      "author": "goodprovider",
+      "tags": [
+        "injury",
+        "healing",
+        "torture",
+        "damage",
+        "narration"
+      ],
+      "nsfw": true,
+      "icon": "brain",
+      "mods": [],
+      "first_published": "2026-10-17T06:53:48Z",
+      "last_updated": "2026-10-21T03:19:24Z",
+      "version": "0.1.4",
+      "history": [
+        {
+          "version": "0.1.4",
+          "commit": "ad00e9424b5e1676d39fed70b87aca2b01db64d3",
+          "date": "2026-10-21T03:19:24Z",
+          "changelog": "### Wounds\r\n- Real wounds are measured against max health and staged minor / major / severe.\r\n- New Injury Ranges settings set where real wounds become minor, major and severe.\r\n- Light hits below minor still count but are not narrated.\r\n- A body part can't be hurt worse than the body has lost health.\r\n- Death narration names the hit that actually killed.\r\n\r\n### Gear and settings\r\n- Torture gear is renamed \"Torture Padded Whip\", \"Torture Flames\" and so on, so it sorts together.\r\n- Narration settings are split into \"Narration\" (modes) and \"Narration Options\"."
+        },
+        {
+          "version": "0.1.3",
+          "commit": "2e0ac0b57f225af734019f4bafc15c3b64425adf",
+          "date": "2026-10-19T05:34:32Z",
+          "changelog": "### Wounds\r\n- Fully healed characters are described as healed, so followers stop talking about old wounds.\r\n\r\n### Fixes\r\n- Courage or Fortify Health refreshing or wearing off no longer gives a sudden severe wound.\r\n- Light hits (weak weapons, burning spells) now add up to a wound, even with a health buff active."
+        },
+        {
+          "version": "0.1.2",
+          "commit": "0c24d5244baad239cbc2238801cf15a88667e5db",
+          "date": "2026-10-19T02:43:58Z",
+          "changelog": "### Fixes\r\n- A buff wearing off (Courage, Fortify Health and the like) no longer counts as a fall or a wound.\r\n- Walking down steps or slopes can no longer be taken for a hard landing.\r\n- Loading a save no longer leaves old torture scenes, heal sessions or truces running.\r\n- Loading a save during an NPC's torture action no longer stops later lashes from counting.\r\n- Punches and weapon hits are judged by the actual swing, not by what is equipped.\r\n- A recent whip lash no longer hides other damage that follows it.\r\n- Torture narration no longer gets cancelled when you look away for a moment.\r\n- Heal start narration is no longer lost while SkyrimNet is still replying.\r\n- The overlay no longer shows an older state after quick updates.\r\n\r\n### Fighting\r\n- An NPC can keep several truces at once, each with its own end time.\r\n- A late answer to an expired truce request is ignored.\r\n\r\n### Wounds\r\n- A mistake in an injury file now skips only that entry instead of the whole file."
+        },
+        {
+          "version": "0.1.1",
+          "commit": "7ee95f49b94fd0190ce2c1a73238d77ca583b0e5",
+          "date": "2026-10-18T06:19:02Z",
+          "changelog": "### Fixes\r\n- Fixed a game freeze when spells hit a badly tortured actor.\r\n- Fire spells cast with empty hands no longer count as punches.\r\n- Body parts that are switched off no longer get real wounds.\r\n\r\n### Wounds\r\n- Drowning now wounds the lungs.\r\n- New setting: minimum health loss from other mods' scripts that counts as a wound.\r\n\r\n### Narration\r\n- Narration names attacker and victim instead of \"he\" / \"she\", so followers don't think you were hurt.\r\n- Real hits in fights out of sight are no longer narrated (they stay short events).\r\n\r\n### FOMOD\r\n- FOMOD option: fight / stop / yield actions (on by default; Torture_Target always installs).\r\n- FOMOD option: torture overlay (on by default; off sets its dashboard default to off)."
+        },
+        {
+          "version": "0.1.0",
+          "commit": "4ea877a003befdfc573c0fb5df303e4a2126a5f5",
+          "date": "2026-10-17T06:53:48Z",
+          "changelog": "## 0.1.0\n\n### Requirements \n- Requires SkyrimNet 0.25.0, SKSE, Address Library, PapyrusUtil SE and PrismaUI.\n\n### Pain and Healing \n- Every hit wounds a body part: swords, arrows, spells, creatures, falls and torture.\n- Wounds go from light to medium to severe and heal over time, with regeneration and healing magic.\n- Torture, healing, hits and killing blows are narrated, and NPCs see and feel the wounds.\n- Other mods can add injury types and wound or heal body parts.\n\n### Torture \n- Torture (whip, pinch, slap, pull, punch, fire, frost, shock) hurts but can't kill.\n- Victims tortured far enough collapse until they are healed (setting).\n- Craft the padded whip at the forge; \"Add gear to player\" also gives the three torture spells.\n- Torture and lashes don't start fights.\n- NPCs can torture someone with the Torture_Target action.\n- A torture overlay shows a bar per tortured actor and fades out by itself.\n- Optional damageable sexual body parts (setting).\n\n### Real Damage \n- Real damage replaces torture wounds first, so a tortured victim dies only after that.\n\n### Combat start, stop, yield\n- NPCs can offer to stop a fight or yield; offers to you show a Yes / No box.\n- NPCs can start a fight with Start_Fighting."
+        }
+      ],
+      "external_url": "https://github.com/GoodProvider/Injury_Engine/releases/latest",
+      "languages": [
+        "en"
+      ],
+      "language": "en",
+      "image": {
+        "file": "cover.jpg",
+        "sha": "1d425dbc983a5818a3be5d328338e6a513bd728a",
+        "commit": "4ea877a003befdfc573c0fb5df303e4a2126a5f5",
+        "width": 1376,
+        "height": 768
+      },
+      "stats": {
+        "downloads": 43,
+        "endorsements": 0
+      }
+    },
     {
       "id": "plugins/urtubesrclogged/adventurers-guild",
       "plugin_id": "urtubesrclogged.adventurers-guild",
@@ -329,69 +398,6 @@
       }
     },
     {
-      "id": "plugins/goodprovider/injury-engine",
-      "plugin_id": "goodprovider.injury-engine",
-      "type": "listing",
-      "title": "Injury Engine ",
-      "tagline": "Let them know when how much it hurts (injury 💔, healing ❤️‍🩹, and torture❤️‍🔥)",
-      "author": "goodprovider",
-      "tags": [
-        "injury",
-        "healing",
-        "torture",
-        "damage",
-        "narration"
-      ],
-      "nsfw": true,
-      "icon": "brain",
-      "mods": [],
-      "first_published": "2026-10-17T06:53:48Z",
-      "last_updated": "2026-10-19T05:34:32Z",
-      "version": "0.1.3",
-      "history": [
-        {
-          "version": "0.1.3",
-          "commit": "2e0ac0b57f225af734019f4bafc15c3b64425adf",
-          "date": "2026-10-19T05:34:32Z",
-          "changelog": "### Wounds\r\n- Fully healed characters are described as healed, so followers stop talking about old wounds.\r\n\r\n### Fixes\r\n- Courage or Fortify Health refreshing or wearing off no longer gives a sudden severe wound.\r\n- Light hits (weak weapons, burning spells) now add up to a wound, even with a health buff active."
-        },
-        {
-          "version": "0.1.2",
-          "commit": "0c24d5244baad239cbc2238801cf15a88667e5db",
-          "date": "2026-10-19T02:43:58Z",
-          "changelog": "### Fixes\r\n- A buff wearing off (Courage, Fortify Health and the like) no longer counts as a fall or a wound.\r\n- Walking down steps or slopes can no longer be taken for a hard landing.\r\n- Loading a save no longer leaves old torture scenes, heal sessions or truces running.\r\n- Loading a save during an NPC's torture action no longer stops later lashes from counting.\r\n- Punches and weapon hits are judged by the actual swing, not by what is equipped.\r\n- A recent whip lash no longer hides other damage that follows it.\r\n- Torture narration no longer gets cancelled when you look away for a moment.\r\n- Heal start narration is no longer lost while SkyrimNet is still replying.\r\n- The overlay no longer shows an older state after quick updates.\r\n\r\n### Fighting\r\n- An NPC can keep several truces at once, each with its own end time.\r\n- A late answer to an expired truce request is ignored.\r\n\r\n### Wounds\r\n- A mistake in an injury file now skips only that entry instead of the whole file."
-        },
-        {
-          "version": "0.1.1",
-          "commit": "7ee95f49b94fd0190ce2c1a73238d77ca583b0e5",
-          "date": "2026-10-18T06:19:02Z",
-          "changelog": "### Fixes\r\n- Fixed a game freeze when spells hit a badly tortured actor.\r\n- Fire spells cast with empty hands no longer count as punches.\r\n- Body parts that are switched off no longer get real wounds.\r\n\r\n### Wounds\r\n- Drowning now wounds the lungs.\r\n- New setting: minimum health loss from other mods' scripts that counts as a wound.\r\n\r\n### Narration\r\n- Narration names attacker and victim instead of \"he\" / \"she\", so followers don't think you were hurt.\r\n- Real hits in fights out of sight are no longer narrated (they stay short events).\r\n\r\n### FOMOD\r\n- FOMOD option: fight / stop / yield actions (on by default; Torture_Target always installs).\r\n- FOMOD option: torture overlay (on by default; off sets its dashboard default to off)."
-        },
-        {
-          "version": "0.1.0",
-          "commit": "4ea877a003befdfc573c0fb5df303e4a2126a5f5",
-          "date": "2026-10-17T06:53:48Z",
-          "changelog": "## 0.1.0\n\n### Requirements \n- Requires SkyrimNet 0.25.0, SKSE, Address Library, PapyrusUtil SE and PrismaUI.\n\n### Pain and Healing \n- Every hit wounds a body part: swords, arrows, spells, creatures, falls and torture.\n- Wounds go from light to medium to severe and heal over time, with regeneration and healing magic.\n- Torture, healing, hits and killing blows are narrated, and NPCs see and feel the wounds.\n- Other mods can add injury types and wound or heal body parts.\n\n### Torture \n- Torture (whip, pinch, slap, pull, punch, fire, frost, shock) hurts but can't kill.\n- Victims tortured far enough collapse until they are healed (setting).\n- Craft the padded whip at the forge; \"Add gear to player\" also gives the three torture spells.\n- Torture and lashes don't start fights.\n- NPCs can torture someone with the Torture_Target action.\n- A torture overlay shows a bar per tortured actor and fades out by itself.\n- Optional damageable sexual body parts (setting).\n\n### Real Damage \n- Real damage replaces torture wounds first, so a tortured victim dies only after that.\n\n### Combat start, stop, yield\n- NPCs can offer to stop a fight or yield; offers to you show a Yes / No box.\n- NPCs can start a fight with Start_Fighting."
-        }
-      ],
-      "external_url": "https://github.com/GoodProvider/Injury_Engine/releases/latest",
-      "languages": [
-        "en"
-      ],
-      "language": "en",
-      "image": {
-        "file": "cover.jpg",
-        "sha": "1d425dbc983a5818a3be5d328338e6a513bd728a",
-        "commit": "4ea877a003befdfc573c0fb5df303e4a2126a5f5",
-        "width": 1376,
-        "height": 768
-      },
-      "stats": {
-        "downloads": 42,
-        "endorsements": 0
-      }
-    },
-    {
       "id": "plugins/min/skyrimnet-prompts-cache-enabled",
       "plugin_id": "min.skyrimnet-prompts-cache-enabled",
       "type": "bundle",
@@ -468,7 +474,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 559,
+        "downloads": 562,
         "endorsements": 9
       }
     },
@@ -932,7 +938,7 @@
         "height": 720
       },
       "stats": {
-        "downloads": 21,
+        "downloads": 23,
         "endorsements": 0
       }
     },
@@ -1210,7 +1216,7 @@
         "height": 864
       },
       "stats": {
-        "downloads": 232,
+        "downloads": 234,
         "endorsements": 6
       }
     },
@@ -1371,7 +1377,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 311,
+        "downloads": 312,
         "endorsements": 3
       }
     },
@@ -1596,7 +1602,7 @@
         "height": 1008
       },
       "stats": {
-        "downloads": 10,
+        "downloads": 11,
         "endorsements": 0
       }
     },
@@ -1910,7 +1916,7 @@
         "config": 4
       },
       "stats": {
-        "downloads": 149,
+        "downloads": 150,
         "endorsements": 0
       }
     },
@@ -2180,7 +2186,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 126,
+        "downloads": 127,
         "endorsements": 0
       }
     },
@@ -2220,7 +2226,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 135,
+        "downloads": 136,
         "endorsements": 0
       }
     },
@@ -2281,7 +2287,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 232,
+        "downloads": 233,
         "endorsements": 0
       }
     },
@@ -2650,7 +2656,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 263,
+        "downloads": 264,
         "endorsements": 1
       }
     },
@@ -2720,7 +2726,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 313,
+        "downloads": 314,
         "endorsements": 0
       }
     },
@@ -2928,7 +2934,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 197,
+        "downloads": 198,
         "endorsements": 0
       }
     },
@@ -3033,7 +3039,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 144,
+        "downloads": 145,
         "endorsements": 0
       }
     },
@@ -3241,7 +3247,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 326,
+        "downloads": 327,
         "endorsements": 4
       }
     },
@@ -3286,7 +3292,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1042,
+        "downloads": 1045,
         "endorsements": 2
       }
     },
@@ -3331,7 +3337,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 514,
+        "downloads": 516,
         "endorsements": 0
       }
     },
@@ -3376,7 +3382,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 51,
+        "downloads": 52,
         "endorsements": 0
       }
     },
@@ -3421,7 +3427,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2243,
+        "downloads": 2247,
         "endorsements": 2
       }
     },
@@ -3916,7 +3922,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 432,
+        "downloads": 435,
         "endorsements": 0
       }
     },
@@ -4141,7 +4147,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 285,
+        "downloads": 289,
         "endorsements": 1
       }
     },
@@ -4411,7 +4417,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 933,
+        "downloads": 937,
         "endorsements": 0
       }
     },
@@ -4681,7 +4687,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 28,
+        "downloads": 29,
         "endorsements": 0
       }
     },
@@ -5041,7 +5047,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 54,
+        "downloads": 56,
         "endorsements": 0
       }
     },
@@ -5131,7 +5137,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1069,
+        "downloads": 1072,
         "endorsements": 2
       }
     },
@@ -5266,7 +5272,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 275,
+        "downloads": 276,
         "endorsements": 1
       }
     },
@@ -5311,7 +5317,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 478,
+        "downloads": 480,
         "endorsements": 0
       }
     },
@@ -5356,7 +5362,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 671,
+        "downloads": 674,
         "endorsements": 0
       }
     },
@@ -5446,7 +5452,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 196,
+        "downloads": 198,
         "endorsements": 0
       }
     },
@@ -5491,7 +5497,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 222,
+        "downloads": 223,
         "endorsements": 0
       }
     },
@@ -5716,7 +5722,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 21,
+        "downloads": 22,
         "endorsements": 0
       }
     },
@@ -5761,7 +5767,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 190,
+        "downloads": 191,
         "endorsements": 0
       }
     },
@@ -5941,7 +5947,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 17,
+        "downloads": 18,
         "endorsements": 0
       }
     },
@@ -6541,7 +6547,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 32,
+        "downloads": 34,
         "endorsements": 0
       }
     },
@@ -6856,7 +6862,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 356,
+        "downloads": 357,
         "endorsements": 0
       }
     },
@@ -7576,7 +7582,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 551,
+        "downloads": 552,
         "endorsements": 0
       }
     },
@@ -7621,7 +7627,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 379,
+        "downloads": 381,
         "endorsements": 0
       }
     },
@@ -7711,7 +7717,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 936,
+        "downloads": 939,
         "endorsements": 0
       }
     },
@@ -7801,7 +7807,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1237,
+        "downloads": 1239,
         "endorsements": 2
       }
     },
@@ -7936,7 +7942,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 25,
+        "downloads": 26,
         "endorsements": 0
       }
     },
@@ -8161,7 +8167,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 26,
+        "downloads": 27,
         "endorsements": 0
       }
     },
@@ -8566,7 +8572,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 16,
+        "downloads": 18,
         "endorsements": 0
       }
     },
@@ -8836,7 +8842,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1317,
+        "downloads": 1320,
         "endorsements": 2
       }
     },
@@ -9106,7 +9112,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1088,
+        "downloads": 1090,
         "endorsements": 2
       }
     },
@@ -9511,7 +9517,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 286,
+        "downloads": 287,
         "endorsements": 0
       }
     },
@@ -9646,7 +9652,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 795,
+        "downloads": 797,
         "endorsements": 0
       }
     },
@@ -9691,7 +9697,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 463,
+        "downloads": 464,
         "endorsements": 0
       }
     },
@@ -10051,7 +10057,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 9,
+        "downloads": 10,
         "endorsements": 0
       }
     },
@@ -10186,7 +10192,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 245,
+        "downloads": 246,
         "endorsements": 0
       }
     },
@@ -10411,7 +10417,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 261,
+        "downloads": 263,
         "endorsements": 0
       }
     },
@@ -10456,7 +10462,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 669,
+        "downloads": 670,
         "endorsements": 0
       }
     },
@@ -10591,7 +10597,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 66,
+        "downloads": 67,
         "endorsements": 0
       }
     },
@@ -10861,7 +10867,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 13,
+        "downloads": 14,
         "endorsements": 0
       }
     },
@@ -11446,7 +11452,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 418,
+        "downloads": 419,
         "endorsements": 0
       }
     },
@@ -11536,7 +11542,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 145,
+        "downloads": 147,
         "endorsements": 0
       }
     },
@@ -11716,7 +11722,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 568,
+        "downloads": 569,
         "endorsements": 2
       }
     },
@@ -11761,7 +11767,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 143,
+        "downloads": 145,
         "endorsements": 0
       }
     },
@@ -12121,7 +12127,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 213,
+        "downloads": 215,
         "endorsements": 0
       }
     },
@@ -12256,7 +12262,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1618,
+        "downloads": 1622,
         "endorsements": 2
       }
     },
@@ -12526,7 +12532,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 369,
+        "downloads": 372,
         "endorsements": 0
       }
     },
