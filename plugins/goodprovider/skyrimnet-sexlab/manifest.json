@@ -9,7 +9,8 @@
     "sex",
     "nswf",
     "sexlab",
-    "actions"
+    "actions",
+    "s&m"
   ],
   "nsfw": true,
   "icon": "heart",
@@ -19,6 +20,6 @@
   ],
   "image": "cover.png",
   "external_url": "https://github.com/GoodProvider/SkyrimNet_SexLab/releases/latest",
-  "version": "0.36.3",
-  "changelog": "### Futa / intersex\r\n- SexLab P+: a female with a The New Gentleman penis now counts as futa when picking animations\r\n- Intersex actors can fill male or female positions\r\n\r\n### OStim TargetMenu\r\n- New **OStim** option in the TargetMenu when OStimNet is installed; OStim plays the scene\r\n- Pick who joins, the victim, the method and the intent as usual\r\n\r\n### Aid panel potions\r\n- The Aid panel remembers what you picked last time\r\n- Potions can be **drunk**\r\n- An NPC offered one (to drink or on the lips) can accept or refuse; a refusal can be punished\r\n- Stamina potions offer drink, lips, ass, pussy and penis\r\n- A potion on ass, pussy, lips or penis during a matching act is shared by both, with narration\r\n- An Aid spell on an undamaged part or someone at full health still shows its effect and is narrated\r\n\r\n### Punish panel\r\n- A custom reason no longer punishes straight away: OK sets the reason, and Punish starts it\r\n- An NPC's current mini-game behavior is offered as a reason (\"Nina appears to be focused on…\")\r\n- Punish and Aid list damaged parts first, worst on top, in red; hover one for its torture bar\r\n- With TT Lover's Ledger, a first vaginal or anal scene marks pussy or ass as damaged\r\n\r\n### Verbose logging\r\n- New SkyrimNet dashboard option **Debug > Verbose logging**. Turn it on when reporting a bug\r\n- It adds much more detail to the logs and shows in the prompts what the SexLab sections saw\r\n- Turn it off afterwards: the extra lines are also sent to the LLM\r\n- Fixed: onlookers were sometimes told they could or couldn't see a scene from another's position\r\n- Fixed: characters in a scene didn't know about it in what they said in its first seconds\r\n\r\n### Scene start messages (untested)\r\n- When SexLab refuses an actor, a message says why (\"SexLab: Lydia can't join - dead\")\r\n\r\n### Recursion warning bug (untested)\r\n- Fixed: a repeating \"JMapValueToJson … stuck in a recursion loop\" warning, sometimes then a crash\r- It could also damage another mo"
+  "version": "0.36.4",
+  "changelog": "### Lover's Ledger\r v1.2.0\n- Works with the latest Lover's Ledger\r\n- The virgin-blood line moved from Lover's Ledger into this mod\r\n- New dashboard option **Virgin blood on first vaginal / anal** (Narration, default off)\r\n- It needs Lover's Ledger\r\n- It is added to the scene-start narration on an actor's first time receiving vaginal or anal sex\r\n- New installer option **First vaginal or anal sex causes soreness and bleeding** (off by default)\r\n- It turns the dashboard option on once at first load. You can turn it off again in the dashboard\r\n- The damaged pussy / ass marks of a first time now use the same check\r\n\r\n### Dead actors can join scenes (untested)\r\n- SkyrimNet_SexLab no longer changes a corpse's Health\r\n- On SexLab 1.66, pick the new installer option **SexLab 1.66 corpse patch**\r\n- The patch is not needed on SexLab P+\r\n- Don't use the patch with SLSO (SexLab Separate Orgasm)\r\n- Without the patch, the option turns itself off when you unpause and a message names the file\r\n\r\n### Scenes (untested)\r\n- NPCs no longer walk out of a scene to follow a sandbox / camp package from a SkyrimNet action mod\r\n- Their packages come back when the scene ends\r\n\r\n### typo\r\n- AP Anal descriptions: \"lays on their hands and knees with feet in the air\" (was \"there\" / \"hair\")"
 }
