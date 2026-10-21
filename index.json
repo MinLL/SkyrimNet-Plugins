@@ -1,8 +1,84 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-21T07:37:35.054Z",
-  "stats_as_of": "2026-10-21T07:37:34.953Z",
+  "generated_at": "2026-10-21T07:38:30.263Z",
+  "stats_as_of": "2026-10-21T07:38:30.121Z",
   "plugins": [
+    {
+      "id": "plugins/awesmdiver/modpacer",
+      "plugin_id": "awesmdiver.modpacer",
+      "type": "listing",
+      "title": "ModPacer",
+      "tagline": "Easily install new mods and keep them on pace with updates.",
+      "author": "awesmdiver",
+      "tags": [
+        "mod updater",
+        "vortex",
+        "mod organizer 2",
+        "updates"
+      ],
+      "nsfw": false,
+      "icon": "wrench",
+      "mods": [],
+      "first_published": "2026-10-06T04:07:35Z",
+      "last_updated": "2026-10-21T07:38:04Z",
+      "version": "1.1.7",
+      "history": [
+        {
+          "version": "1.1.7",
+          "commit": "55fe07563ffff4b194b549dbae298593192b9bdb",
+          "date": "2026-10-21T07:38:04Z",
+          "changelog": "### What's New\n\n- **Hand-Updated Add-ons:** Add-ons you manually update in Mod Organizer 2 now show their true version and no longer prompt for unneeded updates.\n- **Better Version Checks:** ModPacer now correctly compares four-part and beta version numbers, so real updates are no longer missed.\n- **Clearer Logs:** The update log now tracks every download from start to finish, recording the exact version found and where it came from."
+        },
+        {
+          "version": "1.1.6",
+          "commit": "49e8226a64561f6efb26f2d2339523af27b29712",
+          "date": "2026-10-21T04:55:20Z",
+          "changelog": "### What's New\n\n- **Exclude a Mod:** Click Exclude in Mods not installed to stop listing and downloading a mod, and use Settings to view Excluded mods or click Include again.\n- **Better Mod Organizer 2 Detection:** ModPacer now judges each add-on by its own files, so similar-looking folders no longer count as installed and old versions stop showing false updates."
+        },
+        {
+          "version": "1.1.5",
+          "commit": "17633c2bedc622f65e6763600f7349794ef67d45",
+          "date": "2026-10-14T04:45:35Z",
+          "changelog": "### What's New\n\n- **Nexus Details in Vortex:** Mods installed from Nexus now carry their details into Vortex, so the \"missing identification information\" warning no longer appears.\r\n- **Smoother Updates:** Update all installs every new mod first, then removes the old ones together under \"Removing old mods\", without \"Mod not found\" warnings.\r\n- **Cleaner Startup:** ModPacer opens just one Mods section, says so if it is already running, and the installer closes running copies first."
+        },
+        {
+          "version": "1.1.4",
+          "commit": "2eacb62b646358ba2a0b0774fbe76266aa0b3233",
+          "date": "2026-10-07T22:04:44Z",
+          "changelog": "### What's New\r\n\r\n- **Broader MO2 Detection:** Detects SkyrimNet in Mod Organizer 2's Overwrite and Stock Game folders to support custom modlists like Nolvus and Nordic Souls.\r\n- **Respects MO2 Load Order:** Reads the winning copy of SkyrimNet when multiple exist, and alerts you if the only installed copy is disabled.\r\n- **Improved Add-on Tracking:** Recognizes add-ons as installed whether they are located in the Overwrite folder or any active mod.\r\n- **Flexible Folder Recognition:** Correctly identifies installed MO2 mods even if their folder names differ from their official listing names.\r\n- **Self-Exclusion Fix:** ModPacer no longer incorrectly lists itself under \"Mods not installed.\"\r\n- **Streamlined Alerts:** Provides shorter, clearer messages when SkyrimNet is missing or an add-on hasn't registered.\r\n- **Interactive Setup Fallback:** Prompts you to manually select the SkyrimNet folder during setup if auto-detection fails, rather than halting the installation.\r\n- **True Clean Uninstall:** Choosing \"Delete settings\" during uninstallation now completely removes all ModPacer traces."
+        },
+        {
+          "version": "1.1.1",
+          "commit": "8e3ffa3b13de3c88a900592e03b8a28a44fef98b",
+          "date": "2026-10-06T21:49:20Z",
+          "changelog": "**What's New**\r\n\r\n- **Fixed SkyrimNet Folder Detection:** Resolved an issue where ModPacer could mistakenly select a subfolder created by an add-on instead of the main SkyrimNet directory, resulting in a Could not read content-registry.json error. \r\n\r\n- **Improved Logging:** Setup and installation errors are now accurately captured in the diagnostic log, making troubleshooting and support requests much easier."
+        },
+        {
+          "version": "1.1.0",
+          "commit": "526db56f205786e9ccce8572e9b1b66ca49c7248",
+          "date": "2026-10-06T19:35:56Z",
+          "changelog": "**Mod Organizer 2** users: this update is for you. \n\n- Mod Organizer 2 and Wabbajack modlists are now properly handled.\n- Mod Organizer 2: can now pick your Mod Organizer 2 folder and ModPacer finds your mods and Skyrim folder from it.\n- Added logging, which is on by default, but can be turned off in settings.\n- Tells you when a newer ModPacer is out."
+        },
+        {
+          "version": "1.0.0",
+          "commit": "af3e0b8c3452da83640c639c5166db42530c76df",
+          "date": "2026-10-06T06:13:32Z",
+          "changelog": "Initial Release"
+        }
+      ],
+      "external_url": "https://github.com/awesmdiver/modpacer/releases/latest",
+      "image": {
+        "file": "cover.png",
+        "sha": "175af6991604d3810b726c724d7b15a0f62e892f",
+        "commit": "e3bc3bf7cbdc250fb980e857933ede27c591c10b",
+        "width": 1940,
+        "height": 1091
+      },
+      "stats": {
+        "downloads": 29,
+        "endorsements": 1
+      }
+    },
     {
       "id": "plugins/goodprovider/skyrimnet-sexlab",
       "plugin_id": "goodprovider.skyrimnet-sexlab",
@@ -93,76 +169,6 @@
       },
       "stats": {
         "downloads": 167,
-        "endorsements": 1
-      }
-    },
-    {
-      "id": "plugins/awesmdiver/modpacer",
-      "plugin_id": "awesmdiver.modpacer",
-      "type": "listing",
-      "title": "ModPacer",
-      "tagline": "Easily install new mods and keep them on pace with updates.",
-      "author": "awesmdiver",
-      "tags": [
-        "mod updater",
-        "vortex",
-        "mod organizer 2",
-        "updates"
-      ],
-      "nsfw": false,
-      "icon": "wrench",
-      "mods": [],
-      "first_published": "2026-10-06T04:07:35Z",
-      "last_updated": "2026-10-21T04:55:20Z",
-      "version": "1.1.6",
-      "history": [
-        {
-          "version": "1.1.6",
-          "commit": "49e8226a64561f6efb26f2d2339523af27b29712",
-          "date": "2026-10-21T04:55:20Z",
-          "changelog": "### What's New\n\n- **Exclude a Mod:** Click Exclude in Mods not installed to stop listing and downloading a mod, and use Settings to view Excluded mods or click Include again.\n- **Better Mod Organizer 2 Detection:** ModPacer now judges each add-on by its own files, so similar-looking folders no longer count as installed and old versions stop showing false updates."
-        },
-        {
-          "version": "1.1.5",
-          "commit": "17633c2bedc622f65e6763600f7349794ef67d45",
-          "date": "2026-10-14T04:45:35Z",
-          "changelog": "### What's New\n\n- **Nexus Details in Vortex:** Mods installed from Nexus now carry their details into Vortex, so the \"missing identification information\" warning no longer appears.\r\n- **Smoother Updates:** Update all installs every new mod first, then removes the old ones together under \"Removing old mods\", without \"Mod not found\" warnings.\r\n- **Cleaner Startup:** ModPacer opens just one Mods section, says so if it is already running, and the installer closes running copies first."
-        },
-        {
-          "version": "1.1.4",
-          "commit": "2eacb62b646358ba2a0b0774fbe76266aa0b3233",
-          "date": "2026-10-07T22:04:44Z",
-          "changelog": "### What's New\r\n\r\n- **Broader MO2 Detection:** Detects SkyrimNet in Mod Organizer 2's Overwrite and Stock Game folders to support custom modlists like Nolvus and Nordic Souls.\r\n- **Respects MO2 Load Order:** Reads the winning copy of SkyrimNet when multiple exist, and alerts you if the only installed copy is disabled.\r\n- **Improved Add-on Tracking:** Recognizes add-ons as installed whether they are located in the Overwrite folder or any active mod.\r\n- **Flexible Folder Recognition:** Correctly identifies installed MO2 mods even if their folder names differ from their official listing names.\r\n- **Self-Exclusion Fix:** ModPacer no longer incorrectly lists itself under \"Mods not installed.\"\r\n- **Streamlined Alerts:** Provides shorter, clearer messages when SkyrimNet is missing or an add-on hasn't registered.\r\n- **Interactive Setup Fallback:** Prompts you to manually select the SkyrimNet folder during setup if auto-detection fails, rather than halting the installation.\r\n- **True Clean Uninstall:** Choosing \"Delete settings\" during uninstallation now completely removes all ModPacer traces."
-        },
-        {
-          "version": "1.1.1",
-          "commit": "8e3ffa3b13de3c88a900592e03b8a28a44fef98b",
-          "date": "2026-10-06T21:49:20Z",
-          "changelog": "**What's New**\r\n\r\n- **Fixed SkyrimNet Folder Detection:** Resolved an issue where ModPacer could mistakenly select a subfolder created by an add-on instead of the main SkyrimNet directory, resulting in a Could not read content-registry.json error. \r\n\r\n- **Improved Logging:** Setup and installation errors are now accurately captured in the diagnostic log, making troubleshooting and support requests much easier."
-        },
-        {
-          "version": "1.1.0",
-          "commit": "526db56f205786e9ccce8572e9b1b66ca49c7248",
-          "date": "2026-10-06T19:35:56Z",
-          "changelog": "**Mod Organizer 2** users: this update is for you. \n\n- Mod Organizer 2 and Wabbajack modlists are now properly handled.\n- Mod Organizer 2: can now pick your Mod Organizer 2 folder and ModPacer finds your mods and Skyrim folder from it.\n- Added logging, which is on by default, but can be turned off in settings.\n- Tells you when a newer ModPacer is out."
-        },
-        {
-          "version": "1.0.0",
-          "commit": "af3e0b8c3452da83640c639c5166db42530c76df",
-          "date": "2026-10-06T06:13:32Z",
-          "changelog": "Initial Release"
-        }
-      ],
-      "external_url": "https://github.com/awesmdiver/modpacer/releases/latest",
-      "image": {
-        "file": "cover.png",
-        "sha": "175af6991604d3810b726c724d7b15a0f62e892f",
-        "commit": "e3bc3bf7cbdc250fb980e857933ede27c591c10b",
-        "width": 1940,
-        "height": 1091
-      },
-      "stats": {
-        "downloads": 29,
         "endorsements": 1
       }
     },
