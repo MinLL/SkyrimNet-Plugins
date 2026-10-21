@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-21T03:19:52.105Z",
-  "stats_as_of": "2026-10-21T03:19:52.042Z",
+  "generated_at": "2026-10-21T03:35:32.377Z",
+  "stats_as_of": "2026-10-21T03:35:32.249Z",
   "plugins": [
     {
       "id": "plugins/goodprovider/injury-engine",
@@ -2186,7 +2186,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 127,
+        "downloads": 128,
         "endorsements": 0
       }
     },
