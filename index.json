@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-21T16:18:16.173Z",
-  "stats_as_of": "2026-10-21T16:18:16.036Z",
+  "generated_at": "2026-10-21T16:31:48.143Z",
+  "stats_as_of": "2026-10-21T16:31:47.954Z",
   "plugins": [
     {
       "id": "plugins/sorcerers-apprentice/callr-to-action",
@@ -38,7 +38,7 @@
         "height": 720
       },
       "stats": {
-        "downloads": 0,
+        "downloads": 1,
         "endorsements": 0
       }
     },
@@ -276,7 +276,7 @@
         "height": 768
       },
       "stats": {
-        "downloads": 55,
+        "downloads": 56,
         "endorsements": 0
       }
     },
@@ -387,7 +387,7 @@
         "height": 720
       },
       "stats": {
-        "downloads": 11,
+        "downloads": 12,
         "endorsements": 0
       }
     },
@@ -1201,7 +1201,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 73,
+        "downloads": 74,
         "endorsements": 1
       }
     },
@@ -5201,7 +5201,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1082,
+        "downloads": 1083,
         "endorsements": 2
       }
     },
@@ -10526,7 +10526,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 677,
+        "downloads": 678,
         "endorsements": 0
       }
     },
