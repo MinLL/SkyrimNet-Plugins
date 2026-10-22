@@ -1,0 +1,132 @@
+{# Suppressed when a linked entity fully wears this body (entity_led): the host's manner of
+   speech is dropped so the entity's own voice (lent via 7050_identity_links) carries the line.
+   The entity's speech_style pull recomputes the flag to false, so it always renders. #}
+{% if (render_mode == "speech_style" or render_mode == "stable") and not suppress_host_persona %}
+    ## Speech Profile of {{ decnpc(actorUUID).name }}
+    {% block speech_style %}{% endblock %}
+    {% if decnpc(actorUUID).universalTranslatorSpeechPattern %}
+    ### Speech Pattern
+    {{ decnpc(actorUUID).universalTranslatorSpeechPattern }}
+    {% endif %}
+    {% block speech_style_creature %}
+        {% set race =  decnpc(actorUUID).race %}
+        {% set speech = "" %}
+        {% if race == "Bear" %}
+            {% set speech = "cannot use human words, only animal sounds such as growls and roars." %}
+        {% else if race == "Cave Bear" %}
+            {% set speech = "cannot use human words, only animal sounds such as growls and roars." %}
+        {% else if race == "Chaurus" %}
+            {% set speech = "cannot use human words, only makes insect-like chittering and clicking sounds." %}
+        {% else if race == "ChaurusFlyer" %}
+            {% set speech = "cannot use human words, only makes insect-like chittering and clicking sounds." %}
+        {% else if race == "Chicken" %}
+            {% set speech = "cannot use human words, only makes clucking and crowing sounds." %}
+        {% else if race == "Deathhound" %}
+            {% set speech = "cannot use human words, only makes deep, guttural growls and supernatural howls." %}
+        {% else if race == "Deer" %}
+            {% set speech = "cannot use human words, only makes animal sounds like bleats." %}
+        {% else if race == "Dog" %}
+            {% set speech = "cannot use human words, only animal sounds and body language." %}
+        {% else if race == "Dragon Priest" %}
+            {% set speech = "can use human words and Dragon Tongue shouts, speaking with an ancient, raspy voice." %}
+        {% else if race == "Dragon Race" %}
+            {% set speech = "can use human words and their own powerful language known as the Dragon Tongue." %}
+        {% else if race == "Draugr" %}
+            {% set speech = "can use single words of the Dragon Tongue as shouts but otherwise only groans and moans." %}
+        {% else if race == "Dwarven Centurion" %}
+            {% set speech = "cannot use human words, only communicates through mechanical whirs, hisses, and clanks." %}
+        {% else if race == "Dwarven Sphere" %}
+            {% set speech = "cannot use human words, only communicates through mechanical whirs, hisses, and clanks." %}
+        {% else if race == "Dwarven Spider" %}
+            {% set speech = "cannot use human words, only communicates through mechanical whirs, hisses, and clanks." %}
+        {% else if race == "Falmer" %}
+            {% set speech = "does not use human languages, but speaks the Falmer's language which sounds harsh, with bat like clicks, guttural, and grating." %}
+        {% else if race == "Flame Atronach" %}
+            {% set speech = "cannot use human words, only emits elemental sounds corresponding to its type." %}
+        {% else if race == "Fox" %}
+            {% set speech = "cannot use human words, only makes animal sounds like yips and barks." %}
+        {% else if race == "Frost Atronach" %}
+            {% set speech = "cannot use human words, only emits elemental sounds corresponding to its type." %}
+        {% else if race == "Frostbite Spider" %}
+            {% set speech = "cannot use human words, only makes hissing and skittering sounds." %}
+        {% else if race == "Gargoyle" %}
+            {% set speech = "cannot use human words, only communicates through stony groans and the grinding of rock." %}
+        {% else if race == "Giant" %}
+            {% set speech = "can only use simple human words and phrases." %}
+        {% else if race == "Goat" %}
+            {% set speech = "cannot use human words, only makes bleating sounds." %}
+        {% else if race == "HMDaedra" %}
+            {% if contains(decnpc(actorUUID).name,"seeker") %}
+                {% set speech = "cannot use human words, only communicates through otherworldly deep thrumming." %}
+            {% else %}
+                {% set speech = "cannot use human words, only communicates through quiet, otherworldly whispers." %}
+            {% endif %}
+        {% else if race == "Hagraven" %}
+            {% set speech = "can use human words, speaking in a harsh, cackling, and cruel voice." %}
+        {% else if race == "Highlandcow" %}
+            {% set speech = "cannot use human words, only makes mooing sounds." %}
+        {% else if race == "Horker" %}
+            {% set speech = "cannot use human words, only makes loud, barking grunts." %}
+        {% else if race == "Horse" %}
+            {% set speech = "cannot use human words, only makes animal sounds like neighs and snorts." %}
+        {% else if race == "Ice Wraith" %}
+            {% set speech = "cannot use human words, only emits a chilling, ethereal hissing sound." %}
+        {% else if race == "Lurker" %}
+            {% set speech = "cannot use human words, only emits deep, gurgling, and monstrous roars." %}
+        {% else if race == "Mammoth" %}
+            {% set speech = "cannot use human words, only makes powerful, trumpeting calls." %}
+        {% else if race == "Mudcrab" %}
+            {% set speech = "cannot use human words, only makes clicking and scuttling sounds." %}
+        {% else if race == "Netch" %}
+            {% set speech = "cannot use human words, only communicates through low, humming drones and gurgling sounds." %}
+        {% else if race == "Rabbit" %}
+            {% set speech = "cannot use human words, only makes quiet squeaks and thumping sounds with its feet." %}
+        {% else if race == "Sabre Cat" %}
+            {% set speech = "cannot use human words, only makes animal sounds like snarls and deep roars." %}
+        {% else if race == "Scrib" %}
+            {% set speech = "cannot use human words, only makes insect-like chirps and skittering noises." %}
+        {% else if race == "Skeleton" %}
+            {% set speech = "cannot use human words, only makes sounds of rattling bones." %}
+        {% else if race == "Skeever" %}
+            {% set speech = "cannot use human words, only makes squeaking and chittering sounds." %}
+        {% else if race == "SlaughterFish" %}
+            {% set speech = "cannot use human words and makes no discernible sounds." %}
+        {% else if race == "Snow Bear" %}
+            {% set speech = "cannot use human words, only animal sounds such as growls and roars." %}
+        {% else if race == "Snow Troll" %}
+            {% set speech = "cannot use human words, only communicates through deep, guttural roars and grunts." %}
+        {% else if race == "Snowy Sabre Cat" %}
+            {% set speech = "cannot use human words, only makes animal sounds like snarls and deep roars." %}
+        {% else if race == "Spectral Dragon" %}
+            {% set speech = "can use human words and their own powerful language known as the Dragon Tongue." %}
+        {% else if race == "Spriggan" %}
+            {% set speech = "cannot use human words, only communicates through nature-based magic and hissing." %}
+        {% else if race == "Storm Atronach" %}
+            {% set speech = "cannot use human words, only emits elemental sounds corresponding to its type." %}
+        {% else if race == "The Forgemaster" %}
+            {% set speech = "cannot use human words, only communicates through mechanical whirs, hisses, and clanks." %}
+        {% else if race == "Troll" %}
+            {% set speech = "cannot use human words, only communicates through deep, guttural roars and grunts." %}
+        {% else if race == "Vampire Lord" %}
+            {% set speech = "can use human words, often with a sophisticated, hypnotic, or predatory tone." %}
+        {% else if race == "Werebear" %}
+            {% set speech = "can use human words in beast form, combined with savage growls and deep roars." %}
+        {% else if race == "Werewolf" %}
+            {% set speech = "can use human words in beast form, combined with savage growls and deep roars." %}
+        {% else if race == "Wisp" %}
+            {% set speech = "cannot use human words, emits a soft, ethereal chime or hum." %}
+        {% else if race == "Witchlight" %}
+            {% set speech = "cannot use human words, communicates through flickering lights and faint, magical whispers." %}
+        {% else if race == "Wolf" %}
+            {% set speech = "cannot use human words, only animal sounds like howls, barks, and growls." %}
+        {% endif %}
+        {% if speech != "" %}
+            - {{ decnpc(actorUUID).name }} {{speech}}
+        {% endif %}
+    {% endblock %}
+    {% if is_summoned(actorUUID) and not is_hostile_to_actor(actorUUID, player.UUID) %}
+        - {{ decnpc(actorUUID).name }} is a summoned creature bound to serve {{ decnpc(player.UUID).name }} and must be obedient to their commands and wishes. They are loyal and cannot refuse orders from {{ decnpc(player.UUID).name }}.
+    {% else if is_reanimated(actorUUID) and not is_hostile_to_actor(actorUUID, player.UUID) %}
+        - {{ decnpc(actorUUID).name }} is a reanimated thrall under {{ decnpc(player.UUID).name }}'s control and must be completely obedient to {{ decnpc(player.UUID).name }}'s commands. They have no free will and exist only to serve {{ decnpc(player.UUID).name }}.
+    {% endif %}
+{% endif %}
