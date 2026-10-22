@@ -1,8 +1,64 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-22T07:37:10.603Z",
-  "stats_as_of": "2026-10-22T07:32:44.822Z",
+  "generated_at": "2026-10-22T08:20:01.315Z",
+  "stats_as_of": "2026-10-22T08:20:01.233Z",
   "plugins": [
+    {
+      "id": "plugins/zevick/s-t-f-u-skyrim-talk-filter-utility",
+      "plugin_id": "zevick.s-t-f-u-skyrim-talk-filter-utility",
+      "type": "listing",
+      "title": "S.T.F.U - Skyrim Talk Filter Utility",
+      "tagline": "Skyrim Talk Filter Utility silences tedious frequent utterances",
+      "author": "zevick",
+      "tags": [
+        "stfu",
+        "dialogue",
+        "filter"
+      ],
+      "nsfw": false,
+      "icon": "dialogue",
+      "mods": [],
+      "first_published": "2026-08-20T09:09:54Z",
+      "last_updated": "2026-10-22T08:19:32Z",
+      "version": "1.3.0",
+      "history": [
+        {
+          "version": "1.3.0",
+          "commit": "92c86956b295de1eb22b88a544631bbce5a685e7",
+          "date": "2026-10-22T08:19:32Z",
+          "changelog": "- Added support for Magelight UI, which is prioritized over PrismaUI\n- Added Block Proximity Greetings to prevent greetings independent from the Hello filter"
+        },
+        {
+          "version": "1.2.1",
+          "commit": "ba0b708c5d9e82f2d32fce33f9fb11ccea41574e",
+          "date": "2026-10-04T22:05:17Z",
+          "changelog": "## Fixes\n- Potential fix for a crash during Dragon Rising's scene in Dragonsreach.\n- Hard-blocked lines could sometimes slip through on their second part.\n- Changing a blocked scene's category no longer leaves it controlled by both toggles until you restart.\n- Blocking a topic no longer overrides the toggle of a scene that has its own entry (e.g. a follower commentary or bard scene).\n- \"Import Scenes\" now adds the actual bard song scenes instead of three invalid entries.\n- The History tab's \"Whitelisted\" filter now works.\n- NPC names containing quotes no longer break the actor picker.\n- Entries that don't match any topic, scene, actor, faction or plugin are no longer saved silently; you get an error message instead. Failed actor filters and unreadable YAML files show an error too, and YAML import now tells you how many entries it imported.\n- Fixed a possible crash when reading older history entries.\n- Fixed a slow memory leak during long play sessions.\n- Much less log spam in STFU.log.\n- Bard song scenes added automatically on first launch no longer overwrite changes you made to existing bard entries."
+        },
+        {
+          "version": "1.2.0",
+          "commit": "4defc0f0f704b14dca78eb57a3d4a52b102a6270",
+          "date": "2026-09-26T22:48:12Z",
+          "changelog": "## Before you update\n- **New requirement:** [powerofthree's Tweaks](https://www.nexusmods.com/skyrimspecialedition/mods/51073) replaces Native EditorID Fix.\n- **41 scenes were removed from the pre-included list** because blocking them could potentially break quests or strand NPCs. Existing installs keep them until you delete them from the Blacklist tab, or clear your scene blacklist and re-import.\n\nS.T.F.U has been updated to the latest version of commonlibsse-NG. It should work on all versions, but 1.7.X is untested.\n## Fixes\n- Blacklist and whitelist entries now keep working after load-order changes.\n- Actor filters no longer mix up NPCs with the same name.\n- Each scene toggle (ambient, follower commentary, bard songs, blacklist) now controls its own scenes.\n- Removed pre-included scenes stay removed instead of being re-imported every launch.\n- If a game update moves the subtitle/response code, STFU skips those hooks and logs an error instead of crashing.\n- Freeze/crash shortly after loading a save.\n- VR crash during dialogue with the STFU menu open.\n- Jarl Laila and Anuriel getting stuck in Mistveil Keep.\n- Your own hard-blocked scenes playing when \"Block Ambient Scenes\" was off.\n- Scene blocks intermittently failing on AE.\n- Some entries added from History never matching.\n- Editing a blacklist entry erasing its faction filters.\n- Editing a whitelist entry adding a bogus \"actorFilterFormIDs\" actor (remove that chip if you see it).\n- \"Block Follower Commentary\" checkbox showing the opposite state.\n- Empty recent-actors list in the edit window.\n- Notes and names with quotes or line breaks being cut off.\n- YAML FormKeys not working for ESL plugins.\n- Repeated follower lines now show up again in History, and only the chosen reply to a follower command is logged.\n## Other\n- STFU is now licensed under GPL-3.0."
+        },
+        {
+          "version": "1.1.0",
+          "commit": "8961aed30bfcfbfc1a3f45d372a8b0ae23e86b6d",
+          "date": "2026-08-20T09:09:54Z"
+        }
+      ],
+      "external_url": "https://github.com/zevck/S.T.F.U",
+      "image": {
+        "file": "cover.jpg",
+        "sha": "24332344048347896a11bc520a7c312123f1fd79",
+        "commit": "f97b43f1ff35e5f7140be27dda4776fc177af8a0",
+        "width": 1920,
+        "height": 1080
+      },
+      "stats": {
+        "downloads": 116,
+        "endorsements": 4
+      }
+    },
     {
       "id": "plugins/tetherball88/lover-s-ledger",
       "plugin_id": "tetherball88.lover-s-ledger",
@@ -47,7 +103,7 @@
         "height": 1152
       },
       "stats": {
-        "downloads": 101,
+        "downloads": 102,
         "endorsements": 1
       }
     },
@@ -255,7 +311,7 @@
         "height": 432
       },
       "stats": {
-        "downloads": 181,
+        "downloads": 182,
         "endorsements": 1
       }
     },
@@ -324,7 +380,7 @@
         "height": 768
       },
       "stats": {
-        "downloads": 58,
+        "downloads": 59,
         "endorsements": 0
       }
     },
@@ -569,7 +625,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 642,
+        "downloads": 643,
         "endorsements": 31
       }
     },
@@ -650,7 +706,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 616,
+        "downloads": 617,
         "endorsements": 9
       }
     },
@@ -835,7 +891,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 202,
+        "downloads": 203,
         "endorsements": 3
       }
     },
@@ -949,7 +1005,7 @@
         "height": 1152
       },
       "stats": {
-        "downloads": 115,
+        "downloads": 116,
         "endorsements": 0
       }
     },
@@ -1046,7 +1102,7 @@
         "height": 720
       },
       "stats": {
-        "downloads": 78,
+        "downloads": 79,
         "endorsements": 0
       }
     },
@@ -1249,7 +1305,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 80,
+        "downloads": 81,
         "endorsements": 1
       }
     },
@@ -1392,7 +1448,7 @@
         "height": 864
       },
       "stats": {
-        "downloads": 251,
+        "downloads": 252,
         "endorsements": 6
       }
     },
@@ -1629,7 +1685,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 157,
+        "downloads": 158,
         "endorsements": 5
       }
     },
@@ -1677,7 +1733,7 @@
         "height": 1008
       },
       "stats": {
-        "downloads": 88,
+        "downloads": 90,
         "endorsements": 1
       }
     },
@@ -1772,7 +1828,7 @@
         "height": 1008
       },
       "stats": {
-        "downloads": 99,
+        "downloads": 100,
         "endorsements": 2
       }
     },
@@ -1835,7 +1891,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 67,
+        "downloads": 68,
         "endorsements": 0
       }
     },
@@ -2086,7 +2142,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 77,
+        "downloads": 78,
         "endorsements": 2
       }
     },
@@ -2144,7 +2200,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 49,
+        "downloads": 50,
         "endorsements": 0
       }
     },
@@ -2192,7 +2248,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 111,
+        "downloads": 112,
         "endorsements": 2
       }
     },
@@ -2338,7 +2394,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 144,
+        "downloads": 145,
         "endorsements": 0
       }
     },
@@ -2401,56 +2457,6 @@
       "stats": {
         "downloads": 235,
         "endorsements": 0
-      }
-    },
-    {
-      "id": "plugins/zevick/s-t-f-u-skyrim-talk-filter-utility",
-      "plugin_id": "zevick.s-t-f-u-skyrim-talk-filter-utility",
-      "type": "listing",
-      "title": "S.T.F.U - Skyrim Talk Filter Utility",
-      "tagline": "Skyrim Talk Filter Utility silences tedious frequent utterances",
-      "author": "zevick",
-      "tags": [
-        "stfu",
-        "dialogue",
-        "filter"
-      ],
-      "nsfw": false,
-      "icon": "dialogue",
-      "mods": [],
-      "first_published": "2026-08-20T09:09:54Z",
-      "last_updated": "2026-10-04T22:05:17Z",
-      "version": "1.2.1",
-      "history": [
-        {
-          "version": "1.2.1",
-          "commit": "ba0b708c5d9e82f2d32fce33f9fb11ccea41574e",
-          "date": "2026-10-04T22:05:17Z",
-          "changelog": "## Fixes\n- Potential fix for a crash during Dragon Rising's scene in Dragonsreach.\n- Hard-blocked lines could sometimes slip through on their second part.\n- Changing a blocked scene's category no longer leaves it controlled by both toggles until you restart.\n- Blocking a topic no longer overrides the toggle of a scene that has its own entry (e.g. a follower commentary or bard scene).\n- \"Import Scenes\" now adds the actual bard song scenes instead of three invalid entries.\n- The History tab's \"Whitelisted\" filter now works.\n- NPC names containing quotes no longer break the actor picker.\n- Entries that don't match any topic, scene, actor, faction or plugin are no longer saved silently; you get an error message instead. Failed actor filters and unreadable YAML files show an error too, and YAML import now tells you how many entries it imported.\n- Fixed a possible crash when reading older history entries.\n- Fixed a slow memory leak during long play sessions.\n- Much less log spam in STFU.log.\n- Bard song scenes added automatically on first launch no longer overwrite changes you made to existing bard entries."
-        },
-        {
-          "version": "1.2.0",
-          "commit": "4defc0f0f704b14dca78eb57a3d4a52b102a6270",
-          "date": "2026-09-26T22:48:12Z",
-          "changelog": "## Before you update\n- **New requirement:** [powerofthree's Tweaks](https://www.nexusmods.com/skyrimspecialedition/mods/51073) replaces Native EditorID Fix.\n- **41 scenes were removed from the pre-included list** because blocking them could potentially break quests or strand NPCs. Existing installs keep them until you delete them from the Blacklist tab, or clear your scene blacklist and re-import.\n\nS.T.F.U has been updated to the latest version of commonlibsse-NG. It should work on all versions, but 1.7.X is untested.\n## Fixes\n- Blacklist and whitelist entries now keep working after load-order changes.\n- Actor filters no longer mix up NPCs with the same name.\n- Each scene toggle (ambient, follower commentary, bard songs, blacklist) now controls its own scenes.\n- Removed pre-included scenes stay removed instead of being re-imported every launch.\n- If a game update moves the subtitle/response code, STFU skips those hooks and logs an error instead of crashing.\n- Freeze/crash shortly after loading a save.\n- VR crash during dialogue with the STFU menu open.\n- Jarl Laila and Anuriel getting stuck in Mistveil Keep.\n- Your own hard-blocked scenes playing when \"Block Ambient Scenes\" was off.\n- Scene blocks intermittently failing on AE.\n- Some entries added from History never matching.\n- Editing a blacklist entry erasing its faction filters.\n- Editing a whitelist entry adding a bogus \"actorFilterFormIDs\" actor (remove that chip if you see it).\n- \"Block Follower Commentary\" checkbox showing the opposite state.\n- Empty recent-actors list in the edit window.\n- Notes and names with quotes or line breaks being cut off.\n- YAML FormKeys not working for ESL plugins.\n- Repeated follower lines now show up again in History, and only the chosen reply to a follower command is logged.\n## Other\n- STFU is now licensed under GPL-3.0."
-        },
-        {
-          "version": "1.1.0",
-          "commit": "8961aed30bfcfbfc1a3f45d372a8b0ae23e86b6d",
-          "date": "2026-08-20T09:09:54Z"
-        }
-      ],
-      "external_url": "https://github.com/zevck/S.T.F.U",
-      "image": {
-        "file": "cover.jpg",
-        "sha": "24332344048347896a11bc520a7c312123f1fd79",
-        "commit": "f97b43f1ff35e5f7140be27dda4776fc177af8a0",
-        "width": 1920,
-        "height": 1080
-      },
-      "stats": {
-        "downloads": 115,
-        "endorsements": 4
       }
     },
     {
@@ -2540,7 +2546,7 @@
         "height": 1080
       },
       "stats": {
-        "downloads": 135,
+        "downloads": 136,
         "endorsements": 1
       }
     },
@@ -2597,7 +2603,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 107,
+        "downloads": 108,
         "endorsements": 3
       }
     },
@@ -2641,7 +2647,7 @@
         "height": 936
       },
       "stats": {
-        "downloads": 53,
+        "downloads": 54,
         "endorsements": 0
       }
     },
@@ -2894,7 +2900,7 @@
         "height": 720
       },
       "stats": {
-        "downloads": 49,
+        "downloads": 50,
         "endorsements": 0
       }
     },
@@ -2930,7 +2936,7 @@
       ],
       "external_url": "https://github.com/naitro2010/SkyrimNet_UDNG/releases/tag/alpha12",
       "stats": {
-        "downloads": 106,
+        "downloads": 107,
         "endorsements": 3
       }
     },
@@ -2970,7 +2976,7 @@
         "height": 900
       },
       "stats": {
-        "downloads": 179,
+        "downloads": 180,
         "endorsements": 5
       }
     },
@@ -3091,7 +3097,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 64,
+        "downloads": 65,
         "endorsements": 2
       }
     },
@@ -3151,7 +3157,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 146,
+        "downloads": 147,
         "endorsements": 0
       }
     },
@@ -3191,7 +3197,7 @@
         "height": 1152
       },
       "stats": {
-        "downloads": 83,
+        "downloads": 84,
         "endorsements": 2
       }
     },
@@ -3317,7 +3323,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 333,
+        "downloads": 334,
         "endorsements": 5
       }
     },
@@ -3362,7 +3368,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1071,
+        "downloads": 1072,
         "endorsements": 2
       }
     },
@@ -3407,7 +3413,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 526,
+        "downloads": 527,
         "endorsements": 0
       }
     },
@@ -3497,7 +3503,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2316,
+        "downloads": 2318,
         "endorsements": 2
       }
     },
@@ -3722,7 +3728,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1189,
+        "downloads": 1193,
         "endorsements": 0
       }
     },
@@ -4082,7 +4088,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 151,
+        "downloads": 152,
         "endorsements": 0
       }
     },
@@ -4487,7 +4493,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 960,
+        "downloads": 961,
         "endorsements": 0
       }
     },
@@ -4847,7 +4853,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 856,
+        "downloads": 857,
         "endorsements": 1
       }
     },
@@ -5207,7 +5213,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1099,
+        "downloads": 1100,
         "endorsements": 2
       }
     },
@@ -5432,7 +5438,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 692,
+        "downloads": 694,
         "endorsements": 0
       }
     },
@@ -6932,7 +6938,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 366,
+        "downloads": 367,
         "endorsements": 0
       }
     },
@@ -7877,7 +7883,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1270,
+        "downloads": 1271,
         "endorsements": 2
       }
     },
@@ -8912,7 +8918,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1355,
+        "downloads": 1357,
         "endorsements": 2
       }
     },
@@ -9722,7 +9728,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 818,
+        "downloads": 819,
         "endorsements": 0
       }
     },
@@ -9767,7 +9773,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 473,
+        "downloads": 474,
         "endorsements": 0
       }
     },
@@ -11477,7 +11483,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 128,
+        "downloads": 129,
         "endorsements": 0
       }
     },
@@ -11522,7 +11528,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 427,
+        "downloads": 428,
         "endorsements": 0
       }
     },
@@ -11612,7 +11618,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 149,
+        "downloads": 150,
         "endorsements": 0
       }
     },
@@ -12332,7 +12338,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1661,
+        "downloads": 1663,
         "endorsements": 2
       }
     },
@@ -12602,7 +12608,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 384,
+        "downloads": 385,
         "endorsements": 0
       }
     },
@@ -12692,7 +12698,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 44,
+        "downloads": 45,
         "endorsements": 0
       }
     },
