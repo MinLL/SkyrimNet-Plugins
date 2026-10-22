@@ -1,8 +1,65 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-22T23:27:50.989Z",
-  "stats_as_of": "2026-10-22T23:25:06.845Z",
+  "generated_at": "2026-10-22T23:42:41.446Z",
+  "stats_as_of": "2026-10-22T23:42:41.315Z",
   "plugins": [
+    {
+      "id": "plugins/stoptryharding/dragonsense",
+      "plugin_id": "stoptryharding.dragonsense",
+      "type": "listing",
+      "title": "DragonSense",
+      "tagline": "Dragon roars and the Greybeards' summons stop being player-only. Nearby NPCs hear them, react, and remember.",
+      "author": "stoptryharding",
+      "tags": [
+        "External Mod"
+      ],
+      "nsfw": false,
+      "icon": "brain",
+      "mods": [],
+      "first_published": "2026-10-20T06:34:02Z",
+      "last_updated": "2026-10-22T23:42:13Z",
+      "version": "0.4.0",
+      "history": [
+        {
+          "version": "0.4.0",
+          "commit": "038b54c8ff22ef800482f11cd14831492b70ad89",
+          "date": "2026-10-22T23:42:13Z",
+          "changelog": "# DragonSense 0.4.0\n\n## Added\n- **Bats at Bleak Falls Sanctum** — NPCs notice the swarm bursting from the dark as the inner sanctum comes into view.\n- **Ustengrav's rising statues** — stone grinding in the dark as the ancient statues climb out of the water.\n- **FOMOD installer** — one archive, pick your language during install.\n\n## Changed\n- Narration lines are no longer wrapped in asterisks.\n\n## Languages\nEnglish, Russian, Japanese, Portuguese, Spanish, French, German, Italian, Polish, Korean, Vietnamese, Chinese (Simplified), Chinese (Traditional)."
+        },
+        {
+          "version": "0.3.0",
+          "commit": "684f61e0c09d7bcd9d5c9217c38f397c1d0d4b0e",
+          "date": "2026-10-20T06:34:02Z",
+          "changelog": "Initial release"
+        }
+      ],
+      "external_url": "https://github.com/nan0bug00/DragonSense/releases/tag/v0.4.0",
+      "languages": [
+        "en",
+        "ru",
+        "es",
+        "ja",
+        "pt",
+        "de",
+        "fr",
+        "zh",
+        "it",
+        "pl",
+        "ko"
+      ],
+      "language": "en",
+      "image": {
+        "file": "cover.png",
+        "sha": "c036ec1179ee62772b8df0caf71a554a9d92d3d8",
+        "commit": "684f61e0c09d7bcd9d5c9217c38f397c1d0d4b0e",
+        "width": 1280,
+        "height": 720
+      },
+      "stats": {
+        "downloads": 22,
+        "endorsements": 1
+      }
+    },
     {
       "id": "plugins/jykej/intellite",
       "plugin_id": "jykej.intellite",
@@ -225,7 +282,7 @@
         "height": 720
       },
       "stats": {
-        "downloads": 14,
+        "downloads": 15,
         "endorsements": 0
       }
     },
@@ -535,47 +592,6 @@
       "stats": {
         "downloads": 70,
         "endorsements": 3
-      }
-    },
-    {
-      "id": "plugins/stoptryharding/dragonsense",
-      "plugin_id": "stoptryharding.dragonsense",
-      "type": "listing",
-      "title": "DragonSense",
-      "tagline": "Dragon roars and the Greybeards' summons stop being player-only. Nearby NPCs hear them, react, and remember.",
-      "author": "stoptryharding",
-      "tags": [
-        "External Mod"
-      ],
-      "nsfw": false,
-      "icon": "brain",
-      "mods": [],
-      "first_published": "2026-10-20T06:34:02Z",
-      "last_updated": "2026-10-20T06:34:02Z",
-      "version": "0.3.0",
-      "history": [
-        {
-          "version": "0.3.0",
-          "commit": "684f61e0c09d7bcd9d5c9217c38f397c1d0d4b0e",
-          "date": "2026-10-20T06:34:02Z",
-          "changelog": "Initial release"
-        }
-      ],
-      "external_url": "https://github.com/nan0bug00/DragonSense/releases/tag/v0.3.0",
-      "languages": [
-        "en"
-      ],
-      "language": "en",
-      "image": {
-        "file": "cover.png",
-        "sha": "c036ec1179ee62772b8df0caf71a554a9d92d3d8",
-        "commit": "684f61e0c09d7bcd9d5c9217c38f397c1d0d4b0e",
-        "width": 1280,
-        "height": 720
-      },
-      "stats": {
-        "downloads": 22,
-        "endorsements": 1
       }
     },
     {
@@ -1692,7 +1708,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 322,
+        "downloads": 323,
         "endorsements": 3
       }
     },
@@ -3496,7 +3512,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 532,
+        "downloads": 533,
         "endorsements": 0
       }
     },
@@ -3586,7 +3602,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2382,
+        "downloads": 2384,
         "endorsements": 2
       }
     },
@@ -3811,7 +3827,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1223,
+        "downloads": 1225,
         "endorsements": 0
       }
     },
@@ -4081,7 +4097,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 456,
+        "downloads": 457,
         "endorsements": 0
       }
     },
@@ -4576,7 +4592,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 981,
+        "downloads": 983,
         "endorsements": 0
       }
     },
@@ -5296,7 +5312,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1117,
+        "downloads": 1119,
         "endorsements": 2
       }
     },
@@ -5431,7 +5447,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 289,
+        "downloads": 290,
         "endorsements": 1
       }
     },
@@ -5476,7 +5492,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 497,
+        "downloads": 499,
         "endorsements": 0
       }
     },
@@ -5521,7 +5537,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 712,
+        "downloads": 715,
         "endorsements": 0
       }
     },
@@ -7336,7 +7352,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 295,
+        "downloads": 297,
         "endorsements": 0
       }
     },
@@ -7741,7 +7757,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 572,
+        "downloads": 573,
         "endorsements": 0
       }
     },
@@ -7786,7 +7802,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 397,
+        "downloads": 400,
         "endorsements": 0
       }
     },
@@ -7876,7 +7892,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 986,
+        "downloads": 987,
         "endorsements": 0
       }
     },
@@ -7966,7 +7982,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1295,
+        "downloads": 1298,
         "endorsements": 2
       }
     },
@@ -8371,7 +8387,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 295,
+        "downloads": 296,
         "endorsements": 0
       }
     },
@@ -9001,7 +9017,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1385,
+        "downloads": 1387,
         "endorsements": 2
       }
     },
@@ -9271,7 +9287,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1138,
+        "downloads": 1139,
         "endorsements": 2
       }
     },
@@ -9496,7 +9512,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 108,
+        "downloads": 110,
         "endorsements": 0
       }
     },
@@ -9676,7 +9692,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 299,
+        "downloads": 300,
         "endorsements": 0
       }
     },
@@ -9811,7 +9827,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 836,
+        "downloads": 838,
         "endorsements": 0
       }
     },
@@ -9856,7 +9872,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 478,
+        "downloads": 479,
         "endorsements": 0
       }
     },
@@ -10621,7 +10637,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 700,
+        "downloads": 701,
         "endorsements": 0
       }
     },
@@ -11161,7 +11177,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 90,
+        "downloads": 91,
         "endorsements": 0
       }
     },
@@ -11431,7 +11447,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 228,
+        "downloads": 231,
         "endorsements": 0
       }
     },
@@ -11611,7 +11627,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 439,
+        "downloads": 440,
         "endorsements": 0
       }
     },
@@ -11881,7 +11897,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 597,
+        "downloads": 599,
         "endorsements": 2
       }
     },
@@ -12421,7 +12437,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1697,
+        "downloads": 1700,
         "endorsements": 2
       }
     },
@@ -12691,7 +12707,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 394,
+        "downloads": 396,
         "endorsements": 0
       }
     },
