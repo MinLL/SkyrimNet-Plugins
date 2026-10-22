@@ -1,0 +1,19 @@
+{
+  "id": "min.skyrimnet-prompts-local-models",
+  "type": "bundle",
+  "title": "SkyrimNet Prompts - Local Models",
+  "tagline": "Prompts for small local models - EXPERIMENTAL",
+  "description": "Prompt updates intended to optimize for small local models. Built on the cache-enabled prompts, so a local server's prompt cache reuses the system message and the history from one reply to the next.\n\nThis replaces the same files as Skyrimnet Prompts - Cache Enabled; use one or the other, not both. This cuts a significant amount of less important information from the prompt, and optimizes the presentation for the characteristics of local models, such as NVIDIA's upcoming Gemma-Nemotron 4B (Nemotron 3.5 Bolt E4B) model.\n\nRecommended settings: temperature 0.7 for dialogue, reasoning off, and DRY sampling if your server supports it (dry_multiplier 0.8, dry_base 1.75, dry_allowed_length 2). Optionally if you have a lot of plugins that provide new actions: embedded actions off (actions are then chosen in their own call; replies come out faster and score a little better)",
+  "author": "min",
+  "tags": [
+    "Local",
+    "Small models",
+    "Performance"
+  ],
+  "nsfw": false,
+  "icon": "ai",
+  "mods": [],
+  "version": "0.2.0",
+  "changelog": "Initial, highly experimental release. Tuned on Gemma-Nemotron 4B (Nemotron 3.5 Bolt E4B) through SkyrimNet's new recursive prompt calibration framework.",
+  "min_skyrimnet_version": "0.28.0"
+}
