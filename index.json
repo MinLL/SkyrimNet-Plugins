@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-22T06:46:44.351Z",
-  "stats_as_of": "2026-10-22T06:46:44.246Z",
+  "generated_at": "2026-10-22T07:37:10.603Z",
+  "stats_as_of": "2026-10-22T07:32:44.822Z",
   "plugins": [
     {
       "id": "plugins/tetherball88/lover-s-ledger",
@@ -569,7 +569,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 641,
+        "downloads": 642,
         "endorsements": 31
       }
     },
@@ -3497,7 +3497,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2315,
+        "downloads": 2316,
         "endorsements": 2
       }
     },
