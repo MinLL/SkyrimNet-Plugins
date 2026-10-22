@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-22T02:39:11.893Z",
-  "stats_as_of": "2026-10-22T02:39:11.790Z",
+  "generated_at": "2026-10-22T03:35:38.153Z",
+  "stats_as_of": "2026-10-22T03:34:05.238Z",
   "plugins": [
     {
       "id": "plugins/tetherball88/lover-s-ledger",
@@ -47,7 +47,7 @@
         "height": 1152
       },
       "stats": {
-        "downloads": 99,
+        "downloads": 101,
         "endorsements": 1
       }
     },
@@ -86,7 +86,7 @@
         "height": 720
       },
       "stats": {
-        "downloads": 8,
+        "downloads": 9,
         "endorsements": 0
       }
     },
@@ -435,7 +435,7 @@
         "height": 720
       },
       "stats": {
-        "downloads": 17,
+        "downloads": 18,
         "endorsements": 0
       }
     },
@@ -497,7 +497,7 @@
         "height": 720
       },
       "stats": {
-        "downloads": 31,
+        "downloads": 32,
         "endorsements": 0
       }
     },
@@ -569,7 +569,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 638,
+        "downloads": 639,
         "endorsements": 31
       }
     },
@@ -650,7 +650,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 608,
+        "downloads": 610,
         "endorsements": 9
       }
     },
@@ -835,7 +835,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 195,
+        "downloads": 199,
         "endorsements": 3
       }
     },
@@ -949,7 +949,7 @@
         "height": 1152
       },
       "stats": {
-        "downloads": 114,
+        "downloads": 115,
         "endorsements": 0
       }
     },
@@ -1249,7 +1249,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 78,
+        "downloads": 79,
         "endorsements": 1
       }
     },
@@ -1392,7 +1392,7 @@
         "height": 864
       },
       "stats": {
-        "downloads": 248,
+        "downloads": 249,
         "endorsements": 6
       }
     },
@@ -2028,7 +2028,7 @@
         "config": 4
       },
       "stats": {
-        "downloads": 159,
+        "downloads": 160,
         "endorsements": 1
       }
     },
@@ -2086,7 +2086,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 76,
+        "downloads": 77,
         "endorsements": 2
       }
     },
@@ -2144,7 +2144,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 48,
+        "downloads": 49,
         "endorsements": 0
       }
     },
@@ -2338,7 +2338,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 141,
+        "downloads": 142,
         "endorsements": 0
       }
     },
@@ -2970,7 +2970,7 @@
         "height": 900
       },
       "stats": {
-        "downloads": 176,
+        "downloads": 177,
         "endorsements": 5
       }
     },
@@ -3151,7 +3151,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 145,
+        "downloads": 146,
         "endorsements": 0
       }
     },
@@ -3317,7 +3317,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 330,
+        "downloads": 332,
         "endorsements": 5
       }
     },
