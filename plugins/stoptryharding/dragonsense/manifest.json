@@ -3,7 +3,7 @@
   "type": "listing",
   "title": "DragonSense",
   "tagline": "Dragon roars and the Greybeards' summons stop being player-only. Nearby NPCs hear them, react, and remember.",
-  "description": "### Your followers hear the world, not just you.\n\nSkyrim's loudest moments are usually yours alone. You hear the roar; your followers carry on like nothing is happening. DragonSense gives the people around you ears for the moments that matter.\n\n**A dragon's roar.** Whether hearin one across the valley while you walk a road, or feeling one screaming overhead in battle. NPCs near you notice it and react, sometimes immediately, sometimes briefly delayed.\n\n**The Greybeards' summons.** When the shout rolls down from the mountain after the dragon at the Western Watchtower, the people standing beside you hear it too.\n\nNear roars and far ones are perceived differently, so a dragon circling above you doesn't sound like one lost somewhere in the fog.\n\nNo new quests, no items, no `.esp` slot - just a small `.dll` mod that gives the world ears.",
+  "description": "### Your followers hear the world, not just you.\n\nSkyrim's loudest moments are usually yours alone. You hear the roar; your followers carry on like nothing is happening. DragonSense gives the people around you ears for the moments that matter.\n\n**A dragon's roar is now audible to your followers and nearby NPCs.** Whether hearing one across the valley while you walk a road, or feeling one screaming overhead in battle. NPCs near you notice it and react, sometimes immediately, sometimes briefly delayed.\n\nNear roars and far ones are perceived differently, so a dragon circling above you doesn't sound like one lost somewhere in the fog.\n\nOther moments get narrated as well:\n- **The Greybeards Summons:** When they shout \"Dovahkiin!\" on your way back to Whiterun, after the fight w/ Mirmulnir.\n- **Bleak Falls Barrow inner sanctum 'bats' scene**\n- **Ustengrav statues rising out of the water**\n\nNo new quests, no items, no `.esp` slot - just a small `.dll` mod that gives NPCs eyes and ears.",
   "author": "stoptryharding",
   "tags": [
     "External Mod"
@@ -12,10 +12,20 @@
   "icon": "brain",
   "mods": [],
   "languages": [
-    "en"
+    "en",
+    "ru",
+    "es",
+    "ja",
+    "pt",
+    "de",
+    "fr",
+    "zh",
+    "it",
+    "pl",
+    "ko"
   ],
   "image": "cover.png",
-  "external_url": "https://github.com/nan0bug00/DragonSense/releases/tag/v0.3.0",
-  "version": "0.3.0",
-  "changelog": "Initial release"
+  "external_url": "https://github.com/nan0bug00/DragonSense/releases/tag/v0.4.0",
+  "version": "0.4.0",
+  "changelog": "# DragonSense 0.4.0\n\n## Added\n- **Bats at Bleak Falls Sanctum** — NPCs notice the swarm bursting from the dark as the inner sanctum comes into view.\n- **Ustengrav's rising statues** — stone grinding in the dark as the ancient statues climb out of the water.\n- **FOMOD installer** — one archive, pick your language during install.\n\n## Changed\n- Narration lines are no longer wrapped in asterisks.\n\n## Languages\nEnglish, Russian, Japanese, Portuguese, Spanish, French, German, Italian, Polish, Korean, Vietnamese, Chinese (Simplified), Chinese (Traditional)."
 }
