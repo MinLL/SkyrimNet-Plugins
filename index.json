@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-22T04:33:38.927Z",
-  "stats_as_of": "2026-10-22T04:33:38.801Z",
+  "generated_at": "2026-10-22T05:30:54.298Z",
+  "stats_as_of": "2026-10-22T05:30:54.228Z",
   "plugins": [
     {
       "id": "plugins/tetherball88/lover-s-ledger",
@@ -255,7 +255,7 @@
         "height": 432
       },
       "stats": {
-        "downloads": 180,
+        "downloads": 181,
         "endorsements": 1
       }
     },
@@ -569,7 +569,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 640,
+        "downloads": 641,
         "endorsements": 31
       }
     },
@@ -650,7 +650,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 611,
+        "downloads": 612,
         "endorsements": 9
       }
     },
@@ -1046,7 +1046,7 @@
         "height": 720
       },
       "stats": {
-        "downloads": 77,
+        "downloads": 78,
         "endorsements": 0
       }
     },
@@ -1677,7 +1677,7 @@
         "height": 1008
       },
       "stats": {
-        "downloads": 87,
+        "downloads": 88,
         "endorsements": 1
       }
     },
