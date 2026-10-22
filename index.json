@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-22T08:20:01.315Z",
-  "stats_as_of": "2026-10-22T08:20:01.233Z",
+  "generated_at": "2026-10-22T09:33:28.573Z",
+  "stats_as_of": "2026-10-22T09:33:28.458Z",
   "plugins": [
     {
       "id": "plugins/zevick/s-t-f-u-skyrim-talk-filter-utility",
@@ -55,7 +55,7 @@
         "height": 1080
       },
       "stats": {
-        "downloads": 116,
+        "downloads": 117,
         "endorsements": 4
       }
     },
@@ -103,7 +103,7 @@
         "height": 1152
       },
       "stats": {
-        "downloads": 102,
+        "downloads": 103,
         "endorsements": 1
       }
     },
@@ -492,7 +492,7 @@
       },
       "stats": {
         "downloads": 18,
-        "endorsements": 0
+        "endorsements": 1
       }
     },
     {
@@ -706,8 +706,8 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 617,
-        "endorsements": 9
+        "downloads": 618,
+        "endorsements": 10
       }
     },
     {
@@ -2201,7 +2201,7 @@
       },
       "stats": {
         "downloads": 50,
-        "endorsements": 0
+        "endorsements": 1
       }
     },
     {
@@ -3098,7 +3098,7 @@
       },
       "stats": {
         "downloads": 65,
-        "endorsements": 2
+        "endorsements": 3
       }
     },
     {
@@ -7658,7 +7658,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 562,
+        "downloads": 563,
         "endorsements": 0
       }
     },
@@ -10538,7 +10538,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 688,
+        "downloads": 690,
         "endorsements": 0
       }
     },
