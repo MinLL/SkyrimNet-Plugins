@@ -13,9 +13,235 @@
   ],
   "nsfw": true,
   "icon": "package",
-  "mods": [],
+  "mods": [
+    {
+      "name": "Skyrim.esm",
+      "file": "skyrim.esm",
+      "required": true
+    },
+    {
+      "name": "SexLab.esm",
+      "file": "sexlab.esm",
+      "required": true
+    },
+    {
+      "name": "Devious Devices - Assets.esm",
+      "file": "devious devices - assets.esm",
+      "required": true
+    },
+    {
+      "name": "Devious Devices - Integration.esm",
+      "file": "devious devices - integration.esm",
+      "required": true
+    },
+    {
+      "name": "Devious Devices - Expansion.esm",
+      "file": "devious devices - expansion.esm",
+      "required": true
+    },
+    {
+      "name": "Devious Devices - Contraptions.esm",
+      "file": "devious devices - contraptions.esm",
+      "required": true
+    },
+    {
+      "name": "CreatureFramework.esm",
+      "file": "creatureframework.esm",
+      "required": true
+    },
+    {
+      "name": "MilkModNEW.esp",
+      "file": "milkmodnew.esp",
+      "required": true
+    },
+    {
+      "name": "SexLab More Creatures.esp",
+      "file": "sexlab more creatures.esp",
+      "required": true
+    },
+    {
+      "name": "RealisticNeedsandDiseases.esp",
+      "file": "realisticneedsanddiseases.esp",
+      "required": true
+    },
+    {
+      "name": "WaifuCards.esp",
+      "file": "waifucards.esp",
+      "required": true
+    },
+    {
+      "name": "UnforgivingDevices.esp",
+      "file": "unforgivingdevices.esp",
+      "required": true
+    },
+    {
+      "name": "UnforgivingSkyrim.esp",
+      "file": "unforgivingskyrim.esp",
+      "required": true
+    },
+    {
+      "name": "DeviousFollowers.esp",
+      "file": "deviousfollowers.esp",
+      "required": true
+    },
+    {
+      "name": "yps-ImmersivePiercing.esp",
+      "file": "yps-immersivepiercing.esp",
+      "required": true
+    },
+    {
+      "name": "BodySearch.esp",
+      "file": "bodysearch.esp",
+      "required": true
+    },
+    {
+      "name": "iNeed.esp",
+      "file": "ineed.esp",
+      "required": true
+    },
+    {
+      "name": "CaptivePlayer.esp",
+      "file": "captiveplayer.esp",
+      "required": true
+    },
+    {
+      "name": "MoreNastyCritters.esp",
+      "file": "morenastycritters.esp",
+      "required": true
+    },
+    {
+      "name": "Devious Devices SE patch.esp",
+      "file": "devious devices se patch.esp",
+      "required": true
+    },
+    {
+      "name": "CreatureSummoner.esp",
+      "file": "creaturesummoner.esp",
+      "required": true
+    },
+    {
+      "name": "Bathing in Skyrim.esp",
+      "file": "bathing in skyrim.esp",
+      "required": true
+    },
+    {
+      "name": "Bathing in Skyrim - First Person Messages.esp",
+      "file": "bathing in skyrim - first person messages.esp",
+      "required": true
+    },
+    {
+      "name": "MilkModNEW HF.esp",
+      "file": "milkmodnew hf.esp",
+      "required": true
+    },
+    {
+      "name": "WaifuCards - Bimbos of Skyrim.esp",
+      "file": "waifucards - bimbos of skyrim.esp",
+      "required": true
+    },
+    {
+      "name": "HornyCreatures.esp",
+      "file": "hornycreatures.esp",
+      "required": true
+    },
+    {
+      "name": "UnforgivingDevices - DD Patch.esp",
+      "file": "unforgivingdevices - dd patch.esp",
+      "required": true
+    },
+    {
+      "name": "UnforgivingDevices - LBS Patch.esp",
+      "file": "unforgivingdevices - lbs patch.esp",
+      "required": true
+    },
+    {
+      "name": "UnforgivingDevices - Security Overhaul Patch.esp",
+      "file": "unforgivingdevices - security overhaul patch.esp",
+      "required": true
+    },
+    {
+      "name": "Apropos2.esp",
+      "file": "apropos2.esp",
+      "required": true
+    },
+    {
+      "name": "SexLab Aroused Creatures.esp",
+      "file": "sexlab aroused creatures.esp",
+      "required": true
+    },
+    {
+      "name": "DeviousFollowers - Cutting Room Floor - Patch.esp",
+      "file": "deviousfollowers - cutting room floor - patch.esp",
+      "required": true
+    },
+    {
+      "name": "DeviousFollowers - Unofficially Patched.esp",
+      "file": "deviousfollowers - unofficially patched.esp",
+      "required": true
+    },
+    {
+      "name": "Love Sickness.esp",
+      "file": "love sickness.esp",
+      "required": true
+    },
+    {
+      "name": "BattleFuck.esp",
+      "file": "battlefuck.esp",
+      "required": true
+    },
+    {
+      "name": "JailRape.esp",
+      "file": "jailrape.esp",
+      "required": true
+    },
+    {
+      "name": "Bathing in Skyrim - CACO Patch.esp",
+      "file": "bathing in skyrim - caco patch.esp",
+      "required": true
+    },
+    {
+      "name": "UnforgivingDevices - CACO Patch.esp",
+      "file": "unforgivingdevices - caco patch.esp",
+      "required": true
+    },
+    {
+      "name": "UnforgivingSkyrim - CACO Patch.esp",
+      "file": "unforgivingskyrim - caco patch.esp",
+      "required": true
+    },
+    {
+      "name": "Advanced Nudity Detection.esp",
+      "file": "advanced nudity detection.esp",
+      "required": true
+    },
+    {
+      "name": "Devious Devices - NG - Armbinder replacer.esp",
+      "file": "devious devices - ng - armbinder replacer.esp",
+      "required": true
+    },
+    {
+      "name": "Devious Devices - NG - Catsuit replacer.esp",
+      "file": "devious devices - ng - catsuit replacer.esp",
+      "required": true
+    },
+    {
+      "name": "Devious Devices - NG - Piercing replacer.esp",
+      "file": "devious devices - ng - piercing replacer.esp",
+      "required": true
+    },
+    {
+      "name": "Licenses.esp",
+      "file": "licenses.esp",
+      "required": true
+    },
+    {
+      "name": "Licenses - First Person Messages.esp",
+      "file": "licenses - first person messages.esp",
+      "required": true
+    }
+  ],
   "image": "cover.png",
   "external_url": "https://github.com/johnsonjoe1/SkyrimNetMessagelessImmersion/releases",
-  "version": "0.7.3",
-  "changelog": "See full changelog on the GitHub.\nShort summary here:\nBetter timing, fewer repeated comments, clearer equipment names, and additional bathing and license thoughts. Changes since 0.7.2:\n\n## New and improved thoughts\n\n- Added a thought when the player starts bathing, with a 180-second cooldown.\n- Added expiration thoughts for weapon, magic, armor, bikini, clothing, crafting, and trading licenses, travel permits, and life insurance. These use the existing shared license-thought cooldown.\n- Added a player thought for the Devious Devices plug-moan broadcast.\n- Equipment names in armor-activation and AND transparency/flashing prompts now omit bracketed annotations and standalone Roman numerals I through VIII, reducing awkward spoken item labels.\n- Furniture thoughts are now eligible from the first use, without an initial cooldown caused by plugin startup.\n\n## Less repetition and better timing\n\n- Lockpick replenishment thoughts now trigger only when you previously had three or fewer lockpicks, instead of fewer than 20. Replenishment and last-three-lockpicks thoughts each have a separate 180-second cooldown; running out of lockpicks still triggers an immediate thought.\n- AND nudity-change thoughts now wait at least 30 seconds after loading a game and have a 40-second cooldown to reduce repeated comments during clothing changes.\n- Fixed SLAC player-scene stage timing: stage thoughts now wait 40 seconds after the scene starts and at least 40 seconds between subsequent comments. Nearby NPC scene starts and endings each have a separate 180-second cooldown.\n- Fixed slap and grope notification cooldowns incorrectly sharing the timer used for approaching SLAC creatures. Slap and grope thoughts now use their own shared 30-second cooldown.\n- Added separate 120-second cooldowns for the application and removal of the Licenses magic-suppression effect.\n- Increased the cooldown between Battle Fuck stripping-stage thoughts from 20 to 40 seconds."
+  "version": "0.7.4",
+  "changelog": "See full changelog on the GitHub.\nShort summary here:\n- Fixed potential crashes from effects without a caster.\n- Reduced repeated thoughts and false comments after loading saves.\n- Added arousal thoughts with clearer reasons for changes.\n- Added reactions to more device effects and frostbite-spider venom.\n- Improved creature-scene comments and delayed some fashion/device thoughts until quieter moments."
 }
