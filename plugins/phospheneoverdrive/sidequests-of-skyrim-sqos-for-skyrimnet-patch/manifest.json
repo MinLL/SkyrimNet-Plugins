@@ -1,0 +1,34 @@
+{
+  "id": "phospheneoverdrive.sidequests-of-skyrim-sqos-for-skyrimnet-patch",
+  "type": "listing",
+  "title": " Sidequests of Skyrim (SQOS) for SkyrimNet Patch",
+  "tagline": "Talk your way into (and out of) sidequests.",
+  "description": "> **This is a patch, not a standalone mod.** It needs the original Sidequests of Skyrim installed, and does nothing without it.\n\nSidequests of Skyrim (SQOS) gives Skyrim's NPCs small jobs to hand out: fetch an item from a dungeon, gather ingredients, go shopping, temper a weapon, rescue someone, deliver a package or pick up a shipment. Out of the box, SkyrimNet NPCs have no idea any of that happened. They'll deny giving you the note, and the note itself is full of `<Alias=...>` placeholders the AI can't read.\n\nThis patcher fixes that for all 7 quest types. NPCs remember the jobs they gave you, what they asked for, where to go and how it's going. They remember the jobs you finished, gave up or that ended badly, after the quest is over. Quests can be started, handed in and called off just by talking: ask an NPC if they need help, and they offer a job through a pop-up you can accept or decline. Go back when the job's done and they hand over the reward. The regular dialogue-menu lines still work too.\n\n## Requirements\n\n- Skyrim SE/AE with SKSE\n- SkyrimNet **Beta 25 or newer** (tested on Beta 28)\n- Sidequests of Skyrim — **the original mod this patches; install it first**\n- PowerOfThree's Papyrus Extender\n- PapyrusUtil SE\n- Papyrus MessageBox\n\n## Setup notes\n\n- In the SkyrimNet web UI, **disable the built-in `ACCOMPANYTARGET` action** and keep SQOS's lowercase `accompany_target` on. The built-in one can make a rescued victim follow you around and break Rescue quests.\n- Keep the SQOS actions enabled: `ask_for_help`, `pickup_shipment`, `free_captive`, `complete_sidequest`, `cancel_sidequest`, `accompany_target`.\n- A short cooldown on reward actions is still a good idea.\n\n### Updating from v0.3 / v0.3.1\n\n1. Safest is to finish or give up any running SQOS quest first, then save.\n2. Replace the old patcher with v0.4 in your mod manager. Make sure the old `gerkinfeltser.sqos-patch` folder is gone; v0.4 uses `phospheneoverdrive.sqos-patch`.\n3. Action names changed in v0.3.1, so re-apply your action enable and cooldown settings in the SkyrimNet web UI, and disable the built-in `ACCOMPANYTARGET`.\n4. Load your save.\n\n## Known limits\n\n- The give-up box can only be closed by choosing a button.\n- Giving up a Dungeon quest while holding its item lets you keep the item (it isn't marked stolen yet). Other types take the item back.\n- NPC note reading through SeverActions isn't handled yet.\n- History keeps the last 64 jobs; older ones drop off.\n- Another NPC may offer a new job quickly right after you finish one.\n- Some mod-added cells have no hold (for example sleeping cellars for added city NPCs). There, Rescue jobs (and possibly other location-based ones) can't start, and the NPC just ends the conversation. Ask outside, or keep Shopping, Gather or Temper enabled.\n- Using a small model? NPCs may still be slow to offer jobs on their own. Asking directly (\"Do you need any help?\") works best.\n\n## Support\n\nBug reports and questions: GitHub issues. Release files and source:\n\n## Credits\n\nSidequests of Skyrim, SkyrimNet, Papyrus MessageBox, PowerOfThree's Papyrus Extender.\n\nThis patch was made with [much] AI assistance.",
+  "author": "phospheneoverdrive",
+  "tags": [
+    "quests",
+    "patch",
+    "memory",
+    "dialogue",
+    "actions",
+    "immersion",
+    "gameplay",
+    "sidequests"
+  ],
+  "nsfw": false,
+  "icon": "scroll",
+  "mods": [
+    {
+      "name": "Sidequests of Skyrim.esp",
+      "file": "sidequests of skyrim.esp",
+      "required": true
+    }
+  ],
+  "languages": [
+    "en"
+  ],
+  "image": "cover.jpg",
+  "external_url": "https://github.com/Gerkinfeltser/SQOSPatcher/releases/latest",
+  "version": "0.4.0",
+  "changelog": "First release on the SkyrimNet plugin system. Includes the v0.3.1 changes, which were only on GitHub/Discord.\n\n**New**\n- **Give up a quest by talking.** Tell the giver you're calling it off. They confirm with **Yes (Silent)**, **Yes (Narrated)** or **No**. Re-reading the note still offers a give-up box too. Giving up takes back the quest note and the generated quest item. Your own matching items are left alone.\n- **NPCs remember how it ended.** Quest history now covers jobs you gave up and jobs that failed because someone died: the giver, the victim, the recipient or the sender. They're described as over, with nothing owed, not as successes or as still open.\n- **AI hand-ins for every quest type** through `complete_sidequest`: reward and relationship boost paid once, item handed over, then cleanup. The AI no longer fires SQOS's own dialogue lines, so a quest can't complete twice. You can still pick those lines from the dialogue menu yourself.\n- **Better note thoughts.** When you read a quest note, the AI gets the real names, item and place instead of placeholders. This no longer replaces the whole player-thoughts prompt.\n\n**Fixes**\n- Temper quests now fail properly when the giver dies. The original mod was missing this for Temper.\n- Rescue quests now record whether the giver or the victim died (the two reasons were swapped).\n- Shipment pickup and hand-in no longer get stuck or update the wrong quest after cleanup.\n- A Shopping quest saved under an older version repairs itself when you load the save.\n- `ask_for_help` fires only when you actually ask for work, not when you're chatting about past jobs.\n- Dungeon quests rarely pick junk items now (1 in 100).\n\n**From v0.3.1**\n- Packaged as a SkyrimNet plugin (Beta 25+).\n- All action names are now lowercase snake_case (for example `ask_for_help`)."
+}
