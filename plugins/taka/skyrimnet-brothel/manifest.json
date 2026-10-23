@@ -1,0 +1,23 @@
+{
+  "id": "taka.skyrimnet-brothel",
+  "type": "listing",
+  "title": "SkyrimNet Brothel",
+  "tagline": "Run your own brothel: register follower workers, and SkyrimNet AI customers make offers she can accept or refuse.",
+  "description": "Run your own brothel. Make any interior your brothel, register female followers as\nworkers, and send the resident customers to them. SkyrimNet voices the offer and the\nworker decides in conversation whether to accept; SexLab P+ plays the scene and she is\npaid afterwards.\n\n**Requires:** SkyrimNet beta 28+, SexLab P+, SkyUI, MCM Helper, PapyrusUtil SE,\npowerofthree's Papyrus Extender. Japanese translation available.\n\nPre-release: limited testing. Feedback welcome on GitHub Issues.",
+  "author": "taka",
+  "tags": [
+    "SexLab",
+    "NPC",
+    "Gameplay"
+  ],
+  "nsfw": true,
+  "icon": "package",
+  "mods": [],
+  "languages": [
+    "en",
+    "ja"
+  ],
+  "external_url": "https://github.com/nightlantern-mods/skyrimnet_Brothel",
+  "version": "0.1.2",
+  "changelog": "Initial release"
+}
