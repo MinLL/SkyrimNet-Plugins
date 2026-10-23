@@ -1,0 +1,21 @@
+{
+  "id": "whyregister.to-the-yield-a-dueling-plug-in",
+  "type": "listing",
+  "title": "To the Yield (A Dueling Plug-in)",
+  "tagline": "SkyrimNet powered dueling",
+  "description": "Dueling in Skyrimnet. Challenge an NPC to a duel for with the equiped weapons they have.\n\nStarting a duel. Ask an NPC to duel, or an NPC may challenge you. A box asks you to confirm:\nFight starts the duel.\nRefuse declines, and the NPC hears that you turned them down.\nRefuse silently declines without telling the NPC.\nYielding. Sheathe your weapon for about 4 seconds. The NPC can also concede on their own.\nNobody dies. Your opponent kneels when beaten. You drop at zero health and they stop attacking. Afterwards, whoever went down gets back up with some health.\nA duel also ends if you walk away, never draw your weapon, someone outside the duel attacks either of you, or 3 minutes pass. Your followers are kept out of it.\nYou can't duel while either of you is already in combat or on horseback, against someone hostile to you, or with a child. Your opponent has to be close by.\n\nPlease note - Created by Claude 95%, tested by one person (me), only verified on 1.6.1170. File structure requires SkyrimNET 25 or greater.\n\nPlanning to add:\nNPC - NPC Duels\nScoreboard and renwon system\noffscreen events",
+  "author": "whyregister",
+  "tags": [
+    "Dueling",
+    "Weapons",
+    "Fighting",
+    "Brawl"
+  ],
+  "nsfw": false,
+  "icon": "package",
+  "mods": [],
+  "image": "cover.png",
+  "external_url": "https://github.com/whyregisterme/ToTheYield",
+  "version": "0.2.0",
+  "changelog": "Initial release"
+}
