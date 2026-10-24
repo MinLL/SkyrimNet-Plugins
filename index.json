@@ -1,8 +1,134 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-24T02:36:28.335Z",
-  "stats_as_of": "2026-10-24T02:36:28.211Z",
+  "generated_at": "2026-10-24T03:33:23.196Z",
+  "stats_as_of": "2026-10-24T03:33:23.051Z",
   "plugins": [
+    {
+      "id": "plugins/tetherball88/body-language",
+      "plugin_id": "tetherball88.body-language",
+      "type": "listing",
+      "title": "Body Language",
+      "tagline": "Context-aware NPC body descriptions powered by OBody NG, RSV, and TNG.",
+      "author": "tetherball88",
+      "tags": [
+        "body",
+        "descriptions",
+        "obody",
+        "npc",
+        "immersion",
+        "appearance"
+      ],
+      "nsfw": true,
+      "icon": "package",
+      "mods": [],
+      "first_published": "2026-09-25T20:55:01Z",
+      "last_updated": "2026-10-24T03:32:53Z",
+      "version": "2.1.0",
+      "history": [
+        {
+          "version": "2.1.0",
+          "commit": "d48e1bb6b4fd0dcace127b17fe497efb02469d74",
+          "date": "2026-10-24T03:32:53Z",
+          "changelog": "## Improved Body Classification, Roleplay Descriptions & Visual Blueprint Tooling\n### Added\n- Offline Testing & Visual Blueprint Suite (utility_scripts/): Added an interactive HTML visual blueprint generator, a 3D ground-truth analyzer, and an automated C++ DLL test runner with 30 reference 3BA and HIMBO presets.\n### Changed\n- Natural, Roleplay-Friendly Body Descriptions: Rewrote female and male body descriptions to replace clinical jargon with natural roleplay prose, and updated short descriptions to always mention pregnancy when present.\n- Breast Size Detection: Measured forward breast projection independently of ribcage and back width so broad-framed women are not misclassified as overly busty.\n- Pregnancy vs. Chubby/Heavy Builds: Improved pregnancy detection across baked meshes, runtime morphs, and bone scaling while isolating lower-belly overhang from hip measurements.\n- Male Chest & Midsection Accuracy: Updated male chest indexing to measure full upper-torso breadth and improved midsection detection so heavy-bellied men are properly classified as potbellied.\n- Shoulder & Arm Calibration: Recalibrated shoulder, waist, hip, and upper-arm thresholds against real-world proportions across slim, curvy, chubby, pregnant, and muscular builds."
+        },
+        {
+          "version": "2.0.0",
+          "commit": "5221f74a259dc77ac6db19639e639449285ad0e7",
+          "date": "2026-10-17T21:16:37Z",
+          "changelog": "## v2.0.0\n### Real-Time 3D Geometry & Normal-Map Engine\nComplete rewrite replacing static BodySlide XML preset tables, `.7z` texture archive hashing, and Papyrus scripts with a **real-time, mod-agnostic 3D geometry and normal-map analysis engine** built natively in C++.\n> **Upgrading from v1.x:** `TT_BodyLanguage.esp` has been removed (the mod is now ESP-free). When loading an existing save, Skyrim will warn that `TT_BodyLanguage.esp` is missing—this is expected and completely safe to continue past.\n### Added\n- **Universal 3D Body Mesh & Morph Analysis:** Directly reads `_0.nif`, `_1.nif`, and `.tri` files from Skyrim's VFS/BSAs, slicing any humanoid body replacer (3BA, BHUNP, UNP, UBE, HIMBO, SAM, vanilla, or custom follower bodies) into 10 anatomical rings (80 landmark vertices) and evaluating actor weight, RaceMenu (`skee64`) morphs, and XPMSE bone scales in real time.\n- **Pregnancy vs. Weight Isolation:** Separates localized belly morphs and `NPC Belly` node scaling from overall body mass so pregnant slender/athletic NPCs are not misclassified as overweight.\n- **On-Demand Normal Map Muscularity (`_msn.dds`):** Evaluates abdominal and deltoid normal-map definition at runtime via `DirectXTex` (configurable in `BodyLanguage.ini`) with zero startup archive scanning.\n- **Native C++ TNG & SOS Support (`ttlb_get_genitals`):** Detects *The New Gentleman* (TNG) and *Schlongs of Skyrim* (SOS) sizes and addons natively in C++ while keeping all prose and thresholds user-editable in `0020_genitals.prompt`, `tngAddons.json`, and `geometryThresholds.json`.\n- **SPID Keyword RSV Skin Complexions:** Instant keyword-based Racial Skin Variance (RSV) skin feature descriptions via `0005_skin_features.prompt` and `skinFeatures.json`.\n- **Modular Prompts & Full JSON Customization:** Split `0401_appearance_body_shape.prompt` into modular `body_language` subcomponents (`0001_body`, `0005_skin_features`, `0010_height`, `0020_genitals`) backed by `geometryThresholds.json`, `FemaleParts.jso"
+        },
+        {
+          "version": "1.0.3",
+          "commit": "8cc13e9228cd3c4f0e55fc484b1789ac73f3ab0f",
+          "date": "2026-09-26T05:27:36Z",
+          "changelog": "replaced cover image"
+        }
+      ],
+      "external_url": "https://github.com/tetherball88/BodyLanguage/releases/latest",
+      "languages": [
+        "en"
+      ],
+      "language": "en",
+      "image": {
+        "file": "cover.png",
+        "sha": "c4e9aec48dc2a7bef5e4a401e8241e1f5acfdf50",
+        "commit": "8cc13e9228cd3c4f0e55fc484b1789ac73f3ab0f",
+        "width": 2048,
+        "height": 1152
+      },
+      "stats": {
+        "downloads": 125,
+        "endorsements": 0
+      }
+    },
+    {
+      "id": "plugins/tetherball88/ostimnet",
+      "plugin_id": "tetherball88.ostimnet",
+      "type": "listing",
+      "title": "OStimNet",
+      "tagline": "Intimate encounter AI framework integration for OStim and SkyrimNet.",
+      "author": "tetherball88",
+      "tags": [
+        "ostim",
+        "animation",
+        "adult"
+      ],
+      "nsfw": true,
+      "icon": "heart",
+      "mods": [],
+      "first_published": "2026-09-12T06:44:36-08:00",
+      "last_updated": "2026-10-24T03:32:49Z",
+      "version": "2.5.7",
+      "history": [
+        {
+          "version": "2.5.7",
+          "commit": "d12033c6b7cffe5de11c41fc920e29f1a6cd1f23",
+          "date": "2026-10-24T03:32:49Z",
+          "changelog": "### Fixed\n\n- **Hotkeys triggering on mouse clicks & extended keys mapping** — Fixed an issue in `HotkeyInputSink::ProcessEvent` where configuring hotkeys (`Advance scene (player thread)`, `Location scan`, `Toggle mute`) to keys without a standard 1-byte `MapVirtualKeyA` scan code (such as `Pause/Break` / `VK_PAUSE = 19`, which mapped to `0`) caused every Left Mouse Click (`IDCode == 0`) to trigger the hotkey action and advance the player's scene:\n  - Restricted keyboard hotkey evaluation strictly to `RE::INPUT_DEVICE::kKeyboard` events and required non-zero DirectInput scan codes.\n  - Added `VkToDirectInputKeyCode` helper with explicit `VK_PAUSE` (`0xC5`) and `VK_NUMLOCK` (`0x45`) handling and `MAPVK_VK_TO_VSC_EX` translation for `0xE0`-extended keys (arrow keys, Insert/Delete/Home/End/PageUp/PageDown, Numpad Divide, right modifiers)."
+        },
+        {
+          "version": "2.5.6",
+          "commit": "af7bd389cff21a7671a283fd675e84dab10c57c6",
+          "date": "2026-10-18T03:50:27Z",
+          "changelog": "Changelog (2.5.6):\n## v2.5.6\n### Added\n\n- **Session mute Papyrus API** — Added global native Papyrus functions on `OStimNet` (`ToggleMute()`, `IsMuted()`, and `SetMuted(bool akMuted)`)\n\n### Fixed\n\n- **Spectator handling across thread continuations (join/swap)** — Fixed spectators being prematurely removed or stuck when an active scene transitions via thread continuation\n- **Thread continuation event prompt rendering** — Added `sex_continue_thread` event rendering (`{{msg}}`) to `ostimnet_event_compact.prompt` and `ostimnet_event_verbose.prompt` so scene continuation events are no longer omitted from SkyrimNet event logs.\n- **External thread start with AI evaluation** — Fixed third-party / external scene starts failing when delegating scene evaluation to AI"
+        },
+        {
+          "version": "2.5.4",
+          "commit": "d492cd94f3f219da97c2b0ca51124c2e9ec2fed1",
+          "date": "2026-10-05T22:09:21Z",
+          "changelog": "attempt to improve reset OStimNet state when save was done during OStim scene and then loaded. I highly not recommend saving during OStim scenes it can break your game.\nupdated Billyy's meta tags for ostimnet(intent and position tags, not descriptions!)"
+        },
+        {
+          "version": "2.5.3",
+          "commit": "62c1ab313251a1148723fb97dbc72b55146f5df6",
+          "date": "2026-09-29T17:08:22Z",
+          "changelog": "added Being Female pregnancy and female cycles note - to make female npcs aware of pregnancy risk."
+        },
+        {
+          "version": "2.5.0",
+          "commit": "6d53bf9f8ee01c6aca1b0d6fdef004ef2fa02b62",
+          "date": "2026-09-26T05:47:57Z",
+          "changelog": "replaced cover image"
+        },
+        {
+          "version": "2.4.2",
+          "commit": "6beaea6234d873a19a83b6da3003d65d0c5982ab",
+          "date": "2026-09-12T06:44:36-08:00"
+        }
+      ],
+      "external_url": "https://github.com/tetherball88/OStimNet/releases/latest",
+      "image": {
+        "file": "cover.png",
+        "sha": "24935e170bd427bf1791e1330315a5a711f7e715",
+        "commit": "6d53bf9f8ee01c6aca1b0d6fdef004ef2fa02b62",
+        "width": 2048,
+        "height": 1152
+      },
+      "stats": {
+        "downloads": 192,
+        "endorsements": 6
+      }
+    },
     {
       "id": "plugins/felixshuic/hypnosis-the-power-of-mind-control",
       "plugin_id": "felixshuic.hypnosis-the-power-of-mind-control",
@@ -585,7 +711,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 40,
+        "downloads": 41,
         "endorsements": 1
       }
     },
@@ -1113,7 +1239,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 733,
+        "downloads": 736,
         "endorsements": 13
       }
     },
@@ -1300,120 +1426,6 @@
       "stats": {
         "downloads": 229,
         "endorsements": 4
-      }
-    },
-    {
-      "id": "plugins/tetherball88/ostimnet",
-      "plugin_id": "tetherball88.ostimnet",
-      "type": "listing",
-      "title": "OStimNet",
-      "tagline": "Intimate encounter AI framework integration for OStim and SkyrimNet.",
-      "author": "tetherball88",
-      "tags": [
-        "ostim",
-        "animation",
-        "adult"
-      ],
-      "nsfw": true,
-      "icon": "heart",
-      "mods": [],
-      "first_published": "2026-09-12T06:44:36-08:00",
-      "last_updated": "2026-10-18T03:50:27Z",
-      "version": "2.5.6",
-      "history": [
-        {
-          "version": "2.5.6",
-          "commit": "af7bd389cff21a7671a283fd675e84dab10c57c6",
-          "date": "2026-10-18T03:50:27Z",
-          "changelog": "Changelog (2.5.6):\n## v2.5.6\n### Added\n\n- **Session mute Papyrus API** — Added global native Papyrus functions on `OStimNet` (`ToggleMute()`, `IsMuted()`, and `SetMuted(bool akMuted)`)\n\n### Fixed\n\n- **Spectator handling across thread continuations (join/swap)** — Fixed spectators being prematurely removed or stuck when an active scene transitions via thread continuation\n- **Thread continuation event prompt rendering** — Added `sex_continue_thread` event rendering (`{{msg}}`) to `ostimnet_event_compact.prompt` and `ostimnet_event_verbose.prompt` so scene continuation events are no longer omitted from SkyrimNet event logs.\n- **External thread start with AI evaluation** — Fixed third-party / external scene starts failing when delegating scene evaluation to AI"
-        },
-        {
-          "version": "2.5.4",
-          "commit": "d492cd94f3f219da97c2b0ca51124c2e9ec2fed1",
-          "date": "2026-10-05T22:09:21Z",
-          "changelog": "attempt to improve reset OStimNet state when save was done during OStim scene and then loaded. I highly not recommend saving during OStim scenes it can break your game.\nupdated Billyy's meta tags for ostimnet(intent and position tags, not descriptions!)"
-        },
-        {
-          "version": "2.5.3",
-          "commit": "62c1ab313251a1148723fb97dbc72b55146f5df6",
-          "date": "2026-09-29T17:08:22Z",
-          "changelog": "added Being Female pregnancy and female cycles note - to make female npcs aware of pregnancy risk."
-        },
-        {
-          "version": "2.5.0",
-          "commit": "6d53bf9f8ee01c6aca1b0d6fdef004ef2fa02b62",
-          "date": "2026-09-26T05:47:57Z",
-          "changelog": "replaced cover image"
-        },
-        {
-          "version": "2.4.2",
-          "commit": "6beaea6234d873a19a83b6da3003d65d0c5982ab",
-          "date": "2026-09-12T06:44:36-08:00"
-        }
-      ],
-      "external_url": "https://github.com/tetherball88/OStimNet/releases/latest",
-      "image": {
-        "file": "cover.png",
-        "sha": "24935e170bd427bf1791e1330315a5a711f7e715",
-        "commit": "6d53bf9f8ee01c6aca1b0d6fdef004ef2fa02b62",
-        "width": 2048,
-        "height": 1152
-      },
-      "stats": {
-        "downloads": 192,
-        "endorsements": 6
-      }
-    },
-    {
-      "id": "plugins/tetherball88/body-language",
-      "plugin_id": "tetherball88.body-language",
-      "type": "listing",
-      "title": "Body Language",
-      "tagline": "Context-aware NPC body descriptions powered by OBody NG, RSV, and TNG.",
-      "author": "tetherball88",
-      "tags": [
-        "body",
-        "descriptions",
-        "obody",
-        "npc",
-        "immersion",
-        "appearance"
-      ],
-      "nsfw": true,
-      "icon": "package",
-      "mods": [],
-      "first_published": "2026-09-25T20:55:01Z",
-      "last_updated": "2026-10-17T21:16:37Z",
-      "version": "2.0.0",
-      "history": [
-        {
-          "version": "2.0.0",
-          "commit": "5221f74a259dc77ac6db19639e639449285ad0e7",
-          "date": "2026-10-17T21:16:37Z",
-          "changelog": "## v2.0.0\n### Real-Time 3D Geometry & Normal-Map Engine\nComplete rewrite replacing static BodySlide XML preset tables, `.7z` texture archive hashing, and Papyrus scripts with a **real-time, mod-agnostic 3D geometry and normal-map analysis engine** built natively in C++.\n> **Upgrading from v1.x:** `TT_BodyLanguage.esp` has been removed (the mod is now ESP-free). When loading an existing save, Skyrim will warn that `TT_BodyLanguage.esp` is missing—this is expected and completely safe to continue past.\n### Added\n- **Universal 3D Body Mesh & Morph Analysis:** Directly reads `_0.nif`, `_1.nif`, and `.tri` files from Skyrim's VFS/BSAs, slicing any humanoid body replacer (3BA, BHUNP, UNP, UBE, HIMBO, SAM, vanilla, or custom follower bodies) into 10 anatomical rings (80 landmark vertices) and evaluating actor weight, RaceMenu (`skee64`) morphs, and XPMSE bone scales in real time.\n- **Pregnancy vs. Weight Isolation:** Separates localized belly morphs and `NPC Belly` node scaling from overall body mass so pregnant slender/athletic NPCs are not misclassified as overweight.\n- **On-Demand Normal Map Muscularity (`_msn.dds`):** Evaluates abdominal and deltoid normal-map definition at runtime via `DirectXTex` (configurable in `BodyLanguage.ini`) with zero startup archive scanning.\n- **Native C++ TNG & SOS Support (`ttlb_get_genitals`):** Detects *The New Gentleman* (TNG) and *Schlongs of Skyrim* (SOS) sizes and addons natively in C++ while keeping all prose and thresholds user-editable in `0020_genitals.prompt`, `tngAddons.json`, and `geometryThresholds.json`.\n- **SPID Keyword RSV Skin Complexions:** Instant keyword-based Racial Skin Variance (RSV) skin feature descriptions via `0005_skin_features.prompt` and `skinFeatures.json`.\n- **Modular Prompts & Full JSON Customization:** Split `0401_appearance_body_shape.prompt` into modular `body_language` subcomponents (`0001_body`, `0005_skin_features`, `0010_height`, `0020_genitals`) backed by `geometryThresholds.json`, `FemaleParts.jso"
-        },
-        {
-          "version": "1.0.3",
-          "commit": "8cc13e9228cd3c4f0e55fc484b1789ac73f3ab0f",
-          "date": "2026-09-26T05:27:36Z",
-          "changelog": "replaced cover image"
-        }
-      ],
-      "external_url": "https://github.com/tetherball88/BodyLanguage/releases/latest",
-      "languages": [
-        "en"
-      ],
-      "language": "en",
-      "image": {
-        "file": "cover.png",
-        "sha": "c4e9aec48dc2a7bef5e4a401e8241e1f5acfdf50",
-        "commit": "8cc13e9228cd3c4f0e55fc484b1789ac73f3ab0f",
-        "width": 2048,
-        "height": 1152
-      },
-      "stats": {
-        "downloads": 125,
-        "endorsements": 0
       }
     },
     {
@@ -2140,7 +2152,7 @@
         "height": 1008
       },
       "stats": {
-        "downloads": 100,
+        "downloads": 101,
         "endorsements": 1
       }
     },
@@ -3712,7 +3724,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1112,
+        "downloads": 1113,
         "endorsements": 2
       }
     },
@@ -3847,7 +3859,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2447,
+        "downloads": 2448,
         "endorsements": 2
       }
     },
@@ -4072,7 +4084,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1265,
+        "downloads": 1266,
         "endorsements": 0
       }
     },
@@ -5197,7 +5209,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 896,
+        "downloads": 897,
         "endorsements": 1
       }
     },
@@ -5602,7 +5614,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 250,
+        "downloads": 251,
         "endorsements": 0
       }
     },
@@ -6782,7 +6794,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 11,
+        "downloads": 12,
         "endorsements": 0
       }
     },
@@ -7867,7 +7879,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 183,
+        "downloads": 184,
         "endorsements": 1
       }
     },
@@ -8002,7 +8014,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 588,
+        "downloads": 589,
         "endorsements": 0
       }
     },
@@ -8227,7 +8239,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1338,
+        "downloads": 1339,
         "endorsements": 2
       }
     },
@@ -9262,7 +9274,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1426,
+        "downloads": 1427,
         "endorsements": 2
       }
     },
@@ -9532,7 +9544,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1171,
+        "downloads": 1172,
         "endorsements": 2
       }
     },
@@ -10072,7 +10084,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 863,
+        "downloads": 864,
         "endorsements": 0
       }
     },
@@ -10882,7 +10894,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 726,
+        "downloads": 727,
         "endorsements": 0
       }
     },
@@ -11692,7 +11704,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 241,
+        "downloads": 242,
         "endorsements": 0
       }
     },
@@ -12682,7 +12694,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1755,
+        "downloads": 1756,
         "endorsements": 2
       }
     },
