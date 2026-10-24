@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-24T03:36:16.802Z",
-  "stats_as_of": "2026-10-24T03:33:23.051Z",
+  "generated_at": "2026-10-24T03:51:31.992Z",
+  "stats_as_of": "2026-10-24T03:51:31.880Z",
   "plugins": [
     {
       "id": "plugins/sixteenth/political-engine",
@@ -15,9 +15,15 @@
       "icon": "gamemaster",
       "mods": [],
       "first_published": "2026-10-13T05:51:18Z",
-      "last_updated": "2026-10-24T03:35:50Z",
-      "version": "0.7.7",
+      "last_updated": "2026-10-24T03:51:05Z",
+      "version": "0.7.0",
       "history": [
+        {
+          "version": "0.7.0",
+          "commit": "5ae274b93ea0bf692c0e48ea13af7cebe46e4471",
+          "date": "2026-10-24T03:51:05Z",
+          "changelog": "### **NEW in 0.7.0:**\n\n  **- Separate puppet treasuries and resources, transfers between realms, and independent AI self-government toggles.**\n  \n  **- Commander position. Stewards handle economy and trade, commanders handle armies and reconnaissance, and rulers handle both.**\n  \n  **- Dialogue orders for construction, recruitment, troop movement, reconnaissance, and trade agreement cancellation.**\n    _Just say them, what to do_\n  \n  **- Archers and battlemages, troop composition controls, new military buildings, and equipment upgrades for existing soldiers.**\n    _MORE FIGHTERS - MORE CHAOS_  \n\n  **- Fog of war and covert scouting, with detection checked once per complete campaign round.**\n    _KGB never sleeps_  \n\n  **- Initial delegation system: representative travel, invitations, meetings, return reports, and neutral camps.**\n    _They are afraid of you..._  \n\n  **- Optional realm briefings in officials’ biographies covering armies, economy, buildings, wars, and trade.**\n  \n  **- Separated field battle formations and a configurable corpse limit, defaulting to 30.**\n    _More FPS, more soldiers you can add_  \n\n  **- Reorganized settings, clearer custom realm placement instructions, updated API, and revised vanilla NPC office assignments.**\n  \n  **- Realm Management: controlled realms, offices, private puppet links, delegation stages, mission cancellation, battle diagnostics and a saved results journal.**\n  \n  **- MageLightUI support**\n  _A HUGE thank to Whyregister for fixes_ \n\n  **- New API with overwrite ability.**\n\n  **- A lot of bug fixes, perfomance and tokens usage upgrades** \n\nAlso, you can check guide on https://github.com/L-Sixteenth/Political-Engine-Releases"
+        },
         {
           "version": "0.7.7",
           "commit": "5e8eae1f0e743d4934966f569e1c3df2ecee27d1",
