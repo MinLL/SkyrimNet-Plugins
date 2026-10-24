@@ -1,8 +1,77 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-23T23:27:04.416Z",
-  "stats_as_of": "2026-10-23T23:27:04.302Z",
+  "generated_at": "2026-10-24T00:44:34.097Z",
+  "stats_as_of": "2026-10-24T00:40:27.645Z",
   "plugins": [
+    {
+      "id": "plugins/felixshuic/hypnosis-the-power-of-mind-control",
+      "plugin_id": "felixshuic.hypnosis-the-power-of-mind-control",
+      "type": "listing",
+      "title": "Hypnosis: The power of mind control",
+      "tagline": "Illusion spells that hypnotize NPCs and let you rewrite who they are",
+      "author": "felixshuic",
+      "tags": [
+        "hypnosis",
+        "illusion",
+        "magic",
+        "spells",
+        "memory",
+        "personality",
+        "roleplay",
+        "npc",
+        "adult"
+      ],
+      "nsfw": true,
+      "icon": "sparkles",
+      "mods": [],
+      "first_published": "2026-10-13T17:19:25Z",
+      "last_updated": "2026-10-24T00:44:09Z",
+      "version": "1.2.0",
+      "history": [
+        {
+          "version": "1.2.0",
+          "commit": "b43a8d886730bdc64fd186a606ae646a9d523097",
+          "date": "2026-10-24T00:44:09Z",
+          "changelog": "## Hypnosis 1.2.0\nInstall it over 1.1.2. When MO2 asks, choose Replace. Your saves and rewritten characters stay as they are.\nThanks to **KibCharnnel** for the spell resistance system, and to **An Yuki (4nyuki)** for reviewing the Japanese translation!\n\n**What's new:**\n- Spells can be resisted. Your Illusion and Speech go against the target's trust in you, their magical training, magic resistance and level, and the strength of the spell. A failed cast staggers the target, and they and everyone who saw it know what you tried. For one game hour the target is harder to influence. The MCM has a switch and a difficulty slider.\n- Psychosis. Long hypnosis leaves a mark that fades slowly. From 25 points the NPC answers questions nobody asked. From 50 they are obsessed with you and refuse to be sent away. The MCM has a switch for psychosis and one for the obsession.\n- NPCs can hypnotize each other through two new SkyrimNet actions. Hypnotize casts a spell the NPC knows, and PlantDraught slips a draught onto someone.\n- Japanese localization of the whole mod, including the texts for the model.\n- The MCM has pictures now. Hover a setting and the picture of its section shows up next to it.\n- History cleanup is part of the SkyrimNet integration and works with prompt caching, min's Cache Enabled included. The optional History Cut component is gone.\n\n**What's fixed:**\n- Mixing the two dream ingredients at an alchemy lab gives a poison now. It used to come out as a potion you could drink.\n\n**Changed:**\n- SkyrimNet Beta 28 and SeverActions 4.5.0 are supported.\n- Onlookers of a draught that takes effect notice what they could really see: a faint sweet smell and the target swaying for a moment.\n- When an NPC hypnotizes someone, the caster keeps it in their own history too. The target is still told nothing."
+        },
+        {
+          "version": "1.1.2",
+          "commit": "2acd8d1265ca893c469563e8583a3fb05cf392aa",
+          "date": "2026-10-19T19:19:00Z",
+          "changelog": "Install it over 1.1.1. When MO2 asks, choose Replace. Your saves and rewritten characters stay as they are.\n\n**What's fixed:**\n\n- Hypnosis works together with min's SkyrimNet Prompts - Cache Enabled now. Earlier versions replaced a few SkyrimNet prompts that the cache plugin also replaces, so one of the two stopped working. Hypnosis doesn't replace any SkyrimNet prompt anymore. I tested it with the cache plugin on Beta 27, and a hypnotized character keeps its cache\n- Thanks to Nosimo for pointing out the overwrite and the broken cache\n\n**What's new:**\n\n- The hypnosis texts are much stronger. The model is told plainly what the spell overrides toward the caster, and it hears it twice. A refusal from a minute ago doesn't hold anymore. Enthrall feels warmer and stricter, and if you never said what the imprint is about, it is about you\n- If you wrote your own texts in the plugin settings, they still replace the built-in ones\n- The log tells a lot more. If something breaks, send me HypnosisNative.log\n\n**Changed:**\n\n- After a Rewrite with a fresh history, the old lines stay in the conversation. The character is told they belong to the person it used to be\n\n**Coming soon:**\n\n- A roll for success + baka QTE integration\n- Madness, when Enthrall holds for too long\n- A new MCM menu with pictures\n\nThanks for the reports. Keep them coming and I will keep fixing!"
+        },
+        {
+          "version": "1.1.1",
+          "commit": "218f6d7a46d331125f70d6659baedbe602c9797d",
+          "date": "2026-10-17T19:48:05Z",
+          "changelog": "**What's new:**\n\n- A **Diary page** in the Imprint window. You can change what the character wrote, delete an entry or write a new one. Confabula can also change one diary entry. Awakening puts the diary back as it was.\n- Two new buttons on the **Memories** page ask the model for help. **\"Pick with the model\"** switches off the memories that no longer fit the new personality, or the ones you describe in your own words. Amnesia can use it too, within its limit. **\"Invent with the model\"** turns a few words about what happened into a full memory, written by the same rules SkyrimNet uses for its own memories.\n- You can now set how a rewritten character **feels about other people**. The Attitudes page has a switch that lists everyone the character has memories with.\n- **Hypnotized NPCs look the other way.** While the hypnosis holds they don't report crimes to the guards and stay calm when you steal or fight in front of them. Even a failed pickpocket doesn't make them attack you. A switch in the MCM turns this off if you prefer the old way. Once it ends they react like before.\n- The mod keeps its **log from the last five game starts**, so a bug report after a restart still has the run that went wrong.\n\n**What's changed:**\n\n- **SkyrimNet Beta 27** is supported. Beta 25 and 26 still work. The diary page needs Beta 26 or newer.\n- **SeverActions 4.3.0** is supported. With 4.3.0 the patch needs the \"NPC Familiarity & Reputation\" option of the SeverActions installer."
+        },
+        {
+          "version": "1.1.0",
+          "commit": "73b29105c987847870fb993e611b17edbad2780a",
+          "date": "2026-10-13T17:19:25Z",
+          "changelog": "**What's new:**\n\n- **Confabula** (Apprentice). You write one false memory for a named character and they recall it as their own.\n- **Amnesia** (Adept). You pick up to five memories and the character loses them. The number per cast is a setting on the mod's page in the SkyrimNet dashboard.\n- Awakening brings back what Amnesia took and removes what Confabula planted.\n- Tomes for both spells are sold by the Illusion vendors, and you make the staves at the staff enchanter.\n\n**What's fixed:**\n\n- The mod starts on Skyrim 1.7.99 and 1.7.104. In 1.0.1 the game stopped at launch there with \"failed to open address library file\". I have no 1.7 install myself, so please tell me how it goes.\n\n**What's changed:**\n\n- SkyrimNet Beta 26 is supported, and Beta 25 still works.\n- Everyone who sees you cast keeps the moment as an event in their own history - this is now true for every spell. The target gets no such event, so they have nothing to suspect.\n- On Beta 25 a witness gets a memory in place of the event, because that version has no way to add one."
+        }
+      ],
+      "external_url": "https://www.nexusmods.com/skyrimspecialedition/mods/194797",
+      "languages": [
+        "en",
+        "ru",
+        "ja"
+      ],
+      "language": "en",
+      "image": {
+        "file": "cover.png",
+        "sha": "ccd756b3ce8ff274dbaee9a55eae83f870730220",
+        "commit": "218f6d7a46d331125f70d6659baedbe602c9797d",
+        "width": 1280,
+        "height": 720
+      },
+      "stats": {
+        "downloads": 37,
+        "endorsements": 0
+      }
+    },
     {
       "id": "plugins/johnsonjoe1/skyrimnet-messageless-immersion",
       "plugin_id": "johnsonjoe1.skyrimnet-messageless-immersion",
@@ -294,7 +363,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 76,
+        "downloads": 78,
         "endorsements": 0
       }
     },
@@ -516,8 +585,8 @@
         "config": 0
       },
       "stats": {
-        "downloads": 38,
-        "endorsements": 0
+        "downloads": 39,
+        "endorsements": 1
       }
     },
     {
@@ -572,7 +641,7 @@
         "height": 1080
       },
       "stats": {
-        "downloads": 131,
+        "downloads": 132,
         "endorsements": 4
       }
     },
@@ -752,7 +821,7 @@
         "height": 432
       },
       "stats": {
-        "downloads": 191,
+        "downloads": 192,
         "endorsements": 1
       }
     },
@@ -893,68 +962,6 @@
       "stats": {
         "downloads": 76,
         "endorsements": 3
-      }
-    },
-    {
-      "id": "plugins/felixshuic/hypnosis-the-power-of-mind-control",
-      "plugin_id": "felixshuic.hypnosis-the-power-of-mind-control",
-      "type": "listing",
-      "title": "Hypnosis: The power of mind control",
-      "tagline": "Illusion spells that hypnotize NPCs and let you rewrite who they are",
-      "author": "felixshuic",
-      "tags": [
-        "hypnosis",
-        "illusion",
-        "magic",
-        "spells",
-        "memory",
-        "personality",
-        "roleplay",
-        "npc",
-        "adult"
-      ],
-      "nsfw": true,
-      "icon": "sparkles",
-      "mods": [],
-      "first_published": "2026-10-13T17:19:25Z",
-      "last_updated": "2026-10-19T19:19:00Z",
-      "version": "1.1.2",
-      "history": [
-        {
-          "version": "1.1.2",
-          "commit": "2acd8d1265ca893c469563e8583a3fb05cf392aa",
-          "date": "2026-10-19T19:19:00Z",
-          "changelog": "Install it over 1.1.1. When MO2 asks, choose Replace. Your saves and rewritten characters stay as they are.\n\n**What's fixed:**\n\n- Hypnosis works together with min's SkyrimNet Prompts - Cache Enabled now. Earlier versions replaced a few SkyrimNet prompts that the cache plugin also replaces, so one of the two stopped working. Hypnosis doesn't replace any SkyrimNet prompt anymore. I tested it with the cache plugin on Beta 27, and a hypnotized character keeps its cache\n- Thanks to Nosimo for pointing out the overwrite and the broken cache\n\n**What's new:**\n\n- The hypnosis texts are much stronger. The model is told plainly what the spell overrides toward the caster, and it hears it twice. A refusal from a minute ago doesn't hold anymore. Enthrall feels warmer and stricter, and if you never said what the imprint is about, it is about you\n- If you wrote your own texts in the plugin settings, they still replace the built-in ones\n- The log tells a lot more. If something breaks, send me HypnosisNative.log\n\n**Changed:**\n\n- After a Rewrite with a fresh history, the old lines stay in the conversation. The character is told they belong to the person it used to be\n\n**Coming soon:**\n\n- A roll for success + baka QTE integration\n- Madness, when Enthrall holds for too long\n- A new MCM menu with pictures\n\nThanks for the reports. Keep them coming and I will keep fixing!"
-        },
-        {
-          "version": "1.1.1",
-          "commit": "218f6d7a46d331125f70d6659baedbe602c9797d",
-          "date": "2026-10-17T19:48:05Z",
-          "changelog": "**What's new:**\n\n- A **Diary page** in the Imprint window. You can change what the character wrote, delete an entry or write a new one. Confabula can also change one diary entry. Awakening puts the diary back as it was.\n- Two new buttons on the **Memories** page ask the model for help. **\"Pick with the model\"** switches off the memories that no longer fit the new personality, or the ones you describe in your own words. Amnesia can use it too, within its limit. **\"Invent with the model\"** turns a few words about what happened into a full memory, written by the same rules SkyrimNet uses for its own memories.\n- You can now set how a rewritten character **feels about other people**. The Attitudes page has a switch that lists everyone the character has memories with.\n- **Hypnotized NPCs look the other way.** While the hypnosis holds they don't report crimes to the guards and stay calm when you steal or fight in front of them. Even a failed pickpocket doesn't make them attack you. A switch in the MCM turns this off if you prefer the old way. Once it ends they react like before.\n- The mod keeps its **log from the last five game starts**, so a bug report after a restart still has the run that went wrong.\n\n**What's changed:**\n\n- **SkyrimNet Beta 27** is supported. Beta 25 and 26 still work. The diary page needs Beta 26 or newer.\n- **SeverActions 4.3.0** is supported. With 4.3.0 the patch needs the \"NPC Familiarity & Reputation\" option of the SeverActions installer."
-        },
-        {
-          "version": "1.1.0",
-          "commit": "73b29105c987847870fb993e611b17edbad2780a",
-          "date": "2026-10-13T17:19:25Z",
-          "changelog": "**What's new:**\n\n- **Confabula** (Apprentice). You write one false memory for a named character and they recall it as their own.\n- **Amnesia** (Adept). You pick up to five memories and the character loses them. The number per cast is a setting on the mod's page in the SkyrimNet dashboard.\n- Awakening brings back what Amnesia took and removes what Confabula planted.\n- Tomes for both spells are sold by the Illusion vendors, and you make the staves at the staff enchanter.\n\n**What's fixed:**\n\n- The mod starts on Skyrim 1.7.99 and 1.7.104. In 1.0.1 the game stopped at launch there with \"failed to open address library file\". I have no 1.7 install myself, so please tell me how it goes.\n\n**What's changed:**\n\n- SkyrimNet Beta 26 is supported, and Beta 25 still works.\n- Everyone who sees you cast keeps the moment as an event in their own history - this is now true for every spell. The target gets no such event, so they have nothing to suspect.\n- On Beta 25 a witness gets a memory in place of the event, because that version has no way to add one."
-        }
-      ],
-      "external_url": "https://www.nexusmods.com/skyrimspecialedition/mods/194797",
-      "languages": [
-        "en",
-        "ru"
-      ],
-      "language": "en",
-      "image": {
-        "file": "cover.png",
-        "sha": "ccd756b3ce8ff274dbaee9a55eae83f870730220",
-        "commit": "218f6d7a46d331125f70d6659baedbe602c9797d",
-        "width": 1280,
-        "height": 720
-      },
-      "stats": {
-        "downloads": 37,
-        "endorsements": 0
       }
     },
     {
@@ -1106,8 +1113,8 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 727,
-        "endorsements": 12
+        "downloads": 729,
+        "endorsements": 13
       }
     },
     {
@@ -1353,7 +1360,7 @@
         "height": 1152
       },
       "stats": {
-        "downloads": 190,
+        "downloads": 192,
         "endorsements": 6
       }
     },
@@ -2009,8 +2016,8 @@
         "config": 0
       },
       "stats": {
-        "downloads": 333,
-        "endorsements": 3
+        "downloads": 334,
+        "endorsements": 4
       }
     },
     {
@@ -2421,8 +2428,8 @@
         "config": 4
       },
       "stats": {
-        "downloads": 187,
-        "endorsements": 1
+        "downloads": 188,
+        "endorsements": 2
       }
     },
     {
@@ -2585,7 +2592,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 120,
+        "downloads": 121,
         "endorsements": 2
       }
     },
@@ -3750,7 +3757,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 544,
+        "downloads": 545,
         "endorsements": 0
       }
     },
@@ -3840,7 +3847,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2439,
+        "downloads": 2442,
         "endorsements": 2
       }
     },
@@ -4065,7 +4072,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1261,
+        "downloads": 1263,
         "endorsements": 0
       }
     },
@@ -4875,7 +4882,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 62,
+        "downloads": 63,
         "endorsements": 0
       }
     },
@@ -5145,7 +5152,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 21,
+        "downloads": 22,
         "endorsements": 0
       }
     },
@@ -5190,7 +5197,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 889,
+        "downloads": 892,
         "endorsements": 1
       }
     },
@@ -5551,7 +5558,7 @@
       },
       "stats": {
         "downloads": 1146,
-        "endorsements": 2
+        "endorsements": 3
       }
     },
     {
@@ -5595,7 +5602,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 248,
+        "downloads": 249,
         "endorsements": 0
       }
     },
@@ -5776,7 +5783,7 @@
       },
       "stats": {
         "downloads": 734,
-        "endorsements": 0
+        "endorsements": 1
       }
     },
     {
@@ -5910,7 +5917,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 239,
+        "downloads": 240,
         "endorsements": 0
       }
     },
@@ -6045,7 +6052,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 27,
+        "downloads": 28,
         "endorsements": 0
       }
     },
@@ -7095,7 +7102,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 19,
+        "downloads": 20,
         "endorsements": 0
       }
     },
@@ -7140,7 +7147,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 11,
+        "downloads": 12,
         "endorsements": 0
       }
     },
@@ -7590,7 +7597,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 317,
+        "downloads": 318,
         "endorsements": 0
       }
     },
@@ -7726,7 +7733,7 @@
       },
       "stats": {
         "downloads": 25,
-        "endorsements": 0
+        "endorsements": 1
       }
     },
     {
@@ -7816,7 +7823,7 @@
       },
       "stats": {
         "downloads": 34,
-        "endorsements": 0
+        "endorsements": 1
       }
     },
     {
@@ -7861,7 +7868,7 @@
       },
       "stats": {
         "downloads": 183,
-        "endorsements": 0
+        "endorsements": 1
       }
     },
     {
@@ -8130,8 +8137,8 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1015,
-        "endorsements": 0
+        "downloads": 1017,
+        "endorsements": 1
       }
     },
     {
@@ -8490,7 +8497,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 10,
+        "downloads": 11,
         "endorsements": 0
       }
     },
@@ -8715,7 +8722,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 48,
+        "downloads": 49,
         "endorsements": 0
       }
     },
@@ -9255,7 +9262,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1422,
+        "downloads": 1423,
         "endorsements": 2
       }
     },
@@ -9750,7 +9757,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 113,
+        "downloads": 114,
         "endorsements": 0
       }
     },
@@ -9840,7 +9847,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 134,
+        "downloads": 135,
         "endorsements": 0
       }
     },
@@ -9931,7 +9938,7 @@
       },
       "stats": {
         "downloads": 305,
-        "endorsements": 0
+        "endorsements": 1
       }
     },
     {
@@ -10065,7 +10072,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 860,
+        "downloads": 861,
         "endorsements": 0
       }
     },
@@ -10111,7 +10118,7 @@
       },
       "stats": {
         "downloads": 488,
-        "endorsements": 0
+        "endorsements": 1
       }
     },
     {
@@ -10200,8 +10207,8 @@
         "config": 0
       },
       "stats": {
-        "downloads": 14,
-        "endorsements": 0
+        "downloads": 15,
+        "endorsements": 1
       }
     },
     {
@@ -10245,7 +10252,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 3,
+        "downloads": 4,
         "endorsements": 0
       }
     },
@@ -10875,7 +10882,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 720,
+        "downloads": 721,
         "endorsements": 0
       }
     },
@@ -11010,7 +11017,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 73,
+        "downloads": 74,
         "endorsements": 0
       }
     },
@@ -11055,8 +11062,8 @@
         "config": 0
       },
       "stats": {
-        "downloads": 17,
-        "endorsements": 0
+        "downloads": 18,
+        "endorsements": 1
       }
     },
     {
@@ -11145,7 +11152,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 8,
+        "downloads": 9,
         "endorsements": 0
       }
     },
@@ -11235,7 +11242,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 142,
+        "downloads": 143,
         "endorsements": 0
       }
     },
@@ -11415,8 +11422,8 @@
         "config": 0
       },
       "stats": {
-        "downloads": 92,
-        "endorsements": 0
+        "downloads": 94,
+        "endorsements": 1
       }
     },
     {
@@ -12540,7 +12547,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 226,
+        "downloads": 227,
         "endorsements": 0
       }
     },
@@ -12585,7 +12592,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 48,
+        "downloads": 49,
         "endorsements": 0
       }
     },
@@ -12630,7 +12637,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 52,
+        "downloads": 53,
         "endorsements": 0
       }
     },
@@ -12675,7 +12682,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1746,
+        "downloads": 1748,
         "endorsements": 2
       }
     },
@@ -12765,7 +12772,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 16,
+        "downloads": 17,
         "endorsements": 0
       }
     },
