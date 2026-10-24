@@ -1,0 +1,26 @@
+{
+  "id": "nosimo.and-awareness",
+  "type": "listing",
+  "title": "AND-Awareness",
+  "tagline": "SkyrimNet awareness of Advanced Nudity Detection's clothing and flashing states.",
+  "description": "-Clothing Coverage prompt: injects a Clothing Coverage section into the character information\nSkyrimNet sends to the AI, right after the worn-equipment list. It covers revealing garments (sheer or\ncovers-nothing), what is visible right now and which garment is responsible, and an overall\nclothing-quality note. Exposure always comes from A.N.D.'s own state; keywords never invent it. The\nsection isn't shown on the dashboard's character bio page; it can be seen in the prompt payloads in\nSkyrimNet's logs.\n\n-AND_Awareness SKSE plugin (no Papyrus): watches A.N.D.'s flash states on the player and nearby NPCs\nand posts a short narration line (or event selectable in plugin settings) when a flash starts, so nearby characters can react. Also raises the\nSN_ANDFlash mod event for other mods.\n\n-Settings page in SkyrimNet (Settings > Plugins > AND_Awareness): reaction chance, global and\nper-actor cooldowns, player/NPC/followers-only, NPC distance, per-flash-type toggles and editable\nnarration text. Changes apply within about 10 seconds.\n\n\nCreated with Claude Code, housecarl and a few other goodies\n\nRequirements:\nAdvanced Nudity Detection v4.x\nClothing/Armor properly tagged with AND keywords",
+  "author": "nosimo",
+  "tags": [
+    "AND",
+    "Advanced Nudity Detection",
+    "awareness"
+  ],
+  "nsfw": true,
+  "icon": "package",
+  "mods": [
+    {
+      "name": "Advanced Nudity Detection.esp",
+      "file": "advanced nudity detection.esp",
+      "required": true
+    }
+  ],
+  "image": "cover.png",
+  "external_url": "https://github.com/Nosimo-SN/AND-Awareness/releases/latest",
+  "version": "1.0.1",
+  "changelog": "Initial release"
+}
