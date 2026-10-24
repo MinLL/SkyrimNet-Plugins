@@ -1,0 +1,18 @@
+{
+  "id": "whyregister.to-the-yield",
+  "type": "listing",
+  "title": "To The Yield",
+  "tagline": "Dueling Plug-in for SkyrimNet",
+  "description": "Duel with friends, guards, and people that really piss you off.\n\nStarting a duel. Ask an NPC to duel, or an NPC may challenge you. A box asks you to confirm:\nFight starts the duel.\nRefuse declines, and the NPC hears that you turned them down.\nRefuse silently declines without telling the NPC.\nNo box, no duel. The confirm box is the only sign a duel has really started and that you're both protected. If an NPC agrees but no box appears, the duel didn't start: don't attack them, ask again.\nYielding. Sheathe your weapon for about 4 seconds. The NPC can also concede on their own.\nNobody dies. Your opponent kneels when beaten. You drop at zero health and they stop attacking. Afterwards, whoever went down gets back up with some health.\nA duel also ends if you walk away, never draw your weapon, someone outside the duel attacks either of you, or 3 minutes pass. Your followers are kept out of it.\nFriends can duel you; followers need dismissing first. A current follower won't fight you (their follower status stops it), so dismiss them, then duel. If an opponent still won't actually fight (stays out of combat for about 4 seconds), the duel is called off instead of dragging on.\nYou can't duel while either of you is already in combat or on horseback, against someone hostile to you, or with a child. Your opponent has to be close by.\n\nKnow issues\nCurrent Followers will not duel you, you must dismiss them first\nNot sure about custom followers with their own friendly fire suppression packages\n\nPlans to Expand:\nWork around current follower issue\nRenown system\nRecord your duels\nNPC to NPC duels\n\nNotes: Heavily made by Claude, only tested by me. Only one of those things should give you confidence",
+  "author": "whyregister",
+  "tags": [
+    "Dueling",
+    "combat"
+  ],
+  "nsfw": false,
+  "icon": "package",
+  "mods": [],
+  "external_url": "https://github.com/whyregisterme/ToTheYield",
+  "version": "0.2.3",
+  "changelog": "Initial release"
+}
