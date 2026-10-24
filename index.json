@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-24T12:36:27.108Z",
-  "stats_as_of": "2026-10-24T12:36:26.993Z",
+  "generated_at": "2026-10-24T13:05:23.098Z",
+  "stats_as_of": "2026-10-24T13:05:22.969Z",
   "plugins": [
     {
       "id": "plugins/oldcustard/bioforge",
@@ -21,9 +21,15 @@
       "icon": "brain",
       "mods": [],
       "first_published": "2026-09-28T09:03:26Z",
-      "last_updated": "2026-10-24T11:46:59Z",
-      "version": "1.1.0",
+      "last_updated": "2026-10-24T13:04:54Z",
+      "version": "1.1.1",
       "history": [
+        {
+          "version": "1.1.1",
+          "commit": "c3abd68bfdc4b734f8a8b13c43c08aa428074719",
+          "date": "2026-10-24T13:04:54Z",
+          "changelog": "Fixes for 1.1.0's bio blocks.\n\n## 🐛 Fixed\n- 🧩 **NPCs who already carry blocks no longer get new rolls.** The Blocks column kept rolling the groups such an NPC had left empty, and since rolls are fresh each launch, every session offered them a few more traits. An NPC with blocks applied to them (by you, or by an earlier commit) is now done: only a fact can still fill a gap. Blocks granted by a SeverActions faction rule don't count.\n- 🔎 **The review keeps rolls more faithfully.** The model was replacing a roll whenever the evidence supported a *different* option in the same group: a chief with two wives lost Exhibitionism to Polygamy, \"suspicious of outsiders\" replaced Cruel, a trained warrior lost \"dislikes violence\". It's now told that evidence for another option isn't evidence against the roll, and to replace only when the two can't both be true.\n- 🧾 **Review answers are read more reliably.** Answers written as `keep - it fits`, or with the format's `(reason)` placeholder copied in, are now read correctly, and the prompt shows real quoted examples instead of a placeholder."
+        },
         {
           "version": "1.1.0",
           "commit": "6336739e6ceece0233a9a521ce3bc100a0b468ee",
@@ -803,7 +809,7 @@
         "height": 688
       },
       "stats": {
-        "downloads": 25,
+        "downloads": 27,
         "endorsements": 0
       }
     },
@@ -1080,7 +1086,7 @@
         "height": 432
       },
       "stats": {
-        "downloads": 194,
+        "downloads": 195,
         "endorsements": 1
       }
     },
@@ -1372,7 +1378,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 749,
+        "downloads": 751,
         "endorsements": 13
       }
     },
@@ -2179,7 +2185,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 175,
+        "downloads": 176,
         "endorsements": 5
       }
     },
@@ -2734,7 +2740,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 263,
+        "downloads": 265,
         "endorsements": 9
       }
     },
@@ -3742,7 +3748,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1121,
+        "downloads": 1122,
         "endorsements": 2
       }
     },
@@ -3877,7 +3883,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2476,
+        "downloads": 2477,
         "endorsements": 2
       }
     },
@@ -5587,7 +5593,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1162,
+        "downloads": 1163,
         "endorsements": 3
       }
     },
@@ -5812,7 +5818,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 739,
+        "downloads": 740,
         "endorsements": 1
       }
     },
@@ -5902,7 +5908,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 224,
+        "downloads": 225,
         "endorsements": 0
       }
     },
@@ -8032,7 +8038,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 594,
+        "downloads": 595,
         "endorsements": 0
       }
     },
@@ -8257,7 +8263,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1348,
+        "downloads": 1349,
         "endorsements": 2
       }
     },
@@ -8662,7 +8668,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 307,
+        "downloads": 308,
         "endorsements": 0
       }
     },
@@ -9292,7 +9298,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1437,
+        "downloads": 1438,
         "endorsements": 2
       }
     },
@@ -9562,7 +9568,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1181,
+        "downloads": 1182,
         "endorsements": 2
       }
     },
@@ -10912,7 +10918,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 733,
+        "downloads": 734,
         "endorsements": 0
       }
     },
@@ -11857,7 +11863,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 132,
+        "downloads": 133,
         "endorsements": 0
       }
     },
@@ -12172,7 +12178,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 625,
+        "downloads": 626,
         "endorsements": 2
       }
     },
