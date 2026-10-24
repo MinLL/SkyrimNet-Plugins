@@ -1,8 +1,71 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-24T11:25:59.798Z",
-  "stats_as_of": "2026-10-24T11:25:59.690Z",
+  "generated_at": "2026-10-24T11:47:22.336Z",
+  "stats_as_of": "2026-10-24T11:47:22.234Z",
   "plugins": [
+    {
+      "id": "plugins/oldcustard/bioforge",
+      "plugin_id": "oldcustard.bioforge",
+      "type": "listing",
+      "title": "BioForge",
+      "tagline": "Bulk-generate SkyrimNet bios for every NPC in a location that doesn't have one, reviewed before anything is saved.",
+      "author": "oldcustard",
+      "tags": [
+        "bios",
+        "characters",
+        "generation",
+        "tools",
+        "npcs"
+      ],
+      "nsfw": false,
+      "icon": "brain",
+      "mods": [],
+      "first_published": "2026-09-28T09:03:26Z",
+      "last_updated": "2026-10-24T11:46:59Z",
+      "version": "1.1.0",
+      "history": [
+        {
+          "version": "1.1.0",
+          "commit": "6336739e6ceece0233a9a521ce3bc100a0b468ee",
+          "date": "2026-10-24T11:46:59Z",
+          "changelog": "Adds SeverActions bio blocks: short traits like a religion, a phobia or a vice, given to NPCs alongside their bios.\n\n## ✨ New\n- 🧩 **Bio blocks** ([SeverActions](https://github.com/Severause/SeverActions) Bio Blocks API v4). With SeverActions installed, BioForge gives each NPC a few of SeverActions' bio blocks when their bio is committed. Blocks are separate from the bio: they show beside it, and the bio itself is never changed.\n- 📜 **Facts from game data.** A Vigilant of Stendarr worships Stendarr, a Stormcloak dislikes the Empire, a drunk sounds like one. Facts are fixed and never second-guessed.\n- 🎲 **Flavour is rolled, then checked.** Each trait group (religion, temperament, dislikes, phobias, vices...) rolls on its own chance, for variety. A model then reviews the rolls against the NPC's evidence: it keeps a roll unless the evidence contradicts it, and adds one only where the evidence names it outright. Every change carries a quoted reason, and a change with none is ignored. For a new bio the review rides the same generation, with no extra call; the bio is written to match.\n- 🔍 **Review blocks** for NPCs who already have a bio: one small LLM call per NPC (row or batch), staged for you to read before anything is applied. The existing bio is never touched.\n- 📋 **The reader shows a blocks table**: each block's verdict (fact, kept, changed, added, dropped), and the model's reason.\n- 🔁 **Reroll** in the Blocks column rolls an NPC's flavour again. Rolls are fresh each game launch and hold for the session.\n- 🎭 **Anything can happen, rarely.** Every block is reachable; rare sets share a fixed pool (any Daedric Prince: about 1 NPC in 40), so the odd secret Daedra worshipper turns up without crowding the rest.\n- ✏️ The rules live in `SKSE/Plugins/BioForge/block_rules.ini`, a commented text file you can edit.\n\n## 🛠️ Changes\n- 🪟 BioForge's popups are fully opaque, so the panel no longer shows through the text."
+        },
+        {
+          "version": "1.0.2",
+          "commit": "4246a2415631b3fc7c1f172b314bd32718851176",
+          "date": "2026-10-03T05:02:47Z",
+          "changelog": "Adds the option to run BioForge on its own LLM.\r\n\r\n## ✨ New\r\n- 🧠 **A separate model for BioForge** ([#4](https://github.com/Oldcustard/BioForge/issues/4)). BioForge now adds a `bioforge` model to SkyrimNet's LLM settings, and a new setting, **Use BioForge's Own LLM**, switches bios, the relationship refine pass and regional digests over to it. It's **off by default**: BioForge keeps using your Character Profile Generation model, exactly as before.\r\n\r\n## ⚠️ Before you turn it on\r\nSet up the `bioforge` model in SkyrimNet's LLM settings first, and raise its **max tokens to about 10,000**. Until it's configured it inherits SkyrimNet's dialogue defaults (4,096 tokens), which cut bios short and make them fail with missing sections."
+        },
+        {
+          "version": "1.0.1",
+          "commit": "68130bed1b92bdc6f27f3fb5854d7d61f103fb76",
+          "date": "2026-09-29T08:26:07Z",
+          "changelog": "Bug-fix release for non-English installs and creature scanning.\r\n\r\n## 🐛 Fixes\r\n- 🌍 **NPCs with non-English names are detected correctly** ([#1](https://github.com/Oldcustard/BioForge/issues/1)). Bios for NPCs with Cyrillic (or any non-ASCII) names were never matched to their file, so those NPCs kept showing as needing a bio even when one existed.\r\n- 🏘️ **Regional digests handle non-English names**: those characters are now ranked properly instead of sinking to the bottom, and settlements with non-English names no longer share one cached digest.\r\n- 🐴 **Creatures are no longer scanned.** Named horses such as Shadowmere or a mod's stable horses were being offered bios; anything whose race isn't a person's is now skipped."
+        },
+        {
+          "version": "1.0.0",
+          "commit": "20b8a53d9c4a1c2e76af6217f856f18151841503",
+          "date": "2026-09-28T09:03:26Z",
+          "changelog": "Initial release"
+        }
+      ],
+      "external_url": "https://github.com/Oldcustard/BioForge",
+      "languages": [
+        "en"
+      ],
+      "language": "en",
+      "image": {
+        "file": "cover.png",
+        "sha": "302f6684193c94f7c6cd5cfbdfdf537eff6ddcb6",
+        "commit": "20b8a53d9c4a1c2e76af6217f856f18151841503",
+        "width": 1671,
+        "height": 941
+      },
+      "stats": {
+        "downloads": 116,
+        "endorsements": 3
+      }
+    },
     {
       "id": "plugins/sixteenth/political-engine",
       "plugin_id": "sixteenth.political-engine",
@@ -698,7 +761,7 @@
         "height": 720
       },
       "stats": {
-        "downloads": 35,
+        "downloads": 36,
         "endorsements": 1
       }
     },
@@ -2919,63 +2982,6 @@
       }
     },
     {
-      "id": "plugins/oldcustard/bioforge",
-      "plugin_id": "oldcustard.bioforge",
-      "type": "listing",
-      "title": "BioForge",
-      "tagline": "Bulk-generate SkyrimNet bios for every NPC in a location that doesn't have one, reviewed before anything is saved.",
-      "author": "oldcustard",
-      "tags": [
-        "bios",
-        "characters",
-        "generation",
-        "tools",
-        "npcs"
-      ],
-      "nsfw": false,
-      "icon": "brain",
-      "mods": [],
-      "first_published": "2026-09-28T09:03:26Z",
-      "last_updated": "2026-10-03T05:02:47Z",
-      "version": "1.0.2",
-      "history": [
-        {
-          "version": "1.0.2",
-          "commit": "4246a2415631b3fc7c1f172b314bd32718851176",
-          "date": "2026-10-03T05:02:47Z",
-          "changelog": "Adds the option to run BioForge on its own LLM.\r\n\r\n## ✨ New\r\n- 🧠 **A separate model for BioForge** ([#4](https://github.com/Oldcustard/BioForge/issues/4)). BioForge now adds a `bioforge` model to SkyrimNet's LLM settings, and a new setting, **Use BioForge's Own LLM**, switches bios, the relationship refine pass and regional digests over to it. It's **off by default**: BioForge keeps using your Character Profile Generation model, exactly as before.\r\n\r\n## ⚠️ Before you turn it on\r\nSet up the `bioforge` model in SkyrimNet's LLM settings first, and raise its **max tokens to about 10,000**. Until it's configured it inherits SkyrimNet's dialogue defaults (4,096 tokens), which cut bios short and make them fail with missing sections."
-        },
-        {
-          "version": "1.0.1",
-          "commit": "68130bed1b92bdc6f27f3fb5854d7d61f103fb76",
-          "date": "2026-09-29T08:26:07Z",
-          "changelog": "Bug-fix release for non-English installs and creature scanning.\r\n\r\n## 🐛 Fixes\r\n- 🌍 **NPCs with non-English names are detected correctly** ([#1](https://github.com/Oldcustard/BioForge/issues/1)). Bios for NPCs with Cyrillic (or any non-ASCII) names were never matched to their file, so those NPCs kept showing as needing a bio even when one existed.\r\n- 🏘️ **Regional digests handle non-English names**: those characters are now ranked properly instead of sinking to the bottom, and settlements with non-English names no longer share one cached digest.\r\n- 🐴 **Creatures are no longer scanned.** Named horses such as Shadowmere or a mod's stable horses were being offered bios; anything whose race isn't a person's is now skipped."
-        },
-        {
-          "version": "1.0.0",
-          "commit": "20b8a53d9c4a1c2e76af6217f856f18151841503",
-          "date": "2026-09-28T09:03:26Z",
-          "changelog": "Initial release"
-        }
-      ],
-      "external_url": "https://github.com/Oldcustard/BioForge",
-      "languages": [
-        "en"
-      ],
-      "language": "en",
-      "image": {
-        "file": "cover.png",
-        "sha": "302f6684193c94f7c6cd5cfbdfdf537eff6ddcb6",
-        "commit": "20b8a53d9c4a1c2e76af6217f856f18151841503",
-        "width": 1671,
-        "height": 941
-      },
-      "stats": {
-        "downloads": 116,
-        "endorsements": 3
-      }
-    },
-    {
       "id": "plugins/phospheneoverdrive/playersignals-for-skyrimnet",
       "plugin_id": "phospheneoverdrive.playersignals-for-skyrimnet",
       "type": "listing",
@@ -3344,7 +3350,7 @@
         "height": 900
       },
       "stats": {
-        "downloads": 190,
+        "downloads": 191,
         "endorsements": 5
       }
     },
@@ -3871,7 +3877,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2467,
+        "downloads": 2468,
         "endorsements": 2
       }
     },
@@ -5581,7 +5587,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1160,
+        "downloads": 1161,
         "endorsements": 3
       }
     },
@@ -6616,7 +6622,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 405,
+        "downloads": 406,
         "endorsements": 0
       }
     },
@@ -8251,7 +8257,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1346,
+        "downloads": 1347,
         "endorsements": 2
       }
     },
@@ -9286,7 +9292,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1436,
+        "downloads": 1437,
         "endorsements": 2
       }
     },
@@ -9556,7 +9562,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1179,
+        "downloads": 1180,
         "endorsements": 2
       }
     },
@@ -11896,7 +11902,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 461,
+        "downloads": 462,
         "endorsements": 0
       }
     },
@@ -11986,7 +11992,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 158,
+        "downloads": 159,
         "endorsements": 0
       }
     },
@@ -12166,7 +12172,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 624,
+        "downloads": 625,
         "endorsements": 2
       }
     },
@@ -12706,7 +12712,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1767,
+        "downloads": 1768,
         "endorsements": 2
       }
     },
