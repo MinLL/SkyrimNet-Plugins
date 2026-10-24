@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-24T13:05:23.098Z",
-  "stats_as_of": "2026-10-24T13:05:22.969Z",
+  "generated_at": "2026-10-24T13:26:34.922Z",
+  "stats_as_of": "2026-10-24T13:26:34.798Z",
   "plugins": [
     {
       "id": "plugins/oldcustard/bioforge",
@@ -1225,7 +1225,7 @@
         "height": 1080
       },
       "stats": {
-        "downloads": 76,
+        "downloads": 77,
         "endorsements": 3
       }
     },
@@ -2521,7 +2521,7 @@
         "config": 4
       },
       "stats": {
-        "downloads": 190,
+        "downloads": 191,
         "endorsements": 2
       }
     },
@@ -3883,7 +3883,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2477,
+        "downloads": 2482,
         "endorsements": 2
       }
     },
