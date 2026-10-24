@@ -1,8 +1,76 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-24T13:26:34.922Z",
-  "stats_as_of": "2026-10-24T13:26:34.798Z",
+  "generated_at": "2026-10-24T14:19:27.113Z",
+  "stats_as_of": "2026-10-24T14:19:27.038Z",
   "plugins": [
+    {
+      "id": "plugins/whyregister/to-the-yield",
+      "plugin_id": "whyregister.to-the-yield",
+      "type": "listing",
+      "title": "To The Yield",
+      "tagline": "Dueling Plug-in for SkyrimNet",
+      "author": "whyregister",
+      "tags": [
+        "Dueling",
+        "combat"
+      ],
+      "nsfw": false,
+      "icon": "package",
+      "mods": [],
+      "first_published": "2026-10-24T14:18:55Z",
+      "last_updated": "2026-10-24T14:18:55Z",
+      "version": "0.2.3",
+      "history": [
+        {
+          "version": "0.2.3",
+          "commit": "e05481d726e38e41e1e4da41532e5fa5d6793d79",
+          "date": "2026-10-24T14:18:55Z",
+          "changelog": "Initial release"
+        }
+      ],
+      "external_url": "https://github.com/whyregisterme/ToTheYield",
+      "stats": {
+        "downloads": 0,
+        "endorsements": 0
+      }
+    },
+    {
+      "id": "plugins/taka/skyrimnet-brothel",
+      "plugin_id": "taka.skyrimnet-brothel",
+      "type": "listing",
+      "title": "SkyrimNet Brothel",
+      "tagline": "Run your own brothel: register follower workers, and SkyrimNet AI customers make offers she can accept or refuse.",
+      "author": "taka",
+      "tags": [
+        "SexLab",
+        "NPC",
+        "Gameplay"
+      ],
+      "nsfw": true,
+      "icon": "package",
+      "mods": [],
+      "first_published": "2026-10-24T14:18:49Z",
+      "last_updated": "2026-10-24T14:18:49Z",
+      "version": "0.1.2",
+      "history": [
+        {
+          "version": "0.1.2",
+          "commit": "663314ea05d9cae898a64890157bf2b146774ab2",
+          "date": "2026-10-24T14:18:49Z",
+          "changelog": "Initial release"
+        }
+      ],
+      "external_url": "https://github.com/nightlantern-mods/skyrimnet_Brothel",
+      "languages": [
+        "en",
+        "ja"
+      ],
+      "language": "en",
+      "stats": {
+        "downloads": 0,
+        "endorsements": 0
+      }
+    },
     {
       "id": "plugins/oldcustard/bioforge",
       "plugin_id": "oldcustard.bioforge",
@@ -68,7 +136,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 116,
+        "downloads": 117,
         "endorsements": 3
       }
     },
@@ -1378,7 +1446,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 751,
+        "downloads": 753,
         "endorsements": 13
       }
     },
@@ -2109,7 +2177,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 336,
+        "downloads": 337,
         "endorsements": 4
       }
     },
@@ -2831,7 +2899,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 162,
+        "downloads": 163,
         "endorsements": 0
       }
     },
@@ -3703,7 +3771,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 350,
+        "downloads": 351,
         "endorsements": 5
       }
     },
@@ -3883,7 +3951,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2482,
+        "downloads": 2487,
         "endorsements": 2
       }
     },
@@ -4108,7 +4176,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1278,
+        "downloads": 1279,
         "endorsements": 0
       }
     },
@@ -5773,7 +5841,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 518,
+        "downloads": 520,
         "endorsements": 0
       }
     },
@@ -9298,7 +9366,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1438,
+        "downloads": 1439,
         "endorsements": 2
       }
     },
@@ -10108,7 +10176,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 870,
+        "downloads": 871,
         "endorsements": 0
       }
     },
@@ -12718,7 +12786,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1769,
+        "downloads": 1770,
         "endorsements": 2
       }
     },
