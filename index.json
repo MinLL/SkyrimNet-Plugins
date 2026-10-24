@@ -1,8 +1,62 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-24T14:19:27.113Z",
-  "stats_as_of": "2026-10-24T14:19:27.038Z",
+  "generated_at": "2026-10-24T14:23:55.743Z",
+  "stats_as_of": "2026-10-24T14:23:55.602Z",
   "plugins": [
+    {
+      "id": "plugins/phospheneoverdrive/sidequests-of-skyrim-sqos-for-skyrimnet-patch",
+      "plugin_id": "phospheneoverdrive.sidequests-of-skyrim-sqos-for-skyrimnet-patch",
+      "type": "listing",
+      "title": " Sidequests of Skyrim (SQOS) for SkyrimNet Patch",
+      "tagline": "Talk your way into (and out of) sidequests.",
+      "author": "phospheneoverdrive",
+      "tags": [
+        "quests",
+        "patch",
+        "memory",
+        "dialogue",
+        "actions",
+        "immersion",
+        "gameplay",
+        "sidequests"
+      ],
+      "nsfw": false,
+      "icon": "scroll",
+      "mods": [
+        {
+          "name": "Sidequests of Skyrim.esp",
+          "file": "sidequests of skyrim.esp",
+          "required": true
+        }
+      ],
+      "first_published": "2026-10-24T14:23:29Z",
+      "last_updated": "2026-10-24T14:23:29Z",
+      "version": "0.4.0",
+      "history": [
+        {
+          "version": "0.4.0",
+          "commit": "921f300d0d23d6a9d777e2c5bc5bed817b6405f5",
+          "date": "2026-10-24T14:23:29Z",
+          "changelog": "First release on the SkyrimNet plugin system. Includes the v0.3.1 changes, which were only on GitHub/Discord.\n\n**New**\n- **Give up a quest by talking.** Tell the giver you're calling it off. They confirm with **Yes (Silent)**, **Yes (Narrated)** or **No**. Re-reading the note still offers a give-up box too. Giving up takes back the quest note and the generated quest item. Your own matching items are left alone.\n- **NPCs remember how it ended.** Quest history now covers jobs you gave up and jobs that failed because someone died: the giver, the victim, the recipient or the sender. They're described as over, with nothing owed, not as successes or as still open.\n- **AI hand-ins for every quest type** through `complete_sidequest`: reward and relationship boost paid once, item handed over, then cleanup. The AI no longer fires SQOS's own dialogue lines, so a quest can't complete twice. You can still pick those lines from the dialogue menu yourself.\n- **Better note thoughts.** When you read a quest note, the AI gets the real names, item and place instead of placeholders. This no longer replaces the whole player-thoughts prompt.\n\n**Fixes**\n- Temper quests now fail properly when the giver dies. The original mod was missing this for Temper.\n- Rescue quests now record whether the giver or the victim died (the two reasons were swapped).\n- Shipment pickup and hand-in no longer get stuck or update the wrong quest after cleanup.\n- A Shopping quest saved under an older version repairs itself when you load the save.\n- `ask_for_help` fires only when you actually ask for work, not when you're chatting about past jobs.\n- Dungeon quests rarely pick junk items now (1 in 100).\n\n**From v0.3.1**\n- Packaged as a SkyrimNet plugin (Beta 25+).\n- All action names are now lowercase snake_case (for example `ask_for_help`)."
+        }
+      ],
+      "external_url": "https://github.com/Gerkinfeltser/SQOSPatcher/releases/latest",
+      "languages": [
+        "en"
+      ],
+      "language": "en",
+      "image": {
+        "file": "cover.jpg",
+        "sha": "d42cf02bd7ffa80ef417df4898f9e6d3a5fa4bd6",
+        "commit": "921f300d0d23d6a9d777e2c5bc5bed817b6405f5",
+        "width": 1672,
+        "height": 941
+      },
+      "stats": {
+        "downloads": 0,
+        "endorsements": 0
+      }
+    },
     {
       "id": "plugins/whyregister/to-the-yield",
       "plugin_id": "whyregister.to-the-yield",
@@ -3951,7 +4005,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2487,
+        "downloads": 2491,
         "endorsements": 2
       }
     },
