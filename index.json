@@ -1,8 +1,52 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-24T19:24:31.032Z",
-  "stats_as_of": "2026-10-24T19:24:30.952Z",
+  "generated_at": "2026-10-24T20:24:03.267Z",
+  "stats_as_of": "2026-10-24T20:22:50.898Z",
   "plugins": [
+    {
+      "id": "plugins/whyregister/to-the-yield",
+      "plugin_id": "whyregister.to-the-yield",
+      "type": "listing",
+      "title": "To The Yield",
+      "tagline": "Dueling Plug-in for SkyrimNet",
+      "author": "whyregister",
+      "tags": [
+        "Dueling",
+        "combat"
+      ],
+      "nsfw": false,
+      "icon": "package",
+      "mods": [],
+      "first_published": "2026-10-24T14:18:55Z",
+      "last_updated": "2026-10-24T20:23:35Z",
+      "version": "0.3.0",
+      "history": [
+        {
+          "version": "0.3.0",
+          "commit": "200df02466819b5add5becaa3ff5c10a922bdd41",
+          "date": "2026-10-24T20:23:35Z",
+          "changelog": "Added NPC-NPC combat and bystander protection. And image"
+        },
+        {
+          "version": "0.2.3",
+          "commit": "e05481d726e38e41e1e4da41532e5fa5d6793d79",
+          "date": "2026-10-24T14:18:55Z",
+          "changelog": "Initial release"
+        }
+      ],
+      "external_url": "https://github.com/whyregisterme/ToTheYield",
+      "image": {
+        "file": "cover.png",
+        "sha": "9da0705ea2f5b230b4c84dc4c2bee8c2e7a10588",
+        "commit": "200df02466819b5add5becaa3ff5c10a922bdd41",
+        "width": 1672,
+        "height": 941
+      },
+      "stats": {
+        "downloads": 1,
+        "endorsements": 0
+      }
+    },
     {
       "id": "plugins/phospheneoverdrive/sidequests-of-skyrim-sqos-for-skyrimnet-patch",
       "plugin_id": "phospheneoverdrive.sidequests-of-skyrim-sqos-for-skyrimnet-patch",
@@ -53,38 +97,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 4,
-        "endorsements": 0
-      }
-    },
-    {
-      "id": "plugins/whyregister/to-the-yield",
-      "plugin_id": "whyregister.to-the-yield",
-      "type": "listing",
-      "title": "To The Yield",
-      "tagline": "Dueling Plug-in for SkyrimNet",
-      "author": "whyregister",
-      "tags": [
-        "Dueling",
-        "combat"
-      ],
-      "nsfw": false,
-      "icon": "package",
-      "mods": [],
-      "first_published": "2026-10-24T14:18:55Z",
-      "last_updated": "2026-10-24T14:18:55Z",
-      "version": "0.2.3",
-      "history": [
-        {
-          "version": "0.2.3",
-          "commit": "e05481d726e38e41e1e4da41532e5fa5d6793d79",
-          "date": "2026-10-24T14:18:55Z",
-          "changelog": "Initial release"
-        }
-      ],
-      "external_url": "https://github.com/whyregisterme/ToTheYield",
-      "stats": {
-        "downloads": 1,
+        "downloads": 5,
         "endorsements": 0
       }
     },
@@ -190,7 +203,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 120,
+        "downloads": 122,
         "endorsements": 3
       }
     },
@@ -386,7 +399,7 @@
         "height": 1152
       },
       "stats": {
-        "downloads": 205,
+        "downloads": 206,
         "endorsements": 6
       }
     },
@@ -931,7 +944,7 @@
         "height": 688
       },
       "stats": {
-        "downloads": 31,
+        "downloads": 33,
         "endorsements": 0
       }
     },
@@ -972,7 +985,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 52,
+        "downloads": 54,
         "endorsements": 2
       }
     },
@@ -1076,7 +1089,7 @@
         "height": 1152
       },
       "stats": {
-        "downloads": 118,
+        "downloads": 119,
         "endorsements": 1
       }
     },
@@ -1419,7 +1432,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 687,
+        "downloads": 689,
         "endorsements": 32
       }
     },
@@ -1500,7 +1513,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 766,
+        "downloads": 770,
         "endorsements": 13
       }
     },
@@ -2307,7 +2320,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 176,
+        "downloads": 178,
         "endorsements": 5
       }
     },
@@ -2355,7 +2368,7 @@
         "height": 1008
       },
       "stats": {
-        "downloads": 101,
+        "downloads": 102,
         "endorsements": 2
       }
     },
@@ -3346,7 +3359,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 343,
+        "downloads": 344,
         "endorsements": 0
       }
     },
@@ -3438,7 +3451,7 @@
       ],
       "external_url": "https://github.com/naitro2010/SkyrimNet_UDNG/releases/tag/alpha12",
       "stats": {
-        "downloads": 114,
+        "downloads": 116,
         "endorsements": 3
       }
     },
@@ -3870,7 +3883,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1125,
+        "downloads": 1127,
         "endorsements": 2
       }
     },
@@ -3915,7 +3928,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 553,
+        "downloads": 554,
         "endorsements": 0
       }
     },
@@ -4005,7 +4018,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2516,
+        "downloads": 2518,
         "endorsements": 2
       }
     },
@@ -4230,7 +4243,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1283,
+        "downloads": 1285,
         "endorsements": 0
       }
     },
@@ -4590,7 +4603,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 165,
+        "downloads": 166,
         "endorsements": 0
       }
     },
@@ -4725,7 +4738,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 318,
+        "downloads": 319,
         "endorsements": 1
       }
     },
@@ -4770,7 +4783,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 167,
+        "downloads": 168,
         "endorsements": 0
       }
     },
@@ -4995,7 +5008,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1024,
+        "downloads": 1025,
         "endorsements": 0
       }
     },
@@ -5355,7 +5368,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 907,
+        "downloads": 908,
         "endorsements": 1
       }
     },
@@ -5715,7 +5728,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1170,
+        "downloads": 1173,
         "endorsements": 3
       }
     },
@@ -5850,7 +5863,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 301,
+        "downloads": 302,
         "endorsements": 1
       }
     },
@@ -5895,7 +5908,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 521,
+        "downloads": 522,
         "endorsements": 0
       }
     },
@@ -5940,7 +5953,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 746,
+        "downloads": 747,
         "endorsements": 1
       }
     },
@@ -6030,7 +6043,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 225,
+        "downloads": 226,
         "endorsements": 0
       }
     },
@@ -6075,7 +6088,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 243,
+        "downloads": 244,
         "endorsements": 0
       }
     },
@@ -6345,7 +6358,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 207,
+        "downloads": 208,
         "endorsements": 0
       }
     },
@@ -6750,7 +6763,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 411,
+        "downloads": 413,
         "endorsements": 0
       }
     },
@@ -7440,7 +7453,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 383,
+        "downloads": 384,
         "endorsements": 0
       }
     },
@@ -7755,7 +7768,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 325,
+        "downloads": 327,
         "endorsements": 0
       }
     },
@@ -8160,7 +8173,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 596,
+        "downloads": 598,
         "endorsements": 0
       }
     },
@@ -8205,7 +8218,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 420,
+        "downloads": 422,
         "endorsements": 0
       }
     },
@@ -8295,7 +8308,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1036,
+        "downloads": 1037,
         "endorsements": 1
       }
     },
@@ -8385,7 +8398,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1355,
+        "downloads": 1358,
         "endorsements": 2
       }
     },
@@ -9420,7 +9433,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1446,
+        "downloads": 1447,
         "endorsements": 2
       }
     },
@@ -9690,7 +9703,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1188,
+        "downloads": 1191,
         "endorsements": 2
       }
     },
@@ -10230,7 +10243,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 873,
+        "downloads": 874,
         "endorsements": 0
       }
     },
@@ -10275,7 +10288,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 494,
+        "downloads": 495,
         "endorsements": 1
       }
     },
@@ -10770,7 +10783,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 267,
+        "downloads": 268,
         "endorsements": 0
       }
     },
@@ -11040,7 +11053,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 736,
+        "downloads": 738,
         "endorsements": 0
       }
     },
@@ -12030,7 +12043,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 463,
+        "downloads": 464,
         "endorsements": 0
       }
     },
@@ -12300,7 +12313,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 628,
+        "downloads": 630,
         "endorsements": 2
       }
     },
@@ -12705,7 +12718,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 230,
+        "downloads": 231,
         "endorsements": 0
       }
     },
@@ -12840,7 +12853,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1779,
+        "downloads": 1782,
         "endorsements": 2
       }
     },
