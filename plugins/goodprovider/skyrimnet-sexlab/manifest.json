@@ -18,17 +18,17 @@
     {
       "name": "SkyrimNet_DOM.esp",
       "file": "skyrimnet_dom.esp",
-      "required": true
+      "required": false
     },
     {
       "name": "TT_OStimNet.esp",
       "file": "tt_ostimnet.esp",
-      "required": true
+      "required": false
     },
     {
       "name": "TT_LoversLedger.esp",
       "file": "tt_loversledger.esp",
-      "required": true
+      "required": false
     },
     {
       "name": "SkyrimNet_Leashed.esp",
@@ -38,7 +38,7 @@
     {
       "name": "Injury_Engine.esp",
       "file": "injury_engine.esp",
-      "required": true
+      "required": false
     }
   ],
   "languages": [
