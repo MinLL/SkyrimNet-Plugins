@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-25T02:38:42.100Z",
-  "stats_as_of": "2026-10-25T02:37:42.612Z",
+  "generated_at": "2026-10-25T03:37:26.666Z",
+  "stats_as_of": "2026-10-25T03:37:26.593Z",
   "plugins": [
     {
       "id": "plugins/whyregister/to-the-yield",
@@ -43,7 +43,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 6,
+        "downloads": 7,
         "endorsements": 0
       }
     },
@@ -763,7 +763,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 91,
+        "downloads": 92,
         "endorsements": 0
       }
     },
@@ -2602,7 +2602,7 @@
       ],
       "external_url": "https://www.nexusmods.com/skyrimspecialedition/mods/192616",
       "stats": {
-        "downloads": 25,
+        "downloads": 26,
         "endorsements": 0
       }
     },
@@ -4243,7 +4243,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1295,
+        "downloads": 1296,
         "endorsements": 0
       }
     },
@@ -4738,7 +4738,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 327,
+        "downloads": 328,
         "endorsements": 1
       }
     },
@@ -8173,7 +8173,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 605,
+        "downloads": 606,
         "endorsements": 0
       }
     },
@@ -8398,7 +8398,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1372,
+        "downloads": 1373,
         "endorsements": 2
       }
     },
@@ -9703,7 +9703,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1202,
+        "downloads": 1203,
         "endorsements": 2
       }
     },
