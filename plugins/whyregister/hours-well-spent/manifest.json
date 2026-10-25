@@ -1,0 +1,22 @@
+{
+  "id": "whyregister.hours-well-spent",
+  "type": "listing",
+  "title": "Hours Well Spent ",
+  "tagline": "Spend Time Together. Build Skills. Make Memories.",
+  "description": "Hours Well Spent adds shared-time vignettes for SkyrimNet: short off-screen scenes where you and an NPC spend meaningful time together, then read how it went.\n\nSkyrimNet characters sometimes want to do things that don’t neatly fit Skyrim’s mechanics — study, patrol, review ledgers, train, socialize, or simply spend an evening together. Instead of ignoring those moments or physically acting out every minute, Hours Well Spent lets you confirm the activity, fade to black, advance time, and receive a narrated result written from the characters involved, their memories, and the place they’re in.\n\nWalk the battlements with Lydia. Study spells with Serana. Serve drinks with Saadia. Spar in the yard, review estate reports, or stay up too late over wine.\n\nThese scenes last from 1 to 9 hours, are remembered by everyone involved, and can grant light skill practice where it makes sense.\n\nInspired by SevActions’ off-screen events and Pass the Time.",
+  "author": "whyregister",
+  "tags": [
+    "training",
+    "player events",
+    "roleplay",
+    "immersion",
+    "skill"
+  ],
+  "nsfw": false,
+  "icon": "package",
+  "mods": [],
+  "image": "cover.png",
+  "external_url": "https://github.com/whyregisterme/HoursWellSpent",
+  "version": "0.1.0",
+  "changelog": "Initial release"
+}
