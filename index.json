@@ -1,8 +1,99 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-25T07:04:58.874Z",
-  "stats_as_of": "2026-10-25T07:04:58.761Z",
+  "generated_at": "2026-10-25T07:08:05.470Z",
+  "stats_as_of": "2026-10-25T07:08:05.385Z",
   "plugins": [
+    {
+      "id": "plugins/goodprovider/injury-engine",
+      "plugin_id": "goodprovider.injury-engine",
+      "type": "listing",
+      "title": "Injury Engine ",
+      "tagline": "Let them know when how much it hurts (injury 💔, healing ❤️‍🩹, and torture❤️‍🔥)",
+      "author": "goodprovider",
+      "tags": [
+        "injury",
+        "healing",
+        "torture",
+        "damage",
+        "narration"
+      ],
+      "nsfw": true,
+      "icon": "brain",
+      "mods": [
+        {
+          "name": "SkyrimNet_DOM.esp",
+          "file": "skyrimnet_dom.esp",
+          "required": false
+        },
+        {
+          "name": "SkyrimNet_SexLab.esp",
+          "file": "skyrimnet_sexlab.esp",
+          "required": false
+        },
+        {
+          "name": "SkyrimNet_Leashed.esp",
+          "file": "skyrimnet_leashed.esp",
+          "required": false
+        }
+      ],
+      "first_published": "2026-10-17T06:53:48Z",
+      "last_updated": "2026-10-25T07:07:29Z",
+      "version": "0.1.5",
+      "history": [
+        {
+          "version": "0.1.5",
+          "commit": "12feed6359ec9a5c627495f1086485dab7115da6",
+          "date": "2026-10-25T07:07:29Z",
+          "changelog": "### Healing\r\n- Eating or drinking a healing item is narrated as eating or drinking, not as magic.\r\n- NPCs with self-healing abilities no longer narrate healing every few seconds.\r\n- One spell healing several people is narrated as a single line.\r\n\r\n### Integration\r\n- New mod events for torture and for the start of healing, for other mods to use.\r\n\r\n### SkyrimNet_DOM \r\n- Added support for SkyrimNet_DOM 0.2.0"
+        },
+        {
+          "version": "0.1.4",
+          "commit": "ad00e9424b5e1676d39fed70b87aca2b01db64d3",
+          "date": "2026-10-21T03:19:24Z",
+          "changelog": "### Wounds\r\n- Real wounds are measured against max health and staged minor / major / severe.\r\n- New Injury Ranges settings set where real wounds become minor, major and severe.\r\n- Light hits below minor still count but are not narrated.\r\n- A body part can't be hurt worse than the body has lost health.\r\n- Death narration names the hit that actually killed.\r\n\r\n### Gear and settings\r\n- Torture gear is renamed \"Torture Padded Whip\", \"Torture Flames\" and so on, so it sorts together.\r\n- Narration settings are split into \"Narration\" (modes) and \"Narration Options\"."
+        },
+        {
+          "version": "0.1.3",
+          "commit": "2e0ac0b57f225af734019f4bafc15c3b64425adf",
+          "date": "2026-10-19T05:34:32Z",
+          "changelog": "### Wounds\r\n- Fully healed characters are described as healed, so followers stop talking about old wounds.\r\n\r\n### Fixes\r\n- Courage or Fortify Health refreshing or wearing off no longer gives a sudden severe wound.\r\n- Light hits (weak weapons, burning spells) now add up to a wound, even with a health buff active."
+        },
+        {
+          "version": "0.1.2",
+          "commit": "0c24d5244baad239cbc2238801cf15a88667e5db",
+          "date": "2026-10-19T02:43:58Z",
+          "changelog": "### Fixes\r\n- A buff wearing off (Courage, Fortify Health and the like) no longer counts as a fall or a wound.\r\n- Walking down steps or slopes can no longer be taken for a hard landing.\r\n- Loading a save no longer leaves old torture scenes, heal sessions or truces running.\r\n- Loading a save during an NPC's torture action no longer stops later lashes from counting.\r\n- Punches and weapon hits are judged by the actual swing, not by what is equipped.\r\n- A recent whip lash no longer hides other damage that follows it.\r\n- Torture narration no longer gets cancelled when you look away for a moment.\r\n- Heal start narration is no longer lost while SkyrimNet is still replying.\r\n- The overlay no longer shows an older state after quick updates.\r\n\r\n### Fighting\r\n- An NPC can keep several truces at once, each with its own end time.\r\n- A late answer to an expired truce request is ignored.\r\n\r\n### Wounds\r\n- A mistake in an injury file now skips only that entry instead of the whole file."
+        },
+        {
+          "version": "0.1.1",
+          "commit": "7ee95f49b94fd0190ce2c1a73238d77ca583b0e5",
+          "date": "2026-10-18T06:19:02Z",
+          "changelog": "### Fixes\r\n- Fixed a game freeze when spells hit a badly tortured actor.\r\n- Fire spells cast with empty hands no longer count as punches.\r\n- Body parts that are switched off no longer get real wounds.\r\n\r\n### Wounds\r\n- Drowning now wounds the lungs.\r\n- New setting: minimum health loss from other mods' scripts that counts as a wound.\r\n\r\n### Narration\r\n- Narration names attacker and victim instead of \"he\" / \"she\", so followers don't think you were hurt.\r\n- Real hits in fights out of sight are no longer narrated (they stay short events).\r\n\r\n### FOMOD\r\n- FOMOD option: fight / stop / yield actions (on by default; Torture_Target always installs).\r\n- FOMOD option: torture overlay (on by default; off sets its dashboard default to off)."
+        },
+        {
+          "version": "0.1.0",
+          "commit": "4ea877a003befdfc573c0fb5df303e4a2126a5f5",
+          "date": "2026-10-17T06:53:48Z",
+          "changelog": "## 0.1.0\n\n### Requirements \n- Requires SkyrimNet 0.25.0, SKSE, Address Library, PapyrusUtil SE and PrismaUI.\n\n### Pain and Healing \n- Every hit wounds a body part: swords, arrows, spells, creatures, falls and torture.\n- Wounds go from light to medium to severe and heal over time, with regeneration and healing magic.\n- Torture, healing, hits and killing blows are narrated, and NPCs see and feel the wounds.\n- Other mods can add injury types and wound or heal body parts.\n\n### Torture \n- Torture (whip, pinch, slap, pull, punch, fire, frost, shock) hurts but can't kill.\n- Victims tortured far enough collapse until they are healed (setting).\n- Craft the padded whip at the forge; \"Add gear to player\" also gives the three torture spells.\n- Torture and lashes don't start fights.\n- NPCs can torture someone with the Torture_Target action.\n- A torture overlay shows a bar per tortured actor and fades out by itself.\n- Optional damageable sexual body parts (setting).\n\n### Real Damage \n- Real damage replaces torture wounds first, so a tortured victim dies only after that.\n\n### Combat start, stop, yield\n- NPCs can offer to stop a fight or yield; offers to you show a Yes / No box.\n- NPCs can start a fight with Start_Fighting."
+        }
+      ],
+      "external_url": "https://github.com/GoodProvider/Injury_Engine/releases/latest",
+      "languages": [
+        "en"
+      ],
+      "language": "en",
+      "image": {
+        "file": "cover.jpg",
+        "sha": "1d425dbc983a5818a3be5d328338e6a513bd728a",
+        "commit": "4ea877a003befdfc573c0fb5df303e4a2126a5f5",
+        "width": 1376,
+        "height": 768
+      },
+      "stats": {
+        "downloads": 75,
+        "endorsements": 0
+      }
+    },
     {
       "id": "plugins/goodprovider/skyrimnet-sexlab",
       "plugin_id": "goodprovider.skyrimnet-sexlab",
@@ -23,17 +114,17 @@
         {
           "name": "SkyrimNet_DOM.esp",
           "file": "skyrimnet_dom.esp",
-          "required": true
+          "required": false
         },
         {
           "name": "TT_OStimNet.esp",
           "file": "tt_ostimnet.esp",
-          "required": true
+          "required": false
         },
         {
           "name": "TT_LoversLedger.esp",
           "file": "tt_loversledger.esp",
-          "required": true
+          "required": false
         },
         {
           "name": "SkyrimNet_Leashed.esp",
@@ -43,17 +134,17 @@
         {
           "name": "Injury_Engine.esp",
           "file": "injury_engine.esp",
-          "required": true
+          "required": false
         }
       ],
       "first_published": "2026-09-13T21:55:00Z",
-      "last_updated": "2026-10-25T07:04:30Z",
+      "last_updated": "2026-10-25T07:07:10Z",
       "version": "0.36.6",
       "history": [
         {
           "version": "0.36.6",
-          "commit": "df5fc9f4c6d712cbc218d3c35e77eed0ddda7fd1",
-          "date": "2026-10-25T07:04:30Z",
+          "commit": "6de7ab45cbb9e39d2fe0d3735fa1ddc251f2829b",
+          "date": "2026-10-25T07:07:10Z",
           "changelog": "### Aid\r\n- Food, drink and ingredients that restore health or stamina can be used as Aid, like potions\r\n- The Aid panel opens on the most damaged body part\r\n- Aid and Punish can target the throat (Injury Engine: lungs)\r\n\r\n### NPC strategy\r\n- NPCs now press in quick bursts and tire out: stamina to arouse, magicka to calm\r\n- Fixed: NPCs no longer argue with their own strategy. The Arouse and Calm LLM actions are removed\r\n\r\n### Controlling a scene you aren't in\r\n- Controlling an NPC (Num *): Arouse, Calm, Deny, Ask, Order, Punish and Aid are your own actions\r\n- The NPC you control keeps playing its strategy and answers Ask and Order\r\n- Fixed: the Ask / Order / Punish key looked disabled in a solo scene you control\r\n- Your HUD Aid, Ask, Order and Punish are always narrated right away\r\n\r\n### Punish\r\n- A punished NPC's new strategy now holds for 30 seconds\r\n- Tortured past 80% (Injury Engine), the punished actor gives in and submits\r\n- Punished NPCs now see what happened in the scene, so repeated punishment can work\r\n\r\n### DOM slaves (SkyrimNet_DOM 0.2.0)\r\n- Bar fill = the non-random orgasm score; the % over the bar end = chance the next roll works\r\n- DOM slaves' open punishment reasons show in the Punish panel\r\n\r\n### Target menu\r\n- New \"hug\" option: a quick hug, not a scene\r\n- Removed the \"platonic\" option (the scene setting is still in Scene Creator)\r\n\r\n### Description Editor\r\n- Nearby actors can be added to a running scene with **+** (up to 5) and taken off with **✕**\r\n- After adding, pick an animation that fits the new group, then Continue\r\n- The animation table has a filter row: favorites star, gender and name filters\r\n\r\n### Prompts\r\n- Scene data in prompts is live, even at scene start or with a menu open\r\n- Cum on actors is now kept by the SKSE plugin. Cum recorded before this update is lost\r\n\r\n### Bug Fixes\r\n- Fixed: Clean Cum, Dress and Undress were never offered to NPCs\r\n- Fixed: raw `{{sla.ctors.0}}` braces in several animation descriptions"
         },
         {
@@ -1254,75 +1345,6 @@
       },
       "stats": {
         "downloads": 20,
-        "endorsements": 0
-      }
-    },
-    {
-      "id": "plugins/goodprovider/injury-engine",
-      "plugin_id": "goodprovider.injury-engine",
-      "type": "listing",
-      "title": "Injury Engine ",
-      "tagline": "Let them know when how much it hurts (injury 💔, healing ❤️‍🩹, and torture❤️‍🔥)",
-      "author": "goodprovider",
-      "tags": [
-        "injury",
-        "healing",
-        "torture",
-        "damage",
-        "narration"
-      ],
-      "nsfw": true,
-      "icon": "brain",
-      "mods": [],
-      "first_published": "2026-10-17T06:53:48Z",
-      "last_updated": "2026-10-21T03:19:24Z",
-      "version": "0.1.4",
-      "history": [
-        {
-          "version": "0.1.4",
-          "commit": "ad00e9424b5e1676d39fed70b87aca2b01db64d3",
-          "date": "2026-10-21T03:19:24Z",
-          "changelog": "### Wounds\r\n- Real wounds are measured against max health and staged minor / major / severe.\r\n- New Injury Ranges settings set where real wounds become minor, major and severe.\r\n- Light hits below minor still count but are not narrated.\r\n- A body part can't be hurt worse than the body has lost health.\r\n- Death narration names the hit that actually killed.\r\n\r\n### Gear and settings\r\n- Torture gear is renamed \"Torture Padded Whip\", \"Torture Flames\" and so on, so it sorts together.\r\n- Narration settings are split into \"Narration\" (modes) and \"Narration Options\"."
-        },
-        {
-          "version": "0.1.3",
-          "commit": "2e0ac0b57f225af734019f4bafc15c3b64425adf",
-          "date": "2026-10-19T05:34:32Z",
-          "changelog": "### Wounds\r\n- Fully healed characters are described as healed, so followers stop talking about old wounds.\r\n\r\n### Fixes\r\n- Courage or Fortify Health refreshing or wearing off no longer gives a sudden severe wound.\r\n- Light hits (weak weapons, burning spells) now add up to a wound, even with a health buff active."
-        },
-        {
-          "version": "0.1.2",
-          "commit": "0c24d5244baad239cbc2238801cf15a88667e5db",
-          "date": "2026-10-19T02:43:58Z",
-          "changelog": "### Fixes\r\n- A buff wearing off (Courage, Fortify Health and the like) no longer counts as a fall or a wound.\r\n- Walking down steps or slopes can no longer be taken for a hard landing.\r\n- Loading a save no longer leaves old torture scenes, heal sessions or truces running.\r\n- Loading a save during an NPC's torture action no longer stops later lashes from counting.\r\n- Punches and weapon hits are judged by the actual swing, not by what is equipped.\r\n- A recent whip lash no longer hides other damage that follows it.\r\n- Torture narration no longer gets cancelled when you look away for a moment.\r\n- Heal start narration is no longer lost while SkyrimNet is still replying.\r\n- The overlay no longer shows an older state after quick updates.\r\n\r\n### Fighting\r\n- An NPC can keep several truces at once, each with its own end time.\r\n- A late answer to an expired truce request is ignored.\r\n\r\n### Wounds\r\n- A mistake in an injury file now skips only that entry instead of the whole file."
-        },
-        {
-          "version": "0.1.1",
-          "commit": "7ee95f49b94fd0190ce2c1a73238d77ca583b0e5",
-          "date": "2026-10-18T06:19:02Z",
-          "changelog": "### Fixes\r\n- Fixed a game freeze when spells hit a badly tortured actor.\r\n- Fire spells cast with empty hands no longer count as punches.\r\n- Body parts that are switched off no longer get real wounds.\r\n\r\n### Wounds\r\n- Drowning now wounds the lungs.\r\n- New setting: minimum health loss from other mods' scripts that counts as a wound.\r\n\r\n### Narration\r\n- Narration names attacker and victim instead of \"he\" / \"she\", so followers don't think you were hurt.\r\n- Real hits in fights out of sight are no longer narrated (they stay short events).\r\n\r\n### FOMOD\r\n- FOMOD option: fight / stop / yield actions (on by default; Torture_Target always installs).\r\n- FOMOD option: torture overlay (on by default; off sets its dashboard default to off)."
-        },
-        {
-          "version": "0.1.0",
-          "commit": "4ea877a003befdfc573c0fb5df303e4a2126a5f5",
-          "date": "2026-10-17T06:53:48Z",
-          "changelog": "## 0.1.0\n\n### Requirements \n- Requires SkyrimNet 0.25.0, SKSE, Address Library, PapyrusUtil SE and PrismaUI.\n\n### Pain and Healing \n- Every hit wounds a body part: swords, arrows, spells, creatures, falls and torture.\n- Wounds go from light to medium to severe and heal over time, with regeneration and healing magic.\n- Torture, healing, hits and killing blows are narrated, and NPCs see and feel the wounds.\n- Other mods can add injury types and wound or heal body parts.\n\n### Torture \n- Torture (whip, pinch, slap, pull, punch, fire, frost, shock) hurts but can't kill.\n- Victims tortured far enough collapse until they are healed (setting).\n- Craft the padded whip at the forge; \"Add gear to player\" also gives the three torture spells.\n- Torture and lashes don't start fights.\n- NPCs can torture someone with the Torture_Target action.\n- A torture overlay shows a bar per tortured actor and fades out by itself.\n- Optional damageable sexual body parts (setting).\n\n### Real Damage \n- Real damage replaces torture wounds first, so a tortured victim dies only after that.\n\n### Combat start, stop, yield\n- NPCs can offer to stop a fight or yield; offers to you show a Yes / No box.\n- NPCs can start a fight with Start_Fighting."
-        }
-      ],
-      "external_url": "https://github.com/GoodProvider/Injury_Engine/releases/latest",
-      "languages": [
-        "en"
-      ],
-      "language": "en",
-      "image": {
-        "file": "cover.jpg",
-        "sha": "1d425dbc983a5818a3be5d328338e6a513bd728a",
-        "commit": "4ea877a003befdfc573c0fb5df303e4a2126a5f5",
-        "width": 1376,
-        "height": 768
-      },
-      "stats": {
-        "downloads": 75,
         "endorsements": 0
       }
     },
