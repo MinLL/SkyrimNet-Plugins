@@ -3,19 +3,20 @@
   "type": "listing",
   "title": "SkyrimNet MultiProxy",
   "tagline": "Connect your AI of choice to SkyrimNet — set it up once, and it starts every time you play.",
-  "description": "SkyrimNet uses AI for a lot more than just conversation: dynamic dialogue, actions, personal diaries, character bios, the GameMaster, and more. **MultiProxy** sits quietly in the background on your PC, grabs those requests, and routes each one to whichever AI model you want handling that specific job.\r\n\r\n**Use what you already have:**\r\n- **Subscriptions (no API keys needed):** Your existing Claude, ChatGPT, or Google AI Pro accounts.\r\n- **API keys:** OpenRouter, GLM (z.ai), Nano-GPT, OpenAI, DeepSeek, Gemini, TypeSafe, or Kilo Gateway.\r\n- **Ollama:** Run free models directly on your own hardware, or connect via Ollama Cloud.\r\n\r\n**What it does for you:**\r\n- **Starts with Skyrim:** An SKSE plugin launches the proxy automatically whenever your game boots up—nothing extra to click or remember.\r\n- **Easy local dashboard:** Head to ` to drop in keys, grab model names, or test any AI with a quick in-character chat.\r\n- **Live Speeds tab:** Track real response times, check connection reliability, and see which AI is running each SkyrimNet job, with Dialogue prioritized first.\r\n- **Smooths out rough replies:** Automatically retries dropped calls, re-prompts or cleans up garbled output, and fixes broken tags before SkyrimNet ever sees them.\r\n- **Built for Beta 25:** Properly passes real connection failures back to SkyrimNet so backup switching kicks in, instead of an NPC awkwardly reading error code out loud.",
+  "description": "SkyrimNet uses AI for much more than conversation: dynamic dialogue, actions, personal diaries, character bios, the GameMaster, Quick decisions, and more. It sends many requests at once. **MultiProxy** sits quietly in the background, catches them all, and sends each one to whichever AI you want handling that job. It installs like a normal program and lives in your system tray.\n\n**Use what you already have:**\n* **Subscriptions (no API keys needed):** Your existing Claude, ChatGPT (Codex), Google AI Pro (Antigravity), or SuperGrok account.\n* **API keys:** GLM (z.ai), Nano-GPT, OpenAI, DeepSeek, Gemini, xAI, Continuum, Kilo Gateway, and TypeSafe, plus Cloudflare Workers AI, Mistral, and Groq for small free allowances.\n* **Your own hardware:** Built-in local models run on your graphics card with no extra program, no key, and no bill. Ollama and LM Studio models show up too.\n\n**What it does for you:**\n* **Use your other PCs:** Put the small MultiProxy Courier on a spare PC or laptop and use its models from your gaming PC. It updates itself.\n* **Quick decisions and voice:** A fast, private model answers SkyrimNet's constant background questions. NPCs speak with a voice running on your own hardware, and you can talk to them with push-to-talk (speech to text through xAI, off until you turn it on).\n* **Routing:** Pick which model answers Dialogue, Combat, Memory, and every other job, with backups if one fails.\n* **Starts with Skyrim:** The Skyrim mod starts MultiProxy when your game boots, so there is nothing to click or remember.\n* **Easy local dashboard:** Add keys, pick models, test any AI with a quick in-character chat, and see what is running on the Overview page. Every tab has built-in Help.\n* **Live Speeds tab:** Real response times and reliability for each AI, and which AI runs each SkyrimNet job.\n* **Smooths out rough replies:** Retries dropped calls, cleans up garbled output, and fixes broken tags before SkyrimNet sees them.",
   "author": "awesmdiver",
   "tags": [
     "proxy",
     "ai providers",
-    "openrouter",
     "claude",
     "chatgpt",
     "gemini",
+    "grok",
     "deepseek",
     "glm",
     "ollama",
     "local ai",
+    "voice",
     "performance",
     "utility"
   ],
@@ -26,7 +27,7 @@
     "en"
   ],
   "image": "cover.jpg",
-  "external_url": "https://github.com/awesmdiver/skyrimnet-multiproxy",
-  "version": "3.1.0",
-  "changelog": "- **Ready for SkyrimNet Beta 25:** Beta 25 can swap to a backup AI if your primary stalls, or race a second request against a slow one. MultiProxy reports real failures immediately so handoffs trigger cleanly instead of an NPC reading error code out loud! Canceled race requests are cleared away without cluttering your Speeds tab.\r\n- **Voice cues left alone:** Beta 25 uses distinct tags per voice engine, so cues pass through untouched by default. If you use Higgs, toggle `FixHiggsVoiceTags` to keep them clean.\r\n- **Tougher under pressure:** Courtesy of community member Raydonn, dropped connections retry automatically, long chats trim and retry instead of going silent, and scrambled markup tags get repaired before SkyrimNet sees them.\r\n- **Waiting lines:** Also from Raydonn, cap simultaneous requests per provider (`[Concurrency]` in `proxy.ini`) to dodge rate limits. GLM defaults to 6.\r\n- **Full reply log:** Turn on `LogFullReplies` to print complete AI replies directly in your console.\r\n- **Smarter Speeds tab:** Live health cards for each AI, tracking how fast replies start talking, overall speeds, and plain reliability labels, with Dialogue front and center.\r\n\r\n**Fixes**\r\n- **Mod Organizer 2:** The Speeds tab reliably finds SkyrimNet folders on MO2 setups.\r\n- **Faster DeepSeek:** Skips the hidden \"thinking\" step by default, matching GLM.\r\n- **Privacy:** The Speeds tab no longer enables SkyrimNet stats sharing; manage that directly in SkyrimNet's Privacy settings."
+  "external_url": "https://github.com/awesmdiver/skyrimnet-multiproxy/releases/latest",
+  "version": "4.0.0",
+  "changelog": "**Your gaming PC and your spare computers can now team up to run the AI together.**\n\n* **Local models:** Pick a model, hit download, and MultiProxy runs it on your graphics card for free while leaving enough memory for Skyrim.\n* **The Courier:** Run a small app on a spare PC or laptop to use its models from your gaming rig. It updates itself, and if a device drops offline, MultiProxy moves on to your next choice.\n* **Quick decisions:** A fast, private model handles SkyrimNet's constant stream of background questions on any of your PCs.\n* **Voice and speech:** NPCs speak using voices generated on your own hardware, and you can reply using push-to-talk (speech to text through xAI, off until you turn it on).\n* **Routing:** Choose which model handles each job—like Dialogue, Combat, and Memory—and set up your backups.\n* **New providers:** Grok, Continuum, Cloudflare Workers AI, Mistral, and Groq.\n* **One installer:** It brings your old settings along, includes the Skyrim mod, and puts an icon by your clock."
 }
