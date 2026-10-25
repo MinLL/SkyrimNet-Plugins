@@ -2,8 +2,8 @@
   "id": "taka.skyrimnet-brothel",
   "type": "listing",
   "title": "SkyrimNet Brothel",
-  "tagline": "Run your own brothel: register follower workers, and SkyrimNet AI customers make offers she can accept or refuse.",
-  "description": "Run your own brothel. Make any interior your brothel, register female followers as\nworkers, and send the resident customers to them. SkyrimNet voices the offer and the\nworker decides in conversation whether to accept; SexLab P+ plays the scene and she is\npaid afterwards.\n\n**Requires:** SkyrimNet beta 28+, SexLab P+, SkyUI, MCM Helper, PapyrusUtil SE,\npowerofthree's Papyrus Extender. Japanese translation available.\n\nPre-release: limited testing. Feedback welcome on GitHub Issues.",
+  "tagline": "follower workers",
+  "description": "Run your own brothel. Make any interior your brothel, register women (followers or anyone else) as workers, and send customers to them, or take customers yourself. SkyrimNet voices the offer and the worker decides in conversation whether to accept; SexLab plays the scene and she is paid afterwards.\n\n**Requires:** SkyrimNet beta 28+, SkyrimNet Player Choices 0.0.1+, SexLab P+ (SexLab 1.6x is also supported but untested), SkyUI, MCM Helper, PapyrusUtil SE, powerofthree's Papyrus Extender. Japanese translation available.\n\nFeedback welcome on GitHub Issues.",
   "author": "taka",
   "tags": [
     "SexLab",
@@ -18,6 +18,6 @@
     "ja"
   ],
   "external_url": "https://github.com/nightlantern-mods/skyrimnet_Brothel",
-  "version": "0.1.2",
-  "changelog": "Initial release"
+  "version": "0.1.6",
+  "changelog": "**0.1.6**\n- Also runs on classic SexLab 1.6x (written against 1.66b). **The 1.6x support is untested in game**: it was only compiled, and everything was tested on SexLab P+. Reports from 1.6x players are welcome.\n- No change in behaviour on SexLab P+.\n\n**Since 0.1.2**\n- **SkyrimNet Player Choices is now required** (since 0.1.5).\n- Take a customer yourself: answer the offer with AI-written lines in the dialogue menu, then pick a position.\n- Any adult woman can be a worker; other NPCs in the brothel can be customers.\n- Several pairs at once, automatic sending, a same-sex option and a debug log.\n- Beds are found more reliably; Skyrim's common beds are registered with SexLab P+.\n- Fixes: pairs overlapping on one bed, scenes from missing animation packs, the MCM not appearing after install."
 }
