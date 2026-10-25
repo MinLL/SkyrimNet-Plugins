@@ -1,8 +1,49 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-25T23:25:25.487Z",
-  "stats_as_of": "2026-10-25T23:25:25.355Z",
+  "generated_at": "2026-10-25T23:32:45.852Z",
+  "stats_as_of": "2026-10-25T23:32:45.710Z",
   "plugins": [
+    {
+      "id": "plugins/severause/magelight-ui",
+      "plugin_id": "severause.magelight-ui",
+      "type": "listing",
+      "title": "Magelight UI",
+      "tagline": "GPU-rendered web pages inside Skyrim SE, AE and VR. Runs SkyrimNet’s dashboard and chat and SeverActions’ menus, and lets any mod build its UI in HTML, CSS and JavaScript.",
+      "author": "severause",
+      "tags": [],
+      "nsfw": false,
+      "icon": "package",
+      "mods": [
+        {
+          "name": "SeverActions.esp",
+          "file": "severactions.esp",
+          "required": true
+        }
+      ],
+      "first_published": "2026-10-25T23:32:17Z",
+      "last_updated": "2026-10-25T23:32:17Z",
+      "version": "1.5.0",
+      "history": [
+        {
+          "version": "1.5.0",
+          "commit": "68533530c8d3f04593ab710ddaa55f28811c29a6",
+          "date": "2026-10-25T23:32:17Z",
+          "changelog": "Magelight UI 1.5.0\n\nMagelight now runs on Ultralight 2.0, the newest version of the web engine behind every Magelight page. Pages look the same, run a little lighter, and a long list of fixes comes with it.\n\nHighlights\n- Japanese, Chinese and Korean typing: the IME's candidate list now shows inside the page, so you no longer pick characters blind. It matches the text field's font and the page's colours. (Thanks to Dekana, who built and tested this.)\n- Escape while typing with an IME only closes the candidate list or clears the word you're typing. It no longer closes the chat and loses your text. With Korean, one Escape commits the syllable and closes, as in Windows.\n- Fixed a crash and an \"overlay disabled\" problem for players using CrashLogger 1.23 or newer: an error in any mod's page could take down the UI or the game. Pages now run on their own stack and errors stay inside the page.\n- Opening a page no longer makes your character sheathe their weapon or drop a readied spell.\n- HUD-style views (widgets that don't take clicks) now show during play with ENB, ReShade and other graphics wrappers.\n- Opening and closing pages no longer rebuilds the game's cursor, which could crash some cursor mods. The Journal and Inventory keep their cursor too.\n- Alt-tabbing no longer fills Magelight.log with false \"stall\" reports.\n\nSmaller improvements\n- Pages that load in the background open with their images already drawn.\n- Memory used by hidden pages is given back on its own, even when no page is open.\n- Mouse: drags end where you release, the mouse wheel scrolls what's under the pointer, middle-click no longer autoscrolls, and the back/forward mouse buttons work in pages.\n- VR: the keyboard follows the text field you're typing in, shows a number pad or email/URL layout where it fits, and has Undo, Redo, Cut, Copy and Paste buttons. Each hand drags and points on its own.\n- Japanese fonts like MS UI Gothic and MS PGothic draw in the right face again."
+        }
+      ],
+      "external_url": "https://www.nexusmods.com/skyrimspecialedition/mods/193303",
+      "image": {
+        "file": "cover.png",
+        "sha": "5bc1c6579f8ac72ce77bc967215594876861b749",
+        "commit": "68533530c8d3f04593ab710ddaa55f28811c29a6",
+        "width": 1920,
+        "height": 1080
+      },
+      "stats": {
+        "downloads": 0,
+        "endorsements": 0
+      }
+    },
     {
       "id": "plugins/s709/milk-maid-economy-extensions",
       "plugin_id": "s709.milk-maid-economy-extensions",
@@ -4177,7 +4218,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2594,
+        "downloads": 2595,
         "endorsements": 2
       }
     },
@@ -4942,7 +4983,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 171,
+        "downloads": 172,
         "endorsements": 0
       }
     },
@@ -5527,7 +5568,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 943,
+        "downloads": 944,
         "endorsements": 1
       }
     },
@@ -5887,7 +5928,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1223,
+        "downloads": 1224,
         "endorsements": 3
       }
     },
@@ -6517,7 +6558,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 214,
+        "downloads": 215,
         "endorsements": 0
       }
     },
@@ -7882,7 +7923,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 16,
+        "downloads": 17,
         "endorsements": 0
       }
     },
@@ -8332,7 +8373,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 622,
+        "downloads": 623,
         "endorsements": 0
       }
     },
@@ -8377,7 +8418,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 434,
+        "downloads": 435,
         "endorsements": 0
       }
     },
@@ -8557,7 +8598,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1405,
+        "downloads": 1406,
         "endorsements": 2
       }
     },
@@ -9412,7 +9453,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 253,
+        "downloads": 254,
         "endorsements": 1
       }
     },
@@ -11212,7 +11253,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 760,
+        "downloads": 761,
         "endorsements": 0
       }
     },
