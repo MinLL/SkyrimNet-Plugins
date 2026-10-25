@@ -14,12 +14,28 @@
   ],
   "nsfw": true,
   "icon": "brain",
-  "mods": [],
+  "mods": [
+    {
+      "name": "SkyrimNet_DOM.esp",
+      "file": "skyrimnet_dom.esp",
+      "required": false
+    },
+    {
+      "name": "SkyrimNet_SexLab.esp",
+      "file": "skyrimnet_sexlab.esp",
+      "required": false
+    },
+    {
+      "name": "SkyrimNet_Leashed.esp",
+      "file": "skyrimnet_leashed.esp",
+      "required": false
+    }
+  ],
   "languages": [
     "en"
   ],
   "image": "cover.jpg",
   "external_url": "https://github.com/GoodProvider/Injury_Engine/releases/latest",
-  "version": "0.1.4",
-  "changelog": "### Wounds\r\n- Real wounds are measured against max health and staged minor / major / severe.\r\n- New Injury Ranges settings set where real wounds become minor, major and severe.\r\n- Light hits below minor still count but are not narrated.\r\n- A body part can't be hurt worse than the body has lost health.\r\n- Death narration names the hit that actually killed.\r\n\r\n### Gear and settings\r\n- Torture gear is renamed \"Torture Padded Whip\", \"Torture Flames\" and so on, so it sorts together.\r\n- Narration settings are split into \"Narration\" (modes) and \"Narration Options\"."
+  "version": "0.1.5",
+  "changelog": "### Healing\r\n- Eating or drinking a healing item is narrated as eating or drinking, not as magic.\r\n- NPCs with self-healing abilities no longer narrate healing every few seconds.\r\n- One spell healing several people is narrated as a single line.\r\n\r\n### Integration\r\n- New mod events for torture and for the start of healing, for other mods to use.\r\n\r\n### SkyrimNet_DOM \r\n- Added support for SkyrimNet_DOM 0.2.0"
 }
