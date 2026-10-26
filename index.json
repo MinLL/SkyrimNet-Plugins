@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-26T15:13:56.269Z",
-  "stats_as_of": "2026-10-26T15:10:55.776Z",
+  "generated_at": "2026-10-26T15:43:49.110Z",
+  "stats_as_of": "2026-10-26T15:43:48.980Z",
   "plugins": [
     {
       "id": "plugins/whyregister/to-the-yield",
@@ -1970,7 +1970,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 837,
+        "downloads": 838,
         "endorsements": 13
       }
     },
@@ -4455,7 +4455,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1338,
+        "downloads": 1339,
         "endorsements": 0
       }
     },
