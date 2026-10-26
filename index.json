@@ -1,8 +1,55 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-26T01:04:13.962Z",
-  "stats_as_of": "2026-10-26T01:01:23.634Z",
+  "generated_at": "2026-10-26T01:29:16.022Z",
+  "stats_as_of": "2026-10-26T01:25:35.116Z",
   "plugins": [
+    {
+      "id": "plugins/whyregister/hours-well-spent",
+      "plugin_id": "whyregister.hours-well-spent",
+      "type": "listing",
+      "title": "Hours Well Spent ",
+      "tagline": "Spend Time Together. Build Skills. Make Memories.",
+      "author": "whyregister",
+      "tags": [
+        "training",
+        "player events",
+        "roleplay",
+        "immersion",
+        "skill"
+      ],
+      "nsfw": false,
+      "icon": "package",
+      "mods": [],
+      "first_published": "2026-10-25T08:31:50Z",
+      "last_updated": "2026-10-26T01:28:45Z",
+      "version": "0.2.0",
+      "history": [
+        {
+          "version": "0.2.0",
+          "commit": "418260566d2c7c0b19b3440a26ab6d8be88e8535",
+          "date": "2026-10-26T01:28:45Z",
+          "changelog": "Optional Magelight UI page. With Magelight UI 1.3.0 or newer (SeverActions includes it), the proposal and the account appear on a proper page that names the NPC, quotes the activity, and shows the skill you gained with a progress bar. Without Magelight, it uses the same message boxes as 0.1.0. To always use the boxes, type set HWS_UseMagelight to 0 in the console."
+        },
+        {
+          "version": "0.1.0",
+          "commit": "66dc55b96f85d41bd9110c6b4cd154d6bab2b6b4",
+          "date": "2026-10-25T08:31:50Z",
+          "changelog": "Initial release"
+        }
+      ],
+      "external_url": "https://github.com/whyregisterme/HoursWellSpent",
+      "image": {
+        "file": "cover.png",
+        "sha": "d489d91f1e5d039d95b611ff00c7137ba33b95c6",
+        "commit": "66dc55b96f85d41bd9110c6b4cd154d6bab2b6b4",
+        "width": 1672,
+        "height": 941
+      },
+      "stats": {
+        "downloads": 6,
+        "endorsements": 1
+      }
+    },
     {
       "id": "plugins/severause/magelight-ui",
       "plugin_id": "severause.magelight-ui",
@@ -40,7 +87,7 @@
         "height": 1080
       },
       "stats": {
-        "downloads": 0,
+        "downloads": 1,
         "endorsements": 0
       }
     },
@@ -306,47 +353,6 @@
       "stats": {
         "downloads": 37,
         "endorsements": 0
-      }
-    },
-    {
-      "id": "plugins/whyregister/hours-well-spent",
-      "plugin_id": "whyregister.hours-well-spent",
-      "type": "listing",
-      "title": "Hours Well Spent ",
-      "tagline": "Spend Time Together. Build Skills. Make Memories.",
-      "author": "whyregister",
-      "tags": [
-        "training",
-        "player events",
-        "roleplay",
-        "immersion",
-        "skill"
-      ],
-      "nsfw": false,
-      "icon": "package",
-      "mods": [],
-      "first_published": "2026-10-25T08:31:50Z",
-      "last_updated": "2026-10-25T08:31:50Z",
-      "version": "0.1.0",
-      "history": [
-        {
-          "version": "0.1.0",
-          "commit": "66dc55b96f85d41bd9110c6b4cd154d6bab2b6b4",
-          "date": "2026-10-25T08:31:50Z",
-          "changelog": "Initial release"
-        }
-      ],
-      "external_url": "https://github.com/whyregisterme/HoursWellSpent",
-      "image": {
-        "file": "cover.png",
-        "sha": "d489d91f1e5d039d95b611ff00c7137ba33b95c6",
-        "commit": "66dc55b96f85d41bd9110c6b4cd154d6bab2b6b4",
-        "width": 1672,
-        "height": 941
-      },
-      "stats": {
-        "downloads": 6,
-        "endorsements": 1
       }
     },
     {
@@ -1958,7 +1964,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 820,
+        "downloads": 821,
         "endorsements": 13
       }
     },
