@@ -17,6 +17,6 @@
   "mods": [],
   "image": "cover.png",
   "external_url": "https://github.com/whyregisterme/HoursWellSpent",
-  "version": "0.1.0",
-  "changelog": "Initial release"
+  "version": "0.2.0",
+  "changelog": "Optional Magelight UI page. With Magelight UI 1.3.0 or newer (SeverActions includes it), the proposal and the account appear on a proper page that names the NPC, quotes the activity, and shows the skill you gained with a progress bar. Without Magelight, it uses the same message boxes as 0.1.0. To always use the boxes, type set HWS_UseMagelight to 0 in the console."
 }
