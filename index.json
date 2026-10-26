@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-26T07:47:02.711Z",
-  "stats_as_of": "2026-10-26T07:42:18.875Z",
+  "generated_at": "2026-10-26T08:47:31.015Z",
+  "stats_as_of": "2026-10-26T08:47:30.877Z",
   "plugins": [
     {
       "id": "plugins/whyregister/to-the-yield",
@@ -49,7 +49,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 12,
+        "downloads": 13,
         "endorsements": 0
       }
     },
@@ -96,7 +96,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 10,
+        "downloads": 11,
         "endorsements": 1
       }
     },
@@ -342,7 +342,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 189,
+        "downloads": 191,
         "endorsements": 5
       }
     },
@@ -446,7 +446,7 @@
         "height": 720
       },
       "stats": {
-        "downloads": 23,
+        "downloads": 24,
         "endorsements": 0
       }
     },
@@ -537,7 +537,7 @@
         "height": 768
       },
       "stats": {
-        "downloads": 85,
+        "downloads": 86,
         "endorsements": 0
       }
     },
@@ -662,7 +662,7 @@
         "height": 432
       },
       "stats": {
-        "downloads": 211,
+        "downloads": 212,
         "endorsements": 1
       }
     },
@@ -12255,7 +12255,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 486,
+        "downloads": 487,
         "endorsements": 0
       }
     },
