@@ -14,6 +14,6 @@
   "mods": [],
   "image": "cover.png",
   "external_url": "https://github.com/whyregisterme/ToTheYield",
-  "version": "0.3.0",
-  "changelog": "Added NPC-NPC combat and bystander protection. And image"
+  "version": "0.4.0",
+  "changelog": "Added Magelight option if installed, if not will fall back to message box\nAllies of NPCs no longer enter the fray"
 }
