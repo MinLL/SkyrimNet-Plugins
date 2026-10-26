@@ -1,0 +1,22 @@
+{
+  "id": "7regalrascal7.delectatio-et-dominium",
+  "type": "listing",
+  "title": "Delectatio-et-Dominium",
+  "tagline": "Bedroom drama for SkyrimNet",
+  "description": "Delectatio et Dominium (DeD) is a modular SkyrimNet integration mod for a number of classic community adult mods and effects. It aims to immerse you in those mods through thoughtful integration into SkyrimNet's prompt and trigger systems: the LLM driving your NPCs doesn't just know what's happening — it reacts as the character would, narrates it in-story, and decides what happens next. In some instances, DeD even drives the functions itself: applying cum decals, executing paired animations, and applying tattoos. And it attempts to maintain complete compatibility with both main adult Skyrim frameworks, SexLab and OStim — pick either, or run both.\n\nIntegrated mods include:\nBaka Paired Animations - For escalating scenes that can end in adult encounters\nGunSlicer Poses - To allow NPCs to dance and pose emergently (and the player too)\nFill Her Up Baka - For reaction to cumflated actors\nOCum Ascended/SLACS 2 + SCO ( Cum Overlays ) - For reactions to visible cum\nSlaveTats - For ambient reactions to naughty tattoos\n\nThe structural idea: a modular framework that can support a number of mods while requiring as few as one of them. Each module is a separable file-set with a FOMOD installer option, so you install only what you use.\n\nEverything the LLM narrates is written in-story: cues and ambient narration describe what is happening as it happens — the model reacts as the character would, never breaking the scene to explain itself. Nothing fires at random; every interaction and pose is decided by SkyrimNet's model, in context, from the characters' personalities. Master toggles, an intensity slider, and per-module settings let you dial everything back.\n\nThis is an alpha release of the mod so I'm hoping the community can help test the various features, report bugs, and give feedback.\n\nA big thank you to Around906 for the base integrations that this mod is build on top of. Their mods live on within this one.\n\nEnjoy!",
+  "author": "7regalrascal7",
+  "tags": [
+    "SexLab",
+    "OStim",
+    "Fill Her Up",
+    "GS Pose",
+    "Baka"
+  ],
+  "nsfw": true,
+  "icon": "heart",
+  "mods": [],
+  "image": "cover.png",
+  "external_url": "https://github.com/regalrascal/Delectatio-et-Dominium",
+  "version": "0.3.0",
+  "changelog": "Initial release"
+}
