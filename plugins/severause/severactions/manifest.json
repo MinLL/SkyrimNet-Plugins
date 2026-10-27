@@ -10,7 +10,7 @@
   "icon": "scroll",
   "mods": [],
   "image": "cover.png",
-  "external_url": "https://github.com/Severause/SeverActions/releases/tag/v4.5.0",
-  "version": "4.5.0",
-  "changelog": "## **SeverActions v4.5.0** — Mirrors and Motives\n\nA new Outfits page built around a live mirror, a reworked Inventory with trading, a way to see why your companions feel the way they do, NPCs who can study spell tomes, and NPCs who level up with you."
+  "external_url": "https://github.com/Severause/SeverActions/releases/tag/v4.6.0",
+  "version": "4.6.0",
+  "changelog": "# SeverActions 4.6.0 - Blood and Thread\n\n**Bundled with it:**\n- **Magelight UI 1.5.1:** Ultralight 2.0, less memory after pages close, in-page IME typing, crash fixes, pages no longer put your weapons away, and the cursor stays in the game window.\n- **Phantasm:** a separate renderer that now draws the Outfits mirror, the Inventory item view and the party's faces. It installs with SeverActions.(Will be it's own separate mod with an API to hook into in the future)\n\nIf you also run Magelight UI as its own mod, let the newer copy win.\n\n## :drop_of_blood: Survivable dismemberment (highly experimental)\nNeeds Dismembering Framework. Off until you turn it on (Settings → Combat Context, or the MCM's Combat & Outlaws page).\n- A power attack with a sword or axe that leaves someone at low health can take a forearm or lower leg **without killing them**. They stagger, scream and beg for the fight to stop.\n- Most surrender after losing an arm. A brave fighter (a boss, or at least your level) keeps fighting with the other hand (not in VR).\n- A lost leg, or both hands, knocks them down for good.\n- **The wound bleeds** until they die. Adept-or-better Restoration healing (Heal Other, Grand Healing) from you or a follower closes it.\n- They remember who cut them, and who they surrendered to.\n- Followers, guards, children and essential characters are never cut.\n- Limbs don't grow back yet; that's coming in a later update, alongside possible prosthetics.\n\n-See Announcement Page For More"
 }
