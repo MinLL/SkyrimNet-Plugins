@@ -3,7 +3,7 @@
   "type": "listing",
   "title": "IntelEngine — NPC Autonomy & Faction Politics",
   "tagline": "Give Skyrim’s NPCs agency—tasks, schedules, autonomous stories, and faction politics.",
-  "description": "IntelEngine gives Skyrim’s NPCs the ability to act autonomously through SkyrimNet. NPCs can travel, deliver messages, fetch or escort people, schedule meetings and tasks, spread gossip, pursue personal storylines, and participate in an evolving faction-politics system.\n\nOriginally created by **Galanx**. Release **3.5.1** was updated by **PhospheneOverdrive** solely to restore compatibility with **SkyrimNet Beta 25**. No gameplay systems, features, balance, prompts, or intended behavior were changed; the existing actions and prompts were only reorganized into Beta 25’s new plugin format.\n\nRelease **3.5.2** adds a native compatibility update for newer Skyrim versions, with successful testing reported on **Skyrim 1.7.x**. It also passed testing on **1.6.1170**. Use the matching versions of **SKSE and Address Library**. This build does **not support Skyrim VR**.\n\n**Requires SkyrimNet Beta 25 or newer. Not compatible with Beta 24 or earlier.**",
+  "description": "IntelEngine gives Skyrim's NPCs the ability to act autonomously through SkyrimNet. NPCs can travel, deliver messages, fetch or escort people, schedule meetings and tasks, spread gossip, pursue personal storylines, and participate in an evolving faction-politics system.\n\nOriginally created by **Galanx**. **PhospheneOverdrive** currently maintains it in the official galanx repositories (IntelEngine-GamePlugin and IntelEngine-NativePlugin), with Galanx's go-ahead.\n\nRelease **3.6.0** protects saved NPC names and memories, keeps names from name mods (such as RNE) across saves, **re-enables Skyrim VR** with one shared SE/AE/VR DLL, fixes Story DM candidate handling, and includes an offline save converter.\n\n⚠️ **Upgrading an old save? Convert it before loading with 3.6.0.** Fresh games don't need conversion. See the FAQ included in the download for instructions.\n\nTested on **Skyrim SE/AE 1.6.1170 and 1.7.104** with SkyrimNet Beta 28. **VR 1.4.15 should work (partly tested).** Skyrim 1.5.97 is untested. Use the matching versions of **SKSE and Address Library**.\n\n**Have issues?** Report them on the IntelEngine-GamePlugin GitHub issues page.\n\n**Requires SkyrimNet Beta 25 or newer. Not compatible with Beta 24 or earlier.**",
   "author": "phospheneoverdrive",
   "tags": [
     "actions",
@@ -23,7 +23,7 @@
     "en"
   ],
   "image": "cover.png",
-  "external_url": "https://github.com/Gerkinfeltser/IntelEngine-GamePlugin/releases/latest",
-  "version": "3.5.2",
-  "changelog": "Added support for Skyrim SE/AE versions 1.7.x"
+  "external_url": "https://github.com/galanx/IntelEngine-GamePlugin/releases/latest",
+  "version": "3.6.0",
+  "changelog": "- 💾 **Save conversion:** an offline converter (included) repairs saves from earlier versions. **Convert old saves before loading with 3.6.0;** fresh games don't need it.\n- **Names kept:** stored NPC names, including names from name mods such as RNE, now survive saves and reloads. Memories and task history no longer corrupt them.\n- **Skyrim VR re-enabled:** one shared SE/AE/VR DLL; VR saves from 3.5.1 or earlier can be converted. VR should work (partly tested).\n- **Story DM:** stays within the current candidates, leaves disabled story types out of prompts, and skips itself when all eight types are off.\n- **NPC Social DM:** safer around save loading.\n- **Fixes:** Content Library bio lookup and overlay priority; battle and peace relationship changes now survive reloads; script checks aligned with the native plugin.\n\nTested on SE/AE 1.6.1170 and 1.7.104 with SkyrimNet Beta 28. 1.5.97 is untested."
 }
