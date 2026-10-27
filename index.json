@@ -1,8 +1,73 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-27T00:52:56.865Z",
-  "stats_as_of": "2026-10-27T00:49:44.664Z",
+  "generated_at": "2026-10-27T00:55:45.036Z",
+  "stats_as_of": "2026-10-27T00:55:44.945Z",
   "plugins": [
+    {
+      "id": "plugins/goodprovider/skyrimnet-dom",
+      "plugin_id": "goodprovider.skyrimnet-dom",
+      "type": "listing",
+      "title": "SkyrimNet DOM",
+      "tagline": "enslave every actor, complex mental training/punishment",
+      "author": "goodprovider",
+      "tags": [
+        "slave",
+        "slavery",
+        "slaver",
+        "dom"
+      ],
+      "nsfw": true,
+      "icon": "zap",
+      "mods": [
+        {
+          "name": "DiaryOfMine.esm",
+          "file": "diaryofmine.esm",
+          "required": true
+        },
+        {
+          "name": "Injury_Engine.esp",
+          "file": "injury_engine.esp",
+          "required": true
+        },
+        {
+          "name": "SkyrimNet_Leashed.esp",
+          "file": "skyrimnet_leashed.esp",
+          "required": true
+        },
+        {
+          "name": "SkyrimNet_SexLab.esp",
+          "file": "skyrimnet_sexlab.esp",
+          "required": true
+        }
+      ],
+      "first_published": "2026-10-27T00:55:15Z",
+      "last_updated": "2026-10-27T00:55:15Z",
+      "version": "0.2.1",
+      "history": [
+        {
+          "version": "0.2.1",
+          "commit": "d5a1fa60e1a20215c9073637a129a1e7858be61b",
+          "date": "2026-10-27T00:55:15Z",
+          "changelog": "## 0.2.1\n\n### Items\n- Diary of Mine item names and descriptions now come with the DOM plugin\n- DOM Training Info no longer shows in what NPCs are carrying, so the AI won't mention it\n\n### Bug Fixes\n- Fixed: a just-captured slave fought a SkyrimNet_Leashed leash and could not be talked to\n\n### Install\n- Needs the matching SkyrimNet_Leashed update for the leash fix\n- Delete old `SkyrimNet/config/items/diaryofmine_*.yaml` if still there\n- Also delete `SkyrimNet/overlay/items/diaryofmine-esm_*.yaml`; old copies override the new ones\n- Smaller download: debug symbols (`.pdb`) are no longer included\n\n## 0.2.0\n\n### Poses and gestures\n- The AI now sees and narrates what slaves are visibly doing: kneeling, bowing, gestures\n- Tune it in the dashboard: `dom.events.poses`, `gestures`, `gesture_cooldown`\n\n### Torture counts as punishment\n- Torturing a slave with Injury Engine (whip, hands, spells, Punish panel) trains them like DOM\n- A list of the slave's open punishment reasons appears; pick one, random, none or your own\n- With \"When player tortures let player choose\" off, a reason is picked at random\n- SkyrimNet hears why: \"Bob is punishing Nina because she refused to comply...\"\n- The SexLab Punish panel lists the slave's DOM reasons\n\n### Healing counts as praise\n- Healing Hands or SexLab Aid on a slave praises them; a slave in shock is comforted instead\n- A list of praise reasons appears when you heal; \"Being a good slave\" is always first\n- Turn it off with \"Ask player praise reason when healing\"\n\n### Bug Fixes\n- Fixed: a slave the AI agreed to have sex (or follow an order) kept refusing\n- Fixed: a whipping that stopped partway left the punishment stuck with no reason list\n- Fixed: Healing Hands no longer triggers comfort narration\n\n### WebUI\n- New DOM entries in the SexLab menus: orders, abuse, training, restraints, clothes, management\n- New **DOM Info** panel with a slave's profile\n- Optional dashboard setting `dom.info.show_enjoyment` shows the slave's enjoyment details"
+        }
+      ],
+      "external_url": "https://github.com/GoodProvider/SkyrimNet_DOM/releases/latest",
+      "languages": [
+        "en"
+      ],
+      "language": "en",
+      "image": {
+        "file": "cover.png",
+        "sha": "f345e2f4254d71527afab0c296b90f4bf976d80c",
+        "commit": "d5a1fa60e1a20215c9073637a129a1e7858be61b",
+        "width": 1376,
+        "height": 769
+      },
+      "stats": {
+        "downloads": 0,
+        "endorsements": 0
+      }
+    },
     {
       "id": "plugins/severause/magelight-ui",
       "plugin_id": "severause.magelight-ui",
@@ -5015,7 +5080,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 338,
+        "downloads": 339,
         "endorsements": 1
       }
     },
@@ -5285,7 +5350,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1074,
+        "downloads": 1075,
         "endorsements": 0
       }
     },
@@ -6320,7 +6385,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 241,
+        "downloads": 242,
         "endorsements": 0
       }
     },
@@ -8675,7 +8740,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1434,
+        "downloads": 1435,
         "endorsements": 2
       }
     },
@@ -9980,7 +10045,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1253,
+        "downloads": 1254,
         "endorsements": 2
       }
     },
@@ -12320,7 +12385,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 496,
+        "downloads": 497,
         "endorsements": 0
       }
     },
