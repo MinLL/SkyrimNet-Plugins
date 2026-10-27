@@ -36,6 +36,6 @@
   ],
   "image": "cover.jpg",
   "external_url": "https://github.com/GoodProvider/Injury_Engine/releases/latest",
-  "version": "0.1.5",
-  "changelog": "### Healing\r\n- Eating or drinking a healing item is narrated as eating or drinking, not as magic.\r\n- NPCs with self-healing abilities no longer narrate healing every few seconds.\r\n- One spell healing several people is narrated as a single line.\r\n\r\n### Integration\r\n- New mod events for torture and for the start of healing, for other mods to use.\r\n\r\n### SkyrimNet_DOM \r\n- Added support for SkyrimNet_DOM 0.2.0"
+  "version": "0.1.6",
+  "changelog": "### Combat\n- Punches in combat are always real damage: mages out of magicka no longer cause torture damage.\n- In combat, only the torture spells and the padded whip are torture.\n- Removed the setting \"Punching during combat is health not torture\".\n- Diary of Mine's \"Slap with hand\" is now slap torture in or out of combat, not a sword cut.\n\n### Healing\n- Healing costs as much as in the base game; mixed wounds on one body part heal from the worst down.\n- Leftover healing is no longer taken back after the spell ends.\n\n### SkyrimNet_DOM\n- Added support for SkyrimNet_DOM 0.2.0."
 }
