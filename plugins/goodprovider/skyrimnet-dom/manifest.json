@@ -1,0 +1,45 @@
+{
+  "id": "goodprovider.skyrimnet-dom",
+  "type": "listing",
+  "title": "SkyrimNet DOM",
+  "tagline": "enslave every actor, complex mental training/punishment",
+  "description": "SkyrimNet support for Diary of Mine.\n\n# (Alpha) SkyrimNet_DOM\nBasic SkyrimNet support for Diary of Mine.\nThis is in a very rough state.\n\n# Features\n- converts most of the DOM Events into directNarration or events\n - DOM doesn't currently translate everything it does into events\n- Captures many dom activies as Actions\n - full list here SKSE/Plugins/SkyrimNet_DOM/actions.json\n- contains item descripts for the ropes\n - if you make more diaryofmind descriptions, please give them to me\n- contains Healing Hands Trigger\n - Used to clean up all the blood, when its time for comfort\n - Cast healing (she thanks me)\n - dialogue \"\\*Bring in for a warm hug\\* You understand, this was your fault \\*She fears, but doesn't want to believe, he may be right\\*\"\n- Supports whip, fire, ice, and spark torture/punishment via Injury Engine and SkyrimNet-Sexlab\n\n# Required\n- SkyrimNet (dependencies)\n- SkyrimNet Sexlab (dependencies)\n- Injury Engine (dependencies)\n\n# Recommanded\n- SkyrimNet Leashed",
+  "author": "goodprovider",
+  "tags": [
+    "slave",
+    "slavery",
+    "slaver",
+    "dom"
+  ],
+  "nsfw": true,
+  "icon": "zap",
+  "mods": [
+    {
+      "name": "DiaryOfMine.esm",
+      "file": "diaryofmine.esm",
+      "required": true
+    },
+    {
+      "name": "Injury_Engine.esp",
+      "file": "injury_engine.esp",
+      "required": true
+    },
+    {
+      "name": "SkyrimNet_Leashed.esp",
+      "file": "skyrimnet_leashed.esp",
+      "required": true
+    },
+    {
+      "name": "SkyrimNet_SexLab.esp",
+      "file": "skyrimnet_sexlab.esp",
+      "required": true
+    }
+  ],
+  "languages": [
+    "en"
+  ],
+  "image": "cover.png",
+  "external_url": "https://github.com/GoodProvider/SkyrimNet_DOM/releases/latest",
+  "version": "0.2.1",
+  "changelog": "## 0.2.1\n\n### Items\n- Diary of Mine item names and descriptions now come with the DOM plugin\n- DOM Training Info no longer shows in what NPCs are carrying, so the AI won't mention it\n\n### Bug Fixes\n- Fixed: a just-captured slave fought a SkyrimNet_Leashed leash and could not be talked to\n\n### Install\n- Needs the matching SkyrimNet_Leashed update for the leash fix\n- Delete old `SkyrimNet/config/items/diaryofmine_*.yaml` if still there\n- Also delete `SkyrimNet/overlay/items/diaryofmine-esm_*.yaml`; old copies override the new ones\n- Smaller download: debug symbols (`.pdb`) are no longer included\n\n## 0.2.0\n\n### Poses and gestures\n- The AI now sees and narrates what slaves are visibly doing: kneeling, bowing, gestures\n- Tune it in the dashboard: `dom.events.poses`, `gestures`, `gesture_cooldown`\n\n### Torture counts as punishment\n- Torturing a slave with Injury Engine (whip, hands, spells, Punish panel) trains them like DOM\n- A list of the slave's open punishment reasons appears; pick one, random, none or your own\n- With \"When player tortures let player choose\" off, a reason is picked at random\n- SkyrimNet hears why: \"Bob is punishing Nina because she refused to comply...\"\n- The SexLab Punish panel lists the slave's DOM reasons\n\n### Healing counts as praise\n- Healing Hands or SexLab Aid on a slave praises them; a slave in shock is comforted instead\n- A list of praise reasons appears when you heal; \"Being a good slave\" is always first\n- Turn it off with \"Ask player praise reason when healing\"\n\n### Bug Fixes\n- Fixed: a slave the AI agreed to have sex (or follow an order) kept refusing\n- Fixed: a whipping that stopped partway left the punishment stuck with no reason list\n- Fixed: Healing Hands no longer triggers comfort narration\n\n### WebUI\n- New DOM entries in the SexLab menus: orders, abuse, training, restraints, clothes, management\n- New **DOM Info** panel with a slave's profile\n- Optional dashboard setting `dom.info.show_enjoyment` shows the slave's enjoyment details"
+}
