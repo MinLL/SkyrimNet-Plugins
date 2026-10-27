@@ -1,8 +1,49 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-27T00:27:19.893Z",
-  "stats_as_of": "2026-10-27T00:26:11.539Z",
+  "generated_at": "2026-10-27T00:49:44.746Z",
+  "stats_as_of": "2026-10-27T00:49:44.664Z",
   "plugins": [
+    {
+      "id": "plugins/7regalrascal7/delectatio-et-dominium",
+      "plugin_id": "7regalrascal7.delectatio-et-dominium",
+      "type": "listing",
+      "title": "Delectatio-et-Dominium",
+      "tagline": "Bedroom drama for SkyrimNet",
+      "author": "7regalrascal7",
+      "tags": [
+        "SexLab",
+        "OStim",
+        "Fill Her Up",
+        "GS Pose",
+        "Baka"
+      ],
+      "nsfw": true,
+      "icon": "heart",
+      "mods": [],
+      "first_published": "2026-10-27T00:49:15Z",
+      "last_updated": "2026-10-27T00:49:15Z",
+      "version": "0.3.0",
+      "history": [
+        {
+          "version": "0.3.0",
+          "commit": "5b64db3fe63da5453bbdb5638b302c28011e18e4",
+          "date": "2026-10-27T00:49:15Z",
+          "changelog": "Initial release"
+        }
+      ],
+      "external_url": "https://github.com/regalrascal/Delectatio-et-Dominium",
+      "image": {
+        "file": "cover.png",
+        "sha": "aff62b481b43251fbe1d895cf99cbaebeae704ce",
+        "commit": "5b64db3fe63da5453bbdb5638b302c28011e18e4",
+        "width": 1352,
+        "height": 760
+      },
+      "stats": {
+        "downloads": 0,
+        "endorsements": 0
+      }
+    },
     {
       "id": "plugins/goodprovider/skyrimnet-leashed",
       "plugin_id": "goodprovider.skyrimnet-leashed",
@@ -2036,7 +2077,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 850,
+        "downloads": 851,
         "endorsements": 14
       }
     },
@@ -2938,7 +2979,7 @@
         "config": 4
       },
       "stats": {
-        "downloads": 219,
+        "downloads": 220,
         "endorsements": 3
       }
     },
@@ -5238,7 +5279,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1073,
+        "downloads": 1074,
         "endorsements": 0
       }
     },
@@ -11238,7 +11279,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 301,
+        "downloads": 303,
         "endorsements": 0
       }
     },
@@ -13083,7 +13124,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1870,
+        "downloads": 1872,
         "endorsements": 2
       }
     },
