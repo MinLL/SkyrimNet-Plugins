@@ -16,6 +16,6 @@
   "mods": [],
   "image": "cover.png",
   "external_url": "https://github.com/awesmdiver/modpacer/releases/latest",
-  "version": "1.1.9",
-  "changelog": "### What's New v1.1.9\n\n- **Vortex updates:** ModPacer only removes the old version after checking that the new one is installed and switched on. If the new one is missing, your old mod is not removed.\n- **Waiting for a busy Vortex:** Clicking **Update** on a single mod now waits patiently if Vortex is slow to answer, instead of reporting a failed removal.\n- **Vortex Updates:** Update all now waits for a busy Vortex and removes the old versions it replaced. Any old versions left behind are removed too, or listed with a Remove old versions button.\n- **Tidier Add-on List:** Add-ons whose files are missing no longer appear as blank rows, and add-ons not found on the Hub now display their names."
+  "version": "1.2.0",
+  "changelog": "### What's New\n\n- **Sort your mods:** pick **Default order**, **Name A to Z** or **Name Z to A** above your list, and ModPacer remembers your choice.\n- **Set missing versions:** if **Vortex** doesn't know a mod's version, click the new \"It's <version>\" button so we can check for future updates.\n- **One options screen per update:** you now make your mod choices just once, even if **Vortex** is busy.\n- **Clearer logs:** the update log now shows every step of an options-screen installation so you can easily track what happened."
 }
