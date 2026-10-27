@@ -1,8 +1,69 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-27T20:24:17.800Z",
-  "stats_as_of": "2026-10-27T20:24:17.690Z",
+  "generated_at": "2026-10-27T21:15:41.300Z",
+  "stats_as_of": "2026-10-27T21:15:41.176Z",
   "plugins": [
+    {
+      "id": "plugins/phospheneoverdrive/intelengine-npc-autonomy-faction-politics",
+      "plugin_id": "phospheneoverdrive.intelengine-npc-autonomy-faction-politics",
+      "type": "listing",
+      "title": "IntelEngine — NPC Autonomy & Faction Politics",
+      "tagline": "Give Skyrim’s NPCs agency—tasks, schedules, autonomous stories, and faction politics.",
+      "author": "phospheneoverdrive",
+      "tags": [
+        "actions",
+        "autonomy",
+        "immersion",
+        "storytelling",
+        "scheduling",
+        "travel",
+        "quests",
+        "faction politics",
+        "world simulation"
+      ],
+      "nsfw": false,
+      "icon": "gamemaster",
+      "mods": [],
+      "first_published": "2026-09-26T03:14:31Z",
+      "last_updated": "2026-10-27T21:15:05Z",
+      "version": "3.6.0",
+      "history": [
+        {
+          "version": "3.6.0",
+          "commit": "bb9bc25788ea26ab0de510e209bfa0dd1b48bcf5",
+          "date": "2026-10-27T21:15:05Z",
+          "changelog": "- 💾 **Save conversion:** an offline converter (included) repairs saves from earlier versions. **Convert old saves before loading with 3.6.0;** fresh games don't need it.\n- **Names kept:** stored NPC names, including names from name mods such as RNE, now survive saves and reloads. Memories and task history no longer corrupt them.\n- **Skyrim VR re-enabled:** one shared SE/AE/VR DLL; VR saves from 3.5.1 or earlier can be converted. VR should work (partly tested).\n- **Story DM:** stays within the current candidates, leaves disabled story types out of prompts, and skips itself when all eight types are off.\n- **NPC Social DM:** safer around save loading.\n- **Fixes:** Content Library bio lookup and overlay priority; battle and peace relationship changes now survive reloads; script checks aligned with the native plugin.\n\nTested on SE/AE 1.6.1170 and 1.7.104 with SkyrimNet Beta 28. 1.5.97 is untested."
+        },
+        {
+          "version": "3.5.2",
+          "commit": "95fad015e498fa97808d152341a5ce15cbb69f47",
+          "date": "2026-10-09T19:56:07Z",
+          "changelog": "Added support for Skyrim SE/AE versions 1.7.x"
+        },
+        {
+          "version": "3.5.1",
+          "commit": "e21dc4d0cd90657841180582f569a72ef8322f11",
+          "date": "2026-09-26T03:14:31Z",
+          "changelog": "Release for use with SkyrimNet Beta 25"
+        }
+      ],
+      "external_url": "https://github.com/galanx/IntelEngine-GamePlugin/releases/latest",
+      "languages": [
+        "en"
+      ],
+      "language": "en",
+      "image": {
+        "file": "cover.png",
+        "sha": "2481c81c05b48de522dea56a269a1803f5be32f9",
+        "commit": "e21dc4d0cd90657841180582f569a72ef8322f11",
+        "width": 1672,
+        "height": 941
+      },
+      "stats": {
+        "downloads": 279,
+        "endorsements": 10
+      }
+    },
     {
       "id": "plugins/awesmdiver/skyrimnet-multiproxy",
       "plugin_id": "awesmdiver.skyrimnet-multiproxy",
@@ -230,7 +291,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 735,
+        "downloads": 736,
         "endorsements": 35
       }
     },
@@ -1172,7 +1233,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 142,
+        "downloads": 143,
         "endorsements": 3
       }
     },
@@ -1368,7 +1429,7 @@
         "height": 1152
       },
       "stats": {
-        "downloads": 232,
+        "downloads": 233,
         "endorsements": 7
       }
     },
@@ -2166,7 +2227,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 871,
+        "downloads": 872,
         "endorsements": 14
       }
     },
@@ -2571,7 +2632,7 @@
         "height": 864
       },
       "stats": {
-        "downloads": 291,
+        "downloads": 292,
         "endorsements": 6
       }
     },
@@ -2780,7 +2841,7 @@
         "height": 1008
       },
       "stats": {
-        "downloads": 114,
+        "downloads": 115,
         "endorsements": 2
       }
     },
@@ -3068,7 +3129,7 @@
         "config": 4
       },
       "stats": {
-        "downloads": 228,
+        "downloads": 229,
         "endorsements": 3
       }
     },
@@ -3237,61 +3298,6 @@
       }
     },
     {
-      "id": "plugins/phospheneoverdrive/intelengine-npc-autonomy-faction-politics",
-      "plugin_id": "phospheneoverdrive.intelengine-npc-autonomy-faction-politics",
-      "type": "listing",
-      "title": "IntelEngine — NPC Autonomy & Faction Politics",
-      "tagline": "Give Skyrim’s NPCs agency—tasks, schedules, autonomous stories, and faction politics.",
-      "author": "phospheneoverdrive",
-      "tags": [
-        "actions",
-        "autonomy",
-        "immersion",
-        "storytelling",
-        "scheduling",
-        "travel",
-        "quests",
-        "faction politics",
-        "world simulation"
-      ],
-      "nsfw": false,
-      "icon": "gamemaster",
-      "mods": [],
-      "first_published": "2026-09-26T03:14:31Z",
-      "last_updated": "2026-10-09T19:56:07Z",
-      "version": "3.5.2",
-      "history": [
-        {
-          "version": "3.5.2",
-          "commit": "95fad015e498fa97808d152341a5ce15cbb69f47",
-          "date": "2026-10-09T19:56:07Z",
-          "changelog": "Added support for Skyrim SE/AE versions 1.7.x"
-        },
-        {
-          "version": "3.5.1",
-          "commit": "e21dc4d0cd90657841180582f569a72ef8322f11",
-          "date": "2026-09-26T03:14:31Z",
-          "changelog": "Release for use with SkyrimNet Beta 25"
-        }
-      ],
-      "external_url": "https://github.com/Gerkinfeltser/IntelEngine-GamePlugin/releases/latest",
-      "languages": [
-        "en"
-      ],
-      "language": "en",
-      "image": {
-        "file": "cover.png",
-        "sha": "2481c81c05b48de522dea56a269a1803f5be32f9",
-        "commit": "e21dc4d0cd90657841180582f569a72ef8322f11",
-        "width": 1672,
-        "height": 941
-      },
-      "stats": {
-        "downloads": 279,
-        "endorsements": 10
-      }
-    },
-    {
       "id": "plugins/kibcharnnel/triggers-of-idle-animations-wheelmenu-se",
       "plugin_id": "kibcharnnel.triggers-of-idle-animations-wheelmenu-se",
       "type": "bundle",
@@ -3338,7 +3344,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 149,
+        "downloads": 150,
         "endorsements": 0
       }
     },
@@ -3488,7 +3494,7 @@
         "height": 1080
       },
       "stats": {
-        "downloads": 49,
+        "downloads": 50,
         "endorsements": 1
       }
     },
@@ -3811,7 +3817,7 @@
       ],
       "external_url": "https://github.com/naitro2010/SkyrimNet_UDNG/releases/tag/alpha12",
       "stats": {
-        "downloads": 122,
+        "downloads": 123,
         "endorsements": 4
       }
     },
@@ -3927,7 +3933,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 231,
+        "downloads": 232,
         "endorsements": 0
       }
     },
@@ -4243,7 +4249,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1200,
+        "downloads": 1203,
         "endorsements": 2
       }
     },
@@ -4288,7 +4294,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 588,
+        "downloads": 592,
         "endorsements": 0
       }
     },
@@ -4378,7 +4384,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2688,
+        "downloads": 2693,
         "endorsements": 2
       }
     },
@@ -4603,7 +4609,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1376,
+        "downloads": 1377,
         "endorsements": 0
       }
     },
@@ -5098,7 +5104,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 349,
+        "downloads": 350,
         "endorsements": 1
       }
     },
@@ -5368,7 +5374,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1100,
+        "downloads": 1102,
         "endorsements": 0
       }
     },
@@ -5728,7 +5734,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 970,
+        "downloads": 971,
         "endorsements": 1
       }
     },
@@ -6088,7 +6094,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1265,
+        "downloads": 1267,
         "endorsements": 3
       }
     },
@@ -6223,7 +6229,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 325,
+        "downloads": 328,
         "endorsements": 1
       }
     },
@@ -6268,7 +6274,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 555,
+        "downloads": 557,
         "endorsements": 0
       }
     },
@@ -6448,7 +6454,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 261,
+        "downloads": 263,
         "endorsements": 0
       }
     },
@@ -6898,7 +6904,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 18,
+        "downloads": 19,
         "endorsements": 0
       }
     },
@@ -7813,7 +7819,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 406,
+        "downloads": 408,
         "endorsements": 0
       }
     },
@@ -8398,7 +8404,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 195,
+        "downloads": 196,
         "endorsements": 1
       }
     },
@@ -8533,7 +8539,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 644,
+        "downloads": 647,
         "endorsements": 0
       }
     },
@@ -8578,7 +8584,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 449,
+        "downloads": 450,
         "endorsements": 0
       }
     },
@@ -8623,7 +8629,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 26,
+        "downloads": 27,
         "endorsements": 0
       }
     },
@@ -8668,7 +8674,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1123,
+        "downloads": 1126,
         "endorsements": 2
       }
     },
@@ -8758,7 +8764,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1457,
+        "downloads": 1461,
         "endorsements": 2
       }
     },
@@ -9163,7 +9169,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 328,
+        "downloads": 329,
         "endorsements": 0
       }
     },
@@ -9658,7 +9664,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 59,
+        "downloads": 60,
         "endorsements": 0
       }
     },
@@ -9793,7 +9799,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1548,
+        "downloads": 1550,
         "endorsements": 2
       }
     },
@@ -10063,7 +10069,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1275,
+        "downloads": 1277,
         "endorsements": 2
       }
     },
@@ -10603,7 +10609,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 925,
+        "downloads": 928,
         "endorsements": 0
       }
     },
@@ -10648,7 +10654,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 534,
+        "downloads": 537,
         "endorsements": 1
       }
     },
@@ -11143,7 +11149,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 287,
+        "downloads": 289,
         "endorsements": 0
       }
     },
@@ -11278,7 +11284,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 131,
+        "downloads": 132,
         "endorsements": 0
       }
     },
@@ -11368,7 +11374,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 305,
+        "downloads": 307,
         "endorsements": 0
       }
     },
@@ -11413,7 +11419,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 795,
+        "downloads": 797,
         "endorsements": 0
       }
     },
@@ -12403,7 +12409,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 509,
+        "downloads": 510,
         "endorsements": 0
       }
     },
@@ -12673,7 +12679,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 678,
+        "downloads": 679,
         "endorsements": 2
       }
     },
@@ -13078,7 +13084,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 247,
+        "downloads": 249,
         "endorsements": 0
       }
     },
@@ -13213,7 +13219,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1901,
+        "downloads": 1905,
         "endorsements": 2
       }
     },
@@ -13483,7 +13489,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 432,
+        "downloads": 433,
         "endorsements": 0
       }
     },
