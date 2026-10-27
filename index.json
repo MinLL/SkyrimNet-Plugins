@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-27T00:55:45.036Z",
-  "stats_as_of": "2026-10-27T00:55:44.945Z",
+  "generated_at": "2026-10-27T01:03:15.098Z",
+  "stats_as_of": "2026-10-27T01:03:15.036Z",
   "plugins": [
     {
       "id": "plugins/goodprovider/skyrimnet-dom",
@@ -2148,7 +2148,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 851,
+        "downloads": 852,
         "endorsements": 14
       }
     },
