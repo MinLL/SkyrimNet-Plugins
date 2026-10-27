@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-27T08:39:41.804Z",
-  "stats_as_of": "2026-10-27T08:39:41.709Z",
+  "generated_at": "2026-10-27T09:35:19.932Z",
+  "stats_as_of": "2026-10-27T09:33:50.892Z",
   "plugins": [
     {
       "id": "plugins/awesmdiver/skyrimnet-multiproxy",
@@ -230,7 +230,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 722,
+        "downloads": 723,
         "endorsements": 35
       }
     },
@@ -342,7 +342,7 @@
         "height": 1080
       },
       "stats": {
-        "downloads": 17,
+        "downloads": 18,
         "endorsements": 0
       }
     },
@@ -540,7 +540,7 @@
         "height": 768
       },
       "stats": {
-        "downloads": 90,
+        "downloads": 91,
         "endorsements": 0
       }
     },
@@ -2166,7 +2166,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 858,
+        "downloads": 859,
         "endorsements": 14
       }
     },
@@ -4603,7 +4603,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1354,
+        "downloads": 1356,
         "endorsements": 0
       }
     },
@@ -5368,7 +5368,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1084,
+        "downloads": 1085,
         "endorsements": 0
       }
     },
@@ -6088,7 +6088,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1261,
+        "downloads": 1262,
         "endorsements": 3
       }
     },
@@ -13213,7 +13213,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1885,
+        "downloads": 1886,
         "endorsements": 2
       }
     },
