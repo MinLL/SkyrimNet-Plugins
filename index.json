@@ -1,8 +1,73 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-27T05:32:03.832Z",
-  "stats_as_of": "2026-10-27T05:28:59.101Z",
+  "generated_at": "2026-10-27T05:47:47.731Z",
+  "stats_as_of": "2026-10-27T05:47:47.509Z",
   "plugins": [
+    {
+      "id": "plugins/awesmdiver/skyrimnet-multiproxy",
+      "plugin_id": "awesmdiver.skyrimnet-multiproxy",
+      "type": "listing",
+      "title": "SkyrimNet MultiProxy",
+      "tagline": "Connect your AI of choice to SkyrimNet — set it up once, and it starts every time you play.",
+      "author": "awesmdiver",
+      "tags": [
+        "proxy",
+        "ai providers",
+        "claude",
+        "chatgpt",
+        "gemini",
+        "grok",
+        "deepseek",
+        "glm",
+        "ollama",
+        "local ai",
+        "voice",
+        "performance",
+        "utility"
+      ],
+      "nsfw": false,
+      "icon": "ai",
+      "mods": [],
+      "first_published": "2026-09-30T19:06:36Z",
+      "last_updated": "2026-10-27T05:47:16Z",
+      "version": "4.1.0",
+      "history": [
+        {
+          "version": "4.1.0",
+          "commit": "8fdda5e44c5317122f867bc9b37aa02ef885105f",
+          "date": "2026-10-27T05:47:16Z",
+          "changelog": "## Improvements\n\n- **Set me up:** Checks your graphics card and your game, shows which models fit alongside Skyrim, and installs the ones you tick.\n- **Add a PC:** Open one address on a spare PC and it pairs itself. No pairing codes to type.\n- **One list of every model:** The new **Models** tab shows every model on all your PCs. You can start, stop, remove, or delete them from there.\n- **A guard for your game:** If your graphics memory gets too full while Skyrim is running, MultiProxy stops its local chat model to prevent a crash.\n- **Works on Skyrim VR:** One mod file now covers Skyrim SE, AE, and VR, and it no longer needs Address Library.\n- **and a lot more:** See the full release notes on Github."
+        },
+        {
+          "version": "4.0.0",
+          "commit": "a2e67b87e4e6abe982369037a88078704247e23d",
+          "date": "2026-10-25T08:32:13Z",
+          "changelog": "**Your gaming PC and your spare computers can now team up to run the AI together.**\n\n* **Local models:** Pick a model, hit download, and MultiProxy runs it on your graphics card for free while leaving enough memory for Skyrim.\n* **The Courier:** Run a small app on a spare PC or laptop to use its models from your gaming rig. It updates itself, and if a device drops offline, MultiProxy moves on to your next choice.\n* **Quick decisions:** A fast, private model handles SkyrimNet's constant stream of background questions on any of your PCs.\n* **Voice and speech:** NPCs speak using voices generated on your own hardware, and you can reply using push-to-talk (speech to text through xAI, off until you turn it on).\n* **Routing:** Choose which model handles each job—like Dialogue, Combat, and Memory—and set up your backups.\n* **New providers:** Grok, Continuum, Cloudflare Workers AI, Mistral, and Groq.\n* **One installer:** It brings your old settings along, includes the Skyrim mod, and puts an icon by your clock."
+        },
+        {
+          "version": "3.1.0",
+          "commit": "9e4e897cfe0589e3a25e2e53abf39e2bbb55cca4",
+          "date": "2026-09-30T19:06:36Z",
+          "changelog": "- **Ready for SkyrimNet Beta 25:** Beta 25 can swap to a backup AI if your primary stalls, or race a second request against a slow one. MultiProxy reports real failures immediately so handoffs trigger cleanly instead of an NPC reading error code out loud! Canceled race requests are cleared away without cluttering your Speeds tab.\r\n- **Voice cues left alone:** Beta 25 uses distinct tags per voice engine, so cues pass through untouched by default. If you use Higgs, toggle `FixHiggsVoiceTags` to keep them clean.\r\n- **Tougher under pressure:** Courtesy of community member Raydonn, dropped connections retry automatically, long chats trim and retry instead of going silent, and scrambled markup tags get repaired before SkyrimNet sees them.\r\n- **Waiting lines:** Also from Raydonn, cap simultaneous requests per provider (`[Concurrency]` in `proxy.ini`) to dodge rate limits. GLM defaults to 6.\r\n- **Full reply log:** Turn on `LogFullReplies` to print complete AI replies directly in your console.\r\n- **Smarter Speeds tab:** Live health cards for each AI, tracking how fast replies start talking, overall speeds, and plain reliability labels, with Dialogue front and center.\r\n\r\n**Fixes**\r\n- **Mod Organizer 2:** The Speeds tab reliably finds SkyrimNet folders on MO2 setups.\r\n- **Faster DeepSeek:** Skips the hidden \"thinking\" step by default, matching GLM.\r\n- **Privacy:** The Speeds tab no longer enables SkyrimNet stats sharing; manage that directly in SkyrimNet's Privacy settings."
+        }
+      ],
+      "external_url": "https://github.com/awesmdiver/skyrimnet-multiproxy/releases/latest",
+      "languages": [
+        "en"
+      ],
+      "language": "en",
+      "image": {
+        "file": "cover.jpg",
+        "sha": "dc3d2a039af817a353dc46bfd3cb1590aeac3388",
+        "commit": "8fdda5e44c5317122f867bc9b37aa02ef885105f",
+        "width": 2048,
+        "height": 1152
+      },
+      "stats": {
+        "downloads": 37,
+        "endorsements": 0
+      }
+    },
     {
       "id": "plugins/awesmdiver/modpacer",
       "plugin_id": "awesmdiver.modpacer",
@@ -277,7 +342,7 @@
         "height": 1080
       },
       "stats": {
-        "downloads": 14,
+        "downloads": 15,
         "endorsements": 0
       }
     },
@@ -318,7 +383,7 @@
         "height": 760
       },
       "stats": {
-        "downloads": 4,
+        "downloads": 5,
         "endorsements": 0
       }
     },
@@ -779,65 +844,6 @@
       "stats": {
         "downloads": 200,
         "endorsements": 5
-      }
-    },
-    {
-      "id": "plugins/awesmdiver/skyrimnet-multiproxy",
-      "plugin_id": "awesmdiver.skyrimnet-multiproxy",
-      "type": "listing",
-      "title": "SkyrimNet MultiProxy",
-      "tagline": "Connect your AI of choice to SkyrimNet — set it up once, and it starts every time you play.",
-      "author": "awesmdiver",
-      "tags": [
-        "proxy",
-        "ai providers",
-        "claude",
-        "chatgpt",
-        "gemini",
-        "grok",
-        "deepseek",
-        "glm",
-        "ollama",
-        "local ai",
-        "voice",
-        "performance",
-        "utility"
-      ],
-      "nsfw": false,
-      "icon": "ai",
-      "mods": [],
-      "first_published": "2026-09-30T19:06:36Z",
-      "last_updated": "2026-10-25T08:32:13Z",
-      "version": "4.0.0",
-      "history": [
-        {
-          "version": "4.0.0",
-          "commit": "a2e67b87e4e6abe982369037a88078704247e23d",
-          "date": "2026-10-25T08:32:13Z",
-          "changelog": "**Your gaming PC and your spare computers can now team up to run the AI together.**\n\n* **Local models:** Pick a model, hit download, and MultiProxy runs it on your graphics card for free while leaving enough memory for Skyrim.\n* **The Courier:** Run a small app on a spare PC or laptop to use its models from your gaming rig. It updates itself, and if a device drops offline, MultiProxy moves on to your next choice.\n* **Quick decisions:** A fast, private model handles SkyrimNet's constant stream of background questions on any of your PCs.\n* **Voice and speech:** NPCs speak using voices generated on your own hardware, and you can reply using push-to-talk (speech to text through xAI, off until you turn it on).\n* **Routing:** Choose which model handles each job—like Dialogue, Combat, and Memory—and set up your backups.\n* **New providers:** Grok, Continuum, Cloudflare Workers AI, Mistral, and Groq.\n* **One installer:** It brings your old settings along, includes the Skyrim mod, and puts an icon by your clock."
-        },
-        {
-          "version": "3.1.0",
-          "commit": "9e4e897cfe0589e3a25e2e53abf39e2bbb55cca4",
-          "date": "2026-09-30T19:06:36Z",
-          "changelog": "- **Ready for SkyrimNet Beta 25:** Beta 25 can swap to a backup AI if your primary stalls, or race a second request against a slow one. MultiProxy reports real failures immediately so handoffs trigger cleanly instead of an NPC reading error code out loud! Canceled race requests are cleared away without cluttering your Speeds tab.\r\n- **Voice cues left alone:** Beta 25 uses distinct tags per voice engine, so cues pass through untouched by default. If you use Higgs, toggle `FixHiggsVoiceTags` to keep them clean.\r\n- **Tougher under pressure:** Courtesy of community member Raydonn, dropped connections retry automatically, long chats trim and retry instead of going silent, and scrambled markup tags get repaired before SkyrimNet sees them.\r\n- **Waiting lines:** Also from Raydonn, cap simultaneous requests per provider (`[Concurrency]` in `proxy.ini`) to dodge rate limits. GLM defaults to 6.\r\n- **Full reply log:** Turn on `LogFullReplies` to print complete AI replies directly in your console.\r\n- **Smarter Speeds tab:** Live health cards for each AI, tracking how fast replies start talking, overall speeds, and plain reliability labels, with Dialogue front and center.\r\n\r\n**Fixes**\r\n- **Mod Organizer 2:** The Speeds tab reliably finds SkyrimNet folders on MO2 setups.\r\n- **Faster DeepSeek:** Skips the hidden \"thinking\" step by default, matching GLM.\r\n- **Privacy:** The Speeds tab no longer enables SkyrimNet stats sharing; manage that directly in SkyrimNet's Privacy settings."
-        }
-      ],
-      "external_url": "https://github.com/awesmdiver/skyrimnet-multiproxy/releases/latest",
-      "languages": [
-        "en"
-      ],
-      "language": "en",
-      "image": {
-        "file": "cover.jpg",
-        "sha": "af435848fc26f2710306abd0e41f33d24376f47b",
-        "commit": "a2e67b87e4e6abe982369037a88078704247e23d",
-        "width": 1920,
-        "height": 1080
-      },
-      "stats": {
-        "downloads": 37,
-        "endorsements": 0
       }
     },
     {
