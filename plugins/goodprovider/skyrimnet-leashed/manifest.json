@@ -10,9 +10,15 @@
   ],
   "nsfw": true,
   "icon": "system",
-  "mods": [],
+  "mods": [
+    {
+      "name": "Leash.esm",
+      "file": "leash.esm",
+      "required": true
+    }
+  ],
   "image": "cover.png",
   "external_url": "https://github.com/GoodProvider/SkyrimNet_Leashed/releases/latest",
-  "version": "0.4.3",
-  "changelog": "### Injury Engine (optional plugin support) \n\n- Optional Injury Engine: being yanked off your feet scrapes you, dragging adds abrasions. They heal, never kill.\n- With Injury Engine, the yank and its scrapes are narrated as one line (setting \"Falling hurts\").\n- NPCs notice when someone is dragged along by a leash (setting \"Dragging event interval\").\n\n### NPC Struggling \n\n- Struggling against a leash stops on its own after 7 seconds (setting \"Maximum Struggle period\"). It also stops right away when OStim, SexLab, furniture, or a mount takes over the NPC, so their animation is not interrupted."
+  "version": "0.4.4",
+  "changelog": "- Leashing a fresh Diary of Mine captive no longer fights DOM's pose (needs SkyrimNet DOM update).\n- The leash no longer tries to \"unstick\" an NPC that DOM is posing, tying, or holding cowering.\n- NPCs who are already leashed are not leashed again every few lines."
 }
