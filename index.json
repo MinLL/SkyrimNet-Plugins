@@ -1,8 +1,64 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-27T23:22:35.602Z",
-  "stats_as_of": "2026-10-27T23:22:35.472Z",
+  "generated_at": "2026-10-27T23:54:08.388Z",
+  "stats_as_of": "2026-10-27T23:54:08.270Z",
   "plugins": [
+    {
+      "id": "plugins/whyregister/to-the-yield",
+      "plugin_id": "whyregister.to-the-yield",
+      "type": "listing",
+      "title": "To The Yield",
+      "tagline": "Dueling Plug-in for SkyrimNet",
+      "author": "whyregister",
+      "tags": [
+        "Dueling",
+        "combat"
+      ],
+      "nsfw": false,
+      "icon": "package",
+      "mods": [],
+      "first_published": "2026-10-24T14:18:55Z",
+      "last_updated": "2026-10-27T23:53:42Z",
+      "version": "0.6.0",
+      "history": [
+        {
+          "version": "0.6.0",
+          "commit": "8d40e29d7d0282f32b42ce8a6938ea4db6e7eb7d",
+          "date": "2026-10-27T23:53:42Z",
+          "changelog": "Followers can duel player and each other\nAllied Factions can duel\nMagelight support continued\nStat tracking box is live (added as a lesser power)"
+        },
+        {
+          "version": "0.4.0",
+          "commit": "b0cda83fc31b761bd1befe0da77d2a5f4cc67b50",
+          "date": "2026-10-26T05:29:09Z",
+          "changelog": "Added Magelight option if installed, if not will fall back to message box\nAllies of NPCs no longer enter the fray"
+        },
+        {
+          "version": "0.3.0",
+          "commit": "200df02466819b5add5becaa3ff5c10a922bdd41",
+          "date": "2026-10-24T20:23:35Z",
+          "changelog": "Added NPC-NPC combat and bystander protection. And image"
+        },
+        {
+          "version": "0.2.3",
+          "commit": "e05481d726e38e41e1e4da41532e5fa5d6793d79",
+          "date": "2026-10-24T14:18:55Z",
+          "changelog": "Initial release"
+        }
+      ],
+      "external_url": "https://github.com/whyregisterme/ToTheYield",
+      "image": {
+        "file": "cover.png",
+        "sha": "9da0705ea2f5b230b4c84dc4c2bee8c2e7a10588",
+        "commit": "200df02466819b5add5becaa3ff5c10a922bdd41",
+        "width": 1672,
+        "height": 941
+      },
+      "stats": {
+        "downloads": 24,
+        "endorsements": 0
+      }
+    },
     {
       "id": "plugins/phospheneoverdrive/intelengine-npc-autonomy-faction-politics",
       "plugin_id": "phospheneoverdrive.intelengine-npc-autonomy-faction-politics",
@@ -60,7 +116,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 281,
+        "downloads": 282,
         "endorsements": 10
       }
     },
@@ -602,56 +658,6 @@
       },
       "stats": {
         "downloads": 94,
-        "endorsements": 0
-      }
-    },
-    {
-      "id": "plugins/whyregister/to-the-yield",
-      "plugin_id": "whyregister.to-the-yield",
-      "type": "listing",
-      "title": "To The Yield",
-      "tagline": "Dueling Plug-in for SkyrimNet",
-      "author": "whyregister",
-      "tags": [
-        "Dueling",
-        "combat"
-      ],
-      "nsfw": false,
-      "icon": "package",
-      "mods": [],
-      "first_published": "2026-10-24T14:18:55Z",
-      "last_updated": "2026-10-26T05:29:09Z",
-      "version": "0.4.0",
-      "history": [
-        {
-          "version": "0.4.0",
-          "commit": "b0cda83fc31b761bd1befe0da77d2a5f4cc67b50",
-          "date": "2026-10-26T05:29:09Z",
-          "changelog": "Added Magelight option if installed, if not will fall back to message box\nAllies of NPCs no longer enter the fray"
-        },
-        {
-          "version": "0.3.0",
-          "commit": "200df02466819b5add5becaa3ff5c10a922bdd41",
-          "date": "2026-10-24T20:23:35Z",
-          "changelog": "Added NPC-NPC combat and bystander protection. And image"
-        },
-        {
-          "version": "0.2.3",
-          "commit": "e05481d726e38e41e1e4da41532e5fa5d6793d79",
-          "date": "2026-10-24T14:18:55Z",
-          "changelog": "Initial release"
-        }
-      ],
-      "external_url": "https://github.com/whyregisterme/ToTheYield",
-      "image": {
-        "file": "cover.png",
-        "sha": "9da0705ea2f5b230b4c84dc4c2bee8c2e7a10588",
-        "commit": "200df02466819b5add5becaa3ff5c10a922bdd41",
-        "width": 1672,
-        "height": 941
-      },
-      "stats": {
-        "downloads": 24,
         "endorsements": 0
       }
     },
@@ -8134,7 +8140,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 356,
+        "downloads": 357,
         "endorsements": 0
       }
     },
@@ -9439,7 +9445,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 31,
+        "downloads": 32,
         "endorsements": 0
       }
     },
