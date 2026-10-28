@@ -15,7 +15,7 @@
   "languages": [
     "en"
   ],
-  "version": "0.2.0",
-  "changelog": "Initial release",
+  "version": "1.0.1",
+  "changelog": "Fixed bug where women coul be selected instead of a man.",
   "min_skyrimnet_version": "0.28.0"
 }
