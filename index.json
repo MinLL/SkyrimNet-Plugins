@@ -1,8 +1,57 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-28T01:26:58.935Z",
-  "stats_as_of": "2026-10-28T01:26:58.789Z",
+  "generated_at": "2026-10-28T02:11:29.466Z",
+  "stats_as_of": "2026-10-28T02:11:29.335Z",
   "plugins": [
+    {
+      "id": "plugins/taka/skyrimnet-brothel",
+      "plugin_id": "taka.skyrimnet-brothel",
+      "type": "listing",
+      "title": "SkyrimNet Brothel",
+      "tagline": "Run your own brothel: register workers, send customers to them or take customers yourself, and SkyrimNet's AI voices every offer and answer while SexLab plays the scene.",
+      "author": "taka",
+      "tags": [
+        "SexLab",
+        "NPC",
+        "Gameplay"
+      ],
+      "nsfw": true,
+      "icon": "package",
+      "mods": [
+        {
+          "name": "SexLab.esm",
+          "file": "sexlab.esm",
+          "required": true
+        }
+      ],
+      "first_published": "2026-10-24T14:18:49Z",
+      "last_updated": "2026-10-28T02:11:01Z",
+      "version": "0.1.8",
+      "history": [
+        {
+          "version": "0.1.8",
+          "commit": "16033111085618477a6fa3d245a45e843d105fb0",
+          "date": "2026-10-28T02:11:01Z",
+          "changelog": "0.1.8: The menu now shows correctly in games set to any language, not only English. 0.1.7: Townsfolk can visit the brothel as customers. You can name an owner who takes a share and runs the brothel. You can work as one of the girls yourself, and experienced workers invite customers on their own. The brothel and every worker gain levels from 1 to 10. Customers pay up front, and the MCM is split into six pages. SkyrimNet Player Choices is now built in and no longer required. Fixes include an MCM crash with Papyrus Tweaks, customers starting fights, stalled scenes and pairs sinking into common beds."
+        },
+        {
+          "version": "0.1.2",
+          "commit": "663314ea05d9cae898a64890157bf2b146774ab2",
+          "date": "2026-10-24T14:18:49Z",
+          "changelog": "Initial release"
+        }
+      ],
+      "external_url": "https://github.com/nightlantern-mods/skyrimnet_Brothel",
+      "languages": [
+        "en",
+        "ja"
+      ],
+      "language": "en",
+      "stats": {
+        "downloads": 15,
+        "endorsements": 0
+      }
+    },
     {
       "id": "plugins/kaleth/sexist-men-of-skyrim",
       "plugin_id": "kaleth.sexist-men-of-skyrim",
@@ -43,7 +92,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 0,
+        "downloads": 2,
         "endorsements": 0
       }
     },
@@ -391,7 +440,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 738,
+        "downloads": 741,
         "endorsements": 35
       }
     },
@@ -456,7 +505,7 @@
         "height": 769
       },
       "stats": {
-        "downloads": 7,
+        "downloads": 8,
         "endorsements": 0
       }
     },
@@ -544,7 +593,7 @@
         "height": 760
       },
       "stats": {
-        "downloads": 18,
+        "downloads": 19,
         "endorsements": 0
       }
     },
@@ -748,7 +797,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 29,
+        "downloads": 30,
         "endorsements": 1
       }
     },
@@ -998,7 +1047,7 @@
         "height": 720
       },
       "stats": {
-        "downloads": 35,
+        "downloads": 37,
         "endorsements": 1
       }
     },
@@ -1123,7 +1172,7 @@
         "height": 432
       },
       "stats": {
-        "downloads": 220,
+        "downloads": 222,
         "endorsements": 1
       }
     },
@@ -1178,43 +1227,6 @@
       },
       "stats": {
         "downloads": 26,
-        "endorsements": 0
-      }
-    },
-    {
-      "id": "plugins/taka/skyrimnet-brothel",
-      "plugin_id": "taka.skyrimnet-brothel",
-      "type": "listing",
-      "title": "SkyrimNet Brothel",
-      "tagline": "Run your own brothel: register follower workers, and SkyrimNet AI customers make offers she can accept or refuse.",
-      "author": "taka",
-      "tags": [
-        "SexLab",
-        "NPC",
-        "Gameplay"
-      ],
-      "nsfw": true,
-      "icon": "package",
-      "mods": [],
-      "first_published": "2026-10-24T14:18:49Z",
-      "last_updated": "2026-10-24T14:18:49Z",
-      "version": "0.1.2",
-      "history": [
-        {
-          "version": "0.1.2",
-          "commit": "663314ea05d9cae898a64890157bf2b146774ab2",
-          "date": "2026-10-24T14:18:49Z",
-          "changelog": "Initial release"
-        }
-      ],
-      "external_url": "https://github.com/nightlantern-mods/skyrimnet_Brothel",
-      "languages": [
-        "en",
-        "ja"
-      ],
-      "language": "en",
-      "stats": {
-        "downloads": 15,
         "endorsements": 0
       }
     },
@@ -1411,7 +1423,7 @@
         "height": 1152
       },
       "stats": {
-        "downloads": 156,
+        "downloads": 157,
         "endorsements": 0
       }
     },
@@ -1479,7 +1491,7 @@
         "height": 1152
       },
       "stats": {
-        "downloads": 234,
+        "downloads": 235,
         "endorsements": 7
       }
     },
@@ -1843,7 +1855,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 109,
+        "downloads": 110,
         "endorsements": 0
       }
     },
@@ -1942,7 +1954,7 @@
         "height": 688
       },
       "stats": {
-        "downloads": 56,
+        "downloads": 57,
         "endorsements": 0
       }
     },
@@ -2039,7 +2051,7 @@
         "height": 1080
       },
       "stats": {
-        "downloads": 147,
+        "downloads": 148,
         "endorsements": 4
       }
     },
@@ -2087,7 +2099,7 @@
         "height": 1152
       },
       "stats": {
-        "downloads": 132,
+        "downloads": 133,
         "endorsements": 1
       }
     },
@@ -2126,7 +2138,7 @@
         "height": 720
       },
       "stats": {
-        "downloads": 32,
+        "downloads": 33,
         "endorsements": 0
       }
     },
@@ -2277,7 +2289,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 875,
+        "downloads": 878,
         "endorsements": 14
       }
     },
@@ -2891,7 +2903,7 @@
         "height": 1008
       },
       "stats": {
-        "downloads": 115,
+        "downloads": 116,
         "endorsements": 2
       }
     },
@@ -2986,7 +2998,7 @@
         "height": 1008
       },
       "stats": {
-        "downloads": 122,
+        "downloads": 124,
         "endorsements": 3
       }
     },
@@ -3343,7 +3355,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 138,
+        "downloads": 139,
         "endorsements": 2
       }
     },
@@ -3586,7 +3598,7 @@
         "height": 1080
       },
       "stats": {
-        "downloads": 162,
+        "downloads": 163,
         "endorsements": 1
       }
     },
@@ -3867,7 +3879,7 @@
       ],
       "external_url": "https://github.com/naitro2010/SkyrimNet_UDNG/releases/tag/alpha12",
       "stats": {
-        "downloads": 124,
+        "downloads": 125,
         "endorsements": 4
       }
     },
@@ -4299,7 +4311,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1211,
+        "downloads": 1212,
         "endorsements": 2
       }
     },
@@ -4434,7 +4446,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2698,
+        "downloads": 2699,
         "endorsements": 2
       }
     },
@@ -5424,7 +5436,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1102,
+        "downloads": 1103,
         "endorsements": 0
       }
     },
@@ -5784,7 +5796,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 976,
+        "downloads": 977,
         "endorsements": 1
       }
     },
@@ -6144,7 +6156,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1270,
+        "downloads": 1271,
         "endorsements": 3
       }
     },
@@ -7869,7 +7881,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 410,
+        "downloads": 411,
         "endorsements": 0
       }
     },
@@ -8184,7 +8196,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 357,
+        "downloads": 358,
         "endorsements": 0
       }
     },
@@ -8454,7 +8466,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 197,
+        "downloads": 198,
         "endorsements": 1
       }
     },
@@ -8814,7 +8826,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1466,
+        "downloads": 1467,
         "endorsements": 2
       }
     },
@@ -9849,7 +9861,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1555,
+        "downloads": 1556,
         "endorsements": 2
       }
     },
@@ -10119,7 +10131,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1282,
+        "downloads": 1283,
         "endorsements": 2
       }
     },
@@ -10659,7 +10671,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 930,
+        "downloads": 931,
         "endorsements": 0
       }
     },
@@ -12729,7 +12741,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 682,
+        "downloads": 683,
         "endorsements": 2
       }
     },
@@ -13269,7 +13281,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1909,
+        "downloads": 1910,
         "endorsements": 2
       }
     },
@@ -13539,7 +13551,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 434,
+        "downloads": 435,
         "endorsements": 0
       }
     },
