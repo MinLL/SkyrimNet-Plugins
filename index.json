@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-28T06:35:26.944Z",
-  "stats_as_of": "2026-10-28T06:35:26.825Z",
+  "generated_at": "2026-10-28T07:25:17.486Z",
+  "stats_as_of": "2026-10-28T07:25:17.356Z",
   "plugins": [
     {
       "id": "plugins/taka/skyrimnet-brothel",
@@ -92,7 +92,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 9,
+        "downloads": 11,
         "endorsements": 0
       }
     },
@@ -4671,7 +4671,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1388,
+        "downloads": 1389,
         "endorsements": 0
       }
     },
