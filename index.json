@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-28T14:35:04.536Z",
-  "stats_as_of": "2026-10-28T14:34:55.503Z",
+  "generated_at": "2026-10-28T15:24:39.997Z",
+  "stats_as_of": "2026-10-28T15:24:39.859Z",
   "plugins": [
     {
       "id": "plugins/phospheneoverdrive/intelengine-npc-autonomy-faction-politics",
@@ -548,7 +548,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 750,
+        "downloads": 751,
         "endorsements": 35
       }
     },
@@ -2397,7 +2397,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 888,
+        "downloads": 889,
         "endorsements": 14
       }
     },
@@ -4702,7 +4702,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1398,
+        "downloads": 1400,
         "endorsements": 0
       }
     },
@@ -5827,7 +5827,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 980,
+        "downloads": 981,
         "endorsements": 1
       }
     },
