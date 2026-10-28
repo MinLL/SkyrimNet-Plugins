@@ -1,8 +1,75 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-28T14:23:16.783Z",
-  "stats_as_of": "2026-10-28T14:23:16.604Z",
+  "generated_at": "2026-10-28T14:35:04.536Z",
+  "stats_as_of": "2026-10-28T14:34:55.503Z",
   "plugins": [
+    {
+      "id": "plugins/phospheneoverdrive/intelengine-npc-autonomy-faction-politics",
+      "plugin_id": "phospheneoverdrive.intelengine-npc-autonomy-faction-politics",
+      "type": "listing",
+      "title": "IntelEngine — NPC Autonomy & Faction Politics",
+      "tagline": "Give Skyrim’s NPCs agency—tasks, schedules, autonomous stories, and faction politics.",
+      "author": "phospheneoverdrive",
+      "tags": [
+        "actions",
+        "autonomy",
+        "immersion",
+        "storytelling",
+        "scheduling",
+        "travel",
+        "quests",
+        "faction politics",
+        "world simulation"
+      ],
+      "nsfw": false,
+      "icon": "gamemaster",
+      "mods": [],
+      "first_published": "2026-09-26T03:14:31Z",
+      "last_updated": "2026-10-28T14:34:26Z",
+      "version": "3.6.1",
+      "history": [
+        {
+          "version": "3.6.1",
+          "commit": "d70d08cc4ec0a627bb4989e7a6bd39fa0077a091",
+          "date": "2026-10-28T14:34:26Z",
+          "changelog": "- Rebuilt the bundled save converter (`LegacyCacheMigration.exe`) so Windows Defender no longer falsely flags it as `Trojan:Win32/Wacatac.B!ml`. 3.6.0 was never harmful; this release just stops the warning.\n- No functional changes. `IntelEngine.dll` and `IntelEngine.esp` are identical to 3.6.0, so you can update mid-playthrough without converting your saves again."
+        },
+        {
+          "version": "3.6.0",
+          "commit": "bb9bc25788ea26ab0de510e209bfa0dd1b48bcf5",
+          "date": "2026-10-27T21:15:05Z",
+          "changelog": "- 💾 **Save conversion:** an offline converter (included) repairs saves from earlier versions. **Convert old saves before loading with 3.6.0;** fresh games don't need it.\n- **Names kept:** stored NPC names, including names from name mods such as RNE, now survive saves and reloads. Memories and task history no longer corrupt them.\n- **Skyrim VR re-enabled:** one shared SE/AE/VR DLL; VR saves from 3.5.1 or earlier can be converted. VR should work (partly tested).\n- **Story DM:** stays within the current candidates, leaves disabled story types out of prompts, and skips itself when all eight types are off.\n- **NPC Social DM:** safer around save loading.\n- **Fixes:** Content Library bio lookup and overlay priority; battle and peace relationship changes now survive reloads; script checks aligned with the native plugin.\n\nTested on SE/AE 1.6.1170 and 1.7.104 with SkyrimNet Beta 28. 1.5.97 is untested."
+        },
+        {
+          "version": "3.5.2",
+          "commit": "95fad015e498fa97808d152341a5ce15cbb69f47",
+          "date": "2026-10-09T19:56:07Z",
+          "changelog": "Added support for Skyrim SE/AE versions 1.7.x"
+        },
+        {
+          "version": "3.5.1",
+          "commit": "e21dc4d0cd90657841180582f569a72ef8322f11",
+          "date": "2026-09-26T03:14:31Z",
+          "changelog": "Release for use with SkyrimNet Beta 25"
+        }
+      ],
+      "external_url": "https://github.com/galanx/IntelEngine-GamePlugin/releases/latest",
+      "languages": [
+        "en"
+      ],
+      "language": "en",
+      "image": {
+        "file": "cover.png",
+        "sha": "2481c81c05b48de522dea56a269a1803f5be32f9",
+        "commit": "e21dc4d0cd90657841180582f569a72ef8322f11",
+        "width": 1672,
+        "height": 941
+      },
+      "stats": {
+        "downloads": 291,
+        "endorsements": 10
+      }
+    },
     {
       "id": "plugins/taka/skyrimnet-brothel",
       "plugin_id": "taka.skyrimnet-brothel",
@@ -252,67 +319,6 @@
       "stats": {
         "downloads": 28,
         "endorsements": 0
-      }
-    },
-    {
-      "id": "plugins/phospheneoverdrive/intelengine-npc-autonomy-faction-politics",
-      "plugin_id": "phospheneoverdrive.intelengine-npc-autonomy-faction-politics",
-      "type": "listing",
-      "title": "IntelEngine — NPC Autonomy & Faction Politics",
-      "tagline": "Give Skyrim’s NPCs agency—tasks, schedules, autonomous stories, and faction politics.",
-      "author": "phospheneoverdrive",
-      "tags": [
-        "actions",
-        "autonomy",
-        "immersion",
-        "storytelling",
-        "scheduling",
-        "travel",
-        "quests",
-        "faction politics",
-        "world simulation"
-      ],
-      "nsfw": false,
-      "icon": "gamemaster",
-      "mods": [],
-      "first_published": "2026-09-26T03:14:31Z",
-      "last_updated": "2026-10-27T21:15:05Z",
-      "version": "3.6.0",
-      "history": [
-        {
-          "version": "3.6.0",
-          "commit": "bb9bc25788ea26ab0de510e209bfa0dd1b48bcf5",
-          "date": "2026-10-27T21:15:05Z",
-          "changelog": "- 💾 **Save conversion:** an offline converter (included) repairs saves from earlier versions. **Convert old saves before loading with 3.6.0;** fresh games don't need it.\n- **Names kept:** stored NPC names, including names from name mods such as RNE, now survive saves and reloads. Memories and task history no longer corrupt them.\n- **Skyrim VR re-enabled:** one shared SE/AE/VR DLL; VR saves from 3.5.1 or earlier can be converted. VR should work (partly tested).\n- **Story DM:** stays within the current candidates, leaves disabled story types out of prompts, and skips itself when all eight types are off.\n- **NPC Social DM:** safer around save loading.\n- **Fixes:** Content Library bio lookup and overlay priority; battle and peace relationship changes now survive reloads; script checks aligned with the native plugin.\n\nTested on SE/AE 1.6.1170 and 1.7.104 with SkyrimNet Beta 28. 1.5.97 is untested."
-        },
-        {
-          "version": "3.5.2",
-          "commit": "95fad015e498fa97808d152341a5ce15cbb69f47",
-          "date": "2026-10-09T19:56:07Z",
-          "changelog": "Added support for Skyrim SE/AE versions 1.7.x"
-        },
-        {
-          "version": "3.5.1",
-          "commit": "e21dc4d0cd90657841180582f569a72ef8322f11",
-          "date": "2026-09-26T03:14:31Z",
-          "changelog": "Release for use with SkyrimNet Beta 25"
-        }
-      ],
-      "external_url": "https://github.com/galanx/IntelEngine-GamePlugin/releases/latest",
-      "languages": [
-        "en"
-      ],
-      "language": "en",
-      "image": {
-        "file": "cover.png",
-        "sha": "2481c81c05b48de522dea56a269a1803f5be32f9",
-        "commit": "e21dc4d0cd90657841180582f569a72ef8322f11",
-        "width": 1672,
-        "height": 941
-      },
-      "stats": {
-        "downloads": 291,
-        "endorsements": 10
       }
     },
     {
@@ -4336,7 +4342,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1217,
+        "downloads": 1218,
         "endorsements": 2
       }
     },
@@ -4471,7 +4477,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2719,
+        "downloads": 2720,
         "endorsements": 2
       }
     },
@@ -4966,7 +4972,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 524,
+        "downloads": 525,
         "endorsements": 0
       }
     },
@@ -5461,7 +5467,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1115,
+        "downloads": 1116,
         "endorsements": 0
       }
     },
@@ -6406,7 +6412,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 799,
+        "downloads": 800,
         "endorsements": 1
       }
     },
@@ -6496,7 +6502,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 247,
+        "downloads": 248,
         "endorsements": 0
       }
     },
@@ -8851,7 +8857,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1474,
+        "downloads": 1475,
         "endorsements": 2
       }
     },
@@ -9886,7 +9892,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1566,
+        "downloads": 1567,
         "endorsements": 2
       }
     },
@@ -10156,7 +10162,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1288,
+        "downloads": 1289,
         "endorsements": 2
       }
     },
@@ -10696,7 +10702,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 935,
+        "downloads": 936,
         "endorsements": 0
       }
     },
@@ -13306,7 +13312,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1921,
+        "downloads": 1922,
         "endorsements": 2
       }
     },
@@ -13576,7 +13582,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 437,
+        "downloads": 438,
         "endorsements": 0
       }
     },
