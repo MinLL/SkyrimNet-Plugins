@@ -1,8 +1,91 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-28T09:25:54.779Z",
-  "stats_as_of": "2026-10-28T09:25:54.628Z",
+  "generated_at": "2026-10-28T10:22:49.614Z",
+  "stats_as_of": "2026-10-28T10:22:49.510Z",
   "plugins": [
+    {
+      "id": "plugins/deadohiosky/kinship",
+      "plugin_id": "deadohiosky.kinship",
+      "type": "listing",
+      "title": "Kinship",
+      "tagline": "Have unlimited children and make SkyrimNet aware of them and their familial relationships",
+      "author": "deadohiosky",
+      "tags": [
+        "children",
+        "family",
+        "bloodline"
+      ],
+      "nsfw": false,
+      "icon": "characters",
+      "mods": [],
+      "first_published": "2026-09-19T12:22:14Z",
+      "last_updated": "2026-10-28T10:22:23Z",
+      "version": "1.10.0",
+      "history": [
+        {
+          "version": "1.10.0",
+          "commit": "b1c7d9878d4311a3b9c39cec80df2b8ce5fd15dc",
+          "date": "2026-10-28T10:22:23Z",
+          "changelog": "A fix for Life Stages on a new game, plus Kinship can now share family information with other SKSE plugins: which children are the player's, and who their parents are. Nothing changes in play. This is groundwork for an upcoming feature in the Relationships plugin."
+        },
+        {
+          "version": "1.9.9",
+          "commit": "808366628e194fe3b5bb67622e8d71a86612a579",
+          "date": "2026-10-16T21:04:51Z",
+          "changelog": "Updated to support AE 1.7.104. Older versions still work. Nothing in your save needs resetting."
+        },
+        {
+          "version": "1.9.8",
+          "commit": "319c2bc45f31b27e3bb7e460ce0514ecf5129733",
+          "date": "2026-10-05T12:50:07Z",
+          "changelog": "Kinship now protects your children's homes if SeverActions loses them. Kinship shows each child's home by asking SeverActions, which is where most homes are kept if you have that plugin. If SeverActions ever loses its saved homes, Kinship used to faithfully copy the blanks, so the panel showed most of your children with no home at all.\n\nThe case that prompted this was downgrading SeverActions to a pre-4.x version mid-playthrough. A newer version saves its data in a format an older version cannot read, so going back and then forward again can lose every home and companion SeverActions had. Avoid downgrading SeverActions from 4.x to 3.x on a save you care about."
+        },
+        {
+          "version": "1.9.7",
+          "commit": "c9680220e0f57bfa8a745bdbf3dee1bad86d3100",
+          "date": "2026-10-02T18:10:54Z",
+          "changelog": "Fix for a Skyrim VR crash. Release 1.9.6 is equivalent for non-VR users."
+        },
+        {
+          "version": "1.9.6",
+          "commit": "c86cd3f08088b5524340851e435b26698e85273a",
+          "date": "2026-09-28T13:59:51Z",
+          "changelog": "A bugfix release. Kinship was quietly losing some of what Fertility Mode told it, and filling your script log with errors every in-game hour."
+        },
+        {
+          "version": "1.9.5",
+          "commit": "a74a1163297dc7bb41a9230eb140779195047258",
+          "date": "2026-09-27T09:45:48Z",
+          "changelog": "A couple of relatively minor bug fixes, including an edge case where the father is sometimes not written to the child record at birth even though Kinship knew who the father was."
+        },
+        {
+          "version": "1.9.4",
+          "commit": "2a111d61f697705542c979f7d5dc96fe657d4dab",
+          "date": "2026-09-20T19:04:11Z"
+        },
+        {
+          "version": "1.9.3",
+          "commit": "31efbda09c1641469b20b70f814d6e94affc7756",
+          "date": "2026-09-19T12:22:14Z"
+        }
+      ],
+      "external_url": "https://github.com/deadohiosky48/SkyrimNet-Kinship",
+      "languages": [
+        "en"
+      ],
+      "language": "en",
+      "image": {
+        "file": "cover.png",
+        "sha": "2406abb911929131463f084d04b5fdc0d105ca36",
+        "commit": "a74a1163297dc7bb41a9230eb140779195047258",
+        "width": 1664,
+        "height": 928
+      },
+      "stats": {
+        "downloads": 88,
+        "endorsements": 2
+      }
+    },
     {
       "id": "plugins/taka/skyrimnet-brothel",
       "plugin_id": "taka.skyrimnet-brothel",
@@ -92,7 +175,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 15,
+        "downloads": 16,
         "endorsements": 0
       }
     },
@@ -209,7 +292,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 287,
+        "downloads": 289,
         "endorsements": 10
       }
     },
@@ -1172,7 +1255,7 @@
         "height": 432
       },
       "stats": {
-        "downloads": 222,
+        "downloads": 223,
         "endorsements": 1
       }
     },
@@ -1491,7 +1574,7 @@
         "height": 1152
       },
       "stats": {
-        "downloads": 236,
+        "downloads": 237,
         "endorsements": 7
       }
     },
@@ -2289,7 +2372,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 883,
+        "downloads": 884,
         "endorsements": 14
       }
     },
@@ -2357,7 +2440,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 276,
+        "downloads": 277,
         "endorsements": 7
       }
     },
@@ -2476,83 +2559,6 @@
       "stats": {
         "downloads": 24,
         "endorsements": 0
-      }
-    },
-    {
-      "id": "plugins/deadohiosky/kinship",
-      "plugin_id": "deadohiosky.kinship",
-      "type": "listing",
-      "title": "Kinship",
-      "tagline": "Have unlimited children and make SkyrimNet aware of them and their familial relationships",
-      "author": "deadohiosky",
-      "tags": [
-        "children",
-        "family",
-        "bloodline"
-      ],
-      "nsfw": false,
-      "icon": "characters",
-      "mods": [],
-      "first_published": "2026-09-19T12:22:14Z",
-      "last_updated": "2026-10-16T21:04:51Z",
-      "version": "1.9.9",
-      "history": [
-        {
-          "version": "1.9.9",
-          "commit": "808366628e194fe3b5bb67622e8d71a86612a579",
-          "date": "2026-10-16T21:04:51Z",
-          "changelog": "Updated to support AE 1.7.104. Older versions still work. Nothing in your save needs resetting."
-        },
-        {
-          "version": "1.9.8",
-          "commit": "319c2bc45f31b27e3bb7e460ce0514ecf5129733",
-          "date": "2026-10-05T12:50:07Z",
-          "changelog": "Kinship now protects your children's homes if SeverActions loses them. Kinship shows each child's home by asking SeverActions, which is where most homes are kept if you have that plugin. If SeverActions ever loses its saved homes, Kinship used to faithfully copy the blanks, so the panel showed most of your children with no home at all.\n\nThe case that prompted this was downgrading SeverActions to a pre-4.x version mid-playthrough. A newer version saves its data in a format an older version cannot read, so going back and then forward again can lose every home and companion SeverActions had. Avoid downgrading SeverActions from 4.x to 3.x on a save you care about."
-        },
-        {
-          "version": "1.9.7",
-          "commit": "c9680220e0f57bfa8a745bdbf3dee1bad86d3100",
-          "date": "2026-10-02T18:10:54Z",
-          "changelog": "Fix for a Skyrim VR crash. Release 1.9.6 is equivalent for non-VR users."
-        },
-        {
-          "version": "1.9.6",
-          "commit": "c86cd3f08088b5524340851e435b26698e85273a",
-          "date": "2026-09-28T13:59:51Z",
-          "changelog": "A bugfix release. Kinship was quietly losing some of what Fertility Mode told it, and filling your script log with errors every in-game hour."
-        },
-        {
-          "version": "1.9.5",
-          "commit": "a74a1163297dc7bb41a9230eb140779195047258",
-          "date": "2026-09-27T09:45:48Z",
-          "changelog": "A couple of relatively minor bug fixes, including an edge case where the father is sometimes not written to the child record at birth even though Kinship knew who the father was."
-        },
-        {
-          "version": "1.9.4",
-          "commit": "2a111d61f697705542c979f7d5dc96fe657d4dab",
-          "date": "2026-09-20T19:04:11Z"
-        },
-        {
-          "version": "1.9.3",
-          "commit": "31efbda09c1641469b20b70f814d6e94affc7756",
-          "date": "2026-09-19T12:22:14Z"
-        }
-      ],
-      "external_url": "https://github.com/deadohiosky48/SkyrimNet-Kinship",
-      "languages": [
-        "en"
-      ],
-      "language": "en",
-      "image": {
-        "file": "cover.png",
-        "sha": "2406abb911929131463f084d04b5fdc0d105ca36",
-        "commit": "a74a1163297dc7bb41a9230eb140779195047258",
-        "width": 1664,
-        "height": 928
-      },
-      "stats": {
-        "downloads": 87,
-        "endorsements": 2
       }
     },
     {
@@ -2694,7 +2700,7 @@
         "height": 864
       },
       "stats": {
-        "downloads": 295,
+        "downloads": 296,
         "endorsements": 6
       }
     },
@@ -3919,7 +3925,7 @@
         "height": 900
       },
       "stats": {
-        "downloads": 214,
+        "downloads": 215,
         "endorsements": 5
       }
     },
@@ -4140,7 +4146,7 @@
         "height": 1152
       },
       "stats": {
-        "downloads": 101,
+        "downloads": 102,
         "endorsements": 2
       }
     },
@@ -4671,7 +4677,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1390,
+        "downloads": 1392,
         "endorsements": 0
       }
     },
@@ -4941,7 +4947,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 522,
+        "downloads": 523,
         "endorsements": 0
       }
     },
@@ -5211,7 +5217,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 176,
+        "downloads": 177,
         "endorsements": 0
       }
     },
@@ -5436,7 +5442,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1111,
+        "downloads": 1112,
         "endorsements": 0
       }
     },
@@ -5796,7 +5802,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 978,
+        "downloads": 979,
         "endorsements": 1
       }
     },
