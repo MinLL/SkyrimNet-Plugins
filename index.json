@@ -1,8 +1,58 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-28T13:25:05.415Z",
-  "stats_as_of": "2026-10-28T13:25:05.342Z",
+  "generated_at": "2026-10-28T13:34:43.248Z",
+  "stats_as_of": "2026-10-28T13:34:43.160Z",
   "plugins": [
+    {
+      "id": "plugins/kaleth/sexist-men-of-skyrim",
+      "plugin_id": "kaleth.sexist-men-of-skyrim",
+      "type": "bundle",
+      "title": "Sexist Men of Skyrim",
+      "tagline": "Skyrim with raw, unfiltered bigotry.",
+      "author": "kaleth",
+      "tags": [
+        "NSFW",
+        "sexism"
+      ],
+      "nsfw": true,
+      "icon": "package",
+      "mods": [],
+      "first_published": "2026-10-28T01:26:34Z",
+      "last_updated": "2026-10-28T13:34:14Z",
+      "version": "1.1.0",
+      "min_skyrimnet_version": "0.28.0",
+      "history": [
+        {
+          "version": "1.1.0",
+          "commit": "66d181d5de5d150ac179734c71491f0594edf148",
+          "date": "2026-10-28T13:34:14Z",
+          "changelog": "### Mechanic\n- Simpler trigger, the old one was making a mess of events\n- Added a couple of world knowledge: NPC saying crude things will no longer be shun into behaving\n\n### Bugfix\n- Fixed an issue where a missing decorator was allowing female character to be selected."
+        },
+        {
+          "version": "0.2.0",
+          "commit": "f2367713096b7f8283a365c51a2c0d0635fd8b4a",
+          "date": "2026-10-28T01:26:34Z",
+          "changelog": "Initial release"
+        }
+      ],
+      "languages": [
+        "en"
+      ],
+      "language": "en",
+      "contents": {
+        "triggers": 1,
+        "actions": 0,
+        "prompts": 0,
+        "bios": 0,
+        "knowledge": 1,
+        "entities": 0,
+        "config": 0
+      },
+      "stats": {
+        "downloads": 22,
+        "endorsements": 0
+      }
+    },
     {
       "id": "plugins/deadohiosky/kinship",
       "plugin_id": "deadohiosky.kinship",
@@ -136,50 +186,6 @@
       }
     },
     {
-      "id": "plugins/kaleth/sexist-men-of-skyrim",
-      "plugin_id": "kaleth.sexist-men-of-skyrim",
-      "type": "bundle",
-      "title": "Sexist Men of Skyrim",
-      "tagline": "Skyrim with raw, unfiltered bigotry.",
-      "author": "kaleth",
-      "tags": [
-        "NSFW",
-        "sexism"
-      ],
-      "nsfw": true,
-      "icon": "package",
-      "mods": [],
-      "first_published": "2026-10-28T01:26:34Z",
-      "last_updated": "2026-10-28T01:26:34Z",
-      "version": "0.2.0",
-      "min_skyrimnet_version": "0.28.0",
-      "history": [
-        {
-          "version": "0.2.0",
-          "commit": "f2367713096b7f8283a365c51a2c0d0635fd8b4a",
-          "date": "2026-10-28T01:26:34Z",
-          "changelog": "Initial release"
-        }
-      ],
-      "languages": [
-        "en"
-      ],
-      "language": "en",
-      "contents": {
-        "triggers": 1,
-        "actions": 0,
-        "prompts": 0,
-        "bios": 0,
-        "knowledge": 0,
-        "entities": 0,
-        "config": 0
-      },
-      "stats": {
-        "downloads": 22,
-        "endorsements": 0
-      }
-    },
-    {
       "id": "plugins/whyregister/to-the-yield",
       "plugin_id": "whyregister.to-the-yield",
       "type": "listing",
@@ -292,7 +298,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 290,
+        "downloads": 291,
         "endorsements": 10
       }
     },
@@ -2372,7 +2378,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 885,
+        "downloads": 886,
         "endorsements": 14
       }
     },
@@ -4146,7 +4152,7 @@
         "height": 1152
       },
       "stats": {
-        "downloads": 103,
+        "downloads": 104,
         "endorsements": 2
       }
     },
