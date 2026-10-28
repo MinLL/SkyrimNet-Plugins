@@ -1,8 +1,70 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-28T13:34:43.248Z",
-  "stats_as_of": "2026-10-28T13:34:43.160Z",
+  "generated_at": "2026-10-28T14:23:16.783Z",
+  "stats_as_of": "2026-10-28T14:23:16.604Z",
   "plugins": [
+    {
+      "id": "plugins/taka/skyrimnet-brothel",
+      "plugin_id": "taka.skyrimnet-brothel",
+      "type": "listing",
+      "title": "SkyrimNet Brothel",
+      "tagline": "Run your own brothel: register workers, send customers to them or take customers yourself, and SkyrimNet's AI voices every offer and answer while SexLab plays the scene.",
+      "author": "taka",
+      "tags": [
+        "SexLab",
+        "NPC",
+        "Gameplay"
+      ],
+      "nsfw": true,
+      "icon": "package",
+      "mods": [
+        {
+          "name": "SexLab.esm",
+          "file": "sexlab.esm",
+          "required": true
+        }
+      ],
+      "first_published": "2026-10-24T14:18:49Z",
+      "last_updated": "2026-10-28T14:22:45Z",
+      "version": "0.2.0",
+      "history": [
+        {
+          "version": "0.2.0",
+          "commit": "4eb3082a8fa4010b153873492226d75dbc6c45a9",
+          "date": "2026-10-28T14:22:45Z",
+          "changelog": "0.2.0: You can run up to three brothels at once, each with its own customers, owner and level. Customers can be men, women or both. Besides the workers you register yourself, each brothel can also hire up to ten workers of its own. All your female followers can be registered or unregistered at once. Up to twelve pairs can play at the same time. Workers can chat among themselves between customers. A new Manage Brothel power opens a menu with the main settings and needs UIExtensions. A new setting decides how often a customer accepts an invitation, and offers and invitations are now made in many different ways. Two pairs no longer end up on the same bed, double beds are chosen first, and pairs step off the bed after the scene. A customer caught on a door frame no longer walks on the spot forever."
+        },
+        {
+          "version": "0.1.8",
+          "commit": "16033111085618477a6fa3d245a45e843d105fb0",
+          "date": "2026-10-28T02:11:01Z",
+          "changelog": "0.1.8: The menu now shows correctly in games set to any language, not only English. 0.1.7: Townsfolk can visit the brothel as customers. You can name an owner who takes a share and runs the brothel. You can work as one of the girls yourself, and experienced workers invite customers on their own. The brothel and every worker gain levels from 1 to 10. Customers pay up front, and the MCM is split into six pages. SkyrimNet Player Choices is now built in and no longer required. Fixes include an MCM crash with Papyrus Tweaks, customers starting fights, stalled scenes and pairs sinking into common beds."
+        },
+        {
+          "version": "0.1.2",
+          "commit": "663314ea05d9cae898a64890157bf2b146774ab2",
+          "date": "2026-10-24T14:18:49Z",
+          "changelog": "Initial release"
+        }
+      ],
+      "external_url": "https://github.com/nightlantern-mods/skyrimnet_Brothel",
+      "languages": [
+        "en",
+        "ja"
+      ],
+      "language": "en",
+      "image": {
+        "file": "cover.jpg",
+        "sha": "47fbeb811d0c2dd19b12e398658ca0341ae6230a",
+        "commit": "4eb3082a8fa4010b153873492226d75dbc6c45a9",
+        "width": 1920,
+        "height": 1080
+      },
+      "stats": {
+        "downloads": 17,
+        "endorsements": 0
+      }
+    },
     {
       "id": "plugins/kaleth/sexist-men-of-skyrim",
       "plugin_id": "kaleth.sexist-men-of-skyrim",
@@ -49,7 +111,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 22,
+        "downloads": 24,
         "endorsements": 0
       }
     },
@@ -132,57 +194,8 @@
         "height": 928
       },
       "stats": {
-        "downloads": 92,
+        "downloads": 93,
         "endorsements": 2
-      }
-    },
-    {
-      "id": "plugins/taka/skyrimnet-brothel",
-      "plugin_id": "taka.skyrimnet-brothel",
-      "type": "listing",
-      "title": "SkyrimNet Brothel",
-      "tagline": "Run your own brothel: register workers, send customers to them or take customers yourself, and SkyrimNet's AI voices every offer and answer while SexLab plays the scene.",
-      "author": "taka",
-      "tags": [
-        "SexLab",
-        "NPC",
-        "Gameplay"
-      ],
-      "nsfw": true,
-      "icon": "package",
-      "mods": [
-        {
-          "name": "SexLab.esm",
-          "file": "sexlab.esm",
-          "required": true
-        }
-      ],
-      "first_published": "2026-10-24T14:18:49Z",
-      "last_updated": "2026-10-28T02:11:01Z",
-      "version": "0.1.8",
-      "history": [
-        {
-          "version": "0.1.8",
-          "commit": "16033111085618477a6fa3d245a45e843d105fb0",
-          "date": "2026-10-28T02:11:01Z",
-          "changelog": "0.1.8: The menu now shows correctly in games set to any language, not only English. 0.1.7: Townsfolk can visit the brothel as customers. You can name an owner who takes a share and runs the brothel. You can work as one of the girls yourself, and experienced workers invite customers on their own. The brothel and every worker gain levels from 1 to 10. Customers pay up front, and the MCM is split into six pages. SkyrimNet Player Choices is now built in and no longer required. Fixes include an MCM crash with Papyrus Tweaks, customers starting fights, stalled scenes and pairs sinking into common beds."
-        },
-        {
-          "version": "0.1.2",
-          "commit": "663314ea05d9cae898a64890157bf2b146774ab2",
-          "date": "2026-10-24T14:18:49Z",
-          "changelog": "Initial release"
-        }
-      ],
-      "external_url": "https://github.com/nightlantern-mods/skyrimnet_Brothel",
-      "languages": [
-        "en",
-        "ja"
-      ],
-      "language": "en",
-      "stats": {
-        "downloads": 17,
-        "endorsements": 0
       }
     },
     {
@@ -529,7 +542,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 749,
+        "downloads": 750,
         "endorsements": 35
       }
     },
@@ -1136,7 +1149,7 @@
         "height": 720
       },
       "stats": {
-        "downloads": 41,
+        "downloads": 42,
         "endorsements": 1
       }
     },
@@ -2084,7 +2097,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 89,
+        "downloads": 90,
         "endorsements": 2
       }
     },
@@ -2378,7 +2391,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 886,
+        "downloads": 888,
         "endorsements": 14
       }
     },
@@ -2867,7 +2880,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 359,
+        "downloads": 360,
         "endorsements": 4
       }
     },
@@ -4458,7 +4471,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2707,
+        "downloads": 2719,
         "endorsements": 2
       }
     },
@@ -4683,7 +4696,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1397,
+        "downloads": 1398,
         "endorsements": 0
       }
     },
@@ -6348,7 +6361,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 563,
+        "downloads": 565,
         "endorsements": 0
       }
     },
@@ -8838,7 +8851,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1473,
+        "downloads": 1474,
         "endorsements": 2
       }
     },
@@ -9423,7 +9436,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 6,
+        "downloads": 7,
         "endorsements": 0
       }
     },
@@ -9738,7 +9751,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 60,
+        "downloads": 61,
         "endorsements": 0
       }
     },
@@ -9873,7 +9886,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1565,
+        "downloads": 1566,
         "endorsements": 2
       }
     },
@@ -10683,7 +10696,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 934,
+        "downloads": 935,
         "endorsements": 0
       }
     },
@@ -13293,7 +13306,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1920,
+        "downloads": 1921,
         "endorsements": 2
       }
     },
