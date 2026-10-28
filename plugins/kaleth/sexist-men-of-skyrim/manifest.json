@@ -15,7 +15,7 @@
   "languages": [
     "en"
   ],
-  "version": "0.2.0",
-  "changelog": "Initial release",
+  "version": "1.1.0",
+  "changelog": "### Mechanic\n- Simpler trigger, the old one was making a mess of events\n- Added a couple of world knowledge: NPC saying crude things will no longer be shun into behaving\n\n### Bugfix\n- Fixed an issue where a missing decorator was allowing female character to be selected.",
   "min_skyrimnet_version": "0.28.0"
 }
