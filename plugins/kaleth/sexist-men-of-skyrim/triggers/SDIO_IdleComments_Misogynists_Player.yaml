@@ -9,7 +9,7 @@ eventCriteria:
 audience: player
 response:
   type: direct_narration
-  content: "{% set comments = [\"degrade\", \"make a sexually charged comment to\", \"catcall\", \"objectify\", \"demand sexual gratification from\"] %}\n{% set candidates = get_nearby_npc_list(player.UUID) %}\n{% set distance = 9999999 %}\n{% set pick = \"\" %}\n{% for candidate in candidates %}\n  {% set  d = distance_between(player.UUID, candidate.UUID) %}\n  {% if not candidate.isFemale %}\n    {% if d < distance and d > 0 %}\n      {% set distance = d %}\n      {% set pick = candidate %}\n    {% endif %}\n  {% endif %}\n{% endfor %}\n{% if pick and pick != \"\" %}\n  {% set idx = random % length(comments) %}\n  {{ pick.name }} has a strong urge to {{ at(comments, idx) }} {{ player.name }}.\n{% endif %}"
+  content: "{% set comments = [\"sexually degrade\", \"make a sexually charged comment to\", \"catcall\", \"objectify\", \"demand sexual gratification from\"] %}\n{% set s = decnpc(originator_uuid) %}\n{% if not s.isFemale %}\n  {% set idx = random % length(comments) %}\n  {{ s.name }} has an irresistible urge to {{ at(comments, idx) }} {{ player.name }}.\n{% endif %}"
 enabled: true
-cooldownSeconds: 15
+cooldownSeconds: 5
 interrupt: true

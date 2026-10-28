@@ -1,0 +1,114 @@
+{
+  "skyrimnet_knowledge_pack": {
+    "description": "World Knowledge to transform Skyrim into an openly sexist world.",
+    "entries": [
+      {
+        "always_inject": true,
+        "condition_expr": "",
+        "content": "### Misogyny & Rhetoric\n  - World is openly misogynistic,",
+        "display_name": "Misogyny & Rhetoric",
+        "emotion": "hate",
+        "importance": 0.8999999761581421,
+        "key": "misogyny-rhetoric",
+        "knowledge_key": "",
+        "location": "",
+        "tags": [
+          "lore"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": true,
+        "condition_expr": "",
+        "content": "### Gender Dynamics\n#### Male Consensus\n  - Men embrace misogyny,\n  - Men withhold protection from defiant women and welcome their humiliation.\n\n#### Social Expectations\n  - Men view women as frail, flawed, and subordinate,\n  - They treat defiance as an insult to the patriarchy,\n  - Men routinely disparage and correct women in public.\n\n\n",
+        "display_name": "Gender Dynamics",
+        "emotion": "hate",
+        "importance": 0.8999999761581421,
+        "key": "gender-dynamics",
+        "knowledge_key": "",
+        "location": "",
+        "tags": [
+          "lore"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": true,
+        "condition_expr": "",
+        "content": "### Gender Conflicts\n#### Confrontation\n  - Women reaction to conflict is to shrink, fume and beg for pardon,\n  - Women buy peace with subservience.\n\n#### Blame & Gaslighting\n  - Women are always blamed for conflicts, regardless of provocation. \n  - Conflicts are framed as the woman's shortcoming, bending logic to shift moral responsibility onto her.",
+        "display_name": "Gender Conflicts",
+        "emotion": "fear, anger",
+        "importance": 0.949999988079071,
+        "key": "gender-conflicts",
+        "knowledge_key": "",
+        "location": "",
+        "tags": [
+          "lore"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": true,
+        "condition_expr": "",
+        "content": "### Stereotype: Gender Role – Women\n#### Hierarchy\n  - Given the systemic sexim:\n    - all women are heavily traumatized, scared by men, and scarred of men,\n    - all women live in fear of retribution from men,\n\n#### Standing\n  - Women are meant for house and craddle.\n\n",
+        "display_name": "Stereotype: Gender Role – Women",
+        "emotion": "fear, disgust",
+        "importance": 0.699999988079071,
+        "key": "stereotype-gender-role-women",
+        "knowledge_key": "",
+        "location": "",
+        "tags": [
+          "lore"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "",
+        "content": "### Stereotypes: Gender – Women\n#### Prejudices\n  - are sex-creved, deviant, and intrinsically unfaithful,\n  - are irresponsible, incompetent, frivolous, and emotional,\n  - are self‑serving idiots.\n",
+        "display_name": "Stereotypes: Gender – Women",
+        "emotion": "lust, hate,",
+        "importance": 0.699999988079071,
+        "key": "stereotypes-gender-women",
+        "knowledge_key": "",
+        "location": "",
+        "tags": [
+          "lore"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "",
+        "content": "### Stereotypes: Gender – Men\n#### Prejudices\n  - are arrogant, brawny, and power-hungry idiots,\n  - are hyper-aggressive, domineering, and intrinsically violent,\n  - are reckless, emotionally stunted, and brutish.\n",
+        "display_name": "Stereotypes: Gender – Men",
+        "emotion": "",
+        "importance": 0.699999988079071,
+        "key": "stereotypes-gender-men",
+        "knowledge_key": "",
+        "location": "",
+        "tags": [],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": true,
+        "condition_expr": "",
+        "content": "### Stereotype: Gender Role – Men\n#### Hierarchy\n  - Given the systemic sexism against women:\n    - all men are strongly encouraged to perpetuate misogyny,\n    - all men embrace the system without misgiving.\n\n#### Standing\n  - Men are innately superior women.\n",
+        "display_name": "Stereotype: Gender Role – Men",
+        "emotion": "jow, pride, empowerment",
+        "importance": 0.800000011920929,
+        "key": "stereotype-gender-role-men",
+        "knowledge_key": "",
+        "location": "",
+        "tags": [],
+        "type": "KNOWLEDGE"
+      }
+    ],
+    "entry_count": 7,
+    "exported_at": "2026-10-28T13:20:31Z",
+    "format_version": 3,
+    "name": "Sexist Men of Skyrim",
+    "npc_groups": [],
+    "version": "1.1.0"
+  }
+}
