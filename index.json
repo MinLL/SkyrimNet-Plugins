@@ -1,8 +1,52 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-28T01:24:13.634Z",
-  "stats_as_of": "2026-10-28T01:24:13.514Z",
+  "generated_at": "2026-10-28T01:26:58.935Z",
+  "stats_as_of": "2026-10-28T01:26:58.789Z",
   "plugins": [
+    {
+      "id": "plugins/kaleth/sexist-men-of-skyrim",
+      "plugin_id": "kaleth.sexist-men-of-skyrim",
+      "type": "bundle",
+      "title": "Sexist Men of Skyrim",
+      "tagline": "Skyrim with raw, unfiltered bigotry.",
+      "author": "kaleth",
+      "tags": [
+        "NSFW",
+        "sexism"
+      ],
+      "nsfw": true,
+      "icon": "package",
+      "mods": [],
+      "first_published": "2026-10-28T01:26:34Z",
+      "last_updated": "2026-10-28T01:26:34Z",
+      "version": "0.2.0",
+      "min_skyrimnet_version": "0.28.0",
+      "history": [
+        {
+          "version": "0.2.0",
+          "commit": "f2367713096b7f8283a365c51a2c0d0635fd8b4a",
+          "date": "2026-10-28T01:26:34Z",
+          "changelog": "Initial release"
+        }
+      ],
+      "languages": [
+        "en"
+      ],
+      "language": "en",
+      "contents": {
+        "triggers": 1,
+        "actions": 0,
+        "prompts": 0,
+        "bios": 0,
+        "knowledge": 0,
+        "entities": 0,
+        "config": 0
+      },
+      "stats": {
+        "downloads": 0,
+        "endorsements": 0
+      }
+    },
     {
       "id": "plugins/whyregister/to-the-yield",
       "plugin_id": "whyregister.to-the-yield",
