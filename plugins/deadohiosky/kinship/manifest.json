@@ -18,6 +18,6 @@
   ],
   "image": "cover.png",
   "external_url": "https://github.com/deadohiosky48/SkyrimNet-Kinship",
-  "version": "1.9.9",
-  "changelog": "Updated to support AE 1.7.104. Older versions still work. Nothing in your save needs resetting."
+  "version": "1.10.0",
+  "changelog": "A fix for Life Stages on a new game, plus Kinship can now share family information with other SKSE plugins: which children are the player's, and who their parents are. Nothing changes in play. This is groundwork for an upcoming feature in the Relationships plugin."
 }
