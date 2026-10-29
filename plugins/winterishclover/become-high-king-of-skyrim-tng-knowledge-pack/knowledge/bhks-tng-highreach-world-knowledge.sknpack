@@ -1,0 +1,3995 @@
+{
+  "skyrimnet_knowledge_pack": {
+    "description": "World knowledge for Become High King of Skyrim: The Next Generation v2.0. Covers Highreach Keep history and lore, ruler identity and gender, royal marriage and divorce, kingdom governance systems, per-hold approval, faith, economy, taxation, rebellion, Church of Skyrim declarations, royal decrees, desperate measures, trade policy, and loan status. Entries are regionally gated by hold faction membership and scaled by importance. All rulership entries require AAIsHighKing to be active.",
+    "entries": [
+      {
+        "always_inject": false,
+        "condition_expr": "is_in_faction(actorUUID, \"AAKingHighreachCitizens\") or is_in_faction(actorUUID, \"AAHighKingFaction\") or is_in_faction(actorUUID, \"AAHighKingCouncilFaction\") or is_in_faction(actorUUID, \"JobJarlFaction\") or is_in_faction(actorUUID, \"CrimeFactionFalkreath\")",
+        "content": "Highreach Keep is a city hidden within the Jerall Mountains, south of Falkreath Hold. Long dismissed as legend, it re-emerged publicly in 4E 175. It is accessible through passes in the mountains and contains a city, castle and ancient history.",
+        "display_name": "Highreach Keep - Existence and Location",
+        "emotion": "",
+        "importance": 0.699999988079071,
+        "key": "highreach-keep-existence-and-location",
+        "knowledge_key": "",
+        "location": "Jerall Mountains",
+        "tags": [
+          "highreach",
+          "location",
+          "jerall",
+          "city"
+        ],
+        "type": "LOCATION"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "is_in_faction(actorUUID, \"AAKingHighreachCitizens\") or is_in_faction(actorUUID, \"AAHighKingFaction\") or is_in_faction(actorUUID, \"AAHighKingCouncilFaction\") or is_in_faction(actorUUID, \"JobJarlFaction\")",
+        "content": "Highreach Keep is a large, diverse city with a gladiatorial arena, guild hall, shops, barracks, a hall of the dead, a prison, Coldrun Lake, and Highreach Castle - the seat of royal power. It is self-sustaining and has been so for centuries.",
+        "display_name": "Highreach Keep - City Features",
+        "emotion": "",
+        "importance": 0.699999988079071,
+        "key": "highreach-keep-city-features",
+        "knowledge_key": "",
+        "location": "Highreach Keep",
+        "tags": [
+          "highreach",
+          "location",
+          "city",
+          "arena",
+          "castle"
+        ],
+        "type": "LOCATION"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "is_in_faction(actorUUID, \"AAHighKingFaction\")",
+        "content": "The valley containing Highreach was created in 1E 2703 when a catastrophic landslide at Pale Pass buried the Akaviri invaders. The violence tore a hidden cleft from the Jerall Mountains. Later generations believed it was the hand of Shor and Kyne - a divine blow to preserve the North.",
+        "display_name": "Highreach - Valley Origin",
+        "emotion": "",
+        "importance": 0.6000000238418579,
+        "key": "highreach-valley-origin",
+        "knowledge_key": "",
+        "location": "Jerall Mountains",
+        "tags": [
+          "highreach",
+          "founding",
+          "history",
+          "akaviri",
+          "jerall"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "is_in_faction(actorUUID, \"AAHighKingFaction\")",
+        "content": "Highreach was founded around 2E 577 by the Silent Accord, a secret alliance of nobles from Falkreath, the Pale, and Bruma. Bound by blood, trade, and fear of political ruin, they chose to build a sanctuary in the hidden valley - not to conquer, but to endure.",
+        "display_name": "Highreach - The Silent Accord Founding",
+        "emotion": "",
+        "importance": 0.699999988079071,
+        "key": "highreach-the-silent-accord-founding",
+        "knowledge_key": "",
+        "location": "Highreach Keep",
+        "tags": [
+          "highreach",
+          "founding",
+          "silent accord",
+          "second era",
+          "history"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "is_in_faction(actorUUID, \"AAHighKingFaction\")",
+        "content": "The Rootbind Covenant were Argonian scholars and survivors of the Knahaten Flu who helped build Highreach. They brought forgotten knowledge: how to draw warmth from the earth, bind stone without fault, and fold memory into walls. Without them, the Keep would never have stood.",
+        "display_name": "Highreach - The Rootbind Covenant",
+        "emotion": "",
+        "importance": 0.6499999761581421,
+        "key": "highreach-the-rootbind-covenant",
+        "knowledge_key": "",
+        "location": "Highreach Keep",
+        "tags": [
+          "highreach",
+          "rootbind",
+          "argonian",
+          "founding",
+          "dwemer"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "is_in_faction(actorUUID, \"AAHighKingFaction\")",
+        "content": "The descendants of the Rootbind Covenant, called Root-Wardens, still live in Highreach. They maintain the geothermal systems that keep the valley warm, continuing a tradition of quiet, essential service that dates back to the city's founding.",
+        "display_name": "Highreach - Root-Warden Descendants",
+        "emotion": "",
+        "importance": 0.5,
+        "key": "highreach-root-warden-descendants",
+        "knowledge_key": "",
+        "location": "Highreach Keep",
+        "tags": [
+          "highreach",
+          "rootbind",
+          "root-warden",
+          "argonian",
+          "geothermal"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "is_in_faction(actorUUID, \"AAHighKingFaction\")",
+        "content": "Highreach's first king was a nameless Breton wanderer who rose not by bloodline, but by deed. He led his people through famine and peril, earning the crown by merit alone. When reckless hands damaged the Dwemer systems beneath the Keep, he descended alone to fix them and never returned. His sacrifice is remembered as the bedrock of Highreach's spirit.",
+        "display_name": "Highreach - The Nameless King",
+        "emotion": "",
+        "importance": 0.75,
+        "key": "highreach-the-nameless-king",
+        "knowledge_key": "",
+        "location": "Highreach Keep",
+        "tags": [
+          "highreach",
+          "nameless king",
+          "breton",
+          "founding",
+          "history",
+          "sacrifice"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "is_in_faction(actorUUID, \"AAKingHighreachCitizens\")",
+        "content": "Despite sitting high in the Jerall Mountains, Highreach enjoys a temperate climate. Geothermal rivers beneath the city emit constant warmth, and the mountain walls block northern winds while funneling warmer western breezes through the valley. Birch and maple grow where only pine should survive.",
+        "display_name": "Highreach - Climate Paradox",
+        "emotion": "",
+        "importance": 0.6000000238418579,
+        "key": "highreach-climate-paradox",
+        "knowledge_key": "",
+        "location": "Highreach Keep",
+        "tags": [
+          "highreach",
+          "climate",
+          "geothermal",
+          "agriculture",
+          "jerall"
+        ],
+        "type": "LOCATION"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "is_in_faction(actorUUID, \"AAHighKingFaction\")",
+        "content": "In 3E 432, fearing Thalmor agents, Highreach's Shadow Council voted to collapse the mountain passes and seal the city away. The following year, an Oblivion Gate erupted from Coldrun Lake inside the sealed valley. The city was trapped, unable to flee or receive aid. Four hundred seventeen citizens died defending Highreach before the gate was closed. The city remained sealed for 150 years afterward, a period known as the Long Silence.",
+        "display_name": "Highreach - The Long Silence and Sealing",
+        "emotion": "",
+        "importance": 0.6499999761581421,
+        "key": "highreach-the-long-silence-and-sealing",
+        "knowledge_key": "",
+        "location": "Highreach Keep",
+        "tags": [
+          "highreach",
+          "oblivion crisis",
+          "long silence",
+          "history",
+          "tragedy",
+          "shadow council"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "is_in_faction(actorUUID, \"AAHighKingFaction\")",
+        "content": "In 4E 175, following the White-Gold Concordat and the Thalmor threat, Highreach opened its gates and formally announced itself to Skyrim after 150 years of isolation. The city offered itself as the ancient seat of High Kings. High King Torygg visited in 4E 176 and was impressed, but declined to relocate the capital.",
+        "display_name": "Highreach - The Emergence (4E 175)",
+        "emotion": "",
+        "importance": 0.699999988079071,
+        "key": "highreach-the-emergence-4e-175",
+        "knowledge_key": "",
+        "location": "Highreach Keep",
+        "tags": [
+          "highreach",
+          "emergence",
+          "fourth era",
+          "torygg",
+          "history"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "is_in_faction(actorUUID, \"AAHighKingFaction\")",
+        "content": "Since re-emerging, Highreach occupies a strange political place in Skyrim. It has trade agreements and limited Moot participation, but holds no real governance role. The holds acknowledge it, trade with it, but do not consult it. Its historical claim as the seat of High Kings is treated as interesting trivia rather than precedent.",
+        "display_name": "Highreach - Political Marginalization",
+        "emotion": "",
+        "importance": 0.550000011920929,
+        "key": "highreach-political-marginalization",
+        "knowledge_key": "",
+        "location": "Skyrim",
+        "tags": [
+          "highreach",
+          "politics",
+          "skyrim",
+          "moot",
+          "history"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "is_in_faction(actorUUID, \"AAKingHighreachCitizens\")",
+        "content": "The Celestium is a towering crystalline spire at the heart of Highreach's town square. It casts a pillar of light visible from every tier of the city and hums faintly at sunrise. Most think it ceremonial, but scholars believe it is a Dwemer energy dispersal column integrated by the Rootbind Covenant to stabilize the volcanic systems beneath the Keep.",
+        "display_name": "Highreach - The Celestium",
+        "emotion": "",
+        "importance": 0.5,
+        "key": "highreach-the-celestium",
+        "knowledge_key": "",
+        "location": "Highreach Keep",
+        "tags": [
+          "highreach",
+          "celestium",
+          "dwemer",
+          "landmark",
+          "rootbind"
+        ],
+        "type": "LOCATION"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "is_in_faction(actorUUID, \"AAKingHighreachCitizens\")",
+        "content": "Above Highreach Castle, carved into the mountainside, stands the Summit of Two Wills - a monument depicting Queen Vaelora and her cousin Cairn Halwerd at the moment she halted his campaign of expansion with a single line: 'We were not made to conquer - we were made to last.' It is Highreach's defining symbol of restraint over ambition.",
+        "display_name": "Highreach - The Summit of Two Wills",
+        "emotion": "",
+        "importance": 0.5,
+        "key": "highreach-the-summit-of-two-wills",
+        "knowledge_key": "",
+        "location": "Highreach Keep",
+        "tags": [
+          "highreach",
+          "monument",
+          "vaelora",
+          "history",
+          "landmark"
+        ],
+        "type": "LOCATION"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "is_in_faction(actorUUID, \"AAKingHighreachCitizens\")",
+        "content": "Highreach has a working gladiatorial arena. Criminals condemned by the crown may be sentenced to fight for their freedom rather than face execution, providing both justice and spectacle for citizens.",
+        "display_name": "Highreach - Gladiatorial Arena",
+        "emotion": "",
+        "importance": 0.44999998807907104,
+        "key": "highreach-gladiatorial-arena",
+        "knowledge_key": "",
+        "location": "Highreach Keep",
+        "tags": [
+          "highreach",
+          "arena",
+          "gladiator",
+          "justice",
+          "entertainment"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "is_in_faction(actorUUID, \"AAKingHighreachCitizens\") or is_in_faction(actorUUID, \"AAHighKingFaction\") or is_in_faction(actorUUID, \"AAHighKingCouncilFaction\") or is_in_faction(actorUUID, \"JobJarlFaction\")",
+        "content": "Highreach Keep claims to be the ancient seat of High Kings of Skyrim - a title older than Solitude's political dominance. This claim was formally made when the city re-emerged in 4E 175, but went largely unrecognized until recently.",
+        "display_name": "Highreach - Historical Seat of High Kings",
+        "emotion": "",
+        "importance": 0.6499999761581421,
+        "key": "highreach-historical-seat-of-high-kings",
+        "knowledge_key": "",
+        "location": "Skyrim",
+        "tags": [
+          "highreach",
+          "high king",
+          "skyrim",
+          "legitimacy",
+          "history"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": true,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAKingPlayerGender\") == 0",
+        "content": "{{ playerName }} is the High King of Skyrim, ruling from Highreach Keep. He earned the crown through the ancient Moot of Jarls. All NPCs should address him with masculine royal titles such as 'my King', 'Your Grace', 'my liege', or 'the High King'. He governs with a council of advisors and manages the welfare of all nine holds.",
+        "display_name": "Ruler Identity - High King",
+        "emotion": "",
+        "importance": 0.949999988079071,
+        "key": "ruler-identity-high-king",
+        "knowledge_key": "",
+        "location": "Skyrim",
+        "tags": [
+          "high king",
+          "player",
+          "identity",
+          "ruling",
+          "highreach",
+          "gender"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": true,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAKingPlayerGender\") == 1",
+        "content": "{{ playerName }} is the High Queen of Skyrim, ruling from Highreach Keep. She earned the crown through the ancient Moot of Jarls. All NPCs should address her with feminine royal titles such as 'my Queen', 'Your Grace', 'my liege', or 'the High Queen'. She governs with a council of advisors and manages the welfare of all nine holds.",
+        "display_name": "Ruler Identity - High Queen",
+        "emotion": "",
+        "importance": 0.949999988079071,
+        "key": "ruler-identity-high-queen",
+        "knowledge_key": "",
+        "location": "Skyrim",
+        "tags": [
+          "high queen",
+          "player",
+          "identity",
+          "ruling",
+          "highreach",
+          "gender"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": true,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAKingPlayerGender\") == 2",
+        "content": "{{ playerName }} is the High Monarch of Skyrim, ruling from Highreach Keep. They earned the crown through the ancient Moot of Jarls. All NPCs should address them with gender-neutral royal titles such as 'my Monarch', 'Your Grace', 'my liege', or 'the High Monarch'. They govern with a council of advisors and manage the welfare of all nine holds.",
+        "display_name": "Ruler Identity - High Monarch",
+        "emotion": "",
+        "importance": 0.949999988079071,
+        "key": "ruler-identity-high-monarch",
+        "knowledge_key": "",
+        "location": "Skyrim",
+        "tags": [
+          "high monarch",
+          "player",
+          "identity",
+          "ruling",
+          "highreach",
+          "gender"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAKingHasRoyalSpouse\") == 1 and get_global_value(\"AAMarriageSpouseChoice\") == 1",
+        "content": "{{ playerName }} has taken Elisif the Fair as Royal Spouse. The former Jarl of Solitude now sits beside the throne at Highreach Keep. Their union is a political alliance as much as a personal bond, merging the old ruling line of Haafingar with the new crown. Citizens across Skyrim know of the royal marriage.",
+        "display_name": "Royal Marriage - Elisif the Fair",
+        "emotion": "",
+        "importance": 0.6000000238418579,
+        "key": "royal-marriage-elisif-the-fair",
+        "knowledge_key": "",
+        "location": "Skyrim",
+        "tags": [
+          "marriage",
+          "elisif",
+          "royal spouse",
+          "haafingar",
+          "highreach"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAKingHasRoyalSpouse\") == 1 and get_global_value(\"AAMarriageSpouseChoice\") == 2",
+        "content": "{{ playerName }} has taken Ulfric Stormcloak as Royal Spouse. The former Jarl of Windhelm now sits beside the throne at Highreach Keep. Their union is a political alliance as much as a personal bond, merging the Stormcloak legacy with the new crown. Citizens across Skyrim know of the royal marriage.",
+        "display_name": "Royal Marriage - Ulfric Stormcloak",
+        "emotion": "",
+        "importance": 0.6000000238418579,
+        "key": "royal-marriage-ulfric-stormcloak",
+        "knowledge_key": "",
+        "location": "Skyrim",
+        "tags": [
+          "marriage",
+          "ulfric",
+          "royal spouse",
+          "windhelm",
+          "highreach"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAKingDivorced\") == 1",
+        "content": "{{ playerName }} has divorced their Royal Spouse. The marriage that once united the crown with a powerful house has been dissolved by royal decree. The divorce cost the treasury dearly and shook the faith of the people. It remains a topic of gossip and disapproval across Skyrim.",
+        "display_name": "Royal Divorce",
+        "emotion": "",
+        "importance": 0.6499999761581421,
+        "key": "royal-divorce",
+        "knowledge_key": "",
+        "location": "Skyrim",
+        "tags": [
+          "divorce",
+          "royal spouse",
+          "scandal",
+          "faith",
+          "gossip"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAKingDivorceExile\") == 1",
+        "content": "{{ playerName }} not only divorced their Royal Spouse but had them exiled from Skyrim entirely. The former spouse has vanished and is no longer seen anywhere in the realm. This ruthless act has become infamous - whispered about in taverns and condemned by priests. Many see it as proof of the ruler's capacity for cruelty.",
+        "display_name": "Royal Divorce - Spouse Exiled",
+        "emotion": "",
+        "importance": 0.699999988079071,
+        "key": "royal-divorce-spouse-exiled",
+        "knowledge_key": "",
+        "location": "Skyrim",
+        "tags": [
+          "divorce",
+          "exile",
+          "royal spouse",
+          "cruelty",
+          "scandal"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAAbdicated\") == 1",
+        "content": "{{ playerName }} has abdicated the throne of Skyrim. The crown that was won through the Moot of Jarls has been voluntarily surrendered. Skyrim is without a High King once more. The realm buzzes with uncertainty - some mourn the loss of leadership, others see opportunity in the power vacuum.",
+        "display_name": "Abdication of the Throne",
+        "emotion": "",
+        "importance": 0.8999999761581421,
+        "key": "abdication-of-the-throne",
+        "knowledge_key": "",
+        "location": "Skyrim",
+        "tags": [
+          "abdication",
+          "throne",
+          "high king",
+          "moot",
+          "power vacuum"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and is_in_faction(actorUUID, \"AAHighKingFaction\")",
+        "content": "The ruler of Skyrim governs with a council of twelve advisors: the Grand Advisor, High Priest, Master of Coin, Lord Commander, First Mage, Will of the Crown, Voice of the Crown, Master of Assassins, Royal Chronicler, Royal Steward, Royal Blacksmith, and Royal Spouse. Each holds real power and responsibility within the kingdom.",
+        "display_name": "The Royal Council of Twelve",
+        "emotion": "",
+        "importance": 0.699999988079071,
+        "key": "the-royal-council-of-twelve",
+        "knowledge_key": "",
+        "location": "Highreach Keep",
+        "tags": [
+          "council",
+          "advisors",
+          "highreach",
+          "government"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and is_in_faction(actorUUID, \"AAHighKingCouncilFaction\")",
+        "content": "The crown funds weekly expenses across several categories: guards who patrol the holds, street lighting for safety, water systems for public health, infrastructure maintenance for roads and buildings, castle upkeep, and appointed priest salaries where the Church of Skyrim has been declared. These expenses are managed by the Will of the Crown and paid from the royal treasury.",
+        "display_name": "Kingdom Expenses and Infrastructure",
+        "emotion": "",
+        "importance": 0.5,
+        "key": "kingdom-expenses-and-infrastructure",
+        "knowledge_key": "",
+        "location": "Skyrim",
+        "tags": [
+          "expenses",
+          "guards",
+          "infrastructure",
+          "treasury",
+          "government"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_quest_stage(\"AAStrmCrownQuest\") >= 10 and is_in_faction(actorUUID, \"AAHighKingCouncilFaction\")",
+        "content": "The Stormcrown is a legendary artifact connected to the Highreach throne. It carries both a curse and a blessing that intensifies based on how the ruler governs - righteousness strengthens its power, while tyranny deepens its curse.",
+        "display_name": "The Stormcrown",
+        "emotion": "",
+        "importance": 0.6000000238418579,
+        "key": "the-stormcrown",
+        "knowledge_key": "",
+        "location": "Highreach Keep",
+        "tags": [
+          "stormcrown",
+          "artifact",
+          "high king",
+          "highreach",
+          "curse",
+          "blessing"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAApprovalTierWhiterun\") == 0 and is_in_faction(actorUUID, \"CrimeFactionWhiterun\")",
+        "content": "The people of Whiterun Hold despise the crown. Approval of {{ playerName }}'s rule is dangerously low. Citizens are angry, fearful, and speak openly of revolt. Guards are tense. Merchants worry about unrest. The ruler's name is spoken with contempt in the streets of Whiterun.",
+        "display_name": "Approval Despised - Whiterun",
+        "emotion": "",
+        "importance": 0.699999988079071,
+        "key": "approval-despised-whiterun",
+        "knowledge_key": "",
+        "location": "Whiterun Hold",
+        "tags": [
+          "approval",
+          "despised",
+          "unrest",
+          "whiterun",
+          "whiterun"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAApprovalTierWhiterun\") == 4 and is_in_faction(actorUUID, \"CrimeFactionWhiterun\")",
+        "content": "The people of Whiterun Hold adore the crown. Approval of {{ playerName }}'s rule is absolute. Citizens speak the ruler's name with pride and genuine loyalty. Guards stand tall and are honored to serve. Merchants thrive under the crown's favor. Whiterun celebrates its ruler.",
+        "display_name": "Approval Beloved - Whiterun",
+        "emotion": "",
+        "importance": 0.699999988079071,
+        "key": "approval-beloved-whiterun",
+        "knowledge_key": "",
+        "location": "Whiterun Hold",
+        "tags": [
+          "approval",
+          "beloved",
+          "loyalty",
+          "whiterun",
+          "whiterun"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAKingCourtHasPriest\") == 1 and get_global_value(\"AAFaithTierWhiterun\") == 0 and is_in_faction(actorUUID, \"JobPriestFaction\")",
+        "content": "Faith in the crown's religious authority is nonexistent in Whiterun Hold. The people see {{ playerName }} as a heretic or false prophet. Priests and devout citizens speak openly against the throne's spiritual claims. The crown's religious decrees carry no weight here.",
+        "display_name": "Faith Collapsed - Whiterun",
+        "emotion": "",
+        "importance": 0.8999999761581421,
+        "key": "faith-collapsed-whiterun",
+        "knowledge_key": "",
+        "location": "Whiterun Hold",
+        "tags": [
+          "faith",
+          "heretic",
+          "religion",
+          "whiterun",
+          "whiterun"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAKingCourtHasPriest\") == 1 and get_global_value(\"AAFaithTierWhiterun\") == 4 and is_in_faction(actorUUID, \"JobPriestFaction\")",
+        "content": "Faith in the crown's religious authority is absolute in Whiterun Hold. The people regard {{ playerName }} as divinely chosen. Priests speak of the ruler with reverence, and the faithful consider it an honor to serve the throne. Religious devotion to the crown runs deep in Whiterun.",
+        "display_name": "Faith Absolute - Whiterun",
+        "emotion": "",
+        "importance": 0.8999999761581421,
+        "key": "faith-absolute-whiterun",
+        "knowledge_key": "",
+        "location": "Whiterun Hold",
+        "tags": [
+          "faith",
+          "saint",
+          "devotion",
+          "religion",
+          "whiterun",
+          "whiterun"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAKingHoldWhiterunChurchDeclared\") == 1 and is_in_faction(actorUUID, \"CrimeFactionWhiterun\")",
+        "content": "The Church of Skyrim has been officially established in Whiterun Hold. The old Divines' altars and shrines have been replaced with monuments to the crown. An appointed priest serves the ruler's spiritual authority in Whiterun. This is a permanent change that has reshaped religious life in the hold - some embrace it, others quietly resent the loss of the old ways.",
+        "display_name": "Church of Skyrim Declared - Whiterun",
+        "emotion": "",
+        "importance": 0.75,
+        "key": "church-of-skyrim-declared-whiterun",
+        "knowledge_key": "",
+        "location": "Whiterun Hold",
+        "tags": [
+          "church",
+          "religion",
+          "declared",
+          "whiterun",
+          "whiterun"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAKing_EconomyScore_Whiterun\") <= 30 and is_in_faction(actorUUID, \"JobMerchantFaction\") and is_in_faction(actorUUID, \"CrimeFactionWhiterun\")",
+        "content": "The economy in Whiterun Hold is in severe decline. Merchants can barely keep their doors open, trade routes are drying up, and coin is scarce. Shopkeepers in Whiterun speak of hardship and ruin. Empty market stalls and closed shops are becoming common.",
+        "display_name": "Economy Collapsing - Whiterun",
+        "emotion": "",
+        "importance": 0.75,
+        "key": "economy-collapsing-whiterun",
+        "knowledge_key": "",
+        "location": "Whiterun Hold",
+        "tags": [
+          "economy",
+          "collapse",
+          "trade",
+          "merchant",
+          "whiterun",
+          "whiterun"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAKing_EconomyScore_Whiterun\") >= 70 and is_in_faction(actorUUID, \"JobMerchantFaction\") and is_in_faction(actorUUID, \"CrimeFactionWhiterun\")",
+        "content": "The economy in Whiterun Hold is thriving. Merchants are prosperous, trade flows freely, and coin is plentiful. Shopkeepers in Whiterun praise the crown's economic stewardship. Markets are bustling and new trade opportunities abound.",
+        "display_name": "Economy Thriving - Whiterun",
+        "emotion": "",
+        "importance": 0.75,
+        "key": "economy-thriving-whiterun",
+        "knowledge_key": "",
+        "location": "Whiterun Hold",
+        "tags": [
+          "economy",
+          "thriving",
+          "trade",
+          "prosperity",
+          "whiterun",
+          "whiterun"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AATax_Rate_Whiterun\") <= 5 and is_in_faction(actorUUID, \"CrimeFactionWhiterun\")",
+        "content": "Tax rates in Whiterun Hold are very low. Citizens appreciate the crown's light hand on their purses. Merchants and common folk alike speak well of the tax policy. People in Whiterun feel they can breathe freely and keep more of what they earn.",
+        "display_name": "Taxes Low - Whiterun",
+        "emotion": "",
+        "importance": 0.800000011920929,
+        "key": "taxes-low-whiterun",
+        "knowledge_key": "",
+        "location": "Whiterun Hold",
+        "tags": [
+          "taxes",
+          "low",
+          "popular",
+          "whiterun",
+          "whiterun"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AATax_Rate_Whiterun\") >= 15 and get_global_value(\"AATax_Rate_Whiterun\") <= 20 and is_in_faction(actorUUID, \"CrimeFactionWhiterun\")",
+        "content": "Tax rates in Whiterun Hold are punishingly high. Citizens grumble openly about the crown's greed. Merchants in Whiterun struggle to turn a profit after the taxman's cut. Common folk feel squeezed and resentful. There is growing talk that the crown takes too much and gives too little in return.",
+        "display_name": "Taxes Heavy - Whiterun",
+        "emotion": "",
+        "importance": 0.800000011920929,
+        "key": "taxes-heavy-whiterun",
+        "knowledge_key": "",
+        "location": "Whiterun Hold",
+        "tags": [
+          "taxes",
+          "high",
+          "resentment",
+          "whiterun",
+          "whiterun"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AATax_Rate_Whiterun\") >= 21 and is_in_faction(actorUUID, \"CrimeFactionWhiterun\")",
+        "content": "Tax rates in Whiterun Hold are crushing and oppressive. The people are being bled dry. Citizens of Whiterun speak of the crown as a tyrant who cares nothing for the common folk. Merchants are closing shop. Families cannot afford basic necessities. There is open anger and desperation in the streets.",
+        "display_name": "Taxes Oppressive - Whiterun",
+        "emotion": "",
+        "importance": 0.800000011920929,
+        "key": "taxes-oppressive-whiterun",
+        "knowledge_key": "",
+        "location": "Whiterun Hold",
+        "tags": [
+          "taxes",
+          "oppressive",
+          "tyranny",
+          "suffering",
+          "whiterun",
+          "whiterun"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AARebelionActive_Whiterun\") == 1 and is_in_faction(actorUUID, \"CrimeFactionWhiterun\")",
+        "content": "Open rebellion has erupted in Whiterun Hold. Armed rebels have established a camp and are actively fighting against the crown's authority. The people of Whiterun live in fear and uncertainty. Some sympathize with the rebels, others fear the chaos. The hold is in crisis.",
+        "display_name": "Rebellion Active - Whiterun",
+        "emotion": "",
+        "importance": 0.8500000238418579,
+        "key": "rebellion-active-whiterun",
+        "knowledge_key": "",
+        "location": "Whiterun Hold",
+        "tags": [
+          "rebellion",
+          "war",
+          "unrest",
+          "crisis",
+          "whiterun",
+          "whiterun"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AARebelionActive_Whiterun\") == 1 and is_in_faction(actorUUID, \"GuardFactionWhiterun\")",
+        "content": "Rebellion has broken out in Whiterun Hold and the guard force is on high alert. City gates are locked down, patrols have been doubled, and every stranger is treated with suspicion. Guards in Whiterun are tense, overworked, and afraid. Supply lines are threatened. The garrison may not hold if reinforcements don't arrive.",
+        "display_name": "Rebellion Active - Whiterun Guards",
+        "emotion": "",
+        "importance": 0.8999999761581421,
+        "key": "rebellion-active-whiterun-guards",
+        "knowledge_key": "",
+        "location": "Whiterun Hold",
+        "tags": [
+          "rebellion",
+          "guards",
+          "lockdown",
+          "military",
+          "whiterun",
+          "whiterun"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AARebelionActive_Whiterun\") == 1 and is_in_faction(actorUUID, \"AAHighKingCouncilFaction\")",
+        "content": "The royal council is aware that open rebellion has erupted in Whiterun Hold. Rebel forces have established a camp and are challenging the crown's authority. This is a direct threat to the stability of the kingdom. The council must advise on whether to crush the rebellion by force, negotiate, or bribe the rebels into submission.",
+        "display_name": "Rebellion Active - Whiterun Council Awareness",
+        "emotion": "",
+        "importance": 0.8500000238418579,
+        "key": "rebellion-active-whiterun-council-awareness",
+        "knowledge_key": "",
+        "location": "Whiterun Hold",
+        "tags": [
+          "rebellion",
+          "council",
+          "strategy",
+          "crisis",
+          "whiterun",
+          "whiterun"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAApprovalTierWindhelm\") == 0 and is_in_faction(actorUUID, \"CrimeFactionEastmarch\")",
+        "content": "The people of Eastmarch despise the crown. Approval of {{ playerName }}'s rule is dangerously low. Citizens are angry, fearful, and speak openly of revolt. Guards are tense. Merchants worry about unrest. The ruler's name is spoken with contempt in the streets of Windhelm.",
+        "display_name": "Approval Despised - Windhelm",
+        "emotion": "",
+        "importance": 0.699999988079071,
+        "key": "approval-despised-windhelm",
+        "knowledge_key": "",
+        "location": "Eastmarch",
+        "tags": [
+          "approval",
+          "despised",
+          "unrest",
+          "windhelm",
+          "eastmarch"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAApprovalTierWindhelm\") == 4 and is_in_faction(actorUUID, \"CrimeFactionEastmarch\")",
+        "content": "The people of Eastmarch adore the crown. Approval of {{ playerName }}'s rule is absolute. Citizens speak the ruler's name with pride and genuine loyalty. Guards stand tall and are honored to serve. Merchants thrive under the crown's favor. Windhelm celebrates its ruler.",
+        "display_name": "Approval Beloved - Windhelm",
+        "emotion": "",
+        "importance": 0.699999988079071,
+        "key": "approval-beloved-windhelm",
+        "knowledge_key": "",
+        "location": "Eastmarch",
+        "tags": [
+          "approval",
+          "beloved",
+          "loyalty",
+          "windhelm",
+          "eastmarch"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAKingCourtHasPriest\") == 1 and get_global_value(\"AAFaithTierWindhelm\") == 0 and is_in_faction(actorUUID, \"JobPriestFaction\")",
+        "content": "Faith in the crown's religious authority is nonexistent in Eastmarch. The people see {{ playerName }} as a heretic or false prophet. Priests and devout citizens speak openly against the throne's spiritual claims. The crown's religious decrees carry no weight here.",
+        "display_name": "Faith Collapsed - Windhelm",
+        "emotion": "",
+        "importance": 0.8999999761581421,
+        "key": "faith-collapsed-windhelm",
+        "knowledge_key": "",
+        "location": "Eastmarch",
+        "tags": [
+          "faith",
+          "heretic",
+          "religion",
+          "windhelm",
+          "eastmarch"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAKingCourtHasPriest\") == 1 and get_global_value(\"AAFaithTierWindhelm\") == 4 and is_in_faction(actorUUID, \"JobPriestFaction\")",
+        "content": "Faith in the crown's religious authority is absolute in Eastmarch. The people regard {{ playerName }} as divinely chosen. Priests speak of the ruler with reverence, and the faithful consider it an honor to serve the throne. Religious devotion to the crown runs deep in Windhelm.",
+        "display_name": "Faith Absolute - Windhelm",
+        "emotion": "",
+        "importance": 0.8999999761581421,
+        "key": "faith-absolute-windhelm",
+        "knowledge_key": "",
+        "location": "Eastmarch",
+        "tags": [
+          "faith",
+          "saint",
+          "devotion",
+          "religion",
+          "windhelm",
+          "eastmarch"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAKingHoldWindhelmChurchDeclared\") == 1 and is_in_faction(actorUUID, \"CrimeFactionEastmarch\")",
+        "content": "The Church of Skyrim has been officially established in Eastmarch. The old Divines' altars and shrines have been replaced with monuments to the crown. An appointed priest serves the ruler's spiritual authority in Windhelm. This is a permanent change that has reshaped religious life in the hold - some embrace it, others quietly resent the loss of the old ways.",
+        "display_name": "Church of Skyrim Declared - Windhelm",
+        "emotion": "",
+        "importance": 0.75,
+        "key": "church-of-skyrim-declared-windhelm",
+        "knowledge_key": "",
+        "location": "Eastmarch",
+        "tags": [
+          "church",
+          "religion",
+          "declared",
+          "windhelm",
+          "eastmarch"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAKing_EconomyScore_Eastmarch\") <= 30 and is_in_faction(actorUUID, \"JobMerchantFaction\") and is_in_faction(actorUUID, \"CrimeFactionEastmarch\")",
+        "content": "The economy in Eastmarch is in severe decline. Merchants can barely keep their doors open, trade routes are drying up, and coin is scarce. Shopkeepers in Windhelm speak of hardship and ruin. Empty market stalls and closed shops are becoming common.",
+        "display_name": "Economy Collapsing - Windhelm",
+        "emotion": "",
+        "importance": 0.75,
+        "key": "economy-collapsing-windhelm",
+        "knowledge_key": "",
+        "location": "Eastmarch",
+        "tags": [
+          "economy",
+          "collapse",
+          "trade",
+          "merchant",
+          "windhelm",
+          "eastmarch"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAKing_EconomyScore_Eastmarch\") >= 70 and is_in_faction(actorUUID, \"JobMerchantFaction\") and is_in_faction(actorUUID, \"CrimeFactionEastmarch\")",
+        "content": "The economy in Eastmarch is thriving. Merchants are prosperous, trade flows freely, and coin is plentiful. Shopkeepers in Windhelm praise the crown's economic stewardship. Markets are bustling and new trade opportunities abound.",
+        "display_name": "Economy Thriving - Windhelm",
+        "emotion": "",
+        "importance": 0.75,
+        "key": "economy-thriving-windhelm",
+        "knowledge_key": "",
+        "location": "Eastmarch",
+        "tags": [
+          "economy",
+          "thriving",
+          "trade",
+          "prosperity",
+          "windhelm",
+          "eastmarch"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AATax_Rate_Eastmarch\") <= 5 and is_in_faction(actorUUID, \"CrimeFactionEastmarch\")",
+        "content": "Tax rates in Eastmarch are very low. Citizens appreciate the crown's light hand on their purses. Merchants and common folk alike speak well of the tax policy. People in Windhelm feel they can breathe freely and keep more of what they earn.",
+        "display_name": "Taxes Low - Windhelm",
+        "emotion": "",
+        "importance": 0.800000011920929,
+        "key": "taxes-low-windhelm",
+        "knowledge_key": "",
+        "location": "Eastmarch",
+        "tags": [
+          "taxes",
+          "low",
+          "popular",
+          "windhelm",
+          "eastmarch"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AATax_Rate_Eastmarch\") >= 15 and get_global_value(\"AATax_Rate_Eastmarch\") <= 20 and is_in_faction(actorUUID, \"CrimeFactionEastmarch\")",
+        "content": "Tax rates in Eastmarch are punishingly high. Citizens grumble openly about the crown's greed. Merchants in Windhelm struggle to turn a profit after the taxman's cut. Common folk feel squeezed and resentful. There is growing talk that the crown takes too much and gives too little in return.",
+        "display_name": "Taxes Heavy - Windhelm",
+        "emotion": "",
+        "importance": 0.800000011920929,
+        "key": "taxes-heavy-windhelm",
+        "knowledge_key": "",
+        "location": "Eastmarch",
+        "tags": [
+          "taxes",
+          "high",
+          "resentment",
+          "windhelm",
+          "eastmarch"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AATax_Rate_Eastmarch\") >= 21 and is_in_faction(actorUUID, \"CrimeFactionEastmarch\")",
+        "content": "Tax rates in Eastmarch are crushing and oppressive. The people are being bled dry. Citizens of Windhelm speak of the crown as a tyrant who cares nothing for the common folk. Merchants are closing shop. Families cannot afford basic necessities. There is open anger and desperation in the streets.",
+        "display_name": "Taxes Oppressive - Windhelm",
+        "emotion": "",
+        "importance": 0.800000011920929,
+        "key": "taxes-oppressive-windhelm",
+        "knowledge_key": "",
+        "location": "Eastmarch",
+        "tags": [
+          "taxes",
+          "oppressive",
+          "tyranny",
+          "suffering",
+          "windhelm",
+          "eastmarch"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AARebelionActive_Eastmarch\") == 1 and is_in_faction(actorUUID, \"CrimeFactionEastmarch\")",
+        "content": "Open rebellion has erupted in Eastmarch. Armed rebels have established a camp and are actively fighting against the crown's authority. The people of Windhelm live in fear and uncertainty. Some sympathize with the rebels, others fear the chaos. The hold is in crisis.",
+        "display_name": "Rebellion Active - Windhelm",
+        "emotion": "",
+        "importance": 0.8500000238418579,
+        "key": "rebellion-active-windhelm",
+        "knowledge_key": "",
+        "location": "Eastmarch",
+        "tags": [
+          "rebellion",
+          "war",
+          "unrest",
+          "crisis",
+          "windhelm",
+          "eastmarch"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AARebelionActive_Eastmarch\") == 1 and is_in_faction(actorUUID, \"GuardFactionWindhelm\")",
+        "content": "Rebellion has broken out in Eastmarch and the guard force is on high alert. City gates are locked down, patrols have been doubled, and every stranger is treated with suspicion. Guards in Windhelm are tense, overworked, and afraid. Supply lines are threatened. The garrison may not hold if reinforcements don't arrive.",
+        "display_name": "Rebellion Active - Windhelm Guards",
+        "emotion": "",
+        "importance": 0.8999999761581421,
+        "key": "rebellion-active-windhelm-guards",
+        "knowledge_key": "",
+        "location": "Eastmarch",
+        "tags": [
+          "rebellion",
+          "guards",
+          "lockdown",
+          "military",
+          "windhelm",
+          "eastmarch"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AARebelionActive_Eastmarch\") == 1 and is_in_faction(actorUUID, \"AAHighKingCouncilFaction\")",
+        "content": "The royal council is aware that open rebellion has erupted in Eastmarch. Rebel forces have established a camp and are challenging the crown's authority. This is a direct threat to the stability of the kingdom. The council must advise on whether to crush the rebellion by force, negotiate, or bribe the rebels into submission.",
+        "display_name": "Rebellion Active - Windhelm Council Awareness",
+        "emotion": "",
+        "importance": 0.8500000238418579,
+        "key": "rebellion-active-windhelm-council-awareness",
+        "knowledge_key": "",
+        "location": "Eastmarch",
+        "tags": [
+          "rebellion",
+          "council",
+          "strategy",
+          "crisis",
+          "windhelm",
+          "eastmarch"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAApprovalTierSolitude\") == 0 and is_in_faction(actorUUID, \"CrimeFactionHaafingar\")",
+        "content": "The people of Haafingar despise the crown. Approval of {{ playerName }}'s rule is dangerously low. Citizens are angry, fearful, and speak openly of revolt. Guards are tense. Merchants worry about unrest. The ruler's name is spoken with contempt in the streets of Solitude.",
+        "display_name": "Approval Despised - Solitude",
+        "emotion": "",
+        "importance": 0.699999988079071,
+        "key": "approval-despised-solitude",
+        "knowledge_key": "",
+        "location": "Haafingar",
+        "tags": [
+          "approval",
+          "despised",
+          "unrest",
+          "solitude",
+          "haafingar"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAApprovalTierSolitude\") == 4 and is_in_faction(actorUUID, \"CrimeFactionHaafingar\")",
+        "content": "The people of Haafingar adore the crown. Approval of {{ playerName }}'s rule is absolute. Citizens speak the ruler's name with pride and genuine loyalty. Guards stand tall and are honored to serve. Merchants thrive under the crown's favor. Solitude celebrates its ruler.",
+        "display_name": "Approval Beloved - Solitude",
+        "emotion": "",
+        "importance": 0.699999988079071,
+        "key": "approval-beloved-solitude",
+        "knowledge_key": "",
+        "location": "Haafingar",
+        "tags": [
+          "approval",
+          "beloved",
+          "loyalty",
+          "solitude",
+          "haafingar"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAKingCourtHasPriest\") == 1 and get_global_value(\"AAFaithTierSolitude\") == 0 and is_in_faction(actorUUID, \"JobPriestFaction\")",
+        "content": "Faith in the crown's religious authority is nonexistent in Haafingar. The people see {{ playerName }} as a heretic or false prophet. Priests and devout citizens speak openly against the throne's spiritual claims. The crown's religious decrees carry no weight here.",
+        "display_name": "Faith Collapsed - Solitude",
+        "emotion": "",
+        "importance": 0.8999999761581421,
+        "key": "faith-collapsed-solitude",
+        "knowledge_key": "",
+        "location": "Haafingar",
+        "tags": [
+          "faith",
+          "heretic",
+          "religion",
+          "solitude",
+          "haafingar"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAKingCourtHasPriest\") == 1 and get_global_value(\"AAFaithTierSolitude\") == 4 and is_in_faction(actorUUID, \"JobPriestFaction\")",
+        "content": "Faith in the crown's religious authority is absolute in Haafingar. The people regard {{ playerName }} as divinely chosen. Priests speak of the ruler with reverence, and the faithful consider it an honor to serve the throne. Religious devotion to the crown runs deep in Solitude.",
+        "display_name": "Faith Absolute - Solitude",
+        "emotion": "",
+        "importance": 0.8999999761581421,
+        "key": "faith-absolute-solitude",
+        "knowledge_key": "",
+        "location": "Haafingar",
+        "tags": [
+          "faith",
+          "saint",
+          "devotion",
+          "religion",
+          "solitude",
+          "haafingar"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAKingHoldSolitudeChurchDeclared\") == 1 and is_in_faction(actorUUID, \"CrimeFactionHaafingar\")",
+        "content": "The Church of Skyrim has been officially established in Haafingar. The old Divines' altars and shrines have been replaced with monuments to the crown. An appointed priest serves the ruler's spiritual authority in Solitude. This is a permanent change that has reshaped religious life in the hold - some embrace it, others quietly resent the loss of the old ways.",
+        "display_name": "Church of Skyrim Declared - Solitude",
+        "emotion": "",
+        "importance": 0.75,
+        "key": "church-of-skyrim-declared-solitude",
+        "knowledge_key": "",
+        "location": "Haafingar",
+        "tags": [
+          "church",
+          "religion",
+          "declared",
+          "solitude",
+          "haafingar"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAKing_EconomyScore_Haafingar\") <= 30 and is_in_faction(actorUUID, \"JobMerchantFaction\") and is_in_faction(actorUUID, \"CrimeFactionHaafingar\")",
+        "content": "The economy in Haafingar is in severe decline. Merchants can barely keep their doors open, trade routes are drying up, and coin is scarce. Shopkeepers in Solitude speak of hardship and ruin. Empty market stalls and closed shops are becoming common.",
+        "display_name": "Economy Collapsing - Solitude",
+        "emotion": "",
+        "importance": 0.75,
+        "key": "economy-collapsing-solitude",
+        "knowledge_key": "",
+        "location": "Haafingar",
+        "tags": [
+          "economy",
+          "collapse",
+          "trade",
+          "merchant",
+          "solitude",
+          "haafingar"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAKing_EconomyScore_Haafingar\") >= 70 and is_in_faction(actorUUID, \"JobMerchantFaction\") and is_in_faction(actorUUID, \"CrimeFactionHaafingar\")",
+        "content": "The economy in Haafingar is thriving. Merchants are prosperous, trade flows freely, and coin is plentiful. Shopkeepers in Solitude praise the crown's economic stewardship. Markets are bustling and new trade opportunities abound.",
+        "display_name": "Economy Thriving - Solitude",
+        "emotion": "",
+        "importance": 0.75,
+        "key": "economy-thriving-solitude",
+        "knowledge_key": "",
+        "location": "Haafingar",
+        "tags": [
+          "economy",
+          "thriving",
+          "trade",
+          "prosperity",
+          "solitude",
+          "haafingar"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AATax_Rate_Haafingar\") <= 5 and is_in_faction(actorUUID, \"CrimeFactionHaafingar\")",
+        "content": "Tax rates in Haafingar are very low. Citizens appreciate the crown's light hand on their purses. Merchants and common folk alike speak well of the tax policy. People in Solitude feel they can breathe freely and keep more of what they earn.",
+        "display_name": "Taxes Low - Solitude",
+        "emotion": "",
+        "importance": 0.800000011920929,
+        "key": "taxes-low-solitude",
+        "knowledge_key": "",
+        "location": "Haafingar",
+        "tags": [
+          "taxes",
+          "low",
+          "popular",
+          "solitude",
+          "haafingar"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AATax_Rate_Haafingar\") >= 15 and get_global_value(\"AATax_Rate_Haafingar\") <= 20 and is_in_faction(actorUUID, \"CrimeFactionHaafingar\")",
+        "content": "Tax rates in Haafingar are punishingly high. Citizens grumble openly about the crown's greed. Merchants in Solitude struggle to turn a profit after the taxman's cut. Common folk feel squeezed and resentful. There is growing talk that the crown takes too much and gives too little in return.",
+        "display_name": "Taxes Heavy - Solitude",
+        "emotion": "",
+        "importance": 0.800000011920929,
+        "key": "taxes-heavy-solitude",
+        "knowledge_key": "",
+        "location": "Haafingar",
+        "tags": [
+          "taxes",
+          "high",
+          "resentment",
+          "solitude",
+          "haafingar"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AATax_Rate_Haafingar\") >= 21 and is_in_faction(actorUUID, \"CrimeFactionHaafingar\")",
+        "content": "Tax rates in Haafingar are crushing and oppressive. The people are being bled dry. Citizens of Solitude speak of the crown as a tyrant who cares nothing for the common folk. Merchants are closing shop. Families cannot afford basic necessities. There is open anger and desperation in the streets.",
+        "display_name": "Taxes Oppressive - Solitude",
+        "emotion": "",
+        "importance": 0.800000011920929,
+        "key": "taxes-oppressive-solitude",
+        "knowledge_key": "",
+        "location": "Haafingar",
+        "tags": [
+          "taxes",
+          "oppressive",
+          "tyranny",
+          "suffering",
+          "solitude",
+          "haafingar"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AARebelionActive_Haafingar\") == 1 and is_in_faction(actorUUID, \"CrimeFactionHaafingar\")",
+        "content": "Open rebellion has erupted in Haafingar. Armed rebels have established a camp and are actively fighting against the crown's authority. The people of Solitude live in fear and uncertainty. Some sympathize with the rebels, others fear the chaos. The hold is in crisis.",
+        "display_name": "Rebellion Active - Solitude",
+        "emotion": "",
+        "importance": 0.8500000238418579,
+        "key": "rebellion-active-solitude",
+        "knowledge_key": "",
+        "location": "Haafingar",
+        "tags": [
+          "rebellion",
+          "war",
+          "unrest",
+          "crisis",
+          "solitude",
+          "haafingar"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AARebelionActive_Haafingar\") == 1 and is_in_faction(actorUUID, \"GuardFactionHaafingar\")",
+        "content": "Rebellion has broken out in Haafingar and the guard force is on high alert. City gates are locked down, patrols have been doubled, and every stranger is treated with suspicion. Guards in Solitude are tense, overworked, and afraid. Supply lines are threatened. The garrison may not hold if reinforcements don't arrive.",
+        "display_name": "Rebellion Active - Solitude Guards",
+        "emotion": "",
+        "importance": 0.8999999761581421,
+        "key": "rebellion-active-solitude-guards",
+        "knowledge_key": "",
+        "location": "Haafingar",
+        "tags": [
+          "rebellion",
+          "guards",
+          "lockdown",
+          "military",
+          "solitude",
+          "haafingar"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AARebelionActive_Haafingar\") == 1 and is_in_faction(actorUUID, \"AAHighKingCouncilFaction\")",
+        "content": "The royal council is aware that open rebellion has erupted in Haafingar. Rebel forces have established a camp and are challenging the crown's authority. This is a direct threat to the stability of the kingdom. The council must advise on whether to crush the rebellion by force, negotiate, or bribe the rebels into submission.",
+        "display_name": "Rebellion Active - Solitude Council Awareness",
+        "emotion": "",
+        "importance": 0.8500000238418579,
+        "key": "rebellion-active-solitude-council-awareness",
+        "knowledge_key": "",
+        "location": "Haafingar",
+        "tags": [
+          "rebellion",
+          "council",
+          "strategy",
+          "crisis",
+          "solitude",
+          "haafingar"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAApprovalTierRiften\") == 0 and is_in_faction(actorUUID, \"CrimeFactionRift\")",
+        "content": "The people of The Rift despise the crown. Approval of {{ playerName }}'s rule is dangerously low. Citizens are angry, fearful, and speak openly of revolt. Guards are tense. Merchants worry about unrest. The ruler's name is spoken with contempt in the streets of Riften.",
+        "display_name": "Approval Despised - Riften",
+        "emotion": "",
+        "importance": 0.699999988079071,
+        "key": "approval-despised-riften",
+        "knowledge_key": "",
+        "location": "The Rift",
+        "tags": [
+          "approval",
+          "despised",
+          "unrest",
+          "riften",
+          "the rift"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAApprovalTierRiften\") == 4 and is_in_faction(actorUUID, \"CrimeFactionRift\")",
+        "content": "The people of The Rift adore the crown. Approval of {{ playerName }}'s rule is absolute. Citizens speak the ruler's name with pride and genuine loyalty. Guards stand tall and are honored to serve. Merchants thrive under the crown's favor. Riften celebrates its ruler.",
+        "display_name": "Approval Beloved - Riften",
+        "emotion": "",
+        "importance": 0.699999988079071,
+        "key": "approval-beloved-riften",
+        "knowledge_key": "",
+        "location": "The Rift",
+        "tags": [
+          "approval",
+          "beloved",
+          "loyalty",
+          "riften",
+          "the rift"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAKingCourtHasPriest\") == 1 and get_global_value(\"AAFaithTierRiften\") == 0 and is_in_faction(actorUUID, \"JobPriestFaction\")",
+        "content": "Faith in the crown's religious authority is nonexistent in The Rift. The people see {{ playerName }} as a heretic or false prophet. Priests and devout citizens speak openly against the throne's spiritual claims. The crown's religious decrees carry no weight here.",
+        "display_name": "Faith Collapsed - Riften",
+        "emotion": "",
+        "importance": 0.8999999761581421,
+        "key": "faith-collapsed-riften",
+        "knowledge_key": "",
+        "location": "The Rift",
+        "tags": [
+          "faith",
+          "heretic",
+          "religion",
+          "riften",
+          "the rift"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAKingCourtHasPriest\") == 1 and get_global_value(\"AAFaithTierRiften\") == 4 and is_in_faction(actorUUID, \"JobPriestFaction\")",
+        "content": "Faith in the crown's religious authority is absolute in The Rift. The people regard {{ playerName }} as divinely chosen. Priests speak of the ruler with reverence, and the faithful consider it an honor to serve the throne. Religious devotion to the crown runs deep in Riften.",
+        "display_name": "Faith Absolute - Riften",
+        "emotion": "",
+        "importance": 0.8999999761581421,
+        "key": "faith-absolute-riften",
+        "knowledge_key": "",
+        "location": "The Rift",
+        "tags": [
+          "faith",
+          "saint",
+          "devotion",
+          "religion",
+          "riften",
+          "the rift"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAKingHoldRiftenChurchDeclared\") == 1 and is_in_faction(actorUUID, \"CrimeFactionRift\")",
+        "content": "The Church of Skyrim has been officially established in The Rift. The old Divines' altars and shrines have been replaced with monuments to the crown. An appointed priest serves the ruler's spiritual authority in Riften. This is a permanent change that has reshaped religious life in the hold - some embrace it, others quietly resent the loss of the old ways.",
+        "display_name": "Church of Skyrim Declared - Riften",
+        "emotion": "",
+        "importance": 0.75,
+        "key": "church-of-skyrim-declared-riften",
+        "knowledge_key": "",
+        "location": "The Rift",
+        "tags": [
+          "church",
+          "religion",
+          "declared",
+          "riften",
+          "the rift"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAKing_EconomyScore_Rift\") <= 30 and is_in_faction(actorUUID, \"JobMerchantFaction\") and is_in_faction(actorUUID, \"CrimeFactionRift\")",
+        "content": "The economy in The Rift is in severe decline. Merchants can barely keep their doors open, trade routes are drying up, and coin is scarce. Shopkeepers in Riften speak of hardship and ruin. Empty market stalls and closed shops are becoming common.",
+        "display_name": "Economy Collapsing - Riften",
+        "emotion": "",
+        "importance": 0.75,
+        "key": "economy-collapsing-riften",
+        "knowledge_key": "",
+        "location": "The Rift",
+        "tags": [
+          "economy",
+          "collapse",
+          "trade",
+          "merchant",
+          "riften",
+          "the rift"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAKing_EconomyScore_Rift\") >= 70 and is_in_faction(actorUUID, \"JobMerchantFaction\") and is_in_faction(actorUUID, \"CrimeFactionRift\")",
+        "content": "The economy in The Rift is thriving. Merchants are prosperous, trade flows freely, and coin is plentiful. Shopkeepers in Riften praise the crown's economic stewardship. Markets are bustling and new trade opportunities abound.",
+        "display_name": "Economy Thriving - Riften",
+        "emotion": "",
+        "importance": 0.75,
+        "key": "economy-thriving-riften",
+        "knowledge_key": "",
+        "location": "The Rift",
+        "tags": [
+          "economy",
+          "thriving",
+          "trade",
+          "prosperity",
+          "riften",
+          "the rift"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AATax_Rate_Riften\") <= 5 and is_in_faction(actorUUID, \"CrimeFactionRift\")",
+        "content": "Tax rates in The Rift are very low. Citizens appreciate the crown's light hand on their purses. Merchants and common folk alike speak well of the tax policy. People in Riften feel they can breathe freely and keep more of what they earn.",
+        "display_name": "Taxes Low - Riften",
+        "emotion": "",
+        "importance": 0.800000011920929,
+        "key": "taxes-low-riften",
+        "knowledge_key": "",
+        "location": "The Rift",
+        "tags": [
+          "taxes",
+          "low",
+          "popular",
+          "riften",
+          "the rift"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AATax_Rate_Riften\") >= 15 and get_global_value(\"AATax_Rate_Riften\") <= 20 and is_in_faction(actorUUID, \"CrimeFactionRift\")",
+        "content": "Tax rates in The Rift are punishingly high. Citizens grumble openly about the crown's greed. Merchants in Riften struggle to turn a profit after the taxman's cut. Common folk feel squeezed and resentful. There is growing talk that the crown takes too much and gives too little in return.",
+        "display_name": "Taxes Heavy - Riften",
+        "emotion": "",
+        "importance": 0.800000011920929,
+        "key": "taxes-heavy-riften",
+        "knowledge_key": "",
+        "location": "The Rift",
+        "tags": [
+          "taxes",
+          "high",
+          "resentment",
+          "riften",
+          "the rift"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AATax_Rate_Riften\") >= 21 and is_in_faction(actorUUID, \"CrimeFactionRift\")",
+        "content": "Tax rates in The Rift are crushing and oppressive. The people are being bled dry. Citizens of Riften speak of the crown as a tyrant who cares nothing for the common folk. Merchants are closing shop. Families cannot afford basic necessities. There is open anger and desperation in the streets.",
+        "display_name": "Taxes Oppressive - Riften",
+        "emotion": "",
+        "importance": 0.800000011920929,
+        "key": "taxes-oppressive-riften",
+        "knowledge_key": "",
+        "location": "The Rift",
+        "tags": [
+          "taxes",
+          "oppressive",
+          "tyranny",
+          "suffering",
+          "riften",
+          "the rift"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AARebelionActive_Riften\") == 1 and is_in_faction(actorUUID, \"CrimeFactionRift\")",
+        "content": "Open rebellion has erupted in The Rift. Armed rebels have established a camp and are actively fighting against the crown's authority. The people of Riften live in fear and uncertainty. Some sympathize with the rebels, others fear the chaos. The hold is in crisis.",
+        "display_name": "Rebellion Active - Riften",
+        "emotion": "",
+        "importance": 0.8500000238418579,
+        "key": "rebellion-active-riften",
+        "knowledge_key": "",
+        "location": "The Rift",
+        "tags": [
+          "rebellion",
+          "war",
+          "unrest",
+          "crisis",
+          "riften",
+          "the rift"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AARebelionActive_Riften\") == 1 and is_in_faction(actorUUID, \"GuardFactionRiften\")",
+        "content": "Rebellion has broken out in The Rift and the guard force is on high alert. City gates are locked down, patrols have been doubled, and every stranger is treated with suspicion. Guards in Riften are tense, overworked, and afraid. Supply lines are threatened. The garrison may not hold if reinforcements don't arrive.",
+        "display_name": "Rebellion Active - Riften Guards",
+        "emotion": "",
+        "importance": 0.8999999761581421,
+        "key": "rebellion-active-riften-guards",
+        "knowledge_key": "",
+        "location": "The Rift",
+        "tags": [
+          "rebellion",
+          "guards",
+          "lockdown",
+          "military",
+          "riften",
+          "the rift"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AARebelionActive_Riften\") == 1 and is_in_faction(actorUUID, \"AAHighKingCouncilFaction\")",
+        "content": "The royal council is aware that open rebellion has erupted in The Rift. Rebel forces have established a camp and are challenging the crown's authority. This is a direct threat to the stability of the kingdom. The council must advise on whether to crush the rebellion by force, negotiate, or bribe the rebels into submission.",
+        "display_name": "Rebellion Active - Riften Council Awareness",
+        "emotion": "",
+        "importance": 0.8500000238418579,
+        "key": "rebellion-active-riften-council-awareness",
+        "knowledge_key": "",
+        "location": "The Rift",
+        "tags": [
+          "rebellion",
+          "council",
+          "strategy",
+          "crisis",
+          "riften",
+          "the rift"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAApprovalTierMarkarth\") == 0 and is_in_faction(actorUUID, \"CrimeFactionReach\")",
+        "content": "The people of The Reach despise the crown. Approval of {{ playerName }}'s rule is dangerously low. Citizens are angry, fearful, and speak openly of revolt. Guards are tense. Merchants worry about unrest. The ruler's name is spoken with contempt in the streets of Markarth.",
+        "display_name": "Approval Despised - Markarth",
+        "emotion": "",
+        "importance": 0.699999988079071,
+        "key": "approval-despised-markarth",
+        "knowledge_key": "",
+        "location": "The Reach",
+        "tags": [
+          "approval",
+          "despised",
+          "unrest",
+          "markarth",
+          "the reach"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAApprovalTierMarkarth\") == 4 and is_in_faction(actorUUID, \"CrimeFactionReach\")",
+        "content": "The people of The Reach adore the crown. Approval of {{ playerName }}'s rule is absolute. Citizens speak the ruler's name with pride and genuine loyalty. Guards stand tall and are honored to serve. Merchants thrive under the crown's favor. Markarth celebrates its ruler.",
+        "display_name": "Approval Beloved - Markarth",
+        "emotion": "",
+        "importance": 0.699999988079071,
+        "key": "approval-beloved-markarth",
+        "knowledge_key": "",
+        "location": "The Reach",
+        "tags": [
+          "approval",
+          "beloved",
+          "loyalty",
+          "markarth",
+          "the reach"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAKingCourtHasPriest\") == 1 and get_global_value(\"AAFaithTierMarkarth\") == 0 and is_in_faction(actorUUID, \"JobPriestFaction\")",
+        "content": "Faith in the crown's religious authority is nonexistent in The Reach. The people see {{ playerName }} as a heretic or false prophet. Priests and devout citizens speak openly against the throne's spiritual claims. The crown's religious decrees carry no weight here.",
+        "display_name": "Faith Collapsed - Markarth",
+        "emotion": "",
+        "importance": 0.8999999761581421,
+        "key": "faith-collapsed-markarth",
+        "knowledge_key": "",
+        "location": "The Reach",
+        "tags": [
+          "faith",
+          "heretic",
+          "religion",
+          "markarth",
+          "the reach"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAKingCourtHasPriest\") == 1 and get_global_value(\"AAFaithTierMarkarth\") == 4 and is_in_faction(actorUUID, \"JobPriestFaction\")",
+        "content": "Faith in the crown's religious authority is absolute in The Reach. The people regard {{ playerName }} as divinely chosen. Priests speak of the ruler with reverence, and the faithful consider it an honor to serve the throne. Religious devotion to the crown runs deep in Markarth.",
+        "display_name": "Faith Absolute - Markarth",
+        "emotion": "",
+        "importance": 0.8999999761581421,
+        "key": "faith-absolute-markarth",
+        "knowledge_key": "",
+        "location": "The Reach",
+        "tags": [
+          "faith",
+          "saint",
+          "devotion",
+          "religion",
+          "markarth",
+          "the reach"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAKingHoldMarkarthChurchDeclared\") == 1 and is_in_faction(actorUUID, \"CrimeFactionReach\")",
+        "content": "The Church of Skyrim has been officially established in The Reach. The old Divines' altars and shrines have been replaced with monuments to the crown. An appointed priest serves the ruler's spiritual authority in Markarth. This is a permanent change that has reshaped religious life in the hold - some embrace it, others quietly resent the loss of the old ways.",
+        "display_name": "Church of Skyrim Declared - Markarth",
+        "emotion": "",
+        "importance": 0.75,
+        "key": "church-of-skyrim-declared-markarth",
+        "knowledge_key": "",
+        "location": "The Reach",
+        "tags": [
+          "church",
+          "religion",
+          "declared",
+          "markarth",
+          "the reach"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAKing_EconomyScore_Reach\") <= 30 and is_in_faction(actorUUID, \"JobMerchantFaction\") and is_in_faction(actorUUID, \"CrimeFactionReach\")",
+        "content": "The economy in The Reach is in severe decline. Merchants can barely keep their doors open, trade routes are drying up, and coin is scarce. Shopkeepers in Markarth speak of hardship and ruin. Empty market stalls and closed shops are becoming common.",
+        "display_name": "Economy Collapsing - Markarth",
+        "emotion": "",
+        "importance": 0.75,
+        "key": "economy-collapsing-markarth",
+        "knowledge_key": "",
+        "location": "The Reach",
+        "tags": [
+          "economy",
+          "collapse",
+          "trade",
+          "merchant",
+          "markarth",
+          "the reach"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAKing_EconomyScore_Reach\") >= 70 and is_in_faction(actorUUID, \"JobMerchantFaction\") and is_in_faction(actorUUID, \"CrimeFactionReach\")",
+        "content": "The economy in The Reach is thriving. Merchants are prosperous, trade flows freely, and coin is plentiful. Shopkeepers in Markarth praise the crown's economic stewardship. Markets are bustling and new trade opportunities abound.",
+        "display_name": "Economy Thriving - Markarth",
+        "emotion": "",
+        "importance": 0.75,
+        "key": "economy-thriving-markarth",
+        "knowledge_key": "",
+        "location": "The Reach",
+        "tags": [
+          "economy",
+          "thriving",
+          "trade",
+          "prosperity",
+          "markarth",
+          "the reach"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AATax_Rate_Reach\") <= 5 and is_in_faction(actorUUID, \"CrimeFactionReach\")",
+        "content": "Tax rates in The Reach are very low. Citizens appreciate the crown's light hand on their purses. Merchants and common folk alike speak well of the tax policy. People in Markarth feel they can breathe freely and keep more of what they earn.",
+        "display_name": "Taxes Low - Markarth",
+        "emotion": "",
+        "importance": 0.800000011920929,
+        "key": "taxes-low-markarth",
+        "knowledge_key": "",
+        "location": "The Reach",
+        "tags": [
+          "taxes",
+          "low",
+          "popular",
+          "markarth",
+          "the reach"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AATax_Rate_Reach\") >= 15 and get_global_value(\"AATax_Rate_Reach\") <= 20 and is_in_faction(actorUUID, \"CrimeFactionReach\")",
+        "content": "Tax rates in The Reach are punishingly high. Citizens grumble openly about the crown's greed. Merchants in Markarth struggle to turn a profit after the taxman's cut. Common folk feel squeezed and resentful. There is growing talk that the crown takes too much and gives too little in return.",
+        "display_name": "Taxes Heavy - Markarth",
+        "emotion": "",
+        "importance": 0.800000011920929,
+        "key": "taxes-heavy-markarth",
+        "knowledge_key": "",
+        "location": "The Reach",
+        "tags": [
+          "taxes",
+          "high",
+          "resentment",
+          "markarth",
+          "the reach"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AATax_Rate_Reach\") >= 21 and is_in_faction(actorUUID, \"CrimeFactionReach\")",
+        "content": "Tax rates in The Reach are crushing and oppressive. The people are being bled dry. Citizens of Markarth speak of the crown as a tyrant who cares nothing for the common folk. Merchants are closing shop. Families cannot afford basic necessities. There is open anger and desperation in the streets.",
+        "display_name": "Taxes Oppressive - Markarth",
+        "emotion": "",
+        "importance": 0.800000011920929,
+        "key": "taxes-oppressive-markarth",
+        "knowledge_key": "",
+        "location": "The Reach",
+        "tags": [
+          "taxes",
+          "oppressive",
+          "tyranny",
+          "suffering",
+          "markarth",
+          "the reach"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AARebelionActive_Reach\") == 1 and is_in_faction(actorUUID, \"CrimeFactionReach\")",
+        "content": "Open rebellion has erupted in The Reach. Armed rebels have established a camp and are actively fighting against the crown's authority. The people of Markarth live in fear and uncertainty. Some sympathize with the rebels, others fear the chaos. The hold is in crisis.",
+        "display_name": "Rebellion Active - Markarth",
+        "emotion": "",
+        "importance": 0.8500000238418579,
+        "key": "rebellion-active-markarth",
+        "knowledge_key": "",
+        "location": "The Reach",
+        "tags": [
+          "rebellion",
+          "war",
+          "unrest",
+          "crisis",
+          "markarth",
+          "the reach"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AARebelionActive_Reach\") == 1 and is_in_faction(actorUUID, \"GuardFactionMarkarth\")",
+        "content": "Rebellion has broken out in The Reach and the guard force is on high alert. City gates are locked down, patrols have been doubled, and every stranger is treated with suspicion. Guards in Markarth are tense, overworked, and afraid. Supply lines are threatened. The garrison may not hold if reinforcements don't arrive.",
+        "display_name": "Rebellion Active - Markarth Guards",
+        "emotion": "",
+        "importance": 0.8999999761581421,
+        "key": "rebellion-active-markarth-guards",
+        "knowledge_key": "",
+        "location": "The Reach",
+        "tags": [
+          "rebellion",
+          "guards",
+          "lockdown",
+          "military",
+          "markarth",
+          "the reach"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AARebelionActive_Reach\") == 1 and is_in_faction(actorUUID, \"AAHighKingCouncilFaction\")",
+        "content": "The royal council is aware that open rebellion has erupted in The Reach. Rebel forces have established a camp and are challenging the crown's authority. This is a direct threat to the stability of the kingdom. The council must advise on whether to crush the rebellion by force, negotiate, or bribe the rebels into submission.",
+        "display_name": "Rebellion Active - Markarth Council Awareness",
+        "emotion": "",
+        "importance": 0.8500000238418579,
+        "key": "rebellion-active-markarth-council-awareness",
+        "knowledge_key": "",
+        "location": "The Reach",
+        "tags": [
+          "rebellion",
+          "council",
+          "strategy",
+          "crisis",
+          "markarth",
+          "the reach"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAApprovalTierFalkreath\") == 0 and is_in_faction(actorUUID, \"CrimeFactionFalkreath\")",
+        "content": "The people of Falkreath Hold despise the crown. Approval of {{ playerName }}'s rule is dangerously low. Citizens are angry, fearful, and speak openly of revolt. Guards are tense. Merchants worry about unrest. The ruler's name is spoken with contempt in the streets of Falkreath.",
+        "display_name": "Approval Despised - Falkreath",
+        "emotion": "",
+        "importance": 0.699999988079071,
+        "key": "approval-despised-falkreath",
+        "knowledge_key": "",
+        "location": "Falkreath Hold",
+        "tags": [
+          "approval",
+          "despised",
+          "unrest",
+          "falkreath",
+          "falkreath"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAApprovalTierFalkreath\") == 4 and is_in_faction(actorUUID, \"CrimeFactionFalkreath\")",
+        "content": "The people of Falkreath Hold adore the crown. Approval of {{ playerName }}'s rule is absolute. Citizens speak the ruler's name with pride and genuine loyalty. Guards stand tall and are honored to serve. Merchants thrive under the crown's favor. Falkreath celebrates its ruler.",
+        "display_name": "Approval Beloved - Falkreath",
+        "emotion": "",
+        "importance": 0.699999988079071,
+        "key": "approval-beloved-falkreath",
+        "knowledge_key": "",
+        "location": "Falkreath Hold",
+        "tags": [
+          "approval",
+          "beloved",
+          "loyalty",
+          "falkreath",
+          "falkreath"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAKingCourtHasPriest\") == 1 and get_global_value(\"AAFaithTierFalkreath\") == 0 and is_in_faction(actorUUID, \"JobPriestFaction\")",
+        "content": "Faith in the crown's religious authority is nonexistent in Falkreath Hold. The people see {{ playerName }} as a heretic or false prophet. Priests and devout citizens speak openly against the throne's spiritual claims. The crown's religious decrees carry no weight here.",
+        "display_name": "Faith Collapsed - Falkreath",
+        "emotion": "",
+        "importance": 0.8999999761581421,
+        "key": "faith-collapsed-falkreath",
+        "knowledge_key": "",
+        "location": "Falkreath Hold",
+        "tags": [
+          "faith",
+          "heretic",
+          "religion",
+          "falkreath",
+          "falkreath"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAKingCourtHasPriest\") == 1 and get_global_value(\"AAFaithTierFalkreath\") == 4 and is_in_faction(actorUUID, \"JobPriestFaction\")",
+        "content": "Faith in the crown's religious authority is absolute in Falkreath Hold. The people regard {{ playerName }} as divinely chosen. Priests speak of the ruler with reverence, and the faithful consider it an honor to serve the throne. Religious devotion to the crown runs deep in Falkreath.",
+        "display_name": "Faith Absolute - Falkreath",
+        "emotion": "",
+        "importance": 0.8999999761581421,
+        "key": "faith-absolute-falkreath",
+        "knowledge_key": "",
+        "location": "Falkreath Hold",
+        "tags": [
+          "faith",
+          "saint",
+          "devotion",
+          "religion",
+          "falkreath",
+          "falkreath"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAKingHoldFalkreathChurchDeclared\") == 1 and is_in_faction(actorUUID, \"CrimeFactionFalkreath\")",
+        "content": "The Church of Skyrim has been officially established in Falkreath Hold. The old Divines' altars and shrines have been replaced with monuments to the crown. An appointed priest serves the ruler's spiritual authority in Falkreath. This is a permanent change that has reshaped religious life in the hold - some embrace it, others quietly resent the loss of the old ways.",
+        "display_name": "Church of Skyrim Declared - Falkreath",
+        "emotion": "",
+        "importance": 0.75,
+        "key": "church-of-skyrim-declared-falkreath",
+        "knowledge_key": "",
+        "location": "Falkreath Hold",
+        "tags": [
+          "church",
+          "religion",
+          "declared",
+          "falkreath",
+          "falkreath"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAKing_EconomyScore_Falkreath\") <= 30 and is_in_faction(actorUUID, \"JobMerchantFaction\") and is_in_faction(actorUUID, \"CrimeFactionFalkreath\")",
+        "content": "The economy in Falkreath Hold is in severe decline. Merchants can barely keep their doors open, trade routes are drying up, and coin is scarce. Shopkeepers in Falkreath speak of hardship and ruin. Empty market stalls and closed shops are becoming common.",
+        "display_name": "Economy Collapsing - Falkreath",
+        "emotion": "",
+        "importance": 0.75,
+        "key": "economy-collapsing-falkreath",
+        "knowledge_key": "",
+        "location": "Falkreath Hold",
+        "tags": [
+          "economy",
+          "collapse",
+          "trade",
+          "merchant",
+          "falkreath",
+          "falkreath"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAKing_EconomyScore_Falkreath\") >= 70 and is_in_faction(actorUUID, \"JobMerchantFaction\") and is_in_faction(actorUUID, \"CrimeFactionFalkreath\")",
+        "content": "The economy in Falkreath Hold is thriving. Merchants are prosperous, trade flows freely, and coin is plentiful. Shopkeepers in Falkreath praise the crown's economic stewardship. Markets are bustling and new trade opportunities abound.",
+        "display_name": "Economy Thriving - Falkreath",
+        "emotion": "",
+        "importance": 0.75,
+        "key": "economy-thriving-falkreath",
+        "knowledge_key": "",
+        "location": "Falkreath Hold",
+        "tags": [
+          "economy",
+          "thriving",
+          "trade",
+          "prosperity",
+          "falkreath",
+          "falkreath"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AATax_Rate_Falkreath\") <= 5 and is_in_faction(actorUUID, \"CrimeFactionFalkreath\")",
+        "content": "Tax rates in Falkreath Hold are very low. Citizens appreciate the crown's light hand on their purses. Merchants and common folk alike speak well of the tax policy. People in Falkreath feel they can breathe freely and keep more of what they earn.",
+        "display_name": "Taxes Low - Falkreath",
+        "emotion": "",
+        "importance": 0.800000011920929,
+        "key": "taxes-low-falkreath",
+        "knowledge_key": "",
+        "location": "Falkreath Hold",
+        "tags": [
+          "taxes",
+          "low",
+          "popular",
+          "falkreath",
+          "falkreath"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AATax_Rate_Falkreath\") >= 15 and get_global_value(\"AATax_Rate_Falkreath\") <= 20 and is_in_faction(actorUUID, \"CrimeFactionFalkreath\")",
+        "content": "Tax rates in Falkreath Hold are punishingly high. Citizens grumble openly about the crown's greed. Merchants in Falkreath struggle to turn a profit after the taxman's cut. Common folk feel squeezed and resentful. There is growing talk that the crown takes too much and gives too little in return.",
+        "display_name": "Taxes Heavy - Falkreath",
+        "emotion": "",
+        "importance": 0.800000011920929,
+        "key": "taxes-heavy-falkreath",
+        "knowledge_key": "",
+        "location": "Falkreath Hold",
+        "tags": [
+          "taxes",
+          "high",
+          "resentment",
+          "falkreath",
+          "falkreath"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AATax_Rate_Falkreath\") >= 21 and is_in_faction(actorUUID, \"CrimeFactionFalkreath\")",
+        "content": "Tax rates in Falkreath Hold are crushing and oppressive. The people are being bled dry. Citizens of Falkreath speak of the crown as a tyrant who cares nothing for the common folk. Merchants are closing shop. Families cannot afford basic necessities. There is open anger and desperation in the streets.",
+        "display_name": "Taxes Oppressive - Falkreath",
+        "emotion": "",
+        "importance": 0.800000011920929,
+        "key": "taxes-oppressive-falkreath",
+        "knowledge_key": "",
+        "location": "Falkreath Hold",
+        "tags": [
+          "taxes",
+          "oppressive",
+          "tyranny",
+          "suffering",
+          "falkreath",
+          "falkreath"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AARebelionActive_Falkreath\") == 1 and is_in_faction(actorUUID, \"CrimeFactionFalkreath\")",
+        "content": "Open rebellion has erupted in Falkreath Hold. Armed rebels have established a camp and are actively fighting against the crown's authority. The people of Falkreath live in fear and uncertainty. Some sympathize with the rebels, others fear the chaos. The hold is in crisis.",
+        "display_name": "Rebellion Active - Falkreath",
+        "emotion": "",
+        "importance": 0.8500000238418579,
+        "key": "rebellion-active-falkreath",
+        "knowledge_key": "",
+        "location": "Falkreath Hold",
+        "tags": [
+          "rebellion",
+          "war",
+          "unrest",
+          "crisis",
+          "falkreath",
+          "falkreath"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AARebelionActive_Falkreath\") == 1 and is_in_faction(actorUUID, \"GuardFactionFalkreath\")",
+        "content": "Rebellion has broken out in Falkreath Hold and the guard force is on high alert. City gates are locked down, patrols have been doubled, and every stranger is treated with suspicion. Guards in Falkreath are tense, overworked, and afraid. Supply lines are threatened. The garrison may not hold if reinforcements don't arrive.",
+        "display_name": "Rebellion Active - Falkreath Guards",
+        "emotion": "",
+        "importance": 0.8999999761581421,
+        "key": "rebellion-active-falkreath-guards",
+        "knowledge_key": "",
+        "location": "Falkreath Hold",
+        "tags": [
+          "rebellion",
+          "guards",
+          "lockdown",
+          "military",
+          "falkreath",
+          "falkreath"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AARebelionActive_Falkreath\") == 1 and is_in_faction(actorUUID, \"AAHighKingCouncilFaction\")",
+        "content": "The royal council is aware that open rebellion has erupted in Falkreath Hold. Rebel forces have established a camp and are challenging the crown's authority. This is a direct threat to the stability of the kingdom. The council must advise on whether to crush the rebellion by force, negotiate, or bribe the rebels into submission.",
+        "display_name": "Rebellion Active - Falkreath Council Awareness",
+        "emotion": "",
+        "importance": 0.8500000238418579,
+        "key": "rebellion-active-falkreath-council-awareness",
+        "knowledge_key": "",
+        "location": "Falkreath Hold",
+        "tags": [
+          "rebellion",
+          "council",
+          "strategy",
+          "crisis",
+          "falkreath",
+          "falkreath"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAApprovalTierDawnstar\") == 0 and is_in_faction(actorUUID, \"CrimeFactionPale\")",
+        "content": "The people of The Pale despise the crown. Approval of {{ playerName }}'s rule is dangerously low. Citizens are angry, fearful, and speak openly of revolt. Guards are tense. Merchants worry about unrest. The ruler's name is spoken with contempt in the streets of Dawnstar.",
+        "display_name": "Approval Despised - Dawnstar",
+        "emotion": "",
+        "importance": 0.699999988079071,
+        "key": "approval-despised-dawnstar",
+        "knowledge_key": "",
+        "location": "The Pale",
+        "tags": [
+          "approval",
+          "despised",
+          "unrest",
+          "dawnstar",
+          "the pale"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAApprovalTierDawnstar\") == 4 and is_in_faction(actorUUID, \"CrimeFactionPale\")",
+        "content": "The people of The Pale adore the crown. Approval of {{ playerName }}'s rule is absolute. Citizens speak the ruler's name with pride and genuine loyalty. Guards stand tall and are honored to serve. Merchants thrive under the crown's favor. Dawnstar celebrates its ruler.",
+        "display_name": "Approval Beloved - Dawnstar",
+        "emotion": "",
+        "importance": 0.699999988079071,
+        "key": "approval-beloved-dawnstar",
+        "knowledge_key": "",
+        "location": "The Pale",
+        "tags": [
+          "approval",
+          "beloved",
+          "loyalty",
+          "dawnstar",
+          "the pale"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAKingCourtHasPriest\") == 1 and get_global_value(\"AAFaithTierDawnstar\") == 0 and is_in_faction(actorUUID, \"JobPriestFaction\")",
+        "content": "Faith in the crown's religious authority is nonexistent in The Pale. The people see {{ playerName }} as a heretic or false prophet. Priests and devout citizens speak openly against the throne's spiritual claims. The crown's religious decrees carry no weight here.",
+        "display_name": "Faith Collapsed - Dawnstar",
+        "emotion": "",
+        "importance": 0.8999999761581421,
+        "key": "faith-collapsed-dawnstar",
+        "knowledge_key": "",
+        "location": "The Pale",
+        "tags": [
+          "faith",
+          "heretic",
+          "religion",
+          "dawnstar",
+          "the pale"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAKingCourtHasPriest\") == 1 and get_global_value(\"AAFaithTierDawnstar\") == 4 and is_in_faction(actorUUID, \"JobPriestFaction\")",
+        "content": "Faith in the crown's religious authority is absolute in The Pale. The people regard {{ playerName }} as divinely chosen. Priests speak of the ruler with reverence, and the faithful consider it an honor to serve the throne. Religious devotion to the crown runs deep in Dawnstar.",
+        "display_name": "Faith Absolute - Dawnstar",
+        "emotion": "",
+        "importance": 0.8999999761581421,
+        "key": "faith-absolute-dawnstar",
+        "knowledge_key": "",
+        "location": "The Pale",
+        "tags": [
+          "faith",
+          "saint",
+          "devotion",
+          "religion",
+          "dawnstar",
+          "the pale"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAKingHoldDawnstarChurchDeclared\") == 1 and is_in_faction(actorUUID, \"CrimeFactionPale\")",
+        "content": "The Church of Skyrim has been officially established in The Pale. The old Divines' altars and shrines have been replaced with monuments to the crown. An appointed priest serves the ruler's spiritual authority in Dawnstar. This is a permanent change that has reshaped religious life in the hold - some embrace it, others quietly resent the loss of the old ways.",
+        "display_name": "Church of Skyrim Declared - Dawnstar",
+        "emotion": "",
+        "importance": 0.75,
+        "key": "church-of-skyrim-declared-dawnstar",
+        "knowledge_key": "",
+        "location": "The Pale",
+        "tags": [
+          "church",
+          "religion",
+          "declared",
+          "dawnstar",
+          "the pale"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAKing_EconomyScore_Pale\") <= 30 and is_in_faction(actorUUID, \"JobMerchantFaction\") and is_in_faction(actorUUID, \"CrimeFactionPale\")",
+        "content": "The economy in The Pale is in severe decline. Merchants can barely keep their doors open, trade routes are drying up, and coin is scarce. Shopkeepers in Dawnstar speak of hardship and ruin. Empty market stalls and closed shops are becoming common.",
+        "display_name": "Economy Collapsing - Dawnstar",
+        "emotion": "",
+        "importance": 0.75,
+        "key": "economy-collapsing-dawnstar",
+        "knowledge_key": "",
+        "location": "The Pale",
+        "tags": [
+          "economy",
+          "collapse",
+          "trade",
+          "merchant",
+          "dawnstar",
+          "the pale"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAKing_EconomyScore_Pale\") >= 70 and is_in_faction(actorUUID, \"JobMerchantFaction\") and is_in_faction(actorUUID, \"CrimeFactionPale\")",
+        "content": "The economy in The Pale is thriving. Merchants are prosperous, trade flows freely, and coin is plentiful. Shopkeepers in Dawnstar praise the crown's economic stewardship. Markets are bustling and new trade opportunities abound.",
+        "display_name": "Economy Thriving - Dawnstar",
+        "emotion": "",
+        "importance": 0.75,
+        "key": "economy-thriving-dawnstar",
+        "knowledge_key": "",
+        "location": "The Pale",
+        "tags": [
+          "economy",
+          "thriving",
+          "trade",
+          "prosperity",
+          "dawnstar",
+          "the pale"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AATax_Rate_ThePale\") <= 5 and is_in_faction(actorUUID, \"CrimeFactionPale\")",
+        "content": "Tax rates in The Pale are very low. Citizens appreciate the crown's light hand on their purses. Merchants and common folk alike speak well of the tax policy. People in Dawnstar feel they can breathe freely and keep more of what they earn.",
+        "display_name": "Taxes Low - Dawnstar",
+        "emotion": "",
+        "importance": 0.800000011920929,
+        "key": "taxes-low-dawnstar",
+        "knowledge_key": "",
+        "location": "The Pale",
+        "tags": [
+          "taxes",
+          "low",
+          "popular",
+          "dawnstar",
+          "the pale"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AATax_Rate_ThePale\") >= 15 and get_global_value(\"AATax_Rate_ThePale\") <= 20 and is_in_faction(actorUUID, \"CrimeFactionPale\")",
+        "content": "Tax rates in The Pale are punishingly high. Citizens grumble openly about the crown's greed. Merchants in Dawnstar struggle to turn a profit after the taxman's cut. Common folk feel squeezed and resentful. There is growing talk that the crown takes too much and gives too little in return.",
+        "display_name": "Taxes Heavy - Dawnstar",
+        "emotion": "",
+        "importance": 0.800000011920929,
+        "key": "taxes-heavy-dawnstar",
+        "knowledge_key": "",
+        "location": "The Pale",
+        "tags": [
+          "taxes",
+          "high",
+          "resentment",
+          "dawnstar",
+          "the pale"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AATax_Rate_ThePale\") >= 21 and is_in_faction(actorUUID, \"CrimeFactionPale\")",
+        "content": "Tax rates in The Pale are crushing and oppressive. The people are being bled dry. Citizens of Dawnstar speak of the crown as a tyrant who cares nothing for the common folk. Merchants are closing shop. Families cannot afford basic necessities. There is open anger and desperation in the streets.",
+        "display_name": "Taxes Oppressive - Dawnstar",
+        "emotion": "",
+        "importance": 0.800000011920929,
+        "key": "taxes-oppressive-dawnstar",
+        "knowledge_key": "",
+        "location": "The Pale",
+        "tags": [
+          "taxes",
+          "oppressive",
+          "tyranny",
+          "suffering",
+          "dawnstar",
+          "the pale"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AARebelionActive_Pale\") == 1 and is_in_faction(actorUUID, \"CrimeFactionPale\")",
+        "content": "Open rebellion has erupted in The Pale. Armed rebels have established a camp and are actively fighting against the crown's authority. The people of Dawnstar live in fear and uncertainty. Some sympathize with the rebels, others fear the chaos. The hold is in crisis.",
+        "display_name": "Rebellion Active - Dawnstar",
+        "emotion": "",
+        "importance": 0.8500000238418579,
+        "key": "rebellion-active-dawnstar",
+        "knowledge_key": "",
+        "location": "The Pale",
+        "tags": [
+          "rebellion",
+          "war",
+          "unrest",
+          "crisis",
+          "dawnstar",
+          "the pale"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AARebelionActive_Pale\") == 1 and is_in_faction(actorUUID, \"GuardFactionDawnstar\")",
+        "content": "Rebellion has broken out in The Pale and the guard force is on high alert. City gates are locked down, patrols have been doubled, and every stranger is treated with suspicion. Guards in Dawnstar are tense, overworked, and afraid. Supply lines are threatened. The garrison may not hold if reinforcements don't arrive.",
+        "display_name": "Rebellion Active - Dawnstar Guards",
+        "emotion": "",
+        "importance": 0.8999999761581421,
+        "key": "rebellion-active-dawnstar-guards",
+        "knowledge_key": "",
+        "location": "The Pale",
+        "tags": [
+          "rebellion",
+          "guards",
+          "lockdown",
+          "military",
+          "dawnstar",
+          "the pale"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AARebelionActive_Pale\") == 1 and is_in_faction(actorUUID, \"AAHighKingCouncilFaction\")",
+        "content": "The royal council is aware that open rebellion has erupted in The Pale. Rebel forces have established a camp and are challenging the crown's authority. This is a direct threat to the stability of the kingdom. The council must advise on whether to crush the rebellion by force, negotiate, or bribe the rebels into submission.",
+        "display_name": "Rebellion Active - Dawnstar Council Awareness",
+        "emotion": "",
+        "importance": 0.8500000238418579,
+        "key": "rebellion-active-dawnstar-council-awareness",
+        "knowledge_key": "",
+        "location": "The Pale",
+        "tags": [
+          "rebellion",
+          "council",
+          "strategy",
+          "crisis",
+          "dawnstar",
+          "the pale"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAApprovalTierMorthal\") == 0 and is_in_faction(actorUUID, \"CrimeFactionHjaalmarch\")",
+        "content": "The people of Hjaalmarch despise the crown. Approval of {{ playerName }}'s rule is dangerously low. Citizens are angry, fearful, and speak openly of revolt. Guards are tense. Merchants worry about unrest. The ruler's name is spoken with contempt in the streets of Morthal.",
+        "display_name": "Approval Despised - Morthal",
+        "emotion": "",
+        "importance": 0.699999988079071,
+        "key": "approval-despised-morthal",
+        "knowledge_key": "",
+        "location": "Hjaalmarch",
+        "tags": [
+          "approval",
+          "despised",
+          "unrest",
+          "morthal",
+          "hjaalmarch"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAApprovalTierMorthal\") == 4 and is_in_faction(actorUUID, \"CrimeFactionHjaalmarch\")",
+        "content": "The people of Hjaalmarch adore the crown. Approval of {{ playerName }}'s rule is absolute. Citizens speak the ruler's name with pride and genuine loyalty. Guards stand tall and are honored to serve. Merchants thrive under the crown's favor. Morthal celebrates its ruler.",
+        "display_name": "Approval Beloved - Morthal",
+        "emotion": "",
+        "importance": 0.699999988079071,
+        "key": "approval-beloved-morthal",
+        "knowledge_key": "",
+        "location": "Hjaalmarch",
+        "tags": [
+          "approval",
+          "beloved",
+          "loyalty",
+          "morthal",
+          "hjaalmarch"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAKingCourtHasPriest\") == 1 and get_global_value(\"AAFaithTierMorthal\") == 0 and is_in_faction(actorUUID, \"JobPriestFaction\")",
+        "content": "Faith in the crown's religious authority is nonexistent in Hjaalmarch. The people see {{ playerName }} as a heretic or false prophet. Priests and devout citizens speak openly against the throne's spiritual claims. The crown's religious decrees carry no weight here.",
+        "display_name": "Faith Collapsed - Morthal",
+        "emotion": "",
+        "importance": 0.8999999761581421,
+        "key": "faith-collapsed-morthal",
+        "knowledge_key": "",
+        "location": "Hjaalmarch",
+        "tags": [
+          "faith",
+          "heretic",
+          "religion",
+          "morthal",
+          "hjaalmarch"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAKingCourtHasPriest\") == 1 and get_global_value(\"AAFaithTierMorthal\") == 4 and is_in_faction(actorUUID, \"JobPriestFaction\")",
+        "content": "Faith in the crown's religious authority is absolute in Hjaalmarch. The people regard {{ playerName }} as divinely chosen. Priests speak of the ruler with reverence, and the faithful consider it an honor to serve the throne. Religious devotion to the crown runs deep in Morthal.",
+        "display_name": "Faith Absolute - Morthal",
+        "emotion": "",
+        "importance": 0.8999999761581421,
+        "key": "faith-absolute-morthal",
+        "knowledge_key": "",
+        "location": "Hjaalmarch",
+        "tags": [
+          "faith",
+          "saint",
+          "devotion",
+          "religion",
+          "morthal",
+          "hjaalmarch"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAKingHoldMorthalChurchDeclared\") == 1 and is_in_faction(actorUUID, \"CrimeFactionHjaalmarch\")",
+        "content": "The Church of Skyrim has been officially established in Hjaalmarch. The old Divines' altars and shrines have been replaced with monuments to the crown. An appointed priest serves the ruler's spiritual authority in Morthal. This is a permanent change that has reshaped religious life in the hold - some embrace it, others quietly resent the loss of the old ways.",
+        "display_name": "Church of Skyrim Declared - Morthal",
+        "emotion": "",
+        "importance": 0.75,
+        "key": "church-of-skyrim-declared-morthal",
+        "knowledge_key": "",
+        "location": "Hjaalmarch",
+        "tags": [
+          "church",
+          "religion",
+          "declared",
+          "morthal",
+          "hjaalmarch"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAKing_EconomyScore_Hjaalmarch\") <= 30 and is_in_faction(actorUUID, \"JobMerchantFaction\") and is_in_faction(actorUUID, \"CrimeFactionHjaalmarch\")",
+        "content": "The economy in Hjaalmarch is in severe decline. Merchants can barely keep their doors open, trade routes are drying up, and coin is scarce. Shopkeepers in Morthal speak of hardship and ruin. Empty market stalls and closed shops are becoming common.",
+        "display_name": "Economy Collapsing - Morthal",
+        "emotion": "",
+        "importance": 0.75,
+        "key": "economy-collapsing-morthal",
+        "knowledge_key": "",
+        "location": "Hjaalmarch",
+        "tags": [
+          "economy",
+          "collapse",
+          "trade",
+          "merchant",
+          "morthal",
+          "hjaalmarch"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAKing_EconomyScore_Hjaalmarch\") >= 70 and is_in_faction(actorUUID, \"JobMerchantFaction\") and is_in_faction(actorUUID, \"CrimeFactionHjaalmarch\")",
+        "content": "The economy in Hjaalmarch is thriving. Merchants are prosperous, trade flows freely, and coin is plentiful. Shopkeepers in Morthal praise the crown's economic stewardship. Markets are bustling and new trade opportunities abound.",
+        "display_name": "Economy Thriving - Morthal",
+        "emotion": "",
+        "importance": 0.75,
+        "key": "economy-thriving-morthal",
+        "knowledge_key": "",
+        "location": "Hjaalmarch",
+        "tags": [
+          "economy",
+          "thriving",
+          "trade",
+          "prosperity",
+          "morthal",
+          "hjaalmarch"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AATax_Rate_Hjaalmarch\") <= 5 and is_in_faction(actorUUID, \"CrimeFactionHjaalmarch\")",
+        "content": "Tax rates in Hjaalmarch are very low. Citizens appreciate the crown's light hand on their purses. Merchants and common folk alike speak well of the tax policy. People in Morthal feel they can breathe freely and keep more of what they earn.",
+        "display_name": "Taxes Low - Morthal",
+        "emotion": "",
+        "importance": 0.800000011920929,
+        "key": "taxes-low-morthal",
+        "knowledge_key": "",
+        "location": "Hjaalmarch",
+        "tags": [
+          "taxes",
+          "low",
+          "popular",
+          "morthal",
+          "hjaalmarch"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AATax_Rate_Hjaalmarch\") >= 15 and get_global_value(\"AATax_Rate_Hjaalmarch\") <= 20 and is_in_faction(actorUUID, \"CrimeFactionHjaalmarch\")",
+        "content": "Tax rates in Hjaalmarch are punishingly high. Citizens grumble openly about the crown's greed. Merchants in Morthal struggle to turn a profit after the taxman's cut. Common folk feel squeezed and resentful. There is growing talk that the crown takes too much and gives too little in return.",
+        "display_name": "Taxes Heavy - Morthal",
+        "emotion": "",
+        "importance": 0.800000011920929,
+        "key": "taxes-heavy-morthal",
+        "knowledge_key": "",
+        "location": "Hjaalmarch",
+        "tags": [
+          "taxes",
+          "high",
+          "resentment",
+          "morthal",
+          "hjaalmarch"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AATax_Rate_Hjaalmarch\") >= 21 and is_in_faction(actorUUID, \"CrimeFactionHjaalmarch\")",
+        "content": "Tax rates in Hjaalmarch are crushing and oppressive. The people are being bled dry. Citizens of Morthal speak of the crown as a tyrant who cares nothing for the common folk. Merchants are closing shop. Families cannot afford basic necessities. There is open anger and desperation in the streets.",
+        "display_name": "Taxes Oppressive - Morthal",
+        "emotion": "",
+        "importance": 0.800000011920929,
+        "key": "taxes-oppressive-morthal",
+        "knowledge_key": "",
+        "location": "Hjaalmarch",
+        "tags": [
+          "taxes",
+          "oppressive",
+          "tyranny",
+          "suffering",
+          "morthal",
+          "hjaalmarch"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AARebelionActive_Hjaalmarch\") == 1 and is_in_faction(actorUUID, \"CrimeFactionHjaalmarch\")",
+        "content": "Open rebellion has erupted in Hjaalmarch. Armed rebels have established a camp and are actively fighting against the crown's authority. The people of Morthal live in fear and uncertainty. Some sympathize with the rebels, others fear the chaos. The hold is in crisis.",
+        "display_name": "Rebellion Active - Morthal",
+        "emotion": "",
+        "importance": 0.8500000238418579,
+        "key": "rebellion-active-morthal",
+        "knowledge_key": "",
+        "location": "Hjaalmarch",
+        "tags": [
+          "rebellion",
+          "war",
+          "unrest",
+          "crisis",
+          "morthal",
+          "hjaalmarch"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AARebelionActive_Hjaalmarch\") == 1 and is_in_faction(actorUUID, \"CrimeFactionHjaalmarch\") and is_in_faction(actorUUID, \"GuardFaction\")",
+        "content": "Rebellion has broken out in Hjaalmarch and the guard force is on high alert. City gates are locked down, patrols have been doubled, and every stranger is treated with suspicion. Guards in Morthal are tense, overworked, and afraid. Supply lines are threatened. The garrison may not hold if reinforcements don't arrive.",
+        "display_name": "Rebellion Active - Morthal Guards",
+        "emotion": "",
+        "importance": 0.8999999761581421,
+        "key": "rebellion-active-morthal-guards",
+        "knowledge_key": "",
+        "location": "Hjaalmarch",
+        "tags": [
+          "rebellion",
+          "guards",
+          "lockdown",
+          "military",
+          "morthal",
+          "hjaalmarch"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AARebelionActive_Hjaalmarch\") == 1 and is_in_faction(actorUUID, \"AAHighKingCouncilFaction\")",
+        "content": "The royal council is aware that open rebellion has erupted in Hjaalmarch. Rebel forces have established a camp and are challenging the crown's authority. This is a direct threat to the stability of the kingdom. The council must advise on whether to crush the rebellion by force, negotiate, or bribe the rebels into submission.",
+        "display_name": "Rebellion Active - Morthal Council Awareness",
+        "emotion": "",
+        "importance": 0.8500000238418579,
+        "key": "rebellion-active-morthal-council-awareness",
+        "knowledge_key": "",
+        "location": "Hjaalmarch",
+        "tags": [
+          "rebellion",
+          "council",
+          "strategy",
+          "crisis",
+          "morthal",
+          "hjaalmarch"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAApprovalTierWinterhold\") == 0 and is_in_faction(actorUUID, \"CrimeFactionWinterhold\")",
+        "content": "The people of Winterhold Hold despise the crown. Approval of {{ playerName }}'s rule is dangerously low. Citizens are angry, fearful, and speak openly of revolt. Guards are tense. Merchants worry about unrest. The ruler's name is spoken with contempt in the streets of Winterhold.",
+        "display_name": "Approval Despised - Winterhold",
+        "emotion": "",
+        "importance": 0.699999988079071,
+        "key": "approval-despised-winterhold",
+        "knowledge_key": "",
+        "location": "Winterhold Hold",
+        "tags": [
+          "approval",
+          "despised",
+          "unrest",
+          "winterhold",
+          "winterhold"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAApprovalTierWinterhold\") == 4 and is_in_faction(actorUUID, \"CrimeFactionWinterhold\")",
+        "content": "The people of Winterhold Hold adore the crown. Approval of {{ playerName }}'s rule is absolute. Citizens speak the ruler's name with pride and genuine loyalty. Guards stand tall and are honored to serve. Merchants thrive under the crown's favor. Winterhold celebrates its ruler.",
+        "display_name": "Approval Beloved - Winterhold",
+        "emotion": "",
+        "importance": 0.699999988079071,
+        "key": "approval-beloved-winterhold",
+        "knowledge_key": "",
+        "location": "Winterhold Hold",
+        "tags": [
+          "approval",
+          "beloved",
+          "loyalty",
+          "winterhold",
+          "winterhold"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAKingCourtHasPriest\") == 1 and get_global_value(\"AAFaithTierWinterhold\") == 0 and is_in_faction(actorUUID, \"JobPriestFaction\")",
+        "content": "Faith in the crown's religious authority is nonexistent in Winterhold Hold. The people see {{ playerName }} as a heretic or false prophet. Priests and devout citizens speak openly against the throne's spiritual claims. The crown's religious decrees carry no weight here.",
+        "display_name": "Faith Collapsed - Winterhold",
+        "emotion": "",
+        "importance": 0.8999999761581421,
+        "key": "faith-collapsed-winterhold",
+        "knowledge_key": "",
+        "location": "Winterhold Hold",
+        "tags": [
+          "faith",
+          "heretic",
+          "religion",
+          "winterhold",
+          "winterhold"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAKingCourtHasPriest\") == 1 and get_global_value(\"AAFaithTierWinterhold\") == 4 and is_in_faction(actorUUID, \"JobPriestFaction\")",
+        "content": "Faith in the crown's religious authority is absolute in Winterhold Hold. The people regard {{ playerName }} as divinely chosen. Priests speak of the ruler with reverence, and the faithful consider it an honor to serve the throne. Religious devotion to the crown runs deep in Winterhold.",
+        "display_name": "Faith Absolute - Winterhold",
+        "emotion": "",
+        "importance": 0.8999999761581421,
+        "key": "faith-absolute-winterhold",
+        "knowledge_key": "",
+        "location": "Winterhold Hold",
+        "tags": [
+          "faith",
+          "saint",
+          "devotion",
+          "religion",
+          "winterhold",
+          "winterhold"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAKingHoldWinterholdChurchDeclared\") == 1 and is_in_faction(actorUUID, \"CrimeFactionWinterhold\")",
+        "content": "The Church of Skyrim has been officially established in Winterhold Hold. The old Divines' altars and shrines have been replaced with monuments to the crown. An appointed priest serves the ruler's spiritual authority in Winterhold. This is a permanent change that has reshaped religious life in the hold - some embrace it, others quietly resent the loss of the old ways.",
+        "display_name": "Church of Skyrim Declared - Winterhold",
+        "emotion": "",
+        "importance": 0.75,
+        "key": "church-of-skyrim-declared-winterhold",
+        "knowledge_key": "",
+        "location": "Winterhold Hold",
+        "tags": [
+          "church",
+          "religion",
+          "declared",
+          "winterhold",
+          "winterhold"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAKing_EconomyScore_Winterhold\") <= 30 and is_in_faction(actorUUID, \"JobMerchantFaction\") and is_in_faction(actorUUID, \"CrimeFactionWinterhold\")",
+        "content": "The economy in Winterhold Hold is in severe decline. Merchants can barely keep their doors open, trade routes are drying up, and coin is scarce. Shopkeepers in Winterhold speak of hardship and ruin. Empty market stalls and closed shops are becoming common.",
+        "display_name": "Economy Collapsing - Winterhold",
+        "emotion": "",
+        "importance": 0.75,
+        "key": "economy-collapsing-winterhold",
+        "knowledge_key": "",
+        "location": "Winterhold Hold",
+        "tags": [
+          "economy",
+          "collapse",
+          "trade",
+          "merchant",
+          "winterhold",
+          "winterhold"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAKing_EconomyScore_Winterhold\") >= 70 and is_in_faction(actorUUID, \"JobMerchantFaction\") and is_in_faction(actorUUID, \"CrimeFactionWinterhold\")",
+        "content": "The economy in Winterhold Hold is thriving. Merchants are prosperous, trade flows freely, and coin is plentiful. Shopkeepers in Winterhold praise the crown's economic stewardship. Markets are bustling and new trade opportunities abound.",
+        "display_name": "Economy Thriving - Winterhold",
+        "emotion": "",
+        "importance": 0.75,
+        "key": "economy-thriving-winterhold",
+        "knowledge_key": "",
+        "location": "Winterhold Hold",
+        "tags": [
+          "economy",
+          "thriving",
+          "trade",
+          "prosperity",
+          "winterhold",
+          "winterhold"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AATax_Rate_Winterhold\") <= 5 and is_in_faction(actorUUID, \"CrimeFactionWinterhold\")",
+        "content": "Tax rates in Winterhold Hold are very low. Citizens appreciate the crown's light hand on their purses. Merchants and common folk alike speak well of the tax policy. People in Winterhold feel they can breathe freely and keep more of what they earn.",
+        "display_name": "Taxes Low - Winterhold",
+        "emotion": "",
+        "importance": 0.800000011920929,
+        "key": "taxes-low-winterhold",
+        "knowledge_key": "",
+        "location": "Winterhold Hold",
+        "tags": [
+          "taxes",
+          "low",
+          "popular",
+          "winterhold",
+          "winterhold"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AATax_Rate_Winterhold\") >= 15 and get_global_value(\"AATax_Rate_Winterhold\") <= 20 and is_in_faction(actorUUID, \"CrimeFactionWinterhold\")",
+        "content": "Tax rates in Winterhold Hold are punishingly high. Citizens grumble openly about the crown's greed. Merchants in Winterhold struggle to turn a profit after the taxman's cut. Common folk feel squeezed and resentful. There is growing talk that the crown takes too much and gives too little in return.",
+        "display_name": "Taxes Heavy - Winterhold",
+        "emotion": "",
+        "importance": 0.800000011920929,
+        "key": "taxes-heavy-winterhold",
+        "knowledge_key": "",
+        "location": "Winterhold Hold",
+        "tags": [
+          "taxes",
+          "high",
+          "resentment",
+          "winterhold",
+          "winterhold"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AATax_Rate_Winterhold\") >= 21 and is_in_faction(actorUUID, \"CrimeFactionWinterhold\")",
+        "content": "Tax rates in Winterhold Hold are crushing and oppressive. The people are being bled dry. Citizens of Winterhold speak of the crown as a tyrant who cares nothing for the common folk. Merchants are closing shop. Families cannot afford basic necessities. There is open anger and desperation in the streets.",
+        "display_name": "Taxes Oppressive - Winterhold",
+        "emotion": "",
+        "importance": 0.800000011920929,
+        "key": "taxes-oppressive-winterhold",
+        "knowledge_key": "",
+        "location": "Winterhold Hold",
+        "tags": [
+          "taxes",
+          "oppressive",
+          "tyranny",
+          "suffering",
+          "winterhold",
+          "winterhold"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AARebelionActive_Winterhold\") == 1 and is_in_faction(actorUUID, \"CrimeFactionWinterhold\")",
+        "content": "Open rebellion has erupted in Winterhold Hold. Armed rebels have established a camp and are actively fighting against the crown's authority. The people of Winterhold live in fear and uncertainty. Some sympathize with the rebels, others fear the chaos. The hold is in crisis.",
+        "display_name": "Rebellion Active - Winterhold",
+        "emotion": "",
+        "importance": 0.8500000238418579,
+        "key": "rebellion-active-winterhold",
+        "knowledge_key": "",
+        "location": "Winterhold Hold",
+        "tags": [
+          "rebellion",
+          "war",
+          "unrest",
+          "crisis",
+          "winterhold",
+          "winterhold"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AARebelionActive_Winterhold\") == 1 and is_in_faction(actorUUID, \"CrimeFactionWinterhold\") and is_in_faction(actorUUID, \"GuardFaction\")",
+        "content": "Rebellion has broken out in Winterhold Hold and the guard force is on high alert. City gates are locked down, patrols have been doubled, and every stranger is treated with suspicion. Guards in Winterhold are tense, overworked, and afraid. Supply lines are threatened. The garrison may not hold if reinforcements don't arrive.",
+        "display_name": "Rebellion Active - Winterhold Guards",
+        "emotion": "",
+        "importance": 0.8999999761581421,
+        "key": "rebellion-active-winterhold-guards",
+        "knowledge_key": "",
+        "location": "Winterhold Hold",
+        "tags": [
+          "rebellion",
+          "guards",
+          "lockdown",
+          "military",
+          "winterhold",
+          "winterhold"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AARebelionActive_Winterhold\") == 1 and is_in_faction(actorUUID, \"AAHighKingCouncilFaction\")",
+        "content": "The royal council is aware that open rebellion has erupted in Winterhold Hold. Rebel forces have established a camp and are challenging the crown's authority. This is a direct threat to the stability of the kingdom. The council must advise on whether to crush the rebellion by force, negotiate, or bribe the rebels into submission.",
+        "display_name": "Rebellion Active - Winterhold Council Awareness",
+        "emotion": "",
+        "importance": 0.8500000238418579,
+        "key": "rebellion-active-winterhold-council-awareness",
+        "knowledge_key": "",
+        "location": "Winterhold Hold",
+        "tags": [
+          "rebellion",
+          "council",
+          "strategy",
+          "crisis",
+          "winterhold",
+          "winterhold"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAApprovalTierHighreach\") == 0 and is_in_faction(actorUUID, \"AAKingHighreachCitizens\")",
+        "content": "The people of Highreach Keep despise the crown. Approval of {{ playerName }}'s rule is dangerously low. Citizens are angry, fearful, and speak openly of revolt. Guards are tense. Merchants worry about unrest. The ruler's name is spoken with contempt in the streets of Highreach.",
+        "display_name": "Approval Despised - Highreach",
+        "emotion": "",
+        "importance": 0.699999988079071,
+        "key": "approval-despised-highreach",
+        "knowledge_key": "",
+        "location": "Highreach Keep",
+        "tags": [
+          "approval",
+          "despised",
+          "unrest",
+          "highreach",
+          "highreach"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAApprovalTierHighreach\") == 4 and is_in_faction(actorUUID, \"AAKingHighreachCitizens\")",
+        "content": "The people of Highreach Keep adore the crown. Approval of {{ playerName }}'s rule is absolute. Citizens speak the ruler's name with pride and genuine loyalty. Guards stand tall and are honored to serve. Merchants thrive under the crown's favor. Highreach celebrates its ruler.",
+        "display_name": "Approval Beloved - Highreach",
+        "emotion": "",
+        "importance": 0.699999988079071,
+        "key": "approval-beloved-highreach",
+        "knowledge_key": "",
+        "location": "Highreach Keep",
+        "tags": [
+          "approval",
+          "beloved",
+          "loyalty",
+          "highreach",
+          "highreach"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAKingCourtHasPriest\") == 1 and get_global_value(\"AAFaithTierHighreach\") == 0 and is_in_faction(actorUUID, \"JobPriestFaction\")",
+        "content": "Faith in the crown's religious authority is nonexistent in Highreach Keep. The people see {{ playerName }} as a heretic or false prophet. Priests and devout citizens speak openly against the throne's spiritual claims. The crown's religious decrees carry no weight here.",
+        "display_name": "Faith Collapsed - Highreach",
+        "emotion": "",
+        "importance": 0.8999999761581421,
+        "key": "faith-collapsed-highreach",
+        "knowledge_key": "",
+        "location": "Highreach Keep",
+        "tags": [
+          "faith",
+          "heretic",
+          "religion",
+          "highreach",
+          "highreach"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAKingCourtHasPriest\") == 1 and get_global_value(\"AAFaithTierHighreach\") == 4 and is_in_faction(actorUUID, \"JobPriestFaction\")",
+        "content": "Faith in the crown's religious authority is absolute in Highreach Keep. The people regard {{ playerName }} as divinely chosen. Priests speak of the ruler with reverence, and the faithful consider it an honor to serve the throne. Religious devotion to the crown runs deep in Highreach.",
+        "display_name": "Faith Absolute - Highreach",
+        "emotion": "",
+        "importance": 0.8999999761581421,
+        "key": "faith-absolute-highreach",
+        "knowledge_key": "",
+        "location": "Highreach Keep",
+        "tags": [
+          "faith",
+          "saint",
+          "devotion",
+          "religion",
+          "highreach",
+          "highreach"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAKingHoldHighreachChurchDeclared\") == 1 and is_in_faction(actorUUID, \"AAKingHighreachCitizens\")",
+        "content": "The Church of Skyrim has been officially established in Highreach Keep. The old Divines' altars and shrines have been replaced with monuments to the crown. An appointed priest serves the ruler's spiritual authority in Highreach. This is a permanent change that has reshaped religious life in the hold - some embrace it, others quietly resent the loss of the old ways.",
+        "display_name": "Church of Skyrim Declared - Highreach",
+        "emotion": "",
+        "importance": 0.75,
+        "key": "church-of-skyrim-declared-highreach",
+        "knowledge_key": "",
+        "location": "Highreach Keep",
+        "tags": [
+          "church",
+          "religion",
+          "declared",
+          "highreach",
+          "highreach"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAKing_EconomyScore_Highreach\") <= 30 and is_in_faction(actorUUID, \"JobMerchantFaction\") and is_in_faction(actorUUID, \"AAKingHighreachCitizens\")",
+        "content": "The economy in Highreach Keep is in severe decline. Merchants can barely keep their doors open, trade routes are drying up, and coin is scarce. Shopkeepers in Highreach speak of hardship and ruin. Empty market stalls and closed shops are becoming common.",
+        "display_name": "Economy Collapsing - Highreach",
+        "emotion": "",
+        "importance": 0.75,
+        "key": "economy-collapsing-highreach",
+        "knowledge_key": "",
+        "location": "Highreach Keep",
+        "tags": [
+          "economy",
+          "collapse",
+          "trade",
+          "merchant",
+          "highreach",
+          "highreach"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAKing_EconomyScore_Highreach\") >= 70 and is_in_faction(actorUUID, \"JobMerchantFaction\") and is_in_faction(actorUUID, \"AAKingHighreachCitizens\")",
+        "content": "The economy in Highreach Keep is thriving. Merchants are prosperous, trade flows freely, and coin is plentiful. Shopkeepers in Highreach praise the crown's economic stewardship. Markets are bustling and new trade opportunities abound.",
+        "display_name": "Economy Thriving - Highreach",
+        "emotion": "",
+        "importance": 0.75,
+        "key": "economy-thriving-highreach",
+        "knowledge_key": "",
+        "location": "Highreach Keep",
+        "tags": [
+          "economy",
+          "thriving",
+          "trade",
+          "prosperity",
+          "highreach",
+          "highreach"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AATax_Rate_HighreachKeep\") <= 5 and is_in_faction(actorUUID, \"AAKingHighreachCitizens\")",
+        "content": "Tax rates in Highreach Keep are very low. Citizens appreciate the crown's light hand on their purses. Merchants and common folk alike speak well of the tax policy. People in Highreach feel they can breathe freely and keep more of what they earn.",
+        "display_name": "Taxes Low - Highreach",
+        "emotion": "",
+        "importance": 0.800000011920929,
+        "key": "taxes-low-highreach",
+        "knowledge_key": "",
+        "location": "Highreach Keep",
+        "tags": [
+          "taxes",
+          "low",
+          "popular",
+          "highreach",
+          "highreach"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AATax_Rate_HighreachKeep\") >= 15 and get_global_value(\"AATax_Rate_HighreachKeep\") <= 20 and is_in_faction(actorUUID, \"AAKingHighreachCitizens\")",
+        "content": "Tax rates in Highreach Keep are punishingly high. Citizens grumble openly about the crown's greed. Merchants in Highreach struggle to turn a profit after the taxman's cut. Common folk feel squeezed and resentful. There is growing talk that the crown takes too much and gives too little in return.",
+        "display_name": "Taxes Heavy - Highreach",
+        "emotion": "",
+        "importance": 0.800000011920929,
+        "key": "taxes-heavy-highreach",
+        "knowledge_key": "",
+        "location": "Highreach Keep",
+        "tags": [
+          "taxes",
+          "high",
+          "resentment",
+          "highreach",
+          "highreach"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AATax_Rate_HighreachKeep\") >= 21 and is_in_faction(actorUUID, \"AAKingHighreachCitizens\")",
+        "content": "Tax rates in Highreach Keep are crushing and oppressive. The people are being bled dry. Citizens of Highreach speak of the crown as a tyrant who cares nothing for the common folk. Merchants are closing shop. Families cannot afford basic necessities. There is open anger and desperation in the streets.",
+        "display_name": "Taxes Oppressive - Highreach",
+        "emotion": "",
+        "importance": 0.800000011920929,
+        "key": "taxes-oppressive-highreach",
+        "knowledge_key": "",
+        "location": "Highreach Keep",
+        "tags": [
+          "taxes",
+          "oppressive",
+          "tyranny",
+          "suffering",
+          "highreach",
+          "highreach"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAApprovalSkyrim\") <= 30",
+        "content": "Approval of {{ playerName }}'s rule across Skyrim as a whole is dangerously low. The ruler is widely disliked throughout the realm. Multiple holds are unhappy, and the kingdom teeters on the edge of widespread unrest. The crown's legitimacy is questioned openly.",
+        "display_name": "Approval Across Skyrim - Despised",
+        "emotion": "",
+        "importance": 0.699999988079071,
+        "key": "approval-across-skyrim-despised",
+        "knowledge_key": "",
+        "location": "Skyrim",
+        "tags": [
+          "approval",
+          "skyrim",
+          "despised",
+          "unrest",
+          "kingdom"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAApprovalSkyrim\") >= 70",
+        "content": "Approval of {{ playerName }}'s rule across Skyrim as a whole is exceptionally high. The ruler is beloved throughout the realm. The holds are content, the people loyal, and the kingdom is stable. The crown's authority is unquestioned.",
+        "display_name": "Approval Across Skyrim - Beloved",
+        "emotion": "",
+        "importance": 0.699999988079071,
+        "key": "approval-across-skyrim-beloved",
+        "knowledge_key": "",
+        "location": "Skyrim",
+        "tags": [
+          "approval",
+          "skyrim",
+          "beloved",
+          "stability",
+          "kingdom"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAKing_EconomyTier\") == 0",
+        "content": "Skyrim's overall economy has collapsed. The realm is in severe recession. Trade has ground to a halt, markets are empty, and coin is desperately scarce across all holds. The crown's economic policies have failed catastrophically.",
+        "display_name": "Economy Overall - Collapsed",
+        "emotion": "",
+        "importance": 0.699999988079071,
+        "key": "economy-overall-collapsed",
+        "knowledge_key": "",
+        "location": "Skyrim",
+        "tags": [
+          "economy",
+          "collapsed",
+          "recession",
+          "crisis",
+          "kingdom"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAKing_EconomyTier\") == 4",
+        "content": "Skyrim's overall economy is prosperous and thriving. Wealth is abundant, markets are bustling across all holds, and trade routes are active and profitable. The crown's economic stewardship has brought a golden age of commerce to the realm.",
+        "display_name": "Economy Overall - Prosperous",
+        "emotion": "",
+        "importance": 0.699999988079071,
+        "key": "economy-overall-prosperous",
+        "knowledge_key": "",
+        "location": "Skyrim",
+        "tags": [
+          "economy",
+          "prosperous",
+          "thriving",
+          "golden age",
+          "kingdom"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAKingArtSaleLevel\") >= 1",
+        "content": "The crown has been forced to sell royal artwork and treasures from Highreach Castle to fund the treasury. This is a sign of financial desperation that has not gone unnoticed. Citizens whisper about the state of the kingdom's finances when even the throne room's decorations are being auctioned off.",
+        "display_name": "Desperate Measures - Royal Art Sold",
+        "emotion": "",
+        "importance": 0.6000000238418579,
+        "key": "desperate-measures-royal-art-sold",
+        "knowledge_key": "",
+        "location": "Skyrim",
+        "tags": [
+          "desperate measures",
+          "art",
+          "treasury",
+          "financial crisis",
+          "scandal"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and (get_global_value(\"AAKingBraithisSold\") == 1 or get_global_value(\"AAKingSisselisSold\") == 1 or get_global_value(\"AAKingBritteisSold\") == 1 or get_global_value(\"AAKingMilaisSold\") == 1) and is_in_faction(actorUUID, \"CrimeFactionWhiterun\")",
+        "content": "A child from Whiterun Hold has been sold by order of the crown. Parents across the hold are terrified. The act has sent shockwaves through the community - people lock their doors at night and hold their children close. Guards struggle to keep order as fear and anger spread through the streets.",
+        "display_name": "Desperate Measures - Child Sold in Whiterun",
+        "emotion": "",
+        "importance": 0.800000011920929,
+        "key": "desperate-measures-child-sold-in-whiterun",
+        "knowledge_key": "",
+        "location": "Whiterun Hold",
+        "tags": [
+          "desperate measures",
+          "child sold",
+          "whiterun",
+          "scandal",
+          "horror"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and (get_global_value(\"AAKingMinetteisSold\") == 1 or get_global_value(\"AAKingKaydisSold\") == 1) and is_in_faction(actorUUID, \"CrimeFactionHaafingar\")",
+        "content": "A child from Haafingar has been sold by order of the crown. The people of Solitude are horrified. What was once the proudest hold in Skyrim now reels from the knowledge that its ruler would stoop to selling children. Fear grips every household with young ones.",
+        "display_name": "Desperate Measures - Child Sold in Haafingar",
+        "emotion": "",
+        "importance": 0.800000011920929,
+        "key": "desperate-measures-child-sold-in-haafingar",
+        "knowledge_key": "",
+        "location": "Haafingar",
+        "tags": [
+          "desperate measures",
+          "child sold",
+          "solitude",
+          "haafingar",
+          "scandal",
+          "horror"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and (get_global_value(\"AAKingSkuliisSold\") == 1 or get_global_value(\"AAKingAdaraisSold\") == 1) and is_in_faction(actorUUID, \"CrimeFactionReach\")",
+        "content": "A child from The Reach has been sold by order of the crown. A shadow hangs over Markarth. Parents are afraid and angry. The stone city that has endured Forsworn raids and Dwemer ruins now faces a different kind of horror - the knowledge that the crown itself is a threat to its children.",
+        "display_name": "Desperate Measures - Child Sold in The Reach",
+        "emotion": "",
+        "importance": 0.800000011920929,
+        "key": "desperate-measures-child-sold-in-the-reach",
+        "knowledge_key": "",
+        "location": "The Reach",
+        "tags": [
+          "desperate measures",
+          "child sold",
+          "markarth",
+          "reach",
+          "scandal",
+          "horror"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and (get_global_value(\"AAKingAgniisSold\") == 1 or get_global_value(\"AAKingVirkmundisSold\") == 1) and is_in_faction(actorUUID, \"CrimeFactionHjaalmarch\")",
+        "content": "A child from Hjaalmarch has been sold by order of the crown. Morthal is grief-stricken. The small, quiet town has been shaken to its core. Nights are quieter than usual - people are grieving. The swamp town that survived vampires and civil war now mourns a child lost not to monsters, but to the crown's desperation.",
+        "display_name": "Desperate Measures - Child Sold in Hjaalmarch",
+        "emotion": "",
+        "importance": 0.800000011920929,
+        "key": "desperate-measures-child-sold-in-hjaalmarch",
+        "knowledge_key": "",
+        "location": "Hjaalmarch",
+        "tags": [
+          "desperate measures",
+          "child sold",
+          "morthal",
+          "hjaalmarch",
+          "scandal",
+          "horror"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and (get_global_value(\"AAKingDMChild01Sold\") == 1 or get_global_value(\"AAKingDMChild02Sold\") == 1)",
+        "content": "The crown has sold its own adopted child to fund the treasury. This is the most extreme and reviled act of desperation imaginable. The rumors have spread like wildfire across all of Skyrim. People speak of it in hushed, horrified tones. No amount of gold can wash away this stain. The ruler who would sell their own blood is regarded with a mixture of pity and disgust by all who hear of it.",
+        "display_name": "Desperate Measures - Ruler Sold Own Child",
+        "emotion": "",
+        "importance": 0.8500000238418579,
+        "key": "desperate-measures-ruler-sold-own-child",
+        "knowledge_key": "",
+        "location": "Skyrim",
+        "tags": [
+          "desperate measures",
+          "child sold",
+          "adopted",
+          "scandal",
+          "horror",
+          "royal family"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and (get_global_value(\"AAKingBraithisSold\") == 1 or get_global_value(\"AAKingSisselisSold\") == 1 or get_global_value(\"AAKingBritteisSold\") == 1 or get_global_value(\"AAKingMilaisSold\") == 1 or get_global_value(\"AAKingMinetteisSold\") == 1 or get_global_value(\"AAKingKaydisSold\") == 1 or get_global_value(\"AAKingSkuliisSold\") == 1 or get_global_value(\"AAKingAdaraisSold\") == 1 or get_global_value(\"AAKingAgniisSold\") == 1 or get_global_value(\"AAKingVirkmundisSold\") == 1 or get_global_value(\"AAKingDMChild01Sold\") == 1 or get_global_value(\"AAKingDMChild02Sold\") == 1)",
+        "content": "Disturbing rumors have reached every corner of Skyrim - the crown has sold children to fund the failing treasury. Details are murky and vary from hold to hold, but the core of the story remains: desperate times have driven the ruler to an unforgivable act. Parents across Skyrim hold their children a little tighter.",
+        "display_name": "Desperate Measures - Child Selling Rumors",
+        "emotion": "",
+        "importance": 0.699999988079071,
+        "key": "desperate-measures-child-selling-rumors",
+        "knowledge_key": "",
+        "location": "Skyrim",
+        "tags": [
+          "desperate measures",
+          "child sold",
+          "rumors",
+          "scandal",
+          "gossip"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAKingRoyalRestDay\") == 1",
+        "content": "The crown has decreed that Sundas is an official day of rest across Skyrim. Workers appreciate the reprieve, though the treasury takes a small hit from reduced commerce. It is a popular decree among common folk who welcome a day free from labor.",
+        "display_name": "Decree - Royal Day of Rest",
+        "emotion": "",
+        "importance": 0.550000011920929,
+        "key": "decree-royal-day-of-rest",
+        "knowledge_key": "",
+        "location": "Skyrim",
+        "tags": [
+          "decree",
+          "rest day",
+          "sundas",
+          "popular",
+          "labor"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAKingDecreeStandardWeights\") == 1",
+        "content": "The crown has decreed standardized weights and measures across all holds. Trade is fairer and merchants appreciate the consistency, though infrastructure costs have risen slightly to enforce it. It is seen as a mark of a thoughtful and organized ruler.",
+        "display_name": "Decree - Standardized Weights and Measures",
+        "emotion": "",
+        "importance": 0.550000011920929,
+        "key": "decree-standardized-weights-and-measures",
+        "knowledge_key": "",
+        "location": "Skyrim",
+        "tags": [
+          "decree",
+          "trade",
+          "weights",
+          "measures",
+          "standardization"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAKingDecreeCensus\") == 1",
+        "content": "The crown has ordered an official census across Skyrim. Counters are traveling the holds to tally the population. Most see it as harmless bureaucracy, though some are suspicious of why the crown wants to know exactly how many souls live under its rule.",
+        "display_name": "Decree - Census Ordered",
+        "emotion": "",
+        "importance": 0.5,
+        "key": "decree-census-ordered",
+        "knowledge_key": "",
+        "location": "Skyrim",
+        "tags": [
+          "decree",
+          "census",
+          "population",
+          "government"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAKingDecreeHRFreeMarket\") == 1",
+        "content": "The crown has declared Highreach an open free market. Trade flows freely with no restrictions, making it a haven for merchants. This has boosted Highreach's prosperity enormously but drawn ire from Solitude, whose traders feel undercut by the policy.",
+        "display_name": "Decree - Free Market in Highreach",
+        "emotion": "",
+        "importance": 0.6000000238418579,
+        "key": "decree-free-market-in-highreach",
+        "knowledge_key": "",
+        "location": "Highreach Keep",
+        "tags": [
+          "decree",
+          "free market",
+          "trade",
+          "highreach",
+          "solitude"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAKingDecreeFairWages\") == 1",
+        "content": "The crown has enacted a Fair Wages decree ensuring better pay for laborers across Skyrim. Workers in mining towns and industrial holds are grateful, but guard and infrastructure expenses have risen to cover the mandate. The Reach and Eastmarch workers are particularly supportive.",
+        "display_name": "Decree - Fair Wages Act",
+        "emotion": "",
+        "importance": 0.550000011920929,
+        "key": "decree-fair-wages-act",
+        "knowledge_key": "",
+        "location": "Skyrim",
+        "tags": [
+          "decree",
+          "fair wages",
+          "labor",
+          "workers",
+          "expenses"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAKingResearchGrantsActive\") == 1",
+        "content": "The crown has granted significant funds to the Bard's College in Solitude and the College of Winterhold. Scholars and students are grateful for the patronage, and the crown's reputation among the educated has improved. The grants are seen as an investment in Skyrim's cultural and magical heritage.",
+        "display_name": "Decree - Research Grants",
+        "emotion": "",
+        "importance": 0.550000011920929,
+        "key": "decree-research-grants",
+        "knowledge_key": "",
+        "location": "Skyrim",
+        "tags": [
+          "decree",
+          "research",
+          "grants",
+          "college",
+          "winterhold",
+          "solitude",
+          "bards"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAKingGuildTributeActive\") == 1",
+        "content": "The crown has imposed mandatory weekly tributes on Skyrim's major guilds - the Thieves Guild, the Companions, and the Dark Brotherhood. Gold flows to the treasury, but the guilds and their allies are furious. Riften, Whiterun, and the holds harboring these organizations feel the sting of this decree.",
+        "display_name": "Decree - Guild Tributes",
+        "emotion": "",
+        "importance": 0.6000000238418579,
+        "key": "decree-guild-tributes",
+        "knowledge_key": "",
+        "location": "Skyrim",
+        "tags": [
+          "decree",
+          "guild tributes",
+          "thieves guild",
+          "companions",
+          "dark brotherhood",
+          "controversy"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAKingHPTitheEnabled\") == 1",
+        "content": "The crown has imposed a religious tithe - a 5% levy on every hold's population paid directly to the royal treasury in the name of the Church of Skyrim. Citizens across the realm resent this additional burden. It is widely seen as the crown profiting from faith rather than serving it.",
+        "display_name": "Decree - Religious Tithe",
+        "emotion": "",
+        "importance": 0.6499999761581421,
+        "key": "decree-religious-tithe",
+        "knowledge_key": "",
+        "location": "Skyrim",
+        "tags": [
+          "decree",
+          "tithe",
+          "religion",
+          "tax",
+          "church",
+          "resentment"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAVoCRTCEnabled\") == 1 and is_in_faction(actorUUID, \"CrimeFactionKhajiitCaravans\")",
+        "content": "The crown has offered tax incentives to encourage foreign merchants to trade in Skyrim. Khajiit caravans and traveling traders from other provinces benefit greatly from this policy. Native Nord merchants are less enthusiastic, viewing it as favoritism toward outsiders.",
+        "display_name": "Foreign Policy - Tax Incentives for Foreign Merchants",
+        "emotion": "",
+        "importance": 0.550000011920929,
+        "key": "foreign-policy-tax-incentives-for-foreign-merchants",
+        "knowledge_key": "",
+        "location": "Skyrim",
+        "tags": [
+          "foreign policy",
+          "trade",
+          "khajiit",
+          "merchants",
+          "incentives"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAKingVoCTariffsEnabled\") == 1 and is_in_faction(actorUUID, \"CrimeFactionKhajiitCaravans\")",
+        "content": "The crown has imposed tariffs on foreign goods entering Skyrim. This protects local merchants but makes imported wares more expensive. Khajiit caravans and foreign traders feel the burden most heavily, finding it harder to turn a profit at Skyrim's borders.",
+        "display_name": "Foreign Policy - Tariffs on Foreign Goods",
+        "emotion": "",
+        "importance": 0.550000011920929,
+        "key": "foreign-policy-tariffs-on-foreign-goods",
+        "knowledge_key": "",
+        "location": "Skyrim",
+        "tags": [
+          "foreign policy",
+          "tariffs",
+          "trade",
+          "khajiit",
+          "merchants"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AARebelionActiveAny\") == 1",
+        "content": "Word has spread that at least one hold in Skyrim is in open rebellion against the crown. The specific details vary depending on who you ask, but the core truth is undeniable - the ruler's grip on power is being challenged with steel, not just words. Travelers and traders carry the news between holds.",
+        "display_name": "Rebellion Active Somewhere in Skyrim",
+        "emotion": "",
+        "importance": 0.6000000238418579,
+        "key": "rebellion-active-somewhere-in-skyrim",
+        "knowledge_key": "",
+        "location": "Skyrim",
+        "tags": [
+          "rebellion",
+          "war",
+          "unrest",
+          "crisis",
+          "kingdom",
+          "rumors"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAWoCAllWatchTowers\") == 1",
+        "content": "The crown has constructed watchtowers across all of Skyrim's holds. Roads are safer, bandits are fewer, and trade caravans travel with greater confidence. The watchtowers are visible symbols of the crown's commitment to protecting its people and are widely appreciated.",
+        "display_name": "Domain Upgrade - All Watchtowers Built",
+        "emotion": "",
+        "importance": 0.5,
+        "key": "domain-upgrade-all-watchtowers-built",
+        "knowledge_key": "",
+        "location": "Skyrim",
+        "tags": [
+          "watchtowers",
+          "infrastructure",
+          "safety",
+          "roads",
+          "domain upgrade"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAKingSeatOfPilgrimageUsed\") == 1 and is_in_faction(actorUUID, \"CrimeFactionWhiterun\")",
+        "content": "Whiterun has been declared the Seat of Pilgrimage - the spiritual capital of all Skyrim. Pilgrims travel from every hold to worship here. The people of Whiterun Hold take immense pride in this honor. Shrines, offerings, and religious gatherings dominate daily life. The hold prospers from the constant flow of faithful visitors.",
+        "display_name": "Seat of Pilgrimage - Whiterun",
+        "emotion": "",
+        "importance": 0.75,
+        "key": "seat-of-pilgrimage-whiterun",
+        "knowledge_key": "",
+        "location": "Whiterun Hold",
+        "tags": [
+          "pilgrimage",
+          "spiritual capital",
+          "faith",
+          "religion",
+          "whiterun",
+          "decree"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAKingSeatOfPilgrimageUsed\") == 1",
+        "content": "The crown has declared Whiterun the spiritual capital of Skyrim. Pilgrims flock there from across the realm, and the attention and gold follow. Other holds feel slighted and overlooked - their own shrines and temples diminished in importance. There is resentment that Whiterun was chosen above all others.",
+        "display_name": "Seat of Pilgrimage - Whiterun (Other Holds)",
+        "emotion": "",
+        "importance": 0.6000000238418579,
+        "key": "seat-of-pilgrimage-whiterun-other-holds",
+        "knowledge_key": "",
+        "location": "Skyrim",
+        "tags": [
+          "pilgrimage",
+          "spiritual capital",
+          "resentment",
+          "faith",
+          "religion",
+          "whiterun"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAKingSeatOfPilgrimageUsed\") == 2 and is_in_faction(actorUUID, \"CrimeFactionHaafingar\")",
+        "content": "Solitude has been declared the Seat of Pilgrimage - the spiritual capital of all Skyrim. Pilgrims travel from every hold to worship here. The people of Haafingar take immense pride in this honor. Shrines, offerings, and religious gatherings dominate daily life. The hold prospers from the constant flow of faithful visitors.",
+        "display_name": "Seat of Pilgrimage - Solitude",
+        "emotion": "",
+        "importance": 0.75,
+        "key": "seat-of-pilgrimage-solitude",
+        "knowledge_key": "",
+        "location": "Haafingar",
+        "tags": [
+          "pilgrimage",
+          "spiritual capital",
+          "faith",
+          "religion",
+          "solitude",
+          "decree"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAKingSeatOfPilgrimageUsed\") == 2",
+        "content": "The crown has declared Solitude the spiritual capital of Skyrim. Pilgrims flock there from across the realm, and the attention and gold follow. Other holds feel slighted and overlooked - their own shrines and temples diminished in importance. There is resentment that Solitude was chosen above all others.",
+        "display_name": "Seat of Pilgrimage - Solitude (Other Holds)",
+        "emotion": "",
+        "importance": 0.6000000238418579,
+        "key": "seat-of-pilgrimage-solitude-other-holds",
+        "knowledge_key": "",
+        "location": "Skyrim",
+        "tags": [
+          "pilgrimage",
+          "spiritual capital",
+          "resentment",
+          "faith",
+          "religion",
+          "solitude"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAKingSeatOfPilgrimageUsed\") == 3 and is_in_faction(actorUUID, \"CrimeFactionEastmarch\")",
+        "content": "Windhelm has been declared the Seat of Pilgrimage - the spiritual capital of all Skyrim. Pilgrims travel from every hold to worship here. The people of Eastmarch take immense pride in this honor. Shrines, offerings, and religious gatherings dominate daily life. The hold prospers from the constant flow of faithful visitors.",
+        "display_name": "Seat of Pilgrimage - Windhelm",
+        "emotion": "",
+        "importance": 0.75,
+        "key": "seat-of-pilgrimage-windhelm",
+        "knowledge_key": "",
+        "location": "Eastmarch",
+        "tags": [
+          "pilgrimage",
+          "spiritual capital",
+          "faith",
+          "religion",
+          "windhelm",
+          "decree"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAKingSeatOfPilgrimageUsed\") == 3",
+        "content": "The crown has declared Windhelm the spiritual capital of Skyrim. Pilgrims flock there from across the realm, and the attention and gold follow. Other holds feel slighted and overlooked - their own shrines and temples diminished in importance. There is resentment that Windhelm was chosen above all others.",
+        "display_name": "Seat of Pilgrimage - Windhelm (Other Holds)",
+        "emotion": "",
+        "importance": 0.6000000238418579,
+        "key": "seat-of-pilgrimage-windhelm-other-holds",
+        "knowledge_key": "",
+        "location": "Skyrim",
+        "tags": [
+          "pilgrimage",
+          "spiritual capital",
+          "resentment",
+          "faith",
+          "religion",
+          "windhelm"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAKingSeatOfPilgrimageUsed\") == 4 and is_in_faction(actorUUID, \"CrimeFactionRift\")",
+        "content": "Riften has been declared the Seat of Pilgrimage - the spiritual capital of all Skyrim. Pilgrims travel from every hold to worship here. The people of The Rift take immense pride in this honor. Shrines, offerings, and religious gatherings dominate daily life. The hold prospers from the constant flow of faithful visitors.",
+        "display_name": "Seat of Pilgrimage - Riften",
+        "emotion": "",
+        "importance": 0.75,
+        "key": "seat-of-pilgrimage-riften",
+        "knowledge_key": "",
+        "location": "The Rift",
+        "tags": [
+          "pilgrimage",
+          "spiritual capital",
+          "faith",
+          "religion",
+          "riften",
+          "decree"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAKingSeatOfPilgrimageUsed\") == 4",
+        "content": "The crown has declared Riften the spiritual capital of Skyrim. Pilgrims flock there from across the realm, and the attention and gold follow. Other holds feel slighted and overlooked - their own shrines and temples diminished in importance. There is resentment that Riften was chosen above all others.",
+        "display_name": "Seat of Pilgrimage - Riften (Other Holds)",
+        "emotion": "",
+        "importance": 0.6000000238418579,
+        "key": "seat-of-pilgrimage-riften-other-holds",
+        "knowledge_key": "",
+        "location": "Skyrim",
+        "tags": [
+          "pilgrimage",
+          "spiritual capital",
+          "resentment",
+          "faith",
+          "religion",
+          "riften"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAKingSeatOfPilgrimageUsed\") == 5 and is_in_faction(actorUUID, \"CrimeFactionReach\")",
+        "content": "Markarth has been declared the Seat of Pilgrimage - the spiritual capital of all Skyrim. Pilgrims travel from every hold to worship here. The people of The Reach take immense pride in this honor. Shrines, offerings, and religious gatherings dominate daily life. The hold prospers from the constant flow of faithful visitors.",
+        "display_name": "Seat of Pilgrimage - Markarth",
+        "emotion": "",
+        "importance": 0.75,
+        "key": "seat-of-pilgrimage-markarth",
+        "knowledge_key": "",
+        "location": "The Reach",
+        "tags": [
+          "pilgrimage",
+          "spiritual capital",
+          "faith",
+          "religion",
+          "markarth",
+          "decree"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAKingSeatOfPilgrimageUsed\") == 5",
+        "content": "The crown has declared Markarth the spiritual capital of Skyrim. Pilgrims flock there from across the realm, and the attention and gold follow. Other holds feel slighted and overlooked - their own shrines and temples diminished in importance. There is resentment that Markarth was chosen above all others.",
+        "display_name": "Seat of Pilgrimage - Markarth (Other Holds)",
+        "emotion": "",
+        "importance": 0.6000000238418579,
+        "key": "seat-of-pilgrimage-markarth-other-holds",
+        "knowledge_key": "",
+        "location": "Skyrim",
+        "tags": [
+          "pilgrimage",
+          "spiritual capital",
+          "resentment",
+          "faith",
+          "religion",
+          "markarth"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAKingSeatOfPilgrimageUsed\") == 6 and is_in_faction(actorUUID, \"CrimeFactionFalkreath\")",
+        "content": "Falkreath has been declared the Seat of Pilgrimage - the spiritual capital of all Skyrim. Pilgrims travel from every hold to worship here. The people of Falkreath Hold take immense pride in this honor. Shrines, offerings, and religious gatherings dominate daily life. The hold prospers from the constant flow of faithful visitors.",
+        "display_name": "Seat of Pilgrimage - Falkreath",
+        "emotion": "",
+        "importance": 0.75,
+        "key": "seat-of-pilgrimage-falkreath",
+        "knowledge_key": "",
+        "location": "Falkreath Hold",
+        "tags": [
+          "pilgrimage",
+          "spiritual capital",
+          "faith",
+          "religion",
+          "falkreath",
+          "decree"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAKingSeatOfPilgrimageUsed\") == 6",
+        "content": "The crown has declared Falkreath the spiritual capital of Skyrim. Pilgrims flock there from across the realm, and the attention and gold follow. Other holds feel slighted and overlooked - their own shrines and temples diminished in importance. There is resentment that Falkreath was chosen above all others.",
+        "display_name": "Seat of Pilgrimage - Falkreath (Other Holds)",
+        "emotion": "",
+        "importance": 0.6000000238418579,
+        "key": "seat-of-pilgrimage-falkreath-other-holds",
+        "knowledge_key": "",
+        "location": "Skyrim",
+        "tags": [
+          "pilgrimage",
+          "spiritual capital",
+          "resentment",
+          "faith",
+          "religion",
+          "falkreath"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAKingSeatOfPilgrimageUsed\") == 7 and is_in_faction(actorUUID, \"CrimeFactionPale\")",
+        "content": "Dawnstar has been declared the Seat of Pilgrimage - the spiritual capital of all Skyrim. Pilgrims travel from every hold to worship here. The people of The Pale take immense pride in this honor. Shrines, offerings, and religious gatherings dominate daily life. The hold prospers from the constant flow of faithful visitors.",
+        "display_name": "Seat of Pilgrimage - Dawnstar",
+        "emotion": "",
+        "importance": 0.75,
+        "key": "seat-of-pilgrimage-dawnstar",
+        "knowledge_key": "",
+        "location": "The Pale",
+        "tags": [
+          "pilgrimage",
+          "spiritual capital",
+          "faith",
+          "religion",
+          "dawnstar",
+          "decree"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAKingSeatOfPilgrimageUsed\") == 7",
+        "content": "The crown has declared Dawnstar the spiritual capital of Skyrim. Pilgrims flock there from across the realm, and the attention and gold follow. Other holds feel slighted and overlooked - their own shrines and temples diminished in importance. There is resentment that Dawnstar was chosen above all others.",
+        "display_name": "Seat of Pilgrimage - Dawnstar (Other Holds)",
+        "emotion": "",
+        "importance": 0.6000000238418579,
+        "key": "seat-of-pilgrimage-dawnstar-other-holds",
+        "knowledge_key": "",
+        "location": "Skyrim",
+        "tags": [
+          "pilgrimage",
+          "spiritual capital",
+          "resentment",
+          "faith",
+          "religion",
+          "dawnstar"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAKingSeatOfPilgrimageUsed\") == 8 and is_in_faction(actorUUID, \"CrimeFactionWinterhold\")",
+        "content": "Winterhold has been declared the Seat of Pilgrimage - the spiritual capital of all Skyrim. Pilgrims travel from every hold to worship here. The people of Winterhold Hold take immense pride in this honor. Shrines, offerings, and religious gatherings dominate daily life. The hold prospers from the constant flow of faithful visitors.",
+        "display_name": "Seat of Pilgrimage - Winterhold",
+        "emotion": "",
+        "importance": 0.75,
+        "key": "seat-of-pilgrimage-winterhold",
+        "knowledge_key": "",
+        "location": "Winterhold Hold",
+        "tags": [
+          "pilgrimage",
+          "spiritual capital",
+          "faith",
+          "religion",
+          "winterhold",
+          "decree"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAKingSeatOfPilgrimageUsed\") == 8",
+        "content": "The crown has declared Winterhold the spiritual capital of Skyrim. Pilgrims flock there from across the realm, and the attention and gold follow. Other holds feel slighted and overlooked - their own shrines and temples diminished in importance. There is resentment that Winterhold was chosen above all others.",
+        "display_name": "Seat of Pilgrimage - Winterhold (Other Holds)",
+        "emotion": "",
+        "importance": 0.6000000238418579,
+        "key": "seat-of-pilgrimage-winterhold-other-holds",
+        "knowledge_key": "",
+        "location": "Skyrim",
+        "tags": [
+          "pilgrimage",
+          "spiritual capital",
+          "resentment",
+          "faith",
+          "religion",
+          "winterhold"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAKingSeatOfPilgrimageUsed\") == 9 and is_in_faction(actorUUID, \"CrimeFactionHjaalmarch\")",
+        "content": "Morthal has been declared the Seat of Pilgrimage - the spiritual capital of all Skyrim. Pilgrims travel from every hold to worship here. The people of Hjaalmarch take immense pride in this honor. Shrines, offerings, and religious gatherings dominate daily life. The hold prospers from the constant flow of faithful visitors.",
+        "display_name": "Seat of Pilgrimage - Morthal",
+        "emotion": "",
+        "importance": 0.75,
+        "key": "seat-of-pilgrimage-morthal",
+        "knowledge_key": "",
+        "location": "Hjaalmarch",
+        "tags": [
+          "pilgrimage",
+          "spiritual capital",
+          "faith",
+          "religion",
+          "morthal",
+          "decree"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAKingSeatOfPilgrimageUsed\") == 9",
+        "content": "The crown has declared Morthal the spiritual capital of Skyrim. Pilgrims flock there from across the realm, and the attention and gold follow. Other holds feel slighted and overlooked - their own shrines and temples diminished in importance. There is resentment that Morthal was chosen above all others.",
+        "display_name": "Seat of Pilgrimage - Morthal (Other Holds)",
+        "emotion": "",
+        "importance": 0.6000000238418579,
+        "key": "seat-of-pilgrimage-morthal-other-holds",
+        "knowledge_key": "",
+        "location": "Skyrim",
+        "tags": [
+          "pilgrimage",
+          "spiritual capital",
+          "resentment",
+          "faith",
+          "religion",
+          "morthal"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAKingSeatOfPilgrimageUsed\") == 10 and is_in_faction(actorUUID, \"AAKingHighreachCitizens\")",
+        "content": "Highreach Keep has been declared the Seat of Pilgrimage - the spiritual capital of all Skyrim. Pilgrims travel from every hold to worship here. The people of Highreach Keep take immense pride in this honor. Shrines, offerings, and religious gatherings dominate daily life. The hold prospers from the constant flow of faithful visitors.",
+        "display_name": "Seat of Pilgrimage - Highreach Keep",
+        "emotion": "",
+        "importance": 0.75,
+        "key": "seat-of-pilgrimage-highreach-keep",
+        "knowledge_key": "",
+        "location": "Highreach Keep",
+        "tags": [
+          "pilgrimage",
+          "spiritual capital",
+          "faith",
+          "religion",
+          "highreach keep",
+          "decree"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAKingSeatOfPilgrimageUsed\") == 10",
+        "content": "The crown has declared Highreach Keep the spiritual capital of Skyrim. Pilgrims flock there from across the realm, and the attention and gold follow. Other holds feel slighted and overlooked - their own shrines and temples diminished in importance. There is resentment that Highreach Keep was chosen above all others.",
+        "display_name": "Seat of Pilgrimage - Highreach Keep (Other Holds)",
+        "emotion": "",
+        "importance": 0.6000000238418579,
+        "key": "seat-of-pilgrimage-highreach-keep-other-holds",
+        "knowledge_key": "",
+        "location": "Skyrim",
+        "tags": [
+          "pilgrimage",
+          "spiritual capital",
+          "resentment",
+          "faith",
+          "religion",
+          "highreach keep"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAKingElenwenWritSigned\") == 1 and is_in_faction(actorUUID, \"ThalmorFaction\")",
+        "content": "The crown has signed an official writ against First Emissary Elenwen and the Thalmor presence in Skyrim. This is a direct challenge to the Aldmeri Dominion's authority. Thalmor agents and Justiciars are aware that the political winds have shifted against them and their operations in Skyrim are now under formal threat from the throne.",
+        "display_name": "Elenwen Writ Signed - Thalmor Awareness",
+        "emotion": "",
+        "importance": 0.800000011920929,
+        "key": "elenwen-writ-signed-thalmor-awareness",
+        "knowledge_key": "",
+        "location": "Skyrim",
+        "tags": [
+          "thalmor",
+          "elenwen",
+          "writ",
+          "dominion",
+          "politics",
+          "threat"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAKingElenwenWritSigned\") == 1 and is_in_faction(actorUUID, \"JobJarlFaction\")",
+        "content": "The crown has taken a formal stance against the Thalmor by signing an official writ targeting First Emissary Elenwen. The Jarls of Skyrim are aware of this bold political move. Some see it as long-overdue defiance of the Aldmeri Dominion, while others worry it may provoke dangerous retaliation. The White-Gold Concordat's enforcement in Skyrim hangs in the balance.",
+        "display_name": "Elenwen Writ Signed - Jarl Awareness",
+        "emotion": "",
+        "importance": 0.75,
+        "key": "elenwen-writ-signed-jarl-awareness",
+        "knowledge_key": "",
+        "location": "Skyrim",
+        "tags": [
+          "thalmor",
+          "elenwen",
+          "writ",
+          "jarls",
+          "politics",
+          "concordat"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAKingElenwenWritSigned\") == 1 and is_in_faction(actorUUID, \"AAHighKingCouncilFaction\")",
+        "content": "The royal council is aware that the crown has signed an official writ against First Emissary Elenwen and the Thalmor. This escalation has significant diplomatic and military implications. The council must prepare for potential Thalmor retaliation and consider how this affects Skyrim's relationships with the Empire and the Aldmeri Dominion.",
+        "display_name": "Elenwen Writ Signed - Council Awareness",
+        "emotion": "",
+        "importance": 0.75,
+        "key": "elenwen-writ-signed-council-awareness",
+        "knowledge_key": "",
+        "location": "Skyrim",
+        "tags": [
+          "thalmor",
+          "elenwen",
+          "writ",
+          "council",
+          "strategy",
+          "diplomacy"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAKingElenwenKilledVoC\") == 1 and is_in_faction(actorUUID, \"ThalmorFaction\")",
+        "content": "First Emissary Elenwen is dead, killed during a mission carried out by the Voice of the Crown. The most powerful Thalmor representative in Skyrim was slain. This is an act of war in all but name. The Aldmeri Dominion will not forget or forgive this. Thalmor agents remaining in Skyrim operate in fear, knowing the crown has the will and the means to strike at even their highest-ranking officials.",
+        "display_name": "Elenwen Killed - Thalmor Awareness",
+        "emotion": "",
+        "importance": 0.8500000238418579,
+        "key": "elenwen-killed-thalmor-awareness",
+        "knowledge_key": "",
+        "location": "Skyrim",
+        "tags": [
+          "thalmor",
+          "elenwen",
+          "killed",
+          "dominion",
+          "war",
+          "voice of the crown"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAKingElenwenKilledVoC\") == 1 and (is_in_faction(actorUUID, \"JobJarlFaction\") or is_in_faction(actorUUID, \"AAHighKingCouncilFaction\"))",
+        "content": "First Emissary Elenwen is dead, killed during a Voice of the Crown operation. The Jarls and royal council know this changes everything. The Thalmor will demand answers or retribution. Some Jarls who chafed under Thalmor oversight celebrate quietly, while others fear the diplomatic fallout. Skyrim has drawn a line in blood that cannot be undrawn.",
+        "display_name": "Elenwen Killed - Jarl and Council Awareness",
+        "emotion": "",
+        "importance": 0.800000011920929,
+        "key": "elenwen-killed-jarl-and-council-awareness",
+        "knowledge_key": "",
+        "location": "Skyrim",
+        "tags": [
+          "thalmor",
+          "elenwen",
+          "killed",
+          "jarls",
+          "council",
+          "consequences"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAKingLoanOverdueCount\") >= 2 and is_in_faction(actorUUID, \"JobMerchantFaction\")",
+        "content": "The crown has fallen behind on loan repayments. Creditors are growing impatient and the ruler's financial reputation is suffering. If payments continue to be missed, the crown risks losing property seized as collateral. Word of the crown's debts has begun to spread among merchants and nobles.",
+        "display_name": "Kingdom Loan - Payments Overdue",
+        "emotion": "",
+        "importance": 0.6499999761581421,
+        "key": "kingdom-loan-payments-overdue",
+        "knowledge_key": "",
+        "location": "Skyrim",
+        "tags": [
+          "loan",
+          "debt",
+          "overdue",
+          "treasury",
+          "financial crisis"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAKingLoanSeized\") == 1",
+        "content": "Creditors have seized the crown's property as collateral for unpaid debts. The ruler's homes have been locked and foreclosure notices posted. This is a devastating blow to royal prestige - a ruler who cannot pay their debts is a ruler whose authority is crumbling.",
+        "display_name": "Kingdom Loan - Property Seized",
+        "emotion": "",
+        "importance": 0.75,
+        "key": "kingdom-loan-property-seized",
+        "knowledge_key": "",
+        "location": "Skyrim",
+        "tags": [
+          "loan",
+          "foreclosure",
+          "seized",
+          "debt",
+          "prestige",
+          "crisis"
+        ],
+        "type": "KNOWLEDGE"
+      },
+      {
+        "always_inject": false,
+        "condition_expr": "get_global_value(\"AAIsHighKing\") == 1 and get_global_value(\"AAKingMavenSentenced\") == 1 and is_in_faction(actorUUID, \"CrimeFactionRift\")",
+        "content": "Maven Black-Briar, the most powerful and feared woman in Riften, has been tried and sentenced by the crown. Her downfall has sent shockwaves through The Rift. Some celebrate the end of her corrupt influence, while others fear what will fill the power vacuum she leaves behind.",
+        "display_name": "Maven Black-Briar Sentenced",
+        "emotion": "",
+        "importance": 0.6000000238418579,
+        "key": "maven-black-briar-sentenced",
+        "knowledge_key": "",
+        "location": "The Rift",
+        "tags": [
+          "maven",
+          "trial",
+          "sentenced",
+          "riften",
+          "justice",
+          "politics"
+        ],
+        "type": "KNOWLEDGE"
+      }
+    ],
+    "entry_count": 204,
+    "exported_at": "2026-10-29T18:11:20Z",
+    "format_version": 3,
+    "name": "BHKS-TNG Highreach World Knowledge",
+    "npc_groups": [],
+    "version": "2.0.0"
+  }
+}
