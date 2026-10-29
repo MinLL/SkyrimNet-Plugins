@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-29T18:28:13.944Z",
-  "stats_as_of": "2026-10-29T18:26:12.280Z",
+  "generated_at": "2026-10-29T19:22:44.761Z",
+  "stats_as_of": "2026-10-29T19:19:31.921Z",
   "plugins": [
     {
       "id": "plugins/winterishclover/become-high-king-of-skyrim-tng-knowledge-pack",
@@ -55,7 +55,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 0,
+        "downloads": 1,
         "endorsements": 0
       }
     },
@@ -418,7 +418,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 306,
+        "downloads": 307,
         "endorsements": 10
       }
     },
@@ -909,7 +909,7 @@
         "height": 760
       },
       "stats": {
-        "downloads": 41,
+        "downloads": 45,
         "endorsements": 0
       }
     },
@@ -1363,7 +1363,7 @@
         "height": 720
       },
       "stats": {
-        "downloads": 60,
+        "downloads": 62,
         "endorsements": 1
       }
     },
@@ -2536,7 +2536,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 928,
+        "downloads": 929,
         "endorsements": 15
       }
     },
@@ -6506,7 +6506,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 817,
+        "downloads": 819,
         "endorsements": 1
       }
     },
@@ -8006,7 +8006,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 425,
+        "downloads": 426,
         "endorsements": 0
       }
     },
@@ -8861,7 +8861,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1167,
+        "downloads": 1168,
         "endorsements": 2
       }
     },
@@ -9986,7 +9986,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1604,
+        "downloads": 1605,
         "endorsements": 2
       }
     },
@@ -10571,7 +10571,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 155,
+        "downloads": 156,
         "endorsements": 0
       }
     },
@@ -11516,7 +11516,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 28,
+        "downloads": 29,
         "endorsements": 0
       }
     },
@@ -11561,7 +11561,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 323,
+        "downloads": 324,
         "endorsements": 0
       }
     },
@@ -11606,7 +11606,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 821,
+        "downloads": 822,
         "endorsements": 0
       }
     },
@@ -11966,7 +11966,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 165,
+        "downloads": 167,
         "endorsements": 0
       }
     },
@@ -12416,7 +12416,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 279,
+        "downloads": 280,
         "endorsements": 0
       }
     },
@@ -13001,7 +13001,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 181,
+        "downloads": 182,
         "endorsements": 0
       }
     },
@@ -13406,7 +13406,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1971,
+        "downloads": 1972,
         "endorsements": 2
       }
     },
