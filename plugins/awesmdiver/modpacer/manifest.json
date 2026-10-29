@@ -9,13 +9,15 @@
     "mod updater",
     "vortex",
     "mod organizer 2",
-    "updates"
+    "updates",
+    "SkyrimSE",
+    "SkyrimVR"
   ],
   "nsfw": false,
   "icon": "wrench",
   "mods": [],
   "image": "cover.png",
   "external_url": "https://github.com/awesmdiver/modpacer/releases/latest",
-  "version": "1.2.0",
-  "changelog": "### What's New\n\n- **Sort your mods:** pick **Default order**, **Name A to Z** or **Name Z to A** above your list, and ModPacer remembers your choice.\n- **Set missing versions:** if **Vortex** doesn't know a mod's version, click the new \"It's <version>\" button so we can check for future updates.\n- **One options screen per update:** you now make your mod choices just once, even if **Vortex** is busy.\n- **Clearer logs:** the update log now shows every step of an options-screen installation so you can easily track what happened."
+  "version": "1.4.0",
+  "changelog": "## **What's New!**\n\n- **Skyrim VR:** ModPacer now works with Skyrim VR in Vortex and Mod Organizer 2. Just point setup at your Skyrim VR folder.\n- **Pictures and descriptions:** Mods now show their cover art and a short description, and you can hide the art anytime with **Show mod pictures** in **Settings**.\n- **Search:** Find what you need fast using the new search box right next to **Sort by**.\n- **See each step:** An updating mod now shows what ModPacer is doing, such as unpacking, installing, enabling plugins and removing the old version.\n- **Cut-off downloads:** A download that stopped halfway is noticed and downloaded again.\n- **Better matching:** Mods whose names differ between the Hub and Vortex or listed under a different id are matched more reliably.\n- **Stuck updates:** A new Help section walks you through what to do if a mod keeps offering an update you've already installed, and how to report it.\n- **No more guessing:** If a release has several files and it isn't clear which one is the mod, ModPacer sends you to its download page instead of picking one.\n- **Smart startup:** ModPacer now automatically opens the **Updates** section at launch if you have mods that need attention.\n- **Polish:** A lot of under the hood and UI polish."
 }
