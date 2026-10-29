@@ -1,8 +1,81 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-28T23:22:28.975Z",
-  "stats_as_of": "2026-10-28T23:22:28.857Z",
+  "generated_at": "2026-10-29T00:19:09.087Z",
+  "stats_as_of": "2026-10-29T00:19:08.992Z",
   "plugins": [
+    {
+      "id": "plugins/phospheneoverdrive/intelengine-npc-autonomy-faction-politics",
+      "plugin_id": "phospheneoverdrive.intelengine-npc-autonomy-faction-politics",
+      "type": "listing",
+      "title": "IntelEngine — NPC Autonomy & Faction Politics",
+      "tagline": "Give Skyrim’s NPCs agency—tasks, schedules, autonomous stories, and faction politics.",
+      "author": "phospheneoverdrive",
+      "tags": [
+        "actions",
+        "autonomy",
+        "immersion",
+        "storytelling",
+        "scheduling",
+        "travel",
+        "quests",
+        "faction politics",
+        "world simulation"
+      ],
+      "nsfw": false,
+      "icon": "gamemaster",
+      "mods": [],
+      "first_published": "2026-09-26T03:14:31Z",
+      "last_updated": "2026-10-29T00:18:43Z",
+      "version": "3.6.2",
+      "history": [
+        {
+          "version": "3.6.2",
+          "commit": "1ca69aaf3052741648220bbe3ea0420d8ebf7b41",
+          "date": "2026-10-29T00:18:43Z",
+          "changelog": "### Save converter\n- Converts saves that the 3.5.x→3.6 converter used to refuse: caches on temporary (FF) actors and leftover global caches are now converted in place.\n- Refuses saves that are already converted (for example a later save made from an `_IEconverted` one) instead of double-encoding them.\n- Clearer, multi-line output, plus a warning not to load converted saves with any IE 3.5.x.\n\n### Couriers and quests\n- Fixed couriers sometimes \"arriving\" twice, which injected duplicate/blank facts and caused errors after the quest ended.\n- Cancelling a quest from the dashboard after the courier arrives now frees the courier properly.\n- Courier story facts are recorded when the courier actually arrives, so an aborted courier leaves no facts behind.\n\n### Dashboard hotkey\n- Only works while Skyrim is focused, and modifiers must match exactly (a plain 7 no longer fires on Shift+7).\n- Changing the hotkey on the SkyrimNet settings page now applies as soon as you click Save, no restart. The dashboard's Settings tab also changes it. Default: Shift+7.\n\n### Other\n- Politics settings now persist correctly, and politics can be turned on later without a restart.\n- Story DM prompt: knowledge every candidate shares is listed once instead of repeated per NPC.\n- Long text is truncated on UTF-8 character boundaries.\n- Removed unused internal functions.\n\nThis release updates `IntelEngine.dll` and several scripts that must match it; install the whole package over the previous version.\n\n**Antivirus note:** Microsoft Defender may flag the bundled save converter `LegacyCacheMigration.exe` (`Wacapew.C!ml`, a machine-learning heuristic, 1/70 on VirusTotal). It is a false positive and is being reported to Microsoft. The converter is only needed to upgrade 3.5.x saves.\n\nFull changelog: https://github.com/galanx/IntelEngine-GamePlugin/blob/main/CHANGELOG.md#v362\nDownload: https://github.com/galanx/IntelEngine-GamePlugin/releases/tag/v3.6.2"
+        },
+        {
+          "version": "3.6.1",
+          "commit": "d70d08cc4ec0a627bb4989e7a6bd39fa0077a091",
+          "date": "2026-10-28T14:34:26Z",
+          "changelog": "- Rebuilt the bundled save converter (`LegacyCacheMigration.exe`) so Windows Defender no longer falsely flags it as `Trojan:Win32/Wacatac.B!ml`. 3.6.0 was never harmful; this release just stops the warning.\n- No functional changes. `IntelEngine.dll` and `IntelEngine.esp` are identical to 3.6.0, so you can update mid-playthrough without converting your saves again."
+        },
+        {
+          "version": "3.6.0",
+          "commit": "bb9bc25788ea26ab0de510e209bfa0dd1b48bcf5",
+          "date": "2026-10-27T21:15:05Z",
+          "changelog": "- 💾 **Save conversion:** an offline converter (included) repairs saves from earlier versions. **Convert old saves before loading with 3.6.0;** fresh games don't need it.\n- **Names kept:** stored NPC names, including names from name mods such as RNE, now survive saves and reloads. Memories and task history no longer corrupt them.\n- **Skyrim VR re-enabled:** one shared SE/AE/VR DLL; VR saves from 3.5.1 or earlier can be converted. VR should work (partly tested).\n- **Story DM:** stays within the current candidates, leaves disabled story types out of prompts, and skips itself when all eight types are off.\n- **NPC Social DM:** safer around save loading.\n- **Fixes:** Content Library bio lookup and overlay priority; battle and peace relationship changes now survive reloads; script checks aligned with the native plugin.\n\nTested on SE/AE 1.6.1170 and 1.7.104 with SkyrimNet Beta 28. 1.5.97 is untested."
+        },
+        {
+          "version": "3.5.2",
+          "commit": "95fad015e498fa97808d152341a5ce15cbb69f47",
+          "date": "2026-10-09T19:56:07Z",
+          "changelog": "Added support for Skyrim SE/AE versions 1.7.x"
+        },
+        {
+          "version": "3.5.1",
+          "commit": "e21dc4d0cd90657841180582f569a72ef8322f11",
+          "date": "2026-09-26T03:14:31Z",
+          "changelog": "Release for use with SkyrimNet Beta 25"
+        }
+      ],
+      "external_url": "https://github.com/galanx/IntelEngine-GamePlugin/releases/latest",
+      "languages": [
+        "en"
+      ],
+      "language": "en",
+      "image": {
+        "file": "cover.png",
+        "sha": "2481c81c05b48de522dea56a269a1803f5be32f9",
+        "commit": "e21dc4d0cd90657841180582f569a72ef8322f11",
+        "width": 1672,
+        "height": 941
+      },
+      "stats": {
+        "downloads": 299,
+        "endorsements": 10
+      }
+    },
     {
       "id": "plugins/severause/magelight-ui",
       "plugin_id": "severause.magelight-ui",
@@ -54,73 +127,6 @@
       "stats": {
         "downloads": 35,
         "endorsements": 0
-      }
-    },
-    {
-      "id": "plugins/phospheneoverdrive/intelengine-npc-autonomy-faction-politics",
-      "plugin_id": "phospheneoverdrive.intelengine-npc-autonomy-faction-politics",
-      "type": "listing",
-      "title": "IntelEngine — NPC Autonomy & Faction Politics",
-      "tagline": "Give Skyrim’s NPCs agency—tasks, schedules, autonomous stories, and faction politics.",
-      "author": "phospheneoverdrive",
-      "tags": [
-        "actions",
-        "autonomy",
-        "immersion",
-        "storytelling",
-        "scheduling",
-        "travel",
-        "quests",
-        "faction politics",
-        "world simulation"
-      ],
-      "nsfw": false,
-      "icon": "gamemaster",
-      "mods": [],
-      "first_published": "2026-09-26T03:14:31Z",
-      "last_updated": "2026-10-28T14:34:26Z",
-      "version": "3.6.1",
-      "history": [
-        {
-          "version": "3.6.1",
-          "commit": "d70d08cc4ec0a627bb4989e7a6bd39fa0077a091",
-          "date": "2026-10-28T14:34:26Z",
-          "changelog": "- Rebuilt the bundled save converter (`LegacyCacheMigration.exe`) so Windows Defender no longer falsely flags it as `Trojan:Win32/Wacatac.B!ml`. 3.6.0 was never harmful; this release just stops the warning.\n- No functional changes. `IntelEngine.dll` and `IntelEngine.esp` are identical to 3.6.0, so you can update mid-playthrough without converting your saves again."
-        },
-        {
-          "version": "3.6.0",
-          "commit": "bb9bc25788ea26ab0de510e209bfa0dd1b48bcf5",
-          "date": "2026-10-27T21:15:05Z",
-          "changelog": "- 💾 **Save conversion:** an offline converter (included) repairs saves from earlier versions. **Convert old saves before loading with 3.6.0;** fresh games don't need it.\n- **Names kept:** stored NPC names, including names from name mods such as RNE, now survive saves and reloads. Memories and task history no longer corrupt them.\n- **Skyrim VR re-enabled:** one shared SE/AE/VR DLL; VR saves from 3.5.1 or earlier can be converted. VR should work (partly tested).\n- **Story DM:** stays within the current candidates, leaves disabled story types out of prompts, and skips itself when all eight types are off.\n- **NPC Social DM:** safer around save loading.\n- **Fixes:** Content Library bio lookup and overlay priority; battle and peace relationship changes now survive reloads; script checks aligned with the native plugin.\n\nTested on SE/AE 1.6.1170 and 1.7.104 with SkyrimNet Beta 28. 1.5.97 is untested."
-        },
-        {
-          "version": "3.5.2",
-          "commit": "95fad015e498fa97808d152341a5ce15cbb69f47",
-          "date": "2026-10-09T19:56:07Z",
-          "changelog": "Added support for Skyrim SE/AE versions 1.7.x"
-        },
-        {
-          "version": "3.5.1",
-          "commit": "e21dc4d0cd90657841180582f569a72ef8322f11",
-          "date": "2026-09-26T03:14:31Z",
-          "changelog": "Release for use with SkyrimNet Beta 25"
-        }
-      ],
-      "external_url": "https://github.com/galanx/IntelEngine-GamePlugin/releases/latest",
-      "languages": [
-        "en"
-      ],
-      "language": "en",
-      "image": {
-        "file": "cover.png",
-        "sha": "2481c81c05b48de522dea56a269a1803f5be32f9",
-        "commit": "e21dc4d0cd90657841180582f569a72ef8322f11",
-        "width": 1672,
-        "height": 941
-      },
-      "stats": {
-        "downloads": 297,
-        "endorsements": 10
       }
     },
     {
@@ -231,7 +237,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 41,
+        "downloads": 43,
         "endorsements": 0
       }
     },
@@ -314,7 +320,7 @@
         "height": 928
       },
       "stats": {
-        "downloads": 98,
+        "downloads": 99,
         "endorsements": 2
       }
     },
@@ -1409,7 +1415,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 147,
+        "downloads": 148,
         "endorsements": 3
       }
     },
@@ -2165,7 +2171,7 @@
         "height": 1080
       },
       "stats": {
-        "downloads": 150,
+        "downloads": 151,
         "endorsements": 4
       }
     },
@@ -2403,8 +2409,8 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 905,
-        "endorsements": 14
+        "downloads": 907,
+        "endorsements": 15
       }
     },
     {
@@ -2471,7 +2477,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 286,
+        "downloads": 287,
         "endorsements": 7
       }
     },
@@ -2977,7 +2983,7 @@
         "height": 1008
       },
       "stats": {
-        "downloads": 20,
+        "downloads": 21,
         "endorsements": 0
       }
     },
@@ -3228,7 +3234,7 @@
         "config": 4
       },
       "stats": {
-        "downloads": 234,
+        "downloads": 235,
         "endorsements": 3
       }
     },
@@ -3286,7 +3292,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 114,
+        "downloads": 115,
         "endorsements": 2
       }
     },
@@ -4077,7 +4083,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 76,
+        "downloads": 77,
         "endorsements": 3
       }
     },
@@ -4303,7 +4309,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 380,
+        "downloads": 381,
         "endorsements": 5
       }
     },
@@ -4348,7 +4354,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1229,
+        "downloads": 1231,
         "endorsements": 2
       }
     },
@@ -4483,7 +4489,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2762,
+        "downloads": 2764,
         "endorsements": 3
       }
     },
@@ -4708,7 +4714,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1411,
+        "downloads": 1412,
         "endorsements": 0
       }
     },
@@ -5203,7 +5209,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 355,
+        "downloads": 356,
         "endorsements": 1
       }
     },
@@ -5473,7 +5479,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1123,
+        "downloads": 1124,
         "endorsements": 0
       }
     },
@@ -5833,7 +5839,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 988,
+        "downloads": 990,
         "endorsements": 1
       }
     },
@@ -6193,7 +6199,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1285,
+        "downloads": 1287,
         "endorsements": 3
       }
     },
@@ -6373,7 +6379,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 569,
+        "downloads": 570,
         "endorsements": 0
       }
     },
@@ -6418,7 +6424,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 802,
+        "downloads": 804,
         "endorsements": 1
       }
     },
@@ -6508,7 +6514,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 248,
+        "downloads": 249,
         "endorsements": 0
       }
     },
@@ -8503,7 +8509,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 202,
+        "downloads": 204,
         "endorsements": 1
       }
     },
@@ -8728,7 +8734,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 27,
+        "downloads": 28,
         "endorsements": 0
       }
     },
@@ -8773,7 +8779,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1146,
+        "downloads": 1148,
         "endorsements": 2
       }
     },
@@ -8863,7 +8869,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1483,
+        "downloads": 1485,
         "endorsements": 2
       }
     },
@@ -9268,7 +9274,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 333,
+        "downloads": 335,
         "endorsements": 0
       }
     },
@@ -9538,7 +9544,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 32,
+        "downloads": 33,
         "endorsements": 0
       }
     },
@@ -9898,7 +9904,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1574,
+        "downloads": 1576,
         "endorsements": 2
       }
     },
@@ -10168,7 +10174,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1295,
+        "downloads": 1297,
         "endorsements": 2
       }
     },
@@ -10573,7 +10579,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 340,
+        "downloads": 341,
         "endorsements": 1
       }
     },
@@ -10753,7 +10759,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 545,
+        "downloads": 546,
         "endorsements": 1
       }
     },
@@ -11383,7 +11389,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 138,
+        "downloads": 139,
         "endorsements": 0
       }
     },
@@ -11563,7 +11569,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 154,
+        "downloads": 155,
         "endorsements": 0
       }
     },
@@ -11878,7 +11884,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 159,
+        "downloads": 160,
         "endorsements": 0
       }
     },
@@ -12463,7 +12469,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 144,
+        "downloads": 146,
         "endorsements": 0
       }
     },
@@ -12508,7 +12514,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 518,
+        "downloads": 519,
         "endorsements": 0
       }
     },
@@ -12778,7 +12784,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 690,
+        "downloads": 691,
         "endorsements": 2
       }
     },
@@ -13318,7 +13324,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1936,
+        "downloads": 1938,
         "endorsements": 2
       }
     },
