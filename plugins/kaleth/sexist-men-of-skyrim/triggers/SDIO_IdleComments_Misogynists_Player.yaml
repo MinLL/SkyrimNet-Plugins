@@ -11,5 +11,6 @@ response:
   type: direct_narration
   content: "{% set comments = [\"sexually degrade\", \"make a sexually charged comment to\", \"catcall\", \"objectify\", \"demand sexual gratification from\"] %}\n{% set s = decnpc(originator_uuid) %}\n{% if not s.isFemale %}\n  {% set idx = random % length(comments) %}\n  {{ s.name }} has an irresistible urge to {{ at(comments, idx) }} {{ player.name }}.\n{% endif %}"
 enabled: true
-cooldownSeconds: 5
+probability: 0.5
+cooldownSeconds: 120
 interrupt: true
