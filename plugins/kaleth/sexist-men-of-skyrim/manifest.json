@@ -15,7 +15,7 @@
   "languages": [
     "en"
   ],
-  "version": "1.1.0",
-  "changelog": "### Mechanic\n- Simpler trigger, the old one was making a mess of events\n- Added a couple of world knowledge: NPC saying crude things will no longer be shun into behaving\n\n### Bugfix\n- Fixed an issue where a missing decorator was allowing female character to be selected.",
+  "version": "1.2.0",
+  "changelog": "### Mechanic\n- Reduced the default chance for event's to trigger to 50% and lengthen the cooldown to 2 minutes; turns out that Skyrim men can be pretty thirsty. There's always the possibility to modify the trigger as one's wish.",
   "min_skyrimnet_version": "0.28.0"
 }
