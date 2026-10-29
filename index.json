@@ -1,8 +1,64 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-29T17:23:20.773Z",
-  "stats_as_of": "2026-10-29T17:23:20.628Z",
+  "generated_at": "2026-10-29T18:16:41.841Z",
+  "stats_as_of": "2026-10-29T18:16:41.734Z",
   "plugins": [
+    {
+      "id": "plugins/winterishclover/become-high-king-of-skyrim-tng-knowledge-pack",
+      "plugin_id": "winterishclover.become-high-king-of-skyrim-tng-knowledge-pack",
+      "type": "bundle",
+      "title": "Become High King of Skyrim - TNG Knowledge Pack",
+      "tagline": "Everything you'll need to get Highreach and it's history into Skyrim's brains",
+      "author": "winterishclover",
+      "tags": [
+        "knowledge pack"
+      ],
+      "nsfw": false,
+      "icon": "gamemaster",
+      "mods": [
+        {
+          "name": "BecomeKingofSkyrimTNG.esp",
+          "file": "becomekingofskyrimtng.esp",
+          "required": true
+        }
+      ],
+      "first_published": "2026-10-29T18:16:07Z",
+      "last_updated": "2026-10-29T18:16:07Z",
+      "version": "2.1.2",
+      "min_skyrimnet_version": "0.27.0",
+      "history": [
+        {
+          "version": "2.1.2",
+          "commit": "04022a07718f69701b4e3ae3c61832816c1b3f14",
+          "date": "2026-10-29T18:16:07Z",
+          "changelog": "Initial release - updated playername tags and updated for SkyrimNet 2.5"
+        }
+      ],
+      "languages": [
+        "en"
+      ],
+      "language": "en",
+      "image": {
+        "file": "cover.png",
+        "sha": "94ed68ab0dc3a78edc222f7f2c99a3aa2cb7b3c7",
+        "commit": "04022a07718f69701b4e3ae3c61832816c1b3f14",
+        "width": 1280,
+        "height": 720
+      },
+      "contents": {
+        "triggers": 0,
+        "actions": 0,
+        "prompts": 0,
+        "bios": 0,
+        "knowledge": 1,
+        "entities": 0,
+        "config": 0
+      },
+      "stats": {
+        "downloads": 0,
+        "endorsements": 0
+      }
+    },
     {
       "id": "plugins/oldcustard/courier-descriptions",
       "plugin_id": "oldcustard.courier-descriptions",
@@ -415,7 +471,7 @@
         "height": 1080
       },
       "stats": {
-        "downloads": 41,
+        "downloads": 42,
         "endorsements": 0
       }
     },
@@ -2480,7 +2536,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 925,
+        "downloads": 927,
         "endorsements": 15
       }
     },
@@ -5235,7 +5291,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 361,
+        "downloads": 362,
         "endorsements": 1
       }
     },
@@ -5865,7 +5921,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1001,
+        "downloads": 1002,
         "endorsements": 1
       }
     },
@@ -8805,7 +8861,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1166,
+        "downloads": 1167,
         "endorsements": 2
       }
     },
