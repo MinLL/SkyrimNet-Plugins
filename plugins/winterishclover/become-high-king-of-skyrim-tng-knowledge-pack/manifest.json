@@ -3,7 +3,7 @@
   "type": "bundle",
   "title": "Become High King of Skyrim - TNG Knowledge Pack",
   "tagline": "Everything you'll need to get Highreach and it's history into Skyrim's brains",
-  "description": "Version 2.1 for BHKS-TNG version 2.0+\n25 Entries tied to the history of Highreach Keep, its climate, location and architecture, plus guidance for kingdom rule from councilors. Conditioned to appropriate Highreach Keep citizens, council members and quest stages. Supplements SkyrimNet's built-in BHKS integration.\n\nLet me know if there's any expansion that should be done with this - more BHKS tutorials or Highreach Keep's impact on Skyrim. Hopefully Global values will be added to SkyrimNets functions and then we can really go nuts with integration!\n\nIncludes entries for most of BHKS functions including gendered titles, approvals, economy, world events, faith and much more.",
+  "description": "Version 2.1 for BHKS-TNG version 2.0+\n204 Entries tied to the history of Highreach Keep, its climate, location and architecture, plus guidance for kingdom rule from councilors. Conditioned to appropriate Highreach Keep citizens, council members and quest stages. Supplements SkyrimNet's built-in BHKS integration.\n\nLet me know if there's any expansion that should be done with this - more BHKS tutorials or Highreach Keep's impact on Skyrim. Hopefully Global values will be added to SkyrimNets functions and then we can really go nuts with integration!\n\nIncludes entries for most of BHKS functions including gendered titles, approvals, economy, world events, faith and much more.",
   "author": "winterishclover",
   "tags": [
     "knowledge pack"
@@ -20,8 +20,7 @@
   "languages": [
     "en"
   ],
-  "image": "cover.png",
-  "version": "2.1.2",
-  "changelog": "Initial release - updated playername tags and updated for SkyrimNet 2.5",
+  "version": "2.1.3",
+  "changelog": "Updated playername tags and updated for SkyrimNet 2.5\n\nUpdate to description for accuracy.",
   "min_skyrimnet_version": "0.27.0"
 }
