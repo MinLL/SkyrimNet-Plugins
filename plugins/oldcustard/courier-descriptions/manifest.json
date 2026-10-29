@@ -20,6 +20,6 @@
   ],
   "image": "cover.png",
   "external_url": "https://github.com/Oldcustard/CourierDescriptions/releases",
-  "version": "1.2.0",
-  "changelog": "Initial plugin-hub release"
+  "version": "1.3.0",
+  "changelog": "A compatibility release: the courier now works on **Skyrim 1.7.104** and on **SkyrimNet Beta 29**. Nothing about his line, the writing or the timing has changed — if you're on an older game and an older SkyrimNet, there's nothing new here for you.\n\n## ✨ New\n- 🆕 **Works on Skyrim 1.7.104.** Earlier builds couldn't load on it at all. Still one download for SE 1.5.97, AE 1.6.x, 1.7.104 and VR — there's no version to pick.\n- 🎙️ **Works on SkyrimNet Beta 29**, which rebuilt how it voices silent NPCs.\n- 🤝 **Dragonborn Voice Over is no longer needed.** On Beta 25–28 SkyrimNet spoke these lines through DBVO, so you had to have it installed. Beta 29 does it itself."
 }
