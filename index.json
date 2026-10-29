@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-29T05:24:31.226Z",
-  "stats_as_of": "2026-10-29T05:24:31.113Z",
+  "generated_at": "2026-10-29T06:35:23.777Z",
+  "stats_as_of": "2026-10-29T06:35:23.704Z",
   "plugins": [
     {
       "id": "plugins/phospheneoverdrive/intelengine-npc-autonomy-faction-politics",
@@ -187,7 +187,7 @@
         "height": 1080
       },
       "stats": {
-        "downloads": 21,
+        "downloads": 22,
         "endorsements": 0
       }
     },
@@ -237,7 +237,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 53,
+        "downloads": 56,
         "endorsements": 0
       }
     },
@@ -607,7 +607,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 766,
+        "downloads": 767,
         "endorsements": 35
       }
     },
@@ -1611,7 +1611,7 @@
         "height": 1152
       },
       "stats": {
-        "downloads": 243,
+        "downloads": 244,
         "endorsements": 7
       }
     },
@@ -2171,7 +2171,7 @@
         "height": 1080
       },
       "stats": {
-        "downloads": 151,
+        "downloads": 152,
         "endorsements": 4
       }
     },
@@ -2409,7 +2409,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 914,
+        "downloads": 915,
         "endorsements": 15
       }
     },
@@ -2737,7 +2737,7 @@
         "height": 864
       },
       "stats": {
-        "downloads": 299,
+        "downloads": 300,
         "endorsements": 6
       }
     },
@@ -3886,7 +3886,7 @@
         "height": 720
       },
       "stats": {
-        "downloads": 62,
+        "downloads": 63,
         "endorsements": 0
       }
     },
@@ -6424,7 +6424,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 806,
+        "downloads": 807,
         "endorsements": 1
       }
     },
@@ -8779,7 +8779,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1156,
+        "downloads": 1157,
         "endorsements": 2
       }
     },
@@ -9904,7 +9904,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1585,
+        "downloads": 1586,
         "endorsements": 2
       }
     },
@@ -10489,7 +10489,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 154,
+        "downloads": 155,
         "endorsements": 0
       }
     },
@@ -12919,7 +12919,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 180,
+        "downloads": 181,
         "endorsements": 0
       }
     },
