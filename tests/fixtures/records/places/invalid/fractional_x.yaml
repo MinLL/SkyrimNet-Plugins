@@ -1,0 +1,6 @@
+# refuse: POSITION_NOT_INTEGER
+# why: a position is whole game units
+id: fractional_x
+name: Kitchen
+space: Skyrim.esm|0x0165A7
+x: 120.5

@@ -32,6 +32,9 @@ export const RECORD_CODES = {
   PATTERN_MISSING: "PATTERN_MISSING",
   PATTERN_TOO_LONG: "PATTERN_TOO_LONG",
   PATTERN_INVALID: "PATTERN_INVALID",
+  PLACE_NAME_MISSING: "PLACE_NAME_MISSING",
+  POSITION_NOT_INTEGER: "POSITION_NOT_INTEGER",
+  RADIUS_NOT_INTEGER: "RADIUS_NOT_INTEGER",
 };
 
 // The ten dialogue-action categories, as DialogueActionsConfig::Categories() names them.
@@ -62,6 +65,8 @@ const SHOW_IN_PROMPTS_FIELD = "show_in_prompts";
 const TRANSLATOR_GLOBAL_STEM = "global";
 const PRIORITY_FIELD = "priority";
 const PATTERN_FIELD = "pattern";
+// A place's position, in whole game units (an absent coordinate is 0).
+const PLACE_POSITION_FIELDS = Object.freeze(["x", "y", "z"]);
 // The engine's FilterRecords::kMaxPatternLength, in UTF-8 bytes.
 export const MAX_PATTERN_LENGTH = 1024;
 const NPC_REF_PREFIX = "npc:";
@@ -110,28 +115,37 @@ function eslWidthMessage(field, raw, narrowed, spell) {
   );
 }
 
-/** `form` is a FormRef whose stem is the filename stem, exactly as the engine derives it. */
-function checkFormIdentity(doc, subPath, push, why) {
-  const raw = doc[FORM_FIELD];
+/** `field` as a FormRef within its plugin's id width, or null after the refusal. Absent: FORM_MISSING when `why`
+ *  names who needs it, else null with nothing pushed. */
+function readFormRef(doc, field, push, why) {
+  const raw = doc[field];
   if (raw === undefined || raw === null || raw === "") {
-    push(RECORD_CODES.FORM_MISSING, `${why} needs a '${FORM_FIELD}' field of the form 'Plugin.esp|0x01396B'.`);
-    return;
+    if (why) push(RECORD_CODES.FORM_MISSING, `${why} needs a '${field}' field of the form 'Plugin.esp|0x01396B'.`);
+    return null;
   }
   const ref = typeof raw === "string" ? parseFormRef(raw) : null;
   if (ref === null) {
     push(
       RECORD_CODES.FORM_INVALID,
-      `${FORM_FIELD} is ${quoteValue(raw)}, not a form reference. Expected 'Plugin.esp|0x01396B': the defining ` +
+      `${field} is ${quoteValue(raw)}, not a form reference. Expected 'Plugin.esp|0x01396B': the defining ` +
         `plugin's full filename, '|', and the plugin-relative id (up to 24 bits, 12 for an ESL)` +
         (typeof raw === "string" ? "." : ", as a quoted string."),
     );
-    return;
+    return null;
   }
   const narrowed = eslOverflow(ref);
   if (narrowed !== null) {
-    push(RECORD_CODES.FORM_ESL_WIDTH, eslWidthMessage(FORM_FIELD, raw, narrowed, formRefToString));
-    return;
+    push(RECORD_CODES.FORM_ESL_WIDTH, eslWidthMessage(field, raw, narrowed, formRefToString));
+    return null;
   }
+  return ref;
+}
+
+/** `form` is a FormRef whose stem is the filename stem, exactly as the engine derives it. */
+function checkFormIdentity(doc, subPath, push, why) {
+  const raw = doc[FORM_FIELD];
+  const ref = readFormRef(doc, FORM_FIELD, push, why);
+  if (ref === null) return;
   const expected = formStem(ref);
   const stem = stemOf(subPath);
   if (stem !== expected) {
@@ -275,6 +289,28 @@ function checkPattern(doc, kind, push) {
   }
 }
 
+// The engine reads these into a C++ `int`.
+const INT32_MIN = -(2 ** 31);
+const INT32_MAX = 2 ** 31 - 1;
+
+// An integer field within the engine's `int`, when present: `code` otherwise.
+function checkInteger(doc, field, code, what, push) {
+  const value = doc[field];
+  if (value !== undefined && value !== null && !(Number.isInteger(value) && value >= INT32_MIN && value <= INT32_MAX)) {
+    push(code, `'${field}' must be ${what}, not ${quoteValue(value)}.`);
+  }
+}
+
+// A place's name is what goes into the location string: any non-empty scalar, as the engine reads it (js-yaml
+// turns a date-shaped one into a Date; the engine keeps its text).
+function checkPlaceName(doc, push) {
+  const name = doc.name;
+  const scalar = typeof name !== "object" || name instanceof Date;
+  if (name === undefined || name === null || !scalar || String(name).length === 0) {
+    push(RECORD_CODES.PLACE_NAME_MISSING, "A place needs a 'name': what an actor's location says while they stand in it.");
+  }
+}
+
 // `show_in_prompts` (true when omitted) says whether the item or spell appears in NPC equipment and spell lists
 // in prompts; `enabled` is record activation.
 function checkShowInPrompts(doc, root, push) {
@@ -308,6 +344,17 @@ const CHECKS = {
 
   furniture(doc, subPath, push) {
     checkFormIdentity(doc, subPath, push, "A furniture name");
+  },
+
+  places(doc, subPath, push) {
+    pushStemCheck("id", doc.id, subPath, push);
+    checkPlaceName(doc, push);
+    readFormRef(doc, "space", push, "A place (its interior cell, or its worldspace outdoors)");
+    readFormRef(doc, "location", push, null);
+    for (const field of PLACE_POSITION_FIELDS) {
+      checkInteger(doc, field, RECORD_CODES.POSITION_NOT_INTEGER, "a whole number of game units", push);
+    }
+    checkInteger(doc, "radius", RECORD_CODES.RADIUS_NOT_INTEGER, "a whole number of game units (leave it out for the default)", push);
   },
 
   identity(doc, subPath, push) {

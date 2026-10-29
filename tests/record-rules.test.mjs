@@ -40,10 +40,10 @@ function assertCode(res, code, needle) {
   }
 }
 
-test("the record roots are the eight config-system roots and config", () => {
+test("the record roots are the eight config-system roots, config and places", () => {
   assert.deepEqual(
     [...RECORD_ROOTS].sort(),
-    ["config", "dialogue_actions", "filters", "furniture", "identity", "items", "spells", "translator", "voice_effects"],
+    ["config", "dialogue_actions", "filters", "furniture", "identity", "items", "places", "spells", "translator", "voice_effects"],
   );
   assert.throws(() => checkRecord("triggers", { name: "x" }, "triggers/x.yaml"), TypeError);
 });
@@ -340,4 +340,45 @@ test("every issue is reported, not just the first", () => {
   assert.deepEqual(codes(res).sort(), [
     RECORD_CODES.ENABLED_NOT_ACTIVATION, RECORD_CODES.FORM_MISSING, RECORD_CODES.SHOW_IN_PROMPTS_NOT_BOOL,
   ].sort());
+});
+
+// ----- places: a named spot in a cell or worldspace ---------------------------
+
+const PLACE = { id: "breezehome_kitchen", name: "Kitchen", space: "Skyrim.esm|0x0165A7", x: 120, y: -340, z: 64 };
+
+test("places: `id` is the stem, compared folded; a place needs a name and a space", () => {
+  assertOk(checkRecord("places", PLACE, "places/breezehome_kitchen.yaml"));
+  assertOk(checkRecord("places", PLACE, "places/Breezehome_Kitchen.yaml"));
+  assertCode(checkRecord("places", PLACE, "places/kitchen.yaml"), CODES.NAME_NOT_STEM);
+  assertCode(checkRecord("places", { ...PLACE, id: undefined }, "places/breezehome_kitchen.yaml"), CODES.NAME_MISSING);
+  for (const name of [undefined, "", ["Kitchen"]]) {
+    assertCode(checkRecord("places", { ...PLACE, name }, "places/breezehome_kitchen.yaml"), RECORD_CODES.PLACE_NAME_MISSING);
+  }
+  // Any scalar is a name, as the engine reads it.
+  assertOk(checkRecord("places", { ...PLACE, name: 7 }, "places/breezehome_kitchen.yaml"));
+  assertOk(checkRecord("places", { ...PLACE, name: new Date("2024-01-01") }, "places/breezehome_kitchen.yaml"));
+  assertCode(checkRecord("places", { ...PLACE, space: undefined }, "places/breezehome_kitchen.yaml"), RECORD_CODES.FORM_MISSING, /'space'/);
+  assertCode(checkRecord("places", { ...PLACE, space: "Skyrim.esm" }, "places/breezehome_kitchen.yaml"), RECORD_CODES.FORM_INVALID, /^space /);
+  assertCode(checkRecord("places", { ...PLACE, space: "MyLight.esl|0x01ABCD" }, "places/breezehome_kitchen.yaml"), RECORD_CODES.FORM_ESL_WIDTH, /0x000BCD/i);
+});
+
+test("places: the location is optional, and a form reference when present", () => {
+  assertOk(checkRecord("places", { ...PLACE, location: "Skyrim.esm|0x018A56" }, "places/breezehome_kitchen.yaml"));
+  assertOk(checkRecord("places", { ...PLACE, location: "" }, "places/breezehome_kitchen.yaml"));
+  assertCode(checkRecord("places", { ...PLACE, location: "Whiterun" }, "places/breezehome_kitchen.yaml"), RECORD_CODES.FORM_INVALID, /^location /);
+});
+
+test("places: the position and the radius are whole game units, each optional", () => {
+  assertOk(checkRecord("places", { id: "spot", name: "Spot", space: "Skyrim.esm|0x00003C" }, "places/spot.yaml"));
+  assertOk(checkRecord("places", { ...PLACE, x: -61240, radius: 300 }, "places/breezehome_kitchen.yaml"));
+  for (const field of ["x", "y", "z"]) {
+    for (const value of [12.5, "12", true]) {
+      assertCode(checkRecord("places", { ...PLACE, [field]: value }, "places/breezehome_kitchen.yaml"), RECORD_CODES.POSITION_NOT_INTEGER, new RegExp(`'${field}'`));
+    }
+  }
+  assertCode(checkRecord("places", { ...PLACE, radius: "wide" }, "places/breezehome_kitchen.yaml"), RECORD_CODES.RADIUS_NOT_INTEGER);
+  assertCode(checkRecord("places", { ...PLACE, radius: 300.5 }, "places/breezehome_kitchen.yaml"), RECORD_CODES.RADIUS_NOT_INTEGER);
+  // The engine reads a C++ int.
+  assertOk(checkRecord("places", { ...PLACE, x: -(2 ** 31), y: 2 ** 31 - 1 }, "places/breezehome_kitchen.yaml"));
+  assertCode(checkRecord("places", { ...PLACE, x: 2 ** 31 }, "places/breezehome_kitchen.yaml"), RECORD_CODES.POSITION_NOT_INTEGER);
 });

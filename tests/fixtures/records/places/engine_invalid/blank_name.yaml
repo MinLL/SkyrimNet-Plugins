@@ -1,0 +1,4 @@
+# refuse-engine: a name of nothing but blanks and commas (the hub checks only that a name is there)
+id: blank_name
+name: " , "
+space: Skyrim.esm|0x0165A7

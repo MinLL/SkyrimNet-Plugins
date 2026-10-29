@@ -1,6 +1,6 @@
 # The record corpus
 
-The record contract for the eight config-system roots, mirrored byte for byte between SkyrimNet-Core
+The record contract for the nine record roots, mirrored byte for byte between SkyrimNet-Core
 (`tests/test_data/records/`) and SkyrimNet-Plugins (`tests/fixtures/records/`): the two trees must have the
 same git tree id (`git rev-parse HEAD:tests/test_data/records` in SkyrimNet-Core, `HEAD:tests/fixtures/records` in SkyrimNet-Plugins).
 A rule change updates both copies in one change; a fixture that looks wrong is a cross-repo change, never a

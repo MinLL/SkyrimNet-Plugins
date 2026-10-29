@@ -120,7 +120,7 @@ good, not whether it is well-formed.
   NPCs hear and may react). Pick `private` for anything that would be strange for a bystander
   to overhear.
 
-## Config-system records (`voice_effects/`, `items/`, `spells/`, `furniture/`, `identity/`, `filters/`, `translator/`, `dialogue_actions/`, `config/`)
+## Config-system records (`voice_effects/`, `items/`, `spells/`, `furniture/`, `identity/`, `filters/`, `translator/`, `dialogue_actions/`, `config/`, `places/`)
 
 One record per `.yaml` file; the validator has already checked the filename is the record's
 identity, the `kind`, the root's release gate and the caps (README, "Content roots"). What is
@@ -128,9 +128,11 @@ left to judge:
 
 - **Must:** a record names a form the plugin's listed mods provide, or a vanilla one.
   `form: "Skyrim.esm|0x01396B"` and the four DLC masters need no `mods` entry; a third-party
-  plugin in a `form`, a `filters/` list or a `dialogue_actions/` list should appear in `mods`.
-- **Must:** `customName`, `customDescription`, `resolved_name`, translator `speechPattern` and
-  instruction `text` are in-world prose in the same class as a prompt, and are reviewed as one.
+  plugin in a `form`, a place's `space` or `location`, a `filters/` list or a `dialogue_actions/` list
+  should appear in `mods`.
+- **Must:** `customName`, `customDescription`, `resolved_name`, translator `speechPattern`,
+  instruction `text` and a place's `name` are in-world prose in the same class as a prompt, and are reviewed as
+  one (a place's name goes into every location string while someone stands there).
 - `filters/` `kind: actor` and `kind: memory` files, `dialogue_actions/` `kind: lists`
   files and `config/` `kind: carry_audio_tags` files are unioned with the user's own lists.
   A carry-over tag repeats on every sentence of a reply, so a sound (`laughs`, `coughs`) does not
