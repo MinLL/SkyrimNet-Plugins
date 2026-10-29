@@ -1,8 +1,83 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-29T12:32:54.751Z",
-  "stats_as_of": "2026-10-29T12:32:54.586Z",
+  "generated_at": "2026-10-29T12:39:36.120Z",
+  "stats_as_of": "2026-10-29T12:39:35.998Z",
   "plugins": [
+    {
+      "id": "plugins/oldcustard/bioforge",
+      "plugin_id": "oldcustard.bioforge",
+      "type": "listing",
+      "title": "BioForge",
+      "tagline": "Bulk-generate SkyrimNet bios for every NPC in a location that doesn't have one, reviewed before anything is saved.",
+      "author": "oldcustard",
+      "tags": [
+        "bios",
+        "characters",
+        "generation",
+        "tools",
+        "npcs"
+      ],
+      "nsfw": false,
+      "icon": "brain",
+      "mods": [],
+      "first_published": "2026-09-28T09:03:26Z",
+      "last_updated": "2026-10-29T12:39:07Z",
+      "version": "1.1.2",
+      "history": [
+        {
+          "version": "1.1.2",
+          "commit": "5ce3518027f23424d3d819f5377a4aa1cc202ffa",
+          "date": "2026-10-29T12:39:07Z",
+          "changelog": "A fix for bios written twice, and a CommonLib update.\n\n## 🐛 Fixed\n- 🧾 **A reply that writes the bio twice no longer doubles the committed bio.** A model occasionally wrote the whole bio, then the bio-blocks answers with their heading glued onto the end of a sentence, then the whole bio again. Every section ended up in the bio twice, and the blocks answers (`religion: keep`…) leaked into Speech Style. A heading glued onto a line is now recognised, and when a section repeats, the later copy replaces the earlier one, so the bio and the blocks answers come from the same pass.\n  - If one of your committed bios has every section twice, or `### bio_blocks` lines in it, delete it in SkyrimNet's dashboard and regenerate it.\n\n## 🔧 Under the hood\n- ⬆️ Built against CommonLibSSE-NG **14.0.1**.\n- 🆕 **Supports Skyrim 1.7.x** (1.7.99 / 1.7.104), which earlier releases could not load on. Not yet tested on 1.7: reports welcome."
+        },
+        {
+          "version": "1.1.1",
+          "commit": "c3abd68bfdc4b734f8a8b13c43c08aa428074719",
+          "date": "2026-10-24T13:04:54Z",
+          "changelog": "Fixes for 1.1.0's bio blocks.\n\n## 🐛 Fixed\n- 🧩 **NPCs who already carry blocks no longer get new rolls.** The Blocks column kept rolling the groups such an NPC had left empty, and since rolls are fresh each launch, every session offered them a few more traits. An NPC with blocks applied to them (by you, or by an earlier commit) is now done: only a fact can still fill a gap. Blocks granted by a SeverActions faction rule don't count.\n- 🔎 **The review keeps rolls more faithfully.** The model was replacing a roll whenever the evidence supported a *different* option in the same group: a chief with two wives lost Exhibitionism to Polygamy, \"suspicious of outsiders\" replaced Cruel, a trained warrior lost \"dislikes violence\". It's now told that evidence for another option isn't evidence against the roll, and to replace only when the two can't both be true.\n- 🧾 **Review answers are read more reliably.** Answers written as `keep - it fits`, or with the format's `(reason)` placeholder copied in, are now read correctly, and the prompt shows real quoted examples instead of a placeholder."
+        },
+        {
+          "version": "1.1.0",
+          "commit": "6336739e6ceece0233a9a521ce3bc100a0b468ee",
+          "date": "2026-10-24T11:46:59Z",
+          "changelog": "Adds SeverActions bio blocks: short traits like a religion, a phobia or a vice, given to NPCs alongside their bios.\n\n## ✨ New\n- 🧩 **Bio blocks** ([SeverActions](https://github.com/Severause/SeverActions) Bio Blocks API v4). With SeverActions installed, BioForge gives each NPC a few of SeverActions' bio blocks when their bio is committed. Blocks are separate from the bio: they show beside it, and the bio itself is never changed.\n- 📜 **Facts from game data.** A Vigilant of Stendarr worships Stendarr, a Stormcloak dislikes the Empire, a drunk sounds like one. Facts are fixed and never second-guessed.\n- 🎲 **Flavour is rolled, then checked.** Each trait group (religion, temperament, dislikes, phobias, vices...) rolls on its own chance, for variety. A model then reviews the rolls against the NPC's evidence: it keeps a roll unless the evidence contradicts it, and adds one only where the evidence names it outright. Every change carries a quoted reason, and a change with none is ignored. For a new bio the review rides the same generation, with no extra call; the bio is written to match.\n- 🔍 **Review blocks** for NPCs who already have a bio: one small LLM call per NPC (row or batch), staged for you to read before anything is applied. The existing bio is never touched.\n- 📋 **The reader shows a blocks table**: each block's verdict (fact, kept, changed, added, dropped), and the model's reason.\n- 🔁 **Reroll** in the Blocks column rolls an NPC's flavour again. Rolls are fresh each game launch and hold for the session.\n- 🎭 **Anything can happen, rarely.** Every block is reachable; rare sets share a fixed pool (any Daedric Prince: about 1 NPC in 40), so the odd secret Daedra worshipper turns up without crowding the rest.\n- ✏️ The rules live in `SKSE/Plugins/BioForge/block_rules.ini`, a commented text file you can edit.\n\n## 🛠️ Changes\n- 🪟 BioForge's popups are fully opaque, so the panel no longer shows through the text."
+        },
+        {
+          "version": "1.0.2",
+          "commit": "4246a2415631b3fc7c1f172b314bd32718851176",
+          "date": "2026-10-03T05:02:47Z",
+          "changelog": "Adds the option to run BioForge on its own LLM.\r\n\r\n## ✨ New\r\n- 🧠 **A separate model for BioForge** ([#4](https://github.com/Oldcustard/BioForge/issues/4)). BioForge now adds a `bioforge` model to SkyrimNet's LLM settings, and a new setting, **Use BioForge's Own LLM**, switches bios, the relationship refine pass and regional digests over to it. It's **off by default**: BioForge keeps using your Character Profile Generation model, exactly as before.\r\n\r\n## ⚠️ Before you turn it on\r\nSet up the `bioforge` model in SkyrimNet's LLM settings first, and raise its **max tokens to about 10,000**. Until it's configured it inherits SkyrimNet's dialogue defaults (4,096 tokens), which cut bios short and make them fail with missing sections."
+        },
+        {
+          "version": "1.0.1",
+          "commit": "68130bed1b92bdc6f27f3fb5854d7d61f103fb76",
+          "date": "2026-09-29T08:26:07Z",
+          "changelog": "Bug-fix release for non-English installs and creature scanning.\r\n\r\n## 🐛 Fixes\r\n- 🌍 **NPCs with non-English names are detected correctly** ([#1](https://github.com/Oldcustard/BioForge/issues/1)). Bios for NPCs with Cyrillic (or any non-ASCII) names were never matched to their file, so those NPCs kept showing as needing a bio even when one existed.\r\n- 🏘️ **Regional digests handle non-English names**: those characters are now ranked properly instead of sinking to the bottom, and settlements with non-English names no longer share one cached digest.\r\n- 🐴 **Creatures are no longer scanned.** Named horses such as Shadowmere or a mod's stable horses were being offered bios; anything whose race isn't a person's is now skipped."
+        },
+        {
+          "version": "1.0.0",
+          "commit": "20b8a53d9c4a1c2e76af6217f856f18151841503",
+          "date": "2026-09-28T09:03:26Z",
+          "changelog": "Initial release"
+        }
+      ],
+      "external_url": "https://github.com/Oldcustard/BioForge",
+      "languages": [
+        "en"
+      ],
+      "language": "en",
+      "image": {
+        "file": "cover.png",
+        "sha": "302f6684193c94f7c6cd5cfbdfdf537eff6ddcb6",
+        "commit": "20b8a53d9c4a1c2e76af6217f856f18151841503",
+        "width": 1671,
+        "height": 941
+      },
+      "stats": {
+        "downloads": 148,
+        "endorsements": 3
+      }
+    },
     {
       "id": "plugins/taka/skyrimnet-brothel",
       "plugin_id": "taka.skyrimnet-brothel",
@@ -1362,75 +1437,6 @@
       "stats": {
         "downloads": 31,
         "endorsements": 0
-      }
-    },
-    {
-      "id": "plugins/oldcustard/bioforge",
-      "plugin_id": "oldcustard.bioforge",
-      "type": "listing",
-      "title": "BioForge",
-      "tagline": "Bulk-generate SkyrimNet bios for every NPC in a location that doesn't have one, reviewed before anything is saved.",
-      "author": "oldcustard",
-      "tags": [
-        "bios",
-        "characters",
-        "generation",
-        "tools",
-        "npcs"
-      ],
-      "nsfw": false,
-      "icon": "brain",
-      "mods": [],
-      "first_published": "2026-09-28T09:03:26Z",
-      "last_updated": "2026-10-24T13:04:54Z",
-      "version": "1.1.1",
-      "history": [
-        {
-          "version": "1.1.1",
-          "commit": "c3abd68bfdc4b734f8a8b13c43c08aa428074719",
-          "date": "2026-10-24T13:04:54Z",
-          "changelog": "Fixes for 1.1.0's bio blocks.\n\n## 🐛 Fixed\n- 🧩 **NPCs who already carry blocks no longer get new rolls.** The Blocks column kept rolling the groups such an NPC had left empty, and since rolls are fresh each launch, every session offered them a few more traits. An NPC with blocks applied to them (by you, or by an earlier commit) is now done: only a fact can still fill a gap. Blocks granted by a SeverActions faction rule don't count.\n- 🔎 **The review keeps rolls more faithfully.** The model was replacing a roll whenever the evidence supported a *different* option in the same group: a chief with two wives lost Exhibitionism to Polygamy, \"suspicious of outsiders\" replaced Cruel, a trained warrior lost \"dislikes violence\". It's now told that evidence for another option isn't evidence against the roll, and to replace only when the two can't both be true.\n- 🧾 **Review answers are read more reliably.** Answers written as `keep - it fits`, or with the format's `(reason)` placeholder copied in, are now read correctly, and the prompt shows real quoted examples instead of a placeholder."
-        },
-        {
-          "version": "1.1.0",
-          "commit": "6336739e6ceece0233a9a521ce3bc100a0b468ee",
-          "date": "2026-10-24T11:46:59Z",
-          "changelog": "Adds SeverActions bio blocks: short traits like a religion, a phobia or a vice, given to NPCs alongside their bios.\n\n## ✨ New\n- 🧩 **Bio blocks** ([SeverActions](https://github.com/Severause/SeverActions) Bio Blocks API v4). With SeverActions installed, BioForge gives each NPC a few of SeverActions' bio blocks when their bio is committed. Blocks are separate from the bio: they show beside it, and the bio itself is never changed.\n- 📜 **Facts from game data.** A Vigilant of Stendarr worships Stendarr, a Stormcloak dislikes the Empire, a drunk sounds like one. Facts are fixed and never second-guessed.\n- 🎲 **Flavour is rolled, then checked.** Each trait group (religion, temperament, dislikes, phobias, vices...) rolls on its own chance, for variety. A model then reviews the rolls against the NPC's evidence: it keeps a roll unless the evidence contradicts it, and adds one only where the evidence names it outright. Every change carries a quoted reason, and a change with none is ignored. For a new bio the review rides the same generation, with no extra call; the bio is written to match.\n- 🔍 **Review blocks** for NPCs who already have a bio: one small LLM call per NPC (row or batch), staged for you to read before anything is applied. The existing bio is never touched.\n- 📋 **The reader shows a blocks table**: each block's verdict (fact, kept, changed, added, dropped), and the model's reason.\n- 🔁 **Reroll** in the Blocks column rolls an NPC's flavour again. Rolls are fresh each game launch and hold for the session.\n- 🎭 **Anything can happen, rarely.** Every block is reachable; rare sets share a fixed pool (any Daedric Prince: about 1 NPC in 40), so the odd secret Daedra worshipper turns up without crowding the rest.\n- ✏️ The rules live in `SKSE/Plugins/BioForge/block_rules.ini`, a commented text file you can edit.\n\n## 🛠️ Changes\n- 🪟 BioForge's popups are fully opaque, so the panel no longer shows through the text."
-        },
-        {
-          "version": "1.0.2",
-          "commit": "4246a2415631b3fc7c1f172b314bd32718851176",
-          "date": "2026-10-03T05:02:47Z",
-          "changelog": "Adds the option to run BioForge on its own LLM.\r\n\r\n## ✨ New\r\n- 🧠 **A separate model for BioForge** ([#4](https://github.com/Oldcustard/BioForge/issues/4)). BioForge now adds a `bioforge` model to SkyrimNet's LLM settings, and a new setting, **Use BioForge's Own LLM**, switches bios, the relationship refine pass and regional digests over to it. It's **off by default**: BioForge keeps using your Character Profile Generation model, exactly as before.\r\n\r\n## ⚠️ Before you turn it on\r\nSet up the `bioforge` model in SkyrimNet's LLM settings first, and raise its **max tokens to about 10,000**. Until it's configured it inherits SkyrimNet's dialogue defaults (4,096 tokens), which cut bios short and make them fail with missing sections."
-        },
-        {
-          "version": "1.0.1",
-          "commit": "68130bed1b92bdc6f27f3fb5854d7d61f103fb76",
-          "date": "2026-09-29T08:26:07Z",
-          "changelog": "Bug-fix release for non-English installs and creature scanning.\r\n\r\n## 🐛 Fixes\r\n- 🌍 **NPCs with non-English names are detected correctly** ([#1](https://github.com/Oldcustard/BioForge/issues/1)). Bios for NPCs with Cyrillic (or any non-ASCII) names were never matched to their file, so those NPCs kept showing as needing a bio even when one existed.\r\n- 🏘️ **Regional digests handle non-English names**: those characters are now ranked properly instead of sinking to the bottom, and settlements with non-English names no longer share one cached digest.\r\n- 🐴 **Creatures are no longer scanned.** Named horses such as Shadowmere or a mod's stable horses were being offered bios; anything whose race isn't a person's is now skipped."
-        },
-        {
-          "version": "1.0.0",
-          "commit": "20b8a53d9c4a1c2e76af6217f856f18151841503",
-          "date": "2026-09-28T09:03:26Z",
-          "changelog": "Initial release"
-        }
-      ],
-      "external_url": "https://github.com/Oldcustard/BioForge",
-      "languages": [
-        "en"
-      ],
-      "language": "en",
-      "image": {
-        "file": "cover.png",
-        "sha": "302f6684193c94f7c6cd5cfbdfdf537eff6ddcb6",
-        "commit": "20b8a53d9c4a1c2e76af6217f856f18151841503",
-        "width": 1671,
-        "height": 941
-      },
-      "stats": {
-        "downloads": 148,
-        "endorsements": 3
       }
     },
     {
