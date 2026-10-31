@@ -1,8 +1,52 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-31T22:13:06.149Z",
-  "stats_as_of": "2026-10-31T22:13:06.014Z",
+  "generated_at": "2026-10-31T22:19:19.828Z",
+  "stats_as_of": "2026-10-31T22:19:19.703Z",
   "plugins": [
+    {
+      "id": "plugins/nosimo/frostfall-awareness",
+      "plugin_id": "nosimo.frostfall-awareness",
+      "type": "listing",
+      "title": "Frostfall Awareness",
+      "tagline": "SkyrimNet Integration with Frostfall",
+      "author": "nosimo",
+      "tags": [
+        "frostfall",
+        "awareness"
+      ],
+      "nsfw": true,
+      "icon": "package",
+      "mods": [
+        {
+          "name": "Frostfall.esp",
+          "file": "frostfall.esp",
+          "required": true
+        }
+      ],
+      "first_published": "2026-10-31T22:18:54Z",
+      "last_updated": "2026-10-31T22:18:54Z",
+      "version": "1.0.1",
+      "history": [
+        {
+          "version": "1.0.1",
+          "commit": "dc90c70a1a45f733de65e09affb7dcb89caa98d8",
+          "date": "2026-10-31T22:18:54Z",
+          "changelog": "Initial release"
+        }
+      ],
+      "external_url": "https://github.com/Nosimo-SN/Frostfall-Awareness/releases/latest",
+      "image": {
+        "file": "cover.png",
+        "sha": "4a859def8ffb9aeac0dc80fb61910edc03f1639f",
+        "commit": "dc90c70a1a45f733de65e09affb7dcb89caa98d8",
+        "width": 1280,
+        "height": 720
+      },
+      "stats": {
+        "downloads": 0,
+        "endorsements": 0
+      }
+    },
     {
       "id": "plugins/pdusen/narrative-engine",
       "plugin_id": "pdusen.narrative-engine",
@@ -310,7 +354,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 1123,
+        "downloads": 1124,
         "endorsements": 17
       }
     },
@@ -3050,7 +3094,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 394,
+        "downloads": 395,
         "endorsements": 4
       }
     },
@@ -3386,7 +3430,7 @@
         "config": 4
       },
       "stats": {
-        "downloads": 273,
+        "downloads": 274,
         "endorsements": 3
       }
     },
@@ -13296,7 +13340,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 268,
+        "downloads": 269,
         "endorsements": 0
       }
     },
