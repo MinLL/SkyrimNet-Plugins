@@ -1,0 +1,25 @@
+{
+  "id": "nosimo.frostfall-awareness",
+  "type": "listing",
+  "title": "Frostfall Awareness",
+  "tagline": "SkyrimNet Integration with Frostfall",
+  "description": "(Developed using Frostfall 2026)\nNothing is described or posted while you are comfortable: the cold only enters the story once Frostfall's debuffs apply (Chilly and worse, or frostbite).\n\nAir temperature. Everyone in the scene is told the air temperature where you are, in Frostfall's own ten Weathersense tiers from hot to frigid and deadly, indoors and out. Characters can make small talk about the weather, and NPCs whose cold another mod tracks still know the air.\n\nCold Exposure. For you, read from Frostfall: how cold you are, wetness, how much your clothing and any warming spell help, fire and shelter, and frostbite. For NPCs outdoors near you, an estimate from the same air and the garment on their body (A.N.D. revealing outfits count as bare; 50+ frost resistance holds off one step), never more than one step colder than you, because Frostfall's exposure builds over time and an estimate does not. The prompts state facts; how characters react is up to them.\n\nNarration. When a condition starts (only when getting colder) a short line is narrated to the people around you, and repeated at the interval you set while it lasts. Each can also prompt a thought of your own. Nothing is posted in combat, shortly after it, or while a conversation is going on.\n\nShare Body Heat. A friendly person standing close by may choose to hold you close. It removes 10 exposure through Frostfall's own exposure function and never takes you below Chilly, so only fire or shelter truly warms you. They pull you into the vanilla hug and a warm glow passes over you both.\n\nWarm Each Other. NPCs may do the same for each other when someone near them is feeling the cold. Frostfall only tracks you, so this is the gesture alone: the hug, the glow, and the frost leaving them.\n\nFrost on NPCs. NPCs outdoors who are feeling the cold get Frostfall's frost look, the lighter frost at Freezing and the full one at Freezing to Death. It fades within seconds once they warm up, go indoors or you leave.\n\nRescues. With Frostfall's Max Exposure set to rescue, the companion who saved you gets a first-person memory of carrying you in from the cold, you get a hazy one of blacking out, the room sees you brought in, and your rescuer is the first to speak when you wake. Recruited creatures and animals who carried you remember it too, each in its own way, unless SkyrimNet's Memory Filter keeps memories to actors it counts as capable of speech.\n\nCopied fires. DynDOLOD and some mods place copies of vanilla fires (giant camp fires are the usual case) under new records that Frostfall doesn't recognise. At startup, every object using the same model as a fire Frostfall knows is counted as that fire.\n\nScene warmth. During a SexLab or OStim scene, shared body heat removes a little exposure every ten seconds.\n\nVampires and the undead (Serana until she is cured) feel no cold and have no body heat to share, by default; each has its own switch. NPC Cold Shift makes NPCs hardier or quicker to feel the cold by whole steps.\n\nCold Shiver (FOMOD option/Distar66 animations). You shiver from Frostfall's Very Cold on; NPCs outdoors shiver while you are at least Chilly and the air is cold enough for what they wear. Open Animation Replacer can't read SkyrimNet settings, so the animations always leave out vampires and the undead and ignore the cold shift. Children never shiver.",
+  "author": "nosimo",
+  "tags": [
+    "frostfall",
+    "awareness"
+  ],
+  "nsfw": true,
+  "icon": "package",
+  "mods": [
+    {
+      "name": "Frostfall.esp",
+      "file": "frostfall.esp",
+      "required": true
+    }
+  ],
+  "image": "cover.png",
+  "external_url": "https://github.com/Nosimo-SN/Frostfall-Awareness/releases/latest",
+  "version": "1.0.1",
+  "changelog": "Initial release"
+}
