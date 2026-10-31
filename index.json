@@ -1,8 +1,96 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-31T21:22:14.877Z",
-  "stats_as_of": "2026-10-31T21:22:14.292Z",
+  "generated_at": "2026-10-31T22:13:06.149Z",
+  "stats_as_of": "2026-10-31T22:13:06.014Z",
   "plugins": [
+    {
+      "id": "plugins/pdusen/narrative-engine",
+      "plugin_id": "pdusen.narrative-engine",
+      "type": "listing",
+      "title": "Narrative Engine",
+      "tagline": "AI Director for Skyrim, layered on top of SkyrimNet.",
+      "author": "pdusen",
+      "tags": [
+        "narrative",
+        "director",
+        "events",
+        "visits",
+        "letters",
+        "ambush"
+      ],
+      "nsfw": false,
+      "icon": "brain",
+      "mods": [],
+      "first_published": "2026-09-27T00:24:33Z",
+      "last_updated": "2026-10-31T22:12:36Z",
+      "version": "0.9.0",
+      "history": [
+        {
+          "version": "0.9.0",
+          "commit": "ece8532ebf072371a80688c0b8730e32cb4d485d",
+          "date": "2026-10-31T22:12:36Z",
+          "changelog": "NarrativeEngine now runs on Skyrim SE 1.7.x, built on a newer CommonLibSSE-NG that reads the 1.7 Address Library.\n\n## What's New\n\n### Skyrim 1.7.x Support\n\n- The plugin loads and runs on Skyrim SE 1.7.x (tested on 1.7.104), and the same download still covers 1.6.x.\n\n> **Note:** On 1.7.x you need the SKSE build for your game version (2.3.0 or newer) and the matching Address Library.\n\n### Setup Guide\n\n- The README now recommends a model for each NarrativeEngine profile: whatever does well as SkyrimNet's Meta model for the director, and as its Diary model for the composer, with OpenRouter picks that have worked well for each."
+        },
+        {
+          "version": "0.8.0",
+          "commit": "8809c026f7d367470e747e8ec1d5ef371748e30b",
+          "date": "2026-10-25T15:56:53Z",
+          "changelog": "NPCs now scheme against each other in the background, and visits handle you leaving.\r\n\r\n## What's New\r\n\r\n### NPC Plots\r\n\r\n- Unique NPCs pursue schemes of their own, planned as concrete steps (theft, bribery, rumors, denunciation, blackmail, sabotage, forgery, crafting and more) that run over in-game days.\r\n- Schemers send people they can command; a step's odds depend on who does it and to whom, preparing makes it easier, and a failed step means another way or giving up.\r\n- Plots leave memories in SkyrimNet: schemers, agents, targets and officials all remember their part.\r\n- Schemers and agents know about their plot in conversation, and keep it secret.\r\n\r\n> **Note:** Plots need a decision provider set up in SkyrimNet.\r\n\r\n> **Note:** Plots are a background simulation for now and won't be reflected in an NPC's native in-game behavior. This will be revisited in a future release.\r\n\r\n### The Dashboard\r\n\r\n- A new Plots tab shows every plot, its steps, odds and outcomes, with a Simulation Enabled checkbox.\r\n\r\n> **Important:** Requires SkyrimNet Beta 26 (0.26.0) or newer.\r\n\r\n> **Important:** Running IntelEngine alongside is not recommended; if you do, turn its Story Engine off.\r\n\r\n> **Important:** Don't modify NarrativeEngine's prompts for non-English output; it can disrupt the simulations.\r\n\r\n## Fixes\r\n\r\n- Ghosts no longer take part in gossip or plots, or write letters and visit.\r\n- A visit is called off if you go somewhere it could never start before the visitor greets you.\r\n- Fast-travelling away ends a visit; mid-conversation, the visitor remembers you left abruptly."
+        },
+        {
+          "version": "0.7.3",
+          "commit": "ec7f8b981fbda6c4e49b7bbd7a2e2c80e850e9a7",
+          "date": "2026-10-13T22:47:01Z",
+          "changelog": "The Director could start a letter, visit or ambush using something it was never offered, so a hallucinated NPC could show up at your door. Every pick is now checked against the options offered for that specific beat. An invalid pick gets one retry; if that also fails, nothing fires until the next evaluation.\r\n\r\n## Fixes\r\n\r\n- A visit or letter could come from an NPC who was never a valid sender for it, for example a leveled guard, your current follower, or someone who was only eligible to write a letter. That happened when the Director named an NPC that wasn't on the list. Senders are now checked against the list offered for that exact beat.\r\n- A letter or visit could go ahead without its intended topic when the Director named a memory the sender didn't have. The composer then quietly picked a topic itself. That pick is now rejected.\r\n- An ambush that named an attacker group nobody had offered quietly fell back to the first eligible group. That pick is now rejected."
+        },
+        {
+          "version": "0.7.2",
+          "commit": "b86bbc1655aa291af16e64d408619a35a15ce02b",
+          "date": "2026-10-13T01:43:04Z",
+          "changelog": "A pacing and placement update: visits stop arriving back to back, beats repeat less often, and beats no longer fire in other realms or sealed-off places.\r\n\r\n## What's New\r\n\r\n### Visits\r\n\r\n- After any NPC visit, no other visit can happen for 24 in-game hours. Until now only the same visitor was held back, so different NPCs could turn up one after another.\r\n- The new `iVisitBeatCooldownGameHours` setting in `NarrativeEngine.ini` controls how long the pause lasts. Set it to 0 to turn the pause off.\r\n- A visit that's called off before the visitor reaches you doesn't start the cooldown.\r\n\r\n> **Note:** Existing saves load normally. On the first load of an older save the cooldown starts clear, so the next visit isn't held back.\r\n\r\n### The Director\r\n\r\n- The Director now waits 15 minutes before choosing the same kind of beat again, up from 5. The old window mostly ran out while the beat was still playing, so it rarely prevented a repeat.\r\n\r\n## Fixes\r\n\r\n- Beats no longer fire in places nobody could plausibly reach you. Previously Vigilants of Stendarr could ambush you in the Soul Cairn. The default location blacklist now covers the Soul Cairn and the Boneyard, Apocrypha, the Mind of Pelagius, the inside of Azura's Star, the Forgotten Vale, Darkfall Passage, Ancestor Glade, the Throat of the World summit and path, Giant's Grove, Japhet's Folly, Brinewater Grotto, Forebears' Holdout and all of Castle Volkihar. It also still covers Sovngarde. Fort Dawnguard is deliberately left off."
+        },
+        {
+          "version": "0.7.1",
+          "commit": "9bd6d70623ec76df532c292de1ec37aaa8ea887d",
+          "date": "2026-10-05T22:57:15Z",
+          "changelog": "A small workaround for a rare case where Skyrim's own courier stops making deliveries.\r\n\r\n## Fixes\r\n\r\n- If Skyrim's pending-delivery counter has been driven below zero by something outside NarrativeEngine, the vanilla courier stops being dispatched and letters sit undelivered. The plugin now raises that counter to match the letters actually waiting whenever it stages one."
+        },
+        {
+          "version": "0.7.0",
+          "commit": "7b17bbdc1a83435827dd2f63f57a37e32ffda410",
+          "date": "2026-10-03T21:53:59Z",
+          "changelog": "Visiting NPCs now walk Skyrim's real roads and arrive under cover, and the bug behind the \"gossip isn't spreading\" reports is fixed.\r\n\r\n## What's New\r\n\r\n### NPC Visits\r\n\r\n- Visitors travel Skyrim's actual road network instead of a straight line from home; both road graphs ship enabled.\r\n- The arrival spot is found by walking out along their route to the first place far enough off and out of sight.\r\n- Cover is preferred outright over open ground, so a visitor appears behind a rock at 6,000 units rather than in the open at 5,000.\r\n- Visitors can finally arrive inside walled cities like Whiterun and Windhelm.\r\n- Minimum arrival distance rises from 800 to 2,000 units, so nobody appears across the road from you.\r\n- A stuck visitor can hop along the road around an obstacle before walking the long way round.\r\n\r\n## Fixes\r\n\r\n- Gossip could stop spreading: rumors surviving a save came back unable to advance, yet held live-rumor slots until the cap filled and the world stopped seeding.\r\n- Letters and visits could reference things the sender had no way of knowing; the Director now names one of the sender's own memories.\r\n- With you upstairs in an inn, a visitor could be sent to a balcony door instead of the street-level front door.\r\n- Which door a visitor waited at was a coin flip in 279 of 544 vanilla interiors; now it is the same door every time.\r\n- A visitor could arrive thousands of units off their own route, or almost on top of you inside a city gate.\r\n\r\n> **SkyrimNet Beta 25 (0.25.0) or newer is now required.** This release ships only the new plugin layout; on Beta 24 or earlier SkyrimNet finds none of NarrativeEngine's prompts and every LLM-driven beat fails. Update SkyrimNet, or stay on v0.6.1. Let your mod manager replace the whole mod rather than merge into it.\r\n\r\nFull release notes: https://github.com/pdusen/skyrimnet-plugin-narrative-engine/releases/tag/v0.7.0"
+        },
+        {
+          "version": "0.6.1",
+          "commit": "3b2fac11159d5aad110199c3b44e00af5d14b9c8",
+          "date": "2026-10-01T02:46:19Z",
+          "changelog": "# NarrativeEngine v0.6.1\r\n\r\nWalled-city visitors now reach you and greet you indoors, letter and visit prompts see only what the two of you said to each other, and every dashboard tab says when its next thing happens.\r\n\r\n## What's New\r\n\r\n### The Dashboard\r\n\r\n- Every tab with a cadence now shows when the next thing happens: Director evaluations, dispatch cooldowns, the gossip schedule, letter delivery, and the visit approach, return-home and poll deadlines.\r\n- Each readout is labelled with the clock that governs it — real, unpaused, active play, or game time — because those four elapse at different rates.\r\n- A cooldown that is switched off reads as an em dash rather than 0s.\r\n\r\n> **Note:** The numbers do not tick while you watch. Opening the dashboard pauses the game, freezing three of the four clocks.\r\n\r\n### Beat Senders\r\n\r\n- New `sBlacklistedSenders` under `[Beats]` names NPCs who may never write you a letter or pay you a visit. Semicolon-separated, matched on editor ID or in-game name.\r\n\r\n> **Note:** Read at load, so a change needs a restart. Editor-ID matching needs an editor-ID recovery mod (powerofthree's Tweaks); without one use the in-game name.\r\n\r\n### Letters and Visits\r\n\r\n- The dialogue history behind a letter or visit is now strictly what passed between you and that NPC. Third-party lines and ambient chatter are dropped.\r\n\r\n### Ambushes\r\n\r\n- The narration logged when an ambush begins no longer contains speech of any kind. The attackers do their own talking.\r\n\r\n## Fixes\r\n\r\n- An NPC living inside a walled city will now travel to you when you are nowhere near it. Previously most visits from Whiterun, Riften, Solitude, Markarth and Windhelm residents never happened at all.\r\n- A visitor who follows you indoors now greets you, instead of trailing you until the approach timed out.\r\n\r\nFull release notes: https://github.com/pdusen/skyrimnet-plugin-narrative-engine/releases/tag/v0.6.1"
+        },
+        {
+          "version": "0.6.0",
+          "commit": "fc02923868f1038424a7fdfd4f5cdcf27881d71a",
+          "date": "2026-09-27T00:24:33Z",
+          "changelog": "## What's New\r\n\r\n### NPC Visits\r\n\r\n- Visitors arrive from along the road between the player and the sender's home, not on a bearing unrelated to how they would have travelled.\r\n- A visitor whose home lies outside a walled city walks in through that city's gate — the nearest one to the player when there are several.\r\n- When the player is indoors, the visitor is placed on the far side of the player's own door and comes in through it.\r\n- Senders who are not loaded — almost all of them — are now located from their save cell or their location's map marker.\r\n- The arrival band widened from 2500 to 5000 units and the approach timeout from 60 to 90 seconds; the old ceiling discarded ~70% of the road on a route.\r\n- The cover check sweeps a whole visitor's height rather than stopping at the chest, and open ground outside the player's view arc is accepted when there is no cover.\r\n\r\n> **Note:** Past roughly 2000 units an arrival can ride a cover claim the raycast cannot support, so a visitor may occasionally appear in plain sight.\r\n\r\n### Debug Notifications\r\n\r\n- Optional corner-of-screen notices when a beat does something unseen: a visitor warped in, a letter given to the courier, an ambush spawned, a rumor seeded. Off by default; a testing aid, not a gameplay feature.\r\n\r\n### SkyrimNet Beta 25\r\n\r\n- Content ships in Beta 25's plugin layout alongside the old one, so either version works.\r\n\r\n## Fixes\r\n\r\n- The dashboard hotkey matched mouse buttons as well as keys, so scrolling could open or close it.\r\n- A null field in an event payload threw away the whole batch after it.\r\n- Log rotation renamed the current file, detaching any editor tailing it; it copies now.\r\n- The courier's cached lookup was not cleared on save load.\r\n- The MCM event sink traced every other mod's events.\r\n\r\nFull release notes: https://github.com/pdusen/skyrimnet-plugin-narrative-engine/releases/tag/v0.6.0"
+        }
+      ],
+      "external_url": "https://github.com/pdusen/skyrimnet-plugin-narrative-engine/releases/latest",
+      "languages": [
+        "en"
+      ],
+      "language": "en",
+      "image": {
+        "file": "cover.png",
+        "sha": "4bdf6d1bb0948d50f53b176c8b96d64348966561",
+        "commit": "fc02923868f1038424a7fdfd4f5cdcf27881d71a",
+        "width": 1672,
+        "height": 941
+      },
+      "stats": {
+        "downloads": 221,
+        "endorsements": 6
+      }
+    },
     {
       "id": "plugins/urtubesrclogged/adventurers-guild",
       "plugin_id": "urtubesrclogged.adventurers-guild",
@@ -222,7 +310,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 1113,
+        "downloads": 1123,
         "endorsements": 17
       }
     },
@@ -278,7 +366,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 53,
+        "downloads": 55,
         "endorsements": 0
       }
     },
@@ -472,7 +560,7 @@
         "height": 1080
       },
       "stats": {
-        "downloads": 29,
+        "downloads": 30,
         "endorsements": 0
       }
     },
@@ -691,7 +779,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 101,
+        "downloads": 102,
         "endorsements": 0
       }
     },
@@ -973,7 +1061,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 821,
+        "downloads": 823,
         "endorsements": 37
       }
     },
@@ -1236,7 +1324,7 @@
         "height": 768
       },
       "stats": {
-        "downloads": 112,
+        "downloads": 113,
         "endorsements": 0
       }
     },
@@ -1283,7 +1371,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 55,
+        "downloads": 56,
         "endorsements": 2
       }
     },
@@ -1408,88 +1496,6 @@
       "stats": {
         "downloads": 62,
         "endorsements": 1
-      }
-    },
-    {
-      "id": "plugins/pdusen/narrative-engine",
-      "plugin_id": "pdusen.narrative-engine",
-      "type": "listing",
-      "title": "Narrative Engine",
-      "tagline": "AI Director for Skyrim, layered on top of SkyrimNet.",
-      "author": "pdusen",
-      "tags": [
-        "narrative",
-        "director",
-        "events",
-        "visits",
-        "letters",
-        "ambush"
-      ],
-      "nsfw": false,
-      "icon": "brain",
-      "mods": [],
-      "first_published": "2026-09-27T00:24:33Z",
-      "last_updated": "2026-10-25T15:56:53Z",
-      "version": "0.8.0",
-      "history": [
-        {
-          "version": "0.8.0",
-          "commit": "8809c026f7d367470e747e8ec1d5ef371748e30b",
-          "date": "2026-10-25T15:56:53Z",
-          "changelog": "NPCs now scheme against each other in the background, and visits handle you leaving.\r\n\r\n## What's New\r\n\r\n### NPC Plots\r\n\r\n- Unique NPCs pursue schemes of their own, planned as concrete steps (theft, bribery, rumors, denunciation, blackmail, sabotage, forgery, crafting and more) that run over in-game days.\r\n- Schemers send people they can command; a step's odds depend on who does it and to whom, preparing makes it easier, and a failed step means another way or giving up.\r\n- Plots leave memories in SkyrimNet: schemers, agents, targets and officials all remember their part.\r\n- Schemers and agents know about their plot in conversation, and keep it secret.\r\n\r\n> **Note:** Plots need a decision provider set up in SkyrimNet.\r\n\r\n> **Note:** Plots are a background simulation for now and won't be reflected in an NPC's native in-game behavior. This will be revisited in a future release.\r\n\r\n### The Dashboard\r\n\r\n- A new Plots tab shows every plot, its steps, odds and outcomes, with a Simulation Enabled checkbox.\r\n\r\n> **Important:** Requires SkyrimNet Beta 26 (0.26.0) or newer.\r\n\r\n> **Important:** Running IntelEngine alongside is not recommended; if you do, turn its Story Engine off.\r\n\r\n> **Important:** Don't modify NarrativeEngine's prompts for non-English output; it can disrupt the simulations.\r\n\r\n## Fixes\r\n\r\n- Ghosts no longer take part in gossip or plots, or write letters and visit.\r\n- A visit is called off if you go somewhere it could never start before the visitor greets you.\r\n- Fast-travelling away ends a visit; mid-conversation, the visitor remembers you left abruptly."
-        },
-        {
-          "version": "0.7.3",
-          "commit": "ec7f8b981fbda6c4e49b7bbd7a2e2c80e850e9a7",
-          "date": "2026-10-13T22:47:01Z",
-          "changelog": "The Director could start a letter, visit or ambush using something it was never offered, so a hallucinated NPC could show up at your door. Every pick is now checked against the options offered for that specific beat. An invalid pick gets one retry; if that also fails, nothing fires until the next evaluation.\r\n\r\n## Fixes\r\n\r\n- A visit or letter could come from an NPC who was never a valid sender for it, for example a leveled guard, your current follower, or someone who was only eligible to write a letter. That happened when the Director named an NPC that wasn't on the list. Senders are now checked against the list offered for that exact beat.\r\n- A letter or visit could go ahead without its intended topic when the Director named a memory the sender didn't have. The composer then quietly picked a topic itself. That pick is now rejected.\r\n- An ambush that named an attacker group nobody had offered quietly fell back to the first eligible group. That pick is now rejected."
-        },
-        {
-          "version": "0.7.2",
-          "commit": "b86bbc1655aa291af16e64d408619a35a15ce02b",
-          "date": "2026-10-13T01:43:04Z",
-          "changelog": "A pacing and placement update: visits stop arriving back to back, beats repeat less often, and beats no longer fire in other realms or sealed-off places.\r\n\r\n## What's New\r\n\r\n### Visits\r\n\r\n- After any NPC visit, no other visit can happen for 24 in-game hours. Until now only the same visitor was held back, so different NPCs could turn up one after another.\r\n- The new `iVisitBeatCooldownGameHours` setting in `NarrativeEngine.ini` controls how long the pause lasts. Set it to 0 to turn the pause off.\r\n- A visit that's called off before the visitor reaches you doesn't start the cooldown.\r\n\r\n> **Note:** Existing saves load normally. On the first load of an older save the cooldown starts clear, so the next visit isn't held back.\r\n\r\n### The Director\r\n\r\n- The Director now waits 15 minutes before choosing the same kind of beat again, up from 5. The old window mostly ran out while the beat was still playing, so it rarely prevented a repeat.\r\n\r\n## Fixes\r\n\r\n- Beats no longer fire in places nobody could plausibly reach you. Previously Vigilants of Stendarr could ambush you in the Soul Cairn. The default location blacklist now covers the Soul Cairn and the Boneyard, Apocrypha, the Mind of Pelagius, the inside of Azura's Star, the Forgotten Vale, Darkfall Passage, Ancestor Glade, the Throat of the World summit and path, Giant's Grove, Japhet's Folly, Brinewater Grotto, Forebears' Holdout and all of Castle Volkihar. It also still covers Sovngarde. Fort Dawnguard is deliberately left off."
-        },
-        {
-          "version": "0.7.1",
-          "commit": "9bd6d70623ec76df532c292de1ec37aaa8ea887d",
-          "date": "2026-10-05T22:57:15Z",
-          "changelog": "A small workaround for a rare case where Skyrim's own courier stops making deliveries.\r\n\r\n## Fixes\r\n\r\n- If Skyrim's pending-delivery counter has been driven below zero by something outside NarrativeEngine, the vanilla courier stops being dispatched and letters sit undelivered. The plugin now raises that counter to match the letters actually waiting whenever it stages one."
-        },
-        {
-          "version": "0.7.0",
-          "commit": "7b17bbdc1a83435827dd2f63f57a37e32ffda410",
-          "date": "2026-10-03T21:53:59Z",
-          "changelog": "Visiting NPCs now walk Skyrim's real roads and arrive under cover, and the bug behind the \"gossip isn't spreading\" reports is fixed.\r\n\r\n## What's New\r\n\r\n### NPC Visits\r\n\r\n- Visitors travel Skyrim's actual road network instead of a straight line from home; both road graphs ship enabled.\r\n- The arrival spot is found by walking out along their route to the first place far enough off and out of sight.\r\n- Cover is preferred outright over open ground, so a visitor appears behind a rock at 6,000 units rather than in the open at 5,000.\r\n- Visitors can finally arrive inside walled cities like Whiterun and Windhelm.\r\n- Minimum arrival distance rises from 800 to 2,000 units, so nobody appears across the road from you.\r\n- A stuck visitor can hop along the road around an obstacle before walking the long way round.\r\n\r\n## Fixes\r\n\r\n- Gossip could stop spreading: rumors surviving a save came back unable to advance, yet held live-rumor slots until the cap filled and the world stopped seeding.\r\n- Letters and visits could reference things the sender had no way of knowing; the Director now names one of the sender's own memories.\r\n- With you upstairs in an inn, a visitor could be sent to a balcony door instead of the street-level front door.\r\n- Which door a visitor waited at was a coin flip in 279 of 544 vanilla interiors; now it is the same door every time.\r\n- A visitor could arrive thousands of units off their own route, or almost on top of you inside a city gate.\r\n\r\n> **SkyrimNet Beta 25 (0.25.0) or newer is now required.** This release ships only the new plugin layout; on Beta 24 or earlier SkyrimNet finds none of NarrativeEngine's prompts and every LLM-driven beat fails. Update SkyrimNet, or stay on v0.6.1. Let your mod manager replace the whole mod rather than merge into it.\r\n\r\nFull release notes: https://github.com/pdusen/skyrimnet-plugin-narrative-engine/releases/tag/v0.7.0"
-        },
-        {
-          "version": "0.6.1",
-          "commit": "3b2fac11159d5aad110199c3b44e00af5d14b9c8",
-          "date": "2026-10-01T02:46:19Z",
-          "changelog": "# NarrativeEngine v0.6.1\r\n\r\nWalled-city visitors now reach you and greet you indoors, letter and visit prompts see only what the two of you said to each other, and every dashboard tab says when its next thing happens.\r\n\r\n## What's New\r\n\r\n### The Dashboard\r\n\r\n- Every tab with a cadence now shows when the next thing happens: Director evaluations, dispatch cooldowns, the gossip schedule, letter delivery, and the visit approach, return-home and poll deadlines.\r\n- Each readout is labelled with the clock that governs it — real, unpaused, active play, or game time — because those four elapse at different rates.\r\n- A cooldown that is switched off reads as an em dash rather than 0s.\r\n\r\n> **Note:** The numbers do not tick while you watch. Opening the dashboard pauses the game, freezing three of the four clocks.\r\n\r\n### Beat Senders\r\n\r\n- New `sBlacklistedSenders` under `[Beats]` names NPCs who may never write you a letter or pay you a visit. Semicolon-separated, matched on editor ID or in-game name.\r\n\r\n> **Note:** Read at load, so a change needs a restart. Editor-ID matching needs an editor-ID recovery mod (powerofthree's Tweaks); without one use the in-game name.\r\n\r\n### Letters and Visits\r\n\r\n- The dialogue history behind a letter or visit is now strictly what passed between you and that NPC. Third-party lines and ambient chatter are dropped.\r\n\r\n### Ambushes\r\n\r\n- The narration logged when an ambush begins no longer contains speech of any kind. The attackers do their own talking.\r\n\r\n## Fixes\r\n\r\n- An NPC living inside a walled city will now travel to you when you are nowhere near it. Previously most visits from Whiterun, Riften, Solitude, Markarth and Windhelm residents never happened at all.\r\n- A visitor who follows you indoors now greets you, instead of trailing you until the approach timed out.\r\n\r\nFull release notes: https://github.com/pdusen/skyrimnet-plugin-narrative-engine/releases/tag/v0.6.1"
-        },
-        {
-          "version": "0.6.0",
-          "commit": "fc02923868f1038424a7fdfd4f5cdcf27881d71a",
-          "date": "2026-09-27T00:24:33Z",
-          "changelog": "## What's New\r\n\r\n### NPC Visits\r\n\r\n- Visitors arrive from along the road between the player and the sender's home, not on a bearing unrelated to how they would have travelled.\r\n- A visitor whose home lies outside a walled city walks in through that city's gate — the nearest one to the player when there are several.\r\n- When the player is indoors, the visitor is placed on the far side of the player's own door and comes in through it.\r\n- Senders who are not loaded — almost all of them — are now located from their save cell or their location's map marker.\r\n- The arrival band widened from 2500 to 5000 units and the approach timeout from 60 to 90 seconds; the old ceiling discarded ~70% of the road on a route.\r\n- The cover check sweeps a whole visitor's height rather than stopping at the chest, and open ground outside the player's view arc is accepted when there is no cover.\r\n\r\n> **Note:** Past roughly 2000 units an arrival can ride a cover claim the raycast cannot support, so a visitor may occasionally appear in plain sight.\r\n\r\n### Debug Notifications\r\n\r\n- Optional corner-of-screen notices when a beat does something unseen: a visitor warped in, a letter given to the courier, an ambush spawned, a rumor seeded. Off by default; a testing aid, not a gameplay feature.\r\n\r\n### SkyrimNet Beta 25\r\n\r\n- Content ships in Beta 25's plugin layout alongside the old one, so either version works.\r\n\r\n## Fixes\r\n\r\n- The dashboard hotkey matched mouse buttons as well as keys, so scrolling could open or close it.\r\n- A null field in an event payload threw away the whole batch after it.\r\n- Log rotation renamed the current file, detaching any editor tailing it; it copies now.\r\n- The courier's cached lookup was not cleared on save load.\r\n- The MCM event sink traced every other mod's events.\r\n\r\nFull release notes: https://github.com/pdusen/skyrimnet-plugin-narrative-engine/releases/tag/v0.6.0"
-        }
-      ],
-      "external_url": "https://github.com/pdusen/skyrimnet-plugin-narrative-engine/releases/latest",
-      "languages": [
-        "en"
-      ],
-      "language": "en",
-      "image": {
-        "file": "cover.png",
-        "sha": "4bdf6d1bb0948d50f53b176c8b96d64348966561",
-        "commit": "fc02923868f1038424a7fdfd4f5cdcf27881d71a",
-        "width": 1672,
-        "height": 941
-      },
-      "stats": {
-        "downloads": 221,
-        "endorsements": 6
       }
     },
     {
@@ -1908,7 +1914,7 @@
         "height": 1152
       },
       "stats": {
-        "downloads": 262,
+        "downloads": 263,
         "endorsements": 7
       }
     },
@@ -2623,7 +2629,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 309,
+        "downloads": 310,
         "endorsements": 7
       }
     },
@@ -3044,7 +3050,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 393,
+        "downloads": 394,
         "endorsements": 4
       }
     },
@@ -3906,7 +3912,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 341,
+        "downloads": 342,
         "endorsements": 1
       }
     },
@@ -3976,7 +3982,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 413,
+        "downloads": 414,
         "endorsements": 0
       }
     },
@@ -4455,7 +4461,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1327,
+        "downloads": 1328,
         "endorsements": 2
       }
     },
@@ -4500,7 +4506,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 648,
+        "downloads": 649,
         "endorsements": 0
       }
     },
@@ -4590,7 +4596,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2893,
+        "downloads": 2894,
         "endorsements": 4
       }
     },
@@ -4815,7 +4821,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1489,
+        "downloads": 1491,
         "endorsements": 0
       }
     },
@@ -5085,7 +5091,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 573,
+        "downloads": 574,
         "endorsements": 1
       }
     },
@@ -6300,7 +6306,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1376,
+        "downloads": 1378,
         "endorsements": 3
       }
     },
@@ -6345,7 +6351,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 281,
+        "downloads": 282,
         "endorsements": 0
       }
     },
@@ -6480,7 +6486,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 604,
+        "downloads": 605,
         "endorsements": 0
       }
     },
@@ -6525,7 +6531,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 868,
+        "downloads": 869,
         "endorsements": 2
       }
     },
@@ -6930,7 +6936,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 245,
+        "downloads": 246,
         "endorsements": 0
       }
     },
@@ -8745,7 +8751,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 711,
+        "downloads": 712,
         "endorsements": 0
       }
     },
@@ -8880,7 +8886,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1232,
+        "downloads": 1233,
         "endorsements": 2
       }
     },
@@ -8970,7 +8976,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1591,
+        "downloads": 1592,
         "endorsements": 2
       }
     },
@@ -10005,7 +10011,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1677,
+        "downloads": 1679,
         "endorsements": 2
       }
     },
@@ -10275,7 +10281,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1384,
+        "downloads": 1385,
         "endorsements": 2
       }
     },
@@ -10815,7 +10821,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1007,
+        "downloads": 1009,
         "endorsements": 0
       }
     },
@@ -10860,7 +10866,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 589,
+        "downloads": 590,
         "endorsements": 1
       }
     },
@@ -11580,7 +11586,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 339,
+        "downloads": 340,
         "endorsements": 0
       }
     },
@@ -11625,7 +11631,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 867,
+        "downloads": 869,
         "endorsements": 0
       }
     },
@@ -12435,7 +12441,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 295,
+        "downloads": 296,
         "endorsements": 0
       }
     },
@@ -12615,7 +12621,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 548,
+        "downloads": 549,
         "endorsements": 0
       }
     },
@@ -12705,7 +12711,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 190,
+        "downloads": 191,
         "endorsements": 0
       }
     },
@@ -13020,7 +13026,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 193,
+        "downloads": 194,
         "endorsements": 0
       }
     },
@@ -13425,7 +13431,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2067,
+        "downloads": 2070,
         "endorsements": 2
       }
     },
