@@ -1,3 +1,5 @@
+{# Only with SeverActions and Sever's Hearth in the load order. #}
+{% if is_plugin_loaded("SeverActions.esp") and is_plugin_loaded("SeversHearth.esp") %}
 {% if render_mode == "stable" or render_mode == "thoughts" or render_mode == "transform" or (render_mode == "full" and not default(stable_split, false)) %}
 {# The player's camps, for their companions only: camp_base (the base; the first camp pitched becomes it) and current_camp (a
    field camp), both from SeversHearthNative, "" when that camp is not up. The "x and" half of each test catches null (the
@@ -14,6 +16,7 @@
 {% if has_camp %}- {{ camp_ctx }}
 {% endif %}
 - You and {{ player.name }} share {% if has_base and has_camp %}these camps{% else %}this camp{% endif %}: somewhere to rest, eat and warm up by the fire. Keep to what anyone there could see; do not invent furnishings or who built what. Bring it up when it fits the conversation, not in every line.
+{% endif %}
 {% endif %}
 {% endif %}
 {% endif %}

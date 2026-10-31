@@ -1,3 +1,5 @@
+{# Only with SeverActions in the load order. #}
+{% if is_plugin_loaded("SeverActions.esp") %}
 {% if render_mode == "stable" or (render_mode == "full" and not default(stable_split, false)) %}
 {# Group-talk discipline for SeverActions companions, in NPC dialogue only (responseTarget type player, npc or all; "none"
    or unset in thoughts, the diary, memory generation, the translators and the action selector). Test only the type: it
@@ -10,5 +12,6 @@
 - When you back up or answer a point another companion made, speak to the person it was aimed at (usually {{ player.name }}), not to the companion who made it.
 - Do not restate what has already been said. If a demand, a condition or a fact is already on the table, acknowledge it in a word if you must, then add something new: a next step, an objection, a question, a decision. With nothing new to add, keep it short.
 - Every line should move the scene on: answer what was asked, decide something, or raise a fresh concern. A conversation where each person repeats the last person is a stalled conversation.
+{% endif %}
 {% endif %}
 {% endif %}
