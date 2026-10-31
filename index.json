@@ -1,8 +1,67 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-31T12:24:19.715Z",
-  "stats_as_of": "2026-10-31T12:20:28.257Z",
+  "generated_at": "2026-10-31T12:45:06.350Z",
+  "stats_as_of": "2026-10-31T12:45:06.027Z",
   "plugins": [
+    {
+      "id": "plugins/severause/magelight-ui",
+      "plugin_id": "severause.magelight-ui",
+      "type": "listing",
+      "title": "Magelight UI",
+      "tagline": "GPU-rendered web pages inside Skyrim SE, AE and VR. Runs SkyrimNet’s dashboard and chat and SeverActions’ menus, and lets any mod build its UI in HTML, CSS and JavaScript.",
+      "author": "severause",
+      "tags": [],
+      "nsfw": false,
+      "icon": "package",
+      "mods": [
+        {
+          "name": "SeverActions.esp",
+          "file": "severactions.esp",
+          "required": true
+        }
+      ],
+      "first_published": "2026-10-25T23:32:17Z",
+      "last_updated": "2026-10-31T12:44:36Z",
+      "version": "1.7.1",
+      "history": [
+        {
+          "version": "1.7.1",
+          "commit": "16c92ce3e0eb7d99de1a4f8edbda80409c5958d3",
+          "date": "2026-10-31T12:44:36Z",
+          "changelog": "## Magelight UI 1.7.1\n\nIncludes everything from 1.7.0.\n\n**Pages run on their own thread (flat Skyrim)**\n- A page's scripts, layout and painting no longer take time out of the game's frame, so a heavy page costs its own frame rate, not yours\n- A page stuck in a script freezes the pages, not the game, and you can still close it\n- If something misbehaves, add `\"pageThread\": false` to `Magelight.json`. Skyrim VR is unchanged\n\n**Pages at the main menu (flat Skyrim)**\n- Pages can now open at the main menu when a mod asks for them there\n- Other pages still start with the game, and aren't drawn over the main menu when you quit back to it\n\n**Fixes**\n- Long freeze when opening a heavy page, reported with Sanguine's Trade's Ledger\n- Page rows turning black behind Community Shaders' frame generation\n- Crash at start when the game folder's name isn't plain English\n- Pages ignoring the keyboard until you alt-tab, seen on a few PCs\n- A page that runs long no longer loses mouse releases or focus changes\n\n**VR**\n- Squeeze the grip while pointing at a page to grab it: it follows your laser, and the same hand's stick turns it or moves it closer and further away\n- The game's red quill pointer no longer shows at the edges of a page\n\n**For mod authors**\n- On flat Skyrim, JS listeners and other render-thread callbacks now run on the page thread. Never touch game state from one: use `PostGameTask`\n- UI mode requested at the main menu now opens your page, so **guard the request if your page needs a loaded game**\n- `SetViewMainMenu` and the manifest key `\"mainMenu\"` make a main-menu page ahead of time\n- API paths are UTF-8, so build page paths with `u8string()`\n- New in VR: `kVRPlacementAtGaze` and `vr.atGaze` open a view where the player is looking\n\nThanks to **ColdSun** for the page thread!"
+        },
+        {
+          "version": "1.6.0",
+          "commit": "7790dbb653ebbaa56ae9168a7e3afebf3eebccab",
+          "date": "2026-10-28T16:50:21Z",
+          "changelog": "Magelight UI 1.6.0 - Nexus changelog\n\n- Gamepad support for pages that opt in (flat only): the d-pad and left stick move between a page's controls, A presses, B goes back or closes the page, and the right stick scrolls.\n- While such a page is open the controller belongs to it: no button draws a weapon, attacks, sprints or shouts behind the page, and the B that closes it does not open the Tween menu.\n- The button that opened a page does nothing in it until you let go of it.\n- Pages that did not opt in, and other mods' own gamepad handling, behave as before.\n- Magelight.json: \"gamepad\": { \"enabled\": false } turns the gamepad layer off for every page; \"glyphs\": \"playstation\" (or \"generic\") labels the buttons for another controller.\n- For mod authors: SetViewGamepad / GetViewGamepadState, the manifest key \"gamepad\" and the page helper window.magelight.gamepad, with a keys style (no script needed) and a navigation style (focus scopes, tabs, button prompts, an optional stick cursor). Gate on hostVersionNumber >= 10600 or QueryCapability(\"gamepad\"); see CHANGELOG.md and docs/CPP.md.\n- Thanks to ColdSun for the gamepad layer."
+        },
+        {
+          "version": "1.5.1",
+          "commit": "6c07d7f4370065d108c7d08a0376aae3b01c92ff",
+          "date": "2026-10-27T00:52:28Z",
+          "changelog": "## Magelight UI 1.5.1\n\nA small fix release on top of 1.5.0, all about the mouse cursor:\n\n- **Crash fix:** mods that read the game's cursor every frame could crash the game alongside Magelight, often as a chat page opened. Fixed.\n- **Menus over pages:** opening a context or item menu over a page no longer rebuilds the game's cursor.\n- **Cursor stays in the game:** while a page has the mouse, the Windows cursor can no longer wander onto another monitor.\n\nBoth cursor changes are flat-screen only and can be turned off in `Magelight.json` (`\"pinGameCursor\": false`, `\"clipCursor\": false`). VR is unchanged."
+        },
+        {
+          "version": "1.5.0",
+          "commit": "68533530c8d3f04593ab710ddaa55f28811c29a6",
+          "date": "2026-10-25T23:32:17Z",
+          "changelog": "Magelight UI 1.5.0\n\nMagelight now runs on Ultralight 2.0, the newest version of the web engine behind every Magelight page. Pages look the same, run a little lighter, and a long list of fixes comes with it.\n\nHighlights\n- Japanese, Chinese and Korean typing: the IME's candidate list now shows inside the page, so you no longer pick characters blind. It matches the text field's font and the page's colours. (Thanks to Dekana, who built and tested this.)\n- Escape while typing with an IME only closes the candidate list or clears the word you're typing. It no longer closes the chat and loses your text. With Korean, one Escape commits the syllable and closes, as in Windows.\n- Fixed a crash and an \"overlay disabled\" problem for players using CrashLogger 1.23 or newer: an error in any mod's page could take down the UI or the game. Pages now run on their own stack and errors stay inside the page.\n- Opening a page no longer makes your character sheathe their weapon or drop a readied spell.\n- HUD-style views (widgets that don't take clicks) now show during play with ENB, ReShade and other graphics wrappers.\n- Opening and closing pages no longer rebuilds the game's cursor, which could crash some cursor mods. The Journal and Inventory keep their cursor too.\n- Alt-tabbing no longer fills Magelight.log with false \"stall\" reports.\n\nSmaller improvements\n- Pages that load in the background open with their images already drawn.\n- Memory used by hidden pages is given back on its own, even when no page is open.\n- Mouse: drags end where you release, the mouse wheel scrolls what's under the pointer, middle-click no longer autoscrolls, and the back/forward mouse buttons work in pages.\n- VR: the keyboard follows the text field you're typing in, shows a number pad or email/URL layout where it fits, and has Undo, Redo, Cut, Copy and Paste buttons. Each hand drags and points on its own.\n- Japanese fonts like MS UI Gothic and MS PGothic draw in the right face again."
+        }
+      ],
+      "external_url": "https://www.nexusmods.com/skyrimspecialedition/mods/193303",
+      "image": {
+        "file": "cover.png",
+        "sha": "5bc1c6579f8ac72ce77bc967215594876861b749",
+        "commit": "68533530c8d3f04593ab710ddaa55f28811c29a6",
+        "width": 1920,
+        "height": 1080
+      },
+      "stats": {
+        "downloads": 48,
+        "endorsements": 1
+      }
+    },
     {
       "id": "plugins/min/skyrimnet-prompts-cache-enabled",
       "plugin_id": "min.skyrimnet-prompts-cache-enabled",
@@ -87,7 +146,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 1040,
+        "downloads": 1041,
         "endorsements": 15
       }
     },
@@ -143,7 +202,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 33,
+        "downloads": 34,
         "endorsements": 0
       }
     },
@@ -269,7 +328,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 164,
+        "downloads": 166,
         "endorsements": 3
       }
     },
@@ -433,7 +492,7 @@
         "height": 1091
       },
       "stats": {
-        "downloads": 39,
+        "downloads": 40,
         "endorsements": 1
       }
     },
@@ -511,59 +570,6 @@
       }
     },
     {
-      "id": "plugins/severause/magelight-ui",
-      "plugin_id": "severause.magelight-ui",
-      "type": "listing",
-      "title": "Magelight UI",
-      "tagline": "GPU-rendered web pages inside Skyrim SE, AE and VR. Runs SkyrimNet’s dashboard and chat and SeverActions’ menus, and lets any mod build its UI in HTML, CSS and JavaScript.",
-      "author": "severause",
-      "tags": [],
-      "nsfw": false,
-      "icon": "package",
-      "mods": [
-        {
-          "name": "SeverActions.esp",
-          "file": "severactions.esp",
-          "required": true
-        }
-      ],
-      "first_published": "2026-10-25T23:32:17Z",
-      "last_updated": "2026-10-28T16:50:21Z",
-      "version": "1.6.0",
-      "history": [
-        {
-          "version": "1.6.0",
-          "commit": "7790dbb653ebbaa56ae9168a7e3afebf3eebccab",
-          "date": "2026-10-28T16:50:21Z",
-          "changelog": "Magelight UI 1.6.0 - Nexus changelog\n\n- Gamepad support for pages that opt in (flat only): the d-pad and left stick move between a page's controls, A presses, B goes back or closes the page, and the right stick scrolls.\n- While such a page is open the controller belongs to it: no button draws a weapon, attacks, sprints or shouts behind the page, and the B that closes it does not open the Tween menu.\n- The button that opened a page does nothing in it until you let go of it.\n- Pages that did not opt in, and other mods' own gamepad handling, behave as before.\n- Magelight.json: \"gamepad\": { \"enabled\": false } turns the gamepad layer off for every page; \"glyphs\": \"playstation\" (or \"generic\") labels the buttons for another controller.\n- For mod authors: SetViewGamepad / GetViewGamepadState, the manifest key \"gamepad\" and the page helper window.magelight.gamepad, with a keys style (no script needed) and a navigation style (focus scopes, tabs, button prompts, an optional stick cursor). Gate on hostVersionNumber >= 10600 or QueryCapability(\"gamepad\"); see CHANGELOG.md and docs/CPP.md.\n- Thanks to ColdSun for the gamepad layer."
-        },
-        {
-          "version": "1.5.1",
-          "commit": "6c07d7f4370065d108c7d08a0376aae3b01c92ff",
-          "date": "2026-10-27T00:52:28Z",
-          "changelog": "## Magelight UI 1.5.1\n\nA small fix release on top of 1.5.0, all about the mouse cursor:\n\n- **Crash fix:** mods that read the game's cursor every frame could crash the game alongside Magelight, often as a chat page opened. Fixed.\n- **Menus over pages:** opening a context or item menu over a page no longer rebuilds the game's cursor.\n- **Cursor stays in the game:** while a page has the mouse, the Windows cursor can no longer wander onto another monitor.\n\nBoth cursor changes are flat-screen only and can be turned off in `Magelight.json` (`\"pinGameCursor\": false`, `\"clipCursor\": false`). VR is unchanged."
-        },
-        {
-          "version": "1.5.0",
-          "commit": "68533530c8d3f04593ab710ddaa55f28811c29a6",
-          "date": "2026-10-25T23:32:17Z",
-          "changelog": "Magelight UI 1.5.0\n\nMagelight now runs on Ultralight 2.0, the newest version of the web engine behind every Magelight page. Pages look the same, run a little lighter, and a long list of fixes comes with it.\n\nHighlights\n- Japanese, Chinese and Korean typing: the IME's candidate list now shows inside the page, so you no longer pick characters blind. It matches the text field's font and the page's colours. (Thanks to Dekana, who built and tested this.)\n- Escape while typing with an IME only closes the candidate list or clears the word you're typing. It no longer closes the chat and loses your text. With Korean, one Escape commits the syllable and closes, as in Windows.\n- Fixed a crash and an \"overlay disabled\" problem for players using CrashLogger 1.23 or newer: an error in any mod's page could take down the UI or the game. Pages now run on their own stack and errors stay inside the page.\n- Opening a page no longer makes your character sheathe their weapon or drop a readied spell.\n- HUD-style views (widgets that don't take clicks) now show during play with ENB, ReShade and other graphics wrappers.\n- Opening and closing pages no longer rebuilds the game's cursor, which could crash some cursor mods. The Journal and Inventory keep their cursor too.\n- Alt-tabbing no longer fills Magelight.log with false \"stall\" reports.\n\nSmaller improvements\n- Pages that load in the background open with their images already drawn.\n- Memory used by hidden pages is given back on its own, even when no page is open.\n- Mouse: drags end where you release, the mouse wheel scrolls what's under the pointer, middle-click no longer autoscrolls, and the back/forward mouse buttons work in pages.\n- VR: the keyboard follows the text field you're typing in, shows a number pad or email/URL layout where it fits, and has Undo, Redo, Cut, Copy and Paste buttons. Each hand drags and points on its own.\n- Japanese fonts like MS UI Gothic and MS PGothic draw in the right face again."
-        }
-      ],
-      "external_url": "https://www.nexusmods.com/skyrimspecialedition/mods/193303",
-      "image": {
-        "file": "cover.png",
-        "sha": "5bc1c6579f8ac72ce77bc967215594876861b749",
-        "commit": "68533530c8d3f04593ab710ddaa55f28811c29a6",
-        "width": 1920,
-        "height": 1080
-      },
-      "stats": {
-        "downloads": 47,
-        "endorsements": 1
-      }
-    },
-    {
       "id": "plugins/kaleth/sexist-men-of-skyrim",
       "plugin_id": "kaleth.sexist-men-of-skyrim",
       "type": "bundle",
@@ -609,7 +615,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 93,
+        "downloads": 94,
         "endorsements": 0
       }
     },
@@ -997,7 +1003,7 @@
         "height": 760
       },
       "stats": {
-        "downloads": 67,
+        "downloads": 68,
         "endorsements": 0
       }
     },
@@ -1406,7 +1412,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 219,
+        "downloads": 220,
         "endorsements": 6
       }
     },
@@ -1700,7 +1706,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 126,
+        "downloads": 127,
         "endorsements": 1
       }
     },
@@ -1758,7 +1764,7 @@
         "height": 1152
       },
       "stats": {
-        "downloads": 172,
+        "downloads": 175,
         "endorsements": 0
       }
     },
@@ -1826,7 +1832,7 @@
         "height": 1152
       },
       "stats": {
-        "downloads": 258,
+        "downloads": 259,
         "endorsements": 7
       }
     },
@@ -1895,7 +1901,7 @@
         "height": 720
       },
       "stats": {
-        "downloads": 65,
+        "downloads": 67,
         "endorsements": 0
       }
     },
@@ -2190,7 +2196,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 130,
+        "downloads": 131,
         "endorsements": 0
       }
     },
@@ -2434,7 +2440,7 @@
         "height": 1152
       },
       "stats": {
-        "downloads": 144,
+        "downloads": 147,
         "endorsements": 1
       }
     },
@@ -2473,7 +2479,7 @@
         "height": 720
       },
       "stats": {
-        "downloads": 47,
+        "downloads": 48,
         "endorsements": 0
       }
     },
@@ -2763,7 +2769,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 53,
+        "downloads": 54,
         "endorsements": 0
       }
     },
@@ -3080,7 +3086,7 @@
         "height": 1008
       },
       "stats": {
-        "downloads": 125,
+        "downloads": 126,
         "endorsements": 3
       }
     },
@@ -3175,7 +3181,7 @@
         "height": 1008
       },
       "stats": {
-        "downloads": 134,
+        "downloads": 135,
         "endorsements": 3
       }
     },
@@ -3368,7 +3374,7 @@
         "config": 4
       },
       "stats": {
-        "downloads": 265,
+        "downloads": 266,
         "endorsements": 3
       }
     },
@@ -3532,7 +3538,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 145,
+        "downloads": 146,
         "endorsements": 2
       }
     },
@@ -3623,7 +3629,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 186,
+        "downloads": 187,
         "endorsements": 0
       }
     },
@@ -3684,7 +3690,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 261,
+        "downloads": 262,
         "endorsements": 0
       }
     },
@@ -3775,7 +3781,7 @@
         "height": 1080
       },
       "stats": {
-        "downloads": 175,
+        "downloads": 176,
         "endorsements": 1
       }
     },
@@ -3894,7 +3900,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 329,
+        "downloads": 330,
         "endorsements": 1
       }
     },
@@ -3964,7 +3970,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 401,
+        "downloads": 403,
         "endorsements": 0
       }
     },
@@ -4020,7 +4026,7 @@
         "height": 720
       },
       "stats": {
-        "downloads": 64,
+        "downloads": 66,
         "endorsements": 0
       }
     },
@@ -4056,7 +4062,7 @@
       ],
       "external_url": "https://github.com/naitro2010/SkyrimNet_UDNG/releases/tag/alpha12",
       "stats": {
-        "downloads": 130,
+        "downloads": 131,
         "endorsements": 4
       }
     },
@@ -4398,7 +4404,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 398,
+        "downloads": 400,
         "endorsements": 5
       }
     },
@@ -6333,7 +6339,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 279,
+        "downloads": 280,
         "endorsements": 0
       }
     },
@@ -11613,7 +11619,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 851,
+        "downloads": 852,
         "endorsements": 0
       }
     },
