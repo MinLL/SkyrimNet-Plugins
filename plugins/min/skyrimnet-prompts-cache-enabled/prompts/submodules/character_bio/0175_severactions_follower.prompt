@@ -1,3 +1,5 @@
+{# Only with SeverActions in the load order. #}
+{% if is_plugin_loaded("SeverActions.esp") %}
 {% if render_mode == "stable" or render_mode == "thoughts" or render_mode == "transform" or (render_mode == "full" and not default(stable_split, false)) %}
 {# A current companion's role, feelings, fighting style and routine; anyone else's SeverActions home and routine. #}
 {% if actorUUID and actorUUID != 0 %}
@@ -98,7 +100,7 @@ You traveled with {{ player.name }} as their companion before the two of you par
 {% endif %}
 {% endif %}
 {% endif %}
-
+{% endif %}
 {% endif %}
 {% endif %}
 {% endif %}

@@ -2,21 +2,22 @@
   "id": "min.skyrimnet-prompts-cache-enabled",
   "type": "bundle",
   "title": "Skyrimnet Prompts - Cache Enabled",
-  "tagline": "Faster, cheaper responses - EXPERIMENTAL",
-  "description": "This set of prompts are structured to utilize cached input, thereby increasing speed and reducing costs. In tests, this was able to reduce the cost of some models by more than 56% with no observable drop in quality. When using this build, I would suggest significantly increasing the size of your number of events in the history, as this is far cheaper with this change.\n\nThis may not be suitable for all models, and may cause regressions on some (particularly small local models). As such, this is currently experimental.\n\nRequires Beta27-rc4 or newer (Alpha tester only at the time of posting this).",
+  "tagline": "Faster, cheaper responses",
+  "description": "This set of prompts are structured to utilize cached input, thereby increasing speed and reducing costs. In tests, this was able to reduce the cost of some models by more than 56% with no observable drop in quality. When using this build, you may consider significantly increasing the size of your number of events in the history, as this is far cheaper with this set of prompts.\n\nThis may not be suitable for all models, and may cause regressions on some small local models. This is the recommended set of models for Fateless.ai users, and will be the default set of models in a future release as well.",
   "author": "min",
   "tags": [
     "Costs",
     "Performance",
     "Cheaper",
     "Faster",
-    "Speed"
+    "Speed",
+    "Fateless"
   ],
   "nsfw": false,
   "icon": "package",
   "mods": [],
   "image": "cover.png",
-  "version": "1.5.0",
-  "changelog": "1.5.0: more Prompt Caching improvements. Improved support for the Adventurer's Guild plugin, and SeverActions. Note: this temporarily ships an overridden severactions prompt to make it play nicer with the new system. I'll be removing this in a future release after contributing this to SeverActions.",
-  "min_skyrimnet_version": "0.28.0"
+  "version": "1.6.0",
+  "changelog": "Improved the relevancy of player thought and player transform dialogues. Fixed an issue resulting in warnings if SeverActions is not installed.",
+  "min_skyrimnet_version": "0.29.0"
 }
