@@ -21,6 +21,6 @@
   ],
   "image": "cover.png",
   "external_url": "https://www.nexusmods.com/skyrimspecialedition/mods/193777",
-  "version": "1.5.0",
-  "changelog": "1.5.0: hold stamps on the guild card, and what a stamped hold's merchants make of them; any Guild adventurer can show you their guild card (new action); the dungeon dead and the bloodied cards they carry; the Jarls' bounties as Guild work; a counter pays off every hold's bounty for a small fee, and a rep knows your bounty and whether the town's board has new work; missives, notices and monster hunts are spoken of only when their mod is installed (Monster Hunt Missives is new); NPCs bring up the Guild only when it fits the conversation."
+  "version": "1.6.0",
+  "changelog": "# 1.6.0:\n**New 1.6 Features**\n- NPCs know about Guild Boxes, perk training and the new missives.\n**SkyrimNet Optimizations and Improvements**\n- Ranks, your record and parties now use SkyrimNet's native decorators. Lighter on the game, and the \"Decorator 'ag_join_status' not found\" errors after loading are gone.\n- Much smaller prompts: the Guild guidelines went from about 1,600 tokens to about 128, and only NPCs with a tie to the Guild get them. Everyone else gets the details from world knowledge when the Guild comes up."
 }
