@@ -1,0 +1,6 @@
+# refuse: FORM_INVALID
+# why: the location is a form reference like the space
+id: bad_location
+name: Kitchen
+space: Skyrim.esm|0x0165A7
+location: Whiterun

@@ -1,0 +1,9 @@
+# why: an interior place with every field: the cell, the location it was marked in, a position and a radius
+id: breezehome_kitchen
+name: Kitchen
+space: Skyrim.esm|0x0165A7
+location: Skyrim.esm|0x018A56
+x: 120
+y: -340
+z: 64
+radius: 300
