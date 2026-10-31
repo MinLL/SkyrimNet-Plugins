@@ -1,0 +1,26 @@
+{
+  "id": "taka.skyrimnet-minigame",
+  "type": "listing",
+  "title": "SkyrimNet MiniGame",
+  "tagline": "Play Reversi and Liar's Dice with the NPCs around you on a board drawn over the game. Your opponents talk about every move, know how the game stands, and remember it.",
+  "description": "Play table games with the people around you. Open the menu, pick a game and your opponents from the NPCs nearby, and play on a board drawn over the game. SkyrimNet gives your opponents a voice: they talk about the game as it goes, know how it stands, and remember it afterwards.\n\n### Games\n\n- **Reversi** (Othello) against one NPC, at four strengths, with legal-move hints.\n- **Liar's Dice** against one to three NPCs. Everyone hides five dice under a cup, ones are wild; in turn you raise the bid on the whole table's dice or call the last bid a lie. The game plays to the end: once you are out, the others play on while you watch.\n\nWhen a game starts, your opponents come over to stand in front of you, and their faces are shown in frames on the board.\n\n### SkyrimNet\n\n- **Commentary:** each moment of the game is told to one opponent, who reacts in their own words. Liar's Dice waits for each line to be spoken before the next move, so the table never talks over itself.\n- **They know the game:** while they play, each opponent's prompt holds the state of the game (the `minigame_state` decorator). In Liar's Dice they see only their own dice, keep them secret, and may bluff.\n- **You speak your own bids:** in Liar's Dice your bids and \"Liar!\" calls can go through Transform Dialogue, so your character says them aloud (MCM option).\n- **Challenges:** an NPC may challenge you to Reversi in conversation (the action `Reversi_Challenge`); you can accept or decline.\n- Opponents are marked busy while a game is played, so they are not pulled into other conversations.\n\n### Requirements\n\n| Mod | Notes |\n|---|---|\n| Skyrim SE / AE | Tested on 1.6.1170 |\n| SKSE64 and Address Library | |\n| Prisma UI | Draws the board (tested on 1.5.1) |\n| SkyrimNet | Tested on beta 28 |\n| SkyUI and MCM Helper | Settings menu and hotkey |\n\n### How to play\n\nPress the hotkey (**K** by default) to open the menu, pick a game and your opponents, and play. The hotkey or **Esc** closes the board; an unfinished game is offered to continue the next time.\n\n### Installation\n\nDownload the archive from the GitHub releases page and install it with your mod manager; `skyrimnet_MiniGame.esp` is ESL-flagged. A Japanese translation is available as a separate archive. In any other game language the mod runs in English.\n\n### Notes\n\n- Leave *Pause the game while playing* off: NPCs cannot speak while the game is paused.\n- Liar's Dice takes its time, since every bid is spoken before the next one.",
+  "author": "taka",
+  "tags": [
+    "Gameplay",
+    "NPC",
+    "Minigame",
+    "Dialogue",
+    "Prisma UI"
+  ],
+  "nsfw": false,
+  "icon": "package",
+  "mods": [],
+  "languages": [
+    "en",
+    "ja"
+  ],
+  "image": "cover.jpg",
+  "external_url": "https://github.com/nightlantern-mods/skyrimnet_MiniGame",
+  "version": "0.1.0",
+  "changelog": "First release: Reversi against one NPC and Liar's Dice against up to three, with SkyrimNet commentary, the game state in each opponent's prompt, your own bids spoken through Transform Dialogue, NPC challenges to Reversi, and face frames of your opponents on the board."
+}
