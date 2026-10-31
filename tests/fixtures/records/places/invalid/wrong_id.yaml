@@ -1,0 +1,5 @@
+# refuse: NAME_NOT_STEM
+# why: the filename is the identity; an id that is not the stem is refused
+id: breezehome_kitchen
+name: Kitchen
+space: Skyrim.esm|0x0165A7

@@ -78,6 +78,8 @@ export const ROOT_TABLE = Object.freeze([
   // Engine tunables shipped as data (carry-over audio tag lists).
   // `flat`: files only; a folder under config/ is the pre-library layout (config/triggers/), an unknown root.
   { segment: "config", category: "config", extension: ".yaml", minEngine: TUNABLES_ROOT_MIN_ENGINE, flat: true }, // by `kind`
+  // Named spots inside a location (a room, a camp), matched by position in a cell or worldspace.
+  { segment: "places", category: "config", extension: ".yaml", minEngine: RESERVED_MIN_ENGINE }, // `id` == stem
 ]);
 
 // Content roots accepted by the hub, in table order.

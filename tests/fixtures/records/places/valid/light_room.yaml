@@ -1,0 +1,6 @@
+# why: an .esl cell keeps its 12-bit id; a place may ship switched off
+id: light_room
+name: Reading Room
+space: MyLight.esl|0x000801
+x: 0
+enabled: false

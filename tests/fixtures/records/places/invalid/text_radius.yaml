@@ -1,0 +1,6 @@
+# refuse: RADIUS_NOT_INTEGER
+# why: a radius is whole game units; leave it out for the default
+id: text_radius
+name: Kitchen
+space: Skyrim.esm|0x0165A7
+radius: wide

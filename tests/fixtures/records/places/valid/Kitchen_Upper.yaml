@@ -1,0 +1,7 @@
+# why: the id is compared folded, so a stem in another case still names the place
+id: kitchen_upper
+name: Upstairs Kitchen
+space: Skyrim.esm|0x0165A7
+x: 120
+y: -340
+z: 320

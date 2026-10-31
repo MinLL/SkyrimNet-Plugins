@@ -16,11 +16,11 @@ import { CODES } from "../.github/scripts/lib/content-rules.mjs";
 import { RECORD_CODES, checkRecord } from "../.github/scripts/lib/record-rules.mjs";
 
 const FIXTURES = path.join(path.dirname(fileURLToPath(import.meta.url)), "fixtures", "records");
-const ROOTS = ["voice_effects", "items", "spells", "furniture", "identity", "filters", "dialogue_actions", "config"];
+const ROOTS = ["voice_effects", "items", "spells", "furniture", "identity", "filters", "dialogue_actions", "config", "places"];
 // The roots the base package ships records under.
 const BASE_ROOTS = ["voice_effects", "furniture", "filters", "dialogue_actions", "config"];
 // The roots with an engine-only refusal pinned under engine_invalid/.
-const ENGINE_INVALID_ROOTS = ["voice_effects", "furniture", "identity"];
+const ENGINE_INVALID_ROOTS = ["voice_effects", "furniture", "identity", "places"];
 const KNOWN_CODES = new Set([...Object.values(RECORD_CODES), CODES.NAME_MISSING, CODES.NAME_NOT_STEM]);
 const HEADER_RE = /^#\s*([a-z-]+):\s*(.*)$/;
 
@@ -44,7 +44,7 @@ function fixtures(root, group) {
     .map((name) => ({ name, subPath: `${root}/${name}`, text: fs.readFileSync(path.join(dir, name), "utf8") }));
 }
 
-test("the corpus covers the seven config-system roots, each group present where the root has one", () => {
+test("the corpus covers the nine record roots, each group present where the root has one", () => {
   const roots = fs.readdirSync(FIXTURES, { withFileTypes: true }).filter((entry) => entry.isDirectory()).map((entry) => entry.name);
   assert.deepEqual(roots.sort(), [...ROOTS].sort());
   for (const root of ROOTS) {

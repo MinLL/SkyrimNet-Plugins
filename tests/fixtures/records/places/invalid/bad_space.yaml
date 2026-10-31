@@ -1,0 +1,5 @@
+# refuse: FORM_INVALID
+# why: a space is 'Plugin.esp|0x0165A7'; a plugin alone is not a form reference
+id: bad_space
+name: Kitchen
+space: Skyrim.esm

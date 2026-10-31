@@ -1,0 +1,4 @@
+# refuse: FORM_MISSING
+# why: a place is matched only in its own interior cell or worldspace
+id: no_space
+name: Kitchen
