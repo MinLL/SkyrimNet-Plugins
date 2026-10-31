@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-31T03:23:02.594Z",
-  "stats_as_of": "2026-10-31T03:20:20.259Z",
+  "generated_at": "2026-10-31T04:22:05.351Z",
+  "stats_as_of": "2026-10-31T04:22:05.233Z",
   "plugins": [
     {
       "id": "plugins/min/skyrimnet-prompts-cache-enabled",
@@ -87,7 +87,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 979,
+        "downloads": 988,
         "endorsements": 15
       }
     },
@@ -143,7 +143,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 22,
+        "downloads": 24,
         "endorsements": 0
       }
     },
@@ -506,7 +506,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 315,
+        "downloads": 316,
         "endorsements": 10
       }
     },
@@ -891,7 +891,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 796,
+        "downloads": 797,
         "endorsements": 36
       }
     },
@@ -1201,7 +1201,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 49,
+        "downloads": 50,
         "endorsements": 2
       }
     },
@@ -3032,7 +3032,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 381,
+        "downloads": 382,
         "endorsements": 4
       }
     },
@@ -3080,7 +3080,7 @@
         "height": 1008
       },
       "stats": {
-        "downloads": 122,
+        "downloads": 123,
         "endorsements": 3
       }
     },
@@ -3684,7 +3684,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 260,
+        "downloads": 261,
         "endorsements": 0
       }
     },
@@ -3964,7 +3964,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 395,
+        "downloads": 396,
         "endorsements": 0
       }
     },
@@ -4803,7 +4803,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1458,
+        "downloads": 1459,
         "endorsements": 0
       }
     },
@@ -5298,7 +5298,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 378,
+        "downloads": 379,
         "endorsements": 1
       }
     },
@@ -5928,7 +5928,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1020,
+        "downloads": 1021,
         "endorsements": 1
       }
     },
