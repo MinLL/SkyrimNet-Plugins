@@ -1,0 +1,7 @@
+kind: actor
+name: Unslaad dragons speak
+description: The pus, spectral and HH dragon races Unslaad.esm adds.
+RaceWhitelist:
+  - zzzCrbPusDragonRace
+  - zzzCrbDragonSpectralRace
+  - zzzCrbHHDragonRace

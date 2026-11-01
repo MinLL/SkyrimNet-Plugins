@@ -1,0 +1,5 @@
+kind: actor
+name: Triumvirate's Eyes in the Sky speaks
+description: A dragon-keyworded race Triumvirate - Mage Archetypes.esp defines; no actor in the load order uses it.
+RaceWhitelist:
+  - TVR_Totem_Race_EyesInTheSky

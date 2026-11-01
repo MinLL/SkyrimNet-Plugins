@@ -1,0 +1,10 @@
+kind: actor
+name: Vanilla dragons speak
+description: The dragon races Skyrim.esm, Dawnguard.esm and Dragonborn.esm define.
+RaceWhitelist:
+  - DragonRace
+  - AlduinRace
+  - UndeadDragonRace
+  - DLC1UndeadDragonRace
+  - DragonBlackRace
+  - DLC2DragonBlackRace
