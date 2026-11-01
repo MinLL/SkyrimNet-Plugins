@@ -1,8 +1,89 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-11-01T01:14:00.789Z",
-  "stats_as_of": "2026-11-01T01:14:00.643Z",
+  "generated_at": "2026-11-01T01:15:07.159Z",
+  "stats_as_of": "2026-11-01T01:15:06.995Z",
   "plugins": [
+    {
+      "id": "plugins/min/seen-not-heard",
+      "plugin_id": "min.seen-not-heard",
+      "type": "bundle",
+      "title": "Seen and Not Heard",
+      "tagline": "Children are seen and not heard.",
+      "author": "min",
+      "tags": [
+        "filters",
+        "children"
+      ],
+      "nsfw": false,
+      "icon": "package",
+      "mods": [
+        {
+          "name": "RS Children Overhaul",
+          "file": "rskyrimchildren.esm",
+          "required": false
+        },
+        {
+          "name": "Fertility Mode",
+          "file": "fertility mode.esm",
+          "required": false
+        },
+        {
+          "name": "Legacy of the Dragonborn",
+          "file": "dbmcollectors.esp",
+          "required": false
+        },
+        {
+          "name": "The Wheels of Lull",
+          "file": "wheelsoflull.esp",
+          "required": false
+        },
+        {
+          "name": "Dwarfsphere",
+          "file": "dwarfsphere.esp",
+          "required": false
+        },
+        {
+          "name": "Wind Path",
+          "file": "windpath.esp",
+          "required": false
+        }
+      ],
+      "first_published": "2026-11-01T00:39:49Z",
+      "last_updated": "2026-11-01T01:14:35Z",
+      "version": "1.0.1",
+      "min_skyrimnet_version": "0.29.0",
+      "history": [
+        {
+          "version": "1.0.1",
+          "commit": "e51a813138c52f28bf70da812d410a764486ddc3",
+          "date": "2026-11-01T01:14:35Z",
+          "changelog": "Rewrote the description in plain language. No change to the filter files."
+        },
+        {
+          "version": "1.0.0",
+          "commit": "35436e812033d3ab2d3eb4d3fee458c531fef36f",
+          "date": "2026-11-01T00:39:49Z",
+          "changelog": "Initial release"
+        }
+      ],
+      "languages": [
+        "en"
+      ],
+      "language": "en",
+      "contents": {
+        "triggers": 0,
+        "actions": 0,
+        "prompts": 0,
+        "bios": 0,
+        "knowledge": 0,
+        "entities": 0,
+        "config": 7
+      },
+      "stats": {
+        "downloads": 1,
+        "endorsements": 0
+      }
+    },
     {
       "id": "plugins/min/dragons-speak",
       "plugin_id": "min.dragons-speak",
@@ -63,81 +144,6 @@
           "version": "1.0.0",
           "commit": "63fa45a7dbc48149d1dc356d9ab3ccd484933601",
           "date": "2026-11-01T00:39:06Z",
-          "changelog": "Initial release"
-        }
-      ],
-      "languages": [
-        "en"
-      ],
-      "language": "en",
-      "contents": {
-        "triggers": 0,
-        "actions": 0,
-        "prompts": 0,
-        "bios": 0,
-        "knowledge": 0,
-        "entities": 0,
-        "config": 7
-      },
-      "stats": {
-        "downloads": 1,
-        "endorsements": 0
-      }
-    },
-    {
-      "id": "plugins/min/seen-not-heard",
-      "plugin_id": "min.seen-not-heard",
-      "type": "bundle",
-      "title": "Seen and Not Heard",
-      "tagline": "Children are seen and not heard.",
-      "author": "min",
-      "tags": [
-        "filters",
-        "children"
-      ],
-      "nsfw": false,
-      "icon": "package",
-      "mods": [
-        {
-          "name": "RS Children Overhaul",
-          "file": "rskyrimchildren.esm",
-          "required": false
-        },
-        {
-          "name": "Fertility Mode",
-          "file": "fertility mode.esm",
-          "required": false
-        },
-        {
-          "name": "Legacy of the Dragonborn",
-          "file": "dbmcollectors.esp",
-          "required": false
-        },
-        {
-          "name": "The Wheels of Lull",
-          "file": "wheelsoflull.esp",
-          "required": false
-        },
-        {
-          "name": "Dwarfsphere",
-          "file": "dwarfsphere.esp",
-          "required": false
-        },
-        {
-          "name": "Wind Path",
-          "file": "windpath.esp",
-          "required": false
-        }
-      ],
-      "first_published": "2026-11-01T00:39:49Z",
-      "last_updated": "2026-11-01T00:39:49Z",
-      "version": "1.0.0",
-      "min_skyrimnet_version": "0.29.0",
-      "history": [
-        {
-          "version": "1.0.0",
-          "commit": "35436e812033d3ab2d3eb4d3fee458c531fef36f",
-          "date": "2026-11-01T00:39:49Z",
           "changelog": "Initial release"
         }
       ],
@@ -5021,7 +5027,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1497,
+        "downloads": 1498,
         "endorsements": 0
       }
     },
@@ -6686,7 +6692,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 607,
+        "downloads": 608,
         "endorsements": 0
       }
     },
@@ -10211,7 +10217,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1687,
+        "downloads": 1688,
         "endorsements": 2
       }
     },
@@ -11021,7 +11027,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1015,
+        "downloads": 1016,
         "endorsements": 0
       }
     },
@@ -13631,7 +13637,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2076,
+        "downloads": 2077,
         "endorsements": 2
       }
     },
