@@ -1,0 +1,5 @@
+kind: actor
+name: Path of Sorcery's skeleton dragon speaks
+description: The skeleton dragon race PathOfSorcery.esp adds.
+RaceWhitelist:
+  - IMP_RACE_SkeletonDragon

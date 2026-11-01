@@ -1,0 +1,52 @@
+{
+  "id": "min.dragons-speak",
+  "type": "bundle",
+  "title": "Dragons Speak",
+  "tagline": "Every dragon race may talk.",
+  "description": "Actor filter contributions that whitelist every race carrying ActorTypeDragon in the Nolvus Awakening load order, one file per mod that defines a dragon race, so each can be switched off on its own. Dragon races do not allow player dialogue, so with 'Allow only actors capable of speech' on they are normally excluded; a whitelisted race is exempt from that check. In Whitelist Only mode this also makes dragons eligible speakers.",
+  "author": "min",
+  "tags": [
+    "filters",
+    "dragons"
+  ],
+  "nsfw": false,
+  "icon": "package",
+  "mods": [
+    {
+      "name": "Unslaad",
+      "file": "unslaad.esm",
+      "required": false
+    },
+    {
+      "name": "Midwood Isle",
+      "file": "midwood isle.esp",
+      "required": false
+    },
+    {
+      "name": "Ultimate Dragons",
+      "file": "ultimatedragons.esp",
+      "required": false
+    },
+    {
+      "name": "Path of Sorcery",
+      "file": "pathofsorcery.esp",
+      "required": false
+    },
+    {
+      "name": "Triumvirate - Mage Archetypes",
+      "file": "triumvirate - mage archetypes.esp",
+      "required": false
+    },
+    {
+      "name": "Alternate Perspective",
+      "file": "alternateperspective.esp",
+      "required": false
+    }
+  ],
+  "languages": [
+    "en"
+  ],
+  "version": "1.0.0",
+  "changelog": "Initial release",
+  "min_skyrimnet_version": "0.29.0"
+}

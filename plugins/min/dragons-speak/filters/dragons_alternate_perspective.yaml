@@ -1,0 +1,5 @@
+kind: actor
+name: Alternate Perspective's messenger speaks
+description: The messenger dragon race AlternatePerspective.esp adds.
+RaceWhitelist:
+  - AP_MessengerRace

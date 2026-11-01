@@ -1,0 +1,5 @@
+kind: actor
+name: Midwood Isle dragons speak
+description: The undead dragon race Midwood Isle.esp adds.
+RaceWhitelist:
+  - UndeadDragonRaceMidwoodIsle
