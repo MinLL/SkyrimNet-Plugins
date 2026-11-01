@@ -1,0 +1,5 @@
+kind: actor
+name: Wind Path hares don't speak
+description: Wind Path's rabbit race reuses the Child flag for its size.
+RaceBlacklist:
+  - 00WindHareRace

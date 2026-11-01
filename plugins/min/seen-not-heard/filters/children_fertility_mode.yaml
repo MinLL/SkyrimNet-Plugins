@@ -1,0 +1,10 @@
+kind: actor
+name: Fertility Mode children don't speak
+description: The beast and elf child races Fertility Mode.esm adds.
+RaceBlacklist:
+  - OrcRaceChild
+  - HighElfRaceChild
+  - DarkElfRaceChild
+  - WoodElfRaceChild
+  - ArgonianRaceChild
+  - KhajiitRaceChild

@@ -1,0 +1,5 @@
+kind: actor
+name: Legacy of the Dragonborn's conchologist doesn't speak
+description: The child-flagged Nord race DBMCollectors.esp defines for the conchologist.
+RaceBlacklist:
+  - zzzConchologistRace

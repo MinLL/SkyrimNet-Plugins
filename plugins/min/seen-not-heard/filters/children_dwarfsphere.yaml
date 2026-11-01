@@ -1,0 +1,5 @@
+kind: actor
+name: Snippy doesn't speak
+description: Dwarfsphere's pet sphere reuses the Child flag for its size.
+RaceBlacklist:
+  - DwaSpSnippyRace
