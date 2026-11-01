@@ -1,8 +1,89 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-11-01T00:47:05.387Z",
-  "stats_as_of": "2026-11-01T00:44:12.716Z",
+  "generated_at": "2026-11-01T01:14:00.789Z",
+  "stats_as_of": "2026-11-01T01:14:00.643Z",
   "plugins": [
+    {
+      "id": "plugins/min/dragons-speak",
+      "plugin_id": "min.dragons-speak",
+      "type": "bundle",
+      "title": "Dragons Speak",
+      "tagline": "Let dragons talk.",
+      "author": "min",
+      "tags": [
+        "filters",
+        "dragons"
+      ],
+      "nsfw": false,
+      "icon": "package",
+      "mods": [
+        {
+          "name": "Unslaad",
+          "file": "unslaad.esm",
+          "required": false
+        },
+        {
+          "name": "Midwood Isle",
+          "file": "midwood isle.esp",
+          "required": false
+        },
+        {
+          "name": "Ultimate Dragons",
+          "file": "ultimatedragons.esp",
+          "required": false
+        },
+        {
+          "name": "Path of Sorcery",
+          "file": "pathofsorcery.esp",
+          "required": false
+        },
+        {
+          "name": "Triumvirate - Mage Archetypes",
+          "file": "triumvirate - mage archetypes.esp",
+          "required": false
+        },
+        {
+          "name": "Alternate Perspective",
+          "file": "alternateperspective.esp",
+          "required": false
+        }
+      ],
+      "first_published": "2026-11-01T00:39:06Z",
+      "last_updated": "2026-11-01T01:13:32Z",
+      "version": "1.0.1",
+      "min_skyrimnet_version": "0.29.0",
+      "history": [
+        {
+          "version": "1.0.1",
+          "commit": "f79ca3b03770efe386a3e18804ecd3e253123a48",
+          "date": "2026-11-01T01:13:32Z",
+          "changelog": "Rewrote the tagline and description in plain language. No change to the filter files."
+        },
+        {
+          "version": "1.0.0",
+          "commit": "63fa45a7dbc48149d1dc356d9ab3ccd484933601",
+          "date": "2026-11-01T00:39:06Z",
+          "changelog": "Initial release"
+        }
+      ],
+      "languages": [
+        "en"
+      ],
+      "language": "en",
+      "contents": {
+        "triggers": 0,
+        "actions": 0,
+        "prompts": 0,
+        "bios": 0,
+        "knowledge": 0,
+        "entities": 0,
+        "config": 7
+      },
+      "stats": {
+        "downloads": 1,
+        "endorsements": 0
+      }
+    },
     {
       "id": "plugins/min/seen-not-heard",
       "plugin_id": "min.seen-not-heard",
@@ -57,81 +138,6 @@
           "version": "1.0.0",
           "commit": "35436e812033d3ab2d3eb4d3fee458c531fef36f",
           "date": "2026-11-01T00:39:49Z",
-          "changelog": "Initial release"
-        }
-      ],
-      "languages": [
-        "en"
-      ],
-      "language": "en",
-      "contents": {
-        "triggers": 0,
-        "actions": 0,
-        "prompts": 0,
-        "bios": 0,
-        "knowledge": 0,
-        "entities": 0,
-        "config": 7
-      },
-      "stats": {
-        "downloads": 0,
-        "endorsements": 0
-      }
-    },
-    {
-      "id": "plugins/min/dragons-speak",
-      "plugin_id": "min.dragons-speak",
-      "type": "bundle",
-      "title": "Dragons Speak",
-      "tagline": "Every dragon race may talk.",
-      "author": "min",
-      "tags": [
-        "filters",
-        "dragons"
-      ],
-      "nsfw": false,
-      "icon": "package",
-      "mods": [
-        {
-          "name": "Unslaad",
-          "file": "unslaad.esm",
-          "required": false
-        },
-        {
-          "name": "Midwood Isle",
-          "file": "midwood isle.esp",
-          "required": false
-        },
-        {
-          "name": "Ultimate Dragons",
-          "file": "ultimatedragons.esp",
-          "required": false
-        },
-        {
-          "name": "Path of Sorcery",
-          "file": "pathofsorcery.esp",
-          "required": false
-        },
-        {
-          "name": "Triumvirate - Mage Archetypes",
-          "file": "triumvirate - mage archetypes.esp",
-          "required": false
-        },
-        {
-          "name": "Alternate Perspective",
-          "file": "alternateperspective.esp",
-          "required": false
-        }
-      ],
-      "first_published": "2026-11-01T00:39:06Z",
-      "last_updated": "2026-11-01T00:39:06Z",
-      "version": "1.0.0",
-      "min_skyrimnet_version": "0.29.0",
-      "history": [
-        {
-          "version": "1.0.0",
-          "commit": "63fa45a7dbc48149d1dc356d9ab3ccd484933601",
-          "date": "2026-11-01T00:39:06Z",
           "changelog": "Initial release"
         }
       ],
@@ -504,7 +510,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 1133,
+        "downloads": 1134,
         "endorsements": 17
       }
     },
@@ -973,7 +979,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 105,
+        "downloads": 106,
         "endorsements": 0
       }
     },
@@ -1361,7 +1367,7 @@
         "height": 760
       },
       "stats": {
-        "downloads": 76,
+        "downloads": 78,
         "endorsements": 0
       }
     },
@@ -4106,7 +4112,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 344,
+        "downloads": 345,
         "endorsements": 1
       }
     },
@@ -4176,7 +4182,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 418,
+        "downloads": 419,
         "endorsements": 0
       }
     },
@@ -4790,7 +4796,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2903,
+        "downloads": 2904,
         "endorsements": 4
       }
     },
@@ -9170,7 +9176,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1598,
+        "downloads": 1599,
         "endorsements": 2
       }
     },
@@ -10205,7 +10211,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1686,
+        "downloads": 1687,
         "endorsements": 2
       }
     },
@@ -10475,7 +10481,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1391,
+        "downloads": 1392,
         "endorsements": 2
       }
     },
@@ -11015,7 +11021,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1014,
+        "downloads": 1015,
         "endorsements": 0
       }
     },
@@ -11060,7 +11066,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 594,
+        "downloads": 595,
         "endorsements": 1
       }
     },
@@ -11555,7 +11561,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 316,
+        "downloads": 317,
         "endorsements": 0
       }
     },
@@ -11825,7 +11831,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 871,
+        "downloads": 872,
         "endorsements": 0
       }
     },
@@ -13085,7 +13091,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 744,
+        "downloads": 745,
         "endorsements": 2
       }
     },
@@ -13490,7 +13496,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 270,
+        "downloads": 271,
         "endorsements": 0
       }
     },
@@ -13625,7 +13631,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2075,
+        "downloads": 2076,
         "endorsements": 2
       }
     },
