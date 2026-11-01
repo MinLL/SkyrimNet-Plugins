@@ -1,0 +1,21 @@
+{
+  "id": "min.skyrimnet-legacy-prompts",
+  "type": "bundle",
+  "title": "SkyrimNet Legacy Prompts",
+  "tagline": "The default prompts from before the prompt-caching layout.",
+  "description": "Beta 29 rearranged SkyrimNet's default prompts so that more of each request can be served from the model's prompt cache. This plugin brings back the previous versions of the 23 prompts that changed: dialogue, player dialogue and thoughts, event history, the character bio sections, the system instructions and roleplay guidelines, combat status, the universal translator and warmup.\n\nEnable it if you preferred how NPCs behaved before the change, or if you want to compare the two layouts. Disable it to go back to the shipped prompts. Every other prompt stays as SkyrimNet ships it.",
+  "author": "min",
+  "tags": [
+    "prompts",
+    "legacy"
+  ],
+  "nsfw": false,
+  "icon": "package",
+  "mods": [],
+  "languages": [
+    "en"
+  ],
+  "version": "1.0.0",
+  "changelog": "Initial release",
+  "min_skyrimnet_version": "0.29.0"
+}

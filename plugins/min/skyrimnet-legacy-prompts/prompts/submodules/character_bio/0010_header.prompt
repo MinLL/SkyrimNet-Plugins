@@ -1,0 +1,84 @@
+{# Handle the header based on render mode #}
+{% if render_mode == "full" or render_mode == "thoughts" or render_mode == "transform" %}
+    ## {{ decnpc(actorUUID).name }}'s Character Profile (THIS IS WHO YOU ARE ROLEPLAYING AS)
+{% elif render_mode == "dialogue_target" %}
+    {# This prompt is used when the actor is the target in a dialogue. #}
+    {% if responseTarget %}
+        {% if responseTarget.type == "player" %}
+            ## {{ player.name }}'s Character Profile (THIS IS WHO YOU'RE TALKING TO)
+        {% else %}
+            ## {{ decnpc(actorUUID).name }}'s Character Profile (THIS IS WHO YOU'RE TALKING TO)
+        {% endif %}
+    {% else %}
+        ## {{ decnpc(actorUUID).name }}'s Character Profile
+    {% endif %}
+{% endif %}
+{% if render_mode == "full" or render_mode == "thoughts" or render_mode == "transform" or render_mode == "dialogue_target" %}
+    {# Common stats logic for both render modes #}
+    - Gender: {{ decnpc(actorUUID).gender }}
+    - Race: {{ decnpc(actorUUID).race }}
+    {% if is_summoned(actorUUID) %}
+        {% if is_hostile_to_actor(actorUUID, player.UUID) %}
+            - Status: Summoned creature (hostile to {{ decnpc(player.UUID).name }})
+        {% else %}
+            - Status: Summoned creature (serving {{ decnpc(player.UUID).name }})
+        {% endif %}
+    {% elif is_reanimated(actorUUID) %}
+        {% if is_hostile_to_actor(actorUUID, player.UUID) %}
+            - Status: Reanimated undead (hostile to {{ decnpc(player.UUID).name }})
+        {% else %}
+            - Status: Reanimated undead thrall (serving {{ decnpc(player.UUID).name }})
+        {% endif %}
+    {% endif %}
+    {% if decnpc(actorUUID).maxHealth > 0 %}
+        {% set healthRatio = decnpc(actorUUID).health / decnpc(actorUUID).maxHealth %}
+        {% if healthRatio < 0.25 %}
+            - Health: Gravely wounded and near death (IMPORTANT)
+        {% elif healthRatio < 0.5 %}
+            - Health: Injured and bleeding
+        {% elif healthRatio < 0.75 %}
+            - Health: Somewhat wounded
+        {% elif healthRatio <= 0.9 %}
+            - Health: Mostly healthy with minor injuries
+        {% else %}
+            - Health: Healthy and uninjured
+        {% endif %}
+    {% else %}
+        - Health: Unknown health status
+    {% endif %}
+    {% if decnpc(actorUUID).maxMagicka > 0 or is_player(actorUUID) %}
+        {% set magickaRatio = decnpc(actorUUID).magicka / decnpc(actorUUID).maxMagicka %}
+        {% if decnpc(actorUUID).magicka == 0 %}
+            {% set magickaRatio = 0 %}
+        {% endif %}
+        {% if magickaRatio < 0.15 %}
+            - Magic: Magically exhausted, barely any reserves left
+        {% elif magickaRatio < 0.35 %}
+            - Magic: Running low on magical reserves
+        {% elif magickaRatio < 0.6 %}
+            - Magic: Moderate magical reserves
+        {% elif magickaRatio < 0.85 %}
+            - Magic: Strong magical reserves
+        {% else %}
+            - Magic: Full of magical energy
+        {% endif %}
+    {% else %}
+        - Magic: No magical ability
+    {% endif %}
+    {% if decnpc(actorUUID).maxStamina > 0 %}
+        {% set staminaRatio = decnpc(actorUUID).stamina / decnpc(actorUUID).maxStamina %}
+        {% if staminaRatio < 0.25 %}
+            - Energy: Completely winded and short of breath
+        {% elif staminaRatio < 0.5 %}
+            - Energy: Tired and winded
+        {% elif staminaRatio < 0.75 %}
+            - Energy: Somewhat tired
+        {% elif staminaRatio <= 0.9 %}
+            - Energy: Mostly energetic with slight fatigue
+        {% else %}
+            - Energy: Energetic and ready for action
+        {% endif %}
+    {% else %}
+        - Energy: Unknown stamina status
+    {% endif %}
+{% endif %}
