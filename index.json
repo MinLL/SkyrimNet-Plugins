@@ -1,8 +1,64 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-11-01T11:21:47.522Z",
-  "stats_as_of": "2026-11-01T11:21:47.400Z",
+  "generated_at": "2026-11-01T12:04:17.017Z",
+  "stats_as_of": "2026-11-01T12:04:16.892Z",
   "plugins": [
+    {
+      "id": "plugins/kaleth/sexist-men-of-skyrim",
+      "plugin_id": "kaleth.sexist-men-of-skyrim",
+      "type": "bundle",
+      "title": "Sexist Men of Skyrim",
+      "tagline": "Skyrim with raw, unfiltered bigotry.",
+      "author": "kaleth",
+      "tags": [
+        "NSFW",
+        "sexism"
+      ],
+      "nsfw": true,
+      "icon": "package",
+      "mods": [],
+      "first_published": "2026-10-28T01:26:34Z",
+      "last_updated": "2026-11-01T12:03:46Z",
+      "version": "1.2.0",
+      "min_skyrimnet_version": "0.28.0",
+      "history": [
+        {
+          "version": "1.2.0",
+          "commit": "b8e463ef1381ab6829ac95a3185a0d0697f34f58",
+          "date": "2026-11-01T12:03:46Z",
+          "changelog": "### Mechanic\n- Added Pulse integration\n- Added some banter for male character players."
+        },
+        {
+          "version": "1.1.0",
+          "commit": "66d181d5de5d150ac179734c71491f0594edf148",
+          "date": "2026-10-28T13:34:14Z",
+          "changelog": "### Mechanic\n- Simpler trigger, the old one was making a mess of events\n- Added a couple of world knowledge: NPC saying crude things will no longer be shun into behaving\n\n### Bugfix\n- Fixed an issue where a missing decorator was allowing female character to be selected."
+        },
+        {
+          "version": "0.2.0",
+          "commit": "f2367713096b7f8283a365c51a2c0d0635fd8b4a",
+          "date": "2026-10-28T01:26:34Z",
+          "changelog": "Initial release"
+        }
+      ],
+      "languages": [
+        "en"
+      ],
+      "language": "en",
+      "contents": {
+        "triggers": 2,
+        "actions": 0,
+        "prompts": 0,
+        "bios": 0,
+        "knowledge": 1,
+        "entities": 0,
+        "config": 0
+      },
+      "stats": {
+        "downloads": 117,
+        "endorsements": 0
+      }
+    },
     {
       "id": "plugins/taka/skyrimnet-brothel",
       "plugin_id": "taka.skyrimnet-brothel",
@@ -73,7 +129,7 @@
         "height": 1080
       },
       "stats": {
-        "downloads": 34,
+        "downloads": 36,
         "endorsements": 0
       }
     },
@@ -157,7 +213,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 851,
+        "downloads": 852,
         "endorsements": 37
       }
     },
@@ -201,7 +257,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 13,
+        "downloads": 14,
         "endorsements": 0
       }
     },
@@ -630,7 +686,7 @@
         "height": 1080
       },
       "stats": {
-        "downloads": 62,
+        "downloads": 64,
         "endorsements": 1
       }
     },
@@ -1074,56 +1130,6 @@
       }
     },
     {
-      "id": "plugins/kaleth/sexist-men-of-skyrim",
-      "plugin_id": "kaleth.sexist-men-of-skyrim",
-      "type": "bundle",
-      "title": "Sexist Men of Skyrim",
-      "tagline": "Skyrim with raw, unfiltered bigotry.",
-      "author": "kaleth",
-      "tags": [
-        "NSFW",
-        "sexism"
-      ],
-      "nsfw": true,
-      "icon": "package",
-      "mods": [],
-      "first_published": "2026-10-28T01:26:34Z",
-      "last_updated": "2026-10-28T13:34:14Z",
-      "version": "1.1.0",
-      "min_skyrimnet_version": "0.28.0",
-      "history": [
-        {
-          "version": "1.1.0",
-          "commit": "66d181d5de5d150ac179734c71491f0594edf148",
-          "date": "2026-10-28T13:34:14Z",
-          "changelog": "### Mechanic\n- Simpler trigger, the old one was making a mess of events\n- Added a couple of world knowledge: NPC saying crude things will no longer be shun into behaving\n\n### Bugfix\n- Fixed an issue where a missing decorator was allowing female character to be selected."
-        },
-        {
-          "version": "0.2.0",
-          "commit": "f2367713096b7f8283a365c51a2c0d0635fd8b4a",
-          "date": "2026-10-28T01:26:34Z",
-          "changelog": "Initial release"
-        }
-      ],
-      "languages": [
-        "en"
-      ],
-      "language": "en",
-      "contents": {
-        "triggers": 1,
-        "actions": 0,
-        "prompts": 0,
-        "bios": 0,
-        "knowledge": 1,
-        "entities": 0,
-        "config": 0
-      },
-      "stats": {
-        "downloads": 117,
-        "endorsements": 0
-      }
-    },
-    {
       "id": "plugins/deadohiosky/kinship",
       "plugin_id": "deadohiosky.kinship",
       "type": "listing",
@@ -1429,7 +1435,7 @@
         "height": 760
       },
       "stats": {
-        "downloads": 84,
+        "downloads": 86,
         "endorsements": 0
       }
     },
@@ -1801,7 +1807,7 @@
         "height": 720
       },
       "stats": {
-        "downloads": 93,
+        "downloads": 95,
         "endorsements": 1
       }
     },
@@ -3360,7 +3366,7 @@
         "height": 1008
       },
       "stats": {
-        "downloads": 129,
+        "downloads": 130,
         "endorsements": 3
       }
     },
@@ -4336,7 +4342,7 @@
       ],
       "external_url": "https://github.com/naitro2010/SkyrimNet_UDNG/releases/tag/alpha12",
       "stats": {
-        "downloads": 131,
+        "downloads": 132,
         "endorsements": 4
       }
     },
@@ -8113,7 +8119,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 24,
+        "downloads": 25,
         "endorsements": 0
       }
     },
@@ -9328,7 +9334,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 18,
+        "downloads": 19,
         "endorsements": 0
       }
     },
@@ -11218,7 +11224,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 17,
+        "downloads": 18,
         "endorsements": 1
       }
     },
@@ -11263,7 +11269,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 6,
+        "downloads": 7,
         "endorsements": 0
       }
     },
@@ -12928,7 +12934,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 11,
+        "downloads": 12,
         "endorsements": 0
       }
     },
