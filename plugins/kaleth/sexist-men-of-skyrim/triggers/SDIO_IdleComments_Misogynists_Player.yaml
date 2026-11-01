@@ -1,5 +1,5 @@
 name: SDIO_IdleComments_Misogynists_Player
-description: Trigger prompting male NPC to say sexist comments to female players
+description: Trigger prompting male NPC to say sexist comments to female players. Triggers randomly with background dialogue.
 eventCriteria:
   eventType: dialogue_background
   schemaConditions:
@@ -9,7 +9,8 @@ eventCriteria:
 audience: player
 response:
   type: direct_narration
-  content: "{% set comments = [\"sexually degrade\", \"make a sexually charged comment to\", \"catcall\", \"objectify\", \"demand sexual gratification from\"] %}\n{% set s = decnpc(originator_uuid) %}\n{% if not s.isFemale %}\n  {% set idx = random % length(comments) %}\n  {{ s.name }} has an irresistible urge to {{ at(comments, idx) }} {{ player.name }}.\n{% endif %}"
+  content: "{% set direct_comments = [\"sexually degrading\", \"sexually charged comments concerning\", \"catcalling\", \"objectifing\", \"requesting sexual gratification from\"] %}\n{% set indirect_comments = [ \"a misogynist joke\", \"his misogyny views\", \"a disdainful take on women\", \"objectifying thoughts about women\", \"unwelcome sexual suggestions\", \"a diatribe on women inferiority\" ] %}\n\n{% set p = decnpc(player.UUID) %}\n{% set candidates = get_nearby_npc_list(player.UUID) %}\n{% set virtuals = get_virtual_npc_list() %}\n{% set distance = 9999999 %}\n\n{% for candidate in candidates %}\n  {% set c = decnpc(candidate.UUID) %}\n  {% if not c.isFemale %}\n    {% set d = distance_between(player.UUID, candidate.UUID) %}\n    {% if d < distance and d > 0 and c.name != player.name %}\n      {% set isVirtual = false %}\n      {% for v in virtuals %}\n        {% if c.name == v.name %} {% set isVirtual = true %} {% endif %}\n      {% endfor %}\n      {% if not isVirtual %}\n          {% set distance = d %}\n          {% set pick = c %}\n      {% endif %}\n    {% endif %}\n  {% endif %}\n{% endfor %}\n\n{% if pick and pick != \"\" %}\n  {% if p.isFemale %}\n    {% if has_line_of_sight(player.UUID, pick.UUID) %}\n      {% set idx = random % length(direct_comments) %}\n      *{{ pick.name }} is thinking about {{ at(direct_comments, idx) }} {{ player.name }}.*\n    {% else %}\n      {% set idx = random % length(indirect_comments) %}\n      *{{ pick.name }} is thinking about sharing out loud {{ at(indirect_comments, idx) }}.*\n    {% endif %}\n  {% else %}\n    {% if has_line_of_sight(pick.UUID, player.UUID) %}\n      {% set idx = random % length(indirect_comments) %}\n      *{{ pick.name }} is thinking about bonding with {{ player.name }} over {{ at(indirect_comments, idx) }}.*\n    {% else %}\n      *{{ pick.name }} is thinking about {{ at(indirect_comments, idx) }} and feels great about it.*\n    {% endif %}\n  {% endif %}\n{% endif %}"
 enabled: true
+probability: 0.5
 cooldownSeconds: 5
 interrupt: true
