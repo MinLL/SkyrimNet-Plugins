@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-11-01T06:53:39.729Z",
-  "stats_as_of": "2026-11-01T06:53:39.659Z",
+  "generated_at": "2026-11-01T07:22:20.521Z",
+  "stats_as_of": "2026-11-01T07:22:20.433Z",
   "plugins": [
     {
       "id": "plugins/taka/skyrimnet-brothel",
@@ -201,7 +201,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 6,
+        "downloads": 7,
         "endorsements": 0
       }
     },
@@ -363,7 +363,7 @@
         "config": 7
       },
       "stats": {
-        "downloads": 4,
+        "downloads": 5,
         "endorsements": 0
       }
     },
@@ -630,7 +630,7 @@
         "height": 1080
       },
       "stats": {
-        "downloads": 60,
+        "downloads": 61,
         "endorsements": 1
       }
     },
@@ -718,7 +718,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 1160,
+        "downloads": 1162,
         "endorsements": 17
       }
     },
@@ -4244,7 +4244,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 423,
+        "downloads": 424,
         "endorsements": 0
       }
     },
@@ -4858,7 +4858,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2920,
+        "downloads": 2921,
         "endorsements": 4
       }
     },
@@ -5083,7 +5083,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1503,
+        "downloads": 1504,
         "endorsements": 0
       }
     },
@@ -6793,7 +6793,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 875,
+        "downloads": 876,
         "endorsements": 2
       }
     },
