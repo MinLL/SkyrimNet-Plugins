@@ -1,8 +1,82 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-11-01T06:29:03.369Z",
-  "stats_as_of": "2026-11-01T06:29:03.245Z",
+  "generated_at": "2026-11-01T06:53:39.729Z",
+  "stats_as_of": "2026-11-01T06:53:39.659Z",
   "plugins": [
+    {
+      "id": "plugins/taka/skyrimnet-brothel",
+      "plugin_id": "taka.skyrimnet-brothel",
+      "type": "listing",
+      "title": "SkyrimNet Brothel",
+      "tagline": "Run your own brothel: register workers, send customers to them or take customers yourself, and SkyrimNet's AI voices every offer and answer while SexLab plays the scene.",
+      "author": "taka",
+      "tags": [
+        "SexLab",
+        "NPC",
+        "Gameplay"
+      ],
+      "nsfw": true,
+      "icon": "package",
+      "mods": [
+        {
+          "name": "SexLab.esm",
+          "file": "sexlab.esm",
+          "required": true
+        }
+      ],
+      "first_published": "2026-10-24T14:18:49Z",
+      "last_updated": "2026-11-01T06:53:08Z",
+      "version": "0.3.1",
+      "history": [
+        {
+          "version": "0.3.1",
+          "commit": "428e4f902b3310c36640134c60c3f2fd55826d63",
+          "date": "2026-11-01T06:53:08Z",
+          "changelog": "0.3.1: Your followers are no longer picked as customers unless the new setting Followers can be customers is on. In a scene you are in yourself, pressing Space no longer makes you jump out of the animation, because the brothel puts SexLab P+'s hold back on you. A scene that SexLab accepted but never played is now ended, so mods that follow running scenes no longer keep working on it. 0.3.0: Any adult man can now be registered as a worker, and a new setting decides whether the brothel hires women, men or both. Workers and customers who know each other, such as friends, lovers, rivals or regulars, talk like it, and someone the worker knows is picked as their customer first. Relatives never do business together, and a relative who finds a worker in the brothel reacts on the spot instead. When you do not work in the brothel yourself, you can buy a worker's company with your own gold. The settings menu is reordered under headings, the number of the brothel's own customers can go down to zero, and several menu buttons pressed in one visit now all run."
+        },
+        {
+          "version": "0.2.1",
+          "commit": "3ce2ade4b22bffb331de10bb97219315634f1a70",
+          "date": "2026-10-29T09:52:51Z",
+          "changelog": "0.2.1: Taking customers yourself is much quicker. Your conversation now goes first, so it no longer waits for every worker's offer to end, and no worker, owner or small talk starts talking while you are in it. A needless ten-second wait after your invitation is gone, a customer who accepts your invitation now says yes and asks about the position in one line, and the scene starts as soon as you pick a position. The mod no longer uses TriggerPlayerTTS and IsPlayerTTSFinished, which SkyrimNet beta 29 removes, so it works with beta 28 and beta 29 alike. Pairs no longer sink into the noble single bed, such as Delphine's bed at the Sleeping Giant. 0.2.0: You can run up to three brothels, choose men, women or both as customers, let each brothel hire up to ten workers of its own, register all your female followers at once and run up to twelve pairs at the same time. Workers chat among themselves, a Manage Brothel power opens the main settings, offers are made in many different ways, and two pairs no longer end up on the same bed."
+        },
+        {
+          "version": "0.2.0",
+          "commit": "4eb3082a8fa4010b153873492226d75dbc6c45a9",
+          "date": "2026-10-28T14:22:45Z",
+          "changelog": "0.2.0: You can run up to three brothels at once, each with its own customers, owner and level. Customers can be men, women or both. Besides the workers you register yourself, each brothel can also hire up to ten workers of its own. All your female followers can be registered or unregistered at once. Up to twelve pairs can play at the same time. Workers can chat among themselves between customers. A new Manage Brothel power opens a menu with the main settings and needs UIExtensions. A new setting decides how often a customer accepts an invitation, and offers and invitations are now made in many different ways. Two pairs no longer end up on the same bed, double beds are chosen first, and pairs step off the bed after the scene. A customer caught on a door frame no longer walks on the spot forever."
+        },
+        {
+          "version": "0.1.8",
+          "commit": "16033111085618477a6fa3d245a45e843d105fb0",
+          "date": "2026-10-28T02:11:01Z",
+          "changelog": "0.1.8: The menu now shows correctly in games set to any language, not only English. 0.1.7: Townsfolk can visit the brothel as customers. You can name an owner who takes a share and runs the brothel. You can work as one of the girls yourself, and experienced workers invite customers on their own. The brothel and every worker gain levels from 1 to 10. Customers pay up front, and the MCM is split into six pages. SkyrimNet Player Choices is now built in and no longer required. Fixes include an MCM crash with Papyrus Tweaks, customers starting fights, stalled scenes and pairs sinking into common beds."
+        },
+        {
+          "version": "0.1.2",
+          "commit": "663314ea05d9cae898a64890157bf2b146774ab2",
+          "date": "2026-10-24T14:18:49Z",
+          "changelog": "Initial release"
+        }
+      ],
+      "external_url": "https://github.com/nightlantern-mods/skyrimnet_Brothel",
+      "languages": [
+        "en",
+        "ja"
+      ],
+      "language": "en",
+      "image": {
+        "file": "cover.jpg",
+        "sha": "47fbeb811d0c2dd19b12e398658ca0341ae6230a",
+        "commit": "4eb3082a8fa4010b153873492226d75dbc6c45a9",
+        "width": 1920,
+        "height": 1080
+      },
+      "stats": {
+        "downloads": 33,
+        "endorsements": 0
+      }
+    },
     {
       "id": "plugins/severause/severactions",
       "plugin_id": "severause.severactions",
@@ -83,7 +157,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 839,
+        "downloads": 840,
         "endorsements": 37
       }
     },
@@ -421,7 +495,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 228,
+        "downloads": 229,
         "endorsements": 6
       }
     },
@@ -644,7 +718,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 1158,
+        "downloads": 1160,
         "endorsements": 17
       }
     },
@@ -831,74 +905,6 @@
       }
     },
     {
-      "id": "plugins/taka/skyrimnet-brothel",
-      "plugin_id": "taka.skyrimnet-brothel",
-      "type": "listing",
-      "title": "SkyrimNet Brothel",
-      "tagline": "Run your own brothel: register workers, send customers to them or take customers yourself, and SkyrimNet's AI voices every offer and answer while SexLab plays the scene.",
-      "author": "taka",
-      "tags": [
-        "SexLab",
-        "NPC",
-        "Gameplay"
-      ],
-      "nsfw": true,
-      "icon": "package",
-      "mods": [
-        {
-          "name": "SexLab.esm",
-          "file": "sexlab.esm",
-          "required": true
-        }
-      ],
-      "first_published": "2026-10-24T14:18:49Z",
-      "last_updated": "2026-10-29T09:52:51Z",
-      "version": "0.2.1",
-      "history": [
-        {
-          "version": "0.2.1",
-          "commit": "3ce2ade4b22bffb331de10bb97219315634f1a70",
-          "date": "2026-10-29T09:52:51Z",
-          "changelog": "0.2.1: Taking customers yourself is much quicker. Your conversation now goes first, so it no longer waits for every worker's offer to end, and no worker, owner or small talk starts talking while you are in it. A needless ten-second wait after your invitation is gone, a customer who accepts your invitation now says yes and asks about the position in one line, and the scene starts as soon as you pick a position. The mod no longer uses TriggerPlayerTTS and IsPlayerTTSFinished, which SkyrimNet beta 29 removes, so it works with beta 28 and beta 29 alike. Pairs no longer sink into the noble single bed, such as Delphine's bed at the Sleeping Giant. 0.2.0: You can run up to three brothels, choose men, women or both as customers, let each brothel hire up to ten workers of its own, register all your female followers at once and run up to twelve pairs at the same time. Workers chat among themselves, a Manage Brothel power opens the main settings, offers are made in many different ways, and two pairs no longer end up on the same bed."
-        },
-        {
-          "version": "0.2.0",
-          "commit": "4eb3082a8fa4010b153873492226d75dbc6c45a9",
-          "date": "2026-10-28T14:22:45Z",
-          "changelog": "0.2.0: You can run up to three brothels at once, each with its own customers, owner and level. Customers can be men, women or both. Besides the workers you register yourself, each brothel can also hire up to ten workers of its own. All your female followers can be registered or unregistered at once. Up to twelve pairs can play at the same time. Workers can chat among themselves between customers. A new Manage Brothel power opens a menu with the main settings and needs UIExtensions. A new setting decides how often a customer accepts an invitation, and offers and invitations are now made in many different ways. Two pairs no longer end up on the same bed, double beds are chosen first, and pairs step off the bed after the scene. A customer caught on a door frame no longer walks on the spot forever."
-        },
-        {
-          "version": "0.1.8",
-          "commit": "16033111085618477a6fa3d245a45e843d105fb0",
-          "date": "2026-10-28T02:11:01Z",
-          "changelog": "0.1.8: The menu now shows correctly in games set to any language, not only English. 0.1.7: Townsfolk can visit the brothel as customers. You can name an owner who takes a share and runs the brothel. You can work as one of the girls yourself, and experienced workers invite customers on their own. The brothel and every worker gain levels from 1 to 10. Customers pay up front, and the MCM is split into six pages. SkyrimNet Player Choices is now built in and no longer required. Fixes include an MCM crash with Papyrus Tweaks, customers starting fights, stalled scenes and pairs sinking into common beds."
-        },
-        {
-          "version": "0.1.2",
-          "commit": "663314ea05d9cae898a64890157bf2b146774ab2",
-          "date": "2026-10-24T14:18:49Z",
-          "changelog": "Initial release"
-        }
-      ],
-      "external_url": "https://github.com/nightlantern-mods/skyrimnet_Brothel",
-      "languages": [
-        "en",
-        "ja"
-      ],
-      "language": "en",
-      "image": {
-        "file": "cover.jpg",
-        "sha": "47fbeb811d0c2dd19b12e398658ca0341ae6230a",
-        "commit": "4eb3082a8fa4010b153873492226d75dbc6c45a9",
-        "width": 1920,
-        "height": 1080
-      },
-      "stats": {
-        "downloads": 33,
-        "endorsements": 0
-      }
-    },
-    {
       "id": "plugins/awesmdiver/modpacer",
       "plugin_id": "awesmdiver.modpacer",
       "type": "listing",
@@ -1063,7 +1069,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 330,
+        "downloads": 332,
         "endorsements": 10
       }
     },
@@ -1252,7 +1258,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 43,
+        "downloads": 44,
         "endorsements": 0
       }
     },
@@ -2102,7 +2108,7 @@
         "height": 1152
       },
       "stats": {
-        "downloads": 180,
+        "downloads": 181,
         "endorsements": 0
       }
     },
@@ -2534,7 +2540,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 138,
+        "downloads": 139,
         "endorsements": 0
       }
     },
@@ -4672,7 +4678,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 410,
+        "downloads": 411,
         "endorsements": 5
       }
     },
@@ -4852,7 +4858,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2919,
+        "downloads": 2920,
         "endorsements": 4
       }
     },
@@ -5077,7 +5083,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1502,
+        "downloads": 1503,
         "endorsements": 0
       }
     },
@@ -8602,7 +8608,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 393,
+        "downloads": 394,
         "endorsements": 0
       }
     },
@@ -8872,7 +8878,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 218,
+        "downloads": 219,
         "endorsements": 1
       }
     },
@@ -9142,7 +9148,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1248,
+        "downloads": 1249,
         "endorsements": 2
       }
     },
@@ -10267,7 +10273,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1698,
+        "downloads": 1699,
         "endorsements": 2
       }
     },
@@ -11842,7 +11848,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 344,
+        "downloads": 345,
         "endorsements": 0
       }
     },
