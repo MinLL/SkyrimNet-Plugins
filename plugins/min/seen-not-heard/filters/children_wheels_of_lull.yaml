@@ -1,0 +1,5 @@
+kind: actor
+name: Wheels of Lull's Memory doesn't speak
+description: The child-flagged Memory race WheelsOfLull.esp defines.
+RaceBlacklist:
+  - _Lull_MemoryRace

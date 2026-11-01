@@ -1,0 +1,52 @@
+{
+  "id": "min.seen-not-heard",
+  "type": "bundle",
+  "title": "Seen and Not Heard",
+  "tagline": "Children are seen and not heard.",
+  "description": "Actor filter contributions that keep children out of AI conversations: one file per mod that defines a child race, so each can be switched off on its own. Covers the vanilla child races, RS Children's vampire children, Fertility Mode's beast and elf children, and the mod creatures that reuse the Child flag. In Blacklist Exclusion mode these races are excluded outright; in Whitelist Only mode the blacklist still wins over any whitelist.",
+  "author": "min",
+  "tags": [
+    "filters",
+    "children"
+  ],
+  "nsfw": false,
+  "icon": "package",
+  "mods": [
+    {
+      "name": "RS Children Overhaul",
+      "file": "rskyrimchildren.esm",
+      "required": false
+    },
+    {
+      "name": "Fertility Mode",
+      "file": "fertility mode.esm",
+      "required": false
+    },
+    {
+      "name": "Legacy of the Dragonborn",
+      "file": "dbmcollectors.esp",
+      "required": false
+    },
+    {
+      "name": "The Wheels of Lull",
+      "file": "wheelsoflull.esp",
+      "required": false
+    },
+    {
+      "name": "Dwarfsphere",
+      "file": "dwarfsphere.esp",
+      "required": false
+    },
+    {
+      "name": "Wind Path",
+      "file": "windpath.esp",
+      "required": false
+    }
+  ],
+  "languages": [
+    "en"
+  ],
+  "version": "1.0.0",
+  "changelog": "Initial release",
+  "min_skyrimnet_version": "0.29.0"
+}

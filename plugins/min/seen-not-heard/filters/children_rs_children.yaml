@@ -1,0 +1,7 @@
+kind: actor
+name: RS Children's vampire children don't speak
+description: The child vampire races RS Children Overhaul (RSkyrimChildren.esm) adds.
+RaceBlacklist:
+  - NordRaceChildVampire
+  - ImperialRaceChildVampire
+  - RedguardRaceChildVampire

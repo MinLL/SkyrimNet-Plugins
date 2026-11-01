@@ -1,0 +1,9 @@
+kind: actor
+name: Vanilla children don't speak
+description: The child races Skyrim.esm defines, Babette's vampire race included.
+RaceBlacklist:
+  - NordRaceChild
+  - ImperialRaceChild
+  - BretonRaceChild
+  - RedguardRaceChild
+  - BretonRaceChildVampire
