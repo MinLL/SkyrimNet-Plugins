@@ -1,8 +1,92 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-11-01T01:16:30.361Z",
-  "stats_as_of": "2026-11-01T01:16:30.283Z",
+  "generated_at": "2026-11-01T01:48:58.131Z",
+  "stats_as_of": "2026-11-01T01:48:58.051Z",
   "plugins": [
+    {
+      "id": "plugins/severause/severactions",
+      "plugin_id": "severause.severactions",
+      "type": "listing",
+      "title": "SeverActions ",
+      "tagline": "An action, prompt, and behavior pack for SkyrimNet",
+      "author": "severause",
+      "tags": [],
+      "nsfw": false,
+      "icon": "scroll",
+      "mods": [],
+      "first_published": "2026-09-14T10:26:17Z",
+      "last_updated": "2026-11-01T01:48:27Z",
+      "version": "4.7.0",
+      "history": [
+        {
+          "version": "4.7.0",
+          "commit": "3d67ceea80b5e1a79072d98a54ee3e94f2bab4f5",
+          "date": "2026-11-01T01:48:27Z",
+          "changelog": "## **SeverActions v4.7.0** — Linen and Bone\n\nA redesigned menu with a new look on every page, full controller support, NPCs who keep the weapons you give them, and wounds you can treat: broken bones, splints, bandaged stumps and limbs that grow back. Various bug fixes\n\n- See announcement page for the full changelog"
+        },
+        {
+          "version": "4.6.0",
+          "commit": "e5a0d21f81952998a310b0c91f829d4b79c31ade",
+          "date": "2026-10-27T01:14:00Z",
+          "changelog": "# SeverActions 4.6.0 - Blood and Thread\n\n**Bundled with it:**\n- **Magelight UI 1.5.1:** Ultralight 2.0, less memory after pages close, in-page IME typing, crash fixes, pages no longer put your weapons away, and the cursor stays in the game window.\n- **Phantasm:** a separate renderer that now draws the Outfits mirror, the Inventory item view and the party's faces. It installs with SeverActions.(Will be it's own separate mod with an API to hook into in the future)\n\nIf you also run Magelight UI as its own mod, let the newer copy win.\n\n## :drop_of_blood: Survivable dismemberment (highly experimental)\nNeeds Dismembering Framework. Off until you turn it on (Settings → Combat Context, or the MCM's Combat & Outlaws page).\n- A power attack with a sword or axe that leaves someone at low health can take a forearm or lower leg **without killing them**. They stagger, scream and beg for the fight to stop.\n- Most surrender after losing an arm. A brave fighter (a boss, or at least your level) keeps fighting with the other hand (not in VR).\n- A lost leg, or both hands, knocks them down for good.\n- **The wound bleeds** until they die. Adept-or-better Restoration healing (Heal Other, Grand Healing) from you or a follower closes it.\n- They remember who cut them, and who they surrendered to.\n- Followers, guards, children and essential characters are never cut.\n- Limbs don't grow back yet; that's coming in a later update, alongside possible prosthetics.\n\n-See Announcement Page For More"
+        },
+        {
+          "version": "4.5.0",
+          "commit": "49cc60c400a7125b9c24376d7809e4c56aa583f4",
+          "date": "2026-10-19T09:52:36Z",
+          "changelog": "## **SeverActions v4.5.0** — Mirrors and Motives\n\nA new Outfits page built around a live mirror, a reworked Inventory with trading, a way to see why your companions feel the way they do, NPCs who can study spell tomes, and NPCs who level up with you."
+        },
+        {
+          "version": "4.3.0",
+          "commit": "cea225d3267864dbc88e21825d43a72d9ab550cd",
+          "date": "2026-10-11T06:18:40Z",
+          "changelog": "SeverActions v4.3.0 — Law and Language\nA Law & Crime page, guards who stop to talk before they arrest your companions, a language setting with full translations, situation outfits for you, and Bio Blocks starter packs with a bigger API.\n- See announcement page for more information"
+        },
+        {
+          "version": "4.2.0",
+          "commit": "4d9ccc9039e7651d6aa1836feb02f1fa0e8cbf08",
+          "date": "2026-10-05T02:48:23Z",
+          "changelog": "## **SeverActions v4.2.0** — Colours and Clarity\n- See announcement channel for the full changelog\n\nColour themes, presets that stay on, real control over a follower's built-in spells, a bigger quick wheel, plainer menus and a corrected Russian translation.\n\n:warning: **Before you update**\n- **Replace over 4.1.x** in MO2. The installer's pages and choices are the same, and saves carry over.\n- **FOMOD Plus users:** the installer now always installs the module scripts, so installs that came out missing scripts get all of them.\n- **Magelight UI 0.31.2 is included.** If you also run it as its own mod, let the newer copy win.\n\n:art: **Themes**\n- **Five themes** in Settings > UI Display: The Ledger (today's look), Windhelm Slate, Dwemer Verdigris, Soul Cairn and Jarl's Vellum, a light theme.\n- **Everywhere:** every page, popup and the quick wheel, and the cursor takes the theme's colours too.\n\n:dress: **Outfits**\n- **Presets stay on** after fast travel, sleep and waiting, and a sleep outfit no longer dresses a follower over a preset.(needs further testing)\n- **Situation outfits** No timer on situation switches\n- **Inventory** lists armour freed from a default outfit again, with a Take off button for worn pieces.\n- **Warmth:** 100% means a full set of warm gear, so ordinary armour no longer reads \"Bare\".\n\n:magic_wand: **Spells**\n- **Turn off built-in spells:** switching off a spell on the Spells page really stops a follower casting it, including ones they came with. Built-in spells are marked, and ones shared by other NPCs say why they can't be removed.\n\n:joystick: **Quick wheel and hotkeys**\n- **Twelve slots,** showing only the ones you fill.\n- **Key capture always ends,** and VR warns when the menu chord clashes with another binding.\n\n:moneybag: **Enterprises and off-screen life**\n- **Work marks are back:**"
+        },
+        {
+          "version": "4.1.0",
+          "commit": "5738aa5f161c80a73a312d49fadca75880753ad9",
+          "date": "2026-10-04T01:35:24Z",
+          "changelog": "## SeverActions 4.1.0\nMagelight UI 0.30.5 is included in the SeverActions download and is also available on its own.\n\n**SeverActions 4.1.0**\n- **Wait and Follow work on the first press.** Wait All and Follow All finish in a second or two instead of seeming to do nothing. Each command now undoes only what SeverActions actually put on a follower, which helps custom followers most.\n- **Faster loading.** On a long-running save, SeverActions' startup after a load went from about a minute to about 12 seconds, and commands given right after a load no longer wait 20+ seconds.\n- Companions are no longer pushed back onto their follow package every few seconds.\n- Mouse and gamepad buttons (M3, M4, M5…) work again as the menu and quick wheel keys, and Settings > Hotkeys can capture them.\n- Tracking mode: casual follow works again for NPCs no follower framework leads.\n- The Companions page now shows the framework mode the game is actually using.\n- If Magelight can't draw, the menu and wheel keys now tell you so (and point to Magelight.log) instead of doing nothing.\n- Outfits mirror on CPU rendering: the Live Stage takes over instead of leaving a hole in the menu. In VR it's a dark box.\n\n**Magelight UI 0.30.5** (includes 0.30.4)\n- Menus no longer open invisible with DLSS or frame generation behind NVIDIA Streamline (Community Shaders, Open Shaders).\n- Community Shaders frame generation: the UI shows again.\n- NVIDIA Smooth Motion: opening a menu no longer freezes the game.\n- A lost graphics device turns the overlay off instead of leaving the game paused.\n- A new, sharper cursor, and no more double cursor.\n\n**Installing:** install over 4.0.x with Replace. Saves load as they are. Still needs SkyrimNet 0.25 or newer."
+        },
+        {
+          "version": "4.0.2",
+          "commit": "2cc98ac524e8da504068d8822f40f7d2c12b5b27",
+          "date": "2026-10-02T23:24:33Z",
+          "changelog": "## SeverActions 4.0.2 — Hotfix\n\nUpdates the bundled **Magelight UI to 0.30.3**, which fixes three problems in 4.0.1:\n\n**Fixed: crash at startup with Community Shaders**, or a few minutes into play with ENB or an upscaler (`d3d11.dll` in the crash log)\n**Fixed: crash at startup with ENB** that left no crash log\n**Fixed: menu cut off** on screens under ~1067 pixels tall (1366×768, 1600×900)\n\nIf you made a `Magelight.json` to work around the ENB crash, you can delete it now.\n\n**Installing:** install over 4.0.1 and choose **Replace**. Your saves load as they are."
+        },
+        {
+          "version": "4.0.1",
+          "commit": "274859a71a0cc908296244bb9e627151de0e859a",
+          "date": "2026-10-02T15:26:46Z",
+          "changelog": "4.0 Release - Several fixes and additions, please see the announcement channel for the full changelog"
+        },
+        {
+          "version": "3.9.14",
+          "commit": "cfe54b268475b645084a2b7450af4c26e9c06f90",
+          "date": "2026-09-27T16:10:44Z",
+          "changelog": "Added a cover image"
+        }
+      ],
+      "external_url": "https://github.com/Severause/SeverActions/releases/tag/v4.7.0",
+      "image": {
+        "file": "cover.png",
+        "sha": "c37c0b8a5ca4729ed3ed78776124c54ac32d326d",
+        "commit": "cfe54b268475b645084a2b7450af4c26e9c06f90",
+        "width": 2048,
+        "height": 1146
+      },
+      "curated": true,
+      "stats": {
+        "downloads": 831,
+        "endorsements": 37
+      }
+    },
     {
       "id": "plugins/min/skyrimnet-legacy-prompts",
       "plugin_id": "min.skyrimnet-legacy-prompts",
@@ -43,7 +127,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 0,
+        "downloads": 2,
         "endorsements": 0
       }
     },
@@ -124,7 +208,7 @@
         "config": 7
       },
       "stats": {
-        "downloads": 1,
+        "downloads": 2,
         "endorsements": 0
       }
     },
@@ -560,7 +644,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 1135,
+        "downloads": 1137,
         "endorsements": 17
       }
     },
@@ -616,7 +700,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 59,
+        "downloads": 60,
         "endorsements": 0
       }
     },
@@ -1029,7 +1113,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 106,
+        "downloads": 108,
         "endorsements": 0
       }
     },
@@ -1235,84 +1319,6 @@
       "stats": {
         "downloads": 43,
         "endorsements": 0
-      }
-    },
-    {
-      "id": "plugins/severause/severactions",
-      "plugin_id": "severause.severactions",
-      "type": "listing",
-      "title": "SeverActions ",
-      "tagline": "An action, prompt, and behavior pack for SkyrimNet",
-      "author": "severause",
-      "tags": [],
-      "nsfw": false,
-      "icon": "scroll",
-      "mods": [],
-      "first_published": "2026-09-14T10:26:17Z",
-      "last_updated": "2026-10-27T01:14:00Z",
-      "version": "4.6.0",
-      "history": [
-        {
-          "version": "4.6.0",
-          "commit": "e5a0d21f81952998a310b0c91f829d4b79c31ade",
-          "date": "2026-10-27T01:14:00Z",
-          "changelog": "# SeverActions 4.6.0 - Blood and Thread\n\n**Bundled with it:**\n- **Magelight UI 1.5.1:** Ultralight 2.0, less memory after pages close, in-page IME typing, crash fixes, pages no longer put your weapons away, and the cursor stays in the game window.\n- **Phantasm:** a separate renderer that now draws the Outfits mirror, the Inventory item view and the party's faces. It installs with SeverActions.(Will be it's own separate mod with an API to hook into in the future)\n\nIf you also run Magelight UI as its own mod, let the newer copy win.\n\n## :drop_of_blood: Survivable dismemberment (highly experimental)\nNeeds Dismembering Framework. Off until you turn it on (Settings → Combat Context, or the MCM's Combat & Outlaws page).\n- A power attack with a sword or axe that leaves someone at low health can take a forearm or lower leg **without killing them**. They stagger, scream and beg for the fight to stop.\n- Most surrender after losing an arm. A brave fighter (a boss, or at least your level) keeps fighting with the other hand (not in VR).\n- A lost leg, or both hands, knocks them down for good.\n- **The wound bleeds** until they die. Adept-or-better Restoration healing (Heal Other, Grand Healing) from you or a follower closes it.\n- They remember who cut them, and who they surrendered to.\n- Followers, guards, children and essential characters are never cut.\n- Limbs don't grow back yet; that's coming in a later update, alongside possible prosthetics.\n\n-See Announcement Page For More"
-        },
-        {
-          "version": "4.5.0",
-          "commit": "49cc60c400a7125b9c24376d7809e4c56aa583f4",
-          "date": "2026-10-19T09:52:36Z",
-          "changelog": "## **SeverActions v4.5.0** — Mirrors and Motives\n\nA new Outfits page built around a live mirror, a reworked Inventory with trading, a way to see why your companions feel the way they do, NPCs who can study spell tomes, and NPCs who level up with you."
-        },
-        {
-          "version": "4.3.0",
-          "commit": "cea225d3267864dbc88e21825d43a72d9ab550cd",
-          "date": "2026-10-11T06:18:40Z",
-          "changelog": "SeverActions v4.3.0 — Law and Language\nA Law & Crime page, guards who stop to talk before they arrest your companions, a language setting with full translations, situation outfits for you, and Bio Blocks starter packs with a bigger API.\n- See announcement page for more information"
-        },
-        {
-          "version": "4.2.0",
-          "commit": "4d9ccc9039e7651d6aa1836feb02f1fa0e8cbf08",
-          "date": "2026-10-05T02:48:23Z",
-          "changelog": "## **SeverActions v4.2.0** — Colours and Clarity\n- See announcement channel for the full changelog\n\nColour themes, presets that stay on, real control over a follower's built-in spells, a bigger quick wheel, plainer menus and a corrected Russian translation.\n\n:warning: **Before you update**\n- **Replace over 4.1.x** in MO2. The installer's pages and choices are the same, and saves carry over.\n- **FOMOD Plus users:** the installer now always installs the module scripts, so installs that came out missing scripts get all of them.\n- **Magelight UI 0.31.2 is included.** If you also run it as its own mod, let the newer copy win.\n\n:art: **Themes**\n- **Five themes** in Settings > UI Display: The Ledger (today's look), Windhelm Slate, Dwemer Verdigris, Soul Cairn and Jarl's Vellum, a light theme.\n- **Everywhere:** every page, popup and the quick wheel, and the cursor takes the theme's colours too.\n\n:dress: **Outfits**\n- **Presets stay on** after fast travel, sleep and waiting, and a sleep outfit no longer dresses a follower over a preset.(needs further testing)\n- **Situation outfits** No timer on situation switches\n- **Inventory** lists armour freed from a default outfit again, with a Take off button for worn pieces.\n- **Warmth:** 100% means a full set of warm gear, so ordinary armour no longer reads \"Bare\".\n\n:magic_wand: **Spells**\n- **Turn off built-in spells:** switching off a spell on the Spells page really stops a follower casting it, including ones they came with. Built-in spells are marked, and ones shared by other NPCs say why they can't be removed.\n\n:joystick: **Quick wheel and hotkeys**\n- **Twelve slots,** showing only the ones you fill.\n- **Key capture always ends,** and VR warns when the menu chord clashes with another binding.\n\n:moneybag: **Enterprises and off-screen life**\n- **Work marks are back:**"
-        },
-        {
-          "version": "4.1.0",
-          "commit": "5738aa5f161c80a73a312d49fadca75880753ad9",
-          "date": "2026-10-04T01:35:24Z",
-          "changelog": "## SeverActions 4.1.0\nMagelight UI 0.30.5 is included in the SeverActions download and is also available on its own.\n\n**SeverActions 4.1.0**\n- **Wait and Follow work on the first press.** Wait All and Follow All finish in a second or two instead of seeming to do nothing. Each command now undoes only what SeverActions actually put on a follower, which helps custom followers most.\n- **Faster loading.** On a long-running save, SeverActions' startup after a load went from about a minute to about 12 seconds, and commands given right after a load no longer wait 20+ seconds.\n- Companions are no longer pushed back onto their follow package every few seconds.\n- Mouse and gamepad buttons (M3, M4, M5…) work again as the menu and quick wheel keys, and Settings > Hotkeys can capture them.\n- Tracking mode: casual follow works again for NPCs no follower framework leads.\n- The Companions page now shows the framework mode the game is actually using.\n- If Magelight can't draw, the menu and wheel keys now tell you so (and point to Magelight.log) instead of doing nothing.\n- Outfits mirror on CPU rendering: the Live Stage takes over instead of leaving a hole in the menu. In VR it's a dark box.\n\n**Magelight UI 0.30.5** (includes 0.30.4)\n- Menus no longer open invisible with DLSS or frame generation behind NVIDIA Streamline (Community Shaders, Open Shaders).\n- Community Shaders frame generation: the UI shows again.\n- NVIDIA Smooth Motion: opening a menu no longer freezes the game.\n- A lost graphics device turns the overlay off instead of leaving the game paused.\n- A new, sharper cursor, and no more double cursor.\n\n**Installing:** install over 4.0.x with Replace. Saves load as they are. Still needs SkyrimNet 0.25 or newer."
-        },
-        {
-          "version": "4.0.2",
-          "commit": "2cc98ac524e8da504068d8822f40f7d2c12b5b27",
-          "date": "2026-10-02T23:24:33Z",
-          "changelog": "## SeverActions 4.0.2 — Hotfix\n\nUpdates the bundled **Magelight UI to 0.30.3**, which fixes three problems in 4.0.1:\n\n**Fixed: crash at startup with Community Shaders**, or a few minutes into play with ENB or an upscaler (`d3d11.dll` in the crash log)\n**Fixed: crash at startup with ENB** that left no crash log\n**Fixed: menu cut off** on screens under ~1067 pixels tall (1366×768, 1600×900)\n\nIf you made a `Magelight.json` to work around the ENB crash, you can delete it now.\n\n**Installing:** install over 4.0.1 and choose **Replace**. Your saves load as they are."
-        },
-        {
-          "version": "4.0.1",
-          "commit": "274859a71a0cc908296244bb9e627151de0e859a",
-          "date": "2026-10-02T15:26:46Z",
-          "changelog": "4.0 Release - Several fixes and additions, please see the announcement channel for the full changelog"
-        },
-        {
-          "version": "3.9.14",
-          "commit": "cfe54b268475b645084a2b7450af4c26e9c06f90",
-          "date": "2026-09-27T16:10:44Z",
-          "changelog": "Added a cover image"
-        }
-      ],
-      "external_url": "https://github.com/Severause/SeverActions/releases/tag/v4.6.0",
-      "image": {
-        "file": "cover.png",
-        "sha": "c37c0b8a5ca4729ed3ed78776124c54ac32d326d",
-        "commit": "cfe54b268475b645084a2b7450af4c26e9c06f90",
-        "width": 2048,
-        "height": 1146
-      },
-      "curated": true,
-      "stats": {
-        "downloads": 830,
-        "endorsements": 37
       }
     },
     {
@@ -1789,7 +1795,7 @@
         "height": 720
       },
       "stats": {
-        "downloads": 87,
+        "downloads": 88,
         "endorsements": 1
       }
     },
@@ -2038,7 +2044,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 129,
+        "downloads": 130,
         "endorsements": 1
       }
     },
@@ -2164,7 +2170,7 @@
         "height": 1152
       },
       "stats": {
-        "downloads": 264,
+        "downloads": 265,
         "endorsements": 7
       }
     },
@@ -2585,7 +2591,7 @@
         "height": 720
       },
       "stats": {
-        "downloads": 72,
+        "downloads": 73,
         "endorsements": 1
       }
     },
@@ -3518,7 +3524,7 @@
       ],
       "language": "en",
       "stats": {
-        "downloads": 32,
+        "downloads": 33,
         "endorsements": 0
       }
     },
@@ -3891,7 +3897,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 191,
+        "downloads": 192,
         "endorsements": 0
       }
     },
@@ -4666,7 +4672,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 408,
+        "downloads": 409,
         "endorsements": 5
       }
     },
@@ -4711,7 +4717,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1333,
+        "downloads": 1334,
         "endorsements": 2
       }
     },
@@ -4846,7 +4852,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2904,
+        "downloads": 2905,
         "endorsements": 4
       }
     },
@@ -5836,7 +5842,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1206,
+        "downloads": 1207,
         "endorsements": 2
       }
     },
@@ -6196,7 +6202,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1045,
+        "downloads": 1046,
         "endorsements": 1
       }
     },
@@ -6556,7 +6562,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1383,
+        "downloads": 1384,
         "endorsements": 3
       }
     },
@@ -8281,7 +8287,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 451,
+        "downloads": 452,
         "endorsements": 0
       }
     },
@@ -8596,7 +8602,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 387,
+        "downloads": 388,
         "endorsements": 0
       }
     },
@@ -8866,7 +8872,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 216,
+        "downloads": 217,
         "endorsements": 1
       }
     },
@@ -9226,7 +9232,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1599,
+        "downloads": 1600,
         "endorsements": 2
       }
     },
@@ -10261,7 +10267,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1688,
+        "downloads": 1689,
         "endorsements": 2
       }
     },
@@ -10531,7 +10537,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1392,
+        "downloads": 1393,
         "endorsements": 2
       }
     },
@@ -11071,7 +11077,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1016,
+        "downloads": 1017,
         "endorsements": 0
       }
     },
@@ -12826,7 +12832,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 160,
+        "downloads": 161,
         "endorsements": 1
       }
     },
@@ -13141,7 +13147,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 745,
+        "downloads": 746,
         "endorsements": 2
       }
     },
@@ -13681,7 +13687,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2077,
+        "downloads": 2078,
         "endorsements": 2
       }
     },
@@ -13951,7 +13957,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 482,
+        "downloads": 483,
         "endorsements": 0
       }
     },
