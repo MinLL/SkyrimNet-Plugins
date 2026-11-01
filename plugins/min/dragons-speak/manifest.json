@@ -2,8 +2,8 @@
   "id": "min.dragons-speak",
   "type": "bundle",
   "title": "Dragons Speak",
-  "tagline": "Every dragon race may talk.",
-  "description": "Actor filter contributions that whitelist every race carrying ActorTypeDragon in the Nolvus Awakening load order, one file per mod that defines a dragon race, so each can be switched off on its own. Dragon races do not allow player dialogue, so with 'Allow only actors capable of speech' on they are normally excluded; a whitelisted race is exempt from that check. In Whitelist Only mode this also makes dragons eligible speakers.",
+  "tagline": "Let dragons talk.",
+  "description": "By default SkyrimNet only lets an NPC speak if its race allows player dialogue, which rules out every dragon. This plugin adds every dragon race in the load order to the actor filter's whitelist, so dragons can hold a conversation like any other NPC.\n\nThere is one file per mod that adds a dragon race (the vanilla and DLC dragons, Unslaad, Midwood Isle, Ultimate Dragons, Path of Sorcery, Triumvirate and Alternate Perspective), so you can switch off one mod's dragons on the Filters page without touching the rest. If you use whitelist-only filtering, this also makes dragons eligible speakers.",
   "author": "min",
   "tags": [
     "filters",
@@ -46,7 +46,7 @@
   "languages": [
     "en"
   ],
-  "version": "1.0.0",
-  "changelog": "Initial release",
+  "version": "1.0.1",
+  "changelog": "Rewrote the tagline and description in plain language. No change to the filter files.",
   "min_skyrimnet_version": "0.29.0"
 }
