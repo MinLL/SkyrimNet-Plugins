@@ -3,7 +3,7 @@
   "type": "bundle",
   "title": "Seen and Not Heard",
   "tagline": "Children are seen and not heard.",
-  "description": "Actor filter contributions that keep children out of AI conversations: one file per mod that defines a child race, so each can be switched off on its own. Covers the vanilla child races, RS Children's vampire children, Fertility Mode's beast and elf children, and the mod creatures that reuse the Child flag. In Blacklist Exclusion mode these races are excluded outright; in Whitelist Only mode the blacklist still wins over any whitelist.",
+  "description": "Keeps children out of SkyrimNet conversations. Every child race in the load order is added to the actor filter's blacklist, so children never speak, think aloud or write diary entries, whichever filter mode you use.\n\nThere is one file per mod that adds a child race (the vanilla races, RS Children, Fertility Mode, Legacy of the Dragonborn and The Wheels of Lull), plus two for creatures that borrow the child flag for their size (Dwarfsphere's Snippy and Wind Path's hares). Each can be switched back on from the Filters page on its own.",
   "author": "min",
   "tags": [
     "filters",
@@ -46,7 +46,7 @@
   "languages": [
     "en"
   ],
-  "version": "1.0.0",
-  "changelog": "Initial release",
+  "version": "1.0.1",
+  "changelog": "Rewrote the description in plain language. No change to the filter files.",
   "min_skyrimnet_version": "0.29.0"
 }
