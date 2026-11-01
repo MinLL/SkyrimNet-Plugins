@@ -1,8 +1,52 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-11-01T01:15:07.159Z",
-  "stats_as_of": "2026-11-01T01:15:06.995Z",
+  "generated_at": "2026-11-01T01:16:30.361Z",
+  "stats_as_of": "2026-11-01T01:16:30.283Z",
   "plugins": [
+    {
+      "id": "plugins/min/skyrimnet-legacy-prompts",
+      "plugin_id": "min.skyrimnet-legacy-prompts",
+      "type": "bundle",
+      "title": "SkyrimNet Legacy Prompts",
+      "tagline": "The default prompts from before the prompt-caching layout.",
+      "author": "min",
+      "tags": [
+        "prompts",
+        "legacy"
+      ],
+      "nsfw": false,
+      "icon": "package",
+      "mods": [],
+      "first_published": "2026-11-01T01:15:59Z",
+      "last_updated": "2026-11-01T01:15:59Z",
+      "version": "1.0.0",
+      "min_skyrimnet_version": "0.29.0",
+      "history": [
+        {
+          "version": "1.0.0",
+          "commit": "0240feea26b2bc11a993540875dcf033d5878e08",
+          "date": "2026-11-01T01:15:59Z",
+          "changelog": "Initial release"
+        }
+      ],
+      "languages": [
+        "en"
+      ],
+      "language": "en",
+      "contents": {
+        "triggers": 0,
+        "actions": 0,
+        "prompts": 23,
+        "bios": 0,
+        "knowledge": 0,
+        "entities": 0,
+        "config": 0
+      },
+      "stats": {
+        "downloads": 0,
+        "endorsements": 0
+      }
+    },
     {
       "id": "plugins/min/seen-not-heard",
       "plugin_id": "min.seen-not-heard",
@@ -516,7 +560,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 1134,
+        "downloads": 1135,
         "endorsements": 17
       }
     },
