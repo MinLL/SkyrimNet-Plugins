@@ -34,6 +34,6 @@
   ],
   "image": "cover.jpg",
   "external_url": "https://github.com/Telord72612/SkyrimNet-Devious-Awareness-Base/releases/tag/v1.0.0",
-  "version": "1.0.0",
-  "changelog": "Picture update"
+  "version": "1.2.0",
+  "changelog": "No more stutter on SE / AE. An NPC's state is rebuilt only when something about her changes, at most two NPCs per frame, instead of every NPC every few seconds.\nHealing. Healing spells and potions ease what a restraint left behind; she is told who healed her.\nSkin marks (needs RaceMenu). Harsh restraints leave bruises on the neck, wrists, ankles and upper arms — 30 / 50 / 75 / 100 % by how long the gear was worn, half a game day per pain state reached, fading in steps and shorter with healing. Soft gear leaves none. Tunable in [marks] of VRTE_DDZaZ_Scales.ini.\nHoods. An ordinary hood is no longer a gag; one that really covers the mouth (the Execution Hood) is.\nOut cold and carrying: an unconscious NPC is recognised; spare devices in her pack are known.\nAE 1.7.99 supported — needs SKSE 2.3.0+ and the matching Address Library. Built on MinLL/CommonLibVR 4.39.5 (thanks to langfod for the CommonLib update)."
 }
