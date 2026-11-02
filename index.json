@@ -1,8 +1,56 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-11-02T22:22:02.781Z",
-  "stats_as_of": "2026-11-02T22:22:02.675Z",
+  "generated_at": "2026-11-02T22:48:34.259Z",
+  "stats_as_of": "2026-11-02T22:48:34.143Z",
   "plugins": [
+    {
+      "id": "plugins/jykej/intellite",
+      "plugin_id": "jykej.intellite",
+      "type": "listing",
+      "title": "IntelLite",
+      "tagline": "SkyrimNet actions for NPCs.",
+      "author": "jykej",
+      "tags": [
+        "actions",
+        "task"
+      ],
+      "nsfw": false,
+      "icon": "zap",
+      "mods": [],
+      "first_published": "2026-10-22T13:28:54Z",
+      "last_updated": "2026-11-02T22:47:58Z",
+      "version": "0.1.1",
+      "history": [
+        {
+          "version": "0.1.1",
+          "commit": "ce7be983c1e903aeac2637d5e84e8de7258c6ae3",
+          "date": "2026-11-02T22:47:58Z",
+          "changelog": "Improved the staged non-essential assassination path with a dedicated hold package, collision handling around the scene, and a retry/teleport recovery for refused attempts."
+        },
+        {
+          "version": "0.1.0",
+          "commit": "8f453dd5dbc2dd5b95ac0e8b2ff40668ba0c4e30",
+          "date": "2026-10-22T13:28:54Z",
+          "changelog": "First public release.\n- Five native SkyrimNet actions: Fetch Person, Deliver Message, Meet Later, Assassinate and Cancel All.\n- MagelightUI panel and consent card.\n- Package travel with off-screen deadlines, door and gate staging, and a simulation fallback.\n- World-wide NPC index, fuzzy name resolution and an editorid blacklist.\n- SkyrimNet awareness submodule.\n- One DLL for SE and AE, tested on 1.6.1170. SE 1.5.97 and other AE / 1.7.x builds are untested"
+        }
+      ],
+      "external_url": "https://github.com/JykeJ/IntelLite/releases",
+      "languages": [
+        "en"
+      ],
+      "language": "en",
+      "image": {
+        "file": "cover.jpg",
+        "sha": "d0888e10cd1eea7388df94369e36c1b5e26fe1cc",
+        "commit": "8f453dd5dbc2dd5b95ac0e8b2ff40668ba0c4e30",
+        "width": 1223,
+        "height": 688
+      },
+      "stats": {
+        "downloads": 85,
+        "endorsements": 0
+      }
+    },
     {
       "id": "plugins/s709/milk-maid-economy-extensions",
       "plugin_id": "s709.milk-maid-economy-extensions",
@@ -313,7 +361,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 435,
+        "downloads": 436,
         "endorsements": 4
       }
     },
@@ -527,7 +575,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 894,
+        "downloads": 896,
         "endorsements": 38
       }
     },
@@ -652,7 +700,7 @@
         "config": 7
       },
       "stats": {
-        "downloads": 44,
+        "downloads": 45,
         "endorsements": 0
       }
     },
@@ -733,7 +781,7 @@
         "config": 7
       },
       "stats": {
-        "downloads": 68,
+        "downloads": 69,
         "endorsements": 0
       }
     },
@@ -865,7 +913,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 243,
+        "downloads": 244,
         "endorsements": 6
       }
     },
@@ -1088,7 +1136,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 1287,
+        "downloads": 1290,
         "endorsements": 17
       }
     },
@@ -2373,7 +2421,7 @@
         "height": 1152
       },
       "stats": {
-        "downloads": 279,
+        "downloads": 280,
         "endorsements": 7
       }
     },
@@ -2796,48 +2844,6 @@
       "stats": {
         "downloads": 80,
         "endorsements": 1
-      }
-    },
-    {
-      "id": "plugins/jykej/intellite",
-      "plugin_id": "jykej.intellite",
-      "type": "listing",
-      "title": "IntelLite",
-      "tagline": "SkyrimNet actions for NPCs.",
-      "author": "jykej",
-      "tags": [
-        "actions",
-        "task"
-      ],
-      "nsfw": false,
-      "icon": "zap",
-      "mods": [],
-      "first_published": "2026-10-22T13:28:54Z",
-      "last_updated": "2026-10-22T13:28:54Z",
-      "version": "0.1.0",
-      "history": [
-        {
-          "version": "0.1.0",
-          "commit": "8f453dd5dbc2dd5b95ac0e8b2ff40668ba0c4e30",
-          "date": "2026-10-22T13:28:54Z",
-          "changelog": "First public release.\n- Five native SkyrimNet actions: Fetch Person, Deliver Message, Meet Later, Assassinate and Cancel All.\n- MagelightUI panel and consent card.\n- Package travel with off-screen deadlines, door and gate staging, and a simulation fallback.\n- World-wide NPC index, fuzzy name resolution and an editorid blacklist.\n- SkyrimNet awareness submodule.\n- One DLL for SE and AE, tested on 1.6.1170. SE 1.5.97 and other AE / 1.7.x builds are untested"
-        }
-      ],
-      "external_url": "https://github.com/JykeJ/IntelLite/releases",
-      "languages": [
-        "en"
-      ],
-      "language": "en",
-      "image": {
-        "file": "cover.jpg",
-        "sha": "d0888e10cd1eea7388df94369e36c1b5e26fe1cc",
-        "commit": "8f453dd5dbc2dd5b95ac0e8b2ff40668ba0c4e30",
-        "width": 1223,
-        "height": 688
-      },
-      "stats": {
-        "downloads": 85,
-        "endorsements": 0
       }
     },
     {
@@ -4917,7 +4923,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 3042,
+        "downloads": 3045,
         "endorsements": 4
       }
     },
@@ -9297,7 +9303,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1699,
+        "downloads": 1702,
         "endorsements": 2
       }
     },
