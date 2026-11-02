@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-11-02T14:23:33.055Z",
-  "stats_as_of": "2026-11-02T14:23:32.944Z",
+  "generated_at": "2026-11-02T15:23:53.402Z",
+  "stats_as_of": "2026-11-02T15:23:53.219Z",
   "plugins": [
     {
       "id": "plugins/s709/milk-maid-economy-extensions",
@@ -313,7 +313,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 424,
+        "downloads": 426,
         "endorsements": 4
       }
     },
@@ -369,7 +369,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 155,
+        "downloads": 157,
         "endorsements": 0
       }
     },
@@ -527,7 +527,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 884,
+        "downloads": 885,
         "endorsements": 38
       }
     },
@@ -733,7 +733,7 @@
         "config": 7
       },
       "stats": {
-        "downloads": 54,
+        "downloads": 59,
         "endorsements": 0
       }
     },
@@ -777,7 +777,7 @@
         "height": 720
       },
       "stats": {
-        "downloads": 4,
+        "downloads": 5,
         "endorsements": 0
       }
     },
@@ -1088,7 +1088,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 1265,
+        "downloads": 1266,
         "endorsements": 17
       }
     },
@@ -1953,7 +1953,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 66,
+        "downloads": 68,
         "endorsements": 3
       }
     },
@@ -3020,7 +3020,7 @@
         "height": 720
       },
       "stats": {
-        "downloads": 57,
+        "downloads": 58,
         "endorsements": 0
       }
     },
@@ -4114,7 +4114,7 @@
         "height": 1080
       },
       "stats": {
-        "downloads": 187,
+        "downloads": 188,
         "endorsements": 1
       }
     },
@@ -4782,7 +4782,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1381,
+        "downloads": 1382,
         "endorsements": 2
       }
     },
@@ -5412,7 +5412,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 594,
+        "downloads": 595,
         "endorsements": 1
       }
     },
@@ -6627,7 +6627,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1458,
+        "downloads": 1459,
         "endorsements": 3
       }
     },
@@ -7662,7 +7662,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 500,
+        "downloads": 501,
         "endorsements": 0
       }
     },
@@ -9072,7 +9072,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 747,
+        "downloads": 748,
         "endorsements": 0
       }
     },
@@ -9207,7 +9207,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1308,
+        "downloads": 1309,
         "endorsements": 2
       }
     },
@@ -9297,7 +9297,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1679,
+        "downloads": 1680,
         "endorsements": 2
       }
     },
@@ -10332,7 +10332,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1762,
+        "downloads": 1763,
         "endorsements": 2
       }
     },
@@ -10602,7 +10602,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1442,
+        "downloads": 1443,
         "endorsements": 2
       }
     },
@@ -13752,7 +13752,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2182,
+        "downloads": 2183,
         "endorsements": 2
       }
     },
