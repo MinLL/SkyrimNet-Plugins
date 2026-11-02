@@ -17,6 +17,6 @@
   ],
   "image": "cover.jpg",
   "external_url": "https://github.com/JykeJ/IntelLite/releases",
-  "version": "0.1.0",
-  "changelog": "First public release.\n- Five native SkyrimNet actions: Fetch Person, Deliver Message, Meet Later, Assassinate and Cancel All.\n- MagelightUI panel and consent card.\n- Package travel with off-screen deadlines, door and gate staging, and a simulation fallback.\n- World-wide NPC index, fuzzy name resolution and an editorid blacklist.\n- SkyrimNet awareness submodule.\n- One DLL for SE and AE, tested on 1.6.1170. SE 1.5.97 and other AE / 1.7.x builds are untested"
+  "version": "0.1.1",
+  "changelog": "Improved the staged non-essential assassination path with a dedicated hold package, collision handling around the scene, and a retry/teleport recovery for refused attempts."
 }
