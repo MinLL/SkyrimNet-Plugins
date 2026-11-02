@@ -1,8 +1,72 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-11-02T00:43:12.689Z",
-  "stats_as_of": "2026-11-02T00:43:12.549Z",
+  "generated_at": "2026-11-02T01:14:24.698Z",
+  "stats_as_of": "2026-11-02T01:14:24.575Z",
   "plugins": [
+    {
+      "id": "plugins/telord72612/devious-awareness-base",
+      "plugin_id": "telord72612.devious-awareness-base",
+      "type": "listing",
+      "title": "Devious Awareness Base",
+      "tagline": "Plugins that recognize Devious Device and ZaZ gears worn by NPC and send awareness for deprived state and restriction, worn device, effect with accumulating scale and result.",
+      "author": "telord72612",
+      "tags": [
+        "Prompt"
+      ],
+      "nsfw": true,
+      "icon": "package",
+      "mods": [
+        {
+          "name": "Devious Devices - Assets.esm",
+          "file": "devious devices - assets.esm",
+          "required": true
+        },
+        {
+          "name": "Devious Devices - Integration.esm",
+          "file": "devious devices - integration.esm",
+          "required": true
+        },
+        {
+          "name": "Devious Devices - Expansion.esm",
+          "file": "devious devices - expansion.esm",
+          "required": true
+        },
+        {
+          "name": "Devious Devices - Contraptions.esm",
+          "file": "devious devices - contraptions.esm",
+          "required": true
+        }
+      ],
+      "first_published": "2026-09-24T04:44:57Z",
+      "last_updated": "2026-11-02T01:13:54Z",
+      "version": "1.2.0",
+      "history": [
+        {
+          "version": "1.2.0",
+          "commit": "fa407031597eed3eb7c6645a35c6968810095c46",
+          "date": "2026-11-02T01:13:54Z",
+          "changelog": "No more stutter on SE / AE. An NPC's state is rebuilt only when something about her changes, at most two NPCs per frame, instead of every NPC every few seconds.\nHealing. Healing spells and potions ease what a restraint left behind; she is told who healed her.\nSkin marks (needs RaceMenu). Harsh restraints leave bruises on the neck, wrists, ankles and upper arms — 30 / 50 / 75 / 100 % by how long the gear was worn, half a game day per pain state reached, fading in steps and shorter with healing. Soft gear leaves none. Tunable in [marks] of VRTE_DDZaZ_Scales.ini.\nHoods. An ordinary hood is no longer a gag; one that really covers the mouth (the Execution Hood) is.\nOut cold and carrying: an unconscious NPC is recognised; spare devices in her pack are known.\nAE 1.7.99 supported — needs SKSE 2.3.0+ and the matching Address Library. Built on MinLL/CommonLibVR 4.39.5 (thanks to langfod for the CommonLib update)."
+        },
+        {
+          "version": "1.0.0",
+          "commit": "fb7b78d7458d2db1a2813cad29606975f27f1b27",
+          "date": "2026-10-12T00:36:04Z",
+          "changelog": "Picture update"
+        }
+      ],
+      "external_url": "https://github.com/Telord72612/SkyrimNet-Devious-Awareness-Base/releases/tag/v1.0.0",
+      "image": {
+        "file": "cover.jpg",
+        "sha": "92e5d6db064867c5dcfa98f576463a160e033202",
+        "commit": "fb7b78d7458d2db1a2813cad29606975f27f1b27",
+        "width": 1792,
+        "height": 1008
+      },
+      "stats": {
+        "downloads": 138,
+        "endorsements": 3
+      }
+    },
     {
       "id": "plugins/nosimo/nos-inworld-2-audio-tags",
       "plugin_id": "nosimo.nos-inworld-2-audio-tags",
@@ -505,7 +569,7 @@
         "config": 7
       },
       "stats": {
-        "downloads": 28,
+        "downloads": 29,
         "endorsements": 0
       }
     },
@@ -860,7 +924,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 1222,
+        "downloads": 1223,
         "endorsements": 17
       }
     },
@@ -3414,64 +3478,6 @@
       }
     },
     {
-      "id": "plugins/telord72612/devious-awareness-base",
-      "plugin_id": "telord72612.devious-awareness-base",
-      "type": "listing",
-      "title": "Devious Awareness Base",
-      "tagline": "Plugins that recognize Devious Device and ZaZ gears worn by NPC and send awareness for deprived state and restriction, worn device, effect with accumulating scale and result.",
-      "author": "telord72612",
-      "tags": [
-        "Prompt"
-      ],
-      "nsfw": true,
-      "icon": "package",
-      "mods": [
-        {
-          "name": "Devious Devices - Assets.esm",
-          "file": "devious devices - assets.esm",
-          "required": true
-        },
-        {
-          "name": "Devious Devices - Integration.esm",
-          "file": "devious devices - integration.esm",
-          "required": true
-        },
-        {
-          "name": "Devious Devices - Expansion.esm",
-          "file": "devious devices - expansion.esm",
-          "required": true
-        },
-        {
-          "name": "Devious Devices - Contraptions.esm",
-          "file": "devious devices - contraptions.esm",
-          "required": true
-        }
-      ],
-      "first_published": "2026-09-24T04:44:57Z",
-      "last_updated": "2026-10-12T00:36:04Z",
-      "version": "1.0.0",
-      "history": [
-        {
-          "version": "1.0.0",
-          "commit": "fb7b78d7458d2db1a2813cad29606975f27f1b27",
-          "date": "2026-10-12T00:36:04Z",
-          "changelog": "Picture update"
-        }
-      ],
-      "external_url": "https://github.com/Telord72612/SkyrimNet-Devious-Awareness-Base/releases/tag/v1.0.0",
-      "image": {
-        "file": "cover.jpg",
-        "sha": "92e5d6db064867c5dcfa98f576463a160e033202",
-        "commit": "fb7b78d7458d2db1a2813cad29606975f27f1b27",
-        "width": 1792,
-        "height": 1008
-      },
-      "stats": {
-        "downloads": 138,
-        "endorsements": 3
-      }
-    },
-    {
       "id": "plugins/winterishclover/eirlys-frostblade-skyrimnet-ready-follower",
       "plugin_id": "winterishclover.eirlys-frostblade-skyrimnet-ready-follower",
       "type": "listing",
@@ -4388,7 +4394,7 @@
         "height": 900
       },
       "stats": {
-        "downloads": 231,
+        "downloads": 232,
         "endorsements": 5
       }
     },
