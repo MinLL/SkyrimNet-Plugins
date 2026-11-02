@@ -1,8 +1,63 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-11-02T22:48:34.259Z",
+  "generated_at": "2026-11-02T22:50:33.320Z",
   "stats_as_of": "2026-11-02T22:48:34.143Z",
   "plugins": [
+    {
+      "id": "plugins/jykej/revenge-and-respawn",
+      "plugin_id": "jykej.revenge-and-respawn",
+      "type": "listing",
+      "title": "Revenge and Respawn ",
+      "tagline": "Immersive and configurable death alternative system with SkyrimNet integration.",
+      "author": "jykej",
+      "tags": [
+        "death alternative",
+        "respawn",
+        "revenge"
+      ],
+      "nsfw": false,
+      "icon": "skull",
+      "mods": [],
+      "first_published": "2026-09-30T16:20:12Z",
+      "last_updated": "2026-11-02T22:49:59Z",
+      "version": "1.2.0",
+      "history": [
+        {
+          "version": "1.2.0",
+          "commit": "f5fe311640d19ea7c62ab971de79334de95f0921",
+          "date": "2026-11-02T22:49:59Z",
+          "changelog": "Fixed a bug where the revenge quest could remain active against an enemy that no longer existed."
+        },
+        {
+          "version": "1.1.0",
+          "commit": "3385d1571f3da7867af79a1360c7d8ee1596d3b8",
+          "date": "2026-10-04T14:46:32Z",
+          "changelog": "Added an optional Weakened state debuff and small QoL fixes."
+        },
+        {
+          "version": "1.0.0",
+          "commit": "b3504e4ccb6314f60d13b359bc99dc87393007d9",
+          "date": "2026-09-30T16:20:12Z",
+          "changelog": "Initial release"
+        }
+      ],
+      "external_url": "https://www.nexusmods.com/skyrimspecialedition/mods/193087",
+      "languages": [
+        "en"
+      ],
+      "language": "en",
+      "image": {
+        "file": "cover.jpg",
+        "sha": "f60bf96b45227a8e87de006a5f050a3b53aa75c2",
+        "commit": "b3504e4ccb6314f60d13b359bc99dc87393007d9",
+        "width": 1920,
+        "height": 1080
+      },
+      "stats": {
+        "downloads": 55,
+        "endorsements": 1
+      }
+    },
     {
       "id": "plugins/jykej/intellite",
       "plugin_id": "jykej.intellite",
@@ -4031,55 +4086,6 @@
       "stats": {
         "downloads": 277,
         "endorsements": 0
-      }
-    },
-    {
-      "id": "plugins/jykej/revenge-and-respawn",
-      "plugin_id": "jykej.revenge-and-respawn",
-      "type": "listing",
-      "title": "Revenge and Respawn ",
-      "tagline": "Immersive and configurable death alternative system with SkyrimNet integration.",
-      "author": "jykej",
-      "tags": [
-        "death alternative",
-        "respawn",
-        "revenge"
-      ],
-      "nsfw": false,
-      "icon": "skull",
-      "mods": [],
-      "first_published": "2026-09-30T16:20:12Z",
-      "last_updated": "2026-10-04T14:46:32Z",
-      "version": "1.1.0",
-      "history": [
-        {
-          "version": "1.1.0",
-          "commit": "3385d1571f3da7867af79a1360c7d8ee1596d3b8",
-          "date": "2026-10-04T14:46:32Z",
-          "changelog": "Added an optional Weakened state debuff and small QoL fixes."
-        },
-        {
-          "version": "1.0.0",
-          "commit": "b3504e4ccb6314f60d13b359bc99dc87393007d9",
-          "date": "2026-09-30T16:20:12Z",
-          "changelog": "Initial release"
-        }
-      ],
-      "external_url": "https://www.nexusmods.com/skyrimspecialedition/mods/193087",
-      "languages": [
-        "en"
-      ],
-      "language": "en",
-      "image": {
-        "file": "cover.jpg",
-        "sha": "f60bf96b45227a8e87de006a5f050a3b53aa75c2",
-        "commit": "b3504e4ccb6314f60d13b359bc99dc87393007d9",
-        "width": 1920,
-        "height": 1080
-      },
-      "stats": {
-        "downloads": 55,
-        "endorsements": 1
       }
     },
     {
