@@ -3,7 +3,7 @@
   "type": "listing",
   "title": "Milk Maid Economy Extensions",
   "tagline": "Turns Skyrim into a silly, lewd world where everyone drinks milk, milk makes everyone horny, and breasts grow to hilariously unreasonable proportions. 🥛🍈",
-  "description": "🥛 MME EXTENSIONS\n\nTurns Skyrim into a silly, lewd world where everyone drinks suspiciously stimulating milk, tent poles rise across the province, and breasts grow to hilariously unreasonable proportions. 🥛⛺🍈\n\nMilk Mod Economy Extensions expands MME with reactions, animations, dynamic events, armor interactions, OStim support, and optional AI integration.\n\nEverything is optional and adjustable through the MCM.\n\nMME handles the milk. MME Extensions makes Skyrim notice.\n\n## ⭐ KEY FEATURES\n\n- 🤖 AI-powered NPC reactions, actions, narration, and roleplay through .\n- 🥛 Milk drinking increases production, breast size, and arousal.\n- 📦 Trapped treasure chests with Living, Parasite, and Dwemer armor.\n- 🎬 OStim and SexLab P+ support, plus Elsie Lavache and JUGS integration.\n- 🍼 Auto self-milking, milk sharing, and new ways to become a Milk Maid.\n- 🍈 Configurable movement penalties, breast weight, and BodySlide scaling.\n- 👙 Breast-growth armor stripping and questionable wardrobe upgrades.\n- 💭 Lewd notifications, sounds, animations, and other embarrassing consequences.\n\n**MME still handles the milk. MME Extensions makes Skyrim notice.**",
+  "description": "# 🥛 How Does Milk Mod Economy Work?\n\n## 🍒 Overview\n\n- **What?** An erotic fantasy mod that makes Skyrim delightfully lewd!\n- **Who?** Female characters and connoisseurs of generous curves.\n- **Customization?** EVERYTHING is optional and adjustable to YOUR naughty tastes!\n\n## 😈 What to Expect\n\n- **🍑 Lewd Corruption:** The more you milk, the bustier, thiccer, and more voluptuous you become!\n- **🍈 Erotic Flavor:** Perverted thoughts, sensual moans, bouncing melons, bursting armor, and deliciously heavy curves!\n- **🥛 Drinking Milk:** Boost arousal and trigger compatible lewd animations and bodily reactions for men and women!\n- **⛓️ Devious Armor:** Dungeon traps and questionable craftsmen outfit you with wicked milking contraptions. Enjoy their secret thrills!\n\n# 🌟 Major Features\n\n## 🤖 Integration\n\n- AI-powered lewd NPC dialogue and actions! Party chat time!\n- Flirt, breastfeed, milk, or recruit Milk Maids through natural conversation.\n- NPCs recognize MME mechanics and naughty situations. They WILL notice!\n- Free NPC voices through PocketTTS, including unvoiced mod dialogue.\n- Paid AI roleplay costs roughly $0.30–$0.50/hour with basic settings.\n\n### Major Add-ons\n\n- **SeverActions:** Trade, barter, follow, and more! Seduce someone into running away with you!\n- **OStimNet & SkyrimNet SexLab:** Start and narrate intimate scenes after successfully flirting.\n- **Delectatio et Dominium:** Sexy poses, struggling animations, and dominant roleplay. Get your bondage gear ready!\n\n## 🤖 Magelight UI Integration\n\n- Monitor your horny, milky livestock in one dashboard!\n- Shortcuts for milking, milk drinking, and automatic milking.\n- Customize NPC behavior and naughty in-game messages.\n- Open through the MCM or press Numpad Minus.\n\n## 🍈 Milk Makes Your Melons & Cucumbers Grow!\n\n- 🥛 Drinking milk boosts arousal, inflates boobs, and triggers compatible animations, leaks, and other naughty surprises!\n\n## 💭 Milk Maid Reactions\n\n- LOTS of reactions to fullness, milking, restraints, and erotic armor!\n- Lewd thoughts, sensual moans, and tit-slapping sound effects.\n\n## 📦 Trapped Treasure Chests\n\n- Chests hide wicked surprises, including Living, Parasite, and Dwemer armor that milk and tease you!\n- Magical curses transform adventurers into busty Milk Maids!\n- Unfortunate victims may be forced to drink milk. How scandalous!\n\n## 🐙 Erotic Armor Modifications\n\n- 🔨 Blacksmiths tailor armor for generous curves or conceal Dwemer milking devices.\n- 🧪 Alchemists and Court Wizards fit devious tentacles beneath armor.\n- 💉 Attachments tease, inject aphrodisiacs, boost production, and drain your delicious bounty!\n\n## 🍈 Breast Growth & Weight\n\n- 🍑 Milk Maid levels bring increasingly voluptuous curves!\n- 🍈 Optional movement speed and carry-weight penalties.\n- 👏 Above 50% milk capacity, movement can trigger playful tit-slapping sounds!\n\n## 👙 Armor Stripping\n\n- Growing breasts can burst free of an inadequate wardrobe!\n- Complete with naughty moans and optional commentary.\n\n## 🎬 OStim Integration\n\n- Supports modern OStim alongside SexLab.\n- Experimental OStim-only FOMOD option available. SexLab-dependent add-ons won't work in this mode.\n\n## ⚡ SexLab P+ Support\n\n- Modernized SexLab with better performance. Requires animations in the new format.\n\n## 🐄 Elsie Lavache Integration\n\n- Enhances milk effects for Maven Black-Briar, Danica, and other MILFs transformed into busty bimbos!\n- adds AI roleplay and free voiced dialogue through PocketTTS.\n\n# ✨ Minor Features\n\n## 🥛 Oninus Lactis NG Integration\n\n- Leak when your bountiful assets are bursting! Everyone will notice!\n\n## 🥛 Skyrim Drinks Milk\n\n- NPCs casually drink milk in inns, towns, cities, and palaces.\n- Thirsty Milk Maids help themselves, with unique NPCs prioritized and amusing notifications!\n\n## 🧙 Reversing Milk Maid Progression\n\n- Visit a Court Wizard to tame those excessively generous curves!\n\n## 🍼 JUGS Integration\n\n- Adds milk-related effects to intimate encounters. Fresh from the source!\n\n## 🥚 OMania Integration\n\n- Pregnancy events can transform characters into Milk Maids.\n- Get eggnant, become a Milk Maid, and regret nothing!",
   "author": "s709",
   "tags": [
     "milk mod economy",
@@ -79,6 +79,41 @@
       "name": "SexLab Inflation Framework.esp",
       "file": "sexlab inflation framework.esp",
       "required": true
+    },
+    {
+      "name": "OSLAroused.esp",
+      "file": "oslaroused.esp",
+      "required": false
+    },
+    {
+      "name": "SkyrimNet.esp",
+      "file": "skyrimnet.esp",
+      "required": false
+    },
+    {
+      "name": "OStim.esp",
+      "file": "ostim.esp",
+      "required": false
+    },
+    {
+      "name": "Jugs.esp",
+      "file": "jugs.esp",
+      "required": false
+    },
+    {
+      "name": "EstrusUnified.esp",
+      "file": "estrusunified.esp",
+      "required": false
+    },
+    {
+      "name": "DW.esp",
+      "file": "dw.esp",
+      "required": false
+    },
+    {
+      "name": "OninusLactis.esp",
+      "file": "oninuslactis.esp",
+      "required": false
     }
   ],
   "languages": [
@@ -86,6 +121,6 @@
   ],
   "image": "cover.jpg",
   "external_url": "https://www.loverslab.com/files/file/50820-mme-milk-mod-economy-extensions/",
-  "version": "1.4.1",
-  "changelog": "# 🥛 MME Extensions Changelog\n\n## 🌟 Major Features\n\n- 🍼 **JUGS Mod Compatibility:** Added JUGS integration and related bug fixes. You can now erotically share your milk with some extra flavor!\n- 🍈 **Breast Weight & Movement Penalties:** New MCM options to configure optional movement speed and weight debuffs. Big tits weigh you down!\n- 👏 **Breast Slapping Sounds:** When milk capacity exceeds 50%, movement triggers playful tit-slapping sound effects. Every step deserves a round of applause!\n- 🎬 **Experimental OStim-Only Mode:** New FOMOD installation option for an OStim-only experience. WARNING: SexLab-based expansions, including Elsie Lavache, Devious Devices, and JUGS, are not supported in this mode. Some pleasures simply don't mix!\n- 🍑 **BodySlide Scaling:** New sliders to customize body scaling as Milk Maid levels increase. The higher your level, the thiccer you get!\n\n## 🔧 Minor Features\n\n- 💦 **Arousal Reactions:** Notifications and sounds are now more selective, focusing on milk-related targets, such as milk drinkers and Milk Maids.\n\n## 🐛 Bug Fixes\n\n- 🥛 **SexLab P+ Breastfeeding:** Fixed an issue where breastfeeding selected the wrong milk source. No more breastfeeding men!\n- 🔗 **Devious Devices Detection:** Fixed restraint checks triggering even when Devious Devices wasn't installed. No more imaginary restraints!"
+  "version": "1.5.0",
+  "changelog": "# 🥛 MME Extensions Changelog\n\n## 🌟 Major Features\n\n- 🤖 **Mage UI Behavior Manager:** Customize how Skyrim.Net NPCs speak and act during MME events.\n- 🪄 **Magelight UI Dashboard:** Optional Milk Maid status tracker with commands for naughty antics.\n- 🥛 **Improved Milk Curse:** Now boosts milk amounts for existing Milk Maids, not just new ones.\n\n## 🔧 Minor Features\n\n- 🍼 **Post-Milking Narration:** Skyrim.Net knows who's been milked. No more endless begging!\n- 🤖 **Milk Maid Decorators:** Better status tracking and AI awareness.\n- ⚙️ **MME Controls:** Essential original MME buttons mirrored in the Extensions main menu.\n- 🧪 **Lactacid Boost:** Adjustable milk production boost in Fixed Milk Mode.\n- 💦 **Oninus Lactic NG:** Milk leaks at 100% capacity.\n- 🐙 **Estrus Unified:** Compatibility for eggnancy and tentacle antics.\n- 📦 **Trapped Chest MCM:** Cleaner, simpler settings.\n- 🤖 **Curse Awareness:** Skyrim.Net recognizes trapped-chest magic curses for narration.\n\n## 🐛 Bug Fixes\n\n- 🧪 **Lactacid:** Fixed an overly active script.\n- 🍈 **Debuff Display:** Fixed milk weight and movement speed penalty displays in the MCM.\n- 🍼 **SexLab P+:** Stopped empty-source milking restarts between stages; added participant checks and gated diagnostics.\n- 💬 **Narration:** No more false claims of self-milking or completely emptied milk reserves.\n- 🐙 **SexLab & OStim:** Locked armor stays equipped during intimate scenes. Those tentacles are clingy!"
 }
