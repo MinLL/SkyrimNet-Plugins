@@ -1,8 +1,147 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-11-03T15:22:52.231Z",
-  "stats_as_of": "2026-11-03T15:22:51.934Z",
+  "generated_at": "2026-11-03T15:44:28.061Z",
+  "stats_as_of": "2026-11-03T15:44:27.943Z",
   "plugins": [
+    {
+      "id": "plugins/taka/skyrimnet-minigame",
+      "plugin_id": "taka.skyrimnet-minigame",
+      "type": "listing",
+      "title": "SkyrimNet MiniGame",
+      "tagline": "Play Reversi and Liar's Dice with the NPCs around you on a board drawn over the game. Your opponents talk about every move, know how the game stands, and remember it.",
+      "author": "taka",
+      "tags": [
+        "Gameplay",
+        "NPC",
+        "Minigame",
+        "Dialogue",
+        "Prisma UI"
+      ],
+      "nsfw": false,
+      "icon": "package",
+      "mods": [],
+      "first_published": "2026-11-03T15:43:06Z",
+      "last_updated": "2026-11-03T15:43:06Z",
+      "version": "0.1.0",
+      "history": [
+        {
+          "version": "0.1.0",
+          "commit": "95ecad5ed411d5f06f4f9d95f6513dd532a63864",
+          "date": "2026-11-03T15:43:06Z",
+          "changelog": "First release: Reversi against one NPC and Liar's Dice against up to three, with SkyrimNet commentary, the game state in each opponent's prompt, your own bids spoken through Transform Dialogue, NPC challenges to Reversi, and face frames of your opponents on the board."
+        }
+      ],
+      "external_url": "https://github.com/nightlantern-mods/skyrimnet_MiniGame",
+      "languages": [
+        "en",
+        "ja"
+      ],
+      "language": "en",
+      "image": {
+        "file": "cover.jpg",
+        "sha": "c29e9e93a7d7274e3b4347cf8ce495d501f95e51",
+        "commit": "95ecad5ed411d5f06f4f9d95f6513dd532a63864",
+        "width": 1920,
+        "height": 1080
+      },
+      "stats": {
+        "downloads": 0,
+        "endorsements": 0
+      }
+    },
+    {
+      "id": "plugins/maeyanie/itemnet",
+      "plugin_id": "maeyanie.itemnet",
+      "type": "listing",
+      "title": "ItemNet",
+      "tagline": "An offline batch description generator and editor for the OmniSight system.",
+      "author": "maeyanie",
+      "tags": [
+        "omnisight",
+        "bulk",
+        "batch"
+      ],
+      "nsfw": false,
+      "icon": "vision",
+      "mods": [],
+      "first_published": "2026-11-03T15:42:41Z",
+      "last_updated": "2026-11-03T15:42:41Z",
+      "version": "1.0.0",
+      "history": [
+        {
+          "version": "1.0.0",
+          "commit": "f1bd1c87ea65f82e93af4bf1a4a0e187d899b1d7",
+          "date": "2026-11-03T15:42:41Z",
+          "changelog": "Initial release"
+        }
+      ],
+      "external_url": "https://github.com/Maeyanie/ItemNet",
+      "languages": [
+        "en"
+      ],
+      "language": "en",
+      "stats": {
+        "downloads": 0,
+        "endorsements": 0
+      }
+    },
+    {
+      "id": "plugins/taka/skyrimnet-slave-auction",
+      "plugin_id": "taka.skyrimnet-slave-auction",
+      "type": "listing",
+      "title": "SkyrimNet Slave Auction",
+      "tagline": "A secret slave auction near Riften, voiced by SkyrimNet's AI. Be sold on its stage, or sit among the buyers and bid for your followers.",
+      "author": "taka",
+      "tags": [
+        "auction",
+        "followers",
+        "captivity",
+        "dialogue",
+        "framework"
+      ],
+      "nsfw": true,
+      "icon": "package",
+      "mods": [
+        {
+          "name": "ZaZAnimationPack.esm",
+          "file": "zazanimationpack.esm",
+          "required": true
+        },
+        {
+          "name": "nwsFollowerFramework.esp",
+          "file": "nwsfollowerframework.esp",
+          "required": true
+        }
+      ],
+      "first_published": "2026-11-03T15:42:38Z",
+      "last_updated": "2026-11-03T15:42:38Z",
+      "version": "0.1.0",
+      "history": [
+        {
+          "version": "0.1.0",
+          "commit": "8f1e21f736619485df31c30be696940b3a15859f",
+          "date": "2026-11-03T15:42:38Z",
+          "changelog": "First release."
+        }
+      ],
+      "external_url": "https://github.com/nightlantern-mods/skyrimnet_SlaveAuction",
+      "languages": [
+        "en",
+        "ja"
+      ],
+      "language": "en",
+      "image": {
+        "file": "cover.jpg",
+        "sha": "bafe8f299b8b0bbb69307aaa08d47df6387efc72",
+        "commit": "8f1e21f736619485df31c30be696940b3a15859f",
+        "width": 1280,
+        "height": 720
+      },
+      "stats": {
+        "downloads": 0,
+        "endorsements": 0
+      }
+    },
     {
       "id": "plugins/zevick/physical-letters",
       "plugin_id": "zevick.physical-letters",
@@ -600,7 +739,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 184,
+        "downloads": 185,
         "endorsements": 0
       }
     },
@@ -1980,7 +2119,7 @@
         "height": 760
       },
       "stats": {
-        "downloads": 117,
+        "downloads": 118,
         "endorsements": 0
       }
     },
@@ -5166,7 +5305,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1583,
+        "downloads": 1584,
         "endorsements": 0
       }
     },
@@ -9231,7 +9370,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1338,
+        "downloads": 1340,
         "endorsements": 2
       }
     },
@@ -12966,7 +13105,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 597,
+        "downloads": 598,
         "endorsements": 0
       }
     },
