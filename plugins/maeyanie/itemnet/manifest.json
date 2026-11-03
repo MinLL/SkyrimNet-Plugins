@@ -1,0 +1,22 @@
+{
+  "id": "maeyanie.itemnet",
+  "type": "listing",
+  "title": "ItemNet",
+  "tagline": "An offline batch description generator and editor for the OmniSight system.",
+  "description": "ItemNet writes better clothing and armour descriptions for SkyrimNet.\n\nSkyrimNet's OmniSight describes each item from screenshots of the item on its own. It also strips out any body mesh. Without a body for context, vision models often misread what they see: a brief floating in mid-air gets described as a \"chest bandeau\", and pieces of an outfit come out as unrelated objects.\n\nItemNet renders each item on an optional mannequin body from four sides, using your own load order:\n\n- Your Nord race's body, hands, feet and head\n- Your BodySlide meshes and skin textures\n- The slot hiding the game itself applies\n\nIt then has a vision model describe the item, lets you review and edit the result, and saves it into SkyrimNet's database as a locked entry.\n\nIncludes support for:\n- Bulk item describing, including multiple parallel requests, and only running one call for multiple items with the same mesh and textures (for the many enchanted variants which look identical).\n- Importing your provider and models settings from SkyrimNet.\n- Copy/Paste names and descriptions.\n- PBR Textures.\n\nSuggested vision models (I've tried a lot during testing, these are the ones I found the best):\n- ~z-ai/glm-flash-latest (5.3 as of writing): Fast, cheap, and writes fairly well. On certain more complex things it can make mistakes, however.\n- meta/muse-spark-1.3-contributor: Slower, fairly cheap, and accurate. Descriptions are more bland than GLM Flash, but it can understand more things.\n- anthropic/claude-opus-5.5: The heavyweight. Does an excellent job, but _very_ expensive compared to the others. Only use it on the most difficult items, and only if you can't think of how to write it yourself... unless you have a subscription and use SkyrimNet MultiProxy.",
+  "author": "maeyanie",
+  "tags": [
+    "omnisight",
+    "bulk",
+    "batch"
+  ],
+  "nsfw": false,
+  "icon": "vision",
+  "mods": [],
+  "languages": [
+    "en"
+  ],
+  "external_url": "https://github.com/Maeyanie/ItemNet",
+  "version": "1.0.0",
+  "changelog": "Initial release"
+}
