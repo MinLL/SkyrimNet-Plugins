@@ -1,8 +1,136 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-11-03T05:22:45.769Z",
-  "stats_as_of": "2026-11-03T05:22:45.673Z",
+  "generated_at": "2026-11-03T05:34:17.512Z",
+  "stats_as_of": "2026-11-03T05:34:17.443Z",
   "plugins": [
+    {
+      "id": "plugins/zevick/physical-letters",
+      "plugin_id": "zevick.physical-letters",
+      "type": "listing",
+      "title": "Physical Letters",
+      "tagline": "Allows you to write and receive letters from NPCs",
+      "author": "zevick",
+      "tags": [
+        "physical",
+        "letters",
+        "writing",
+        "courier"
+      ],
+      "nsfw": false,
+      "icon": "scroll",
+      "mods": [],
+      "first_published": "2026-10-10T02:04:29Z",
+      "last_updated": "2026-11-03T05:33:54Z",
+      "version": "1.1.0",
+      "history": [
+        {
+          "version": "1.1.0",
+          "commit": "600caa569006176b7cb570d588c7ead28282218b",
+          "date": "2026-11-03T05:33:54Z",
+          "changelog": "- Added the ability to forge fake letters from NPCs. Letters now start with a \"From:\" heading.\n- Items can be attached to a letter when mailing one as a package. You will be prompted when you give a letter to an innkeeper or courier.\n- A new DM letter lets you manually dispatch letters between any NPCs. The letters are canon.\n- The MCM has a new page for toggling letter actions. Physical Letters ships no actions by default.\n- Fixes for NPC Names Distributor and merchant container crashes\n- Cyrillic encoding changes\n- A new API for other mod authors to integrate with Physical Letters"
+        },
+        {
+          "version": "1.0.1",
+          "commit": "c11739f3fbe84746cd9e17d95ba4fc1aee790bdf",
+          "date": "2026-10-10T22:53:00Z",
+          "changelog": "Fixed a conflict with Dynamic Strings Distributor that caused the game to crash."
+        },
+        {
+          "version": "1.0.0",
+          "commit": "64eb0b72f14988d0a2ef77c350d2722f69d07f0d",
+          "date": "2026-10-10T20:15:04Z",
+          "changelog": "Initial release"
+        }
+      ],
+      "external_url": "https://github.com/zevck/Physical-Letters/blob/main/README.md",
+      "languages": [
+        "en",
+        "zh",
+        "fr",
+        "de",
+        "it",
+        "ja",
+        "pl",
+        "es",
+        "ru"
+      ],
+      "language": "en",
+      "image": {
+        "file": "cover.png",
+        "sha": "08790950a699a53fd5fb6922991812597ba09209",
+        "commit": "e86bc6f55a53338c0c5dbf406b0da401f96b44b4",
+        "width": 1672,
+        "height": 941
+      },
+      "stats": {
+        "downloads": 128,
+        "endorsements": 2
+      }
+    },
+    {
+      "id": "plugins/zevick/physical-diaries",
+      "plugin_id": "zevick.physical-diaries",
+      "type": "listing",
+      "title": "Physical Diaries",
+      "tagline": "Adds diary books to NPC's inventories to read SkyrimNet diaries in game",
+      "author": "zevick",
+      "tags": [
+        "physical",
+        "diaries",
+        "writing",
+        "journal"
+      ],
+      "nsfw": false,
+      "icon": "diary",
+      "mods": [],
+      "first_published": "2026-10-10T02:04:26Z",
+      "last_updated": "2026-11-03T05:33:48Z",
+      "version": "2.0.2",
+      "history": [
+        {
+          "version": "2.0.2",
+          "commit": "abba1c1347f7f01218ce3dc2b797c793042bf232",
+          "date": "2026-11-03T05:33:48Z",
+          "changelog": "- General goods merchants always sell blank journals. Blank journals no longer appear in houses.\n- Logging improvements\n- Changes to how Cyrillic text is encoded"
+        },
+        {
+          "version": "2.0.1",
+          "commit": "878ce51756f4078e60a90635d38ef90eafc3b5dd",
+          "date": "2026-10-10T22:52:52Z",
+          "changelog": "Fixed a conflict with Dynamic Strings Distributor that caused the game to crash."
+        },
+        {
+          "version": "2.0.0",
+          "commit": "9e72de6d1407fd6261052a280882a256d13389dd",
+          "date": "2026-10-10T02:04:26Z",
+          "changelog": "Initial release"
+        }
+      ],
+      "external_url": "https://github.com/zevck/SkyrimNet-Physical-Diaries/blob/main/README.md",
+      "languages": [
+        "en",
+        "zh",
+        "fr",
+        "de",
+        "it",
+        "ja",
+        "pl",
+        "ru",
+        "es"
+      ],
+      "language": "en",
+      "image": {
+        "file": "cover.jpg",
+        "sha": "fff3bba8682bf7ba2f0525dbb573cd64b984da8e",
+        "commit": "abba1c1347f7f01218ce3dc2b797c793042bf232",
+        "width": 1920,
+        "height": 1080
+      },
+      "stats": {
+        "downloads": 84,
+        "endorsements": 1
+      }
+    },
     {
       "id": "plugins/jykej/revenge-and-respawn",
       "plugin_id": "jykej.revenge-and-respawn",
@@ -472,7 +600,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 178,
+        "downloads": 179,
         "endorsements": 0
       }
     },
@@ -3770,122 +3898,6 @@
       "stats": {
         "downloads": 340,
         "endorsements": 3
-      }
-    },
-    {
-      "id": "plugins/zevick/physical-letters",
-      "plugin_id": "zevick.physical-letters",
-      "type": "listing",
-      "title": "Physical Letters",
-      "tagline": "Allows you to write and receive letters from NPCs",
-      "author": "zevick",
-      "tags": [
-        "physical",
-        "letters",
-        "writing",
-        "courier"
-      ],
-      "nsfw": false,
-      "icon": "scroll",
-      "mods": [],
-      "first_published": "2026-10-10T02:04:29Z",
-      "last_updated": "2026-10-10T22:53:00Z",
-      "version": "1.0.1",
-      "history": [
-        {
-          "version": "1.0.1",
-          "commit": "c11739f3fbe84746cd9e17d95ba4fc1aee790bdf",
-          "date": "2026-10-10T22:53:00Z",
-          "changelog": "Fixed a conflict with Dynamic Strings Distributor that caused the game to crash."
-        },
-        {
-          "version": "1.0.0",
-          "commit": "64eb0b72f14988d0a2ef77c350d2722f69d07f0d",
-          "date": "2026-10-10T20:15:04Z",
-          "changelog": "Initial release"
-        }
-      ],
-      "external_url": "https://github.com/zevck/Physical-Letters",
-      "languages": [
-        "en",
-        "zh",
-        "fr",
-        "de",
-        "it",
-        "ja",
-        "pl",
-        "es",
-        "ru"
-      ],
-      "language": "en",
-      "image": {
-        "file": "cover.png",
-        "sha": "08790950a699a53fd5fb6922991812597ba09209",
-        "commit": "e86bc6f55a53338c0c5dbf406b0da401f96b44b4",
-        "width": 1672,
-        "height": 941
-      },
-      "stats": {
-        "downloads": 128,
-        "endorsements": 2
-      }
-    },
-    {
-      "id": "plugins/zevick/physical-diaries",
-      "plugin_id": "zevick.physical-diaries",
-      "type": "listing",
-      "title": "Physical Diaries",
-      "tagline": "Adds diary book items to NPC's inventories to read SkyrimNet diaries in game",
-      "author": "zevick",
-      "tags": [
-        "physical",
-        "diaries",
-        "writing",
-        "journal"
-      ],
-      "nsfw": false,
-      "icon": "diary",
-      "mods": [],
-      "first_published": "2026-10-10T02:04:26Z",
-      "last_updated": "2026-10-10T22:52:52Z",
-      "version": "2.0.1",
-      "history": [
-        {
-          "version": "2.0.1",
-          "commit": "878ce51756f4078e60a90635d38ef90eafc3b5dd",
-          "date": "2026-10-10T22:52:52Z",
-          "changelog": "Fixed a conflict with Dynamic Strings Distributor that caused the game to crash."
-        },
-        {
-          "version": "2.0.0",
-          "commit": "9e72de6d1407fd6261052a280882a256d13389dd",
-          "date": "2026-10-10T02:04:26Z",
-          "changelog": "Initial release"
-        }
-      ],
-      "external_url": "https://github.com/zevck/SkyrimNet-Physical-Diaries",
-      "languages": [
-        "en",
-        "zh",
-        "fr",
-        "de",
-        "it",
-        "ja",
-        "pl",
-        "ru",
-        "es"
-      ],
-      "language": "en",
-      "image": {
-        "file": "cover.png",
-        "sha": "cb7bf4a0480a774e07a899596d3508380f5fca26",
-        "commit": "9e72de6d1407fd6261052a280882a256d13389dd",
-        "width": 1672,
-        "height": 941
-      },
-      "stats": {
-        "downloads": 84,
-        "endorsements": 1
       }
     },
     {
