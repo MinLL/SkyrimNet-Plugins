@@ -1,8 +1,58 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-11-03T20:23:13.888Z",
-  "stats_as_of": "2026-11-03T20:22:26.351Z",
+  "generated_at": "2026-11-03T20:48:14.919Z",
+  "stats_as_of": "2026-11-03T20:48:14.782Z",
   "plugins": [
+    {
+      "id": "plugins/phospheneoverdrive/playersignals-for-skyrimnet",
+      "plugin_id": "phospheneoverdrive.playersignals-for-skyrimnet",
+      "type": "listing",
+      "title": "PlayerSignals for SkyrimNet",
+      "tagline": "A little less talking, a little more nodding.",
+      "author": "phospheneoverdrive",
+      "tags": [
+        "roleplay",
+        "communication",
+        "immersion",
+        "utility"
+      ],
+      "nsfw": false,
+      "icon": "package",
+      "mods": [],
+      "first_published": "2026-10-03T01:25:26Z",
+      "last_updated": "2026-11-03T20:45:50Z",
+      "version": "0.2.0",
+      "history": [
+        {
+          "version": "0.2.0",
+          "commit": "d70778baddc10c680a0f551590931c7f371eaa36",
+          "date": "2026-11-03T20:45:50Z",
+          "changelog": "- New Magelight wheel with twelve slices, replacing the UIExtensions menu (UIExtensions is no longer needed).\n- Openly tips, Shift, gamepad X or no target address everyone nearby.\n- New slot kinds: hybrids (signal plus action), actions, game keys and raw keys (bundled PlayerSignals.dll).\n- Gamepad support: stick aiming, A to choose, B to cancel, X for Openly.\n- Faster wheel opening.\n- Targeted signals are now answered by the NPC you aimed at, not a bystander.\n- Per-slot colours, player guide and AI configuration helper.\n\nUIExtensions is no longer required; Magelight 1.7.1+ and Address Library are. Install the whole package over 0.1.0 (replace it, don't merge) and load a save."
+        },
+        {
+          "version": "0.1.0",
+          "commit": "bf7be0889eb259b8ea57998fe209c965278d7eb5",
+          "date": "2026-10-03T01:25:26Z",
+          "changelog": "Initial limited-test release with a UIExtensions wheel, JSON layout and gesture customization, player-originator targeted/group narration, and an optional intent-authoring helper. In-game testing confirmed the player as originator for all eight gestures in the reviewed session; seven received NPC responses and the final no-audience gesture correctly produced none. A limited removal/cleaned-save load test is documented; comprehensive save compatibility and long-term removal safety remain unverified."
+        }
+      ],
+      "external_url": "https://github.com/Gerkinfeltser/PlayerSignals/releases/latest",
+      "languages": [
+        "en"
+      ],
+      "language": "en",
+      "image": {
+        "file": "cover.png",
+        "sha": "63b5da1958b99922294aade7de538b0c46e48da7",
+        "commit": "bf7be0889eb259b8ea57998fe209c965278d7eb5",
+        "width": 1664,
+        "height": 936
+      },
+      "stats": {
+        "downloads": 66,
+        "endorsements": 0
+      }
+    },
     {
       "id": "plugins/urtubesrclogged/battle-summaries",
       "plugin_id": "urtubesrclogged.battle-summaries",
@@ -76,7 +126,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 351,
+        "downloads": 352,
         "endorsements": 7
       }
     },
@@ -279,7 +329,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 140,
+        "downloads": 141,
         "endorsements": 2
       }
     },
@@ -1099,7 +1149,7 @@
         "config": 7
       },
       "stats": {
-        "downloads": 71,
+        "downloads": 72,
         "endorsements": 0
       }
     },
@@ -3425,7 +3475,7 @@
         "height": 720
       },
       "stats": {
-        "downloads": 62,
+        "downloads": 63,
         "endorsements": 0
       }
     },
@@ -3766,7 +3816,7 @@
         "height": 1008
       },
       "stats": {
-        "downloads": 37,
+        "downloads": 38,
         "endorsements": 0
       }
     },
@@ -4044,7 +4094,7 @@
         "config": 4
       },
       "stats": {
-        "downloads": 347,
+        "downloads": 348,
         "endorsements": 3
       }
     },
@@ -4291,50 +4341,6 @@
       }
     },
     {
-      "id": "plugins/phospheneoverdrive/playersignals-for-skyrimnet",
-      "plugin_id": "phospheneoverdrive.playersignals-for-skyrimnet",
-      "type": "listing",
-      "title": "PlayerSignals for SkyrimNet",
-      "tagline": "A little less talking, a little more nodding.",
-      "author": "phospheneoverdrive",
-      "tags": [
-        "roleplay",
-        "communication",
-        "immersion",
-        "utility"
-      ],
-      "nsfw": false,
-      "icon": "package",
-      "mods": [],
-      "first_published": "2026-10-03T01:25:26Z",
-      "last_updated": "2026-10-03T01:25:26Z",
-      "version": "0.1.0",
-      "history": [
-        {
-          "version": "0.1.0",
-          "commit": "bf7be0889eb259b8ea57998fe209c965278d7eb5",
-          "date": "2026-10-03T01:25:26Z",
-          "changelog": "Initial limited-test release with a UIExtensions wheel, JSON layout and gesture customization, player-originator targeted/group narration, and an optional intent-authoring helper. In-game testing confirmed the player as originator for all eight gestures in the reviewed session; seven received NPC responses and the final no-audience gesture correctly produced none. A limited removal/cleaned-save load test is documented; comprehensive save compatibility and long-term removal safety remain unverified."
-        }
-      ],
-      "external_url": "https://github.com/Gerkinfeltser/PlayerSignals/releases/latest",
-      "languages": [
-        "en"
-      ],
-      "language": "en",
-      "image": {
-        "file": "cover.png",
-        "sha": "63b5da1958b99922294aade7de538b0c46e48da7",
-        "commit": "bf7be0889eb259b8ea57998fe209c965278d7eb5",
-        "width": 1664,
-        "height": 936
-      },
-      "stats": {
-        "downloads": 66,
-        "endorsements": 0
-      }
-    },
-    {
       "id": "plugins/pdusen/knowledge-pack-for-ultimate-college-of-winterhold-more",
       "plugin_id": "pdusen.knowledge-pack-for-ultimate-college-of-winterhold-more",
       "type": "bundle",
@@ -4475,7 +4481,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 488,
+        "downloads": 489,
         "endorsements": 0
       }
     },
@@ -4683,7 +4689,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 286,
+        "downloads": 287,
         "endorsements": 0
       }
     },
