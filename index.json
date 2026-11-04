@@ -1,8 +1,82 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-11-04T02:24:40.986Z",
-  "stats_as_of": "2026-11-04T02:24:40.865Z",
+  "generated_at": "2026-11-04T03:10:53.993Z",
+  "stats_as_of": "2026-11-04T03:10:53.907Z",
   "plugins": [
+    {
+      "id": "plugins/tetherball88/ostimnet",
+      "plugin_id": "tetherball88.ostimnet",
+      "type": "listing",
+      "title": "OStimNet",
+      "tagline": "Intimate encounter AI framework integration for OStim and SkyrimNet.",
+      "author": "tetherball88",
+      "tags": [
+        "ostim",
+        "animation",
+        "adult"
+      ],
+      "nsfw": true,
+      "icon": "heart",
+      "mods": [],
+      "first_published": "2026-09-12T06:44:36-08:00",
+      "last_updated": "2026-11-04T03:10:22Z",
+      "version": "2.6.0",
+      "history": [
+        {
+          "version": "2.6.0",
+          "commit": "3c16bb252b76512fa1e917d2e7ef3f4d2d3faa80",
+          "date": "2026-11-04T03:10:22Z",
+          "changelog": "!!!ATTENTION!!!\nIt requires new OStim Navigator version 2.3.0(https://github.com/tetherball88/OStimNavigator/releases/tag/v2.3.0)\n\n### Added\n\n- **Faster, more reliable AI scene setup & progression (SkyrimNet Decisions support)** — OStimNet now uses SkyrimNet's **Decisions** system to evaluate and set up scenes step-by-step instead of relying solely on long, complex AI text responses:\n  - Makes scene evaluations significantly faster, more consistent, and far less prone to AI formatting errors—especially with smaller or faster AI models.\n  - Covers all scene evaluations: starting new sexual or affectionate scenes, inviting or joining ongoing scenes, automatic scene progression, near-climax pull-out decisions, spontaneous NPC location scans, and scenes started by external mods.\n  - Enabled by default under **General → Use Jev Decisions for evaluations**. If no Decisions model is configured in SkyrimNet, OStimNet automatically falls back to the standard Game Master AI without any extra setup needed.\n\nFull changelog is on github."
+        },
+        {
+          "version": "2.5.7",
+          "commit": "d12033c6b7cffe5de11c41fc920e29f1a6cd1f23",
+          "date": "2026-10-24T03:32:49Z",
+          "changelog": "### Fixed\n\n- **Hotkeys triggering on mouse clicks & extended keys mapping** — Fixed an issue in `HotkeyInputSink::ProcessEvent` where configuring hotkeys (`Advance scene (player thread)`, `Location scan`, `Toggle mute`) to keys without a standard 1-byte `MapVirtualKeyA` scan code (such as `Pause/Break` / `VK_PAUSE = 19`, which mapped to `0`) caused every Left Mouse Click (`IDCode == 0`) to trigger the hotkey action and advance the player's scene:\n  - Restricted keyboard hotkey evaluation strictly to `RE::INPUT_DEVICE::kKeyboard` events and required non-zero DirectInput scan codes.\n  - Added `VkToDirectInputKeyCode` helper with explicit `VK_PAUSE` (`0xC5`) and `VK_NUMLOCK` (`0x45`) handling and `MAPVK_VK_TO_VSC_EX` translation for `0xE0`-extended keys (arrow keys, Insert/Delete/Home/End/PageUp/PageDown, Numpad Divide, right modifiers)."
+        },
+        {
+          "version": "2.5.6",
+          "commit": "af7bd389cff21a7671a283fd675e84dab10c57c6",
+          "date": "2026-10-18T03:50:27Z",
+          "changelog": "Changelog (2.5.6):\n## v2.5.6\n### Added\n\n- **Session mute Papyrus API** — Added global native Papyrus functions on `OStimNet` (`ToggleMute()`, `IsMuted()`, and `SetMuted(bool akMuted)`)\n\n### Fixed\n\n- **Spectator handling across thread continuations (join/swap)** — Fixed spectators being prematurely removed or stuck when an active scene transitions via thread continuation\n- **Thread continuation event prompt rendering** — Added `sex_continue_thread` event rendering (`{{msg}}`) to `ostimnet_event_compact.prompt` and `ostimnet_event_verbose.prompt` so scene continuation events are no longer omitted from SkyrimNet event logs.\n- **External thread start with AI evaluation** — Fixed third-party / external scene starts failing when delegating scene evaluation to AI"
+        },
+        {
+          "version": "2.5.4",
+          "commit": "d492cd94f3f219da97c2b0ca51124c2e9ec2fed1",
+          "date": "2026-10-05T22:09:21Z",
+          "changelog": "attempt to improve reset OStimNet state when save was done during OStim scene and then loaded. I highly not recommend saving during OStim scenes it can break your game.\nupdated Billyy's meta tags for ostimnet(intent and position tags, not descriptions!)"
+        },
+        {
+          "version": "2.5.3",
+          "commit": "62c1ab313251a1148723fb97dbc72b55146f5df6",
+          "date": "2026-09-29T17:08:22Z",
+          "changelog": "added Being Female pregnancy and female cycles note - to make female npcs aware of pregnancy risk."
+        },
+        {
+          "version": "2.5.0",
+          "commit": "6d53bf9f8ee01c6aca1b0d6fdef004ef2fa02b62",
+          "date": "2026-09-26T05:47:57Z",
+          "changelog": "replaced cover image"
+        },
+        {
+          "version": "2.4.2",
+          "commit": "6beaea6234d873a19a83b6da3003d65d0c5982ab",
+          "date": "2026-09-12T06:44:36-08:00"
+        }
+      ],
+      "external_url": "https://github.com/tetherball88/OStimNet/releases/latest",
+      "image": {
+        "file": "cover.png",
+        "sha": "24935e170bd427bf1791e1330315a5a711f7e715",
+        "commit": "6d53bf9f8ee01c6aca1b0d6fdef004ef2fa02b62",
+        "width": 2048,
+        "height": 1152
+      },
+      "stats": {
+        "downloads": 289,
+        "endorsements": 7
+      }
+    },
     {
       "id": "plugins/phospheneoverdrive/playersignals-for-skyrimnet",
       "plugin_id": "phospheneoverdrive.playersignals-for-skyrimnet",
@@ -1113,7 +1187,7 @@
       "curated": true,
       "stats": {
         "downloads": 916,
-        "endorsements": 38
+        "endorsements": 39
       }
     },
     {
@@ -1237,7 +1311,7 @@
         "config": 7
       },
       "stats": {
-        "downloads": 74,
+        "downloads": 75,
         "endorsements": 0
       }
     },
@@ -1318,7 +1392,7 @@
         "config": 7
       },
       "stats": {
-        "downloads": 110,
+        "downloads": 111,
         "endorsements": 0
       }
     },
@@ -1597,7 +1671,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 1354,
+        "downloads": 1356,
         "endorsements": 17
       }
     },
@@ -2819,74 +2893,6 @@
       }
     },
     {
-      "id": "plugins/tetherball88/ostimnet",
-      "plugin_id": "tetherball88.ostimnet",
-      "type": "listing",
-      "title": "OStimNet",
-      "tagline": "Intimate encounter AI framework integration for OStim and SkyrimNet.",
-      "author": "tetherball88",
-      "tags": [
-        "ostim",
-        "animation",
-        "adult"
-      ],
-      "nsfw": true,
-      "icon": "heart",
-      "mods": [],
-      "first_published": "2026-09-12T06:44:36-08:00",
-      "last_updated": "2026-10-24T03:32:49Z",
-      "version": "2.5.7",
-      "history": [
-        {
-          "version": "2.5.7",
-          "commit": "d12033c6b7cffe5de11c41fc920e29f1a6cd1f23",
-          "date": "2026-10-24T03:32:49Z",
-          "changelog": "### Fixed\n\n- **Hotkeys triggering on mouse clicks & extended keys mapping** — Fixed an issue in `HotkeyInputSink::ProcessEvent` where configuring hotkeys (`Advance scene (player thread)`, `Location scan`, `Toggle mute`) to keys without a standard 1-byte `MapVirtualKeyA` scan code (such as `Pause/Break` / `VK_PAUSE = 19`, which mapped to `0`) caused every Left Mouse Click (`IDCode == 0`) to trigger the hotkey action and advance the player's scene:\n  - Restricted keyboard hotkey evaluation strictly to `RE::INPUT_DEVICE::kKeyboard` events and required non-zero DirectInput scan codes.\n  - Added `VkToDirectInputKeyCode` helper with explicit `VK_PAUSE` (`0xC5`) and `VK_NUMLOCK` (`0x45`) handling and `MAPVK_VK_TO_VSC_EX` translation for `0xE0`-extended keys (arrow keys, Insert/Delete/Home/End/PageUp/PageDown, Numpad Divide, right modifiers)."
-        },
-        {
-          "version": "2.5.6",
-          "commit": "af7bd389cff21a7671a283fd675e84dab10c57c6",
-          "date": "2026-10-18T03:50:27Z",
-          "changelog": "Changelog (2.5.6):\n## v2.5.6\n### Added\n\n- **Session mute Papyrus API** — Added global native Papyrus functions on `OStimNet` (`ToggleMute()`, `IsMuted()`, and `SetMuted(bool akMuted)`)\n\n### Fixed\n\n- **Spectator handling across thread continuations (join/swap)** — Fixed spectators being prematurely removed or stuck when an active scene transitions via thread continuation\n- **Thread continuation event prompt rendering** — Added `sex_continue_thread` event rendering (`{{msg}}`) to `ostimnet_event_compact.prompt` and `ostimnet_event_verbose.prompt` so scene continuation events are no longer omitted from SkyrimNet event logs.\n- **External thread start with AI evaluation** — Fixed third-party / external scene starts failing when delegating scene evaluation to AI"
-        },
-        {
-          "version": "2.5.4",
-          "commit": "d492cd94f3f219da97c2b0ca51124c2e9ec2fed1",
-          "date": "2026-10-05T22:09:21Z",
-          "changelog": "attempt to improve reset OStimNet state when save was done during OStim scene and then loaded. I highly not recommend saving during OStim scenes it can break your game.\nupdated Billyy's meta tags for ostimnet(intent and position tags, not descriptions!)"
-        },
-        {
-          "version": "2.5.3",
-          "commit": "62c1ab313251a1148723fb97dbc72b55146f5df6",
-          "date": "2026-09-29T17:08:22Z",
-          "changelog": "added Being Female pregnancy and female cycles note - to make female npcs aware of pregnancy risk."
-        },
-        {
-          "version": "2.5.0",
-          "commit": "6d53bf9f8ee01c6aca1b0d6fdef004ef2fa02b62",
-          "date": "2026-09-26T05:47:57Z",
-          "changelog": "replaced cover image"
-        },
-        {
-          "version": "2.4.2",
-          "commit": "6beaea6234d873a19a83b6da3003d65d0c5982ab",
-          "date": "2026-09-12T06:44:36-08:00"
-        }
-      ],
-      "external_url": "https://github.com/tetherball88/OStimNet/releases/latest",
-      "image": {
-        "file": "cover.png",
-        "sha": "24935e170bd427bf1791e1330315a5a711f7e715",
-        "commit": "6d53bf9f8ee01c6aca1b0d6fdef004ef2fa02b62",
-        "width": 2048,
-        "height": 1152
-      },
-      "stats": {
-        "downloads": 289,
-        "endorsements": 7
-      }
-    },
-    {
       "id": "plugins/felixshuic/hypnosis-the-power-of-mind-control",
       "plugin_id": "felixshuic.hypnosis-the-power-of-mind-control",
       "type": "listing",
@@ -3246,7 +3252,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 153,
+        "downloads": 154,
         "endorsements": 0
       }
     },
@@ -4493,7 +4499,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 490,
+        "downloads": 491,
         "endorsements": 0
       }
     },
@@ -5107,7 +5113,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 3115,
+        "downloads": 3117,
         "endorsements": 4
       }
     },
@@ -5332,7 +5338,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1600,
+        "downloads": 1602,
         "endorsements": 0
       }
     },
@@ -5602,7 +5608,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 607,
+        "downloads": 608,
         "endorsements": 1
       }
     },
@@ -6817,7 +6823,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1520,
+        "downloads": 1521,
         "endorsements": 3
       }
     },
@@ -7852,7 +7858,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 519,
+        "downloads": 520,
         "endorsements": 0
       }
     },
@@ -9487,7 +9493,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1749,
+        "downloads": 1751,
         "endorsements": 2
       }
     },
@@ -10522,7 +10528,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1830,
+        "downloads": 1831,
         "endorsements": 2
       }
     },
@@ -10792,7 +10798,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1494,
+        "downloads": 1496,
         "endorsements": 2
       }
     },
@@ -11152,7 +11158,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 26,
+        "downloads": 27,
         "endorsements": 0
       }
     },
@@ -11377,7 +11383,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 645,
+        "downloads": 646,
         "endorsements": 1
       }
     },
@@ -12142,7 +12148,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 931,
+        "downloads": 932,
         "endorsements": 0
       }
     },
@@ -12952,7 +12958,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 347,
+        "downloads": 348,
         "endorsements": 0
       }
     },
@@ -13132,7 +13138,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 605,
+        "downloads": 606,
         "endorsements": 0
       }
     },
@@ -13222,7 +13228,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 212,
+        "downloads": 213,
         "endorsements": 0
       }
     },
@@ -13402,7 +13408,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 829,
+        "downloads": 830,
         "endorsements": 2
       }
     },
@@ -13942,7 +13948,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2262,
+        "downloads": 2263,
         "endorsements": 2
       }
     },
