@@ -1,8 +1,78 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-11-04T10:24:11.811Z",
-  "stats_as_of": "2026-11-04T10:24:11.658Z",
+  "generated_at": "2026-11-04T11:30:42.496Z",
+  "stats_as_of": "2026-11-04T11:29:39.810Z",
   "plugins": [
+    {
+      "id": "plugins/zevick/physical-letters",
+      "plugin_id": "zevick.physical-letters",
+      "type": "listing",
+      "title": "Physical Letters",
+      "tagline": "Allows you to write and receive letters from NPCs",
+      "author": "zevick",
+      "tags": [
+        "physical",
+        "letters",
+        "writing",
+        "courier"
+      ],
+      "nsfw": false,
+      "icon": "scroll",
+      "mods": [],
+      "first_published": "2026-10-10T02:04:29Z",
+      "last_updated": "2026-11-04T11:30:14Z",
+      "version": "1.1.1",
+      "history": [
+        {
+          "version": "1.1.1",
+          "commit": "1a8cf25ce2e1e6097c1e1835e626dc67d146bb7b",
+          "date": "2026-11-04T11:30:14Z",
+          "changelog": "Letter prompts no longer use SkyrimNet's prompt caching"
+        },
+        {
+          "version": "1.1.0",
+          "commit": "600caa569006176b7cb570d588c7ead28282218b",
+          "date": "2026-11-03T05:33:54Z",
+          "changelog": "- Added the ability to forge fake letters from NPCs. Letters now start with a \"From:\" heading.\n- Items can be attached to a letter when mailing one as a package. You will be prompted when you give a letter to an innkeeper or courier.\n- A new DM letter lets you manually dispatch letters between any NPCs. The letters are canon.\n- The MCM has a new page for toggling letter actions. Physical Letters ships no actions by default.\n- Fixes for NPC Names Distributor and merchant container crashes\n- Cyrillic encoding changes\n- A new API for other mod authors to integrate with Physical Letters"
+        },
+        {
+          "version": "1.0.1",
+          "commit": "c11739f3fbe84746cd9e17d95ba4fc1aee790bdf",
+          "date": "2026-10-10T22:53:00Z",
+          "changelog": "Fixed a conflict with Dynamic Strings Distributor that caused the game to crash."
+        },
+        {
+          "version": "1.0.0",
+          "commit": "64eb0b72f14988d0a2ef77c350d2722f69d07f0d",
+          "date": "2026-10-10T20:15:04Z",
+          "changelog": "Initial release"
+        }
+      ],
+      "external_url": "https://github.com/zevck/Physical-Letters/blob/main/README.md",
+      "languages": [
+        "en",
+        "zh",
+        "fr",
+        "de",
+        "it",
+        "ja",
+        "pl",
+        "es",
+        "ru"
+      ],
+      "language": "en",
+      "image": {
+        "file": "cover.png",
+        "sha": "08790950a699a53fd5fb6922991812597ba09209",
+        "commit": "e86bc6f55a53338c0c5dbf406b0da401f96b44b4",
+        "width": 1672,
+        "height": 941
+      },
+      "stats": {
+        "downloads": 144,
+        "endorsements": 2
+      }
+    },
     {
       "id": "plugins/tetherball88/ostimnet",
       "plugin_id": "tetherball88.ostimnet",
@@ -288,7 +358,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 368,
+        "downloads": 369,
         "endorsements": 7
       }
     },
@@ -429,70 +499,6 @@
       "stats": {
         "downloads": 7,
         "endorsements": 0
-      }
-    },
-    {
-      "id": "plugins/zevick/physical-letters",
-      "plugin_id": "zevick.physical-letters",
-      "type": "listing",
-      "title": "Physical Letters",
-      "tagline": "Allows you to write and receive letters from NPCs",
-      "author": "zevick",
-      "tags": [
-        "physical",
-        "letters",
-        "writing",
-        "courier"
-      ],
-      "nsfw": false,
-      "icon": "scroll",
-      "mods": [],
-      "first_published": "2026-10-10T02:04:29Z",
-      "last_updated": "2026-11-03T05:33:54Z",
-      "version": "1.1.0",
-      "history": [
-        {
-          "version": "1.1.0",
-          "commit": "600caa569006176b7cb570d588c7ead28282218b",
-          "date": "2026-11-03T05:33:54Z",
-          "changelog": "- Added the ability to forge fake letters from NPCs. Letters now start with a \"From:\" heading.\n- Items can be attached to a letter when mailing one as a package. You will be prompted when you give a letter to an innkeeper or courier.\n- A new DM letter lets you manually dispatch letters between any NPCs. The letters are canon.\n- The MCM has a new page for toggling letter actions. Physical Letters ships no actions by default.\n- Fixes for NPC Names Distributor and merchant container crashes\n- Cyrillic encoding changes\n- A new API for other mod authors to integrate with Physical Letters"
-        },
-        {
-          "version": "1.0.1",
-          "commit": "c11739f3fbe84746cd9e17d95ba4fc1aee790bdf",
-          "date": "2026-10-10T22:53:00Z",
-          "changelog": "Fixed a conflict with Dynamic Strings Distributor that caused the game to crash."
-        },
-        {
-          "version": "1.0.0",
-          "commit": "64eb0b72f14988d0a2ef77c350d2722f69d07f0d",
-          "date": "2026-10-10T20:15:04Z",
-          "changelog": "Initial release"
-        }
-      ],
-      "external_url": "https://github.com/zevck/Physical-Letters/blob/main/README.md",
-      "languages": [
-        "en",
-        "zh",
-        "fr",
-        "de",
-        "it",
-        "ja",
-        "pl",
-        "es",
-        "ru"
-      ],
-      "language": "en",
-      "image": {
-        "file": "cover.png",
-        "sha": "08790950a699a53fd5fb6922991812597ba09209",
-        "commit": "e86bc6f55a53338c0c5dbf406b0da401f96b44b4",
-        "width": 1672,
-        "height": 941
-      },
-      "stats": {
-        "downloads": 144,
-        "endorsements": 2
       }
     },
     {
@@ -1311,7 +1317,7 @@
         "config": 7
       },
       "stats": {
-        "downloads": 84,
+        "downloads": 85,
         "endorsements": 0
       }
     },
@@ -1392,7 +1398,7 @@
         "config": 7
       },
       "stats": {
-        "downloads": 122,
+        "downloads": 125,
         "endorsements": 0
       }
     },
@@ -1671,8 +1677,8 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 1370,
-        "endorsements": 17
+        "downloads": 1374,
+        "endorsements": 18
       }
     },
     {
@@ -2291,7 +2297,7 @@
         "height": 769
       },
       "stats": {
-        "downloads": 35,
+        "downloads": 36,
         "endorsements": 0
       }
     },
@@ -2489,7 +2495,7 @@
         "height": 768
       },
       "stats": {
-        "downloads": 128,
+        "downloads": 129,
         "endorsements": 0
       }
     },
@@ -4112,7 +4118,7 @@
         "config": 4
       },
       "stats": {
-        "downloads": 359,
+        "downloads": 362,
         "endorsements": 3
       }
     },
@@ -4499,7 +4505,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 497,
+        "downloads": 498,
         "endorsements": 0
       }
     },
@@ -4933,7 +4939,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 435,
+        "downloads": 436,
         "endorsements": 5
       }
     },
@@ -4978,7 +4984,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1429,
+        "downloads": 1432,
         "endorsements": 2
       }
     },
@@ -5113,7 +5119,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 3140,
+        "downloads": 3144,
         "endorsements": 4
       }
     },
@@ -5338,7 +5344,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1615,
+        "downloads": 1617,
         "endorsements": 0
       }
     },
@@ -5788,7 +5794,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 65,
+        "downloads": 66,
         "endorsements": 0
       }
     },
@@ -6103,7 +6109,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1333,
+        "downloads": 1334,
         "endorsements": 2
       }
     },
@@ -6463,7 +6469,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1119,
+        "downloads": 1122,
         "endorsements": 1
       }
     },
@@ -6823,7 +6829,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1530,
+        "downloads": 1532,
         "endorsements": 3
       }
     },
@@ -7048,7 +7054,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 976,
+        "downloads": 977,
         "endorsements": 2
       }
     },
@@ -8863,7 +8869,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 461,
+        "downloads": 462,
         "endorsements": 0
       }
     },
@@ -9313,7 +9319,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 548,
+        "downloads": 549,
         "endorsements": 0
       }
     },
@@ -9493,7 +9499,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1765,
+        "downloads": 1768,
         "endorsements": 2
       }
     },
@@ -10348,7 +10354,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 307,
+        "downloads": 308,
         "endorsements": 1
       }
     },
@@ -10528,7 +10534,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1848,
+        "downloads": 1850,
         "endorsements": 2
       }
     },
@@ -10798,7 +10804,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1504,
+        "downloads": 1506,
         "endorsements": 2
       }
     },
@@ -11338,7 +11344,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1119,
+        "downloads": 1120,
         "endorsements": 0
       }
     },
@@ -12148,7 +12154,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 935,
+        "downloads": 936,
         "endorsements": 0
       }
     },
@@ -12958,7 +12964,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 353,
+        "downloads": 354,
         "endorsements": 0
       }
     },
@@ -13408,7 +13414,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 838,
+        "downloads": 840,
         "endorsements": 2
       }
     },
@@ -13453,7 +13459,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 210,
+        "downloads": 211,
         "endorsements": 0
       }
     },
@@ -13948,7 +13954,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2276,
+        "downloads": 2280,
         "endorsements": 2
       }
     },
@@ -14218,7 +14224,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 554,
+        "downloads": 555,
         "endorsements": 0
       }
     },
