@@ -17,8 +17,8 @@
   "languages": [
     "en"
   ],
-  "image": "cover.png",
+  "image": "cover.jpg",
   "external_url": "https://github.com/Gerkinfeltser/PlayerSignals/releases/latest",
   "version": "0.2.1",
-  "changelog": "- Fixed: with some other mods installed (for example EasyWheel), the wheel never started and showed \"Magelight wheel view/listener is unavailable.\" Install over 0.2.0 and restart the game. Thanks to whyregister for the bug!"
+  "changelog": "- Fixed: with some other mods installed (for example EasyWheel), the wheel never started and showed \"Magelight wheel view/listener is unavailable.\" Install over 0.2.0 and restart the game. Thanks to whyregister for the bug!\n- Updated cover art"
 }
