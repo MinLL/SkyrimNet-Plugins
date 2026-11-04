@@ -1,8 +1,90 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-11-03T23:22:05.619Z",
-  "stats_as_of": "2026-11-03T23:22:05.458Z",
+  "generated_at": "2026-11-04T00:20:43.192Z",
+  "stats_as_of": "2026-11-04T00:20:43.057Z",
   "plugins": [
+    {
+      "id": "plugins/urtubesrclogged/adventurers-guild",
+      "plugin_id": "urtubesrclogged.adventurers-guild",
+      "type": "listing",
+      "title": "Adventurers Guild",
+      "tagline": "An isekai-style adventurers guild: Skyrimnet NPCs know its lore, your rank and your party, and its innkeepers can register and promote you.",
+      "author": "urtubesrclogged",
+      "tags": [
+        "Guild",
+        "Quests",
+        "Rank",
+        "Lore",
+        "Actions",
+        "Followers"
+      ],
+      "nsfw": false,
+      "icon": "scroll",
+      "mods": [],
+      "first_published": "2026-10-06T04:11:35Z",
+      "last_updated": "2026-11-04T00:20:12Z",
+      "version": "1.6.2",
+      "history": [
+        {
+          "version": "1.6.2",
+          "commit": "a10687fe3754a2ed0a6b7cf87b213d0c55ea4216",
+          "date": "2026-11-04T00:20:12Z",
+          "changelog": "# 1.6.2:\n**Fixes/Bugs**\n- Fixed SkyrimNet 29.2 warning that the Guild's rank prompt has no render mode check."
+        },
+        {
+          "version": "1.6.0",
+          "commit": "32fc0130021259d174186f289ff1f3d3666569b0",
+          "date": "2026-10-31T14:49:54Z",
+          "changelog": "# 1.6.0:\n**New 1.6 Features**\n- NPCs know about Guild Boxes, perk training and the new missives.\n**SkyrimNet Optimizations and Improvements**\n- Ranks, your record and parties now use SkyrimNet's native decorators. Lighter on the game, and the \"Decorator 'ag_join_status' not found\" errors after loading are gone.\n- Much smaller prompts: the Guild guidelines went from about 1,600 tokens to about 128, and only NPCs with a tie to the Guild get them. Everyone else gets the details from world knowledge when the Guild comes up."
+        },
+        {
+          "version": "1.5.0",
+          "commit": "0dfc5a98ab67ea2331d56163d6a0df15900a8c3a",
+          "date": "2026-10-20T19:19:33Z",
+          "changelog": "1.5.0: hold stamps on the guild card, and what a stamped hold's merchants make of them; any Guild adventurer can show you their guild card (new action); the dungeon dead and the bloodied cards they carry; the Jarls' bounties as Guild work; a counter pays off every hold's bounty for a small fee, and a rep knows your bounty and whether the town's board has new work; missives, notices and monster hunts are spoken of only when their mod is installed (Monster Hunt Missives is new); NPCs bring up the Guild only when it fits the conversation."
+        },
+        {
+          "version": "1.4.0",
+          "commit": "df4eaa91664c2c9c57a6308f9f4a55ad06df0b0a",
+          "date": "2026-10-09T23:56:25Z",
+          "changelog": "1.4.0: NPCs know the Guild now keeps a counter on Solstheim, at the Retching Netch in Raven Rock, and Geldis Sadri can do everything the mainland innkeepers can. They know rank S is rare and has to be proven, and they know about Guild Augments, the spell tomes sold one rank above your own, and the points of interest the Guild’s scouts sell."
+        },
+        {
+          "version": "1.3.0",
+          "commit": "c8eaf55206c011c86ac05cbbc11417c25f95f9fa",
+          "date": "2026-10-08T00:27:53Z",
+          "changelog": "1.3.0 Skyrimnet bios for the new named adventurers and Erik, replacement reps and those who say a counter has closed; wandering adventurers know they’re Guild members; conduct and the three levels of Appraisal as common knowledge; a rep knows your Appraisal level."
+        },
+        {
+          "version": "1.2.0",
+          "commit": "e0fb8539558049bea6d44e602c6ba424f2957a78",
+          "date": "2026-10-06T15:37:14Z",
+          "changelog": "1.2.0: NPCs know what each rank is trusted with, from E to S, and about the guild card every adventurer carries. An innkeeper knows when yours is lost and can hand over a replacement in conversation (new action). Notice-board work counts as Guild work; parties can be up to ten strong."
+        },
+        {
+          "version": "1.0.0",
+          "commit": "49ac631e988683f905ca340c67f51b45d671a54a",
+          "date": "2026-10-06T04:11:35Z",
+          "changelog": "Initial release on the plugin hub"
+        }
+      ],
+      "external_url": "https://www.nexusmods.com/skyrimspecialedition/mods/193777",
+      "languages": [
+        "en"
+      ],
+      "language": "en",
+      "image": {
+        "file": "cover.png",
+        "sha": "537395f8a9ccbb37f866705ef51c63586ca85a8f",
+        "commit": "df4eaa91664c2c9c57a6308f9f4a55ad06df0b0a",
+        "width": 1920,
+        "height": 1080
+      },
+      "stats": {
+        "downloads": 99,
+        "endorsements": 3
+      }
+    },
     {
       "id": "plugins/phospheneoverdrive/playersignals-for-skyrimnet",
       "plugin_id": "phospheneoverdrive.playersignals-for-skyrimnet",
@@ -49,7 +131,7 @@
         "height": 936
       },
       "stats": {
-        "downloads": 66,
+        "downloads": 67,
         "endorsements": 0
       }
     },
@@ -126,7 +208,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 358,
+        "downloads": 360,
         "endorsements": 7
       }
     },
@@ -329,7 +411,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 142,
+        "downloads": 143,
         "endorsements": 2
       }
     },
@@ -496,7 +578,7 @@
         "height": 688
       },
       "stats": {
-        "downloads": 93,
+        "downloads": 94,
         "endorsements": 0
       }
     },
@@ -724,7 +806,7 @@
         "height": 1008
       },
       "stats": {
-        "downloads": 156,
+        "downloads": 157,
         "endorsements": 3
       }
     },
@@ -866,7 +948,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 189,
+        "downloads": 190,
         "endorsements": 0
       }
     },
@@ -1068,7 +1150,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 36,
+        "downloads": 37,
         "endorsements": 2
       }
     },
@@ -1230,7 +1312,7 @@
         "config": 7
       },
       "stats": {
-        "downloads": 105,
+        "downloads": 109,
         "endorsements": 0
       }
     },
@@ -1362,84 +1444,8 @@
         "height": 941
       },
       "stats": {
-        "downloads": 247,
+        "downloads": 248,
         "endorsements": 6
-      }
-    },
-    {
-      "id": "plugins/urtubesrclogged/adventurers-guild",
-      "plugin_id": "urtubesrclogged.adventurers-guild",
-      "type": "listing",
-      "title": "Adventurers Guild",
-      "tagline": "An isekai-style adventurers guild: Skyrimnet NPCs know its lore, your rank and your party, and its innkeepers can register and promote you.",
-      "author": "urtubesrclogged",
-      "tags": [
-        "Guild",
-        "Quests",
-        "Rank",
-        "Lore",
-        "Actions",
-        "Followers"
-      ],
-      "nsfw": false,
-      "icon": "scroll",
-      "mods": [],
-      "first_published": "2026-10-06T04:11:35Z",
-      "last_updated": "2026-10-31T14:49:54Z",
-      "version": "1.6.0",
-      "history": [
-        {
-          "version": "1.6.0",
-          "commit": "32fc0130021259d174186f289ff1f3d3666569b0",
-          "date": "2026-10-31T14:49:54Z",
-          "changelog": "# 1.6.0:\n**New 1.6 Features**\n- NPCs know about Guild Boxes, perk training and the new missives.\n**SkyrimNet Optimizations and Improvements**\n- Ranks, your record and parties now use SkyrimNet's native decorators. Lighter on the game, and the \"Decorator 'ag_join_status' not found\" errors after loading are gone.\n- Much smaller prompts: the Guild guidelines went from about 1,600 tokens to about 128, and only NPCs with a tie to the Guild get them. Everyone else gets the details from world knowledge when the Guild comes up."
-        },
-        {
-          "version": "1.5.0",
-          "commit": "0dfc5a98ab67ea2331d56163d6a0df15900a8c3a",
-          "date": "2026-10-20T19:19:33Z",
-          "changelog": "1.5.0: hold stamps on the guild card, and what a stamped hold's merchants make of them; any Guild adventurer can show you their guild card (new action); the dungeon dead and the bloodied cards they carry; the Jarls' bounties as Guild work; a counter pays off every hold's bounty for a small fee, and a rep knows your bounty and whether the town's board has new work; missives, notices and monster hunts are spoken of only when their mod is installed (Monster Hunt Missives is new); NPCs bring up the Guild only when it fits the conversation."
-        },
-        {
-          "version": "1.4.0",
-          "commit": "df4eaa91664c2c9c57a6308f9f4a55ad06df0b0a",
-          "date": "2026-10-09T23:56:25Z",
-          "changelog": "1.4.0: NPCs know the Guild now keeps a counter on Solstheim, at the Retching Netch in Raven Rock, and Geldis Sadri can do everything the mainland innkeepers can. They know rank S is rare and has to be proven, and they know about Guild Augments, the spell tomes sold one rank above your own, and the points of interest the Guild’s scouts sell."
-        },
-        {
-          "version": "1.3.0",
-          "commit": "c8eaf55206c011c86ac05cbbc11417c25f95f9fa",
-          "date": "2026-10-08T00:27:53Z",
-          "changelog": "1.3.0 Skyrimnet bios for the new named adventurers and Erik, replacement reps and those who say a counter has closed; wandering adventurers know they’re Guild members; conduct and the three levels of Appraisal as common knowledge; a rep knows your Appraisal level."
-        },
-        {
-          "version": "1.2.0",
-          "commit": "e0fb8539558049bea6d44e602c6ba424f2957a78",
-          "date": "2026-10-06T15:37:14Z",
-          "changelog": "1.2.0: NPCs know what each rank is trusted with, from E to S, and about the guild card every adventurer carries. An innkeeper knows when yours is lost and can hand over a replacement in conversation (new action). Notice-board work counts as Guild work; parties can be up to ten strong."
-        },
-        {
-          "version": "1.0.0",
-          "commit": "49ac631e988683f905ca340c67f51b45d671a54a",
-          "date": "2026-10-06T04:11:35Z",
-          "changelog": "Initial release on the plugin hub"
-        }
-      ],
-      "external_url": "https://www.nexusmods.com/skyrimspecialedition/mods/193777",
-      "languages": [
-        "en"
-      ],
-      "language": "en",
-      "image": {
-        "file": "cover.png",
-        "sha": "537395f8a9ccbb37f866705ef51c63586ca85a8f",
-        "commit": "df4eaa91664c2c9c57a6308f9f4a55ad06df0b0a",
-        "width": 1920,
-        "height": 1080
-      },
-      "stats": {
-        "downloads": 99,
-        "endorsements": 3
       }
     },
     {
@@ -1497,7 +1503,7 @@
         "height": 1080
       },
       "stats": {
-        "downloads": 83,
+        "downloads": 84,
         "endorsements": 1
       }
     },
@@ -1585,7 +1591,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 1348,
+        "downloads": 1353,
         "endorsements": 17
       }
     },
@@ -2019,7 +2025,7 @@
         "height": 928
       },
       "stats": {
-        "downloads": 128,
+        "downloads": 129,
         "endorsements": 2
       }
     },
@@ -2075,7 +2081,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 56,
+        "downloads": 57,
         "endorsements": 0
       }
     },
@@ -2744,7 +2750,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 142,
+        "downloads": 144,
         "endorsements": 1
       }
     },
@@ -3291,7 +3297,7 @@
         "height": 720
       },
       "stats": {
-        "downloads": 83,
+        "downloads": 84,
         "endorsements": 1
       }
     },
@@ -4094,7 +4100,7 @@
         "config": 4
       },
       "stats": {
-        "downloads": 348,
+        "downloads": 349,
         "endorsements": 3
       }
     },
@@ -4233,7 +4239,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 204,
+        "downloads": 205,
         "endorsements": 0
       }
     },
@@ -4411,7 +4417,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 385,
+        "downloads": 386,
         "endorsements": 1
       }
     },
@@ -4481,7 +4487,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 489,
+        "downloads": 490,
         "endorsements": 0
       }
     },
@@ -4915,7 +4921,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 433,
+        "downloads": 434,
         "endorsements": 5
       }
     },
@@ -4960,7 +4966,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1416,
+        "downloads": 1417,
         "endorsements": 2
       }
     },
@@ -5320,7 +5326,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1597,
+        "downloads": 1598,
         "endorsements": 0
       }
     },
@@ -5590,7 +5596,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 606,
+        "downloads": 607,
         "endorsements": 1
       }
     },
@@ -6085,7 +6091,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1325,
+        "downloads": 1326,
         "endorsements": 2
       }
     },
@@ -6445,7 +6451,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1113,
+        "downloads": 1114,
         "endorsements": 1
       }
     },
@@ -6805,7 +6811,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1513,
+        "downloads": 1514,
         "endorsements": 3
       }
     },
@@ -7030,7 +7036,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 962,
+        "downloads": 963,
         "endorsements": 2
       }
     },
@@ -9115,7 +9121,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 238,
+        "downloads": 239,
         "endorsements": 1
       }
     },
@@ -9475,7 +9481,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1744,
+        "downloads": 1745,
         "endorsements": 2
       }
     },
@@ -10330,7 +10336,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 304,
+        "downloads": 305,
         "endorsements": 1
       }
     },
@@ -10780,7 +10786,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1489,
+        "downloads": 1490,
         "endorsements": 2
       }
     },
@@ -13390,7 +13396,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 826,
+        "downloads": 827,
         "endorsements": 2
       }
     },
@@ -13930,7 +13936,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2258,
+        "downloads": 2259,
         "endorsements": 2
       }
     },
