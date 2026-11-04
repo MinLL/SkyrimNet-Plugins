@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-11-04T00:20:43.192Z",
-  "stats_as_of": "2026-11-04T00:20:43.057Z",
+  "generated_at": "2026-11-04T00:40:09.972Z",
+  "stats_as_of": "2026-11-04T00:40:09.688Z",
   "plugins": [
     {
       "id": "plugins/urtubesrclogged/adventurers-guild",
@@ -81,7 +81,7 @@
         "height": 1080
       },
       "stats": {
-        "downloads": 99,
+        "downloads": 100,
         "endorsements": 3
       }
     },
@@ -208,7 +208,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 360,
+        "downloads": 361,
         "endorsements": 7
       }
     },
@@ -411,7 +411,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 143,
+        "downloads": 144,
         "endorsements": 2
       }
     },
@@ -475,7 +475,7 @@
         "height": 1080
       },
       "stats": {
-        "downloads": 94,
+        "downloads": 95,
         "endorsements": 1
       }
     },
@@ -2252,7 +2252,7 @@
         "height": 760
       },
       "stats": {
-        "downloads": 120,
+        "downloads": 121,
         "endorsements": 0
       }
     },
@@ -3297,7 +3297,7 @@
         "height": 720
       },
       "stats": {
-        "downloads": 84,
+        "downloads": 85,
         "endorsements": 1
       }
     },
@@ -5326,7 +5326,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1598,
+        "downloads": 1599,
         "endorsements": 0
       }
     },
