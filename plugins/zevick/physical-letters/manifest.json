@@ -27,6 +27,6 @@
   ],
   "image": "cover.png",
   "external_url": "https://github.com/zevck/Physical-Letters/blob/main/README.md",
-  "version": "1.1.0",
-  "changelog": "- Added the ability to forge fake letters from NPCs. Letters now start with a \"From:\" heading.\n- Items can be attached to a letter when mailing one as a package. You will be prompted when you give a letter to an innkeeper or courier.\n- A new DM letter lets you manually dispatch letters between any NPCs. The letters are canon.\n- The MCM has a new page for toggling letter actions. Physical Letters ships no actions by default.\n- Fixes for NPC Names Distributor and merchant container crashes\n- Cyrillic encoding changes\n- A new API for other mod authors to integrate with Physical Letters"
+  "version": "1.1.1",
+  "changelog": "Letter prompts no longer use SkyrimNet's prompt caching"
 }
