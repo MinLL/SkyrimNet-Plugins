@@ -1,8 +1,64 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-11-04T16:22:28.459Z",
-  "stats_as_of": "2026-11-04T16:22:28.317Z",
+  "generated_at": "2026-11-04T17:22:26.182Z",
+  "stats_as_of": "2026-11-04T17:22:26.055Z",
   "plugins": [
+    {
+      "id": "plugins/phospheneoverdrive/playersignals-for-skyrimnet",
+      "plugin_id": "phospheneoverdrive.playersignals-for-skyrimnet",
+      "type": "listing",
+      "title": "PlayerSignals for SkyrimNet",
+      "tagline": "A little less talking, a little more nodding.",
+      "author": "phospheneoverdrive",
+      "tags": [
+        "roleplay",
+        "communication",
+        "immersion",
+        "utility"
+      ],
+      "nsfw": false,
+      "icon": "package",
+      "mods": [],
+      "first_published": "2026-10-03T01:25:26Z",
+      "last_updated": "2026-11-04T17:21:58Z",
+      "version": "0.2.1",
+      "history": [
+        {
+          "version": "0.2.1",
+          "commit": "7cb520ceb7ac5a12165b96c738b7435fd67be0dc",
+          "date": "2026-11-04T17:21:58Z",
+          "changelog": "- Fixed: with some other mods installed (for example EasyWheel), the wheel never started and showed \"Magelight wheel view/listener is unavailable.\" Install over 0.2.0 and restart the game. Thanks to whyregister for the bug!\n- Updated cover art"
+        },
+        {
+          "version": "0.2.0",
+          "commit": "d70778baddc10c680a0f551590931c7f371eaa36",
+          "date": "2026-11-03T20:45:50Z",
+          "changelog": "- New Magelight wheel with twelve slices, replacing the UIExtensions menu (UIExtensions is no longer needed).\n- Openly tips, Shift, gamepad X or no target address everyone nearby.\n- New slot kinds: hybrids (signal plus action), actions, game keys and raw keys (bundled PlayerSignals.dll).\n- Gamepad support: stick aiming, A to choose, B to cancel, X for Openly.\n- Faster wheel opening.\n- Targeted signals are now answered by the NPC you aimed at, not a bystander.\n- Per-slot colours, player guide and AI configuration helper.\n\nUIExtensions is no longer required; Magelight 1.7.1+ and Address Library are. Install the whole package over 0.1.0 (replace it, don't merge) and load a save."
+        },
+        {
+          "version": "0.1.0",
+          "commit": "bf7be0889eb259b8ea57998fe209c965278d7eb5",
+          "date": "2026-10-03T01:25:26Z",
+          "changelog": "Initial limited-test release with a UIExtensions wheel, JSON layout and gesture customization, player-originator targeted/group narration, and an optional intent-authoring helper. In-game testing confirmed the player as originator for all eight gestures in the reviewed session; seven received NPC responses and the final no-audience gesture correctly produced none. A limited removal/cleaned-save load test is documented; comprehensive save compatibility and long-term removal safety remain unverified."
+        }
+      ],
+      "external_url": "https://github.com/Gerkinfeltser/PlayerSignals/releases/latest",
+      "languages": [
+        "en"
+      ],
+      "language": "en",
+      "image": {
+        "file": "cover.jpg",
+        "sha": "1f0f44366142edae7fad79b2734d5f6b1be5421c",
+        "commit": "7cb520ceb7ac5a12165b96c738b7435fd67be0dc",
+        "width": 1672,
+        "height": 941
+      },
+      "stats": {
+        "downloads": 71,
+        "endorsements": 0
+      }
+    },
     {
       "id": "plugins/deadohiosky/relationships",
       "plugin_id": "deadohiosky.relationships",
@@ -114,7 +170,7 @@
         "height": 864
       },
       "stats": {
-        "downloads": 331,
+        "downloads": 333,
         "endorsements": 6
       }
     },
@@ -310,64 +366,8 @@
         "height": 1152
       },
       "stats": {
-        "downloads": 302,
+        "downloads": 304,
         "endorsements": 7
-      }
-    },
-    {
-      "id": "plugins/phospheneoverdrive/playersignals-for-skyrimnet",
-      "plugin_id": "phospheneoverdrive.playersignals-for-skyrimnet",
-      "type": "listing",
-      "title": "PlayerSignals for SkyrimNet",
-      "tagline": "A little less talking, a little more nodding.",
-      "author": "phospheneoverdrive",
-      "tags": [
-        "roleplay",
-        "communication",
-        "immersion",
-        "utility"
-      ],
-      "nsfw": false,
-      "icon": "package",
-      "mods": [],
-      "first_published": "2026-10-03T01:25:26Z",
-      "last_updated": "2026-11-04T01:53:53Z",
-      "version": "0.2.1",
-      "history": [
-        {
-          "version": "0.2.1",
-          "commit": "ebe34d959cb059b910362b4d340c698ac12e3967",
-          "date": "2026-11-04T01:53:53Z",
-          "changelog": "- Fixed: with some other mods installed (for example EasyWheel), the wheel never started and showed \"Magelight wheel view/listener is unavailable.\" Install over 0.2.0 and restart the game. Thanks to whyregister for the bug!"
-        },
-        {
-          "version": "0.2.0",
-          "commit": "d70778baddc10c680a0f551590931c7f371eaa36",
-          "date": "2026-11-03T20:45:50Z",
-          "changelog": "- New Magelight wheel with twelve slices, replacing the UIExtensions menu (UIExtensions is no longer needed).\n- Openly tips, Shift, gamepad X or no target address everyone nearby.\n- New slot kinds: hybrids (signal plus action), actions, game keys and raw keys (bundled PlayerSignals.dll).\n- Gamepad support: stick aiming, A to choose, B to cancel, X for Openly.\n- Faster wheel opening.\n- Targeted signals are now answered by the NPC you aimed at, not a bystander.\n- Per-slot colours, player guide and AI configuration helper.\n\nUIExtensions is no longer required; Magelight 1.7.1+ and Address Library are. Install the whole package over 0.1.0 (replace it, don't merge) and load a save."
-        },
-        {
-          "version": "0.1.0",
-          "commit": "bf7be0889eb259b8ea57998fe209c965278d7eb5",
-          "date": "2026-10-03T01:25:26Z",
-          "changelog": "Initial limited-test release with a UIExtensions wheel, JSON layout and gesture customization, player-originator targeted/group narration, and an optional intent-authoring helper. In-game testing confirmed the player as originator for all eight gestures in the reviewed session; seven received NPC responses and the final no-audience gesture correctly produced none. A limited removal/cleaned-save load test is documented; comprehensive save compatibility and long-term removal safety remain unverified."
-        }
-      ],
-      "external_url": "https://github.com/Gerkinfeltser/PlayerSignals/releases/latest",
-      "languages": [
-        "en"
-      ],
-      "language": "en",
-      "image": {
-        "file": "cover.png",
-        "sha": "63b5da1958b99922294aade7de538b0c46e48da7",
-        "commit": "bf7be0889eb259b8ea57998fe209c965278d7eb5",
-        "width": 1664,
-        "height": 936
-      },
-      "stats": {
-        "downloads": 71,
-        "endorsements": 0
       }
     },
     {
@@ -525,7 +525,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 374,
+        "downloads": 377,
         "endorsements": 7
       }
     },
@@ -785,7 +785,7 @@
         "height": 688
       },
       "stats": {
-        "downloads": 98,
+        "downloads": 99,
         "endorsements": 0
       }
     },
@@ -1313,7 +1313,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 930,
+        "downloads": 931,
         "endorsements": 39
       }
     },
@@ -1357,7 +1357,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 38,
+        "downloads": 39,
         "endorsements": 2
       }
     },
@@ -1798,7 +1798,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 1382,
+        "downloads": 1385,
         "endorsements": 18
       }
     },
@@ -1905,7 +1905,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 100,
+        "downloads": 101,
         "endorsements": 3
       }
     },
@@ -2149,7 +2149,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 350,
+        "downloads": 351,
         "endorsements": 10
       }
     },
@@ -2288,7 +2288,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 57,
+        "downloads": 58,
         "endorsements": 0
       }
     },
@@ -3581,7 +3581,7 @@
         "height": 1152
       },
       "stats": {
-        "downloads": 170,
+        "downloads": 171,
         "endorsements": 1
       }
     },
@@ -4448,7 +4448,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 394,
+        "downloads": 395,
         "endorsements": 1
       }
     },
@@ -4518,7 +4518,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 502,
+        "downloads": 503,
         "endorsements": 0
       }
     },
@@ -4726,7 +4726,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 295,
+        "downloads": 296,
         "endorsements": 0
       }
     },
@@ -4786,7 +4786,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 194,
+        "downloads": 195,
         "endorsements": 0
       }
     },
@@ -4997,7 +4997,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1438,
+        "downloads": 1440,
         "endorsements": 2
       }
     },
@@ -5042,7 +5042,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 732,
+        "downloads": 733,
         "endorsements": 0
       }
     },
@@ -5132,7 +5132,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 3157,
+        "downloads": 3160,
         "endorsements": 4
       }
     },
@@ -5357,7 +5357,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1624,
+        "downloads": 1626,
         "endorsements": 0
       }
     },
@@ -5627,7 +5627,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 615,
+        "downloads": 616,
         "endorsements": 1
       }
     },
@@ -5717,7 +5717,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 219,
+        "downloads": 220,
         "endorsements": 0
       }
     },
@@ -5807,7 +5807,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 69,
+        "downloads": 70,
         "endorsements": 0
       }
     },
@@ -5897,7 +5897,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 200,
+        "downloads": 201,
         "endorsements": 0
       }
     },
@@ -6122,7 +6122,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1345,
+        "downloads": 1347,
         "endorsements": 2
       }
     },
@@ -6842,7 +6842,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1542,
+        "downloads": 1544,
         "endorsements": 3
       }
     },
@@ -7067,7 +7067,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 986,
+        "downloads": 988,
         "endorsements": 2
       }
     },
@@ -7472,7 +7472,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 265,
+        "downloads": 266,
         "endorsements": 0
       }
     },
@@ -7877,7 +7877,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 525,
+        "downloads": 526,
         "endorsements": 0
       }
     },
@@ -8882,7 +8882,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 466,
+        "downloads": 468,
         "endorsements": 0
       }
     },
@@ -9332,7 +9332,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 553,
+        "downloads": 555,
         "endorsements": 0
       }
     },
@@ -9422,7 +9422,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1372,
+        "downloads": 1374,
         "endorsements": 2
       }
     },
@@ -9512,7 +9512,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1780,
+        "downloads": 1782,
         "endorsements": 2
       }
     },
@@ -9602,7 +9602,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 20,
+        "downloads": 21,
         "endorsements": 0
       }
     },
@@ -10547,7 +10547,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1863,
+        "downloads": 1866,
         "endorsements": 2
       }
     },
@@ -10817,7 +10817,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1513,
+        "downloads": 1514,
         "endorsements": 2
       }
     },
@@ -10952,7 +10952,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 51,
+        "downloads": 52,
         "endorsements": 0
       }
     },
@@ -11357,7 +11357,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1130,
+        "downloads": 1131,
         "endorsements": 0
       }
     },
@@ -12167,7 +12167,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 937,
+        "downloads": 938,
         "endorsements": 0
       }
     },
@@ -12977,7 +12977,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 358,
+        "downloads": 359,
         "endorsements": 0
       }
     },
@@ -13157,7 +13157,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 610,
+        "downloads": 611,
         "endorsements": 0
       }
     },
@@ -13427,7 +13427,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 849,
+        "downloads": 851,
         "endorsements": 2
       }
     },
@@ -13967,7 +13967,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2294,
+        "downloads": 2296,
         "endorsements": 2
       }
     },
@@ -14237,7 +14237,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 564,
+        "downloads": 565,
         "endorsements": 0
       }
     },
