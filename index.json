@@ -1,8 +1,60 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-11-04T11:30:42.496Z",
-  "stats_as_of": "2026-11-04T11:29:39.810Z",
+  "generated_at": "2026-11-04T11:38:25.688Z",
+  "stats_as_of": "2026-11-04T11:38:25.586Z",
   "plugins": [
+    {
+      "id": "plugins/taka/skyrimnet-minigame",
+      "plugin_id": "taka.skyrimnet-minigame",
+      "type": "listing",
+      "title": "SkyrimNet MiniGame",
+      "tagline": "Play Reversi, Liar's Dice, Shut the Box and Blackjack with the NPCs around you on a board drawn over the game. Your opponents talk about the game, know how it stands, and remember it.",
+      "author": "taka",
+      "tags": [
+        "Gameplay",
+        "NPC",
+        "Minigame",
+        "Dialogue",
+        "Prisma UI"
+      ],
+      "nsfw": false,
+      "icon": "package",
+      "mods": [],
+      "first_published": "2026-11-03T15:43:06Z",
+      "last_updated": "2026-11-04T11:37:55Z",
+      "version": "0.1.1",
+      "history": [
+        {
+          "version": "0.1.1",
+          "commit": "b41140512332d681fe5c6b353d84b035002a85ff",
+          "date": "2026-11-04T11:37:55Z",
+          "changelog": "Two new games: Shut the Box and Blackjack, each against up to three NPCs with four opponent strengths. In Blackjack you choose who deals, you or one of your opponents. Also fixed: the board could lose the input focus and stay on screen, reacting to nothing. It now takes the focus back, and Esc always closes it."
+        },
+        {
+          "version": "0.1.0",
+          "commit": "95ecad5ed411d5f06f4f9d95f6513dd532a63864",
+          "date": "2026-11-03T15:43:06Z",
+          "changelog": "First release: Reversi against one NPC and Liar's Dice against up to three, with SkyrimNet commentary, the game state in each opponent's prompt, your own bids spoken through Transform Dialogue, NPC challenges to Reversi, and face frames of your opponents on the board."
+        }
+      ],
+      "external_url": "https://github.com/nightlantern-mods/skyrimnet_MiniGame",
+      "languages": [
+        "en",
+        "ja"
+      ],
+      "language": "en",
+      "image": {
+        "file": "cover.jpg",
+        "sha": "c29e9e93a7d7274e3b4347cf8ce495d501f95e51",
+        "commit": "95ecad5ed411d5f06f4f9d95f6513dd532a63864",
+        "width": 1920,
+        "height": 1080
+      },
+      "stats": {
+        "downloads": 4,
+        "endorsements": 0
+      }
+    },
     {
       "id": "plugins/zevick/physical-letters",
       "plugin_id": "zevick.physical-letters",
@@ -360,52 +412,6 @@
       "stats": {
         "downloads": 369,
         "endorsements": 7
-      }
-    },
-    {
-      "id": "plugins/taka/skyrimnet-minigame",
-      "plugin_id": "taka.skyrimnet-minigame",
-      "type": "listing",
-      "title": "SkyrimNet MiniGame",
-      "tagline": "Play Reversi and Liar's Dice with the NPCs around you on a board drawn over the game. Your opponents talk about every move, know how the game stands, and remember it.",
-      "author": "taka",
-      "tags": [
-        "Gameplay",
-        "NPC",
-        "Minigame",
-        "Dialogue",
-        "Prisma UI"
-      ],
-      "nsfw": false,
-      "icon": "package",
-      "mods": [],
-      "first_published": "2026-11-03T15:43:06Z",
-      "last_updated": "2026-11-03T15:43:06Z",
-      "version": "0.1.0",
-      "history": [
-        {
-          "version": "0.1.0",
-          "commit": "95ecad5ed411d5f06f4f9d95f6513dd532a63864",
-          "date": "2026-11-03T15:43:06Z",
-          "changelog": "First release: Reversi against one NPC and Liar's Dice against up to three, with SkyrimNet commentary, the game state in each opponent's prompt, your own bids spoken through Transform Dialogue, NPC challenges to Reversi, and face frames of your opponents on the board."
-        }
-      ],
-      "external_url": "https://github.com/nightlantern-mods/skyrimnet_MiniGame",
-      "languages": [
-        "en",
-        "ja"
-      ],
-      "language": "en",
-      "image": {
-        "file": "cover.jpg",
-        "sha": "c29e9e93a7d7274e3b4347cf8ce495d501f95e51",
-        "commit": "95ecad5ed411d5f06f4f9d95f6513dd532a63864",
-        "width": 1920,
-        "height": 1080
-      },
-      "stats": {
-        "downloads": 4,
-        "endorsements": 0
       }
     },
     {
@@ -1192,7 +1198,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 921,
+        "downloads": 922,
         "endorsements": 39
       }
     },
@@ -1317,7 +1323,7 @@
         "config": 7
       },
       "stats": {
-        "downloads": 85,
+        "downloads": 86,
         "endorsements": 0
       }
     },
@@ -1677,7 +1683,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 1374,
+        "downloads": 1375,
         "endorsements": 18
       }
     },
@@ -4435,7 +4441,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 389,
+        "downloads": 390,
         "endorsements": 1
       }
     },
@@ -4505,7 +4511,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 498,
+        "downloads": 499,
         "endorsements": 0
       }
     },
@@ -5344,7 +5350,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1617,
+        "downloads": 1618,
         "endorsements": 0
       }
     },
@@ -6469,7 +6475,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1122,
+        "downloads": 1123,
         "endorsements": 1
       }
     },
@@ -6829,7 +6835,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1532,
+        "downloads": 1533,
         "endorsements": 3
       }
     },
@@ -7864,7 +7870,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 522,
+        "downloads": 523,
         "endorsements": 0
       }
     },
@@ -9274,7 +9280,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 775,
+        "downloads": 776,
         "endorsements": 0
       }
     },
