@@ -1,0 +1,33 @@
+name: "sacrosanct_lord_transform"
+description: "The player turns into a Vampire Lord"
+
+eventCriteria:
+  eventType: "spell_cast"
+  schemaConditions:
+    - fieldPath: "spell_editor_id"
+      operator: "equals"
+      value: "DLC1VampireChange"
+      caseSensitive: true
+    - fieldPath: "actor"
+      operator: "equals"
+      value: "{{ player.name }}"
+
+# One roll per firing. Each branch is an angle, not a line.
+response:
+  type: "player_thought"
+  content: |
+    {%- set _roll = random -%}
+    {%- if _roll < 25 -%}
+    I've let it out and taken my true shape. The body: what is different, what was always there.
+    {%- else if _roll < 50 -%}
+    I've let it out and taken my true shape, and everything human about me has fallen away.
+    {%- else if _roll < 75 -%}
+    I've let it out. What I'm going to do with this, right now, and to whom.
+    {%- else -%}
+    I've taken my true shape again. Whether there is anyone near me who should not have seen that.
+    {%- endif -%}
+
+enabled: true
+probability: 1.0
+cooldownSeconds: 30
+priority: 5

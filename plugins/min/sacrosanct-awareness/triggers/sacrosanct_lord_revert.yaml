@@ -1,0 +1,33 @@
+name: "sacrosanct_lord_revert"
+description: "The player reverts from Vampire Lord form"
+
+eventCriteria:
+  eventType: "spell_cast"
+  schemaConditions:
+    - fieldPath: "spell_editor_id"
+      operator: "equals"
+      value: "DLC1RevertForm"
+      caseSensitive: true
+    - fieldPath: "actor"
+      operator: "equals"
+      value: "{{ player.name }}"
+
+# One roll per firing. Each branch is an angle, not a line.
+response:
+  type: "player_thought"
+  content: |
+    {%- set _roll = random -%}
+    {%- if _roll < 25 -%}
+    I'm back in my own skin. The shape is gone, but how much of me came back with it?
+    {%- else if _roll < 50 -%}
+    Back in my own skin. The smallness of it after that, and whether I miss the other one already.
+    {%- else if _roll < 75 -%}
+    Back in my own skin. What I did while I was the other thing, and whether I'd have done it like this.
+    {%- else -%}
+    Back in my own skin. Taking stock: what hurts, who saw, what needs cleaning up.
+    {%- endif -%}
+
+enabled: true
+probability: 1.0
+cooldownSeconds: 30
+priority: 5

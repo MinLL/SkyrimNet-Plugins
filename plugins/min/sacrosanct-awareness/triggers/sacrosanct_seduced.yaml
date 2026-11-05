@@ -1,0 +1,24 @@
+name: "sacrosanct_seduced"
+description: "The player uses Vampire's Seduction on someone. Recorded, no one reacts to it."
+
+eventCriteria:
+  eventType: "active_effect"
+  logicalOperator: "OR"
+  schemaConditions:
+    - fieldPath: "effect_editor_id"
+      operator: "equals"
+      value: "SCS_VampireSpells_Vanilla_Power_Effect_VampiresSeduction"
+      caseSensitive: true
+    - fieldPath: "effect_editor_id"
+      operator: "equals"
+      value: "SCS_VampireSpells_Vanilla_Power_Effect_VampiresSeduction_Vampire"
+      caseSensitive: true
+
+response:
+  type: "persistent_generic"
+  content: "*{{ event_json.caster }} holds {{ event_json.target }}'s gaze with an unnatural, seductive pull. {{ event_json.target }} falls calm and pliant.*"
+
+enabled: true
+probability: 1.0
+cooldownSeconds: 10
+priority: 5

@@ -1,0 +1,37 @@
+name: "sacrosanct_hunger_starved"
+description: "The player has become Blood Starved"
+
+# Sacrosanct's status and feed effects never reach active_effect events (script effects with no script),
+# so these read its HUD notifications. The texts differ under YOT - Sacrosanct, so both wordings are listed.
+eventCriteria:
+  eventType: "notification"
+  logicalOperator: "OR"
+  schemaConditions:
+    - fieldPath: "message"
+      operator: "contains"
+      value: "hated and feared"
+    - fieldPath: "message"
+      operator: "contains"
+      value: "seize the reins"
+
+# One roll per firing. Each branch is an angle, not a line, so the stage does not always arrive as the same thought.
+response:
+  type: "player_thought"
+  content: |
+    {%- set _roll = random -%}
+    {%- if _roll < 20 -%}
+    I've gone too long. Nothing is healing any more, and what that means if I'm hurt.
+    {%- else if _roll < 40 -%}
+    I've gone too long. People can see it in me now, and how they look at me.
+    {%- else if _roll < 60 -%}
+    I've gone too long, and the monster is very close to the reins. How much of me is still deciding.
+    {%- else if _roll < 80 -%}
+    I've gone too long. Someone has to die for this to end, and I'm already choosing.
+    {%- else -%}
+    I've gone too long. The sun is unbearable now; where I can stand to be, and for how long.
+    {%- endif -%}
+
+enabled: true
+probability: 1.0
+cooldownSeconds: 60
+priority: 5
