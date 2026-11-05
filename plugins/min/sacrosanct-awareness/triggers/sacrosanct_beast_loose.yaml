@@ -1,0 +1,22 @@
+name: "sacrosanct_beast_loose"
+description: "Wassail takes over: the player loses control to the Beast"
+
+eventCriteria:
+  eventType: "quest_start_stop"
+  schemaConditions:
+    - fieldPath: "quest"
+      operator: "equals"
+      value: "Wassail"
+      caseSensitive: true
+    - fieldPath: "started"
+      operator: "equals"
+      value: "true"
+
+response:
+  type: "player_thought"
+  content: "The Beast has slipped its leash. I can't stop myself, all I can do is watch."
+
+enabled: true
+probability: 1.0
+cooldownSeconds: 30
+priority: 8

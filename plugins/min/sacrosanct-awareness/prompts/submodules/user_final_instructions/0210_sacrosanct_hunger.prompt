@@ -1,0 +1,40 @@
+{# The player's blood hunger under Sacrosanct, for their own thoughts and lines; for anyone else, only the
+   Blood Starved stage, the one Sacrosanct makes visible to others. VampireStatus: 0 not a vampire, 1 Sated,
+   2 Thirsty, 3 Parched, 4 Blood Starved. It changes turn to turn, so it stays here, after the history. #}
+{% if is_plugin_loaded("Sacrosanct - Vampires of Skyrim.esp") and (render_mode == "full" or render_mode == "thoughts" or render_mode == "transform") %}
+{% set _vampStatus = get_script_property("PlayerVampireQuest", "PlayerVampireQuestScript", "VampireStatus") %}
+{% if _vampStatus and _vampStatus >= 1 %}
+{% if is_player(npc.UUID) %}
+{% set _hoursSinceFeed = round((get_global_value("GameDaysPassed") - get_script_property("PlayerVampireQuest", "PlayerVampireQuestScript", "LastFeedTime")) * 24, 0) %}
+## Your Hunger for Blood
+Private. Never name these stages aloud; in your own words this is whatever you call it to yourself. Let this subtly influence roleplay without overwhelming it.
+{% if _hoursSinceFeed < 2 %}You fed within the last hour or two.
+{% else if _hoursSinceFeed < 36 %}You last fed about {{ _hoursSinceFeed }} hours ago.
+{% else %}You last fed about {{ round(_hoursSinceFeed / 24, 0) }} days ago.
+{% endif %}
+{% if _vampStatus == 1 %}
+Sated. The hunger is quiet and you pass easily among the living; your charm is at its strongest. Your darker gifts are at their weakest now: they grow as you thirst.
+{% else if _vampStatus == 2 %}
+Thirsty. You have started noticing pulses and the warmth of people close to you. Your power is rising, and it feels good. If you are badly hurt in a fight, the Beast can slip its leash.
+{% else if _vampStatus == 3 %}
+Parched. It is hard to think past the hunger. You can no longer take blood gently: the only way left to feed is to drain someone to death. The sun hurts far more, and your power is frightening. Your charm has gone cold.
+{% else %}
+Blood Starved. Your body has stopped mending: nothing heals you, blood potions do nothing, and sunlight is unbearable. People can see what is wrong with you and they fear and hate you for it. Only draining someone to death will end this, and the monster in you is close to taking the reins.
+{% endif %}
+{% set _hour = get_global_value("GameHour") %}
+Your days and nights are reversed: you are awake at night and rest during the day, out of the sun.
+{% if _hour >= 19 or _hour < 5 %}
+It is night, so your day is only beginning. You are wide awake and do not want sleep. You have no need of a bed or a room tonight, and an inn at this hour is for other people.
+{% else if _hour < 7 %}
+Dawn is close. Your night is ending, and you need somewhere dark to spend the day before the sun is up.
+{% else if _hour < 17 %}
+It is daytime. This is when you should be resting somewhere dark, and being out in it wears on you.
+{% else %}
+Dusk is coming and you are starting to wake. The night ahead is yours; you have no need of a bed.
+{% endif %}
+{% else if _vampStatus == 4 and render_mode == "full" %}
+## {{ player.name }}'s Appearance
+Something is badly wrong with {{ player.name }} right now: gaunt, grey, and with a hunger in the eyes that is hard to meet. It makes you deeply uneasy and afraid. Unless you already know what {{ player.name }} is, you do not know the cause.
+{% endif %}
+{% endif %}
+{% endif %}
