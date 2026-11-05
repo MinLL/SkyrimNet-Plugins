@@ -1,0 +1,22 @@
+name: "sacrosanct_embraced"
+description: "The player has embraced someone, turning them"
+
+eventCriteria:
+  eventType: "active_effect"
+  schemaConditions:
+    - fieldPath: "effect_editor_id"
+      operator: "equals"
+      value: "SCS_Mechanics_Effect_FeedFosterChilde_Target"
+      caseSensitive: true
+    - fieldPath: "action"
+      operator: "equals"
+      value: "applied"
+
+response:
+  type: "player_thought"
+  content: "I have just given {{ event_json.target }} the same curse that runs in me. {{ event_json.target }} will wake as what I am, and that is my doing."
+
+enabled: true
+probability: 1.0
+cooldownSeconds: 30
+priority: 5

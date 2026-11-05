@@ -1,0 +1,37 @@
+name: "sacrosanct_hunger_thirsty"
+description: "The player has grown Thirsty"
+
+# Sacrosanct's status and feed effects never reach active_effect events (script effects with no script),
+# so these read its HUD notifications. The texts differ under YOT - Sacrosanct, so both wordings are listed.
+eventCriteria:
+  eventType: "notification"
+  logicalOperator: "OR"
+  schemaConditions:
+    - fieldPath: "message"
+      operator: "contains"
+      value: "charm fades"
+    - fieldPath: "message"
+      operator: "contains"
+      value: "charm is fading"
+
+# One roll per firing. Each branch is an angle, not a line, so the stage does not always arrive as the same thought.
+response:
+  type: "player_thought"
+  content: |
+    {%- set _roll = random -%}
+    {%- if _roll < 20 -%}
+    The thirst has started. The first pulse I can pick out nearby, and what hearing it does to me.
+    {%- else if _roll < 40 -%}
+    The thirst has started, and the power coming up with it feels better than it should.
+    {%- else if _roll < 60 -%}
+    The thirst has started. The practical side: who, where, and how soon.
+    {%- else if _roll < 80 -%}
+    The thirst has started again. It always does, and how I feel about the cycle this time.
+    {%- else -%}
+    The thirst has started. What I'm doing to keep whoever is near me from noticing.
+    {%- endif -%}
+
+enabled: true
+probability: 1.0
+cooldownSeconds: 60
+priority: 5

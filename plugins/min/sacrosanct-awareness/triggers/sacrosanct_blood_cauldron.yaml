@@ -1,0 +1,24 @@
+name: "sacrosanct_blood_cauldron"
+description: "The player uses Blood Cauldron. Recorded, no one reacts to it."
+
+eventCriteria:
+  eventType: "spell_cast"
+  schemaConditions:
+    - fieldPath: "spell_editor_id"
+      operator: "equals"
+      value: "SCS_VampireSpells_Vanilla_Power_Spell_BloodCauldron"
+      caseSensitive: true
+    - fieldPath: "actor"
+      operator: "equals"
+      value: "{{ player.name }}"
+
+# Written as what onlookers see: nearby NPCs get this line in their history, and this plugin keeps the
+# player's vampirism private until Blood Starved, so it shows the blood and the recovery but names no curse.
+response:
+  type: "persistent_generic"
+  content: "*Blood wells up and bursts across {{ event_json.actor }}'s body, and {{ event_json.actor }} staggers under it. As it fades, {{ event_json.actor }} stands steadier, wounds closed and weariness gone.*"
+
+enabled: true
+probability: 1.0
+cooldownSeconds: 10
+priority: 5

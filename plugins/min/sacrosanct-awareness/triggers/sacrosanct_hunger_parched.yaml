@@ -1,0 +1,34 @@
+name: "sacrosanct_hunger_parched"
+description: "The player has grown Parched"
+
+# Sacrosanct's status and feed effects never reach active_effect events (script effects with no script),
+# so these read its HUD notifications. The texts differ under YOT - Sacrosanct, so both wordings are listed.
+eventCriteria:
+  eventType: "notification"
+  logicalOperator: "AND"
+  schemaConditions:
+    - fieldPath: "message"
+      operator: "contains"
+      value: "primal urge"
+
+# One roll per firing. Each branch is an angle, not a line, so the stage does not always arrive as the same thought.
+response:
+  type: "player_thought"
+  content: |
+    {%- set _roll = random -%}
+    {%- if _roll < 20 -%}
+    The hunger has sharpened and it is getting hard to think past it. What it is crowding out.
+    {%- else if _roll < 40 -%}
+    The hunger has sharpened. I couldn't feed gently now if I tried; the next one would be a kill, and what I make of that.
+    {%- else if _roll < 60 -%}
+    The hunger has sharpened and the sun bites far worse than it did. Daylight is a problem now.
+    {%- else if _roll < 80 -%}
+    The hunger has sharpened and my charm has gone cold. People are a little cooler to me, and I can tell.
+    {%- else -%}
+    The hunger has sharpened, and the strength that comes with it is starting to frighten even me.
+    {%- endif -%}
+
+enabled: true
+probability: 1.0
+cooldownSeconds: 60
+priority: 5

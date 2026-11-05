@@ -1,0 +1,27 @@
+name: notification_blood_boil_trigger
+description: Stepping outside during the day
+eventCriteria:
+  eventType: notification
+  schemaConditions:
+    - fieldPath: message
+      operator: equals
+      value: I can feel my blood boil in the sunlight.
+      caseSensitive: false
+audience: player
+# One roll per firing. Each branch is an angle, not a line, so the sun does not always get the same thought.
+response:
+  type: player_thought
+  content: |
+    {%- set _roll = random -%}
+    {%- if _roll < 25 -%}
+    So bright out. The glare, and the heat on my skin.
+    {%- else if _roll < 50 -%}
+    Out in the sun again. How many hours until dusk, and where the nearest shade is.
+    {%- else if _roll < 75 -%}
+    Out in the sun. How I must look to anyone watching me squint through it.
+    {%- else -%}
+    Out in the sun, at this hour. Whatever I'm out here for had better be worth it.
+    {%- endif -%}
+enabled: true
+probability: 0.5
+cooldownSeconds: 120

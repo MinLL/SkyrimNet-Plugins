@@ -1,0 +1,35 @@
+name: "sacrosanct_fed"
+description: "The player has fed on someone"
+
+# Sacrosanct's status and feed effects never reach active_effect events (script effects with no script),
+# so these read its HUD notifications. The texts differ under YOT - Sacrosanct, so both wordings are listed.
+eventCriteria:
+  eventType: "notification"
+  logicalOperator: "AND"
+  schemaConditions:
+    - fieldPath: "message"
+      operator: "contains"
+      value: "charm returns"
+
+# One roll per firing. Each branch is an angle, not a line: the thought is written in the player's own
+# voice from it, so the same feed reads differently from one time to the next.
+response:
+  type: "player_thought"
+  content: |
+    {%- set _roll = random -%}
+    {%- if _roll < 20 -%}
+    I just fed. Where the blood goes first, and what in me it quiets.
+    {%- else if _roll < 40 -%}
+    I just fed, and I took that from someone. Whatever I feel about that, I feel it right now, before it fades.
+    {%- else if _roll < 60 -%}
+    I just fed. One thing I noticed about them while I drank: a sound, a smell, how they went still.
+    {%- else if _roll < 80 -%}
+    I just fed, and the charm is back on me. What that lets me get away with, for a while.
+    {%- else -%}
+    I just fed. The relief of it, and how I already know it will not last.
+    {%- endif -%}
+
+enabled: true
+probability: 1.0
+cooldownSeconds: 5
+priority: 5
