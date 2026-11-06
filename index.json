@@ -1,8 +1,66 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-11-06T08:25:39.929Z",
-  "stats_as_of": "2026-11-06T08:24:11.898Z",
+  "generated_at": "2026-11-06T08:51:32.468Z",
+  "stats_as_of": "2026-11-06T08:48:42.995Z",
   "plugins": [
+    {
+      "id": "plugins/taka/skyrimnet-minigame",
+      "plugin_id": "taka.skyrimnet-minigame",
+      "type": "listing",
+      "title": "SkyrimNet MiniGame",
+      "tagline": "Play Reversi, Liar's Dice, Shut the Box and Blackjack with the NPCs around you on a board drawn over the game. Your opponents talk about the game, know how it stands, and remember it.",
+      "author": "taka",
+      "tags": [
+        "Gameplay",
+        "NPC",
+        "Minigame",
+        "Dialogue",
+        "Prisma UI"
+      ],
+      "nsfw": false,
+      "icon": "package",
+      "mods": [],
+      "first_published": "2026-11-03T15:43:06Z",
+      "last_updated": "2026-11-06T08:50:59Z",
+      "version": "0.1.2",
+      "history": [
+        {
+          "version": "0.1.2",
+          "commit": "2847f20c4aa29e093dc5071c49c677567da38413",
+          "date": "2026-11-06T08:50:59Z",
+          "changelog": "Fixed a crash when a mini game started with ENB or Skyrim Upscaler installed: saving the photo for the face frames crashed inside the game's own screenshot code. With either of them installed, the photo is now skipped and the frames show initials. A new MCM option, Face photos, turns the photo off by hand."
+        },
+        {
+          "version": "0.1.1",
+          "commit": "b41140512332d681fe5c6b353d84b035002a85ff",
+          "date": "2026-11-04T11:37:55Z",
+          "changelog": "Two new games: Shut the Box and Blackjack, each against up to three NPCs with four opponent strengths. In Blackjack you choose who deals, you or one of your opponents. Also fixed: the board could lose the input focus and stay on screen, reacting to nothing. It now takes the focus back, and Esc always closes it."
+        },
+        {
+          "version": "0.1.0",
+          "commit": "95ecad5ed411d5f06f4f9d95f6513dd532a63864",
+          "date": "2026-11-03T15:43:06Z",
+          "changelog": "First release: Reversi against one NPC and Liar's Dice against up to three, with SkyrimNet commentary, the game state in each opponent's prompt, your own bids spoken through Transform Dialogue, NPC challenges to Reversi, and face frames of your opponents on the board."
+        }
+      ],
+      "external_url": "https://github.com/nightlantern-mods/skyrimnet_MiniGame",
+      "languages": [
+        "en",
+        "ja"
+      ],
+      "language": "en",
+      "image": {
+        "file": "cover.jpg",
+        "sha": "c29e9e93a7d7274e3b4347cf8ce495d501f95e51",
+        "commit": "95ecad5ed411d5f06f4f9d95f6513dd532a63864",
+        "width": 1920,
+        "height": 1080
+      },
+      "stats": {
+        "downloads": 9,
+        "endorsements": 0
+      }
+    },
     {
       "id": "plugins/awesmdiver/modpacer",
       "plugin_id": "awesmdiver.modpacer",
@@ -411,58 +469,6 @@
       "stats": {
         "downloads": 360,
         "endorsements": 7
-      }
-    },
-    {
-      "id": "plugins/taka/skyrimnet-minigame",
-      "plugin_id": "taka.skyrimnet-minigame",
-      "type": "listing",
-      "title": "SkyrimNet MiniGame",
-      "tagline": "Play Reversi, Liar's Dice, Shut the Box and Blackjack with the NPCs around you on a board drawn over the game. Your opponents talk about the game, know how it stands, and remember it.",
-      "author": "taka",
-      "tags": [
-        "Gameplay",
-        "NPC",
-        "Minigame",
-        "Dialogue",
-        "Prisma UI"
-      ],
-      "nsfw": false,
-      "icon": "package",
-      "mods": [],
-      "first_published": "2026-11-03T15:43:06Z",
-      "last_updated": "2026-11-04T11:37:55Z",
-      "version": "0.1.1",
-      "history": [
-        {
-          "version": "0.1.1",
-          "commit": "b41140512332d681fe5c6b353d84b035002a85ff",
-          "date": "2026-11-04T11:37:55Z",
-          "changelog": "Two new games: Shut the Box and Blackjack, each against up to three NPCs with four opponent strengths. In Blackjack you choose who deals, you or one of your opponents. Also fixed: the board could lose the input focus and stay on screen, reacting to nothing. It now takes the focus back, and Esc always closes it."
-        },
-        {
-          "version": "0.1.0",
-          "commit": "95ecad5ed411d5f06f4f9d95f6513dd532a63864",
-          "date": "2026-11-03T15:43:06Z",
-          "changelog": "First release: Reversi against one NPC and Liar's Dice against up to three, with SkyrimNet commentary, the game state in each opponent's prompt, your own bids spoken through Transform Dialogue, NPC challenges to Reversi, and face frames of your opponents on the board."
-        }
-      ],
-      "external_url": "https://github.com/nightlantern-mods/skyrimnet_MiniGame",
-      "languages": [
-        "en",
-        "ja"
-      ],
-      "language": "en",
-      "image": {
-        "file": "cover.jpg",
-        "sha": "c29e9e93a7d7274e3b4347cf8ce495d501f95e51",
-        "commit": "95ecad5ed411d5f06f4f9d95f6513dd532a63864",
-        "width": 1920,
-        "height": 1080
-      },
-      "stats": {
-        "downloads": 9,
-        "endorsements": 0
       }
     },
     {
@@ -2037,7 +2043,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 1451,
+        "downloads": 1452,
         "endorsements": 18
       }
     },
@@ -2529,7 +2535,7 @@
         "height": 760
       },
       "stats": {
-        "downloads": 140,
+        "downloads": 142,
         "endorsements": 0
       }
     },
@@ -3547,7 +3553,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 144,
+        "downloads": 145,
         "endorsements": 3
       }
     },
@@ -7137,7 +7143,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1019,
+        "downloads": 1020,
         "endorsements": 2
       }
     },
@@ -9492,7 +9498,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1409,
+        "downloads": 1410,
         "endorsements": 2
       }
     },
@@ -10617,7 +10623,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1927,
+        "downloads": 1928,
         "endorsements": 2
       }
     },
@@ -11202,7 +11208,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 192,
+        "downloads": 193,
         "endorsements": 0
       }
     },
@@ -13632,7 +13638,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 226,
+        "downloads": 227,
         "endorsements": 0
       }
     },
