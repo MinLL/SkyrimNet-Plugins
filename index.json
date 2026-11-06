@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-11-06T04:24:04.378Z",
-  "stats_as_of": "2026-11-06T04:24:02.341Z",
+  "generated_at": "2026-11-06T05:22:44.802Z",
+  "stats_as_of": "2026-11-06T05:22:44.690Z",
   "plugins": [
     {
       "id": "plugins/phospheneoverdrive/intelengine-npc-autonomy-faction-politics",
@@ -660,7 +660,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 397,
+        "downloads": 398,
         "endorsements": 8
       }
     },
@@ -1492,7 +1492,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 45,
+        "downloads": 46,
         "endorsements": 2
       }
     },
@@ -1654,7 +1654,7 @@
         "config": 7
       },
       "stats": {
-        "downloads": 167,
+        "downloads": 168,
         "endorsements": 1
       }
     },
@@ -1786,7 +1786,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 258,
+        "downloads": 259,
         "endorsements": 6
       }
     },
@@ -1933,7 +1933,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 1445,
+        "downloads": 1449,
         "endorsements": 18
       }
     },
@@ -4193,7 +4193,7 @@
         "config": 4
       },
       "stats": {
-        "downloads": 393,
+        "downloads": 394,
         "endorsements": 3
       }
     },
@@ -4712,7 +4712,7 @@
         "height": 900
       },
       "stats": {
-        "downloads": 241,
+        "downloads": 242,
         "endorsements": 5
       }
     },
@@ -6184,7 +6184,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1383,
+        "downloads": 1384,
         "endorsements": 2
       }
     },
@@ -10609,7 +10609,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1922,
+        "downloads": 1923,
         "endorsements": 2
       }
     },
@@ -14029,7 +14029,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2362,
+        "downloads": 2363,
         "endorsements": 2
       }
     },
