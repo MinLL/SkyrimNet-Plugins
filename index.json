@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-11-07T08:23:08.819Z",
-  "stats_as_of": "2026-11-07T08:22:28.250Z",
+  "generated_at": "2026-11-07T09:22:34.028Z",
+  "stats_as_of": "2026-11-07T09:17:57.451Z",
   "plugins": [
     {
       "id": "plugins/taka/skyrimnet-minigame",
@@ -1194,7 +1194,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 71,
+        "downloads": 72,
         "endorsements": 1
       }
     },
@@ -1764,7 +1764,7 @@
         "config": 7
       },
       "stats": {
-        "downloads": 193,
+        "downloads": 194,
         "endorsements": 1
       }
     },
@@ -2043,7 +2043,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 1486,
+        "downloads": 1487,
         "endorsements": 18
       }
     },
@@ -2494,7 +2494,7 @@
         "height": 769
       },
       "stats": {
-        "downloads": 45,
+        "downloads": 46,
         "endorsements": 0
       }
     },
@@ -2535,7 +2535,7 @@
         "height": 760
       },
       "stats": {
-        "downloads": 149,
+        "downloads": 150,
         "endorsements": 0
       }
     },
@@ -2784,7 +2784,7 @@
         "height": 720
       },
       "stats": {
-        "downloads": 148,
+        "downloads": 150,
         "endorsements": 1
       }
     },
@@ -3160,7 +3160,7 @@
         "height": 720
       },
       "stats": {
-        "downloads": 82,
+        "downloads": 83,
         "endorsements": 0
       }
     },
