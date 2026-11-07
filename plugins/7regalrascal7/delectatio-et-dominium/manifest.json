@@ -1,9 +1,9 @@
 {
   "id": "7regalrascal7.delectatio-et-dominium",
   "type": "listing",
-  "title": "Delectatio-et-Dominium",
-  "tagline": "Bedroom drama for SkyrimNet",
-  "description": "Delectatio et Dominium (DeD) is a modular SkyrimNet integration mod for a number of classic community adult mods and effects. It aims to immerse you in those mods through thoughtful integration into SkyrimNet's prompt and trigger systems: the LLM driving your NPCs doesn't just know what's happening — it reacts as the character would, narrates it in-story, and decides what happens next. In some instances, DeD even drives the functions itself: applying cum decals, executing paired animations, and applying tattoos. And it attempts to maintain complete compatibility with both main adult Skyrim frameworks, SexLab and OStim — pick either, or run both.\n\nIntegrated mods include:\nBaka Paired Animations - For escalating scenes that can end in adult encounters\nGunSlicer Poses - To allow NPCs to dance and pose emergently (and the player too)\nFill Her Up Baka - For reaction to cumflated actors\nOCum Ascended/SLACS 2 + SCO ( Cum Overlays ) - For reactions to visible cum\nSlaveTats - For ambient reactions to naughty tattoos\n\nThe structural idea: a modular framework that can support a number of mods while requiring as few as one of them. Each module is a separable file-set with a FOMOD installer option, so you install only what you use.\n\nEverything the LLM narrates is written in-story: cues and ambient narration describe what is happening as it happens — the model reacts as the character would, never breaking the scene to explain itself. Nothing fires at random; every interaction and pose is decided by SkyrimNet's model, in context, from the characters' personalities. Master toggles, an intensity slider, and per-module settings let you dial everything back.\n\nThis is an alpha release of the mod so I'm hoping the community can help test the various features, report bugs, and give feedback.\n\nA big thank you to Around906 for the base integrations that this mod is build on top of. Their mods live on within this one.\n\nEnjoy!",
+  "title": "Delectatio et Dominium",
+  "tagline": "Bedroom Drama for SkyrimNet",
+  "description": "Delectatio et Dominium (DeD) is a modular SkyrimNet integration mod for a number of classic community adult mods and effects. It aims to immerse you in those mods through thoughtful integration into SkyrimNet's prompt and trigger systems: the LLM driving your NPCs doesn't just know what's happening — it reacts as the character would, narrates it in-story, and decides what happens next. In some instances, DeD even drives the functions itself: applying cum decals, executing paired animations, and applying tattoos. And it attempts to maintain complete compatibility with both main adult Skyrim frameworks, SexLab and OStim — pick either, or run both.\n\nIntegrated mods include: Baka Paired Animations - For escalating scenes that can end in adult encounters GunSlicer Poses - To allow NPCs to dance and pose emergently (and the player too) Fill Her Up Baka - For reaction to cumflated actors OCum Ascended/SLACS 2 + SCO ( Cum Overlays ) - For reactions to visible cum SlaveTats - For ambient reactions to naughty tattoos\n\nThe structural idea: a modular framework that can support a number of mods while requiring as few as one of them. Each module is a separable file-set with a FOMOD installer option, so you install only what you use.\n\nEverything the LLM narrates is written in-story: cues and ambient narration describe what is happening as it happens — the model reacts as the character would, never breaking the scene to explain itself. Nothing fires at random; every interaction and pose is decided by SkyrimNet's model, in context, from the characters' personalities. Master toggles, an intensity slider, and per-module settings let you dial everything back.\n\nThe alpha testing continues. The Daedric influence modes have been enhanced, and several bugs have been squashed.\n\nA big thank you to Around906 for the base integrations that this mod is build on top of. Their mods live on within this one.\n\nEnjoy!",
   "author": "7regalrascal7",
   "tags": [
     "SexLab",
@@ -14,9 +14,53 @@
   ],
   "nsfw": true,
   "icon": "heart",
-  "mods": [],
+  "mods": [
+    {
+      "name": "Acheron.esm",
+      "file": "acheron.esm",
+      "required": true
+    },
+    {
+      "name": "SexLab.esm",
+      "file": "sexlab.esm",
+      "required": true
+    },
+    {
+      "name": "OStim.esp",
+      "file": "ostim.esp",
+      "required": true
+    },
+    {
+      "name": "sr_FillHerUp.esp",
+      "file": "sr_fillherup.esp",
+      "required": false
+    },
+    {
+      "name": "SexLabDefeat.esp",
+      "file": "sexlabdefeat.esp",
+      "required": false
+    },
+    {
+      "name": "SlaveTats.esp",
+      "file": "slavetats.esp",
+      "required": false
+    },
+    {
+      "name": "_GSPoses.esp",
+      "file": "_gsposes.esp",
+      "required": false
+    },
+    {
+      "name": "OCum.esp",
+      "file": "ocum.esp",
+      "required": false
+    }
+  ],
+  "languages": [
+    "en"
+  ],
   "image": "cover.png",
-  "external_url": "https://github.com/regalrascal/Delectatio-et-Dominium",
-  "version": "0.3.0",
-  "changelog": "Initial release"
+  "external_url": "https://github.com/regalrascal/Delectatio-et-Dominium/releases/tag/v0.4.0",
+  "version": "0.4.0",
+  "changelog": "Delectatio et Dominium 0.4.0\n\nNarrative Selection — the headline. Every ambient mode now casts its own scenes: one LLM call picks who acts, what they do, to whom, and why — from live context (bios, arousal, memories, recent events), not dice. And the \"why\" ships in the cue itself: \"that display of strength is the first thing in this cursed room worth wanting.\" Toggle per module if you prefer plain cues.\n\nReaction lanes everywhere — direct narration / NPC thought / player speech / player thought, unified across GS poses and Baka actions, one lane per event in rotation, with a guaranteed acknowledgment floor so no pose happens unseen.\n\nTriggers that say what happened — rich cue descriptions now flow directly into trigger text (live-proven {{ event_data }} channel). No more \"something happened, react.\"\n\nArousal doctrine completed — the last mechanical banding retired. All reaction registers render as suggestions beside actual arousal facts; the LLM picks what fits the person and the moment.\n\nHonest cadence — clocks arm at dispatch, not fire; missed LLM answers no longer burn cadence slots; fast modes auto-lean their prompts to stay affordable. 60s default.\n\nThe Acheron fix — the follower soft-lock is dead at its roots: Acheron rescues work on NPCs, Prisma HelpUp always releases, and standing over downed companions post-combat extends their wait by one minute, not forever.\n\nSofter feet — EmoTears4NPCs is now a true soft dependency (it was never actually used). One hidden load-order constraint gone.\n\nThe theme: every \"broken system\" this cycle was a too-literal gatekeeper, while the model's answers kept being the healthiest layer. 0.4.0 stops second-guessing the model — complete information, honest timing, gates that check spelling. The mod now speaks in complete sentences."
 }
