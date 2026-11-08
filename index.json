@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-11-08T03:24:34.334Z",
-  "stats_as_of": "2026-11-08T03:24:34.262Z",
+  "generated_at": "2026-11-08T04:22:59.991Z",
+  "stats_as_of": "2026-11-08T04:22:59.721Z",
   "plugins": [
     {
       "id": "plugins/goodprovider/skyrimnet-leashed",
@@ -65,7 +65,7 @@
         "height": 720
       },
       "stats": {
-        "downloads": 125,
+        "downloads": 126,
         "endorsements": 1
       }
     },
@@ -196,7 +196,7 @@
         "height": 432
       },
       "stats": {
-        "downloads": 260,
+        "downloads": 262,
         "endorsements": 3
       }
     },
@@ -443,7 +443,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 392,
+        "downloads": 393,
         "endorsements": 11
       }
     },
@@ -734,7 +734,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 164,
+        "downloads": 165,
         "endorsements": 2
       }
     },
@@ -967,7 +967,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 425,
+        "downloads": 426,
         "endorsements": 8
       }
     },
@@ -1124,7 +1124,7 @@
         "height": 1080
       },
       "stats": {
-        "downloads": 103,
+        "downloads": 104,
         "endorsements": 1
       }
     },
@@ -1755,7 +1755,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 979,
+        "downloads": 980,
         "endorsements": 40
       }
     },
@@ -1961,7 +1961,7 @@
         "config": 7
       },
       "stats": {
-        "downloads": 218,
+        "downloads": 219,
         "endorsements": 1
       }
     },
@@ -2005,7 +2005,7 @@
         "height": 720
       },
       "stats": {
-        "downloads": 16,
+        "downloads": 17,
         "endorsements": 0
       }
     },
@@ -2152,7 +2152,7 @@
         "height": 1080
       },
       "stats": {
-        "downloads": 99,
+        "downloads": 100,
         "endorsements": 2
       }
     },
@@ -2240,7 +2240,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 1513,
+        "downloads": 1515,
         "endorsements": 18
       }
     },
@@ -2296,7 +2296,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 138,
+        "downloads": 139,
         "endorsements": 0
       }
     },
@@ -3467,7 +3467,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 171,
+        "downloads": 172,
         "endorsements": 0
       }
     },
@@ -3621,7 +3621,7 @@
         "height": 1080
       },
       "stats": {
-        "downloads": 174,
+        "downloads": 175,
         "endorsements": 5
       }
     },
