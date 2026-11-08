@@ -1,8 +1,71 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-11-08T13:22:00.206Z",
-  "stats_as_of": "2026-11-08T13:21:59.881Z",
+  "generated_at": "2026-11-08T14:17:28.476Z",
+  "stats_as_of": "2026-11-08T14:17:28.342Z",
   "plugins": [
+    {
+      "id": "plugins/taka/skyrimnet-slave-auction",
+      "plugin_id": "taka.skyrimnet-slave-auction",
+      "type": "listing",
+      "title": "SkyrimNet Slave Auction",
+      "tagline": "A secret slave auction near Riften, voiced by SkyrimNet's AI. Be sold on its stage, or sit among the buyers and bid for your followers.",
+      "author": "taka",
+      "tags": [
+        "auction",
+        "followers",
+        "captivity",
+        "dialogue",
+        "framework"
+      ],
+      "nsfw": true,
+      "icon": "package",
+      "mods": [
+        {
+          "name": "ZaZAnimationPack.esm",
+          "file": "zazanimationpack.esm",
+          "required": true
+        },
+        {
+          "name": "nwsFollowerFramework.esp",
+          "file": "nwsfollowerframework.esp",
+          "required": true
+        }
+      ],
+      "first_published": "2026-11-03T15:42:38Z",
+      "last_updated": "2026-11-08T14:16:56Z",
+      "version": "0.1.1",
+      "history": [
+        {
+          "version": "0.1.1",
+          "commit": "efb046986c844cbe186e90f9ed03193a5caa099d",
+          "date": "2026-11-08T14:16:56Z",
+          "changelog": "Fixes a serious problem in 0.1.0: on every auction it changed the cooldowns of 39 SkyrimNet actions from other mods, and SkyrimNet saved them, so those mods behaved differently even outside the auction. 0.1.1 no longer touches any SkyrimNet setting. If you ran an auction with 0.1.0, update and run the separate SkyrimNet Actions Repair once; it is on the GitHub release page. New users need no repair. The installer now also works in Vortex."
+        },
+        {
+          "version": "0.1.0",
+          "commit": "8f1e21f736619485df31c30be696940b3a15859f",
+          "date": "2026-11-03T15:42:38Z",
+          "changelog": "First release."
+        }
+      ],
+      "external_url": "https://github.com/nightlantern-mods/skyrimnet_SlaveAuction",
+      "languages": [
+        "en",
+        "ja"
+      ],
+      "language": "en",
+      "image": {
+        "file": "cover.jpg",
+        "sha": "bafe8f299b8b0bbb69307aaa08d47df6387efc72",
+        "commit": "8f1e21f736619485df31c30be696940b3a15859f",
+        "width": 1280,
+        "height": 720
+      },
+      "stats": {
+        "downloads": 31,
+        "endorsements": 0
+      }
+    },
     {
       "id": "plugins/severause/magelight-ui",
       "plugin_id": "severause.magelight-ui",
@@ -304,7 +367,7 @@
         "height": 768
       },
       "stats": {
-        "downloads": 143,
+        "downloads": 144,
         "endorsements": 0
       }
     },
@@ -384,7 +447,7 @@
         "height": 1080
       },
       "stats": {
-        "downloads": 65,
+        "downloads": 67,
         "endorsements": 0
       }
     },
@@ -918,7 +981,7 @@
         "height": 864
       },
       "stats": {
-        "downloads": 377,
+        "downloads": 378,
         "endorsements": 7
       }
     },
@@ -1258,63 +1321,6 @@
       "language": "en",
       "stats": {
         "downloads": 32,
-        "endorsements": 0
-      }
-    },
-    {
-      "id": "plugins/taka/skyrimnet-slave-auction",
-      "plugin_id": "taka.skyrimnet-slave-auction",
-      "type": "listing",
-      "title": "SkyrimNet Slave Auction",
-      "tagline": "A secret slave auction near Riften, voiced by SkyrimNet's AI. Be sold on its stage, or sit among the buyers and bid for your followers.",
-      "author": "taka",
-      "tags": [
-        "auction",
-        "followers",
-        "captivity",
-        "dialogue",
-        "framework"
-      ],
-      "nsfw": true,
-      "icon": "package",
-      "mods": [
-        {
-          "name": "ZaZAnimationPack.esm",
-          "file": "zazanimationpack.esm",
-          "required": true
-        },
-        {
-          "name": "nwsFollowerFramework.esp",
-          "file": "nwsfollowerframework.esp",
-          "required": true
-        }
-      ],
-      "first_published": "2026-11-03T15:42:38Z",
-      "last_updated": "2026-11-03T15:42:38Z",
-      "version": "0.1.0",
-      "history": [
-        {
-          "version": "0.1.0",
-          "commit": "8f1e21f736619485df31c30be696940b3a15859f",
-          "date": "2026-11-03T15:42:38Z",
-          "changelog": "First release."
-        }
-      ],
-      "external_url": "https://github.com/nightlantern-mods/skyrimnet_SlaveAuction",
-      "languages": [
-        "en",
-        "ja"
-      ],
-      "language": "en",
-      "image": {
-        "file": "cover.jpg",
-        "sha": "bafe8f299b8b0bbb69307aaa08d47df6387efc72",
-        "commit": "8f1e21f736619485df31c30be696940b3a15859f",
-        "width": 1280,
-        "height": 720
-      },
-      "stats": {
-        "downloads": 31,
         "endorsements": 0
       }
     },
@@ -1795,7 +1801,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 482,
+        "downloads": 483,
         "endorsements": 4
       }
     },
@@ -1851,7 +1857,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 242,
+        "downloads": 244,
         "endorsements": 0
       }
     },
@@ -1935,7 +1941,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 984,
+        "downloads": 986,
         "endorsements": 40
       }
     },
@@ -1979,7 +1985,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 59,
+        "downloads": 60,
         "endorsements": 2
       }
     },
@@ -2060,7 +2066,7 @@
         "config": 7
       },
       "stats": {
-        "downloads": 173,
+        "downloads": 175,
         "endorsements": 0
       }
     },
@@ -2141,7 +2147,7 @@
         "config": 7
       },
       "stats": {
-        "downloads": 234,
+        "downloads": 237,
         "endorsements": 1
       }
     },
@@ -2417,7 +2423,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 150,
+        "downloads": 151,
         "endorsements": 0
       }
     },
@@ -3589,7 +3595,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 155,
+        "downloads": 156,
         "endorsements": 3
       }
     },
@@ -4630,7 +4636,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 561,
+        "downloads": 562,
         "endorsements": 0
       }
     },
@@ -5005,7 +5011,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 60,
+        "downloads": 61,
         "endorsements": 0
       }
     },
@@ -5109,7 +5115,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1542,
+        "downloads": 1545,
         "endorsements": 2
       }
     },
@@ -5154,7 +5160,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 785,
+        "downloads": 787,
         "endorsements": 0
       }
     },
@@ -5244,7 +5250,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 3390,
+        "downloads": 3391,
         "endorsements": 4
       }
     },
@@ -5469,7 +5475,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1740,
+        "downloads": 1742,
         "endorsements": 0
       }
     },
@@ -6594,7 +6600,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1219,
+        "downloads": 1222,
         "endorsements": 1
       }
     },
@@ -6954,7 +6960,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1669,
+        "downloads": 1672,
         "endorsements": 3
       }
     },
@@ -8179,7 +8185,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 15,
+        "downloads": 16,
         "endorsements": 0
       }
     },
@@ -9264,7 +9270,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 263,
+        "downloads": 264,
         "endorsements": 1
       }
     },
@@ -9399,7 +9405,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 833,
+        "downloads": 834,
         "endorsements": 0
       }
     },
@@ -9624,7 +9630,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1928,
+        "downloads": 1931,
         "endorsements": 2
       }
     },
@@ -10479,7 +10485,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 329,
+        "downloads": 330,
         "endorsements": 1
       }
     },
@@ -10659,7 +10665,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2000,
+        "downloads": 2002,
         "endorsements": 2
       }
     },
@@ -10929,7 +10935,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1632,
+        "downloads": 1634,
         "endorsements": 2
       }
     },
@@ -11469,7 +11475,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1205,
+        "downloads": 1207,
         "endorsements": 0
       }
     },
@@ -12279,7 +12285,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1019,
+        "downloads": 1020,
         "endorsements": 0
       }
     },
@@ -13089,7 +13095,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 394,
+        "downloads": 395,
         "endorsements": 0
       }
     },
@@ -13269,7 +13275,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 662,
+        "downloads": 664,
         "endorsements": 0
       }
     },
@@ -13539,7 +13545,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 922,
+        "downloads": 923,
         "endorsements": 2
       }
     },
@@ -14079,7 +14085,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2471,
+        "downloads": 2472,
         "endorsements": 2
       }
     },
