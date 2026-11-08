@@ -16,7 +16,7 @@
     "en"
   ],
   "image": "cover.jpg",
-  "external_url": "https://github.com/Telord72612/Bathing-in-Skyrim-SN-SA-Plugins/releases/tag/V2.6.0",
-  "version": "2.6.0",
-  "changelog": "Fixed an issue where Standpoint wasn't making NPC travel for inside cell."
+  "external_url": "https://github.com/Telord72612/Bathing-in-Skyrim-SN-SA-Plugins/releases/tag/V3.0.0",
+  "version": "3.0.0",
+  "changelog": "V3.0.0 Update\nReworked the prompt send to LLM on dirtiness Tiers so to reflect BiSR tiers\nReword on dual wash mechanism, message box prompt for SE/AE, in VR, the NPC will kneel/sit on a log and wait for the player to go place themself in front/behind them. NPC will be told if the Player don't show up.\nStandPoint V2 and WaterFinder V1.6 updated, big amelioration on travel to water around obstacle. NavMesh scanning, priority change, occlusion box on undisclosed obstacle, NPC traveling to water by themself should now work in 98% of location, including dungeon, different level, pass wall or needing to pass around a ledge or a obstacle.\nEverything is tested in VR. Should be SE/AE compatible except the walk into water with StandPoint V2, it use the old \"that direction that far, walk\" feature."
 }
