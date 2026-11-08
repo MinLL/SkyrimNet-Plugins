@@ -1,0 +1,18 @@
+{
+  "id": "telord72612.simplebleedoutko",
+  "type": "listing",
+  "title": "SimpleBleedoutKO",
+  "tagline": "Turn Bleedout into Unconscious mechanics and a massif nerf on NPC regen for better healing and injury roleplay.",
+  "description": "A simple mod that make NPC go unconscious instead of bleedout, and remove high HP regen.\nMade to be a sister mod to Injury Engine, but will work without it.\nUntested on SE/AE, made in SkyrimVR\n\nBLEEDOUT CHANGE\nEssential/protected NPC will go unconscious when their HP reach 0.\nNormal NPC will do the same when they do go in bleedout with a roll chance. If their HP reach 0, they die, KO or Bleedout.\nKO chance under 15% HP is calculated according to type of armor (heavy,light,clothes), how many pieces, lvl disparities between who hit and who receive, and how much HP is left. A NPC on bleedout roll for that chance each time they go in bleedout or if hit in bleedout without a kill. NPC go in bleedout when their HP go under 10% except melee class in vanilla skyrim.\n\nREGEN CHANGE\nRegen for NPC is changed to 0.01. NPC will wake up form KO at 25%\nFollower won't magically regain all their HP at the end of a fight, they will stay at their current HP when the combat end.\n\nNON COMBAT KNOCKOUT\nYou can knockout a NPC in VR by hitting them on the head with a mace or a hammer, or a bash in SE/AE anywhere on their body, as SE/AE don't have PLANCK. If undetected, it's 100%, if detected, it's a 10% chance to work or 100% under 10% HP.\nThere is a sleep spell that can be bought by Drevis in the college of winterhold. It's put NPC in sleep for a random amount of time, usually couple of hours.\n\nINJURY ENGINE\nMade to work with injury engine injury system. All knockout feature will be off if a DoM NPC or a IE Torture scene is detected, to prevent conflict.\nWill add skin mark to proper Injury Engine location to have a visual cue on NPC of injury type and location.\nNo heal at endCombat mean injury sustained during fight by Injury Engine are present after the combat.\n\nSKYRIMNET AWARENESS\nFollower/NPC getting waken from KO will be confused and disoriented. If KO by sneaking, NPC won't know who KO them.\nWaking a sleeping NPC will make them confused at first, but less. If by spell, they will have dreamed the player casting magic on them. If not they simply wake up wondering why they were sleeping there.\n\nThis is my personal mod i use for support mage roleplay in my day to day.\nI do strategy and healing on NPC and i'm the one keeping them alive.\nIf you have another NPC being a healer, like in SeverAction role, that NPC will become essential to your party as going thru dungeon will be very hard without it.\nI'm sharing in case some people are interested by this kind of gameplay too.",
+  "author": "telord72612",
+  "tags": [
+    "Combat mechanics"
+  ],
+  "nsfw": false,
+  "icon": "package",
+  "mods": [],
+  "image": "cover.jpg",
+  "external_url": "https://github.com/Telord72612/SimpleBleedoutKO/releases/tag/V2.0.0",
+  "version": "2.0.0",
+  "changelog": "Initial release"
+}
