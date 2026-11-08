@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-11-08T14:17:28.476Z",
-  "stats_as_of": "2026-11-08T14:17:28.342Z",
+  "generated_at": "2026-11-08T14:22:00.340Z",
+  "stats_as_of": "2026-11-08T14:22:00.203Z",
   "plugins": [
     {
       "id": "plugins/taka/skyrimnet-slave-auction",
@@ -62,7 +62,7 @@
         "height": 720
       },
       "stats": {
-        "downloads": 31,
+        "downloads": 32,
         "endorsements": 0
       }
     },
@@ -127,7 +127,7 @@
         "height": 1080
       },
       "stats": {
-        "downloads": 104,
+        "downloads": 105,
         "endorsements": 2
       }
     },
@@ -810,7 +810,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 76,
+        "downloads": 77,
         "endorsements": 0
       }
     },
@@ -2066,7 +2066,7 @@
         "config": 7
       },
       "stats": {
-        "downloads": 175,
+        "downloads": 176,
         "endorsements": 0
       }
     },
@@ -2279,7 +2279,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 262,
+        "downloads": 263,
         "endorsements": 6
       }
     },
@@ -2367,7 +2367,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 1528,
+        "downloads": 1529,
         "endorsements": 19
       }
     },
@@ -2818,7 +2818,7 @@
         "height": 769
       },
       "stats": {
-        "downloads": 52,
+        "downloads": 53,
         "endorsements": 0
       }
     },
