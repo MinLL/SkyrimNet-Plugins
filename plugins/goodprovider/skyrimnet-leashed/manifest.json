@@ -19,6 +19,6 @@
   ],
   "image": "cover.png",
   "external_url": "https://github.com/GoodProvider/SkyrimNet_Leashed/releases/latest",
-  "version": "0.5.0",
-  "changelog": "## Magelight UI \nWe have moved to Magelight UI to bring this inline with SkyrimNet\n- The `\\` leash panel now needs Magelight UI instead of PrismaUI. Without it the panel is off; everything else still works.\n\n## VR support\n- Skyrim VR (untested, please report): Grip + Stick click opens or closes the leash panel.\n- VR: needs the panel hotkey on; change the chord in Controls. Point with the laser; B / Y closes.\n\n\n## Struggling\n- NPCs stop struggling as soon as the leash pulls them, including when they start following you. They only struggle while you stand still.\n- NPCs no longer start struggling while knocked down or being dragged.\n- Should fix a long freeze when tabbing back in and a small stutter every 3/4 second in busy areas.\n\n## Bug Fixes \n- Leashes that no longer exist are cleared when you load a save, so NPCs stop mentioning them.\n- After loading a save from an earlier session, leash pull lines and injuries no longer stop for a while.\n- Changing a neck or waist leash to wrists no longer leaves the old leash on.\n- NPCs far away, including leashed NPCs left in another area, no longer show up as nearby.\n- Loading a save no longer narrates a downed NPC as being dragged.\n- Typing `\\` in the console no longer opens the leash panel."
+  "version": "0.5.1",
+  "changelog": "- NPCs on a wrist leash now play the Devious Devices cuffs struggle instead of just fidgeting.\n- Wrist struggle needs the classic DD animation files and an FNIS/Nemesis/Pandora rebuild.\n- SexLab Target Menu leash panel: wrists and waist are always pickable; the type switches to match."
 }
