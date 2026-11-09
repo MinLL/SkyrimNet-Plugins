@@ -18,7 +18,8 @@
     "local ai",
     "voice",
     "performance",
-    "utility"
+    "utility",
+    "benchmark"
   ],
   "nsfw": false,
   "icon": "ai",
@@ -28,6 +29,6 @@
   ],
   "image": "cover.jpg",
   "external_url": "https://github.com/awesmdiver/skyrimnet-multiproxy/releases/latest",
-  "version": "4.1.0",
-  "changelog": "## Improvements\n\n- **Set me up:** Checks your graphics card and your game, shows which models fit alongside Skyrim, and installs the ones you tick.\n- **Add a PC:** Open one address on a spare PC and it pairs itself. No pairing codes to type.\n- **One list of every model:** The new **Models** tab shows every model on all your PCs. You can start, stop, remove, or delete them from there.\n- **A guard for your game:** If your graphics memory gets too full while Skyrim is running, MultiProxy stops its local chat model to prevent a crash.\n- **Works on Skyrim VR:** One mod file now covers Skyrim SE, AE, and VR, and it no longer needs Address Library.\n- **and a lot more:** See the full release notes on Github."
+  "version": "4.2.0",
+  "changelog": "## ✨ What's New\n\n### Benchmarks\nA new tab that tests your AI models to show exactly how fast each one answers and how much graphics memory it uses, helping you pick the one that fits alongside Skyrim.\n\n* **Run anywhere:** Select models, press **Start benchmark**, and watch live speed, memory, and temperature on your gaming PC or a spare one running the Courier.\n* **Check your fit:** **On this card right now** shows what is using your graphics card, while the fit dots and start warnings calculate based on the memory that is truly free.\n* **Get real numbers:** Each result shows exactly how much memory the model, its cache, and its workspace actually used, next to our estimate from before the run.\n* **Know your model:** See your model's size, layers, and max conversation length before and during a test, along with which engine is running it and how much memory short and long chats will need.\n* **AMD cards (new):** Benchmarks now reads AMD graphics cards, but this is new and not fully tested.\n* **Save your results:** Keep your test scores to easily compare runs and find out which models are fast enough for smooth play.\n\n### Voice and pictures\n* **Understand voice errors:** The log now explains exactly why a voice refused a line, and automatically fixes unreadable clips before sending them.\n* **Show pictures to Claude:** Pictures now reach Claude and Codex and Grok and Copilot clearly tell you they cannot see pictures.\n\n## 🔧 Improvements & Polish\n\n* **Smaller fixes and polish:** We added clearer names on **Overview**, a helpful colour key at the top, made the **Watch activity live** window stay open, and more."
 }
