@@ -10,7 +10,7 @@
   "icon": "scroll",
   "mods": [],
   "image": "cover.png",
-  "external_url": "https://github.com/Severause/SeverActions/releases/tag/v4.7.0",
-  "version": "4.7.0",
-  "changelog": "## **SeverActions v4.7.0** — Linen and Bone\n\nA redesigned menu with a new look on every page, full controller support, NPCs who keep the weapons you give them, and wounds you can treat: broken bones, splints, bandaged stumps and limbs that grow back. Various bug fixes\n\n- See announcement page for the full changelog"
+  "external_url": "https://github.com/Severause/SeverActions/releases/tag/v4.8.0",
+  "version": "4.8.0",
+  "changelog": "## **SeverActions v4.8.0** — Many Hands\n\nGive one order to a whole group, follow any NPC's days without moving them, and watch companions rest, trade and react as themselves.\n\n:busts_in_silhouette: **One order, several people**\n- **Send a group:** \"Rin, Jenassa, Rayya, meet me at the Bannered Mare\" and they all set off. With the travel popup on, one card names the whole group.\n- **Wait and follow together:** \"Lydia, Rin, wait here\" parks both, and \"everyone, come on\" calls back every companion nearby, with one reply for the group.\n- **Several items in one trade:** \"a mead, and an ale for Rin\" is one purchase. The innkeeper hands you yours and walks over to give Rin hers, and the card lists every item, who it's for and one total.\n- **Walled cities:** Fixed bug that would make NPCs teleport to their travel destination if it was in a walled city\n\n- See announcement page for more"
 }
