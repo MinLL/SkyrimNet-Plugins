@@ -1,8 +1,73 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-11-09T01:22:41.901Z",
-  "stats_as_of": "2026-11-09T01:22:41.810Z",
+  "generated_at": "2026-11-09T01:32:37.202Z",
+  "stats_as_of": "2026-11-09T01:32:37.103Z",
   "plugins": [
+    {
+      "id": "plugins/severause/magelight-ui",
+      "plugin_id": "severause.magelight-ui",
+      "type": "listing",
+      "title": "Magelight UI",
+      "tagline": "GPU-rendered web pages inside Skyrim SE, AE and VR. Runs SkyrimNet’s dashboard and chat and SeverActions’ menus, and lets any mod build its UI in HTML, CSS and JavaScript.",
+      "author": "severause",
+      "tags": [],
+      "nsfw": false,
+      "icon": "package",
+      "mods": [
+        {
+          "name": "SeverActions.esp",
+          "file": "severactions.esp",
+          "required": true
+        }
+      ],
+      "first_published": "2026-10-25T23:32:17Z",
+      "last_updated": "2026-11-09T01:32:00Z",
+      "version": "1.8.0",
+      "history": [
+        {
+          "version": "1.8.0",
+          "commit": "f5e2bd0df44936385f995932f1da6ae5d4aa8505",
+          "date": "2026-11-09T01:32:00Z",
+          "changelog": "## Magelight UI 1.8.0\n\nIncludes everything from 1.7.2, which wasn't released on its own.\n\n**Fixes**\n- Right-clicking selected text in a page's text box (SkyrimNet's dashboard, for one) no longer turns the UI off until you restart. The Menu key and Shift+F10 are fixed too\n- An error in one mod's page no longer shuts off every page: only that action fails, and `Magelight.log` names it\n- Pages no longer stop working at load with ENB and NVIDIA Smooth Motion together\n\n**Low memory**\n- When Windows is nearly out of memory, Magelight stops opening new pages and lets go of hidden ones instead of turning the UI off. Pages on screen stay, and the rest come back once memory recovers\n- If you see the low memory notice often, make your Windows pagefile larger: it's the whole game running out, not Magelight\n- `\"lowMemoryFloorMB\"` in `Magelight.json` sets the threshold (768 MB by default, `0` turns it off)\n\n**SimpleIME**\n- SimpleIME now types into pages, and Google Japanese Input no longer stalls the game\n- In SimpleIME's tool window (F2), set the IME window position to \"Based on cursor position\" or \"None\"\n- Smoothest typing: set SimpleIME's `enable_mod = false`, and Magelight's own IME handles Japanese, Chinese and Korean\n\n**For mod authors**\n- `contextmenu` still reaches you, but WebKit's menu is cancelled and hidden from you: `defaultPrevented` shows only your own `preventDefault()`, so your own menus work as before\n- Let other plugins read keys while you hold UI mode: `kUIModeFlagPassPolledKeys`, `SetViewPolledKeys` or `\"polledKeys\"`. Gate on `hostVersionNumber >= 10800`\n- While memory is low, `RequestUIMode` for a view not on screen is refused (`low memory`) and hidden views are released: send state again on `ViewReloaded`\n- A C++ exception leaving your JS listener or callback no longer ends the overlay; the log names it"
+        },
+        {
+          "version": "1.7.1",
+          "commit": "16c92ce3e0eb7d99de1a4f8edbda80409c5958d3",
+          "date": "2026-10-31T12:44:36Z",
+          "changelog": "## Magelight UI 1.7.1\n\nIncludes everything from 1.7.0.\n\n**Pages run on their own thread (flat Skyrim)**\n- A page's scripts, layout and painting no longer take time out of the game's frame, so a heavy page costs its own frame rate, not yours\n- A page stuck in a script freezes the pages, not the game, and you can still close it\n- If something misbehaves, add `\"pageThread\": false` to `Magelight.json`. Skyrim VR is unchanged\n\n**Pages at the main menu (flat Skyrim)**\n- Pages can now open at the main menu when a mod asks for them there\n- Other pages still start with the game, and aren't drawn over the main menu when you quit back to it\n\n**Fixes**\n- Long freeze when opening a heavy page, reported with Sanguine's Trade's Ledger\n- Page rows turning black behind Community Shaders' frame generation\n- Crash at start when the game folder's name isn't plain English\n- Pages ignoring the keyboard until you alt-tab, seen on a few PCs\n- A page that runs long no longer loses mouse releases or focus changes\n\n**VR**\n- Squeeze the grip while pointing at a page to grab it: it follows your laser, and the same hand's stick turns it or moves it closer and further away\n- The game's red quill pointer no longer shows at the edges of a page\n\n**For mod authors**\n- On flat Skyrim, JS listeners and other render-thread callbacks now run on the page thread. Never touch game state from one: use `PostGameTask`\n- UI mode requested at the main menu now opens your page, so **guard the request if your page needs a loaded game**\n- `SetViewMainMenu` and the manifest key `\"mainMenu\"` make a main-menu page ahead of time\n- API paths are UTF-8, so build page paths with `u8string()`\n- New in VR: `kVRPlacementAtGaze` and `vr.atGaze` open a view where the player is looking\n\nThanks to **ColdSun** for the page thread!"
+        },
+        {
+          "version": "1.6.0",
+          "commit": "7790dbb653ebbaa56ae9168a7e3afebf3eebccab",
+          "date": "2026-10-28T16:50:21Z",
+          "changelog": "Magelight UI 1.6.0 - Nexus changelog\n\n- Gamepad support for pages that opt in (flat only): the d-pad and left stick move between a page's controls, A presses, B goes back or closes the page, and the right stick scrolls.\n- While such a page is open the controller belongs to it: no button draws a weapon, attacks, sprints or shouts behind the page, and the B that closes it does not open the Tween menu.\n- The button that opened a page does nothing in it until you let go of it.\n- Pages that did not opt in, and other mods' own gamepad handling, behave as before.\n- Magelight.json: \"gamepad\": { \"enabled\": false } turns the gamepad layer off for every page; \"glyphs\": \"playstation\" (or \"generic\") labels the buttons for another controller.\n- For mod authors: SetViewGamepad / GetViewGamepadState, the manifest key \"gamepad\" and the page helper window.magelight.gamepad, with a keys style (no script needed) and a navigation style (focus scopes, tabs, button prompts, an optional stick cursor). Gate on hostVersionNumber >= 10600 or QueryCapability(\"gamepad\"); see CHANGELOG.md and docs/CPP.md.\n- Thanks to ColdSun for the gamepad layer."
+        },
+        {
+          "version": "1.5.1",
+          "commit": "6c07d7f4370065d108c7d08a0376aae3b01c92ff",
+          "date": "2026-10-27T00:52:28Z",
+          "changelog": "## Magelight UI 1.5.1\n\nA small fix release on top of 1.5.0, all about the mouse cursor:\n\n- **Crash fix:** mods that read the game's cursor every frame could crash the game alongside Magelight, often as a chat page opened. Fixed.\n- **Menus over pages:** opening a context or item menu over a page no longer rebuilds the game's cursor.\n- **Cursor stays in the game:** while a page has the mouse, the Windows cursor can no longer wander onto another monitor.\n\nBoth cursor changes are flat-screen only and can be turned off in `Magelight.json` (`\"pinGameCursor\": false`, `\"clipCursor\": false`). VR is unchanged."
+        },
+        {
+          "version": "1.5.0",
+          "commit": "68533530c8d3f04593ab710ddaa55f28811c29a6",
+          "date": "2026-10-25T23:32:17Z",
+          "changelog": "Magelight UI 1.5.0\n\nMagelight now runs on Ultralight 2.0, the newest version of the web engine behind every Magelight page. Pages look the same, run a little lighter, and a long list of fixes comes with it.\n\nHighlights\n- Japanese, Chinese and Korean typing: the IME's candidate list now shows inside the page, so you no longer pick characters blind. It matches the text field's font and the page's colours. (Thanks to Dekana, who built and tested this.)\n- Escape while typing with an IME only closes the candidate list or clears the word you're typing. It no longer closes the chat and loses your text. With Korean, one Escape commits the syllable and closes, as in Windows.\n- Fixed a crash and an \"overlay disabled\" problem for players using CrashLogger 1.23 or newer: an error in any mod's page could take down the UI or the game. Pages now run on their own stack and errors stay inside the page.\n- Opening a page no longer makes your character sheathe their weapon or drop a readied spell.\n- HUD-style views (widgets that don't take clicks) now show during play with ENB, ReShade and other graphics wrappers.\n- Opening and closing pages no longer rebuilds the game's cursor, which could crash some cursor mods. The Journal and Inventory keep their cursor too.\n- Alt-tabbing no longer fills Magelight.log with false \"stall\" reports.\n\nSmaller improvements\n- Pages that load in the background open with their images already drawn.\n- Memory used by hidden pages is given back on its own, even when no page is open.\n- Mouse: drags end where you release, the mouse wheel scrolls what's under the pointer, middle-click no longer autoscrolls, and the back/forward mouse buttons work in pages.\n- VR: the keyboard follows the text field you're typing in, shows a number pad or email/URL layout where it fits, and has Undo, Redo, Cut, Copy and Paste buttons. Each hand drags and points on its own.\n- Japanese fonts like MS UI Gothic and MS PGothic draw in the right face again."
+        }
+      ],
+      "external_url": "https://www.nexusmods.com/skyrimspecialedition/mods/193303",
+      "image": {
+        "file": "cover.png",
+        "sha": "e8a66ce815bed09f7419b3b677417e8e5d3a544b",
+        "commit": "f5e2bd0df44936385f995932f1da6ae5d4aa8505",
+        "width": 1920,
+        "height": 1080
+      },
+      "stats": {
+        "downloads": 110,
+        "endorsements": 2
+      }
+    },
     {
       "id": "plugins/telord72612/simplebleedoutko",
       "plugin_id": "telord72612.simplebleedoutko",
@@ -168,7 +233,7 @@
         "height": 1008
       },
       "stats": {
-        "downloads": 144,
+        "downloads": 145,
         "endorsements": 3
       }
     },
@@ -258,7 +323,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 992,
+        "downloads": 993,
         "endorsements": 40
       }
     },
@@ -417,71 +482,6 @@
       "stats": {
         "downloads": 40,
         "endorsements": 0
-      }
-    },
-    {
-      "id": "plugins/severause/magelight-ui",
-      "plugin_id": "severause.magelight-ui",
-      "type": "listing",
-      "title": "Magelight UI",
-      "tagline": "GPU-rendered web pages inside Skyrim SE, AE and VR. Runs SkyrimNet’s dashboard and chat and SeverActions’ menus, and lets any mod build its UI in HTML, CSS and JavaScript.",
-      "author": "severause",
-      "tags": [],
-      "nsfw": false,
-      "icon": "package",
-      "mods": [
-        {
-          "name": "SeverActions.esp",
-          "file": "severactions.esp",
-          "required": true
-        }
-      ],
-      "first_published": "2026-10-25T23:32:17Z",
-      "last_updated": "2026-11-08T07:22:57Z",
-      "version": "1.8.0",
-      "history": [
-        {
-          "version": "1.8.0",
-          "commit": "390783d8b02462b06b8fa3c4835a450c2a096f14",
-          "date": "2026-11-08T07:22:57Z",
-          "changelog": "## Magelight UI 1.8.0\n\nIncludes everything from 1.7.2, which wasn't released on its own.\n\n**Fixes**\n- Right-clicking selected text in a page's text box (SkyrimNet's dashboard, for one) no longer turns the UI off until you restart. The Menu key and Shift+F10 are fixed too\n- An error in one mod's page no longer shuts off every page: only that action fails, and `Magelight.log` names it\n- Pages no longer stop working at load with ENB and NVIDIA Smooth Motion together\n\n**Low memory**\n- When Windows is nearly out of memory, Magelight stops opening new pages and lets go of hidden ones instead of turning the UI off. Pages on screen stay, and the rest come back once memory recovers\n- If you see the low memory notice often, make your Windows pagefile larger: it's the whole game running out, not Magelight\n- `\"lowMemoryFloorMB\"` in `Magelight.json` sets the threshold (768 MB by default, `0` turns it off)\n\n**SimpleIME**\n- SimpleIME now types into pages, and Google Japanese Input no longer stalls the game\n- In SimpleIME's tool window (F2), set the IME window position to \"Based on cursor position\" or \"None\"\n- Smoothest typing: set SimpleIME's `enable_mod = false`, and Magelight's own IME handles Japanese, Chinese and Korean\n\n**For mod authors**\n- `contextmenu` still reaches you, but WebKit's menu is cancelled and hidden from you: `defaultPrevented` shows only your own `preventDefault()`, so your own menus work as before\n- Let other plugins read keys while you hold UI mode: `kUIModeFlagPassPolledKeys`, `SetViewPolledKeys` or `\"polledKeys\"`. Gate on `hostVersionNumber >= 10800`\n- While memory is low, `RequestUIMode` for a view not on screen is refused (`low memory`) and hidden views are released: send state again on `ViewReloaded`\n- A C++ exception leaving your JS listener or callback no longer ends the overlay; the log names it"
-        },
-        {
-          "version": "1.7.1",
-          "commit": "16c92ce3e0eb7d99de1a4f8edbda80409c5958d3",
-          "date": "2026-10-31T12:44:36Z",
-          "changelog": "## Magelight UI 1.7.1\n\nIncludes everything from 1.7.0.\n\n**Pages run on their own thread (flat Skyrim)**\n- A page's scripts, layout and painting no longer take time out of the game's frame, so a heavy page costs its own frame rate, not yours\n- A page stuck in a script freezes the pages, not the game, and you can still close it\n- If something misbehaves, add `\"pageThread\": false` to `Magelight.json`. Skyrim VR is unchanged\n\n**Pages at the main menu (flat Skyrim)**\n- Pages can now open at the main menu when a mod asks for them there\n- Other pages still start with the game, and aren't drawn over the main menu when you quit back to it\n\n**Fixes**\n- Long freeze when opening a heavy page, reported with Sanguine's Trade's Ledger\n- Page rows turning black behind Community Shaders' frame generation\n- Crash at start when the game folder's name isn't plain English\n- Pages ignoring the keyboard until you alt-tab, seen on a few PCs\n- A page that runs long no longer loses mouse releases or focus changes\n\n**VR**\n- Squeeze the grip while pointing at a page to grab it: it follows your laser, and the same hand's stick turns it or moves it closer and further away\n- The game's red quill pointer no longer shows at the edges of a page\n\n**For mod authors**\n- On flat Skyrim, JS listeners and other render-thread callbacks now run on the page thread. Never touch game state from one: use `PostGameTask`\n- UI mode requested at the main menu now opens your page, so **guard the request if your page needs a loaded game**\n- `SetViewMainMenu` and the manifest key `\"mainMenu\"` make a main-menu page ahead of time\n- API paths are UTF-8, so build page paths with `u8string()`\n- New in VR: `kVRPlacementAtGaze` and `vr.atGaze` open a view where the player is looking\n\nThanks to **ColdSun** for the page thread!"
-        },
-        {
-          "version": "1.6.0",
-          "commit": "7790dbb653ebbaa56ae9168a7e3afebf3eebccab",
-          "date": "2026-10-28T16:50:21Z",
-          "changelog": "Magelight UI 1.6.0 - Nexus changelog\n\n- Gamepad support for pages that opt in (flat only): the d-pad and left stick move between a page's controls, A presses, B goes back or closes the page, and the right stick scrolls.\n- While such a page is open the controller belongs to it: no button draws a weapon, attacks, sprints or shouts behind the page, and the B that closes it does not open the Tween menu.\n- The button that opened a page does nothing in it until you let go of it.\n- Pages that did not opt in, and other mods' own gamepad handling, behave as before.\n- Magelight.json: \"gamepad\": { \"enabled\": false } turns the gamepad layer off for every page; \"glyphs\": \"playstation\" (or \"generic\") labels the buttons for another controller.\n- For mod authors: SetViewGamepad / GetViewGamepadState, the manifest key \"gamepad\" and the page helper window.magelight.gamepad, with a keys style (no script needed) and a navigation style (focus scopes, tabs, button prompts, an optional stick cursor). Gate on hostVersionNumber >= 10600 or QueryCapability(\"gamepad\"); see CHANGELOG.md and docs/CPP.md.\n- Thanks to ColdSun for the gamepad layer."
-        },
-        {
-          "version": "1.5.1",
-          "commit": "6c07d7f4370065d108c7d08a0376aae3b01c92ff",
-          "date": "2026-10-27T00:52:28Z",
-          "changelog": "## Magelight UI 1.5.1\n\nA small fix release on top of 1.5.0, all about the mouse cursor:\n\n- **Crash fix:** mods that read the game's cursor every frame could crash the game alongside Magelight, often as a chat page opened. Fixed.\n- **Menus over pages:** opening a context or item menu over a page no longer rebuilds the game's cursor.\n- **Cursor stays in the game:** while a page has the mouse, the Windows cursor can no longer wander onto another monitor.\n\nBoth cursor changes are flat-screen only and can be turned off in `Magelight.json` (`\"pinGameCursor\": false`, `\"clipCursor\": false`). VR is unchanged."
-        },
-        {
-          "version": "1.5.0",
-          "commit": "68533530c8d3f04593ab710ddaa55f28811c29a6",
-          "date": "2026-10-25T23:32:17Z",
-          "changelog": "Magelight UI 1.5.0\n\nMagelight now runs on Ultralight 2.0, the newest version of the web engine behind every Magelight page. Pages look the same, run a little lighter, and a long list of fixes comes with it.\n\nHighlights\n- Japanese, Chinese and Korean typing: the IME's candidate list now shows inside the page, so you no longer pick characters blind. It matches the text field's font and the page's colours. (Thanks to Dekana, who built and tested this.)\n- Escape while typing with an IME only closes the candidate list or clears the word you're typing. It no longer closes the chat and loses your text. With Korean, one Escape commits the syllable and closes, as in Windows.\n- Fixed a crash and an \"overlay disabled\" problem for players using CrashLogger 1.23 or newer: an error in any mod's page could take down the UI or the game. Pages now run on their own stack and errors stay inside the page.\n- Opening a page no longer makes your character sheathe their weapon or drop a readied spell.\n- HUD-style views (widgets that don't take clicks) now show during play with ENB, ReShade and other graphics wrappers.\n- Opening and closing pages no longer rebuilds the game's cursor, which could crash some cursor mods. The Journal and Inventory keep their cursor too.\n- Alt-tabbing no longer fills Magelight.log with false \"stall\" reports.\n\nSmaller improvements\n- Pages that load in the background open with their images already drawn.\n- Memory used by hidden pages is given back on its own, even when no page is open.\n- Mouse: drags end where you release, the mouse wheel scrolls what's under the pointer, middle-click no longer autoscrolls, and the back/forward mouse buttons work in pages.\n- VR: the keyboard follows the text field you're typing in, shows a number pad or email/URL layout where it fits, and has Undo, Redo, Cut, Copy and Paste buttons. Each hand drags and points on its own.\n- Japanese fonts like MS UI Gothic and MS PGothic draw in the right face again."
-        }
-      ],
-      "external_url": "https://www.nexusmods.com/skyrimspecialedition/mods/193303",
-      "image": {
-        "file": "cover.png",
-        "sha": "5bc1c6579f8ac72ce77bc967215594876861b749",
-        "commit": "68533530c8d3f04593ab710ddaa55f28811c29a6",
-        "width": 1920,
-        "height": 1080
-      },
-      "stats": {
-        "downloads": 110,
-        "endorsements": 2
       }
     },
     {
@@ -720,7 +720,7 @@
         "height": 768
       },
       "stats": {
-        "downloads": 149,
+        "downloads": 150,
         "endorsements": 0
       }
     },
@@ -2335,7 +2335,7 @@
         "config": 7
       },
       "stats": {
-        "downloads": 190,
+        "downloads": 191,
         "endorsements": 0
       }
     },
@@ -4732,7 +4732,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 581,
+        "downloads": 582,
         "endorsements": 0
       }
     },
@@ -7281,7 +7281,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1093,
+        "downloads": 1094,
         "endorsements": 2
       }
     },
@@ -7371,7 +7371,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 326,
+        "downloads": 327,
         "endorsements": 0
       }
     },
@@ -8781,7 +8781,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 541,
+        "downloads": 542,
         "endorsements": 0
       }
     },
@@ -11571,7 +11571,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1226,
+        "downloads": 1227,
         "endorsements": 0
       }
     },
@@ -12741,7 +12741,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 215,
+        "downloads": 216,
         "endorsements": 0
       }
     },
@@ -13326,7 +13326,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 194,
+        "downloads": 195,
         "endorsements": 1
       }
     },
@@ -14181,7 +14181,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2506,
+        "downloads": 2507,
         "endorsements": 2
       }
     },
