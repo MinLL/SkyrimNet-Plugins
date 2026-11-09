@@ -1,8 +1,45 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-11-09T01:18:21.402Z",
-  "stats_as_of": "2026-11-09T01:15:40.763Z",
+  "generated_at": "2026-11-09T01:22:41.901Z",
+  "stats_as_of": "2026-11-09T01:22:41.810Z",
   "plugins": [
+    {
+      "id": "plugins/telord72612/simplebleedoutko",
+      "plugin_id": "telord72612.simplebleedoutko",
+      "type": "listing",
+      "title": "SimpleBleedoutKO",
+      "tagline": "Turn Bleedout into Unconscious mechanics and a massif nerf on NPC regen for better healing and injury roleplay.",
+      "author": "telord72612",
+      "tags": [
+        "Combat mechanics"
+      ],
+      "nsfw": false,
+      "icon": "package",
+      "mods": [],
+      "first_published": "2026-11-09T01:21:40Z",
+      "last_updated": "2026-11-09T01:21:40Z",
+      "version": "2.0.0",
+      "history": [
+        {
+          "version": "2.0.0",
+          "commit": "71453eb5e230e0c3b29c1aa98d2c1b674b4c909b",
+          "date": "2026-11-09T01:21:40Z",
+          "changelog": "Initial release"
+        }
+      ],
+      "external_url": "https://github.com/Telord72612/SimpleBleedoutKO/releases/tag/V2.0.0",
+      "image": {
+        "file": "cover.jpg",
+        "sha": "6a394831c7e0b09584155f12b59628beb2d15fe0",
+        "commit": "71453eb5e230e0c3b29c1aa98d2c1b674b4c909b",
+        "width": 1792,
+        "height": 1008
+      },
+      "stats": {
+        "downloads": 0,
+        "endorsements": 0
+      }
+    },
     {
       "id": "plugins/severause/phantasm",
       "plugin_id": "severause.phantasm",
@@ -315,7 +352,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 272,
+        "downloads": 273,
         "endorsements": 6
       }
     },
@@ -443,7 +480,7 @@
         "height": 1080
       },
       "stats": {
-        "downloads": 109,
+        "downloads": 110,
         "endorsements": 2
       }
     },
@@ -580,7 +617,7 @@
         "height": 432
       },
       "stats": {
-        "downloads": 275,
+        "downloads": 276,
         "endorsements": 3
       }
     },
@@ -2567,7 +2604,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 158,
+        "downloads": 159,
         "endorsements": 0
       }
     },
@@ -5070,7 +5107,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 61,
+        "downloads": 62,
         "endorsements": 0
       }
     },
@@ -5309,7 +5346,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 3432,
+        "downloads": 3433,
         "endorsements": 4
       }
     },
@@ -5534,7 +5571,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1763,
+        "downloads": 1764,
         "endorsements": 0
       }
     },
@@ -6299,7 +6336,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1452,
+        "downloads": 1453,
         "endorsements": 2
       }
     },
