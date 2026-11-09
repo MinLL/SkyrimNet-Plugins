@@ -1,0 +1,16 @@
+{
+  "id": "severause.phantasm",
+  "type": "listing",
+  "title": "Phantasm",
+  "tagline": "Live actors for Skyrim menus",
+  "description": "## **Phantasm** — live actors for Skyrim menus\n\nA renderer that draws Skyrim's characters and items on their own: posed, lit and framed, for pages and pictures instead of the game's own view.\n\n**Coming to SkyrimNet**\n- In SkyrimNet's next release, OmniSight takes its pictures of characters and items through Phantasm, so the descriptions SkyrimNet writes come from a clean, well-lit shot of the person or the gear, not whatever happens to be on screen.\n\n**In SeverActions**\n- Draws the Outfits mirror, the 3D item views and the automatic faces you see across its pages.\n\n**For mod authors**\n- Other mods can use it through a small C API.\n\n## Works on Skyrim SE, AE and VR.",
+  "author": "severause",
+  "tags": [],
+  "nsfw": false,
+  "icon": "skull",
+  "mods": [],
+  "image": "cover.png",
+  "external_url": "https://www.nexusmods.com/skyrimspecialedition/mods/197470",
+  "version": "1.0.0",
+  "changelog": "Initial release"
+}
