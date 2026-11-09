@@ -1,8 +1,72 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-11-09T07:24:28.280Z",
-  "stats_as_of": "2026-11-09T07:24:28.157Z",
+  "generated_at": "2026-11-09T08:23:11.246Z",
+  "stats_as_of": "2026-11-09T08:23:11.130Z",
   "plugins": [
+    {
+      "id": "plugins/taka/skyrimnet-minigame",
+      "plugin_id": "taka.skyrimnet-minigame",
+      "type": "listing",
+      "title": "SkyrimNet MiniGame",
+      "tagline": "Play Reversi, Liar's Dice, Shut the Box, Blackjack and Texas Hold'em with the NPCs around you on a board drawn over the game. Your opponents talk about the game, know how it stands, and remember it.",
+      "author": "taka",
+      "tags": [
+        "Gameplay",
+        "NPC",
+        "Minigame",
+        "Dialogue",
+        "Prisma UI"
+      ],
+      "nsfw": false,
+      "icon": "package",
+      "mods": [],
+      "first_published": "2026-11-03T15:43:06Z",
+      "last_updated": "2026-11-09T08:22:36Z",
+      "version": "0.2.0",
+      "history": [
+        {
+          "version": "0.2.0",
+          "commit": "52ff2089717d5532fa12a04a971e9cc37935490b",
+          "date": "2026-11-09T08:22:36Z",
+          "changelog": "Texas Hold'em: no-limit, blinds 5 and 10, 200 chips each, up to three opponents. How each opponent plays (tight or loose, bold or cautious, how often they bluff) is read from their character by SkyrimNet when the game starts, and they talk the way they play. The board now runs on Magelight UI (1.0 or later) when it is installed, else on Prisma UI as before; one of the two is enough. Your character can also speak their own poker moves (folds, checks, calls, bets and raises) through Transform Dialogue, like bids in Liar's Dice."
+        },
+        {
+          "version": "0.1.2",
+          "commit": "2847f20c4aa29e093dc5071c49c677567da38413",
+          "date": "2026-11-06T08:50:59Z",
+          "changelog": "Fixed a crash when a mini game started with ENB or Skyrim Upscaler installed: saving the photo for the face frames crashed inside the game's own screenshot code. With either of them installed, the photo is now skipped and the frames show initials. A new MCM option, Face photos, turns the photo off by hand."
+        },
+        {
+          "version": "0.1.1",
+          "commit": "b41140512332d681fe5c6b353d84b035002a85ff",
+          "date": "2026-11-04T11:37:55Z",
+          "changelog": "Two new games: Shut the Box and Blackjack, each against up to three NPCs with four opponent strengths. In Blackjack you choose who deals, you or one of your opponents. Also fixed: the board could lose the input focus and stay on screen, reacting to nothing. It now takes the focus back, and Esc always closes it."
+        },
+        {
+          "version": "0.1.0",
+          "commit": "95ecad5ed411d5f06f4f9d95f6513dd532a63864",
+          "date": "2026-11-03T15:43:06Z",
+          "changelog": "First release: Reversi against one NPC and Liar's Dice against up to three, with SkyrimNet commentary, the game state in each opponent's prompt, your own bids spoken through Transform Dialogue, NPC challenges to Reversi, and face frames of your opponents on the board."
+        }
+      ],
+      "external_url": "https://github.com/nightlantern-mods/skyrimnet_MiniGame",
+      "languages": [
+        "en",
+        "ja"
+      ],
+      "language": "en",
+      "image": {
+        "file": "cover.jpg",
+        "sha": "c29e9e93a7d7274e3b4347cf8ce495d501f95e51",
+        "commit": "95ecad5ed411d5f06f4f9d95f6513dd532a63864",
+        "width": 1920,
+        "height": 1080
+      },
+      "stats": {
+        "downloads": 18,
+        "endorsements": 0
+      }
+    },
     {
       "id": "plugins/goodprovider/skyrimnet-sexlab",
       "plugin_id": "goodprovider.skyrimnet-sexlab",
@@ -142,7 +206,7 @@
         "height": 432
       },
       "stats": {
-        "downloads": 279,
+        "downloads": 280,
         "endorsements": 3
       }
     },
@@ -385,7 +449,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 276,
+        "downloads": 277,
         "endorsements": 6
       }
     },
@@ -619,7 +683,7 @@
         "height": 1008
       },
       "stats": {
-        "downloads": 150,
+        "downloads": 151,
         "endorsements": 3
       }
     },
@@ -709,7 +773,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 1007,
+        "downloads": 1011,
         "endorsements": 40
       }
     },
@@ -875,7 +939,7 @@
         "height": 768
       },
       "stats": {
-        "downloads": 153,
+        "downloads": 155,
         "endorsements": 0
       }
     },
@@ -956,64 +1020,6 @@
       },
       "stats": {
         "downloads": 74,
-        "endorsements": 0
-      }
-    },
-    {
-      "id": "plugins/taka/skyrimnet-minigame",
-      "plugin_id": "taka.skyrimnet-minigame",
-      "type": "listing",
-      "title": "SkyrimNet MiniGame",
-      "tagline": "Play Reversi, Liar's Dice, Shut the Box and Blackjack with the NPCs around you on a board drawn over the game. Your opponents talk about the game, know how it stands, and remember it.",
-      "author": "taka",
-      "tags": [
-        "Gameplay",
-        "NPC",
-        "Minigame",
-        "Dialogue",
-        "Prisma UI"
-      ],
-      "nsfw": false,
-      "icon": "package",
-      "mods": [],
-      "first_published": "2026-11-03T15:43:06Z",
-      "last_updated": "2026-11-06T08:50:59Z",
-      "version": "0.1.2",
-      "history": [
-        {
-          "version": "0.1.2",
-          "commit": "2847f20c4aa29e093dc5071c49c677567da38413",
-          "date": "2026-11-06T08:50:59Z",
-          "changelog": "Fixed a crash when a mini game started with ENB or Skyrim Upscaler installed: saving the photo for the face frames crashed inside the game's own screenshot code. With either of them installed, the photo is now skipped and the frames show initials. A new MCM option, Face photos, turns the photo off by hand."
-        },
-        {
-          "version": "0.1.1",
-          "commit": "b41140512332d681fe5c6b353d84b035002a85ff",
-          "date": "2026-11-04T11:37:55Z",
-          "changelog": "Two new games: Shut the Box and Blackjack, each against up to three NPCs with four opponent strengths. In Blackjack you choose who deals, you or one of your opponents. Also fixed: the board could lose the input focus and stay on screen, reacting to nothing. It now takes the focus back, and Esc always closes it."
-        },
-        {
-          "version": "0.1.0",
-          "commit": "95ecad5ed411d5f06f4f9d95f6513dd532a63864",
-          "date": "2026-11-03T15:43:06Z",
-          "changelog": "First release: Reversi against one NPC and Liar's Dice against up to three, with SkyrimNet commentary, the game state in each opponent's prompt, your own bids spoken through Transform Dialogue, NPC challenges to Reversi, and face frames of your opponents on the board."
-        }
-      ],
-      "external_url": "https://github.com/nightlantern-mods/skyrimnet_MiniGame",
-      "languages": [
-        "en",
-        "ja"
-      ],
-      "language": "en",
-      "image": {
-        "file": "cover.jpg",
-        "sha": "c29e9e93a7d7274e3b4347cf8ce495d501f95e51",
-        "commit": "95ecad5ed411d5f06f4f9d95f6513dd532a63864",
-        "width": 1920,
-        "height": 1080
-      },
-      "stats": {
-        "downloads": 18,
         "endorsements": 0
       }
     },
@@ -1308,7 +1314,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 81,
+        "downloads": 82,
         "endorsements": 0
       }
     },
@@ -1423,7 +1429,7 @@
         "height": 864
       },
       "stats": {
-        "downloads": 384,
+        "downloads": 385,
         "endorsements": 7
       }
     },
@@ -1493,7 +1499,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 171,
+        "downloads": 172,
         "endorsements": 2
       }
     },
@@ -1567,7 +1573,7 @@
         "height": 1152
       },
       "stats": {
-        "downloads": 368,
+        "downloads": 369,
         "endorsements": 8
       }
     },
@@ -1726,7 +1732,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 436,
+        "downloads": 438,
         "endorsements": 8
       }
     },
@@ -1826,7 +1832,7 @@
         "height": 1080
       },
       "stats": {
-        "downloads": 105,
+        "downloads": 106,
         "endorsements": 1
       }
     },
@@ -1881,7 +1887,7 @@
         "height": 1080
       },
       "stats": {
-        "downloads": 59,
+        "downloads": 60,
         "endorsements": 1
       }
     },
@@ -1929,7 +1935,7 @@
         "height": 688
       },
       "stats": {
-        "downloads": 117,
+        "downloads": 118,
         "endorsements": 0
       }
     },
@@ -2637,7 +2643,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 1570,
+        "downloads": 1572,
         "endorsements": 19
       }
     },
@@ -2744,7 +2750,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 104,
+        "downloads": 105,
         "endorsements": 3
       }
     },
@@ -2819,7 +2825,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 205,
+        "downloads": 206,
         "endorsements": 3
       }
     },
@@ -3338,7 +3344,7 @@
         "height": 1152
       },
       "stats": {
-        "downloads": 205,
+        "downloads": 206,
         "endorsements": 0
       }
     },
@@ -3407,7 +3413,7 @@
         "height": 720
       },
       "stats": {
-        "downloads": 83,
+        "downloads": 84,
         "endorsements": 0
       }
     },
@@ -3702,7 +3708,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 174,
+        "downloads": 175,
         "endorsements": 0
       }
     },
@@ -3759,7 +3765,7 @@
         "height": 720
       },
       "stats": {
-        "downloads": 97,
+        "downloads": 98,
         "endorsements": 1
       }
     },
@@ -5190,7 +5196,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 463,
+        "downloads": 465,
         "endorsements": 5
       }
     },
@@ -10155,7 +10161,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 412,
+        "downloads": 413,
         "endorsements": 0
       }
     },
@@ -13710,7 +13716,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 225,
+        "downloads": 226,
         "endorsements": 0
       }
     },
