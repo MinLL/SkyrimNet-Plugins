@@ -25,6 +25,6 @@
   ],
   "image": "cover.jpg",
   "external_url": "https://github.com/nightlantern-mods/skyrimnet_Brothel",
-  "version": "0.4.1",
-  "changelog": "0.4.1: Scouting people in debt. Talk to anyone who owes money and offer them work at your brothel to pay it off. You pick how to put it from AI-written lines (with several brothels, which brothel they will work at), and they agree or refuse by a chance of its own, answering in their own words. If they agree they become a worker and make their way to that brothel. A share of what they earn from each customer pays the debt; once it is paid off they keep working, or leave if you choose. This needs IOU Ledger, a small debt ledger that comes with SkyrimNet Slave Auction 0.2.0. The brothel finds it on its own, and without it nothing changes. Four new settings on the MCM's You page. The plugin has new records, so replace it when you update."
+  "version": "0.4.2",
+  "changelog": "0.4.2: Scouted workers no longer stand at the door. In 0.4.1 a worker you scouted, once at the brothel, stood at the visitors' waiting spot, which is often by the front door, and went back there after every customer. Scouted workers now move about the brothel like its hired workers: they sit, eat and sleep in a free bed at night. Workers already standing at the door start moving when you load your save. The plugin is unchanged from 0.4.1."
 }
