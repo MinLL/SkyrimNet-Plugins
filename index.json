@@ -1,8 +1,43 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-11-09T00:52:59.031Z",
-  "stats_as_of": "2026-11-09T00:52:31.097Z",
+  "generated_at": "2026-11-09T01:18:21.402Z",
+  "stats_as_of": "2026-11-09T01:15:40.763Z",
   "plugins": [
+    {
+      "id": "plugins/severause/phantasm",
+      "plugin_id": "severause.phantasm",
+      "type": "listing",
+      "title": "Phantasm",
+      "tagline": "Live actors for Skyrim menus",
+      "author": "severause",
+      "tags": [],
+      "nsfw": false,
+      "icon": "skull",
+      "mods": [],
+      "first_published": "2026-11-09T01:17:49Z",
+      "last_updated": "2026-11-09T01:17:49Z",
+      "version": "1.0.0",
+      "history": [
+        {
+          "version": "1.0.0",
+          "commit": "91639ef4694d7ffa600c52190571e675a57d74c0",
+          "date": "2026-11-09T01:17:49Z",
+          "changelog": "Initial release"
+        }
+      ],
+      "external_url": "https://www.nexusmods.com/skyrimspecialedition/mods/197470",
+      "image": {
+        "file": "cover.png",
+        "sha": "6895cef9ec8ffcdf11ad158d5027c8607a26388e",
+        "commit": "91639ef4694d7ffa600c52190571e675a57d74c0",
+        "width": 1920,
+        "height": 1080
+      },
+      "stats": {
+        "downloads": 0,
+        "endorsements": 0
+      }
+    },
     {
       "id": "plugins/telord72612/gift-by-hand-vr-awareness",
       "plugin_id": "telord72612.gift-by-hand-vr-awareness",
@@ -2344,7 +2379,7 @@
         "config": 7
       },
       "stats": {
-        "downloads": 263,
+        "downloads": 264,
         "endorsements": 1
       }
     },
