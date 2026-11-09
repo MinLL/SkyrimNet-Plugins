@@ -46,6 +46,6 @@
   ],
   "image": "cover.png",
   "external_url": "https://github.com/GoodProvider/SkyrimNet_SexLab/releases/latest",
-  "version": "0.37.1",
-  "changelog": "### Creatures\n- Creatures are recognized; animation lists show **MC** (male creature) and **FC** (female creature)\n- Filtering by gender or position lists only your creature's animations: a wolf gets canine ones\n- Scenes started by NPCs or actions with a creature now pick creature animations\n- Fixed: a werewolf player got human animations at the last stage and in the Description Editor\n\n### Orgasm engine\n- Fixed: arousing an actor stayed blocked for a full minute after an orgasm, not just the afterglow"
+  "version": "0.37.2",
+  "changelog": "### AnimDB\n- Fixed: human casts got creature animations at the last stage and in the Scene Creator\n- A load that finds an interrupted animation database build restarts it\n- A new game no longer rebuilds an animation database that already has animations\n\n### SexLab P+ (untested)\n- Fixed: a save made during the animation database build crashed the game on load\n- Saves that already hold the bad data are not repaired\n\n### Diary of Mine 8.5.6d\n- Fixed: the DOM handler uses Diary of Mine 8.5.6d's values for arousal and step rolls"
 }
