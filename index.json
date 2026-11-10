@@ -1,8 +1,79 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-11-10T15:33:46.036Z",
-  "stats_as_of": "2026-11-10T15:33:45.896Z",
+  "generated_at": "2026-11-10T15:58:34.780Z",
+  "stats_as_of": "2026-11-10T15:58:34.684Z",
   "plugins": [
+    {
+      "id": "plugins/goodprovider/skyrimnet-dom",
+      "plugin_id": "goodprovider.skyrimnet-dom",
+      "type": "listing",
+      "title": "SkyrimNet DOM",
+      "tagline": "enslave every actor, complex mental training/punishment",
+      "author": "goodprovider",
+      "tags": [
+        "slave",
+        "slavery",
+        "slaver",
+        "dom"
+      ],
+      "nsfw": true,
+      "icon": "zap",
+      "mods": [
+        {
+          "name": "DiaryOfMine.esm",
+          "file": "diaryofmine.esm",
+          "required": true
+        },
+        {
+          "name": "Injury_Engine.esp",
+          "file": "injury_engine.esp",
+          "required": true
+        },
+        {
+          "name": "SkyrimNet_Leashed.esp",
+          "file": "skyrimnet_leashed.esp",
+          "required": true
+        },
+        {
+          "name": "SkyrimNet_SexLab.esp",
+          "file": "skyrimnet_sexlab.esp",
+          "required": true
+        }
+      ],
+      "first_published": "2026-10-27T00:55:15Z",
+      "last_updated": "2026-11-10T15:57:59Z",
+      "version": "0.3.0",
+      "history": [
+        {
+          "version": "0.3.0",
+          "commit": "4c2a93f2e92358a7c445754dfb4b431ebd094c4f",
+          "date": "2026-11-10T15:57:59Z",
+          "changelog": "### Obedience\n\n* AI tracks slave obedience (trained to defiant) and mood effects.\n* Well-trained slaves show as The Devoted, Professional, or Hollowed.\n* AI slave commands execute; menu orders can still be refused.\n* Fleeing slaves continue running even if accepting a sex order.\n\n### Baths\n\n* \"Bath me\" and \"bath you\" feature stage-by-stage descriptions, including finish events.\n* WebUI baths queue next stages after current line completes; self-washing logs start/stop events.\n* DOM menu baths work for slaves; WebUI/DOM shower refusal rates are equalized.\n* Busy animation states block wash commands with a status message.\n* AI can command slaves to wash themselves or their master.\n* **Fixes:** AI orders moving slaves mid-bath, stuck wash animations, and players remaining undressed post-\"bath me\".\n\n### Diary of Mine 8.5.6d\n\n* Requires DOM 8.5.6d+.\n* WebUI shower requires water (dries off if landbound); Pose > Breasts restored.\n* Punishment grounds aligned with DOM (adds kiss/body check refusal, useless trainer).\n* AI tracks bathing, duty restraints, and jail status.\n* **Fixes:** WebUI bath/shower actions and lost wash narration under extended DOM events.\n\n### Skyrim VR (Untested)\n\n* DOM menus map to SexLab VR controls (default: Grip + A; SexLab 0.37.2+).\n\n### Bug Fixes\n\n* Restored AI actions: \"stand here\", \"follow me\", and \"display yourself\".\n* Fixed `SkyrimNet_DOM.dll` load failure (Error 126) on missing Visual C++ runtimes.\n* Healing a slave in shock now triggers comforting dialogue instead of praise.\n\n### Requirements\n\n* SkyrimNet_SexLab 0.37.2+\n* Magelight UI 0.30.1+ (hosts DOM SexLab menus)"
+        },
+        {
+          "version": "0.2.1",
+          "commit": "d5a1fa60e1a20215c9073637a129a1e7858be61b",
+          "date": "2026-10-27T00:55:15Z",
+          "changelog": "## 0.2.1\n\n### Items\n- Diary of Mine item names and descriptions now come with the DOM plugin\n- DOM Training Info no longer shows in what NPCs are carrying, so the AI won't mention it\n\n### Bug Fixes\n- Fixed: a just-captured slave fought a SkyrimNet_Leashed leash and could not be talked to\n\n### Install\n- Needs the matching SkyrimNet_Leashed update for the leash fix\n- Delete old `SkyrimNet/config/items/diaryofmine_*.yaml` if still there\n- Also delete `SkyrimNet/overlay/items/diaryofmine-esm_*.yaml`; old copies override the new ones\n- Smaller download: debug symbols (`.pdb`) are no longer included\n\n## 0.2.0\n\n### Poses and gestures\n- The AI now sees and narrates what slaves are visibly doing: kneeling, bowing, gestures\n- Tune it in the dashboard: `dom.events.poses`, `gestures`, `gesture_cooldown`\n\n### Torture counts as punishment\n- Torturing a slave with Injury Engine (whip, hands, spells, Punish panel) trains them like DOM\n- A list of the slave's open punishment reasons appears; pick one, random, none or your own\n- With \"When player tortures let player choose\" off, a reason is picked at random\n- SkyrimNet hears why: \"Bob is punishing Nina because she refused to comply...\"\n- The SexLab Punish panel lists the slave's DOM reasons\n\n### Healing counts as praise\n- Healing Hands or SexLab Aid on a slave praises them; a slave in shock is comforted instead\n- A list of praise reasons appears when you heal; \"Being a good slave\" is always first\n- Turn it off with \"Ask player praise reason when healing\"\n\n### Bug Fixes\n- Fixed: a slave the AI agreed to have sex (or follow an order) kept refusing\n- Fixed: a whipping that stopped partway left the punishment stuck with no reason list\n- Fixed: Healing Hands no longer triggers comfort narration\n\n### WebUI\n- New DOM entries in the SexLab menus: orders, abuse, training, restraints, clothes, management\n- New **DOM Info** panel with a slave's profile\n- Optional dashboard setting `dom.info.show_enjoyment` shows the slave's enjoyment details"
+        }
+      ],
+      "external_url": "https://github.com/GoodProvider/SkyrimNet_DOM/releases/latest",
+      "languages": [
+        "en"
+      ],
+      "language": "en",
+      "image": {
+        "file": "cover.png",
+        "sha": "ecaa02c60eb17a8218809887d1659645cc447ba5",
+        "commit": "4c2a93f2e92358a7c445754dfb4b431ebd094c4f",
+        "width": 1376,
+        "height": 769
+      },
+      "stats": {
+        "downloads": 62,
+        "endorsements": 0
+      }
+    },
     {
       "id": "plugins/taka/skyrimnet-minigame",
       "plugin_id": "taka.skyrimnet-minigame",
@@ -84,7 +155,7 @@
         "height": 1080
       },
       "stats": {
-        "downloads": 28,
+        "downloads": 29,
         "endorsements": 0
       }
     },
@@ -182,7 +253,7 @@
         "height": 1080
       },
       "stats": {
-        "downloads": 90,
+        "downloads": 91,
         "endorsements": 0
       }
     },
@@ -472,77 +543,6 @@
       }
     },
     {
-      "id": "plugins/goodprovider/skyrimnet-dom",
-      "plugin_id": "goodprovider.skyrimnet-dom",
-      "type": "listing",
-      "title": "SkyrimNet DOM",
-      "tagline": "enslave every actor, complex mental training/punishment",
-      "author": "goodprovider",
-      "tags": [
-        "slave",
-        "slavery",
-        "slaver",
-        "dom"
-      ],
-      "nsfw": true,
-      "icon": "zap",
-      "mods": [
-        {
-          "name": "DiaryOfMine.esm",
-          "file": "diaryofmine.esm",
-          "required": true
-        },
-        {
-          "name": "Injury_Engine.esp",
-          "file": "injury_engine.esp",
-          "required": true
-        },
-        {
-          "name": "SkyrimNet_Leashed.esp",
-          "file": "skyrimnet_leashed.esp",
-          "required": true
-        },
-        {
-          "name": "SkyrimNet_SexLab.esp",
-          "file": "skyrimnet_sexlab.esp",
-          "required": true
-        }
-      ],
-      "first_published": "2026-10-27T00:55:15Z",
-      "last_updated": "2026-11-09T03:37:55Z",
-      "version": "0.3.0",
-      "history": [
-        {
-          "version": "0.3.0",
-          "commit": "6f7f3e4ac4c8cfe1e0c9bf2d152ff6dcdf83458d",
-          "date": "2026-11-09T03:37:55Z",
-          "changelog": "### Obedience\n\n* AI tracks slave obedience (trained to defiant) and mood effects.\n* Well-trained slaves show as The Devoted, Professional, or Hollowed.\n* AI slave commands execute; menu orders can still be refused.\n* Fleeing slaves continue running even if accepting a sex order.\n\n### Baths\n\n* \"Bath me\" and \"bath you\" feature stage-by-stage descriptions, including finish events.\n* WebUI baths queue next stages after current line completes; self-washing logs start/stop events.\n* DOM menu baths work for slaves; WebUI/DOM shower refusal rates are equalized.\n* Busy animation states block wash commands with a status message.\n* AI can command slaves to wash themselves or their master.\n* **Fixes:** AI orders moving slaves mid-bath, stuck wash animations, and players remaining undressed post-\"bath me\".\n\n### Diary of Mine 8.5.6d\n\n* Requires DOM 8.5.6d+.\n* WebUI shower requires water (dries off if landbound); Pose > Breasts restored.\n* Punishment grounds aligned with DOM (adds kiss/body check refusal, useless trainer).\n* AI tracks bathing, duty restraints, and jail status.\n* **Fixes:** WebUI bath/shower actions and lost wash narration under extended DOM events.\n\n### Skyrim VR (Untested)\n\n* DOM menus map to SexLab VR controls (default: Grip + A; SexLab 0.37.2+).\n\n### Bug Fixes\n\n* Restored AI actions: \"stand here\", \"follow me\", and \"display yourself\".\n* Fixed `SkyrimNet_DOM.dll` load failure (Error 126) on missing Visual C++ runtimes.\n* Healing a slave in shock now triggers comforting dialogue instead of praise.\n\n### Requirements\n\n* SkyrimNet_SexLab 0.37.2+\n* Magelight UI 0.30.1+ (hosts DOM SexLab menus)"
-        },
-        {
-          "version": "0.2.1",
-          "commit": "d5a1fa60e1a20215c9073637a129a1e7858be61b",
-          "date": "2026-10-27T00:55:15Z",
-          "changelog": "## 0.2.1\n\n### Items\n- Diary of Mine item names and descriptions now come with the DOM plugin\n- DOM Training Info no longer shows in what NPCs are carrying, so the AI won't mention it\n\n### Bug Fixes\n- Fixed: a just-captured slave fought a SkyrimNet_Leashed leash and could not be talked to\n\n### Install\n- Needs the matching SkyrimNet_Leashed update for the leash fix\n- Delete old `SkyrimNet/config/items/diaryofmine_*.yaml` if still there\n- Also delete `SkyrimNet/overlay/items/diaryofmine-esm_*.yaml`; old copies override the new ones\n- Smaller download: debug symbols (`.pdb`) are no longer included\n\n## 0.2.0\n\n### Poses and gestures\n- The AI now sees and narrates what slaves are visibly doing: kneeling, bowing, gestures\n- Tune it in the dashboard: `dom.events.poses`, `gestures`, `gesture_cooldown`\n\n### Torture counts as punishment\n- Torturing a slave with Injury Engine (whip, hands, spells, Punish panel) trains them like DOM\n- A list of the slave's open punishment reasons appears; pick one, random, none or your own\n- With \"When player tortures let player choose\" off, a reason is picked at random\n- SkyrimNet hears why: \"Bob is punishing Nina because she refused to comply...\"\n- The SexLab Punish panel lists the slave's DOM reasons\n\n### Healing counts as praise\n- Healing Hands or SexLab Aid on a slave praises them; a slave in shock is comforted instead\n- A list of praise reasons appears when you heal; \"Being a good slave\" is always first\n- Turn it off with \"Ask player praise reason when healing\"\n\n### Bug Fixes\n- Fixed: a slave the AI agreed to have sex (or follow an order) kept refusing\n- Fixed: a whipping that stopped partway left the punishment stuck with no reason list\n- Fixed: Healing Hands no longer triggers comfort narration\n\n### WebUI\n- New DOM entries in the SexLab menus: orders, abuse, training, restraints, clothes, management\n- New **DOM Info** panel with a slave's profile\n- Optional dashboard setting `dom.info.show_enjoyment` shows the slave's enjoyment details"
-        }
-      ],
-      "external_url": "https://github.com/GoodProvider/SkyrimNet_DOM/releases/latest",
-      "languages": [
-        "en"
-      ],
-      "language": "en",
-      "image": {
-        "file": "cover.png",
-        "sha": "f345e2f4254d71527afab0c296b90f4bf976d80c",
-        "commit": "d5a1fa60e1a20215c9073637a129a1e7858be61b",
-        "width": 1376,
-        "height": 769
-      },
-      "stats": {
-        "downloads": 62,
-        "endorsements": 0
-      }
-    },
-    {
       "id": "plugins/goodprovider/skyrimnet-leashed",
       "plugin_id": "goodprovider.skyrimnet-leashed",
       "type": "listing",
@@ -775,7 +775,7 @@
         "height": 1080
       },
       "stats": {
-        "downloads": 118,
+        "downloads": 119,
         "endorsements": 2
       }
     },
@@ -812,7 +812,7 @@
         "height": 1008
       },
       "stats": {
-        "downloads": 5,
+        "downloads": 6,
         "endorsements": 0
       }
     },
@@ -847,7 +847,7 @@
         "height": 1080
       },
       "stats": {
-        "downloads": 13,
+        "downloads": 15,
         "endorsements": 0
       }
     },
@@ -1034,7 +1034,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 1057,
+        "downloads": 1058,
         "endorsements": 40
       }
     },
@@ -1376,7 +1376,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 119,
+        "downloads": 120,
         "endorsements": 0
       }
     },
@@ -1691,7 +1691,7 @@
         "height": 1152
       },
       "stats": {
-        "downloads": 379,
+        "downloads": 380,
         "endorsements": 9
       }
     },
@@ -1850,7 +1850,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 454,
+        "downloads": 455,
         "endorsements": 8
       }
     },
@@ -1886,7 +1886,7 @@
       ],
       "language": "en",
       "stats": {
-        "downloads": 42,
+        "downloads": 43,
         "endorsements": 0
       }
     },
@@ -2467,7 +2467,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 68,
+        "downloads": 69,
         "endorsements": 2
       }
     },
@@ -2629,7 +2629,7 @@
         "config": 7
       },
       "stats": {
-        "downloads": 304,
+        "downloads": 305,
         "endorsements": 1
       }
     },
@@ -2821,7 +2821,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 173,
+        "downloads": 174,
         "endorsements": 0
       }
     },
@@ -3273,7 +3273,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 68,
+        "downloads": 69,
         "endorsements": 0
       }
     },
@@ -5298,7 +5298,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1624,
+        "downloads": 1626,
         "endorsements": 2
       }
     },
@@ -5433,7 +5433,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 3522,
+        "downloads": 3524,
         "endorsements": 4
       }
     },
@@ -5658,7 +5658,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1831,
+        "downloads": 1834,
         "endorsements": 0
       }
     },
@@ -5928,7 +5928,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 691,
+        "downloads": 692,
         "endorsements": 1
       }
     },
@@ -6423,7 +6423,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1513,
+        "downloads": 1515,
         "endorsements": 2
       }
     },
@@ -7143,7 +7143,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1760,
+        "downloads": 1761,
         "endorsements": 3
       }
     },
@@ -7323,7 +7323,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 726,
+        "downloads": 727,
         "endorsements": 0
       }
     },
@@ -7368,7 +7368,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1146,
+        "downloads": 1147,
         "endorsements": 2
       }
     },
@@ -8868,7 +8868,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 569,
+        "downloads": 570,
         "endorsements": 0
       }
     },
@@ -9138,7 +9138,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 26,
+        "downloads": 27,
         "endorsements": 0
       }
     },
@@ -9183,7 +9183,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 546,
+        "downloads": 547,
         "endorsements": 0
       }
     },
@@ -9453,7 +9453,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 283,
+        "downloads": 284,
         "endorsements": 1
       }
     },
@@ -9588,7 +9588,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 881,
+        "downloads": 882,
         "endorsements": 0
       }
     },
@@ -9633,7 +9633,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 638,
+        "downloads": 639,
         "endorsements": 0
       }
     },
@@ -9723,7 +9723,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1543,
+        "downloads": 1544,
         "endorsements": 2
       }
     },
@@ -9813,7 +9813,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2033,
+        "downloads": 2034,
         "endorsements": 2
       }
     },
@@ -10308,7 +10308,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 75,
+        "downloads": 76,
         "endorsements": 0
       }
     },
@@ -10668,7 +10668,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 349,
+        "downloads": 350,
         "endorsements": 1
       }
     },
@@ -10848,7 +10848,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2104,
+        "downloads": 2106,
         "endorsements": 2
       }
     },
@@ -11343,7 +11343,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 166,
+        "downloads": 167,
         "endorsements": 0
       }
     },
@@ -11523,7 +11523,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 462,
+        "downloads": 463,
         "endorsements": 1
       }
     },
@@ -11703,7 +11703,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 744,
+        "downloads": 745,
         "endorsements": 1
       }
     },
@@ -12063,7 +12063,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 16,
+        "downloads": 17,
         "endorsements": 0
       }
     },
@@ -12333,7 +12333,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 195,
+        "downloads": 196,
         "endorsements": 1
       }
     },
@@ -12378,7 +12378,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 42,
+        "downloads": 43,
         "endorsements": 0
       }
     },
@@ -12468,7 +12468,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1068,
+        "downloads": 1072,
         "endorsements": 0
       }
     },
@@ -12828,7 +12828,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 227,
+        "downloads": 231,
         "endorsements": 0
       }
     },
@@ -13188,7 +13188,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 15,
+        "downloads": 17,
         "endorsements": 0
       }
     },
@@ -13278,7 +13278,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 425,
+        "downloads": 427,
         "endorsements": 0
       }
     },
@@ -13458,7 +13458,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 701,
+        "downloads": 705,
         "endorsements": 0
       }
     },
@@ -13863,7 +13863,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 253,
+        "downloads": 254,
         "endorsements": 0
       }
     },
@@ -14133,7 +14133,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 325,
+        "downloads": 326,
         "endorsements": 0
       }
     },
@@ -14178,7 +14178,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 60,
+        "downloads": 61,
         "endorsements": 0
       }
     },
@@ -14268,7 +14268,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2583,
+        "downloads": 2587,
         "endorsements": 2
       }
     },
@@ -14898,7 +14898,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 58,
+        "downloads": 59,
         "endorsements": 0
       }
     }
