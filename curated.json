@@ -2,7 +2,6 @@
   "schema_version": 1,
   "curated": [
     { "id": "plugins/severause/severactions" },
-    { "id": "plugins/min/skyrimnet-prompts-cache-enabled" },
     { "id": "plugins/urtubesrclogged/battle-summaries" }
   ]
 }

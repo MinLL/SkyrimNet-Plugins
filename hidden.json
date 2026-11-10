@@ -1,4 +1,11 @@
 {
   "schema_version": 1,
-  "hidden": []
+  "hidden": [
+    {
+      "id": "plugins/min/skyrimnet-prompts-cache-enabled",
+      "hidden_at": "2026-11-10T03:46:08.000Z",
+      "moderator": "MinLL",
+      "reason": "Merged into SkyrimNet: the cache-enabled prompts are now the default prompts."
+    }
+  ]
 }
