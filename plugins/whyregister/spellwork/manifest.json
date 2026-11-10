@@ -1,0 +1,21 @@
+{
+  "id": "whyregister.spellwork",
+  "type": "listing",
+  "title": "Spellwork",
+  "tagline": "Spend soul gems for skill points, train magicka alone. Skyrimnet triggers added",
+  "description": "Train in magicka schools solo, no trainer and no practice partner. Soul Study spends a soul to raise a school one level, like a trainer. Practice Ward conjures a dummy: spells cast near it teach half as much as it would in live combat. Degrades over time (you get tired training - this is flavor roleplay, not tracked, no buffs or debuffs)",
+  "author": "whyregister",
+  "tags": [
+    "training",
+    "magicka",
+    "magic",
+    "study",
+    "soul gems"
+  ],
+  "nsfw": false,
+  "icon": "sparkles",
+  "mods": [],
+  "external_url": "https://www.nexusmods.com/skyrimspecialedition/mods/198697?tab=description",
+  "version": "1.0.0",
+  "changelog": "Initial release"
+}
