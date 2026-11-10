@@ -25,6 +25,6 @@
   ],
   "image": "cover.jpg",
   "external_url": "https://github.com/nightlantern-mods/skyrimnet_Brothel",
-  "version": "0.4.2",
-  "changelog": "0.4.2: Scouted workers no longer stand at the door. In 0.4.1 a worker you scouted, once at the brothel, stood at the visitors' waiting spot, which is often by the front door, and went back there after every customer. Scouted workers now move about the brothel like its hired workers: they sit, eat and sleep in a free bed at night. Workers already standing at the door start moving when you load your save. The plugin is unchanged from 0.4.1."
+  "version": "0.4.3",
+  "changelog": "0.4.3: No crash when you leave while a pair is about to start. A scene could start just as you walked out of the brothel (for example while customers are sent automatically), with one of the pair no longer loaded, and OStim then crashed the game when it let them go. A scene now starts only while you are in the brothel and both of the pair are there and loaded. This is checked before the scene, again before every try, and once more right before the scene is handed to OStim or SexLab. Otherwise the deal is let go and the customer gets the gold back, with no message while you are away. The plugin is unchanged from 0.4.1."
 }
