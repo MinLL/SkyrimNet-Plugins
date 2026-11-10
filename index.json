@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-11-10T03:23:56.461Z",
-  "stats_as_of": "2026-11-10T03:19:50.577Z",
+  "generated_at": "2026-11-10T03:47:09.114Z",
+  "stats_as_of": "2026-11-10T03:46:22.382Z",
   "plugins": [
     {
       "id": "plugins/taka/skyrimnet-brothel",
@@ -161,7 +161,7 @@
         "height": 720
       },
       "stats": {
-        "downloads": 48,
+        "downloads": 49,
         "endorsements": 0
       }
     },
@@ -440,7 +440,7 @@
         "height": 432
       },
       "stats": {
-        "downloads": 290,
+        "downloads": 291,
         "endorsements": 3
       }
     },
@@ -583,7 +583,7 @@
         "height": 720
       },
       "stats": {
-        "downloads": 150,
+        "downloads": 151,
         "endorsements": 1
       }
     },
@@ -917,7 +917,7 @@
         "height": 1008
       },
       "stats": {
-        "downloads": 158,
+        "downloads": 159,
         "endorsements": 3
       }
     },
@@ -1007,7 +1007,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 1041,
+        "downloads": 1042,
         "endorsements": 40
       }
     },
@@ -1110,7 +1110,7 @@
         "height": 768
       },
       "stats": {
-        "downloads": 162,
+        "downloads": 163,
         "endorsements": 0
       }
     },
@@ -2254,7 +2254,7 @@
         "height": 1008
       },
       "stats": {
-        "downloads": 181,
+        "downloads": 182,
         "endorsements": 3
       }
     },
@@ -2732,7 +2732,11 @@
         "entities": 0,
         "config": 0
       },
-      "curated": true,
+      "hidden": {
+        "reason": "Merged into SkyrimNet: the cache-enabled prompts are now the default prompts.",
+        "hidden_at": "2026-11-10T03:46:08.000Z",
+        "moderator": "MinLL"
+      },
       "stats": {
         "downloads": 1603,
         "endorsements": 19
