@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-11-10T07:22:42.627Z",
-  "stats_as_of": "2026-11-10T07:22:42.556Z",
+  "generated_at": "2026-11-10T08:01:49.555Z",
+  "stats_as_of": "2026-11-10T08:01:49.441Z",
   "plugins": [
     {
       "id": "plugins/taka/skyrimnet-minigame",
@@ -21,9 +21,15 @@
       "icon": "package",
       "mods": [],
       "first_published": "2026-11-03T15:43:06Z",
-      "last_updated": "2026-11-10T05:32:32Z",
-      "version": "0.3.0",
+      "last_updated": "2026-11-10T08:01:22Z",
+      "version": "0.4.0",
       "history": [
+        {
+          "version": "0.4.0",
+          "commit": "bd72e8297880795dcb5b9ae14a8227defa7cbbc2",
+          "date": "2026-11-10T08:01:22Z",
+          "changelog": "Five languages and one installer: the board, the commentary and the settings menu are now in English, Japanese, Russian, German or Simplified Chinese (the last three machine-translated), chosen in a FOMOD installer for MO2 and Vortex, independent of the game's language. The separate Japanese archive is gone: if you installed the old \"skyrimnet_MiniGame_x.x.x_Japanese\" mod, remove it and pick Japanese in the installer instead (日本語版を別 MOD で入れていた方は、その MOD を外し、インストーラーで日本語を選んでください). Since 0.3.0: faces drawn by Phantasm, with Phantasm installed (0.2.0 or later; it comes with SeverActions 4.7 or later, and is also a download of its own), each opponent's face in the frames is a head-and-shoulders portrait Phantasm draws of them, with no screenshot, so the faces also show with ENB or Skyrim Upscaler, and the opponents need not be on screen. Without Phantasm nothing changes. Since 0.2.0: Texas Hold'em, where each opponent's way of playing (tight or loose, bold or cautious, how often they bluff) comes from their character; the board runs on Magelight UI (1.0 or later) when it is installed, else on Prisma UI, one of the two being enough; and your character can speak their own poker moves through Transform Dialogue, like bids in Liar's Dice."
+        },
         {
           "version": "0.3.0",
           "commit": "3548aa4f3b08b7a52e9abf4c5c93e423e8b29a04",
@@ -58,7 +64,10 @@
       "external_url": "https://github.com/nightlantern-mods/skyrimnet_MiniGame",
       "languages": [
         "en",
-        "ja"
+        "ja",
+        "zh",
+        "de",
+        "ru"
       ],
       "language": "en",
       "image": {
@@ -517,7 +526,7 @@
         "height": 769
       },
       "stats": {
-        "downloads": 60,
+        "downloads": 61,
         "endorsements": 0
       }
     },
@@ -1355,7 +1364,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 111,
+        "downloads": 112,
         "endorsements": 0
       }
     },
@@ -2402,7 +2411,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 262,
+        "downloads": 263,
         "endorsements": 0
       }
     },
@@ -2527,7 +2536,7 @@
         "config": 7
       },
       "stats": {
-        "downloads": 218,
+        "downloads": 219,
         "endorsements": 0
       }
     },
@@ -2608,7 +2617,7 @@
         "config": 7
       },
       "stats": {
-        "downloads": 294,
+        "downloads": 295,
         "endorsements": 1
       }
     },
@@ -3198,7 +3207,7 @@
         "height": 720
       },
       "stats": {
-        "downloads": 182,
+        "downloads": 183,
         "endorsements": 1
       }
     },
@@ -4137,7 +4146,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 75,
+        "downloads": 77,
         "endorsements": 0
       }
     },
@@ -4411,7 +4420,7 @@
         "config": 4
       },
       "stats": {
-        "downloads": 461,
+        "downloads": 462,
         "endorsements": 3
       }
     },
@@ -4510,7 +4519,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 190,
+        "downloads": 191,
         "endorsements": 0
       }
     },
@@ -4728,7 +4737,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 461,
+        "downloads": 462,
         "endorsements": 1
       }
     },
@@ -4798,7 +4807,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 603,
+        "downloads": 604,
         "endorsements": 0
       }
     },
@@ -5006,7 +5015,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 351,
+        "downloads": 353,
         "endorsements": 0
       }
     },
@@ -5232,7 +5241,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 473,
+        "downloads": 474,
         "endorsements": 5
       }
     },
@@ -5277,7 +5286,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1604,
+        "downloads": 1605,
         "endorsements": 2
       }
     },
@@ -5412,7 +5421,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 3486,
+        "downloads": 3491,
         "endorsements": 4
       }
     },
@@ -5907,7 +5916,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 676,
+        "downloads": 678,
         "endorsements": 1
       }
     },
@@ -6177,7 +6186,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 227,
+        "downloads": 228,
         "endorsements": 0
       }
     },
@@ -6402,7 +6411,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1497,
+        "downloads": 1499,
         "endorsements": 2
       }
     },
@@ -7167,7 +7176,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 342,
+        "downloads": 345,
         "endorsements": 0
       }
     },
@@ -7302,7 +7311,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 709,
+        "downloads": 710,
         "endorsements": 0
       }
     },
@@ -7347,7 +7356,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1123,
+        "downloads": 1125,
         "endorsements": 2
       }
     },
@@ -9162,7 +9171,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 539,
+        "downloads": 541,
         "endorsements": 0
       }
     },
@@ -9567,7 +9576,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 865,
+        "downloads": 866,
         "endorsements": 0
       }
     },
@@ -9702,7 +9711,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1515,
+        "downloads": 1516,
         "endorsements": 2
       }
     },
@@ -9792,7 +9801,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2006,
+        "downloads": 2007,
         "endorsements": 2
       }
     },
@@ -10827,7 +10836,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2072,
+        "downloads": 2075,
         "endorsements": 2
       }
     },
@@ -11097,7 +11106,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1695,
+        "downloads": 1696,
         "endorsements": 2
       }
     },
@@ -11412,7 +11421,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 214,
+        "downloads": 215,
         "endorsements": 0
       }
     },
@@ -11637,7 +11646,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1247,
+        "downloads": 1248,
         "endorsements": 0
       }
     },
@@ -13842,7 +13851,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 249,
+        "downloads": 250,
         "endorsements": 0
       }
     },
@@ -14247,7 +14256,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2558,
+        "downloads": 2560,
         "endorsements": 2
       }
     },
@@ -14517,7 +14526,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 641,
+        "downloads": 642,
         "endorsements": 0
       }
     },
@@ -14607,7 +14616,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 66,
+        "downloads": 68,
         "endorsements": 0
       }
     },
