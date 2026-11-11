@@ -1,8 +1,70 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-11-11T03:24:51.224Z",
-  "stats_as_of": "2026-11-11T03:24:51.146Z",
+  "generated_at": "2026-11-11T04:06:48.334Z",
+  "stats_as_of": "2026-11-11T04:06:48.111Z",
   "plugins": [
+    {
+      "id": "plugins/whyregister/to-the-yield",
+      "plugin_id": "whyregister.to-the-yield",
+      "type": "listing",
+      "title": "To The Yield",
+      "tagline": "Dueling Plug-in for SkyrimNet",
+      "author": "whyregister",
+      "tags": [
+        "Dueling",
+        "combat"
+      ],
+      "nsfw": false,
+      "icon": "package",
+      "mods": [],
+      "first_published": "2026-10-24T14:18:55Z",
+      "last_updated": "2026-11-11T04:06:21Z",
+      "version": "0.8.0",
+      "history": [
+        {
+          "version": "0.8.0",
+          "commit": "bc1ef2b2645c537f6c28a325e2a585cc4244522e",
+          "date": "2026-11-11T04:06:21Z",
+          "changelog": "0.8.0\n- When your opponent yields, you answer: accept it, keep fighting, or make it a duel to the death (confirmed first; not offered against essential NPCs or your companion).\n- A killing in a duel to the death is murder. set TTY_SanctionedDeath to 1 keeps it off your vanilla bounty; a SeverActions guard who sees it can still charge you, so you'll have to talk your way out of it.\n- NPC duels: the winner answers a yield in their own words (accept, fight on, or ask for a fight to the death). You're asked about a fight to the death first: Allow, Stop it, or Stop it silently. Nobody dies without your say.\n- Duels are now \"with weapons and magic\", and the prompts no longer tell NPCs what a duel means.\n- Fix: an NPC answering another NPC's challenge could start a duel with you instead.\n- Fix: the yield page could come up without its text."
+        },
+        {
+          "version": "0.6.0",
+          "commit": "8d40e29d7d0282f32b42ce8a6938ea4db6e7eb7d",
+          "date": "2026-10-27T23:53:42Z",
+          "changelog": "Followers can duel player and each other\nAllied Factions can duel\nMagelight support continued\nStat tracking box is live (added as a lesser power)"
+        },
+        {
+          "version": "0.4.0",
+          "commit": "b0cda83fc31b761bd1befe0da77d2a5f4cc67b50",
+          "date": "2026-10-26T05:29:09Z",
+          "changelog": "Added Magelight option if installed, if not will fall back to message box\nAllies of NPCs no longer enter the fray"
+        },
+        {
+          "version": "0.3.0",
+          "commit": "200df02466819b5add5becaa3ff5c10a922bdd41",
+          "date": "2026-10-24T20:23:35Z",
+          "changelog": "Added NPC-NPC combat and bystander protection. And image"
+        },
+        {
+          "version": "0.2.3",
+          "commit": "e05481d726e38e41e1e4da41532e5fa5d6793d79",
+          "date": "2026-10-24T14:18:55Z",
+          "changelog": "Initial release"
+        }
+      ],
+      "external_url": "https://github.com/whyregisterme/ToTheYield",
+      "image": {
+        "file": "cover.png",
+        "sha": "9da0705ea2f5b230b4c84dc4c2bee8c2e7a10588",
+        "commit": "200df02466819b5add5becaa3ff5c10a922bdd41",
+        "width": 1672,
+        "height": 941
+      },
+      "stats": {
+        "downloads": 70,
+        "endorsements": 0
+      }
+    },
     {
       "id": "plugins/taka/skyrimnet-slave-auction",
       "plugin_id": "taka.skyrimnet-slave-auction",
@@ -166,7 +228,7 @@
         "height": 1152
       },
       "stats": {
-        "downloads": 393,
+        "downloads": 394,
         "endorsements": 9
       }
     },
@@ -1473,7 +1535,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 134,
+        "downloads": 136,
         "endorsements": 0
       }
     },
@@ -2390,7 +2452,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 496,
+        "downloads": 497,
         "endorsements": 4
       }
     },
@@ -2571,7 +2633,7 @@
         "config": 7
       },
       "stats": {
-        "downloads": 251,
+        "downloads": 252,
         "endorsements": 0
       }
     },
@@ -2652,7 +2714,7 @@
         "config": 7
       },
       "stats": {
-        "downloads": 331,
+        "downloads": 332,
         "endorsements": 1
       }
     },
@@ -3055,62 +3117,6 @@
       "stats": {
         "downloads": 141,
         "endorsements": 2
-      }
-    },
-    {
-      "id": "plugins/whyregister/to-the-yield",
-      "plugin_id": "whyregister.to-the-yield",
-      "type": "listing",
-      "title": "To The Yield",
-      "tagline": "Dueling Plug-in for SkyrimNet",
-      "author": "whyregister",
-      "tags": [
-        "Dueling",
-        "combat"
-      ],
-      "nsfw": false,
-      "icon": "package",
-      "mods": [],
-      "first_published": "2026-10-24T14:18:55Z",
-      "last_updated": "2026-10-27T23:53:42Z",
-      "version": "0.6.0",
-      "history": [
-        {
-          "version": "0.6.0",
-          "commit": "8d40e29d7d0282f32b42ce8a6938ea4db6e7eb7d",
-          "date": "2026-10-27T23:53:42Z",
-          "changelog": "Followers can duel player and each other\nAllied Factions can duel\nMagelight support continued\nStat tracking box is live (added as a lesser power)"
-        },
-        {
-          "version": "0.4.0",
-          "commit": "b0cda83fc31b761bd1befe0da77d2a5f4cc67b50",
-          "date": "2026-10-26T05:29:09Z",
-          "changelog": "Added Magelight option if installed, if not will fall back to message box\nAllies of NPCs no longer enter the fray"
-        },
-        {
-          "version": "0.3.0",
-          "commit": "200df02466819b5add5becaa3ff5c10a922bdd41",
-          "date": "2026-10-24T20:23:35Z",
-          "changelog": "Added NPC-NPC combat and bystander protection. And image"
-        },
-        {
-          "version": "0.2.3",
-          "commit": "e05481d726e38e41e1e4da41532e5fa5d6793d79",
-          "date": "2026-10-24T14:18:55Z",
-          "changelog": "Initial release"
-        }
-      ],
-      "external_url": "https://github.com/whyregisterme/ToTheYield",
-      "image": {
-        "file": "cover.png",
-        "sha": "9da0705ea2f5b230b4c84dc4c2bee8c2e7a10588",
-        "commit": "200df02466819b5add5becaa3ff5c10a922bdd41",
-        "width": 1672,
-        "height": 941
-      },
-      "stats": {
-        "downloads": 70,
-        "endorsements": 0
       }
     },
     {
@@ -3845,7 +3851,7 @@
         "height": 720
       },
       "stats": {
-        "downloads": 102,
+        "downloads": 103,
         "endorsements": 1
       }
     },
@@ -3886,7 +3892,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 163,
+        "downloads": 164,
         "endorsements": 3
       }
     },
@@ -4455,7 +4461,7 @@
         "config": 4
       },
       "stats": {
-        "downloads": 484,
+        "downloads": 485,
         "endorsements": 3
       }
     },
@@ -4772,7 +4778,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 477,
+        "downloads": 478,
         "endorsements": 1
       }
     },
@@ -4842,7 +4848,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 627,
+        "downloads": 629,
         "endorsements": 0
       }
     },
@@ -5050,7 +5056,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 367,
+        "downloads": 368,
         "endorsements": 0
       }
     },
@@ -5321,7 +5327,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1670,
+        "downloads": 1671,
         "endorsements": 2
       }
     },
@@ -5366,7 +5372,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 849,
+        "downloads": 850,
         "endorsements": 0
       }
     },
@@ -5456,7 +5462,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 3607,
+        "downloads": 3612,
         "endorsements": 4
       }
     },
@@ -5951,7 +5957,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 712,
+        "downloads": 714,
         "endorsements": 1
       }
     },
@@ -6176,7 +6182,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 516,
+        "downloads": 517,
         "endorsements": 1
       }
     },
@@ -6446,7 +6452,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1547,
+        "downloads": 1550,
         "endorsements": 2
       }
     },
@@ -6806,7 +6812,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1311,
+        "downloads": 1313,
         "endorsements": 1
       }
     },
@@ -7166,7 +7172,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1809,
+        "downloads": 1812,
         "endorsements": 3
       }
     },
@@ -7211,7 +7217,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 361,
+        "downloads": 362,
         "endorsements": 0
       }
     },
@@ -7391,7 +7397,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1170,
+        "downloads": 1174,
         "endorsements": 2
       }
     },
@@ -7481,7 +7487,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 343,
+        "downloads": 344,
         "endorsements": 0
       }
     },
@@ -7796,7 +7802,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 313,
+        "downloads": 314,
         "endorsements": 0
       }
     },
@@ -8576,7 +8582,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 48,
+        "downloads": 49,
         "endorsements": 0
       }
     },
@@ -8891,7 +8897,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 581,
+        "downloads": 583,
         "endorsements": 0
       }
     },
@@ -9206,7 +9212,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 555,
+        "downloads": 557,
         "endorsements": 0
       }
     },
@@ -9611,7 +9617,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 903,
+        "downloads": 905,
         "endorsements": 0
       }
     },
@@ -9746,7 +9752,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1589,
+        "downloads": 1591,
         "endorsements": 2
       }
     },
@@ -9836,7 +9842,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2081,
+        "downloads": 2084,
         "endorsements": 2
       }
     },
@@ -10691,7 +10697,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 363,
+        "downloads": 364,
         "endorsements": 1
       }
     },
@@ -10871,7 +10877,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2155,
+        "downloads": 2157,
         "endorsements": 2
       }
     },
@@ -11141,7 +11147,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1758,
+        "downloads": 1759,
         "endorsements": 2
       }
     },
@@ -11456,7 +11462,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 226,
+        "downloads": 227,
         "endorsements": 0
       }
     },
@@ -11681,7 +11687,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1292,
+        "downloads": 1293,
         "endorsements": 0
       }
     },
@@ -11726,7 +11732,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 761,
+        "downloads": 762,
         "endorsements": 1
       }
     },
@@ -12446,7 +12452,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 437,
+        "downloads": 438,
         "endorsements": 0
       }
     },
@@ -12491,7 +12497,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1092,
+        "downloads": 1094,
         "endorsements": 0
       }
     },
@@ -12536,7 +12542,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 213,
+        "downloads": 214,
         "endorsements": 0
       }
     },
@@ -13301,7 +13307,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 434,
+        "downloads": 435,
         "endorsements": 0
       }
     },
@@ -13751,7 +13757,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 985,
+        "downloads": 986,
         "endorsements": 2
       }
     },
@@ -13886,7 +13892,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 261,
+        "downloads": 262,
         "endorsements": 0
       }
     },
@@ -14291,7 +14297,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2648,
+        "downloads": 2650,
         "endorsements": 2
       }
     },
@@ -14561,7 +14567,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 657,
+        "downloads": 658,
         "endorsements": 0
       }
     },
