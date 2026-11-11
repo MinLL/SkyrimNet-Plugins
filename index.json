@@ -1,8 +1,61 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-11-11T17:12:12.521Z",
-  "stats_as_of": "2026-11-11T17:12:12.405Z",
+  "generated_at": "2026-11-11T17:17:33.879Z",
+  "stats_as_of": "2026-11-11T17:17:33.762Z",
   "plugins": [
+    {
+      "id": "plugins/whyregister/hours-well-spent",
+      "plugin_id": "whyregister.hours-well-spent",
+      "type": "listing",
+      "title": "Hours Well Spent ",
+      "tagline": "Spend Time Together. Build Skills. Make Memories.",
+      "author": "whyregister",
+      "tags": [
+        "training",
+        "player events",
+        "roleplay",
+        "immersion",
+        "skill"
+      ],
+      "nsfw": false,
+      "icon": "package",
+      "mods": [],
+      "first_published": "2026-10-25T08:31:50Z",
+      "last_updated": "2026-11-11T17:17:03Z",
+      "version": "0.3.0",
+      "history": [
+        {
+          "version": "0.3.0",
+          "commit": "a14eefe3f34bd642f3c33f671c7a14752c31e839",
+          "date": "2026-11-11T17:17:03Z",
+          "changelog": "New: the Plan the Hours lesser power. Plan the hours yourself: what (type anything or pick an idea), how long, who comes along (followers and people nearby, or nobody), and an optional Focus skill. Needs Magelight UI.\nNew: Change the plan on an NPC's proposal opens the planner filled in with their idea. Change the activity, hours or company, or add a Focus; quick accept works as before.\nNew: hours spent alone. The account is remembered, without anyone being told.\nFix: on some load orders the proposal fell back to message boxes even with Magelight UI installed (\"Magelight has no prompt view\" in the Papyrus log). The page has a name of its own now.\nFix: if Magelight wasn't ready when the game loaded, the page is set up again at the next proposal.\nFix: an account the model wrapped in a code fence was lost to the plain one-line account.\nWhen the page can't be used, the Papyrus log says why.\nUpdate by replacing 0.2.0. Safe mid-playthrough; the power is added on the next load."
+        },
+        {
+          "version": "0.2.0",
+          "commit": "418260566d2c7c0b19b3440a26ab6d8be88e8535",
+          "date": "2026-10-26T01:28:45Z",
+          "changelog": "Optional Magelight UI page. With Magelight UI 1.3.0 or newer (SeverActions includes it), the proposal and the account appear on a proper page that names the NPC, quotes the activity, and shows the skill you gained with a progress bar. Without Magelight, it uses the same message boxes as 0.1.0. To always use the boxes, type set HWS_UseMagelight to 0 in the console."
+        },
+        {
+          "version": "0.1.0",
+          "commit": "66dc55b96f85d41bd9110c6b4cd154d6bab2b6b4",
+          "date": "2026-10-25T08:31:50Z",
+          "changelog": "Initial release"
+        }
+      ],
+      "external_url": "https://github.com/whyregisterme/HoursWellSpent",
+      "image": {
+        "file": "cover.png",
+        "sha": "d489d91f1e5d039d95b611ff00c7137ba33b95c6",
+        "commit": "66dc55b96f85d41bd9110c6b4cd154d6bab2b6b4",
+        "width": 1672,
+        "height": 941
+      },
+      "stats": {
+        "downloads": 117,
+        "endorsements": 3
+      }
+    },
     {
       "id": "plugins/goodprovider/injury-engine",
       "plugin_id": "goodprovider.injury-engine",
@@ -2470,7 +2523,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 500,
+        "downloads": 501,
         "endorsements": 4
       }
     },
@@ -2651,7 +2704,7 @@
         "config": 7
       },
       "stats": {
-        "downloads": 271,
+        "downloads": 272,
         "endorsements": 0
       }
     },
@@ -2732,7 +2785,7 @@
         "config": 7
       },
       "stats": {
-        "downloads": 357,
+        "downloads": 358,
         "endorsements": 1
       }
     },
@@ -2924,7 +2977,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 192,
+        "downloads": 193,
         "endorsements": 0
       }
     },
@@ -3176,53 +3229,6 @@
       "stats": {
         "downloads": 195,
         "endorsements": 0
-      }
-    },
-    {
-      "id": "plugins/whyregister/hours-well-spent",
-      "plugin_id": "whyregister.hours-well-spent",
-      "type": "listing",
-      "title": "Hours Well Spent ",
-      "tagline": "Spend Time Together. Build Skills. Make Memories.",
-      "author": "whyregister",
-      "tags": [
-        "training",
-        "player events",
-        "roleplay",
-        "immersion",
-        "skill"
-      ],
-      "nsfw": false,
-      "icon": "package",
-      "mods": [],
-      "first_published": "2026-10-25T08:31:50Z",
-      "last_updated": "2026-10-26T01:28:45Z",
-      "version": "0.2.0",
-      "history": [
-        {
-          "version": "0.2.0",
-          "commit": "418260566d2c7c0b19b3440a26ab6d8be88e8535",
-          "date": "2026-10-26T01:28:45Z",
-          "changelog": "Optional Magelight UI page. With Magelight UI 1.3.0 or newer (SeverActions includes it), the proposal and the account appear on a proper page that names the NPC, quotes the activity, and shows the skill you gained with a progress bar. Without Magelight, it uses the same message boxes as 0.1.0. To always use the boxes, type set HWS_UseMagelight to 0 in the console."
-        },
-        {
-          "version": "0.1.0",
-          "commit": "66dc55b96f85d41bd9110c6b4cd154d6bab2b6b4",
-          "date": "2026-10-25T08:31:50Z",
-          "changelog": "Initial release"
-        }
-      ],
-      "external_url": "https://github.com/whyregisterme/HoursWellSpent",
-      "image": {
-        "file": "cover.png",
-        "sha": "d489d91f1e5d039d95b611ff00c7137ba33b95c6",
-        "commit": "66dc55b96f85d41bd9110c6b4cd154d6bab2b6b4",
-        "width": 1672,
-        "height": 941
-      },
-      "stats": {
-        "downloads": 117,
-        "endorsements": 3
       }
     },
     {
@@ -5300,7 +5306,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 486,
+        "downloads": 487,
         "endorsements": 5
       }
     },
@@ -5345,7 +5351,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1698,
+        "downloads": 1699,
         "endorsements": 2
       }
     },
