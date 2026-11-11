@@ -1,0 +1,25 @@
+{
+  "id": "thatguy.o-deadly-skyrim",
+  "type": "listing",
+  "title": "O'Deadly Skyrim",
+  "tagline": "Randomized OStim events for the whole world, not just the player — as light or as dark as you want.",
+  "description": "O'Deadly Skyrim\n\nA SkyrimNet environmental mod. It adds randomized OStim events to Skyrim for you, your followers, and the people already around you, not just the player.\n\nLife is random. Some moments are good, some are funny, and some are dark. Every chance is toggleable and adjustable, so you can keep things light or push it into darker territory. Install it and leave it alone until something actually happens.\n\nThis was based on the idea of ODangerous Nights. I never downloaded ODangerous Nights, so I have no idea if it is compatible. ODangerous Nights is not needed — this does the same thing, and so much more.\n\n**Adults only.** Children are never involved, in any role. That is not a setting.\n\n## Family-safe switch\n\nThe master switch in the MCM is **off by default**. Nothing in this mod runs until you turn it on. Bind the Panic key under it (unbound by default). One press stops any scene this mod started, removes anyone it spawned, turns the mod off, and stops SkyrimNet from talking about it. Use it if you need the game family-safe in a hurry.\n\n## Requirements: (Mod Integration not selected as integrated mods are optional)\n\n- Skyrim SE or AE (1.6.x), including GOG. Not Oldrim or Skyrim VR (May work with VR but never tested).\n- SKSE64 (the build that matches your game)\n- OStim Standalone 7.5.x (API 7.1+)\n- SkyUI\n- powerofthree's Papyrus Extender (the build that matches your game)\n\nThe plugin is an ESL that masters only Skyrim.esm. There is no SKSE .dll of ours. Place it near the end of your load order. Nolvus users: do not place this plugin below Paper Maps.\n\n## Optional, auto-detected\n\nNone of these are required, and none of them is a master:\n\n- **SkyrimNet**: narration, memories, rumours, and a \"would this character do it?\" check against their bio. The decision prompt ships in the download and turns on when SkyrimNet is present. Without SkyrimNet the engine still runs, using its own character filter.\n- **OCreatures**: unlocks the Creatures page\n- **OCum**, **ZaZ Animation Pack**, **OStimNet**\n- **iActions**: better drink detection and morning-after partner preference\n- **Dirt and Blood** or **Bathing in Skyrim**: the bathing module\n- **Blood and OStim** and **Sacrosanct**: Dark Gift feeding and vampirism\n- **OStim Kidnapped Redux** (Lirael): SkyrimNet hears when you are taken, slip an ambush, escape, are let go, or are sold. O'Deadly holds its own encounters while you are held.\n- **ODefeat Reforged** (Lirael): SkyrimNet hears when you are defeated and what happens next. A downed player is left to ODefeat Reforged; O'Deadly's Defeat module still handles followers.\n- **The Killer Rabbit of Caerbannog** (Mihail): unlocks a third Climax fauna option that can spawn his killer rabbits after a climax. The unique rabbit in the Cave of Caerbannog is left alone. None of his files are included.\n\n## What you can turn on\n\nNight attacks, jails and barracks, inns, defeat, trespass, roads, relationships, optional creatures, plus morning after, bathing, shared inn rooms, watched from a distance, Dark Gift, mid-battle follower rescue, and a silly climax easter egg (vanilla rabbits and butterflies, or Mihail's Killer Rabbits of Caerbannog if that mod is installed). Every module is off by default and sits behind the master switch.\n\nDownload the latest release from the External URL. Full notes, source, and the changelog are in that GitHub repository.\n\nBy That Guy (Coronerra).",
+  "author": "thatguy",
+  "tags": [
+    "adult",
+    "ostim",
+    "immersion",
+    "events",
+    "roleplay"
+  ],
+  "nsfw": true,
+  "icon": "brain",
+  "mods": [],
+  "languages": [
+    "en"
+  ],
+  "image": "cover.jpg",
+  "external_url": "https://github.com/Coronerra/ODeadly-Skyrim",
+  "version": "0.0.4",
+  "changelog": "Initial release"
+}
