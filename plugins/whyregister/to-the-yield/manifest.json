@@ -14,6 +14,6 @@
   "mods": [],
   "image": "cover.png",
   "external_url": "https://github.com/whyregisterme/ToTheYield",
-  "version": "0.6.0",
-  "changelog": "Followers can duel player and each other\nAllied Factions can duel\nMagelight support continued\nStat tracking box is live (added as a lesser power)"
+  "version": "0.8.0",
+  "changelog": "0.8.0\n- When your opponent yields, you answer: accept it, keep fighting, or make it a duel to the death (confirmed first; not offered against essential NPCs or your companion).\n- A killing in a duel to the death is murder. set TTY_SanctionedDeath to 1 keeps it off your vanilla bounty; a SeverActions guard who sees it can still charge you, so you'll have to talk your way out of it.\n- NPC duels: the winner answers a yield in their own words (accept, fight on, or ask for a fight to the death). You're asked about a fight to the death first: Allow, Stop it, or Stop it silently. Nobody dies without your say.\n- Duels are now \"with weapons and magic\", and the prompts no longer tell NPCs what a duel means.\n- Fix: an NPC answering another NPC's challenge could start a duel with you instead.\n- Fix: the yield page could come up without its text."
 }
