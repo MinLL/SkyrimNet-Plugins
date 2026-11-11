@@ -1,8 +1,84 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-11-11T00:40:59.558Z",
-  "stats_as_of": "2026-11-11T00:36:33.713Z",
+  "generated_at": "2026-11-11T00:42:48.059Z",
+  "stats_as_of": "2026-11-11T00:40:05.725Z",
   "plugins": [
+    {
+      "id": "plugins/taka/skyrimnet-slave-auction",
+      "plugin_id": "taka.skyrimnet-slave-auction",
+      "type": "listing",
+      "title": "SkyrimNet Slave Auction",
+      "tagline": "A secret slave auction near Riften, voiced by SkyrimNet's AI. Be sold on its stage, or sit among the buyers and bid on whoever is in the cage.",
+      "author": "taka",
+      "tags": [
+        "auction",
+        "followers",
+        "captivity",
+        "dialogue",
+        "framework",
+        "debt"
+      ],
+      "nsfw": true,
+      "icon": "package",
+      "mods": [
+        {
+          "name": "ZaZAnimationPack.esm",
+          "file": "zazanimationpack.esm",
+          "required": true
+        },
+        {
+          "name": "nwsFollowerFramework.esp",
+          "file": "nwsfollowerframework.esp",
+          "required": true
+        }
+      ],
+      "first_published": "2026-11-03T15:42:38Z",
+      "last_updated": "2026-11-11T00:42:10Z",
+      "version": "0.2.1",
+      "history": [
+        {
+          "version": "0.2.1",
+          "commit": "877800392af5dc5913a49e2bcdad64ba3b2c67e5",
+          "date": "2026-11-11T00:42:10Z",
+          "changelog": "The settings menu (MCM) now shows its text in every game language. Before, a game in a language other than English or Japanese showed the menu's $ keys instead."
+        },
+        {
+          "version": "0.2.0",
+          "commit": "dec1d32aa6edd3f6d654375f32f6a81d9977872f",
+          "date": "2026-11-09T14:36:11Z",
+          "changelog": "Other mods can now ask for an auction without the player, naming who goes on sale or adding people to a waiting cage, and each lot goes on as soon as they are sold. New samples: Entry: Sacked Captives (needs Diary of Mine) and Exit: Set Free in Debt, with the new IOU Ledger add-on. Fixed: fights started by the AI in the hall, a freeze while belongings were moved, a follower left behind in the hall, and followers kept in a follower framework slot after being sold. If you ran an auction with 0.1.0 and have not run the SkyrimNet Actions Repair yet, run it once; it is on the GitHub release page."
+        },
+        {
+          "version": "0.1.1",
+          "commit": "efb046986c844cbe186e90f9ed03193a5caa099d",
+          "date": "2026-11-08T14:16:56Z",
+          "changelog": "Fixes a serious problem in 0.1.0: on every auction it changed the cooldowns of 39 SkyrimNet actions from other mods, and SkyrimNet saved them, so those mods behaved differently even outside the auction. 0.1.1 no longer touches any SkyrimNet setting. If you ran an auction with 0.1.0, update and run the separate SkyrimNet Actions Repair once; it is on the GitHub release page. New users need no repair. The installer now also works in Vortex."
+        },
+        {
+          "version": "0.1.0",
+          "commit": "8f1e21f736619485df31c30be696940b3a15859f",
+          "date": "2026-11-03T15:42:38Z",
+          "changelog": "First release."
+        }
+      ],
+      "external_url": "https://github.com/nightlantern-mods/skyrimnet_SlaveAuction",
+      "languages": [
+        "en",
+        "ja"
+      ],
+      "language": "en",
+      "image": {
+        "file": "cover.jpg",
+        "sha": "bafe8f299b8b0bbb69307aaa08d47df6387efc72",
+        "commit": "8f1e21f736619485df31c30be696940b3a15859f",
+        "width": 1280,
+        "height": 720
+      },
+      "stats": {
+        "downloads": 55,
+        "endorsements": 0
+      }
+    },
     {
       "id": "plugins/tetherball88/ostimnet",
       "plugin_id": "tetherball88.ostimnet",
@@ -345,76 +421,6 @@
       },
       "stats": {
         "downloads": 95,
-        "endorsements": 0
-      }
-    },
-    {
-      "id": "plugins/taka/skyrimnet-slave-auction",
-      "plugin_id": "taka.skyrimnet-slave-auction",
-      "type": "listing",
-      "title": "SkyrimNet Slave Auction",
-      "tagline": "A secret slave auction near Riften, voiced by SkyrimNet's AI. Be sold on its stage, or sit among the buyers and bid on whoever is in the cage.",
-      "author": "taka",
-      "tags": [
-        "auction",
-        "followers",
-        "captivity",
-        "dialogue",
-        "framework",
-        "debt"
-      ],
-      "nsfw": true,
-      "icon": "package",
-      "mods": [
-        {
-          "name": "ZaZAnimationPack.esm",
-          "file": "zazanimationpack.esm",
-          "required": true
-        },
-        {
-          "name": "nwsFollowerFramework.esp",
-          "file": "nwsfollowerframework.esp",
-          "required": true
-        }
-      ],
-      "first_published": "2026-11-03T15:42:38Z",
-      "last_updated": "2026-11-09T14:36:11Z",
-      "version": "0.2.0",
-      "history": [
-        {
-          "version": "0.2.0",
-          "commit": "dec1d32aa6edd3f6d654375f32f6a81d9977872f",
-          "date": "2026-11-09T14:36:11Z",
-          "changelog": "Other mods can now ask for an auction without the player, naming who goes on sale or adding people to a waiting cage, and each lot goes on as soon as they are sold. New samples: Entry: Sacked Captives (needs Diary of Mine) and Exit: Set Free in Debt, with the new IOU Ledger add-on. Fixed: fights started by the AI in the hall, a freeze while belongings were moved, a follower left behind in the hall, and followers kept in a follower framework slot after being sold. If you ran an auction with 0.1.0 and have not run the SkyrimNet Actions Repair yet, run it once; it is on the GitHub release page."
-        },
-        {
-          "version": "0.1.1",
-          "commit": "efb046986c844cbe186e90f9ed03193a5caa099d",
-          "date": "2026-11-08T14:16:56Z",
-          "changelog": "Fixes a serious problem in 0.1.0: on every auction it changed the cooldowns of 39 SkyrimNet actions from other mods, and SkyrimNet saved them, so those mods behaved differently even outside the auction. 0.1.1 no longer touches any SkyrimNet setting. If you ran an auction with 0.1.0, update and run the separate SkyrimNet Actions Repair once; it is on the GitHub release page. New users need no repair. The installer now also works in Vortex."
-        },
-        {
-          "version": "0.1.0",
-          "commit": "8f1e21f736619485df31c30be696940b3a15859f",
-          "date": "2026-11-03T15:42:38Z",
-          "changelog": "First release."
-        }
-      ],
-      "external_url": "https://github.com/nightlantern-mods/skyrimnet_SlaveAuction",
-      "languages": [
-        "en",
-        "ja"
-      ],
-      "language": "en",
-      "image": {
-        "file": "cover.jpg",
-        "sha": "bafe8f299b8b0bbb69307aaa08d47df6387efc72",
-        "commit": "8f1e21f736619485df31c30be696940b3a15859f",
-        "width": 1280,
-        "height": 720
-      },
-      "stats": {
-        "downloads": 55,
         "endorsements": 0
       }
     },
@@ -5450,7 +5456,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 3594,
+        "downloads": 3595,
         "endorsements": 4
       }
     },
@@ -5675,7 +5681,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1872,
+        "downloads": 1873,
         "endorsements": 0
       }
     },
@@ -8195,7 +8201,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 595,
+        "downloads": 596,
         "endorsements": 0
       }
     },
