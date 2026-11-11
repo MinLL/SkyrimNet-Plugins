@@ -36,6 +36,6 @@
   ],
   "image": "cover.jpg",
   "external_url": "https://github.com/GoodProvider/Injury_Engine/releases/latest",
-  "version": "0.2.0",
-  "changelog": "### Magelight UI\n- New requirement: Magelight UI 1.7.1 or later, a separate download. Install it before updating.\n- The torture overlay now runs on Magelight UI. PrismaUI is no longer needed by this mod.\n\n### Creatures\n- Creatures have their own body parts and wound text instead of reading as human wounds.\n- Covered: undead, werewolves, the vampire lord, insects, animals, trolls, spriggans and dragons.\n- Also covered: Durnehviir, Dwarven machines, atronachs, spirits, netch, mudcrabs, fish and birds.\n- Optional sexual parts on insects, werewolves, undead and the vampire lord have their own text.\n\n### Healing\n- Werewolves and werebears feeding on a corpse get their own healing line; none at full health.\n- Fortify Health and Courage are no longer read as healing.\n- A health buff ending no longer leaves a made-up wound behind.\n\n### Settings\n- Removed the unused settings \"Narration cooldown\" and \"Torture narration window\"."
+  "version": "0.2.1",
+  "changelog": "### Wounds\n- Bow and crossbow hits are arrow wounds, narrated as shots instead of stabs.\n- Vampiric Drain and Absorb Health spells drain life instead of reading as a blow.\n- Poison spells, poisoned weapons and venom have their own poison wounds.\n- Vampire Lord claws read as claw wounds instead of chewing.\n- Spell mods can mark spells as blood magic for their own wounds.\n- Every creature has its own text for arrows, drain, poison, claws and blood magic.\n- Spells no longer read as the weapon in the caster's other hand.\n- A bash with a bow or crossbow is a blunt blow."
 }
