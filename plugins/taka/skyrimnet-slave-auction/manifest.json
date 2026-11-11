@@ -33,6 +33,6 @@
   ],
   "image": "cover.jpg",
   "external_url": "https://github.com/nightlantern-mods/skyrimnet_SlaveAuction",
-  "version": "0.2.0",
-  "changelog": "Other mods can now ask for an auction without the player, naming who goes on sale or adding people to a waiting cage, and each lot goes on as soon as they are sold. New samples: Entry: Sacked Captives (needs Diary of Mine) and Exit: Set Free in Debt, with the new IOU Ledger add-on. Fixed: fights started by the AI in the hall, a freeze while belongings were moved, a follower left behind in the hall, and followers kept in a follower framework slot after being sold. If you ran an auction with 0.1.0 and have not run the SkyrimNet Actions Repair yet, run it once; it is on the GitHub release page."
+  "version": "0.2.1",
+  "changelog": "The settings menu (MCM) now shows its text in every game language. Before, a game in a language other than English or Japanese showed the menu's $ keys instead."
 }
