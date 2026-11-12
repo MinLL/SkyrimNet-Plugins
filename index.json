@@ -1,8 +1,134 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-11-12T02:10:41.276Z",
-  "stats_as_of": "2026-11-12T02:10:41.167Z",
+  "generated_at": "2026-11-12T02:24:37.993Z",
+  "stats_as_of": "2026-11-12T02:24:37.900Z",
   "plugins": [
+    {
+      "id": "plugins/7regalrascal7/delectatio-et-dominium",
+      "plugin_id": "7regalrascal7.delectatio-et-dominium",
+      "type": "listing",
+      "title": "Delectatio et Dominium",
+      "tagline": "Bedroom Drama for SkyrimNet",
+      "author": "7regalrascal7",
+      "tags": [
+        "SexLab",
+        "OStim",
+        "Fill Her Up",
+        "GS Pose",
+        "Baka"
+      ],
+      "nsfw": true,
+      "icon": "heart",
+      "mods": [
+        {
+          "name": "Acheron.esm",
+          "file": "acheron.esm",
+          "required": true
+        },
+        {
+          "name": "SexLab.esm",
+          "file": "sexlab.esm",
+          "required": true
+        },
+        {
+          "name": "OStim.esp",
+          "file": "ostim.esp",
+          "required": true
+        },
+        {
+          "name": "sr_FillHerUp.esp",
+          "file": "sr_fillherup.esp",
+          "required": false
+        },
+        {
+          "name": "SexLabDefeat.esp",
+          "file": "sexlabdefeat.esp",
+          "required": false
+        },
+        {
+          "name": "SlaveTats.esp",
+          "file": "slavetats.esp",
+          "required": false
+        },
+        {
+          "name": "_GSPoses.esp",
+          "file": "_gsposes.esp",
+          "required": false
+        },
+        {
+          "name": "OCum.esp",
+          "file": "ocum.esp",
+          "required": false
+        }
+      ],
+      "first_published": "2026-10-27T00:49:15Z",
+      "last_updated": "2026-11-12T02:23:53Z",
+      "version": "0.4.0",
+      "history": [
+        {
+          "version": "0.4.0",
+          "commit": "687d0105f99302460258df9d8336b0d7946395fd",
+          "date": "2026-11-12T02:23:53Z",
+          "changelog": "Delectatio et Dominium 0.4.0\n\nNarrative Selection — the headline. Every ambient mode now casts its own scenes: one LLM call picks who acts, what they do, to whom, and why — from live context (bios, arousal, memories, recent events), not dice. And the \"why\" ships in the cue itself: \"that display of strength is the first thing in this cursed room worth wanting.\" Toggle per module if you prefer plain cues.\n\nReaction lanes everywhere — direct narration / NPC thought / player speech / player thought, unified across GS poses and Baka actions, one lane per event in rotation, with a guaranteed acknowledgment floor so no pose happens unseen.\n\nTriggers that say what happened — rich cue descriptions now flow directly into trigger text (live-proven {{ event_data }} channel). No more \"something happened, react.\"\n\nArousal doctrine completed — the last mechanical banding retired. All reaction registers render as suggestions beside actual arousal facts; the LLM picks what fits the person and the moment.\n\nHonest cadence — clocks arm at dispatch, not fire; missed LLM answers no longer burn cadence slots; fast modes auto-lean their prompts to stay affordable. 60s default.\n\nThe Acheron fix — the follower soft-lock is dead at its roots: Acheron rescues work on NPCs, Prisma HelpUp always releases, and standing over downed companions post-combat extends their wait by one minute, not forever.\n\nSofter feet — EmoTears4NPCs is now a true soft dependency (it was never actually used). One hidden load-order constraint gone.\n\nThe theme: every \"broken system\" this cycle was a too-literal gatekeeper, while the model's answers kept being the healthiest layer. 0.4.0 stops second-guessing the model — complete information, honest timing, gates that check spelling. The mod now speaks in complete sentences."
+        },
+        {
+          "version": "0.3.0",
+          "commit": "5b64db3fe63da5453bbdb5638b302c28011e18e4",
+          "date": "2026-10-27T00:49:15Z",
+          "changelog": "Initial release"
+        }
+      ],
+      "external_url": "https://github.com/regalrascal/Delectatio-et-Dominium/releases/tag/v0.4.0",
+      "languages": [
+        "en"
+      ],
+      "language": "en",
+      "image": {
+        "file": "cover.png",
+        "sha": "aff62b481b43251fbe1d895cf99cbaebeae704ce",
+        "commit": "5b64db3fe63da5453bbdb5638b302c28011e18e4",
+        "width": 1352,
+        "height": 760
+      },
+      "stats": {
+        "downloads": 197,
+        "endorsements": 0
+      }
+    },
+    {
+      "id": "plugins/whyregister/spellwork",
+      "plugin_id": "whyregister.spellwork",
+      "type": "listing",
+      "title": "Spellwork",
+      "tagline": "Spend soul gems for skill points, train magicka alone. Skyrimnet triggers added",
+      "author": "whyregister",
+      "tags": [
+        "training",
+        "magicka",
+        "magic",
+        "study",
+        "soul gems"
+      ],
+      "nsfw": false,
+      "icon": "sparkles",
+      "mods": [],
+      "first_published": "2026-11-12T02:23:32Z",
+      "last_updated": "2026-11-12T02:23:32Z",
+      "version": "1.0.0",
+      "history": [
+        {
+          "version": "1.0.0",
+          "commit": "644f008846e0708a0f23c6d0caa2e28c205740ac",
+          "date": "2026-11-12T02:23:32Z",
+          "changelog": "Initial release"
+        }
+      ],
+      "external_url": "https://www.nexusmods.com/skyrimspecialedition/mods/198697?tab=description",
+      "stats": {
+        "downloads": 0,
+        "endorsements": 0
+      }
+    },
     {
       "id": "plugins/oldcustard/audio-tags-for-universal-translator",
       "plugin_id": "oldcustard.audio-tags-for-universal-translator",
@@ -449,7 +575,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 80,
+        "downloads": 81,
         "endorsements": 0
       }
     },
@@ -2325,7 +2451,7 @@
         "height": 688
       },
       "stats": {
-        "downloads": 123,
+        "downloads": 124,
         "endorsements": 0
       }
     },
@@ -2820,7 +2946,7 @@
         "config": 7
       },
       "stats": {
-        "downloads": 285,
+        "downloads": 286,
         "endorsements": 0
       }
     },
@@ -2901,7 +3027,7 @@
         "config": 7
       },
       "stats": {
-        "downloads": 376,
+        "downloads": 377,
         "endorsements": 1
       }
     },
@@ -3093,7 +3219,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 198,
+        "downloads": 199,
         "endorsements": 0
       }
     },
@@ -3307,47 +3433,6 @@
       }
     },
     {
-      "id": "plugins/7regalrascal7/delectatio-et-dominium",
-      "plugin_id": "7regalrascal7.delectatio-et-dominium",
-      "type": "listing",
-      "title": "Delectatio-et-Dominium",
-      "tagline": "Bedroom drama for SkyrimNet",
-      "author": "7regalrascal7",
-      "tags": [
-        "SexLab",
-        "OStim",
-        "Fill Her Up",
-        "GS Pose",
-        "Baka"
-      ],
-      "nsfw": true,
-      "icon": "heart",
-      "mods": [],
-      "first_published": "2026-10-27T00:49:15Z",
-      "last_updated": "2026-10-27T00:49:15Z",
-      "version": "0.3.0",
-      "history": [
-        {
-          "version": "0.3.0",
-          "commit": "5b64db3fe63da5453bbdb5638b302c28011e18e4",
-          "date": "2026-10-27T00:49:15Z",
-          "changelog": "Initial release"
-        }
-      ],
-      "external_url": "https://github.com/regalrascal/Delectatio-et-Dominium",
-      "image": {
-        "file": "cover.png",
-        "sha": "aff62b481b43251fbe1d895cf99cbaebeae704ce",
-        "commit": "5b64db3fe63da5453bbdb5638b302c28011e18e4",
-        "width": 1352,
-        "height": 760
-      },
-      "stats": {
-        "downloads": 197,
-        "endorsements": 0
-      }
-    },
-    {
       "id": "plugins/nosimo/and-awareness",
       "plugin_id": "nosimo.and-awareness",
       "type": "listing",
@@ -3512,7 +3597,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 171,
+        "downloads": 172,
         "endorsements": 1
       }
     },
@@ -3933,7 +4018,7 @@
         "height": 720
       },
       "stats": {
-        "downloads": 107,
+        "downloads": 108,
         "endorsements": 1
       }
     },
@@ -4543,7 +4628,7 @@
         "config": 4
       },
       "stats": {
-        "downloads": 510,
+        "downloads": 511,
         "endorsements": 3
       }
     },
@@ -4820,7 +4905,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 492,
+        "downloads": 494,
         "endorsements": 1
       }
     },
@@ -4890,7 +4975,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 657,
+        "downloads": 659,
         "endorsements": 0
       }
     },
@@ -5022,7 +5107,7 @@
         "height": 900
       },
       "stats": {
-        "downloads": 264,
+        "downloads": 265,
         "endorsements": 5
       }
     },
@@ -5369,7 +5454,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1724,
+        "downloads": 1725,
         "endorsements": 2
       }
     },
@@ -5414,7 +5499,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 876,
+        "downloads": 877,
         "endorsements": 0
       }
     },
@@ -5504,7 +5589,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 3688,
+        "downloads": 3689,
         "endorsements": 4
       }
     },
@@ -6179,7 +6264,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 95,
+        "downloads": 96,
         "endorsements": 0
       }
     },
@@ -6494,7 +6579,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1602,
+        "downloads": 1603,
         "endorsements": 2
       }
     },
@@ -7394,7 +7479,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 761,
+        "downloads": 762,
         "endorsements": 0
       }
     },
@@ -7439,7 +7524,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1209,
+        "downloads": 1212,
         "endorsements": 2
       }
     },
@@ -8939,7 +9024,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 599,
+        "downloads": 601,
         "endorsements": 0
       }
     },
@@ -9029,7 +9114,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 105,
+        "downloads": 106,
         "endorsements": 0
       }
     },
@@ -9254,7 +9339,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 573,
+        "downloads": 575,
         "endorsements": 0
       }
     },
@@ -9659,7 +9744,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 927,
+        "downloads": 928,
         "endorsements": 0
       }
     },
@@ -9794,7 +9879,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1642,
+        "downloads": 1644,
         "endorsements": 2
       }
     },
@@ -11594,7 +11679,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 483,
+        "downloads": 484,
         "endorsements": 1
       }
     },
@@ -12404,7 +12489,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 205,
+        "downloads": 206,
         "endorsements": 1
       }
     },
