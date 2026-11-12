@@ -21,6 +21,6 @@
   ],
   "image": "cover.png",
   "external_url": "https://www.nexusmods.com/skyrimspecialedition/mods/198353",
-  "version": "2.2.1",
-  "changelog": "github: https://github.com/tetherball88/BodyLanguage/releases/tag/latest\n### Fixed\n\n- **Fixed False Male Genital Descriptions on Female NPCs**\n  - Fixed a bug where naked female NPCs without a genital addon equipped could falsely receive a male genital description.\n  - Prevented female characters from being assigned genital descriptions from unequipped items carried in their inventory.\n  - Improved 3D mesh filtering to prevent non-genital meshes from being misidentified during anatomy evaluation."
+  "version": "2.2.2",
+  "changelog": "github: https://github.com/tetherball88/BodyLanguage/releases/tag/latest\n### Fixed\n\n- Excluded Child NPCs from All Body Prompts - in v2.2.2\n  - Child NPCs are now automatically excluded from the Body shape prompt section and all subprompts (body state, skin features, height, and anatomy) in addition to 3D mesh evaluation.\n- **Fixed False Male Genital Descriptions on Female NPCs** - in v2.2.1\n  - Fixed a bug where naked female NPCs without a genital addon equipped could falsely receive a male genital description.\n  - Prevented female characters from being assigned genital descriptions from unequipped items carried in their inventory.\n  - Improved 3D mesh filtering to prevent non-genital meshes from being misidentified during anatomy evaluation."
 }
