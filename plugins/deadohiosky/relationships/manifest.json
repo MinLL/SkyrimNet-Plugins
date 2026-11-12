@@ -37,6 +37,6 @@
   ],
   "image": "cover.png",
   "external_url": "https://github.com/deadohiosky48/SkyrimNet-Relationships",
-  "version": "2.5.0",
-  "changelog": "**2.5.0 - To have and to hold**\n\n**No more external dependencies for marriage.** Relationships now fully controls the marriage process, from engagement on. Other marriage mods are redundant and potentially conflicting, so they should be removed or have their marriage-related functionality disabled if you're using Relationships. See the main mod GitHub page for details.\n\n**Ask them to marry you.** Propose, hire a wedding planner to customize your ceremony, buy custom engagement rings and wedding bands, pick any spot in Skyrim to get married, then have the ceremony conducted - all driven by SkyrimNet dialogue.\n\n**Or just elope.** Any priest, priestess or jarl will marry you there and then.\n\n**More than one spouse is your call.** Turn on Marry More Than One Spouse in the settings.\n\n**A calendar, and a family.** Wedding days, anniversaries, birthdays and Skyrim's festivals are on the new calendar, accessible from the dashboard. Also, every character's card shows their familial relations.\n\n**All UI elements now handled via the primary UI framework (Meridian, Magelight, or Prisma UI).** Papyrus MessageBox is no longer required or used."
+  "version": "2.5.2",
+  "changelog": "**Patch for world knowledge and time change issues**\n\n- World knowledge entries so citizens know which characters offer wedding planning services now work properly\n- Fixed an issue caused by daylight savings time change for some who live in time zones that don't change time"
 }
