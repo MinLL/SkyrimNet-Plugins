@@ -12,7 +12,7 @@
   "nsfw": false,
   "icon": "world",
   "mods": [],
-  "version": "1.0.0",
-  "changelog": "Initial release",
-  "min_skyrimnet_version": "0.26.0"
+  "version": "1.1.0",
+  "changelog": "1.1.0: Rebased on the SkyrimNet 0.30 base universal translator (prompt-cache layout, spoken language and subtitle translation, multi-line preservation). Audio tags now pass render_mode as a template argument and also apply in translation-only mode; tags stay out of <translation> blocks.",
+  "min_skyrimnet_version": "1.1.1"
 }
