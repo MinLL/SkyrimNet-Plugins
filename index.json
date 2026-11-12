@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-11-12T01:22:09.278Z",
-  "stats_as_of": "2026-11-12T01:20:31.130Z",
+  "generated_at": "2026-11-12T01:45:22.257Z",
+  "stats_as_of": "2026-11-12T01:45:22.171Z",
   "plugins": [
     {
       "id": "plugins/tetherball88/body-language",
@@ -22,9 +22,15 @@
       "icon": "package",
       "mods": [],
       "first_published": "2026-09-25T20:55:01Z",
-      "last_updated": "2026-11-11T19:50:10Z",
-      "version": "2.2.0",
+      "last_updated": "2026-11-12T01:44:47Z",
+      "version": "2.2.1",
       "history": [
+        {
+          "version": "2.2.1",
+          "commit": "10235e35024be101414eb513b2fae36d5bf14b46",
+          "date": "2026-11-12T01:44:47Z",
+          "changelog": "github: https://github.com/tetherball88/BodyLanguage/releases/tag/latest\n### Fixed\n\n- **Fixed False Male Genital Descriptions on Female NPCs**\n  - Fixed a bug where naked female NPCs without a genital addon equipped could falsely receive a male genital description.\n  - Prevented female characters from being assigned genital descriptions from unequipped items carried in their inventory.\n  - Improved 3D mesh filtering to prevent non-genital meshes from being misidentified during anatomy evaluation."
+        },
         {
           "version": "2.2.0",
           "commit": "5115191a4dc26b82269a1cc9f25766c6db6f8dc4",
@@ -225,7 +231,7 @@
         "height": 768
       },
       "stats": {
-        "downloads": 180,
+        "downloads": 181,
         "endorsements": 0
       }
     },
@@ -6482,7 +6488,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1598,
+        "downloads": 1599,
         "endorsements": 2
       }
     },
