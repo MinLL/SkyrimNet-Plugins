@@ -1,0 +1,42 @@
+{
+  "id": "thatguy.o-blood-dirt-and-cum",
+  "type": "listing",
+  "title": "O'Blood, Dirt and Cum",
+  "tagline": "A mod that bridges Ocum, Dirt and Blood, and Skyrimnet... a bit more. :)",
+  "description": "A plugin that can go three ways.\nO’Blood, Dirt and Cum is a small SkyrimNet companion that works with Dirt and Blood, OCum, or both. This plugin scans your system to see if you have one of the two mods installed or both. If you do, it does the following...\n\n\n- Dirt and Blood only → SkyrimNet knows about your dirt and blood (and baths). Reports a little better than the stock prompt.\n- OCum only → SkyrimNet knows when someone has cum on them. Reports a little more than the Ostimnet one does.\n- Both → the above, plus a real Dirt and Blood bath actually washes the cum off (not just swimming or waiting for a timer).\n\nNolvus Players Welcome.\n\n“Why?”\n\n> Because it’s not right when your lover finishes a bath and then talks to the innkeeper with stuff still hanging off their chin and everyone talking as if it's normal and they are clean.",
+  "author": "thatguy",
+  "tags": [
+    "NSFW",
+    "Cum",
+    "Ocum",
+    "Dirt and Blood",
+    "Dirt",
+    "Blood"
+  ],
+  "nsfw": true,
+  "icon": "package",
+  "mods": [
+    {
+      "name": "Dirt and Blood - Dynamic Visuals.esp",
+      "file": "dirt and blood - dynamic visuals.esp",
+      "required": false
+    },
+    {
+      "name": "Dirt and Blood - Malignis Animations Patch.esp",
+      "file": "dirt and blood - malignis animations patch.esp",
+      "required": false
+    },
+    {
+      "name": "OCum.esp",
+      "file": "ocum.esp",
+      "required": false
+    }
+  ],
+  "languages": [
+    "en"
+  ],
+  "image": "cover.jpg",
+  "external_url": "https://github.com/Coronerra/OBlood-Dirt-and-Cum#6-ocum-washing-cum-off-in-a-bath",
+  "version": "0.3.0",
+  "changelog": "Initial release"
+}
