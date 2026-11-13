@@ -1,8 +1,85 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-11-13T18:23:07.528Z",
-  "stats_as_of": "2026-11-13T18:23:07.399Z",
+  "generated_at": "2026-11-13T19:05:58.601Z",
+  "stats_as_of": "2026-11-13T19:02:29.035Z",
   "plugins": [
+    {
+      "id": "plugins/thatguy/o-deadly-skyrim",
+      "plugin_id": "thatguy.o-deadly-skyrim",
+      "type": "listing",
+      "title": "O'Deadly Skyrim",
+      "tagline": "Randomized OStim events for the whole world, not just the player — as light or as dark as you want.",
+      "author": "thatguy",
+      "tags": [
+        "adult",
+        "ostim",
+        "immersion",
+        "events",
+        "roleplay"
+      ],
+      "nsfw": true,
+      "icon": "brain",
+      "mods": [
+        {
+          "name": "SexLabDefeat.esp",
+          "file": "sexlabdefeat.esp",
+          "required": false
+        },
+        {
+          "name": "Dirt and Blood - Dynamic Visuals.esp",
+          "file": "dirt and blood - dynamic visuals.esp",
+          "required": false
+        },
+        {
+          "name": "Dirt and Blood - Malignis Animations Patch.esp",
+          "file": "dirt and blood - malignis animations patch.esp",
+          "required": false
+        },
+        {
+          "name": "Blood and OStim.esp",
+          "file": "blood and ostim.esp",
+          "required": false
+        },
+        {
+          "name": "Sacrosanct - Vampires of Skyrim.esp",
+          "file": "sacrosanct - vampires of skyrim.esp",
+          "required": false
+        }
+      ],
+      "first_published": "2026-11-12T02:38:04Z",
+      "last_updated": "2026-11-13T19:05:28Z",
+      "version": "0.7.0",
+      "history": [
+        {
+          "version": "0.7.0",
+          "commit": "cfa92b348fae25e486baffd9ce006f7a2209e644",
+          "date": "2026-11-13T19:05:28Z",
+          "changelog": "O'Deadly Skyrim 0.7 (A SkyrimNet environmental mod) by That Guy (Coronerra).\n\nFixed: crash on save with NPC AI Position Fix after a sleep event. NPC AI Position Fix keeps track of every NPC that is moved or loaded in while you sleep or wait, then repositions them when the rest ends. 0.6 woke you and spawned its sleep-event characters while the sleep was still running, so they ended up on that mod's list and were removed later. That could crash the game on the next save.\n\nSleep events now begin as you wake. The roll still happens when you lie down, with the same chances as before. Nothing is moved, spawned or started until the sleep has finished and the Sleep/Wait menu has closed, plus a one-second pause so other mods can finish their own after-rest work. The sleep itself is no longer interrupted.\nThe morning after now also waits for the menu to close. Wait events pause one second after the menu closes.\nIf something else cuts your sleep short (another mod's event, an attack), the event rolled for that sleep is dropped. Loading a save, the panic key or turning the master switch off clears any sleep event that has not started yet.\nFixed: a Bathing scene could start before a long bath had finished. With the Malignis Animations - BiSR DnB Patch a bath runs about 65 seconds, and 0.6 gave up waiting after 60. O'Deadly now waits until the actor has really left the bath (up to 150 seconds), pauses 2.5 seconds so clothes and controls are restored, then stages. Someone still in a running bath is never picked as the partner.\n\nSame plugin, records and FormIDs; still only Skyrim.esm as master. Same settings and defaults; master switch still OFF; kill switch, panic key and adults-only rules unchanged. SkyrimNet pack version 0.7.0.\nInstall: download ODeadly_Skyrim_0.7.zip, install in MO2 and overwrite 0.6; settings carry over. Best updated while not asleep or waiting. See the README and changelog."
+        },
+        {
+          "version": "0.0.4",
+          "commit": "5a9ffa05ce483af9139ed72c3f0775beb65b7a4d",
+          "date": "2026-11-12T02:38:04Z",
+          "changelog": "Initial release"
+        }
+      ],
+      "external_url": "https://github.com/Coronerra/ODeadly-Skyrim",
+      "languages": [
+        "en"
+      ],
+      "language": "en",
+      "image": {
+        "file": "cover.jpg",
+        "sha": "93ff687cc29bd15f03b5473d365194328554db97",
+        "commit": "5a9ffa05ce483af9139ed72c3f0775beb65b7a4d",
+        "width": 1280,
+        "height": 720
+      },
+      "stats": {
+        "downloads": 18,
+        "endorsements": 0
+      }
+    },
     {
       "id": "plugins/awesmdiver/skyrimnet-multiproxy",
       "plugin_id": "awesmdiver.skyrimnet-multiproxy",
@@ -356,51 +433,6 @@
       }
     },
     {
-      "id": "plugins/thatguy/o-deadly-skyrim",
-      "plugin_id": "thatguy.o-deadly-skyrim",
-      "type": "listing",
-      "title": "O'Deadly Skyrim",
-      "tagline": "Randomized OStim events for the whole world, not just the player — as light or as dark as you want.",
-      "author": "thatguy",
-      "tags": [
-        "adult",
-        "ostim",
-        "immersion",
-        "events",
-        "roleplay"
-      ],
-      "nsfw": true,
-      "icon": "brain",
-      "mods": [],
-      "first_published": "2026-11-12T02:38:04Z",
-      "last_updated": "2026-11-12T02:38:04Z",
-      "version": "0.0.4",
-      "history": [
-        {
-          "version": "0.0.4",
-          "commit": "5a9ffa05ce483af9139ed72c3f0775beb65b7a4d",
-          "date": "2026-11-12T02:38:04Z",
-          "changelog": "Initial release"
-        }
-      ],
-      "external_url": "https://github.com/Coronerra/ODeadly-Skyrim",
-      "languages": [
-        "en"
-      ],
-      "language": "en",
-      "image": {
-        "file": "cover.jpg",
-        "sha": "93ff687cc29bd15f03b5473d365194328554db97",
-        "commit": "5a9ffa05ce483af9139ed72c3f0775beb65b7a4d",
-        "width": 1280,
-        "height": 720
-      },
-      "stats": {
-        "downloads": 18,
-        "endorsements": 0
-      }
-    },
-    {
       "id": "plugins/tetherball88/body-language",
       "plugin_id": "tetherball88.body-language",
       "type": "listing",
@@ -644,7 +676,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 235,
+        "downloads": 236,
         "endorsements": 0
       }
     },
@@ -806,7 +838,7 @@
         "height": 768
       },
       "stats": {
-        "downloads": 198,
+        "downloads": 199,
         "endorsements": 0
       }
     },
@@ -916,7 +948,7 @@
         "height": 1080
       },
       "stats": {
-        "downloads": 118,
+        "downloads": 119,
         "endorsements": 0
       }
     },
@@ -1145,7 +1177,7 @@
         "height": 1152
       },
       "stats": {
-        "downloads": 434,
+        "downloads": 435,
         "endorsements": 9
       }
     },
@@ -1359,7 +1391,7 @@
         "height": 432
       },
       "stats": {
-        "downloads": 310,
+        "downloads": 311,
         "endorsements": 3
       }
     },
@@ -1596,7 +1628,7 @@
         "height": 1080
       },
       "stats": {
-        "downloads": 132,
+        "downloads": 133,
         "endorsements": 2
       }
     },
@@ -1668,7 +1700,7 @@
         "height": 1080
       },
       "stats": {
-        "downloads": 37,
+        "downloads": 38,
         "endorsements": 0
       }
     },
@@ -1855,7 +1887,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 1136,
+        "downloads": 1137,
         "endorsements": 41
       }
     },
@@ -2094,7 +2126,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 218,
+        "downloads": 222,
         "endorsements": 0
       }
     },
@@ -2379,7 +2411,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 507,
+        "downloads": 508,
         "endorsements": 9
       }
     },
@@ -3077,7 +3109,7 @@
         "config": 7
       },
       "stats": {
-        "downloads": 353,
+        "downloads": 356,
         "endorsements": 0
       }
     },
@@ -3158,7 +3190,7 @@
         "config": 7
       },
       "stats": {
-        "downloads": 484,
+        "downloads": 486,
         "endorsements": 1
       }
     },
@@ -3350,7 +3382,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 233,
+        "downloads": 235,
         "endorsements": 0
       }
     },
@@ -4759,7 +4791,7 @@
         "config": 4
       },
       "stats": {
-        "downloads": 580,
+        "downloads": 581,
         "endorsements": 3
       }
     },
@@ -4919,7 +4951,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 304,
+        "downloads": 305,
         "endorsements": 0
       }
     },
@@ -5036,7 +5068,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 531,
+        "downloads": 533,
         "endorsements": 1
       }
     },
@@ -5106,7 +5138,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 737,
+        "downloads": 738,
         "endorsements": 0
       }
     },
@@ -5314,7 +5346,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 421,
+        "downloads": 422,
         "endorsements": 0
       }
     },
@@ -5481,7 +5513,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 89,
+        "downloads": 90,
         "endorsements": 0
       }
     },
@@ -5585,7 +5617,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1867,
+        "downloads": 1871,
         "endorsements": 2
       }
     },
@@ -5630,7 +5662,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 946,
+        "downloads": 949,
         "endorsements": 0
       }
     },
@@ -5720,7 +5752,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 3891,
+        "downloads": 3900,
         "endorsements": 4
       }
     },
@@ -5945,7 +5977,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2098,
+        "downloads": 2105,
         "endorsements": 0
       }
     },
@@ -6305,7 +6337,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 288,
+        "downloads": 289,
         "endorsements": 0
       }
     },
@@ -6440,7 +6472,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 575,
+        "downloads": 576,
         "endorsements": 1
       }
     },
@@ -6485,7 +6517,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 262,
+        "downloads": 263,
         "endorsements": 0
       }
     },
@@ -6710,7 +6742,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1727,
+        "downloads": 1732,
         "endorsements": 2
       }
     },
@@ -6755,7 +6787,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 110,
+        "downloads": 111,
         "endorsements": 0
       }
     },
@@ -6890,7 +6922,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 34,
+        "downloads": 35,
         "endorsements": 0
       }
     },
@@ -7070,7 +7102,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1439,
+        "downloads": 1440,
         "endorsements": 1
       }
     },
@@ -7430,7 +7462,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2012,
+        "downloads": 2016,
         "endorsements": 3
       }
     },
@@ -7475,7 +7507,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 423,
+        "downloads": 424,
         "endorsements": 0
       }
     },
@@ -7565,7 +7597,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 481,
+        "downloads": 482,
         "endorsements": 1
       }
     },
@@ -7610,7 +7642,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 815,
+        "downloads": 817,
         "endorsements": 0
       }
     },
@@ -7655,7 +7687,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1313,
+        "downloads": 1315,
         "endorsements": 2
       }
     },
@@ -7790,7 +7822,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 396,
+        "downloads": 398,
         "endorsements": 0
       }
     },
@@ -8060,7 +8092,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 343,
+        "downloads": 344,
         "endorsements": 0
       }
     },
@@ -8465,7 +8497,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 658,
+        "downloads": 661,
         "endorsements": 0
       }
     },
@@ -9155,7 +9187,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 643,
+        "downloads": 644,
         "endorsements": 0
       }
     },
@@ -9470,7 +9502,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 615,
+        "downloads": 617,
         "endorsements": 0
       }
     },
@@ -9740,7 +9772,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 337,
+        "downloads": 338,
         "endorsements": 1
       }
     },
@@ -9875,7 +9907,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 997,
+        "downloads": 999,
         "endorsements": 0
       }
     },
@@ -10010,7 +10042,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1773,
+        "downloads": 1778,
         "endorsements": 2
       }
     },
@@ -10100,7 +10132,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2303,
+        "downloads": 2308,
         "endorsements": 2
       }
     },
@@ -10505,7 +10537,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 471,
+        "downloads": 473,
         "endorsements": 0
       }
     },
@@ -10955,7 +10987,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 410,
+        "downloads": 411,
         "endorsements": 1
       }
     },
@@ -11135,7 +11167,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2376,
+        "downloads": 2380,
         "endorsements": 2
       }
     },
@@ -11315,7 +11347,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 103,
+        "downloads": 104,
         "endorsements": 0
       }
     },
@@ -11405,7 +11437,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1952,
+        "downloads": 1958,
         "endorsements": 2
       }
     },
@@ -11720,7 +11752,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 259,
+        "downloads": 261,
         "endorsements": 0
       }
     },
@@ -11810,7 +11842,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 512,
+        "downloads": 514,
         "endorsements": 1
       }
     },
@@ -11945,7 +11977,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1422,
+        "downloads": 1425,
         "endorsements": 0
       }
     },
@@ -11990,7 +12022,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 835,
+        "downloads": 837,
         "endorsements": 1
       }
     },
@@ -12485,7 +12517,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 425,
+        "downloads": 427,
         "endorsements": 0
       }
     },
@@ -12755,7 +12787,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1198,
+        "downloads": 1200,
         "endorsements": 0
       }
     },
@@ -13565,7 +13597,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 482,
+        "downloads": 483,
         "endorsements": 0
       }
     },
@@ -13700,7 +13732,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 244,
+        "downloads": 246,
         "endorsements": 1
       }
     },
@@ -13745,7 +13777,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 782,
+        "downloads": 784,
         "endorsements": 0
       }
     },
@@ -13835,7 +13867,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 272,
+        "downloads": 273,
         "endorsements": 0
       }
     },
@@ -14015,7 +14047,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1070,
+        "downloads": 1073,
         "endorsements": 2
       }
     },
@@ -14150,7 +14182,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 292,
+        "downloads": 293,
         "endorsements": 0
       }
     },
@@ -14420,7 +14452,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 362,
+        "downloads": 363,
         "endorsements": 0
       }
     },
@@ -14465,7 +14497,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 67,
+        "downloads": 68,
         "endorsements": 0
       }
     },
@@ -14555,7 +14587,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2898,
+        "downloads": 2903,
         "endorsements": 2
       }
     },
@@ -14825,7 +14857,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 740,
+        "downloads": 741,
         "endorsements": 0
       }
     },
@@ -15185,7 +15217,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 63,
+        "downloads": 64,
         "endorsements": 0
       }
     }
