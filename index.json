@@ -1,8 +1,86 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-11-13T05:23:00.904Z",
-  "stats_as_of": "2026-11-13T05:23:00.819Z",
+  "generated_at": "2026-11-13T06:17:14.580Z",
+  "stats_as_of": "2026-11-13T06:17:14.459Z",
   "plugins": [
+    {
+      "id": "plugins/awesmdiver/skyrimnet-multiproxy",
+      "plugin_id": "awesmdiver.skyrimnet-multiproxy",
+      "type": "listing",
+      "title": "SkyrimNet MultiProxy",
+      "tagline": "Connect your AI of choice to SkyrimNet — set it up once, and it starts every time you play.",
+      "author": "awesmdiver",
+      "tags": [
+        "proxy",
+        "ai providers",
+        "claude",
+        "chatgpt",
+        "gemini",
+        "grok",
+        "deepseek",
+        "glm",
+        "ollama",
+        "local ai",
+        "voice",
+        "performance",
+        "utility",
+        "benchmark"
+      ],
+      "nsfw": false,
+      "icon": "ai",
+      "mods": [],
+      "first_published": "2026-09-30T19:06:36Z",
+      "last_updated": "2026-11-13T06:16:42Z",
+      "version": "4.2.1",
+      "history": [
+        {
+          "version": "4.2.1",
+          "commit": "406be642dd46f194a8e8d8d40548407837436a9d",
+          "date": "2026-11-13T06:16:42Z",
+          "changelog": "## 🔧 Improvements & Polish\n\n* **Claude answers:** Newer Claude models no longer spend the small answer budget on thinking. If an answer still runs out of room, MultiProxy asks once more, or tells you plainly: \"The AI ran out of room before it finished its answer.\"\n* **ChatGPT card:** The list shows every model Codex offers your account, and **Check for models** asks Codex to refresh the old listing.\n* **No more empty squares:** Skyrim's subtitle font cannot draw a long dash (em-dash), so MultiProxy swaps it for a plain hyphen. You can switch this off in **Settings**."
+        },
+        {
+          "version": "4.2.0",
+          "commit": "ab462b57fc46803147d2fe57ebc79c0bbd808b96",
+          "date": "2026-11-09T09:53:58Z",
+          "changelog": "## ✨ What's New\n\n### Benchmarks\nA new tab that tests your AI models to show exactly how fast each one answers and how much graphics memory it uses, helping you pick the one that fits alongside Skyrim.\n\n* **Run anywhere:** Select models, press **Start benchmark**, and watch live speed, memory, and temperature on your gaming PC or a spare one running the Courier.\n* **Check your fit:** **On this card right now** shows what is using your graphics card, while the fit dots and start warnings calculate based on the memory that is truly free.\n* **Get real numbers:** Each result shows exactly how much memory the model, its cache, and its workspace actually used, next to our estimate from before the run.\n* **Know your model:** See your model's size, layers, and max conversation length before and during a test, along with which engine is running it and how much memory short and long chats will need.\n* **AMD cards (new):** Benchmarks now reads AMD graphics cards, but this is new and not fully tested.\n* **Save your results:** Keep your test scores to easily compare runs and find out which models are fast enough for smooth play.\n\n### Voice and pictures\n* **Understand voice errors:** The log now explains exactly why a voice refused a line, and automatically fixes unreadable clips before sending them.\n* **Show pictures to Claude:** Pictures now reach Claude and Codex and Grok and Copilot clearly tell you they cannot see pictures.\n\n## 🔧 Improvements & Polish\n\n* **Smaller fixes and polish:** We added clearer names on **Overview**, a helpful colour key at the top, made the **Watch activity live** window stay open, and more."
+        },
+        {
+          "version": "4.1.0",
+          "commit": "8fdda5e44c5317122f867bc9b37aa02ef885105f",
+          "date": "2026-10-27T05:47:16Z",
+          "changelog": "## Improvements\n\n- **Set me up:** Checks your graphics card and your game, shows which models fit alongside Skyrim, and installs the ones you tick.\n- **Add a PC:** Open one address on a spare PC and it pairs itself. No pairing codes to type.\n- **One list of every model:** The new **Models** tab shows every model on all your PCs. You can start, stop, remove, or delete them from there.\n- **A guard for your game:** If your graphics memory gets too full while Skyrim is running, MultiProxy stops its local chat model to prevent a crash.\n- **Works on Skyrim VR:** One mod file now covers Skyrim SE, AE, and VR, and it no longer needs Address Library.\n- **and a lot more:** See the full release notes on Github."
+        },
+        {
+          "version": "4.0.0",
+          "commit": "a2e67b87e4e6abe982369037a88078704247e23d",
+          "date": "2026-10-25T08:32:13Z",
+          "changelog": "**Your gaming PC and your spare computers can now team up to run the AI together.**\n\n* **Local models:** Pick a model, hit download, and MultiProxy runs it on your graphics card for free while leaving enough memory for Skyrim.\n* **The Courier:** Run a small app on a spare PC or laptop to use its models from your gaming rig. It updates itself, and if a device drops offline, MultiProxy moves on to your next choice.\n* **Quick decisions:** A fast, private model handles SkyrimNet's constant stream of background questions on any of your PCs.\n* **Voice and speech:** NPCs speak using voices generated on your own hardware, and you can reply using push-to-talk (speech to text through xAI, off until you turn it on).\n* **Routing:** Choose which model handles each job—like Dialogue, Combat, and Memory—and set up your backups.\n* **New providers:** Grok, Continuum, Cloudflare Workers AI, Mistral, and Groq.\n* **One installer:** It brings your old settings along, includes the Skyrim mod, and puts an icon by your clock."
+        },
+        {
+          "version": "3.1.0",
+          "commit": "9e4e897cfe0589e3a25e2e53abf39e2bbb55cca4",
+          "date": "2026-09-30T19:06:36Z",
+          "changelog": "- **Ready for SkyrimNet Beta 25:** Beta 25 can swap to a backup AI if your primary stalls, or race a second request against a slow one. MultiProxy reports real failures immediately so handoffs trigger cleanly instead of an NPC reading error code out loud! Canceled race requests are cleared away without cluttering your Speeds tab.\r\n- **Voice cues left alone:** Beta 25 uses distinct tags per voice engine, so cues pass through untouched by default. If you use Higgs, toggle `FixHiggsVoiceTags` to keep them clean.\r\n- **Tougher under pressure:** Courtesy of community member Raydonn, dropped connections retry automatically, long chats trim and retry instead of going silent, and scrambled markup tags get repaired before SkyrimNet sees them.\r\n- **Waiting lines:** Also from Raydonn, cap simultaneous requests per provider (`[Concurrency]` in `proxy.ini`) to dodge rate limits. GLM defaults to 6.\r\n- **Full reply log:** Turn on `LogFullReplies` to print complete AI replies directly in your console.\r\n- **Smarter Speeds tab:** Live health cards for each AI, tracking how fast replies start talking, overall speeds, and plain reliability labels, with Dialogue front and center.\r\n\r\n**Fixes**\r\n- **Mod Organizer 2:** The Speeds tab reliably finds SkyrimNet folders on MO2 setups.\r\n- **Faster DeepSeek:** Skips the hidden \"thinking\" step by default, matching GLM.\r\n- **Privacy:** The Speeds tab no longer enables SkyrimNet stats sharing; manage that directly in SkyrimNet's Privacy settings."
+        }
+      ],
+      "external_url": "https://github.com/awesmdiver/skyrimnet-multiproxy/releases/latest",
+      "languages": [
+        "en"
+      ],
+      "language": "en",
+      "image": {
+        "file": "cover.jpg",
+        "sha": "551d88e09b4bbf0e5743b39e814130e2cf349e92",
+        "commit": "ab462b57fc46803147d2fe57ebc79c0bbd808b96",
+        "width": 1920,
+        "height": 1080
+      },
+      "stats": {
+        "downloads": 55,
+        "endorsements": 0
+      }
+    },
     {
       "id": "plugins/thatguy/o-blood-dirt-and-cum",
       "plugin_id": "thatguy.o-blood-dirt-and-cum",
@@ -182,7 +260,7 @@
         "height": 864
       },
       "stats": {
-        "downloads": 426,
+        "downloads": 427,
         "endorsements": 8
       }
     },
@@ -394,7 +472,7 @@
         "height": 1152
       },
       "stats": {
-        "downloads": 252,
+        "downloads": 254,
         "endorsements": 0
       }
     },
@@ -728,7 +806,7 @@
         "height": 768
       },
       "stats": {
-        "downloads": 194,
+        "downloads": 196,
         "endorsements": 0
       }
     },
@@ -838,7 +916,7 @@
         "height": 1080
       },
       "stats": {
-        "downloads": 110,
+        "downloads": 111,
         "endorsements": 0
       }
     },
@@ -900,7 +978,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 94,
+        "downloads": 95,
         "endorsements": 0
       }
     },
@@ -1143,78 +1221,6 @@
       }
     },
     {
-      "id": "plugins/awesmdiver/skyrimnet-multiproxy",
-      "plugin_id": "awesmdiver.skyrimnet-multiproxy",
-      "type": "listing",
-      "title": "SkyrimNet MultiProxy",
-      "tagline": "Connect your AI of choice to SkyrimNet — set it up once, and it starts every time you play.",
-      "author": "awesmdiver",
-      "tags": [
-        "proxy",
-        "ai providers",
-        "claude",
-        "chatgpt",
-        "gemini",
-        "grok",
-        "deepseek",
-        "glm",
-        "ollama",
-        "local ai",
-        "voice",
-        "performance",
-        "utility",
-        "benchmark"
-      ],
-      "nsfw": false,
-      "icon": "ai",
-      "mods": [],
-      "first_published": "2026-09-30T19:06:36Z",
-      "last_updated": "2026-11-09T09:53:58Z",
-      "version": "4.2.0",
-      "history": [
-        {
-          "version": "4.2.0",
-          "commit": "ab462b57fc46803147d2fe57ebc79c0bbd808b96",
-          "date": "2026-11-09T09:53:58Z",
-          "changelog": "## ✨ What's New\n\n### Benchmarks\nA new tab that tests your AI models to show exactly how fast each one answers and how much graphics memory it uses, helping you pick the one that fits alongside Skyrim.\n\n* **Run anywhere:** Select models, press **Start benchmark**, and watch live speed, memory, and temperature on your gaming PC or a spare one running the Courier.\n* **Check your fit:** **On this card right now** shows what is using your graphics card, while the fit dots and start warnings calculate based on the memory that is truly free.\n* **Get real numbers:** Each result shows exactly how much memory the model, its cache, and its workspace actually used, next to our estimate from before the run.\n* **Know your model:** See your model's size, layers, and max conversation length before and during a test, along with which engine is running it and how much memory short and long chats will need.\n* **AMD cards (new):** Benchmarks now reads AMD graphics cards, but this is new and not fully tested.\n* **Save your results:** Keep your test scores to easily compare runs and find out which models are fast enough for smooth play.\n\n### Voice and pictures\n* **Understand voice errors:** The log now explains exactly why a voice refused a line, and automatically fixes unreadable clips before sending them.\n* **Show pictures to Claude:** Pictures now reach Claude and Codex and Grok and Copilot clearly tell you they cannot see pictures.\n\n## 🔧 Improvements & Polish\n\n* **Smaller fixes and polish:** We added clearer names on **Overview**, a helpful colour key at the top, made the **Watch activity live** window stay open, and more."
-        },
-        {
-          "version": "4.1.0",
-          "commit": "8fdda5e44c5317122f867bc9b37aa02ef885105f",
-          "date": "2026-10-27T05:47:16Z",
-          "changelog": "## Improvements\n\n- **Set me up:** Checks your graphics card and your game, shows which models fit alongside Skyrim, and installs the ones you tick.\n- **Add a PC:** Open one address on a spare PC and it pairs itself. No pairing codes to type.\n- **One list of every model:** The new **Models** tab shows every model on all your PCs. You can start, stop, remove, or delete them from there.\n- **A guard for your game:** If your graphics memory gets too full while Skyrim is running, MultiProxy stops its local chat model to prevent a crash.\n- **Works on Skyrim VR:** One mod file now covers Skyrim SE, AE, and VR, and it no longer needs Address Library.\n- **and a lot more:** See the full release notes on Github."
-        },
-        {
-          "version": "4.0.0",
-          "commit": "a2e67b87e4e6abe982369037a88078704247e23d",
-          "date": "2026-10-25T08:32:13Z",
-          "changelog": "**Your gaming PC and your spare computers can now team up to run the AI together.**\n\n* **Local models:** Pick a model, hit download, and MultiProxy runs it on your graphics card for free while leaving enough memory for Skyrim.\n* **The Courier:** Run a small app on a spare PC or laptop to use its models from your gaming rig. It updates itself, and if a device drops offline, MultiProxy moves on to your next choice.\n* **Quick decisions:** A fast, private model handles SkyrimNet's constant stream of background questions on any of your PCs.\n* **Voice and speech:** NPCs speak using voices generated on your own hardware, and you can reply using push-to-talk (speech to text through xAI, off until you turn it on).\n* **Routing:** Choose which model handles each job—like Dialogue, Combat, and Memory—and set up your backups.\n* **New providers:** Grok, Continuum, Cloudflare Workers AI, Mistral, and Groq.\n* **One installer:** It brings your old settings along, includes the Skyrim mod, and puts an icon by your clock."
-        },
-        {
-          "version": "3.1.0",
-          "commit": "9e4e897cfe0589e3a25e2e53abf39e2bbb55cca4",
-          "date": "2026-09-30T19:06:36Z",
-          "changelog": "- **Ready for SkyrimNet Beta 25:** Beta 25 can swap to a backup AI if your primary stalls, or race a second request against a slow one. MultiProxy reports real failures immediately so handoffs trigger cleanly instead of an NPC reading error code out loud! Canceled race requests are cleared away without cluttering your Speeds tab.\r\n- **Voice cues left alone:** Beta 25 uses distinct tags per voice engine, so cues pass through untouched by default. If you use Higgs, toggle `FixHiggsVoiceTags` to keep them clean.\r\n- **Tougher under pressure:** Courtesy of community member Raydonn, dropped connections retry automatically, long chats trim and retry instead of going silent, and scrambled markup tags get repaired before SkyrimNet sees them.\r\n- **Waiting lines:** Also from Raydonn, cap simultaneous requests per provider (`[Concurrency]` in `proxy.ini`) to dodge rate limits. GLM defaults to 6.\r\n- **Full reply log:** Turn on `LogFullReplies` to print complete AI replies directly in your console.\r\n- **Smarter Speeds tab:** Live health cards for each AI, tracking how fast replies start talking, overall speeds, and plain reliability labels, with Dialogue front and center.\r\n\r\n**Fixes**\r\n- **Mod Organizer 2:** The Speeds tab reliably finds SkyrimNet folders on MO2 setups.\r\n- **Faster DeepSeek:** Skips the hidden \"thinking\" step by default, matching GLM.\r\n- **Privacy:** The Speeds tab no longer enables SkyrimNet stats sharing; manage that directly in SkyrimNet's Privacy settings."
-        }
-      ],
-      "external_url": "https://github.com/awesmdiver/skyrimnet-multiproxy/releases/latest",
-      "languages": [
-        "en"
-      ],
-      "language": "en",
-      "image": {
-        "file": "cover.jpg",
-        "sha": "551d88e09b4bbf0e5743b39e814130e2cf349e92",
-        "commit": "ab462b57fc46803147d2fe57ebc79c0bbd808b96",
-        "width": 1920,
-        "height": 1080
-      },
-      "stats": {
-        "downloads": 55,
-        "endorsements": 0
-      }
-    },
-    {
       "id": "plugins/goodprovider/skyrimnet-sexlab",
       "plugin_id": "goodprovider.skyrimnet-sexlab",
       "type": "listing",
@@ -1353,7 +1359,7 @@
         "height": 432
       },
       "stats": {
-        "downloads": 307,
+        "downloads": 309,
         "endorsements": 3
       }
     },
@@ -1525,7 +1531,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 313,
+        "downloads": 314,
         "endorsements": 6
       }
     },
@@ -1849,7 +1855,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 1125,
+        "downloads": 1126,
         "endorsements": 41
       }
     },
@@ -2088,7 +2094,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 200,
+        "downloads": 201,
         "endorsements": 0
       }
     },
@@ -3152,7 +3158,7 @@
         "config": 7
       },
       "stats": {
-        "downloads": 448,
+        "downloads": 450,
         "endorsements": 1
       }
     },
@@ -3470,7 +3476,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 220,
+        "downloads": 222,
         "endorsements": 3
       }
     },
@@ -4240,7 +4246,7 @@
         "height": 1080
       },
       "stats": {
-        "downloads": 188,
+        "downloads": 189,
         "endorsements": 5
       }
     },
@@ -4327,7 +4333,7 @@
         "height": 720
       },
       "stats": {
-        "downloads": 94,
+        "downloads": 95,
         "endorsements": 0
       }
     },
@@ -4753,7 +4759,7 @@
         "config": 4
       },
       "stats": {
-        "downloads": 559,
+        "downloads": 560,
         "endorsements": 3
       }
     },
@@ -4801,7 +4807,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 180,
+        "downloads": 181,
         "endorsements": 2
       }
     },
@@ -5100,7 +5106,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 708,
+        "downloads": 710,
         "endorsements": 0
       }
     },
@@ -5308,7 +5314,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 407,
+        "downloads": 409,
         "endorsements": 0
       }
     },
@@ -5579,7 +5585,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1823,
+        "downloads": 1824,
         "endorsements": 2
       }
     },
@@ -5714,7 +5720,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 3829,
+        "downloads": 3830,
         "endorsements": 4
       }
     },
@@ -5939,7 +5945,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2045,
+        "downloads": 2046,
         "endorsements": 0
       }
     },
@@ -7064,7 +7070,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1415,
+        "downloads": 1416,
         "endorsements": 1
       }
     },
@@ -7424,7 +7430,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1976,
+        "downloads": 1977,
         "endorsements": 3
       }
     },
@@ -7649,7 +7655,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1282,
+        "downloads": 1284,
         "endorsements": 2
       }
     },
@@ -8599,7 +8605,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 56,
+        "downloads": 57,
         "endorsements": 0
       }
     },
@@ -9464,7 +9470,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 604,
+        "downloads": 605,
         "endorsements": 0
       }
     },
@@ -10004,7 +10010,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1740,
+        "downloads": 1742,
         "endorsements": 2
       }
     },
@@ -10949,7 +10955,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 402,
+        "downloads": 403,
         "endorsements": 1
       }
     },
@@ -11129,7 +11135,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2337,
+        "downloads": 2339,
         "endorsements": 2
       }
     },
@@ -11399,7 +11405,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1917,
+        "downloads": 1919,
         "endorsements": 2
       }
     },
@@ -12704,7 +12710,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 474,
+        "downloads": 475,
         "endorsements": 0
       }
     },
@@ -12749,7 +12755,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1176,
+        "downloads": 1177,
         "endorsements": 0
       }
     },
@@ -13829,7 +13835,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 267,
+        "downloads": 268,
         "endorsements": 0
       }
     },
@@ -14009,7 +14015,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1054,
+        "downloads": 1055,
         "endorsements": 2
       }
     },
@@ -14054,7 +14060,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 260,
+        "downloads": 261,
         "endorsements": 0
       }
     },
@@ -14144,7 +14150,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 288,
+        "downloads": 289,
         "endorsements": 0
       }
     },
@@ -14549,7 +14555,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2848,
+        "downloads": 2850,
         "endorsements": 2
       }
     },
@@ -14819,7 +14825,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 721,
+        "downloads": 722,
         "endorsements": 0
       }
     },
