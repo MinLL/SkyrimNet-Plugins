@@ -1,8 +1,70 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-11-13T03:25:18.893Z",
-  "stats_as_of": "2026-11-13T03:25:18.771Z",
+  "generated_at": "2026-11-13T04:04:58.666Z",
+  "stats_as_of": "2026-11-13T04:04:58.609Z",
   "plugins": [
+    {
+      "id": "plugins/thatguy/o-blood-dirt-and-cum",
+      "plugin_id": "thatguy.o-blood-dirt-and-cum",
+      "type": "listing",
+      "title": "O'Blood, Dirt and Cum",
+      "tagline": "A mod that bridges Ocum, Dirt and Blood, and Skyrimnet... a bit more. :)",
+      "author": "thatguy",
+      "tags": [
+        "NSFW",
+        "Cum",
+        "Ocum",
+        "Dirt and Blood",
+        "Dirt",
+        "Blood"
+      ],
+      "nsfw": true,
+      "icon": "package",
+      "mods": [
+        {
+          "name": "Dirt and Blood - Dynamic Visuals.esp",
+          "file": "dirt and blood - dynamic visuals.esp",
+          "required": false
+        },
+        {
+          "name": "Dirt and Blood - Malignis Animations Patch.esp",
+          "file": "dirt and blood - malignis animations patch.esp",
+          "required": false
+        },
+        {
+          "name": "OCum.esp",
+          "file": "ocum.esp",
+          "required": false
+        }
+      ],
+      "first_published": "2026-11-13T04:04:27Z",
+      "last_updated": "2026-11-13T04:04:27Z",
+      "version": "0.3.0",
+      "history": [
+        {
+          "version": "0.3.0",
+          "commit": "4ac45c438ccb01ddaf9a4eb13c71f6d333b4d606",
+          "date": "2026-11-13T04:04:27Z",
+          "changelog": "Initial release"
+        }
+      ],
+      "external_url": "https://github.com/Coronerra/OBlood-Dirt-and-Cum#6-ocum-washing-cum-off-in-a-bath",
+      "languages": [
+        "en"
+      ],
+      "language": "en",
+      "image": {
+        "file": "cover.jpg",
+        "sha": "0e40b6e34c93e2b2ba8f234db40637d7a5246e31",
+        "commit": "4ac45c438ccb01ddaf9a4eb13c71f6d333b4d606",
+        "width": 1792,
+        "height": 1008
+      },
+      "stats": {
+        "downloads": 0,
+        "endorsements": 0
+      }
+    },
     {
       "id": "plugins/deadohiosky/relationships",
       "plugin_id": "deadohiosky.relationships",
@@ -256,7 +318,7 @@
         "height": 720
       },
       "stats": {
-        "downloads": 11,
+        "downloads": 12,
         "endorsements": 0
       }
     },
@@ -1076,7 +1138,7 @@
         "height": 769
       },
       "stats": {
-        "downloads": 71,
+        "downloads": 72,
         "endorsements": 0
       }
     },
@@ -1528,7 +1590,7 @@
         "height": 1080
       },
       "stats": {
-        "downloads": 130,
+        "downloads": 131,
         "endorsements": 2
       }
     },
@@ -1697,7 +1759,7 @@
         "height": 1008
       },
       "stats": {
-        "downloads": 172,
+        "downloads": 173,
         "endorsements": 3
       }
     },
@@ -2884,7 +2946,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 307,
+        "downloads": 309,
         "endorsements": 0
       }
     },
@@ -3009,7 +3071,7 @@
         "config": 7
       },
       "stats": {
-        "downloads": 329,
+        "downloads": 330,
         "endorsements": 0
       }
     },
@@ -3282,7 +3344,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 220,
+        "downloads": 221,
         "endorsements": 0
       }
     },
@@ -5038,7 +5100,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 705,
+        "downloads": 706,
         "endorsements": 0
       }
     },
@@ -5413,7 +5475,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 84,
+        "downloads": 85,
         "endorsements": 0
       }
     },
@@ -5517,7 +5579,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1817,
+        "downloads": 1819,
         "endorsements": 2
       }
     },
@@ -5562,7 +5624,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 923,
+        "downloads": 924,
         "endorsements": 0
       }
     },
@@ -5652,7 +5714,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 3820,
+        "downloads": 3825,
         "endorsements": 4
       }
     },
@@ -7002,7 +7064,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1411,
+        "downloads": 1413,
         "endorsements": 1
       }
     },
@@ -7362,7 +7424,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1970,
+        "downloads": 1971,
         "endorsements": 3
       }
     },
@@ -7587,7 +7649,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1277,
+        "downloads": 1278,
         "endorsements": 2
       }
     },
@@ -9402,7 +9464,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 600,
+        "downloads": 602,
         "endorsements": 0
       }
     },
@@ -9852,7 +9914,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 697,
+        "downloads": 698,
         "endorsements": 0
       }
     },
@@ -9942,7 +10004,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1737,
+        "downloads": 1738,
         "endorsements": 2
       }
     },
@@ -10032,7 +10094,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2252,
+        "downloads": 2254,
         "endorsements": 2
       }
     },
@@ -10887,7 +10949,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 399,
+        "downloads": 400,
         "endorsements": 1
       }
     },
@@ -11067,7 +11129,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2328,
+        "downloads": 2329,
         "endorsements": 2
       }
     },
@@ -11337,7 +11399,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1910,
+        "downloads": 1912,
         "endorsements": 2
       }
     },
@@ -11652,7 +11714,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 253,
+        "downloads": 254,
         "endorsements": 0
       }
     },
@@ -12822,7 +12884,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 122,
+        "downloads": 123,
         "endorsements": 0
       }
     },
@@ -13497,7 +13559,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 471,
+        "downloads": 472,
         "endorsements": 0
       }
     },
@@ -13947,7 +14009,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1050,
+        "downloads": 1051,
         "endorsements": 2
       }
     },
@@ -14082,7 +14144,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 286,
+        "downloads": 287,
         "endorsements": 0
       }
     },
@@ -14487,7 +14549,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2839,
+        "downloads": 2841,
         "endorsements": 2
       }
     },
