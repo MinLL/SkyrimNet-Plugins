@@ -1,8 +1,58 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-11-14T05:22:50.120Z",
-  "stats_as_of": "2026-11-14T05:22:50.001Z",
+  "generated_at": "2026-11-14T05:36:00.920Z",
+  "stats_as_of": "2026-11-14T05:36:00.817Z",
   "plugins": [
+    {
+      "id": "plugins/nosimo/frostfall-awareness",
+      "plugin_id": "nosimo.frostfall-awareness",
+      "type": "listing",
+      "title": "Frostfall Awareness",
+      "tagline": "SkyrimNet Integration with Frostfall",
+      "author": "nosimo",
+      "tags": [
+        "frostfall",
+        "awareness"
+      ],
+      "nsfw": true,
+      "icon": "package",
+      "mods": [
+        {
+          "name": "Frostfall.esp",
+          "file": "frostfall.esp",
+          "required": true
+        }
+      ],
+      "first_published": "2026-10-31T22:18:54Z",
+      "last_updated": "2026-11-14T05:35:24Z",
+      "version": "1.0.2",
+      "history": [
+        {
+          "version": "1.0.2",
+          "commit": "e18b0afdd4198b5acc4274bf15be6fc564100124",
+          "date": "2026-11-14T05:35:24Z",
+          "changelog": "Support for the ESL-compacted Frostfall 2026 and Campfire 2026\n\nThese editions ship ESL-compacted plugins that renumber every record. With them, 1.0.1 lost the NPC frost look, copied-fire detection and the Cold Shiver animations.\n\nFrostfall forms (running flag, settings, frostbite keywords, rescue messages, frost shaders, near-fire flag) are found by EditorID, then the regular FormID, then the compacted one.\nCampfire's heat source lists are found the same way, so fires copied by DynDOLOD and similar mods count as heat sources again. The startup log now always reports this step.\nThe Cold Shiver option's Frostfall check accepts either edition's FormID. OAR may show one of the two conditions as invalid; that is expected.\nWorks with the original Frostfall and Campfire as before. Install with your mod manager over 1.0.1 and choose the Cold Shiver option again if you use it. Requires SkyrimNet Beta 28 or later."
+        },
+        {
+          "version": "1.0.1",
+          "commit": "dc90c70a1a45f733de65e09affb7dcb89caa98d8",
+          "date": "2026-10-31T22:18:54Z",
+          "changelog": "Initial release"
+        }
+      ],
+      "external_url": "https://github.com/Nosimo-SN/Frostfall-Awareness/releases/latest",
+      "image": {
+        "file": "cover.png",
+        "sha": "4a859def8ffb9aeac0dc80fb61910edc03f1639f",
+        "commit": "dc90c70a1a45f733de65e09affb7dcb89caa98d8",
+        "width": 1280,
+        "height": 720
+      },
+      "stats": {
+        "downloads": 31,
+        "endorsements": 0
+      }
+    },
     {
       "id": "plugins/severause/phantasm",
       "plugin_id": "severause.phantasm",
@@ -3213,50 +3263,6 @@
       }
     },
     {
-      "id": "plugins/nosimo/frostfall-awareness",
-      "plugin_id": "nosimo.frostfall-awareness",
-      "type": "listing",
-      "title": "Frostfall Awareness",
-      "tagline": "SkyrimNet Integration with Frostfall",
-      "author": "nosimo",
-      "tags": [
-        "frostfall",
-        "awareness"
-      ],
-      "nsfw": true,
-      "icon": "package",
-      "mods": [
-        {
-          "name": "Frostfall.esp",
-          "file": "frostfall.esp",
-          "required": true
-        }
-      ],
-      "first_published": "2026-10-31T22:18:54Z",
-      "last_updated": "2026-10-31T22:18:54Z",
-      "version": "1.0.1",
-      "history": [
-        {
-          "version": "1.0.1",
-          "commit": "dc90c70a1a45f733de65e09affb7dcb89caa98d8",
-          "date": "2026-10-31T22:18:54Z",
-          "changelog": "Initial release"
-        }
-      ],
-      "external_url": "https://github.com/Nosimo-SN/Frostfall-Awareness/releases/latest",
-      "image": {
-        "file": "cover.png",
-        "sha": "4a859def8ffb9aeac0dc80fb61910edc03f1639f",
-        "commit": "dc90c70a1a45f733de65e09affb7dcb89caa98d8",
-        "width": 1280,
-        "height": 720
-      },
-      "stats": {
-        "downloads": 30,
-        "endorsements": 0
-      }
-    },
-    {
       "id": "plugins/min/skyrimnet-prompts-cache-enabled",
       "plugin_id": "min.skyrimnet-prompts-cache-enabled",
       "type": "bundle",
@@ -5156,7 +5162,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 757,
+        "downloads": 758,
         "endorsements": 0
       }
     },
@@ -5680,7 +5686,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 963,
+        "downloads": 964,
         "endorsements": 0
       }
     },
@@ -5770,7 +5776,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 3937,
+        "downloads": 3938,
         "endorsements": 4
       }
     },
@@ -5995,7 +6001,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2134,
+        "downloads": 2136,
         "endorsements": 0
       }
     },
@@ -6265,7 +6271,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 813,
+        "downloads": 814,
         "endorsements": 1
       }
     },
@@ -10060,7 +10066,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1801,
+        "downloads": 1802,
         "endorsements": 2
       }
     },
@@ -10150,7 +10156,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2344,
+        "downloads": 2345,
         "endorsements": 2
       }
     },
@@ -11455,7 +11461,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1993,
+        "downloads": 1994,
         "endorsements": 2
       }
     },
