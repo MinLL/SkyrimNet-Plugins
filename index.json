@@ -1,8 +1,105 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-11-14T12:25:17.528Z",
-  "stats_as_of": "2026-11-14T12:22:58.620Z",
+  "generated_at": "2026-11-14T12:36:02.110Z",
+  "stats_as_of": "2026-11-14T12:36:02.051Z",
   "plugins": [
+    {
+      "id": "plugins/taka/skyrimnet-minigame",
+      "plugin_id": "taka.skyrimnet-minigame",
+      "type": "listing",
+      "title": "SkyrimNet MiniGame",
+      "tagline": "Nine table games with the NPCs around you: Reversi, Checkers, Gomoku, Liar's Dice, Shut the Box, Yacht, Blackjack, Cribbage and Texas Hold'em. Your opponents talk about the game and remember it.",
+      "author": "taka",
+      "tags": [
+        "Gameplay",
+        "NPC",
+        "Minigame",
+        "Dialogue",
+        "Prisma UI"
+      ],
+      "nsfw": false,
+      "icon": "package",
+      "mods": [],
+      "first_published": "2026-11-03T15:43:06Z",
+      "last_updated": "2026-11-14T12:35:25Z",
+      "version": "0.5.1",
+      "history": [
+        {
+          "version": "0.5.1",
+          "commit": "d5c74b430f924b43ae6306690dccd7b2dd9a5d55",
+          "date": "2026-11-14T12:35:25Z",
+          "changelog": "Two new games. Yacht, against one to three NPCs: roll five dice up to three times a turn, keeping any between rolls, and score them in one of twelve boxes; after twelve rounds the highest total wins. An opponent speaks once or twice a round, and more on good rolls. Gomoku, against one NPC: free-style five in a row on a 15 x 15 board; the opponent speaks on fours, double threats and blocks. Each has an opponent strength in the MCM, and all new texts are in the installer's five languages."
+        },
+        {
+          "version": "0.5.0",
+          "commit": "90b6d5d1f69b46adcf74b09ef0aca880e15381b9",
+          "date": "2026-11-12T07:21:29Z",
+          "changelog": "Talk at the table: a text box under each game's log. Type a line and your character says it to one of your opponents (the one you name, else whoever spoke last), who alone answers, knowing the game; in your character's words or as written (MCM). Typing Japanese, Chinese or Korean needs Magelight UI. Fixed in Texas Hold'em: an opponent could say one thing and do another (\"I call\", then a fold); the opponent who answers your bet now has the move decided first, so the line fits it. Fixed: an opponent out of turn could answer your spoken move and make up a move of their own; your own moves no longer go through Transform Dialogue, and only the opponent who acts next reacts. Fixed: opponents kept talking about the previous hand. Fixed on Magelight UI: the board could stop answering clicks after a text box had been used."
+        },
+        {
+          "version": "0.4.1",
+          "commit": "cc489be9ceb581c208a39b5b695454b44798cf25",
+          "date": "2026-11-10T15:33:11Z",
+          "changelog": "Two new games, each against one NPC at four strengths: Checkers (American draughts: forced captures, multi-jumps, kings) and Cribbage (two-handed, to 121, with the full play and show). Both were contributed by whyregisterme. Their strength is set in the MCM and on the board. New MCM setting, Length of their lines: how long your opponents' remarks about the game are (a few words, short, SkyrimNet's own, longer). It reaches only the NPCs at the table while a game is played and changes nothing in SkyrimNet's own settings. All new texts are in the installer's five languages."
+        },
+        {
+          "version": "0.4.0",
+          "commit": "bd72e8297880795dcb5b9ae14a8227defa7cbbc2",
+          "date": "2026-11-10T08:01:22Z",
+          "changelog": "Five languages and one installer: the board, the commentary and the settings menu are now in English, Japanese, Russian, German or Simplified Chinese (the last three machine-translated), chosen in a FOMOD installer for MO2 and Vortex, independent of the game's language. The separate Japanese archive is gone: if you installed the old \"skyrimnet_MiniGame_x.x.x_Japanese\" mod, remove it and pick Japanese in the installer instead (日本語版を別 MOD で入れていた方は、その MOD を外し、インストーラーで日本語を選んでください). Since 0.3.0: faces drawn by Phantasm, with Phantasm installed (0.2.0 or later; it comes with SeverActions 4.7 or later, and is also a download of its own), each opponent's face in the frames is a head-and-shoulders portrait Phantasm draws of them, with no screenshot, so the faces also show with ENB or Skyrim Upscaler, and the opponents need not be on screen. Without Phantasm nothing changes. Since 0.2.0: Texas Hold'em, where each opponent's way of playing (tight or loose, bold or cautious, how often they bluff) comes from their character; the board runs on Magelight UI (1.0 or later) when it is installed, else on Prisma UI, one of the two being enough; and your character can speak their own poker moves through Transform Dialogue, like bids in Liar's Dice."
+        },
+        {
+          "version": "0.3.0",
+          "commit": "3548aa4f3b08b7a52e9abf4c5c93e423e8b29a04",
+          "date": "2026-11-10T05:32:32Z",
+          "changelog": "Faces drawn by Phantasm: with Phantasm installed (0.2.0 or later; it comes with SeverActions 4.7 or later, and is also a download of its own), each opponent's face in the frames is a head-and-shoulders portrait Phantasm draws of them, with no screenshot, so the faces also show with ENB or Skyrim Upscaler, and the opponents need not be on screen. Without Phantasm nothing changes. Since 0.2.0: Texas Hold'em, where each opponent's way of playing (tight or loose, bold or cautious, how often they bluff) comes from their character; the board runs on Magelight UI (1.0 or later) when it is installed, else on Prisma UI, one of the two being enough; and your character can speak their own poker moves through Transform Dialogue, like bids in Liar's Dice."
+        },
+        {
+          "version": "0.2.0",
+          "commit": "52ff2089717d5532fa12a04a971e9cc37935490b",
+          "date": "2026-11-09T08:22:36Z",
+          "changelog": "Texas Hold'em: no-limit, blinds 5 and 10, 200 chips each, up to three opponents. How each opponent plays (tight or loose, bold or cautious, how often they bluff) is read from their character by SkyrimNet when the game starts, and they talk the way they play. The board now runs on Magelight UI (1.0 or later) when it is installed, else on Prisma UI as before; one of the two is enough. Your character can also speak their own poker moves (folds, checks, calls, bets and raises) through Transform Dialogue, like bids in Liar's Dice."
+        },
+        {
+          "version": "0.1.2",
+          "commit": "2847f20c4aa29e093dc5071c49c677567da38413",
+          "date": "2026-11-06T08:50:59Z",
+          "changelog": "Fixed a crash when a mini game started with ENB or Skyrim Upscaler installed: saving the photo for the face frames crashed inside the game's own screenshot code. With either of them installed, the photo is now skipped and the frames show initials. A new MCM option, Face photos, turns the photo off by hand."
+        },
+        {
+          "version": "0.1.1",
+          "commit": "b41140512332d681fe5c6b353d84b035002a85ff",
+          "date": "2026-11-04T11:37:55Z",
+          "changelog": "Two new games: Shut the Box and Blackjack, each against up to three NPCs with four opponent strengths. In Blackjack you choose who deals, you or one of your opponents. Also fixed: the board could lose the input focus and stay on screen, reacting to nothing. It now takes the focus back, and Esc always closes it."
+        },
+        {
+          "version": "0.1.0",
+          "commit": "95ecad5ed411d5f06f4f9d95f6513dd532a63864",
+          "date": "2026-11-03T15:43:06Z",
+          "changelog": "First release: Reversi against one NPC and Liar's Dice against up to three, with SkyrimNet commentary, the game state in each opponent's prompt, your own bids spoken through Transform Dialogue, NPC challenges to Reversi, and face frames of your opponents on the board."
+        }
+      ],
+      "external_url": "https://github.com/nightlantern-mods/skyrimnet_MiniGame",
+      "languages": [
+        "en",
+        "ja",
+        "zh",
+        "de",
+        "ru"
+      ],
+      "language": "en",
+      "image": {
+        "file": "cover.jpg",
+        "sha": "c29e9e93a7d7274e3b4347cf8ce495d501f95e51",
+        "commit": "95ecad5ed411d5f06f4f9d95f6513dd532a63864",
+        "width": 1920,
+        "height": 1080
+      },
+      "stats": {
+        "downloads": 49,
+        "endorsements": 0
+      }
+    },
     {
       "id": "plugins/nosimo/frostfall-awareness",
       "plugin_id": "nosimo.frostfall-awareness",
@@ -592,97 +689,6 @@
       "stats": {
         "downloads": 438,
         "endorsements": 8
-      }
-    },
-    {
-      "id": "plugins/taka/skyrimnet-minigame",
-      "plugin_id": "taka.skyrimnet-minigame",
-      "type": "listing",
-      "title": "SkyrimNet MiniGame",
-      "tagline": "Play Reversi, Checkers, Liar's Dice, Shut the Box, Blackjack, Cribbage and Texas Hold'em with the NPCs around you. Your opponents talk about the game, know how it stands, and remember it.",
-      "author": "taka",
-      "tags": [
-        "Gameplay",
-        "NPC",
-        "Minigame",
-        "Dialogue",
-        "Prisma UI"
-      ],
-      "nsfw": false,
-      "icon": "package",
-      "mods": [],
-      "first_published": "2026-11-03T15:43:06Z",
-      "last_updated": "2026-11-12T07:21:29Z",
-      "version": "0.5.0",
-      "history": [
-        {
-          "version": "0.5.0",
-          "commit": "90b6d5d1f69b46adcf74b09ef0aca880e15381b9",
-          "date": "2026-11-12T07:21:29Z",
-          "changelog": "Talk at the table: a text box under each game's log. Type a line and your character says it to one of your opponents (the one you name, else whoever spoke last), who alone answers, knowing the game; in your character's words or as written (MCM). Typing Japanese, Chinese or Korean needs Magelight UI. Fixed in Texas Hold'em: an opponent could say one thing and do another (\"I call\", then a fold); the opponent who answers your bet now has the move decided first, so the line fits it. Fixed: an opponent out of turn could answer your spoken move and make up a move of their own; your own moves no longer go through Transform Dialogue, and only the opponent who acts next reacts. Fixed: opponents kept talking about the previous hand. Fixed on Magelight UI: the board could stop answering clicks after a text box had been used."
-        },
-        {
-          "version": "0.4.1",
-          "commit": "cc489be9ceb581c208a39b5b695454b44798cf25",
-          "date": "2026-11-10T15:33:11Z",
-          "changelog": "Two new games, each against one NPC at four strengths: Checkers (American draughts: forced captures, multi-jumps, kings) and Cribbage (two-handed, to 121, with the full play and show). Both were contributed by whyregisterme. Their strength is set in the MCM and on the board. New MCM setting, Length of their lines: how long your opponents' remarks about the game are (a few words, short, SkyrimNet's own, longer). It reaches only the NPCs at the table while a game is played and changes nothing in SkyrimNet's own settings. All new texts are in the installer's five languages."
-        },
-        {
-          "version": "0.4.0",
-          "commit": "bd72e8297880795dcb5b9ae14a8227defa7cbbc2",
-          "date": "2026-11-10T08:01:22Z",
-          "changelog": "Five languages and one installer: the board, the commentary and the settings menu are now in English, Japanese, Russian, German or Simplified Chinese (the last three machine-translated), chosen in a FOMOD installer for MO2 and Vortex, independent of the game's language. The separate Japanese archive is gone: if you installed the old \"skyrimnet_MiniGame_x.x.x_Japanese\" mod, remove it and pick Japanese in the installer instead (日本語版を別 MOD で入れていた方は、その MOD を外し、インストーラーで日本語を選んでください). Since 0.3.0: faces drawn by Phantasm, with Phantasm installed (0.2.0 or later; it comes with SeverActions 4.7 or later, and is also a download of its own), each opponent's face in the frames is a head-and-shoulders portrait Phantasm draws of them, with no screenshot, so the faces also show with ENB or Skyrim Upscaler, and the opponents need not be on screen. Without Phantasm nothing changes. Since 0.2.0: Texas Hold'em, where each opponent's way of playing (tight or loose, bold or cautious, how often they bluff) comes from their character; the board runs on Magelight UI (1.0 or later) when it is installed, else on Prisma UI, one of the two being enough; and your character can speak their own poker moves through Transform Dialogue, like bids in Liar's Dice."
-        },
-        {
-          "version": "0.3.0",
-          "commit": "3548aa4f3b08b7a52e9abf4c5c93e423e8b29a04",
-          "date": "2026-11-10T05:32:32Z",
-          "changelog": "Faces drawn by Phantasm: with Phantasm installed (0.2.0 or later; it comes with SeverActions 4.7 or later, and is also a download of its own), each opponent's face in the frames is a head-and-shoulders portrait Phantasm draws of them, with no screenshot, so the faces also show with ENB or Skyrim Upscaler, and the opponents need not be on screen. Without Phantasm nothing changes. Since 0.2.0: Texas Hold'em, where each opponent's way of playing (tight or loose, bold or cautious, how often they bluff) comes from their character; the board runs on Magelight UI (1.0 or later) when it is installed, else on Prisma UI, one of the two being enough; and your character can speak their own poker moves through Transform Dialogue, like bids in Liar's Dice."
-        },
-        {
-          "version": "0.2.0",
-          "commit": "52ff2089717d5532fa12a04a971e9cc37935490b",
-          "date": "2026-11-09T08:22:36Z",
-          "changelog": "Texas Hold'em: no-limit, blinds 5 and 10, 200 chips each, up to three opponents. How each opponent plays (tight or loose, bold or cautious, how often they bluff) is read from their character by SkyrimNet when the game starts, and they talk the way they play. The board now runs on Magelight UI (1.0 or later) when it is installed, else on Prisma UI as before; one of the two is enough. Your character can also speak their own poker moves (folds, checks, calls, bets and raises) through Transform Dialogue, like bids in Liar's Dice."
-        },
-        {
-          "version": "0.1.2",
-          "commit": "2847f20c4aa29e093dc5071c49c677567da38413",
-          "date": "2026-11-06T08:50:59Z",
-          "changelog": "Fixed a crash when a mini game started with ENB or Skyrim Upscaler installed: saving the photo for the face frames crashed inside the game's own screenshot code. With either of them installed, the photo is now skipped and the frames show initials. A new MCM option, Face photos, turns the photo off by hand."
-        },
-        {
-          "version": "0.1.1",
-          "commit": "b41140512332d681fe5c6b353d84b035002a85ff",
-          "date": "2026-11-04T11:37:55Z",
-          "changelog": "Two new games: Shut the Box and Blackjack, each against up to three NPCs with four opponent strengths. In Blackjack you choose who deals, you or one of your opponents. Also fixed: the board could lose the input focus and stay on screen, reacting to nothing. It now takes the focus back, and Esc always closes it."
-        },
-        {
-          "version": "0.1.0",
-          "commit": "95ecad5ed411d5f06f4f9d95f6513dd532a63864",
-          "date": "2026-11-03T15:43:06Z",
-          "changelog": "First release: Reversi against one NPC and Liar's Dice against up to three, with SkyrimNet commentary, the game state in each opponent's prompt, your own bids spoken through Transform Dialogue, NPC challenges to Reversi, and face frames of your opponents on the board."
-        }
-      ],
-      "external_url": "https://github.com/nightlantern-mods/skyrimnet_MiniGame",
-      "languages": [
-        "en",
-        "ja",
-        "zh",
-        "de",
-        "ru"
-      ],
-      "language": "en",
-      "image": {
-        "file": "cover.jpg",
-        "sha": "c29e9e93a7d7274e3b4347cf8ce495d501f95e51",
-        "commit": "95ecad5ed411d5f06f4f9d95f6513dd532a63864",
-        "width": 1920,
-        "height": 1080
-      },
-      "stats": {
-        "downloads": 49,
-        "endorsements": 0
       }
     },
     {
@@ -2040,7 +2046,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 1159,
+        "downloads": 1161,
         "endorsements": 41
       }
     },
@@ -2320,7 +2326,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 189,
+        "downloads": 190,
         "endorsements": 2
       }
     },
@@ -2634,7 +2640,7 @@
         "height": 1080
       },
       "stats": {
-        "downloads": 63,
+        "downloads": 64,
         "endorsements": 1
       }
     },
@@ -3258,7 +3264,7 @@
         "config": 7
       },
       "stats": {
-        "downloads": 527,
+        "downloads": 528,
         "endorsements": 1
       }
     },
@@ -4205,7 +4211,7 @@
         "height": 720
       },
       "stats": {
-        "downloads": 114,
+        "downloads": 115,
         "endorsements": 1
       }
     },
@@ -4246,7 +4252,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 182,
+        "downloads": 183,
         "endorsements": 3
       }
     },
@@ -5776,7 +5782,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 3969,
+        "downloads": 3970,
         "endorsements": 4
       }
     },
@@ -6001,7 +6007,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2154,
+        "downloads": 2155,
         "endorsements": 0
       }
     },
@@ -8116,7 +8122,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 353,
+        "downloads": 354,
         "endorsements": 0
       }
     },
@@ -11191,7 +11197,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2433,
+        "downloads": 2434,
         "endorsements": 2
       }
     },
@@ -12001,7 +12007,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1446,
+        "downloads": 1447,
         "endorsements": 0
       }
     },
@@ -14161,7 +14167,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 42,
+        "downloads": 43,
         "endorsements": 0
       }
     },
@@ -14611,7 +14617,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2962,
+        "downloads": 2963,
         "endorsements": 2
       }
     },
