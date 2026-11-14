@@ -25,7 +25,7 @@
     "ko"
   ],
   "image": "cover.png",
-  "external_url": "https://github.com/nan0bug00/DragonSense/releases/tag/v0.4.0",
-  "version": "0.4.0",
-  "changelog": "# DragonSense 0.4.0\n\n## Added\n- **Bats at Bleak Falls Sanctum** — NPCs notice the swarm bursting from the dark as the inner sanctum comes into view.\n- **Ustengrav's rising statues** — stone grinding in the dark as the ancient statues climb out of the water.\n- **FOMOD installer** — one archive, pick your language during install.\n\n## Changed\n- Narration lines are no longer wrapped in asterisks.\n\n## Languages\nEnglish, Russian, Japanese, Portuguese, Spanish, French, German, Italian, Polish, Korean, Vietnamese, Chinese (Simplified), Chinese (Traditional)."
+  "external_url": "https://github.com/nan0bug00/DragonSense/releases/tag/v0.5.0",
+  "version": "0.5.0",
+  "changelog": "## DragonSense 0.5.0\n\n### Changed\n- **Fewer interruptions from dragon roars**: most roars are now quietly remembered instead of drawing a reaction on the spot. About 1 in 5 gets an immediate response, down from half.\n- **Longer gaps between roar reactions**: 2 minutes for nearby roars and 3 minutes for distant ones, up from 1 minute each.\n- **Roars have a range limit**: NPCs no longer react to dragons roaring too far away for you to hear.\n- **No roar events on the Throat of the World summit**: the dragons circling after Alduin's defeat no longer flood the area with reactions, and Hakon, Gormlaith and Felldir stay on script during the Time-Wound vision.\n\n### Fixed\n- **Non-English languages now load**: in 0.4.0, every language except English was rejected by SkyrimNet when picked in the installer."
 }
