@@ -26,6 +26,6 @@
   ],
   "image": "cover.png",
   "external_url": "https://www.nexusmods.com/skyrimspecialedition/mods/169603",
-  "version": "2.6.1",
-  "changelog": "**Solo / masturbation scene support & phrasing across modals, evaluations, and events** — Fixed several issues where solo (1-person) sexual scenes were blocked or treated as partnered encounters with placeholder names\ngithub https://github.com/tetherball88/OStimNet/releases/latest\nnexusmods https://www.nexusmods.com/skyrimspecialedition/mods/169603"
+  "version": "2.6.2",
+  "changelog": "github https://github.com/tetherball88/OStimNet/releases/latest\nnexusmods https://www.nexusmods.com/skyrimspecialedition/mods/169603\n### Added\n- **Billyy animation pack descriptions** — Added detailed scene descriptions and updated position metadata for **Billyy's** animation pack(covering male/female dom and spawned furniture modules), giving the AI a clearer understanding of what characters are doing during those scenes for more accurate dialogue and reactions.\n### Fixed\n- **Scene setup & progression popup errors with limited options** — Fixed a SkyrimNet Decisions error popup (*\"offers 1 option(s); at least two are needed\"*) that could interrupt scene starts, NPC location scans, or automatic scene progression when only a single compatible activity or position existed for the current participants and furniture. When only one valid option is available, OStimNet now selects it automatically."
 }
