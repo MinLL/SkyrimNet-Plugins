@@ -20,6 +20,6 @@
   ],
   "image": "cover.png",
   "external_url": "https://github.com/Nosimo-SN/Frostfall-Awareness/releases/latest",
-  "version": "1.0.1",
-  "changelog": "Initial release"
+  "version": "1.0.2",
+  "changelog": "Support for the ESL-compacted Frostfall 2026 and Campfire 2026\n\nThese editions ship ESL-compacted plugins that renumber every record. With them, 1.0.1 lost the NPC frost look, copied-fire detection and the Cold Shiver animations.\n\nFrostfall forms (running flag, settings, frostbite keywords, rescue messages, frost shaders, near-fire flag) are found by EditorID, then the regular FormID, then the compacted one.\nCampfire's heat source lists are found the same way, so fires copied by DynDOLOD and similar mods count as heat sources again. The startup log now always reports this step.\nThe Cold Shiver option's Frostfall check accepts either edition's FormID. OAR may show one of the two conditions as invalid; that is expected.\nWorks with the original Frostfall and Campfire as before. Install with your mod manager over 1.0.1 and choose the Cold Shiver option again if you use it. Requires SkyrimNet Beta 28 or later."
 }
