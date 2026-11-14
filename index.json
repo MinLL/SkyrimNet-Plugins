@@ -1,8 +1,71 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-11-14T19:42:14.123Z",
-  "stats_as_of": "2026-11-14T19:42:14.004Z",
+  "generated_at": "2026-11-14T20:20:08.197Z",
+  "stats_as_of": "2026-11-14T20:20:08.078Z",
   "plugins": [
+    {
+      "id": "plugins/stoptryharding/dragonsense",
+      "plugin_id": "stoptryharding.dragonsense",
+      "type": "listing",
+      "title": "DragonSense",
+      "tagline": "Dragon roars and the Greybeards' summons stop being player-only. Nearby NPCs hear them, react, and remember.",
+      "author": "stoptryharding",
+      "tags": [
+        "External Mod"
+      ],
+      "nsfw": false,
+      "icon": "brain",
+      "mods": [],
+      "first_published": "2026-10-20T06:34:02Z",
+      "last_updated": "2026-11-14T20:19:38Z",
+      "version": "0.5.0",
+      "history": [
+        {
+          "version": "0.5.0",
+          "commit": "086c3423aa59904a3201ab1bbcd367d65cf051db",
+          "date": "2026-11-14T20:19:38Z",
+          "changelog": "## DragonSense 0.5.0\n\n### Changed\n- **Fewer interruptions from dragon roars**: most roars are now quietly remembered instead of drawing a reaction on the spot. About 1 in 5 gets an immediate response, down from half.\n- **Longer gaps between roar reactions**: 2 minutes for nearby roars and 3 minutes for distant ones, up from 1 minute each.\n- **Roars have a range limit**: NPCs no longer react to dragons roaring too far away for you to hear.\n- **No roar events on the Throat of the World summit**: the dragons circling after Alduin's defeat no longer flood the area with reactions, and Hakon, Gormlaith and Felldir stay on script during the Time-Wound vision.\n\n### Fixed\n- **Non-English languages now load**: in 0.4.0, every language except English was rejected by SkyrimNet when picked in the installer."
+        },
+        {
+          "version": "0.4.0",
+          "commit": "038b54c8ff22ef800482f11cd14831492b70ad89",
+          "date": "2026-10-22T23:42:13Z",
+          "changelog": "# DragonSense 0.4.0\n\n## Added\n- **Bats at Bleak Falls Sanctum** — NPCs notice the swarm bursting from the dark as the inner sanctum comes into view.\n- **Ustengrav's rising statues** — stone grinding in the dark as the ancient statues climb out of the water.\n- **FOMOD installer** — one archive, pick your language during install.\n\n## Changed\n- Narration lines are no longer wrapped in asterisks.\n\n## Languages\nEnglish, Russian, Japanese, Portuguese, Spanish, French, German, Italian, Polish, Korean, Vietnamese, Chinese (Simplified), Chinese (Traditional)."
+        },
+        {
+          "version": "0.3.0",
+          "commit": "684f61e0c09d7bcd9d5c9217c38f397c1d0d4b0e",
+          "date": "2026-10-20T06:34:02Z",
+          "changelog": "Initial release"
+        }
+      ],
+      "external_url": "https://github.com/nan0bug00/DragonSense/releases/tag/v0.5.0",
+      "languages": [
+        "en",
+        "ru",
+        "es",
+        "ja",
+        "pt",
+        "de",
+        "fr",
+        "zh",
+        "it",
+        "pl",
+        "ko"
+      ],
+      "language": "en",
+      "image": {
+        "file": "cover.png",
+        "sha": "c036ec1179ee62772b8df0caf71a554a9d92d3d8",
+        "commit": "684f61e0c09d7bcd9d5c9217c38f397c1d0d4b0e",
+        "width": 1280,
+        "height": 720
+      },
+      "stats": {
+        "downloads": 117,
+        "endorsements": 1
+      }
+    },
     {
       "id": "plugins/phospheneoverdrive/intelengine-npc-autonomy-faction-politics",
       "plugin_id": "phospheneoverdrive.intelengine-npc-autonomy-faction-politics",
@@ -102,7 +165,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 443,
+        "downloads": 444,
         "endorsements": 11
       }
     },
@@ -199,7 +262,7 @@
         "height": 1152
       },
       "stats": {
-        "downloads": 453,
+        "downloads": 454,
         "endorsements": 9
       }
     },
@@ -348,7 +411,7 @@
         "height": 432
       },
       "stats": {
-        "downloads": 324,
+        "downloads": 325,
         "endorsements": 3
       }
     },
@@ -642,7 +705,7 @@
         "height": 1080
       },
       "stats": {
-        "downloads": 56,
+        "downloads": 57,
         "endorsements": 0
       }
     },
@@ -790,7 +853,7 @@
         "height": 720
       },
       "stats": {
-        "downloads": 37,
+        "downloads": 38,
         "endorsements": 0
       }
     },
@@ -1709,7 +1772,7 @@
         "height": 720
       },
       "stats": {
-        "downloads": 78,
+        "downloads": 79,
         "endorsements": 0
       }
     },
@@ -2230,7 +2293,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 246,
+        "downloads": 247,
         "endorsements": 0
       }
     },
@@ -2882,7 +2945,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 86,
+        "downloads": 87,
         "endorsements": 1
       }
     },
@@ -3213,7 +3276,7 @@
         "config": 7
       },
       "stats": {
-        "downloads": 402,
+        "downloads": 403,
         "endorsements": 0
       }
     },
@@ -3294,7 +3357,7 @@
         "config": 7
       },
       "stats": {
-        "downloads": 556,
+        "downloads": 557,
         "endorsements": 1
       }
     },
@@ -3442,7 +3505,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 257,
+        "downloads": 258,
         "endorsements": 0
       }
     },
@@ -4189,63 +4252,6 @@
       }
     },
     {
-      "id": "plugins/stoptryharding/dragonsense",
-      "plugin_id": "stoptryharding.dragonsense",
-      "type": "listing",
-      "title": "DragonSense",
-      "tagline": "Dragon roars and the Greybeards' summons stop being player-only. Nearby NPCs hear them, react, and remember.",
-      "author": "stoptryharding",
-      "tags": [
-        "External Mod"
-      ],
-      "nsfw": false,
-      "icon": "brain",
-      "mods": [],
-      "first_published": "2026-10-20T06:34:02Z",
-      "last_updated": "2026-10-22T23:42:13Z",
-      "version": "0.4.0",
-      "history": [
-        {
-          "version": "0.4.0",
-          "commit": "038b54c8ff22ef800482f11cd14831492b70ad89",
-          "date": "2026-10-22T23:42:13Z",
-          "changelog": "# DragonSense 0.4.0\n\n## Added\n- **Bats at Bleak Falls Sanctum** — NPCs notice the swarm bursting from the dark as the inner sanctum comes into view.\n- **Ustengrav's rising statues** — stone grinding in the dark as the ancient statues climb out of the water.\n- **FOMOD installer** — one archive, pick your language during install.\n\n## Changed\n- Narration lines are no longer wrapped in asterisks.\n\n## Languages\nEnglish, Russian, Japanese, Portuguese, Spanish, French, German, Italian, Polish, Korean, Vietnamese, Chinese (Simplified), Chinese (Traditional)."
-        },
-        {
-          "version": "0.3.0",
-          "commit": "684f61e0c09d7bcd9d5c9217c38f397c1d0d4b0e",
-          "date": "2026-10-20T06:34:02Z",
-          "changelog": "Initial release"
-        }
-      ],
-      "external_url": "https://github.com/nan0bug00/DragonSense/releases/tag/v0.4.0",
-      "languages": [
-        "en",
-        "ru",
-        "es",
-        "ja",
-        "pt",
-        "de",
-        "fr",
-        "zh",
-        "it",
-        "pl",
-        "ko"
-      ],
-      "language": "en",
-      "image": {
-        "file": "cover.png",
-        "sha": "c036ec1179ee62772b8df0caf71a554a9d92d3d8",
-        "commit": "684f61e0c09d7bcd9d5c9217c38f397c1d0d4b0e",
-        "width": 1280,
-        "height": 720
-      },
-      "stats": {
-        "downloads": 117,
-        "endorsements": 1
-      }
-    },
-    {
       "id": "plugins/min/skyrimnet-prompts-local-models",
       "plugin_id": "min.skyrimnet-prompts-local-models",
       "type": "bundle",
@@ -4474,7 +4480,7 @@
         "height": 1080
       },
       "stats": {
-        "downloads": 67,
+        "downloads": 68,
         "endorsements": 0
       }
     },
@@ -4851,7 +4857,7 @@
         "config": 4
       },
       "stats": {
-        "downloads": 626,
+        "downloads": 627,
         "endorsements": 3
       }
     },
@@ -5198,7 +5204,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 786,
+        "downloads": 789,
         "endorsements": 0
       }
     },
@@ -5290,7 +5296,7 @@
       ],
       "external_url": "https://github.com/naitro2010/SkyrimNet_UDNG/releases/tag/alpha12",
       "stats": {
-        "downloads": 161,
+        "downloads": 162,
         "endorsements": 4
       }
     },
@@ -5406,7 +5412,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 438,
+        "downloads": 439,
         "endorsements": 0
       }
     },
@@ -5677,7 +5683,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1943,
+        "downloads": 1945,
         "endorsements": 2
       }
     },
@@ -5812,7 +5818,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 4004,
+        "downloads": 4009,
         "endorsements": 4
       }
     },
@@ -6037,7 +6043,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2197,
+        "downloads": 2199,
         "endorsements": 0
       }
     },
@@ -6307,7 +6313,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 842,
+        "downloads": 844,
         "endorsements": 1
       }
     },
@@ -6397,7 +6403,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 308,
+        "downloads": 309,
         "endorsements": 0
       }
     },
@@ -6532,7 +6538,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 600,
+        "downloads": 602,
         "endorsements": 1
       }
     },
@@ -6802,7 +6808,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1809,
+        "downloads": 1813,
         "endorsements": 2
       }
     },
@@ -7162,7 +7168,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1492,
+        "downloads": 1494,
         "endorsements": 1
       }
     },
@@ -7522,7 +7528,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2104,
+        "downloads": 2106,
         "endorsements": 3
       }
     },
@@ -7567,7 +7573,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 443,
+        "downloads": 445,
         "endorsements": 0
       }
     },
@@ -7702,7 +7708,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 836,
+        "downloads": 837,
         "endorsements": 0
       }
     },
@@ -7747,7 +7753,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1380,
+        "downloads": 1384,
         "endorsements": 2
       }
     },
@@ -9562,7 +9568,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 641,
+        "downloads": 643,
         "endorsements": 0
       }
     },
@@ -9967,7 +9973,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1029,
+        "downloads": 1030,
         "endorsements": 0
       }
     },
@@ -10102,7 +10108,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1840,
+        "downloads": 1842,
         "endorsements": 2
       }
     },
@@ -10192,7 +10198,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2415,
+        "downloads": 2418,
         "endorsements": 2
       }
     },
@@ -10867,7 +10873,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 53,
+        "downloads": 54,
         "endorsements": 0
       }
     },
@@ -11047,7 +11053,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 430,
+        "downloads": 431,
         "endorsements": 1
       }
     },
@@ -11227,7 +11233,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2484,
+        "downloads": 2489,
         "endorsements": 2
       }
     },
@@ -11497,7 +11503,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2042,
+        "downloads": 2044,
         "endorsements": 2
       }
     },
@@ -11812,7 +11818,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 272,
+        "downloads": 273,
         "endorsements": 0
       }
     },
@@ -12037,7 +12043,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1464,
+        "downloads": 1465,
         "endorsements": 0
       }
     },
@@ -12802,7 +12808,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 501,
+        "downloads": 503,
         "endorsements": 0
       }
     },
@@ -13657,7 +13663,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 509,
+        "downloads": 513,
         "endorsements": 0
       }
     },
@@ -14107,7 +14113,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1114,
+        "downloads": 1115,
         "endorsements": 2
       }
     },
@@ -14242,7 +14248,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 307,
+        "downloads": 309,
         "endorsements": 0
       }
     },
@@ -14647,7 +14653,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 3015,
+        "downloads": 3018,
         "endorsements": 2
       }
     },
@@ -14917,7 +14923,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 772,
+        "downloads": 774,
         "endorsements": 0
       }
     },
@@ -15007,7 +15013,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 74,
+        "downloads": 75,
         "endorsements": 0
       }
     },
