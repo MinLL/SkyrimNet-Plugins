@@ -1,8 +1,49 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-11-14T01:09:57.441Z",
-  "stats_as_of": "2026-11-14T01:09:57.308Z",
+  "generated_at": "2026-11-14T01:11:03.293Z",
+  "stats_as_of": "2026-11-14T01:11:03.167Z",
   "plugins": [
+    {
+      "id": "plugins/severause/phantasm",
+      "plugin_id": "severause.phantasm",
+      "type": "listing",
+      "title": "Phantasm",
+      "tagline": "Live actors for Skyrim menus",
+      "author": "severause",
+      "tags": [],
+      "nsfw": false,
+      "icon": "skull",
+      "mods": [],
+      "first_published": "2026-11-09T01:17:49Z",
+      "last_updated": "2026-11-14T01:10:32Z",
+      "version": "1.2.0",
+      "history": [
+        {
+          "version": "1.2.0",
+          "commit": "4e2539d2bcecd35778059e9a6ee8c625ce4d599e",
+          "date": "2026-11-14T01:10:32Z",
+          "changelog": "## Phantasm 1.2.0\n\n\n**Fixes**\n- First-person body mods (Improved Camera): first-person views of the player no longer show a pointed neck, missing arms or missing back weapons\n- Bodies with more than 128 bones (UBE soft-body with Bone Limit Extender) now pose with the character; up to 256 bones per piece\n- Doubled-triangle hair (many Sims 4 conversions) no longer shows dark and light flakes\n\n**Settings in the game**\n- SKSE Menu Framework's Mod Control Panel (Phantasm > Settings), or with Magelight UI the page Scroll Lock opens. Changes hold at once and are written back to `Phantasm.ini`, comments kept. Both optional\n\n**Experimental: neural rendering (off by default)**\n- NVIDIA DLSS NR on the character pictures mods ask Phantasm for, and optionally on live views. Turn it on from the settings page (**Scroll Lock** with Magelight UI, or the Mod Control Panel), or with `[NeuralRendering] Enabled = 1` in `Phantasm.ini`\n- Uses the `nvngx_dlssnr.dll` your neural rendering mod installed and follows that mod's settings \n- Runs inside the game from Phantasm's own `PhantasmNRInProc.dll` (no NVIDIA code, nothing to install beyond your driver); costs several hundred MB of memory while on\n\n**For mod authors** (gate on `pluginVersion >= 10100`)\n- `aim=face`: the camera stays on the actor's face, taken from where their head looks, so a paired-animation partner turned around is still seen face on. Also for Portrait stills via `RequestStillHinted`\n- `zoom` (0.5 to 3) for Portrait stills: the face alone for a badge or round avatar, crown kept\n- `scale` (0.5 to 2) for actor views and `scene` entries: draw actors at a multiple of their size while a clip plays, so paired animations line up"
+        },
+        {
+          "version": "1.0.0",
+          "commit": "91639ef4694d7ffa600c52190571e675a57d74c0",
+          "date": "2026-11-09T01:17:49Z",
+          "changelog": "Initial release"
+        }
+      ],
+      "external_url": "https://www.nexusmods.com/skyrimspecialedition/mods/197470",
+      "image": {
+        "file": "cover.png",
+        "sha": "6895cef9ec8ffcdf11ad158d5027c8607a26388e",
+        "commit": "91639ef4694d7ffa600c52190571e675a57d74c0",
+        "width": 1920,
+        "height": 1080
+      },
+      "stats": {
+        "downloads": 43,
+        "endorsements": 0
+      }
+    },
     {
       "id": "plugins/severause/magelight-ui",
       "plugin_id": "severause.magelight-ui",
@@ -1763,41 +1804,6 @@
       },
       "stats": {
         "downloads": 19,
-        "endorsements": 0
-      }
-    },
-    {
-      "id": "plugins/severause/phantasm",
-      "plugin_id": "severause.phantasm",
-      "type": "listing",
-      "title": "Phantasm",
-      "tagline": "Live actors for Skyrim menus",
-      "author": "severause",
-      "tags": [],
-      "nsfw": false,
-      "icon": "skull",
-      "mods": [],
-      "first_published": "2026-11-09T01:17:49Z",
-      "last_updated": "2026-11-09T01:17:49Z",
-      "version": "1.0.0",
-      "history": [
-        {
-          "version": "1.0.0",
-          "commit": "91639ef4694d7ffa600c52190571e675a57d74c0",
-          "date": "2026-11-09T01:17:49Z",
-          "changelog": "Initial release"
-        }
-      ],
-      "external_url": "https://www.nexusmods.com/skyrimspecialedition/mods/197470",
-      "image": {
-        "file": "cover.png",
-        "sha": "6895cef9ec8ffcdf11ad158d5027c8607a26388e",
-        "commit": "91639ef4694d7ffa600c52190571e675a57d74c0",
-        "width": 1920,
-        "height": 1080
-      },
-      "stats": {
-        "downloads": 43,
         "endorsements": 0
       }
     },
