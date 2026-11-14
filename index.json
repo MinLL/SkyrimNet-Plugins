@@ -1,8 +1,99 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-11-14T00:39:35.208Z",
-  "stats_as_of": "2026-11-14T00:39:13.000Z",
+  "generated_at": "2026-11-14T01:01:31.272Z",
+  "stats_as_of": "2026-11-14T01:01:31.147Z",
   "plugins": [
+    {
+      "id": "plugins/phospheneoverdrive/intelengine-npc-autonomy-faction-politics",
+      "plugin_id": "phospheneoverdrive.intelengine-npc-autonomy-faction-politics",
+      "type": "listing",
+      "title": "IntelEngine — NPC Autonomy & Faction Politics",
+      "tagline": "Give Skyrim’s NPCs agency—tasks, schedules, autonomous stories, and faction politics.",
+      "author": "phospheneoverdrive",
+      "tags": [
+        "actions",
+        "autonomy",
+        "immersion",
+        "storytelling",
+        "scheduling",
+        "travel",
+        "quests",
+        "faction politics",
+        "world simulation"
+      ],
+      "nsfw": false,
+      "icon": "gamemaster",
+      "mods": [],
+      "first_published": "2026-09-26T03:14:31Z",
+      "last_updated": "2026-11-14T01:01:01Z",
+      "version": "3.8.0",
+      "history": [
+        {
+          "version": "3.8.0",
+          "commit": "0934b55b9974e85bffa337a263b7aaeaf2e68d36",
+          "date": "2026-11-14T01:01:01Z",
+          "changelog": "# IntelEngine 3.8.0\n\n**New**\n- IntelEngine's settings are on SkyrimNet's plugin settings page, kept in sync with the MCM and the dashboard. Settings now belong to your install, not one save.\n- Running tasks show on SkyrimNet's Package Manager page; Remove cancels them.\n- With Magelight UI, the Allow/Deny, door-knock and quest-offer prompts are Magelight popups (keys 1-3, gamepad). No answer within 20 seconds is a deny.\n- Times in plain words: \"in 2 hours\", \"tomorrow at 6\", \"at dusk\" (time parser by Lanosity).\n- Director: a form per story type, Generate fills only the type you picked, and required fields are checked before you send.\n- Politics: choose which factions may go to war (`war_allowed:` in factions.yaml); ended wars become truces; big news reaches every NPC.\n- Optional Political Engine support, off by default and experimental.\n\n**Better**\n- Stuck NPCs recover out of your sight, and other mods' follow or wait orders survive a task.\n- Tasks finish across cells: unseen deliveries are reported back, and NPCs who arrive unseen end up inside the building.\n- NPCs finish their sentence before they leave, and the inn's bard (or his audience) can be sent on a task.\n- Visits end on their own: while you talk and a little after, six game hours at most, or when you walk away.\n- One plain name per setting in the MCM, the dashboard and SkyrimNet's page.\n\n**Fixed**\n- Assassins and spawned soldiers no longer turn on you; brawl survivors are cleaned up.\n- Story NPCs no longer get stuck arriving or speak from the floor below.\n- Settings that showed the wrong value (NPC-to-NPC switches, sliders, defaults); two settings that did nothing were removed.\n- An automatic story no longer overwrites a running one.\n\nInstall the whole package over 3.7.x. Requires SkyrimNet Beta 27+. Saves from before 3.6 still need the converter (see the FAQ).\n\nCredits: developed by Gerkinfeltser & Galanx. Natural-language time parser by Lanosity."
+        },
+        {
+          "version": "3.7.1",
+          "commit": "57451f63bc139bff24329b9e38453b87a0d9438e",
+          "date": "2026-11-06T01:52:52Z",
+          "changelog": "### Fixes\n- The dashboard no longer goes blank when a game or mod name has invalid text encoding; it shows � instead.\n- Fixed a crash near some modded NPCs whose faction list contains a non-faction record; the NPC is logged once so the mod can be found.\n- MCM Hold Restriction toggles now save when clicked (the dashboard Settings tab already worked).\n\nThis release updates `IntelEngine.dll` and the MCM script; install the whole package over 3.7.0.\n\nFull changelog: https://github.com/galanx/IntelEngine-GamePlugin/blob/main/CHANGELOG.md#371--2026-11-04\nDownload: https://github.com/galanx/IntelEngine-GamePlugin/releases/tag/v3.7.1"
+        },
+        {
+          "version": "3.7.0",
+          "commit": "3da732fc441190d7418dd3abea3186c260b68ff4",
+          "date": "2026-11-04T23:27:50Z",
+          "changelog": "### Director\n- New **Generate** button on Story, NPC Social, Political and Action forms fills in a draft from nearby NPCs and factions. **Experimental:** quality depends on the model in SkyrimNet's default slot; small models (e.g. 4B) fill fields unreliably, so review before dispatching. Stop and Clear buttons too.\n- Director requests now show an on-screen notice when accepted and the reason when refused; busy NPCs ask before replacing their task.\n- Drafts are remembered across reloads; NPC and faction pickers are searchable; required fields are marked and block Dispatch until filled.\n- Action Execution: optional reason, works on non-unique NPCs (guards, city folk), and Cancel/Change Speed act straight away.\n\n### Dashboard\n- Optional **Magelight UI** host (1.7.1+, recommended): Esc closes the menu. PrismaUI stays as a fallback.\n- Tasks tab shows each task's origin, in-game time and reason, plus the NPC's current package. Actions are grouped by category.\n- Politics shows in-game dates and faction leaders.\n- Finished Story and Social outcomes are recorded in SkyrimNet's History.\n\n### Fixes\n- No more duplicate arrivals or stale story callbacks repeating outcomes.\n- Mod-added NPCs (high form IDs) are no longer mixed up in dashboard actions.\n- Better exact NPC and faction-leader matching; same-faction political pairs are rejected.\n- Task history now says \"tried to\" when a task didn't succeed.\n- Localized place names are kept intact in travel prompts.\n\nThis release updates `IntelEngine.dll` and scripts that must match it; install the whole package over the previous version.\n\n**Antivirus note:** Microsoft Defender may flag the bundled save converter `LegacyCacheMigration.exe` as a false positive. It is only needed to upgrade 3.5.x saves.\n\nFull changelog: https://github.com/galanx/IntelEngine-GamePlugin/blob/main/CHANGELOG.md#370--2026-11-03\nDownload: https://github.com/galanx/IntelEngine-GamePlugin/releases/tag/v3.7.0"
+        },
+        {
+          "version": "3.6.2",
+          "commit": "1ca69aaf3052741648220bbe3ea0420d8ebf7b41",
+          "date": "2026-10-29T00:18:43Z",
+          "changelog": "### Save converter\n- Converts saves that the 3.5.x→3.6 converter used to refuse: caches on temporary (FF) actors and leftover global caches are now converted in place.\n- Refuses saves that are already converted (for example a later save made from an `_IEconverted` one) instead of double-encoding them.\n- Clearer, multi-line output, plus a warning not to load converted saves with any IE 3.5.x.\n\n### Couriers and quests\n- Fixed couriers sometimes \"arriving\" twice, which injected duplicate/blank facts and caused errors after the quest ended.\n- Cancelling a quest from the dashboard after the courier arrives now frees the courier properly.\n- Courier story facts are recorded when the courier actually arrives, so an aborted courier leaves no facts behind.\n\n### Dashboard hotkey\n- Only works while Skyrim is focused, and modifiers must match exactly (a plain 7 no longer fires on Shift+7).\n- Changing the hotkey on the SkyrimNet settings page now applies as soon as you click Save, no restart. The dashboard's Settings tab also changes it. Default: Shift+7.\n\n### Other\n- Politics settings now persist correctly, and politics can be turned on later without a restart.\n- Story DM prompt: knowledge every candidate shares is listed once instead of repeated per NPC.\n- Long text is truncated on UTF-8 character boundaries.\n- Removed unused internal functions.\n\nThis release updates `IntelEngine.dll` and several scripts that must match it; install the whole package over the previous version.\n\n**Antivirus note:** Microsoft Defender may flag the bundled save converter `LegacyCacheMigration.exe` (`Wacapew.C!ml`, a machine-learning heuristic, 1/70 on VirusTotal). It is a false positive and is being reported to Microsoft. The converter is only needed to upgrade 3.5.x saves.\n\nFull changelog: https://github.com/galanx/IntelEngine-GamePlugin/blob/main/CHANGELOG.md#v362\nDownload: https://github.com/galanx/IntelEngine-GamePlugin/releases/tag/v3.6.2"
+        },
+        {
+          "version": "3.6.1",
+          "commit": "d70d08cc4ec0a627bb4989e7a6bd39fa0077a091",
+          "date": "2026-10-28T14:34:26Z",
+          "changelog": "- Rebuilt the bundled save converter (`LegacyCacheMigration.exe`) so Windows Defender no longer falsely flags it as `Trojan:Win32/Wacatac.B!ml`. 3.6.0 was never harmful; this release just stops the warning.\n- No functional changes. `IntelEngine.dll` and `IntelEngine.esp` are identical to 3.6.0, so you can update mid-playthrough without converting your saves again."
+        },
+        {
+          "version": "3.6.0",
+          "commit": "bb9bc25788ea26ab0de510e209bfa0dd1b48bcf5",
+          "date": "2026-10-27T21:15:05Z",
+          "changelog": "- 💾 **Save conversion:** an offline converter (included) repairs saves from earlier versions. **Convert old saves before loading with 3.6.0;** fresh games don't need it.\n- **Names kept:** stored NPC names, including names from name mods such as RNE, now survive saves and reloads. Memories and task history no longer corrupt them.\n- **Skyrim VR re-enabled:** one shared SE/AE/VR DLL; VR saves from 3.5.1 or earlier can be converted. VR should work (partly tested).\n- **Story DM:** stays within the current candidates, leaves disabled story types out of prompts, and skips itself when all eight types are off.\n- **NPC Social DM:** safer around save loading.\n- **Fixes:** Content Library bio lookup and overlay priority; battle and peace relationship changes now survive reloads; script checks aligned with the native plugin.\n\nTested on SE/AE 1.6.1170 and 1.7.104 with SkyrimNet Beta 28. 1.5.97 is untested."
+        },
+        {
+          "version": "3.5.2",
+          "commit": "95fad015e498fa97808d152341a5ce15cbb69f47",
+          "date": "2026-10-09T19:56:07Z",
+          "changelog": "Added support for Skyrim SE/AE versions 1.7.x"
+        },
+        {
+          "version": "3.5.1",
+          "commit": "e21dc4d0cd90657841180582f569a72ef8322f11",
+          "date": "2026-09-26T03:14:31Z",
+          "changelog": "Release for use with SkyrimNet Beta 25"
+        }
+      ],
+      "external_url": "https://github.com/galanx/IntelEngine-GamePlugin/releases/latest",
+      "languages": [
+        "en"
+      ],
+      "language": "en",
+      "image": {
+        "file": "cover.png",
+        "sha": "2481c81c05b48de522dea56a269a1803f5be32f9",
+        "commit": "e21dc4d0cd90657841180582f569a72ef8322f11",
+        "width": 1672,
+        "height": 941
+      },
+      "stats": {
+        "downloads": 422,
+        "endorsements": 11
+      }
+    },
     {
       "id": "plugins/thatguy/o-deadly-skyrim",
       "plugin_id": "thatguy.o-deadly-skyrim",
@@ -1248,7 +1339,7 @@
         "height": 769
       },
       "stats": {
-        "downloads": 76,
+        "downloads": 78,
         "endorsements": 0
       }
     },
@@ -1391,7 +1482,7 @@
         "height": 432
       },
       "stats": {
-        "downloads": 314,
+        "downloads": 315,
         "endorsements": 3
       }
     },
@@ -1993,91 +2084,6 @@
       "stats": {
         "downloads": 48,
         "endorsements": 1
-      }
-    },
-    {
-      "id": "plugins/phospheneoverdrive/intelengine-npc-autonomy-faction-politics",
-      "plugin_id": "phospheneoverdrive.intelengine-npc-autonomy-faction-politics",
-      "type": "listing",
-      "title": "IntelEngine — NPC Autonomy & Faction Politics",
-      "tagline": "Give Skyrim’s NPCs agency—tasks, schedules, autonomous stories, and faction politics.",
-      "author": "phospheneoverdrive",
-      "tags": [
-        "actions",
-        "autonomy",
-        "immersion",
-        "storytelling",
-        "scheduling",
-        "travel",
-        "quests",
-        "faction politics",
-        "world simulation"
-      ],
-      "nsfw": false,
-      "icon": "gamemaster",
-      "mods": [],
-      "first_published": "2026-09-26T03:14:31Z",
-      "last_updated": "2026-11-06T01:52:52Z",
-      "version": "3.7.1",
-      "history": [
-        {
-          "version": "3.7.1",
-          "commit": "57451f63bc139bff24329b9e38453b87a0d9438e",
-          "date": "2026-11-06T01:52:52Z",
-          "changelog": "### Fixes\n- The dashboard no longer goes blank when a game or mod name has invalid text encoding; it shows � instead.\n- Fixed a crash near some modded NPCs whose faction list contains a non-faction record; the NPC is logged once so the mod can be found.\n- MCM Hold Restriction toggles now save when clicked (the dashboard Settings tab already worked).\n\nThis release updates `IntelEngine.dll` and the MCM script; install the whole package over 3.7.0.\n\nFull changelog: https://github.com/galanx/IntelEngine-GamePlugin/blob/main/CHANGELOG.md#371--2026-11-04\nDownload: https://github.com/galanx/IntelEngine-GamePlugin/releases/tag/v3.7.1"
-        },
-        {
-          "version": "3.7.0",
-          "commit": "3da732fc441190d7418dd3abea3186c260b68ff4",
-          "date": "2026-11-04T23:27:50Z",
-          "changelog": "### Director\n- New **Generate** button on Story, NPC Social, Political and Action forms fills in a draft from nearby NPCs and factions. **Experimental:** quality depends on the model in SkyrimNet's default slot; small models (e.g. 4B) fill fields unreliably, so review before dispatching. Stop and Clear buttons too.\n- Director requests now show an on-screen notice when accepted and the reason when refused; busy NPCs ask before replacing their task.\n- Drafts are remembered across reloads; NPC and faction pickers are searchable; required fields are marked and block Dispatch until filled.\n- Action Execution: optional reason, works on non-unique NPCs (guards, city folk), and Cancel/Change Speed act straight away.\n\n### Dashboard\n- Optional **Magelight UI** host (1.7.1+, recommended): Esc closes the menu. PrismaUI stays as a fallback.\n- Tasks tab shows each task's origin, in-game time and reason, plus the NPC's current package. Actions are grouped by category.\n- Politics shows in-game dates and faction leaders.\n- Finished Story and Social outcomes are recorded in SkyrimNet's History.\n\n### Fixes\n- No more duplicate arrivals or stale story callbacks repeating outcomes.\n- Mod-added NPCs (high form IDs) are no longer mixed up in dashboard actions.\n- Better exact NPC and faction-leader matching; same-faction political pairs are rejected.\n- Task history now says \"tried to\" when a task didn't succeed.\n- Localized place names are kept intact in travel prompts.\n\nThis release updates `IntelEngine.dll` and scripts that must match it; install the whole package over the previous version.\n\n**Antivirus note:** Microsoft Defender may flag the bundled save converter `LegacyCacheMigration.exe` as a false positive. It is only needed to upgrade 3.5.x saves.\n\nFull changelog: https://github.com/galanx/IntelEngine-GamePlugin/blob/main/CHANGELOG.md#370--2026-11-03\nDownload: https://github.com/galanx/IntelEngine-GamePlugin/releases/tag/v3.7.0"
-        },
-        {
-          "version": "3.6.2",
-          "commit": "1ca69aaf3052741648220bbe3ea0420d8ebf7b41",
-          "date": "2026-10-29T00:18:43Z",
-          "changelog": "### Save converter\n- Converts saves that the 3.5.x→3.6 converter used to refuse: caches on temporary (FF) actors and leftover global caches are now converted in place.\n- Refuses saves that are already converted (for example a later save made from an `_IEconverted` one) instead of double-encoding them.\n- Clearer, multi-line output, plus a warning not to load converted saves with any IE 3.5.x.\n\n### Couriers and quests\n- Fixed couriers sometimes \"arriving\" twice, which injected duplicate/blank facts and caused errors after the quest ended.\n- Cancelling a quest from the dashboard after the courier arrives now frees the courier properly.\n- Courier story facts are recorded when the courier actually arrives, so an aborted courier leaves no facts behind.\n\n### Dashboard hotkey\n- Only works while Skyrim is focused, and modifiers must match exactly (a plain 7 no longer fires on Shift+7).\n- Changing the hotkey on the SkyrimNet settings page now applies as soon as you click Save, no restart. The dashboard's Settings tab also changes it. Default: Shift+7.\n\n### Other\n- Politics settings now persist correctly, and politics can be turned on later without a restart.\n- Story DM prompt: knowledge every candidate shares is listed once instead of repeated per NPC.\n- Long text is truncated on UTF-8 character boundaries.\n- Removed unused internal functions.\n\nThis release updates `IntelEngine.dll` and several scripts that must match it; install the whole package over the previous version.\n\n**Antivirus note:** Microsoft Defender may flag the bundled save converter `LegacyCacheMigration.exe` (`Wacapew.C!ml`, a machine-learning heuristic, 1/70 on VirusTotal). It is a false positive and is being reported to Microsoft. The converter is only needed to upgrade 3.5.x saves.\n\nFull changelog: https://github.com/galanx/IntelEngine-GamePlugin/blob/main/CHANGELOG.md#v362\nDownload: https://github.com/galanx/IntelEngine-GamePlugin/releases/tag/v3.6.2"
-        },
-        {
-          "version": "3.6.1",
-          "commit": "d70d08cc4ec0a627bb4989e7a6bd39fa0077a091",
-          "date": "2026-10-28T14:34:26Z",
-          "changelog": "- Rebuilt the bundled save converter (`LegacyCacheMigration.exe`) so Windows Defender no longer falsely flags it as `Trojan:Win32/Wacatac.B!ml`. 3.6.0 was never harmful; this release just stops the warning.\n- No functional changes. `IntelEngine.dll` and `IntelEngine.esp` are identical to 3.6.0, so you can update mid-playthrough without converting your saves again."
-        },
-        {
-          "version": "3.6.0",
-          "commit": "bb9bc25788ea26ab0de510e209bfa0dd1b48bcf5",
-          "date": "2026-10-27T21:15:05Z",
-          "changelog": "- 💾 **Save conversion:** an offline converter (included) repairs saves from earlier versions. **Convert old saves before loading with 3.6.0;** fresh games don't need it.\n- **Names kept:** stored NPC names, including names from name mods such as RNE, now survive saves and reloads. Memories and task history no longer corrupt them.\n- **Skyrim VR re-enabled:** one shared SE/AE/VR DLL; VR saves from 3.5.1 or earlier can be converted. VR should work (partly tested).\n- **Story DM:** stays within the current candidates, leaves disabled story types out of prompts, and skips itself when all eight types are off.\n- **NPC Social DM:** safer around save loading.\n- **Fixes:** Content Library bio lookup and overlay priority; battle and peace relationship changes now survive reloads; script checks aligned with the native plugin.\n\nTested on SE/AE 1.6.1170 and 1.7.104 with SkyrimNet Beta 28. 1.5.97 is untested."
-        },
-        {
-          "version": "3.5.2",
-          "commit": "95fad015e498fa97808d152341a5ce15cbb69f47",
-          "date": "2026-10-09T19:56:07Z",
-          "changelog": "Added support for Skyrim SE/AE versions 1.7.x"
-        },
-        {
-          "version": "3.5.1",
-          "commit": "e21dc4d0cd90657841180582f569a72ef8322f11",
-          "date": "2026-09-26T03:14:31Z",
-          "changelog": "Release for use with SkyrimNet Beta 25"
-        }
-      ],
-      "external_url": "https://github.com/galanx/IntelEngine-GamePlugin/releases/latest",
-      "languages": [
-        "en"
-      ],
-      "language": "en",
-      "image": {
-        "file": "cover.png",
-        "sha": "2481c81c05b48de522dea56a269a1803f5be32f9",
-        "commit": "e21dc4d0cd90657841180582f569a72ef8322f11",
-        "width": 1672,
-        "height": 941
-      },
-      "stats": {
-        "downloads": 422,
-        "endorsements": 11
       }
     },
     {
@@ -3190,7 +3196,7 @@
         "config": 7
       },
       "stats": {
-        "downloads": 501,
+        "downloads": 502,
         "endorsements": 1
       }
     },
@@ -5138,7 +5144,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 745,
+        "downloads": 746,
         "endorsements": 0
       }
     },
@@ -5346,7 +5352,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 426,
+        "downloads": 427,
         "endorsements": 0
       }
     },
@@ -5977,7 +5983,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2123,
+        "downloads": 2124,
         "endorsements": 0
       }
     },
@@ -6247,7 +6253,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 809,
+        "downloads": 810,
         "endorsements": 1
       }
     },
@@ -7777,7 +7783,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 395,
+        "downloads": 396,
         "endorsements": 0
       }
     },
@@ -10042,7 +10048,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1788,
+        "downloads": 1790,
         "endorsements": 2
       }
     },
@@ -11572,7 +11578,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 75,
+        "downloads": 76,
         "endorsements": 0
       }
     },
@@ -11842,7 +11848,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 516,
+        "downloads": 517,
         "endorsements": 1
       }
     },
@@ -14947,7 +14953,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 71,
+        "downloads": 72,
         "endorsements": 0
       }
     },
