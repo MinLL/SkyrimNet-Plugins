@@ -1,8 +1,100 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-11-15T02:25:48.185Z",
-  "stats_as_of": "2026-11-15T02:25:02.694Z",
+  "generated_at": "2026-11-15T02:52:39.292Z",
+  "stats_as_of": "2026-11-15T02:52:39.213Z",
   "plugins": [
+    {
+      "id": "plugins/nosimo/nos-inworld-2-audio-tags",
+      "plugin_id": "nosimo.nos-inworld-2-audio-tags",
+      "type": "bundle",
+      "title": "Nos 2 Audio Tags",
+      "tagline": "Audio tagging for inworld 2, eleven labs",
+      "author": "nosimo",
+      "tags": [
+        "inworld",
+        "audio",
+        "tags",
+        "tts",
+        "eleven",
+        "lab",
+        "elven"
+      ],
+      "nsfw": false,
+      "icon": "voice",
+      "mods": [],
+      "first_published": "2026-10-02T23:59:14Z",
+      "last_updated": "2026-11-15T02:52:04Z",
+      "version": "1.4.0",
+      "min_skyrimnet_version": "1.2.0",
+      "history": [
+        {
+          "version": "1.4.0",
+          "commit": "ed6472c78592c1fc939ce16a89219fd616e1ec12",
+          "date": "2026-11-15T02:52:04Z",
+          "changelog": "Longer instructions from earlier versions restored, Fateless now uses the older long Inworld tagging as well as Inworld and Elevenlabs. Still cache enabled. NO REASON TO UPDATE IF YOU ARE HAPPY WITH YOUR VOICES, this \"should\" make them more expressive for the people who liked the older version."
+        },
+        {
+          "version": "1.3.0",
+          "commit": "ff157712ceb128a84bf3b3b06ae4df5e26d9166c",
+          "date": "2026-11-01T19:47:15Z",
+          "changelog": "Inworld now shares default Fateless instructions.  Cache enabled."
+        },
+        {
+          "version": "1.2.0",
+          "commit": "fecb4c8ef2e0bc9bc6bb877c13ea356fbb525d50",
+          "date": "2026-10-14T22:04:53Z",
+          "changelog": "Shortened inworld/eleven labs prompt instructions ~50%"
+        },
+        {
+          "version": "1.1.0",
+          "commit": "848d0d857d5a24756ca448c91d0a6eccf7099428",
+          "date": "2026-10-04T03:36:38Z",
+          "changelog": "Seperate Eleven labs support based on v4 tagging guidelines"
+        },
+        {
+          "version": "1.0.3",
+          "commit": "e7b124a86fa177f192d56d28757be7e68701ab75",
+          "date": "2026-10-04T01:14:43Z",
+          "changelog": "Rough Eleven lab support using inworld tt2 instructions, will refine as I play with it"
+        },
+        {
+          "version": "1.0.1",
+          "commit": "fc3dad764f7bea579b2120a44e47dbec762f60f7",
+          "date": "2026-10-03T02:01:36Z",
+          "changelog": "Removed NSFW example"
+        },
+        {
+          "version": "1.0.0",
+          "commit": "6a9bec5677486237968d14e4832c14eb0a179c4f",
+          "date": "2026-10-02T23:59:14Z",
+          "changelog": "Initial release"
+        }
+      ],
+      "languages": [
+        "en"
+      ],
+      "language": "en",
+      "image": {
+        "file": "cover.png",
+        "sha": "09a87069d4babfa7575d309e5f08db2f852fe0d0",
+        "commit": "fc3dad764f7bea579b2120a44e47dbec762f60f7",
+        "width": 1280,
+        "height": 720
+      },
+      "contents": {
+        "triggers": 0,
+        "actions": 0,
+        "prompts": 1,
+        "bios": 0,
+        "knowledge": 0,
+        "entities": 0,
+        "config": 0
+      },
+      "stats": {
+        "downloads": 520,
+        "endorsements": 4
+      }
+    },
     {
       "id": "plugins/stoptryharding/dragonsense",
       "plugin_id": "stoptryharding.dragonsense",
@@ -62,7 +154,7 @@
         "height": 720
       },
       "stats": {
-        "downloads": 123,
+        "downloads": 124,
         "endorsements": 1
       }
     },
@@ -165,7 +257,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 451,
+        "downloads": 452,
         "endorsements": 11
       }
     },
@@ -1114,7 +1206,7 @@
         "height": 864
       },
       "stats": {
-        "downloads": 450,
+        "downloads": 451,
         "endorsements": 8
       }
     },
@@ -1190,7 +1282,7 @@
         "height": 1152
       },
       "stats": {
-        "downloads": 269,
+        "downloads": 270,
         "endorsements": 0
       }
     },
@@ -1952,7 +2044,7 @@
         "height": 1008
       },
       "stats": {
-        "downloads": 24,
+        "downloads": 25,
         "endorsements": 0
       }
     },
@@ -2139,7 +2231,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 1188,
+        "downloads": 1189,
         "endorsements": 41
       }
     },
@@ -2293,7 +2385,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 259,
+        "downloads": 260,
         "endorsements": 0
       }
     },
@@ -2419,7 +2511,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 196,
+        "downloads": 197,
         "endorsements": 2
       }
     },
@@ -2578,7 +2670,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 539,
+        "downloads": 540,
         "endorsements": 9
       }
     },
@@ -3014,92 +3106,6 @@
       }
     },
     {
-      "id": "plugins/nosimo/nos-inworld-2-audio-tags",
-      "plugin_id": "nosimo.nos-inworld-2-audio-tags",
-      "type": "bundle",
-      "title": "Nos 2 Audio Tags",
-      "tagline": "Audio tagging for inworld 2, eleven labs",
-      "author": "nosimo",
-      "tags": [
-        "inworld",
-        "audio",
-        "tags",
-        "tts",
-        "eleven",
-        "lab",
-        "elven"
-      ],
-      "nsfw": false,
-      "icon": "voice",
-      "mods": [],
-      "first_published": "2026-10-02T23:59:14Z",
-      "last_updated": "2026-11-01T19:47:15Z",
-      "version": "1.3.0",
-      "min_skyrimnet_version": "0.29.1",
-      "history": [
-        {
-          "version": "1.3.0",
-          "commit": "ff157712ceb128a84bf3b3b06ae4df5e26d9166c",
-          "date": "2026-11-01T19:47:15Z",
-          "changelog": "Inworld now shares default Fateless instructions.  Cache enabled."
-        },
-        {
-          "version": "1.2.0",
-          "commit": "fecb4c8ef2e0bc9bc6bb877c13ea356fbb525d50",
-          "date": "2026-10-14T22:04:53Z",
-          "changelog": "Shortened inworld/eleven labs prompt instructions ~50%"
-        },
-        {
-          "version": "1.1.0",
-          "commit": "848d0d857d5a24756ca448c91d0a6eccf7099428",
-          "date": "2026-10-04T03:36:38Z",
-          "changelog": "Seperate Eleven labs support based on v4 tagging guidelines"
-        },
-        {
-          "version": "1.0.3",
-          "commit": "e7b124a86fa177f192d56d28757be7e68701ab75",
-          "date": "2026-10-04T01:14:43Z",
-          "changelog": "Rough Eleven lab support using inworld tt2 instructions, will refine as I play with it"
-        },
-        {
-          "version": "1.0.1",
-          "commit": "fc3dad764f7bea579b2120a44e47dbec762f60f7",
-          "date": "2026-10-03T02:01:36Z",
-          "changelog": "Removed NSFW example"
-        },
-        {
-          "version": "1.0.0",
-          "commit": "6a9bec5677486237968d14e4832c14eb0a179c4f",
-          "date": "2026-10-02T23:59:14Z",
-          "changelog": "Initial release"
-        }
-      ],
-      "languages": [
-        "en"
-      ],
-      "language": "en",
-      "image": {
-        "file": "cover.png",
-        "sha": "09a87069d4babfa7575d309e5f08db2f852fe0d0",
-        "commit": "fc3dad764f7bea579b2120a44e47dbec762f60f7",
-        "width": 1280,
-        "height": 720
-      },
-      "contents": {
-        "triggers": 0,
-        "actions": 0,
-        "prompts": 1,
-        "bios": 0,
-        "knowledge": 0,
-        "entities": 0,
-        "config": 0
-      },
-      "stats": {
-        "downloads": 520,
-        "endorsements": 4
-      }
-    },
-    {
       "id": "plugins/kaleth/sexist-men-of-skyrim",
       "plugin_id": "kaleth.sexist-men-of-skyrim",
       "type": "bundle",
@@ -3505,7 +3511,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 263,
+        "downloads": 264,
         "endorsements": 0
       }
     },
@@ -3556,7 +3562,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 114,
+        "downloads": 115,
         "endorsements": 3
       }
     },
@@ -3631,7 +3637,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 232,
+        "downloads": 233,
         "endorsements": 3
       }
     },
@@ -3714,7 +3720,7 @@
         "height": 928
       },
       "stats": {
-        "downloads": 153,
+        "downloads": 154,
         "endorsements": 2
       }
     },
@@ -4622,7 +4628,7 @@
         "height": 1080
       },
       "stats": {
-        "downloads": 34,
+        "downloads": 35,
         "endorsements": 0
       }
     },
@@ -5336,7 +5342,7 @@
         "height": 900
       },
       "stats": {
-        "downloads": 282,
+        "downloads": 283,
         "endorsements": 5
       }
     },
@@ -5818,7 +5824,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 4058,
+        "downloads": 4059,
         "endorsements": 4
       }
     },
@@ -6808,7 +6814,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1850,
+        "downloads": 1851,
         "endorsements": 2
       }
     },
@@ -9253,7 +9259,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 673,
+        "downloads": 674,
         "endorsements": 0
       }
     },
@@ -10198,7 +10204,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2455,
+        "downloads": 2456,
         "endorsements": 2
       }
     },
@@ -14653,7 +14659,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 3063,
+        "downloads": 3064,
         "endorsements": 2
       }
     },
