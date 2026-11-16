@@ -39,6 +39,21 @@
       "name": "Sacrosanct - Vampires of Skyrim.esp",
       "file": "sacrosanct - vampires of skyrim.esp",
       "required": false
+    },
+    {
+      "name": "Growl - Werebeasts of Skyrim.esp",
+      "file": "growl - werebeasts of skyrim.esp",
+      "required": false
+    },
+    {
+      "name": "CC Misc Patches - Saturalia Holiday Pack.esp",
+      "file": "cc misc patches - saturalia holiday pack.esp",
+      "required": false
+    },
+    {
+      "name": "OCreatures.esp",
+      "file": "ocreatures.esp",
+      "required": false
     }
   ],
   "languages": [
@@ -46,6 +61,6 @@
   ],
   "image": "cover.jpg",
   "external_url": "https://github.com/Coronerra/ODeadly-Skyrim",
-  "version": "0.7.0",
-  "changelog": "O'Deadly Skyrim 0.7 (A SkyrimNet environmental mod) by That Guy (Coronerra).\n\nFixed: crash on save with NPC AI Position Fix after a sleep event. NPC AI Position Fix keeps track of every NPC that is moved or loaded in while you sleep or wait, then repositions them when the rest ends. 0.6 woke you and spawned its sleep-event characters while the sleep was still running, so they ended up on that mod's list and were removed later. That could crash the game on the next save.\n\nSleep events now begin as you wake. The roll still happens when you lie down, with the same chances as before. Nothing is moved, spawned or started until the sleep has finished and the Sleep/Wait menu has closed, plus a one-second pause so other mods can finish their own after-rest work. The sleep itself is no longer interrupted.\nThe morning after now also waits for the menu to close. Wait events pause one second after the menu closes.\nIf something else cuts your sleep short (another mod's event, an attack), the event rolled for that sleep is dropped. Loading a save, the panic key or turning the master switch off clears any sleep event that has not started yet.\nFixed: a Bathing scene could start before a long bath had finished. With the Malignis Animations - BiSR DnB Patch a bath runs about 65 seconds, and 0.6 gave up waiting after 60. O'Deadly now waits until the actor has really left the bath (up to 150 seconds), pauses 2.5 seconds so clothes and controls are restored, then stages. Someone still in a running bath is never picked as the partner.\n\nSame plugin, records and FormIDs; still only Skyrim.esm as master. Same settings and defaults; master switch still OFF; kill switch, panic key and adults-only rules unchanged. SkyrimNet pack version 0.7.0.\nInstall: download ODeadly_Skyrim_0.7.zip, install in MO2 and overwrite 0.6; settings carry over. Best updated while not asleep or waiting. See the README and changelog."
+  "version": "1.0.1",
+  "changelog": "O'Deadly Skyrim 0.7.0 --> 1.0.1 (A SkyrimNet environmental mod) by That Guy (Coronerra).\n\nLot's of changes and additions:\n- A fix so nobody stays stuck lying in bed or sitting while a scene plays around them. It's a fix, not a new feature. \n- Savior Complex (Random travelers on the roads may be taken by bandits. Do you save them?)\n- Killer Rabbit vs Vigilants (Think Monty Python)\n- Join in (with take-over)\n- Wild creatures\n- Werewolves at night\n- OSTIM Beast Form integration, transform offers (take a beaten bandit, or claim your spouse or a companion)\n- Bitch in Heat (If a werewolf has sex outside in beast form, other werewolves may hear and smell it to join in.)\n- Blood Born Pathogen (Chance of infecting lovers with vampirism or werewolfism)\n- Saturalia, People talk about it for the three days leading up to it. On Saturalia, you may see Agrane Peryval giving out gifts."
 }
