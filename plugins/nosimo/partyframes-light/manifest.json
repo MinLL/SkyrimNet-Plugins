@@ -1,0 +1,30 @@
+{
+  "id": "nosimo.partyframes-light",
+  "type": "listing",
+  "title": "PartyFrames Light",
+  "tagline": "Magelight UI based Party Frames",
+  "description": "Simple party frames, optional portrait pulled from severs actions, status bars, member direction/distance arrow and sever's survival needs indicators. Expand vertically or horizontally, drag and drop where you want them, shift F8 default for setup. Only tested with Sever's actions, may not support other follower frameworks. Requires magelight.",
+  "author": "nosimo",
+  "tags": [
+    "party",
+    "frames"
+  ],
+  "nsfw": false,
+  "icon": "package",
+  "mods": [
+    {
+      "name": "SeverActions.esp",
+      "file": "severactions.esp",
+      "required": false
+    },
+    {
+      "name": "SeversHearth.esp",
+      "file": "severshearth.esp",
+      "required": false
+    }
+  ],
+  "image": "cover.png",
+  "external_url": "https://github.com/Nosimo-SN/PartyFrames-Light/releases/latest",
+  "version": "0.4.2",
+  "changelog": "Initial release"
+}
