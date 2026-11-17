@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-11-17T16:13:31.335Z",
-  "stats_as_of": "2026-11-17T16:13:09.794Z",
+  "generated_at": "2026-11-17T16:24:16.047Z",
+  "stats_as_of": "2026-11-17T16:20:11.820Z",
   "plugins": [
     {
       "id": "plugins/taka/skyrimnet-swirling-malice",
@@ -1395,7 +1395,7 @@
         "height": 720
       },
       "stats": {
-        "downloads": 35,
+        "downloads": 36,
         "endorsements": 0
       }
     },
@@ -1936,7 +1936,7 @@
         "height": 760
       },
       "stats": {
-        "downloads": 285,
+        "downloads": 286,
         "endorsements": 0
       }
     },
@@ -2426,7 +2426,7 @@
         "height": 720
       },
       "stats": {
-        "downloads": 98,
+        "downloads": 99,
         "endorsements": 0
       }
     },
@@ -3087,7 +3087,7 @@
       ],
       "language": "en",
       "stats": {
-        "downloads": 84,
+        "downloads": 85,
         "endorsements": 0
       }
     },
@@ -3374,7 +3374,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 390,
+        "downloads": 391,
         "endorsements": 0
       }
     },
