@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-11-17T02:25:34.965Z",
-  "stats_as_of": "2026-11-17T02:25:34.836Z",
+  "generated_at": "2026-11-17T02:26:32.028Z",
+  "stats_as_of": "2026-11-17T02:26:31.926Z",
   "plugins": [
     {
       "id": "plugins/tetherball88/ostimnet",
@@ -2440,7 +2440,7 @@
         "height": 1008
       },
       "stats": {
-        "downloads": 189,
+        "downloads": 190,
         "endorsements": 3
       }
     },
@@ -4599,7 +4599,7 @@
         "height": 720
       },
       "stats": {
-        "downloads": 40,
+        "downloads": 41,
         "endorsements": 0
       }
     },
@@ -5110,7 +5110,7 @@
         "height": 1080
       },
       "stats": {
-        "downloads": 231,
+        "downloads": 232,
         "endorsements": 1
       }
     },
