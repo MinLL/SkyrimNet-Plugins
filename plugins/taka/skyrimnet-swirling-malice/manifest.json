@@ -1,0 +1,47 @@
+{
+  "id": "taka.skyrimnet-swirling-malice",
+  "type": "listing",
+  "title": "SkyrimNet Swirling Malice",
+  "tagline": "Register a follower as a dominant. Each keeps their own people, and in a city one dialogue choice frames an adult. SkyrimNet speaks every line.",
+  "description": "**For adult players.** Register the follower under the crosshair as a dominant. Up to five dominants, and each keeps a separate record of up to ten people. In a city with a jail, one dialogue choice frames one adult. SkyrimNet speaks the lines. The settings menu chooses whether OStim or SexLab plays the scene. The default is OStim.\n\nChildren are never registered and never framed. Guards are not framed.\n\n## What you do\n- Look at a current follower and register them from the settings menu. A journal quest in their name is added.\n- The same menu lists every registered dominant and the people recorded for them.\n- When a scene between that dominant and someone they are taking starts, that person is recorded. Each dominant's record is their own.\n- In a city with a jail, talk to the dominant and choose to frame one adult. A guard comes, and the framed person is taken to the jail.\n\n## Requirements\nSKSE64, SkyrimNet with an AI model set up, SkyUI, MCM Helper and PapyrusUtil. One scene framework: OStim Standalone or SexLab. The scene script names script types from both, so both frameworks' scripts need to be installed for that script to load. The menu chooses which one plays.\n\n## Optional\nLeash, together with SkyrimNet Leashed, can leash the arrested person. SeverActions can release someone it is already holding when they reach the jail. None of these are required.\n\n## Installation\nThe download is one FOMOD. Choose English or Japanese. English puts English menu text in every game language. Japanese puts Japanese menu text in the Japanese language file and English in the other nine, so a game in another language does not show the wrong characters. The plugin is light and its only master is Skyrim.esm.",
+  "author": "taka",
+  "tags": [
+    "followers",
+    "dialogue",
+    "ostim",
+    "sexlab",
+    "domination"
+  ],
+  "nsfw": true,
+  "icon": "package",
+  "mods": [
+    {
+      "name": "OStim.esp",
+      "file": "ostim.esp",
+      "required": false
+    },
+    {
+      "name": "SexLab.esm",
+      "file": "sexlab.esm",
+      "required": false
+    },
+    {
+      "name": "Leash.esm",
+      "file": "leash.esm",
+      "required": false
+    },
+    {
+      "name": "SkyrimNet_Leashed.esp",
+      "file": "skyrimnet_leashed.esp",
+      "required": false
+    }
+  ],
+  "languages": [
+    "en",
+    "ja"
+  ],
+  "image": "cover.jpg",
+  "external_url": "https://github.com/nightlantern-mods/skyrimnet_SwirlingMalice",
+  "version": "0.1.0",
+  "changelog": "First version on the Hub. Register up to five dominant followers. Each keeps a record of up to ten people. In a city with a jail, one dialogue choice frames one adult. SkyrimNet speaks the lines. The settings menu chooses OStim or SexLab. The installer offers English or Japanese."
+}
