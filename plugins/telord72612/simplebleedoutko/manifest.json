@@ -12,7 +12,7 @@
   "icon": "package",
   "mods": [],
   "image": "cover.jpg",
-  "external_url": "https://github.com/Telord72612/SimpleBleedoutKO/releases/tag/V2.0.0",
-  "version": "2.0.0",
-  "changelog": "Initial release"
+  "external_url": "https://github.com/Telord72612/SimpleBleedoutKO/releases/tag/V2.1.0",
+  "version": "2.1.0",
+  "changelog": "-New SBKO_setting.ini to edit and change some setting, like who get KO, regen rate\n-New loot menu, sneaking and interacting with a KO NPC will open their inventory. It's not pickpocket\n-endCombat full regen should now be off on SE/AE"
 }
