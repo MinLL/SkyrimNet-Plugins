@@ -1,0 +1,25 @@
+{
+  "id": "nosimo.hjalti",
+  "type": "listing",
+  "title": "Hjalti",
+  "tagline": "A SkyrimNet powered dog companion",
+  "description": "Hjalti is designed to be a dog and scaling combat companion, he doesn't speak directly but instead through narration, sniffs your pack, points to the woods etc. He uses a .dll which controls his drives, hunger, tiredness, restlessness, affection, seperation and a JEV decision decides which one the .dll will call an action on at various levels. He can be praised or scolded through words (another JEV decision) which can be associated with actions through his prompts. All of his actions are exposed to the LLMs so they can call them independant of the .dll. Consider the .dll as driving his instinct while the LLMs control what he likes to do. He scales with the player in various ways, fully customizable through plugin settings and gains special combat abilities. There is no backstory yet but he can found outside the riverwood inn. There is no follower package attached to him, recruit him through sever's actions, no other framework has been tested (I suggest toggling survival needs off for him if you use them). Sever's actions and Open Animation Replacer are required. (if you really want to talk to him use telepathy, he should answer once and never intiate it back.)",
+  "author": "nosimo",
+  "tags": [
+    "dog",
+    "companion"
+  ],
+  "nsfw": false,
+  "icon": "characters",
+  "mods": [
+    {
+      "name": "SeverActions.esp",
+      "file": "severactions.esp",
+      "required": true
+    }
+  ],
+  "image": "cover.png",
+  "external_url": "https://github.com/Nosimo-SN/Hjalti/releases/latest",
+  "version": "0.26.7",
+  "changelog": "Intial prerelease, existing functions work, mostly, and he is stable, expect some derpiness and poorly done animations.  I'm also aware some of his idle sounds are more like a pigeon than a dog.  IMPORTANT NOTE, HJALTI IS KNOWN FOR COUNTER SURFING, THIS CAN START SOME SERIOUS INCIDENTS WITH GUARDS AND OTHERS, please check settings and if you don't want to deal with lawful consequences you can disable it counting as a crime.  He currently has no repercussions for his drives maxing out.  His eat actions include begging (you'll see your pack open), taking what he wants from packs (yours and others), taking open world food and scavenging corpses.  He naps at will and sleeps when you sleep, in order to keep him still his AI is turned off, looks a bit weird but functional.  He'll wake up when you walk away from him, if for some reason he doesn't there is a watchdog function which should restore him shortly after.  He has a considerable number of actions and more are planned.  ANOTHER NOTE IF YOU USE DYNAMIC BIO UPDATES DISABLE CHANGING SPEECH STYLE, this is pretty important to his behavior.  If he starts talking, check this first, you can restore his original bio from the plugin page.  If he continues talking please report the offending occurence on his discord channel."
+}
