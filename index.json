@@ -1,8 +1,55 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-11-18T01:43:07.055Z",
-  "stats_as_of": "2026-11-18T01:43:06.937Z",
+  "generated_at": "2026-11-18T01:45:04.861Z",
+  "stats_as_of": "2026-11-18T01:45:04.668Z",
   "plugins": [
+    {
+      "id": "plugins/severause/phantasm",
+      "plugin_id": "severause.phantasm",
+      "type": "listing",
+      "title": "Phantasm",
+      "tagline": "Live actors for Skyrim menus",
+      "author": "severause",
+      "tags": [],
+      "nsfw": false,
+      "icon": "skull",
+      "mods": [],
+      "first_published": "2026-11-09T01:17:49Z",
+      "last_updated": "2026-11-18T01:44:33Z",
+      "version": "1.3.0",
+      "history": [
+        {
+          "version": "1.3.0",
+          "commit": "fb1f3f48293185219f78dff9fb622955440b2407",
+          "date": "2026-11-18T01:44:33Z",
+          "changelog": "## Phantasm 1.3.0\n\n**Skin**\n- Very dark skin tones (Dremora, for one) are as dark as in game, so the body matches the face again\n- Skin no longer looks less artificial with texture mods that keep the shine in the normal map; Phantasm reads it the way the game does. The vanilla body looks the same as before\n\n**Characters and creatures**\n- Ghosts look like ghosts: blue rim and glow, body and clothes faint under them. Their particles and script-faded ghosts (Katria) aren't drawn yet\n- Head shots of creatures with their own head bone (dogs, for one) show the head instead of empty air\n- Body mod bone sizes (TNG, SOS, RaceMenu bone scales) now show in the classic pose too, so OmniSight draws them right\n\n**Scenes**\n- In multi-actor scene previews, adult body parts now fit the partner they meet instead of passing beside or through the body. Needs XPMSE with your body mod's genital bones; the mouth's placement is still being tuned\n\n**Neural rendering**\n- Wide live views (OmniSight's capture) are no longer blurry with NR on. `LiveScale` now means the same on every view: `0.5` = the size shown, `1` = up to twice that. A large wide view costs about 3x the GPU time it did; tall mirrors are unchanged\n\n**For mod authors**\n- `Phantasm.log` now lists, once per view and pose, each genital bone's scale in game and as drawn (`MannequinRenderer/genitals:`), to track down a pose that loses a body mod's size"
+        },
+        {
+          "version": "1.2.0",
+          "commit": "4e2539d2bcecd35778059e9a6ee8c625ce4d599e",
+          "date": "2026-11-14T01:10:32Z",
+          "changelog": "## Phantasm 1.2.0\n\n\n**Fixes**\n- First-person body mods (Improved Camera): first-person views of the player no longer show a pointed neck, missing arms or missing back weapons\n- Bodies with more than 128 bones (UBE soft-body with Bone Limit Extender) now pose with the character; up to 256 bones per piece\n- Doubled-triangle hair (many Sims 4 conversions) no longer shows dark and light flakes\n\n**Settings in the game**\n- SKSE Menu Framework's Mod Control Panel (Phantasm > Settings), or with Magelight UI the page Scroll Lock opens. Changes hold at once and are written back to `Phantasm.ini`, comments kept. Both optional\n\n**Experimental: neural rendering (off by default)**\n- NVIDIA DLSS NR on the character pictures mods ask Phantasm for, and optionally on live views. Turn it on from the settings page (**Scroll Lock** with Magelight UI, or the Mod Control Panel), or with `[NeuralRendering] Enabled = 1` in `Phantasm.ini`\n- Uses the `nvngx_dlssnr.dll` your neural rendering mod installed and follows that mod's settings \n- Runs inside the game from Phantasm's own `PhantasmNRInProc.dll` (no NVIDIA code, nothing to install beyond your driver); costs several hundred MB of memory while on\n\n**For mod authors** (gate on `pluginVersion >= 10100`)\n- `aim=face`: the camera stays on the actor's face, taken from where their head looks, so a paired-animation partner turned around is still seen face on. Also for Portrait stills via `RequestStillHinted`\n- `zoom` (0.5 to 3) for Portrait stills: the face alone for a badge or round avatar, crown kept\n- `scale` (0.5 to 2) for actor views and `scene` entries: draw actors at a multiple of their size while a clip plays, so paired animations line up"
+        },
+        {
+          "version": "1.0.0",
+          "commit": "91639ef4694d7ffa600c52190571e675a57d74c0",
+          "date": "2026-11-09T01:17:49Z",
+          "changelog": "Initial release"
+        }
+      ],
+      "external_url": "https://www.nexusmods.com/skyrimspecialedition/mods/197470",
+      "image": {
+        "file": "cover.png",
+        "sha": "6895cef9ec8ffcdf11ad158d5027c8607a26388e",
+        "commit": "91639ef4694d7ffa600c52190571e675a57d74c0",
+        "width": 1920,
+        "height": 1080
+      },
+      "stats": {
+        "downloads": 80,
+        "endorsements": 0
+      }
+    },
     {
       "id": "plugins/severause/magelight-ui",
       "plugin_id": "severause.magelight-ui",
@@ -1483,47 +1530,6 @@
       }
     },
     {
-      "id": "plugins/severause/phantasm",
-      "plugin_id": "severause.phantasm",
-      "type": "listing",
-      "title": "Phantasm",
-      "tagline": "Live actors for Skyrim menus",
-      "author": "severause",
-      "tags": [],
-      "nsfw": false,
-      "icon": "skull",
-      "mods": [],
-      "first_published": "2026-11-09T01:17:49Z",
-      "last_updated": "2026-11-14T01:10:32Z",
-      "version": "1.2.0",
-      "history": [
-        {
-          "version": "1.2.0",
-          "commit": "4e2539d2bcecd35778059e9a6ee8c625ce4d599e",
-          "date": "2026-11-14T01:10:32Z",
-          "changelog": "## Phantasm 1.2.0\n\n\n**Fixes**\n- First-person body mods (Improved Camera): first-person views of the player no longer show a pointed neck, missing arms or missing back weapons\n- Bodies with more than 128 bones (UBE soft-body with Bone Limit Extender) now pose with the character; up to 256 bones per piece\n- Doubled-triangle hair (many Sims 4 conversions) no longer shows dark and light flakes\n\n**Settings in the game**\n- SKSE Menu Framework's Mod Control Panel (Phantasm > Settings), or with Magelight UI the page Scroll Lock opens. Changes hold at once and are written back to `Phantasm.ini`, comments kept. Both optional\n\n**Experimental: neural rendering (off by default)**\n- NVIDIA DLSS NR on the character pictures mods ask Phantasm for, and optionally on live views. Turn it on from the settings page (**Scroll Lock** with Magelight UI, or the Mod Control Panel), or with `[NeuralRendering] Enabled = 1` in `Phantasm.ini`\n- Uses the `nvngx_dlssnr.dll` your neural rendering mod installed and follows that mod's settings \n- Runs inside the game from Phantasm's own `PhantasmNRInProc.dll` (no NVIDIA code, nothing to install beyond your driver); costs several hundred MB of memory while on\n\n**For mod authors** (gate on `pluginVersion >= 10100`)\n- `aim=face`: the camera stays on the actor's face, taken from where their head looks, so a paired-animation partner turned around is still seen face on. Also for Portrait stills via `RequestStillHinted`\n- `zoom` (0.5 to 3) for Portrait stills: the face alone for a badge or round avatar, crown kept\n- `scale` (0.5 to 2) for actor views and `scene` entries: draw actors at a multiple of their size while a clip plays, so paired animations line up"
-        },
-        {
-          "version": "1.0.0",
-          "commit": "91639ef4694d7ffa600c52190571e675a57d74c0",
-          "date": "2026-11-09T01:17:49Z",
-          "changelog": "Initial release"
-        }
-      ],
-      "external_url": "https://www.nexusmods.com/skyrimspecialedition/mods/197470",
-      "image": {
-        "file": "cover.png",
-        "sha": "6895cef9ec8ffcdf11ad158d5027c8607a26388e",
-        "commit": "91639ef4694d7ffa600c52190571e675a57d74c0",
-        "width": 1920,
-        "height": 1080
-      },
-      "stats": {
-        "downloads": 80,
-        "endorsements": 0
-      }
-    },
-    {
       "id": "plugins/awesmdiver/skyrimnet-multiproxy",
       "plugin_id": "awesmdiver.skyrimnet-multiproxy",
       "type": "listing",
@@ -2438,7 +2444,7 @@
         "height": 720
       },
       "stats": {
-        "downloads": 99,
+        "downloads": 100,
         "endorsements": 0
       }
     },
