@@ -25,6 +25,6 @@
   ],
   "image": "cover.png",
   "external_url": "https://github.com/Nosimo-SN/PartyFrames-Light/releases/latest",
-  "version": "0.4.2",
-  "changelog": "Initial release"
+  "version": "0.4.3",
+  "changelog": "-Teammate status alone no longer qualifies an actor, regardless of SeverActions roster membership.\n-Preserves current SeverActions follow state, engine follower links, live player-targeted follow/escort/accompany packages and the supported Hearth camping-package exception.\n-Adds Follower included / Follower removed log lines with actor IDs, follow signals and package/target IDs to help diagnose remaining reports"
 }
