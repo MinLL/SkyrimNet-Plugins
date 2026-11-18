@@ -1,8 +1,117 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-11-18T22:22:33.423Z",
-  "stats_as_of": "2026-11-18T22:22:33.350Z",
+  "generated_at": "2026-11-18T23:17:34.375Z",
+  "stats_as_of": "2026-11-18T23:17:05.389Z",
   "plugins": [
+    {
+      "id": "plugins/phospheneoverdrive/iactions-drunk-for-skyrimnet",
+      "plugin_id": "phospheneoverdrive.iactions-drunk-for-skyrimnet",
+      "type": "listing",
+      "title": "iActions [Drunk+] for SkyrimNet",
+      "tagline": "NPC drinking, intoxication, food, exchange, and related (or random) actions for SkyrimNet.",
+      "author": "phospheneoverdrive",
+      "tags": [
+        "dialogue",
+        "immersion",
+        "actions"
+      ],
+      "nsfw": false,
+      "icon": "zap",
+      "mods": [],
+      "first_published": "2026-09-12T21:07:45Z",
+      "last_updated": "2026-11-18T23:16:51Z",
+      "version": "0.7.0",
+      "history": [
+        {
+          "version": "0.7.0",
+          "commit": "2198a0e7508826c7e0a47da8aa4c7e4b2fbb962c",
+          "date": "2026-11-18T23:16:51Z",
+          "changelog": "## What changes in v0.7.0\n\n- **Skyrim VR support.** One native DLL for Skyrim SE/AE and VR. Tested on Skyrim 1.6.1170 and 1.7.104; VR 1.4.15 was tested with the 0.6.8 build; 0.7.0 is untested on VR. Expected to work on 1.5.97, 1.6.640 and 1.7.99, untested.\n- **Drinks from other NPCs.** NPCs hand each other drinks, merchants sell them, and a drinker with nothing buys from the nearest merchant who sells alcohol. The drinker pays the base price; \"can't afford\" when short.\n- **New MCM options (Drunk Behavior, both off by default):** **NPC Drinks on the House** (no gold changes hands, but the narration reads as a normal sale; your own trades are unchanged) and **Short-Lived Drink Events** (drink results stay in scene context for 2 minutes instead of entering NPC memories).\n- **New request prompt in Magelight UI** for drink and food requests, working on Skyrim 1.7.x. It replaces Papyrus MessageBox, which still works where installed (on 1.7.104 with a community build) and is expected to be dropped later. With neither, use the MCM Auto-Take / Auto-Give workaround.\n- **Keyword drinks.** Drinks with the keyword `iActions_Alcohol` count as alcohol (works with Keyword Item Distributor).\n- The drinker reacts to a drink and chooses who to address; with Respond Directly off, every drink is still recorded silently.\n- Fixes: drunk-NPC limit, sobering racing a new drink, one bottle drunk twice, mod drinks with unusual names, \"(N left)\" counting keyword drinks.\n- PapyrusUtil SE is now listed as a requirement (SkyrimNet already requires it).\n- Save compatible with 0.6.7: replace the old mod folder rather than merging files."
+        },
+        {
+          "version": "0.6.7",
+          "commit": "453f385a255cf4313628936b2796f6eded89af85",
+          "date": "2026-10-10T20:32:32Z",
+          "changelog": "## What changes in *LEGIT*(*) v0.6.7\n\n- Version 0.6.7 adds compatibility work for Skyrim **1.5.97, 1.6.640, 1.6.1170, 1.7.99 and 1.7.104**. Support for these versions is still being evaluated; **Skyrim VR is not supported**.\n\n- Drinking, food requests, arrow extraction and sobering are now individual actions rather than grouped under Food and Drink / Health and Recovery. Drinking behavior and save formats are unchanged.\n\n\n### Temporary Skyrim 1.7.x workaround\n\nPapyrus MessageBox has not yet been rebuilt for 1.7.x, so **dialog-based drink and food requests are unavailable**. To use those actions without their choice dialogs, configure the iActions MCM before requesting them:\n\n- **Drunk Behavior → Auto-Take Alcohol: ON** for drinks taken from your inventory. If the toggle is greyed out, enable **Require Alcohol in Inventory** first.\n- **Configuration → Auto-Give Food: ON** for food requests. **Auto-Give Max Food Items** controls the transfer limit.\n\n\n> (*) Previous 0.6.7 was a result of SkyrimNet plugin familiarity growing pain. Sorry for any confusion."
+        },
+        {
+          "version": "0.6.6",
+          "commit": "30146b7520a66fca43d6dd69e14beff1f649073c",
+          "date": "2026-09-12T21:07:45Z"
+        }
+      ],
+      "external_url": "https://github.com/Gerkinfeltser/iActions/releases",
+      "languages": [
+        "en"
+      ],
+      "language": "en",
+      "image": {
+        "file": "cover.jpg",
+        "sha": "2e4cba624304c95dc5d655deaaac835d38bcc8bf",
+        "commit": "2198a0e7508826c7e0a47da8aa4c7e4b2fbb962c",
+        "width": 1672,
+        "height": 941
+      },
+      "stats": {
+        "downloads": 207,
+        "endorsements": 2
+      }
+    },
+    {
+      "id": "plugins/nosimo/partyframes-light",
+      "plugin_id": "nosimo.partyframes-light",
+      "type": "listing",
+      "title": "PartyFrames Light",
+      "tagline": "Magelight UI based Party Frames",
+      "author": "nosimo",
+      "tags": [
+        "party",
+        "frames"
+      ],
+      "nsfw": false,
+      "icon": "package",
+      "mods": [
+        {
+          "name": "SeverActions.esp",
+          "file": "severactions.esp",
+          "required": false
+        },
+        {
+          "name": "SeversHearth.esp",
+          "file": "severshearth.esp",
+          "required": false
+        }
+      ],
+      "first_published": "2026-11-17T08:03:21Z",
+      "last_updated": "2026-11-18T23:16:29Z",
+      "version": "0.4.3",
+      "history": [
+        {
+          "version": "0.4.3",
+          "commit": "ecc3b5aed5fe0496bbdc221f6d38c9c0ca91b67b",
+          "date": "2026-11-18T23:16:29Z",
+          "changelog": "-Teammate status alone no longer qualifies an actor, regardless of SeverActions roster membership.\n-Preserves current SeverActions follow state, engine follower links, live player-targeted follow/escort/accompany packages and the supported Hearth camping-package exception.\n-Adds Follower included / Follower removed log lines with actor IDs, follow signals and package/target IDs to help diagnose remaining reports"
+        },
+        {
+          "version": "0.4.2",
+          "commit": "7a1dfb2cc21631b62e2f84bffe006f47597f2550",
+          "date": "2026-11-17T08:03:21Z",
+          "changelog": "Initial release"
+        }
+      ],
+      "external_url": "https://github.com/Nosimo-SN/PartyFrames-Light/releases/latest",
+      "image": {
+        "file": "cover.png",
+        "sha": "4efc73dc819294d56c9be6fb18444f050dffb28d",
+        "commit": "7a1dfb2cc21631b62e2f84bffe006f47597f2550",
+        "width": 1280,
+        "height": 720
+      },
+      "stats": {
+        "downloads": 19,
+        "endorsements": 0
+      }
+    },
     {
       "id": "plugins/goodprovider/skyrimnet-leashed",
       "plugin_id": "goodprovider.skyrimnet-leashed",
@@ -422,55 +531,6 @@
       },
       "stats": {
         "downloads": 8,
-        "endorsements": 0
-      }
-    },
-    {
-      "id": "plugins/nosimo/partyframes-light",
-      "plugin_id": "nosimo.partyframes-light",
-      "type": "listing",
-      "title": "PartyFrames Light",
-      "tagline": "Magelight UI based Party Frames",
-      "author": "nosimo",
-      "tags": [
-        "party",
-        "frames"
-      ],
-      "nsfw": false,
-      "icon": "package",
-      "mods": [
-        {
-          "name": "SeverActions.esp",
-          "file": "severactions.esp",
-          "required": false
-        },
-        {
-          "name": "SeversHearth.esp",
-          "file": "severshearth.esp",
-          "required": false
-        }
-      ],
-      "first_published": "2026-11-17T08:03:21Z",
-      "last_updated": "2026-11-17T08:03:21Z",
-      "version": "0.4.2",
-      "history": [
-        {
-          "version": "0.4.2",
-          "commit": "7a1dfb2cc21631b62e2f84bffe006f47597f2550",
-          "date": "2026-11-17T08:03:21Z",
-          "changelog": "Initial release"
-        }
-      ],
-      "external_url": "https://github.com/Nosimo-SN/PartyFrames-Light/releases/latest",
-      "image": {
-        "file": "cover.png",
-        "sha": "4efc73dc819294d56c9be6fb18444f050dffb28d",
-        "commit": "7a1dfb2cc21631b62e2f84bffe006f47597f2550",
-        "width": 1280,
-        "height": 720
-      },
-      "stats": {
-        "downloads": 19,
         "endorsements": 0
       }
     },
@@ -1049,7 +1109,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 1346,
+        "downloads": 1349,
         "endorsements": 43
       }
     },
@@ -1743,7 +1803,7 @@
         "height": 1008
       },
       "stats": {
-        "downloads": 62,
+        "downloads": 63,
         "endorsements": 0
       }
     },
@@ -3075,7 +3135,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 640,
+        "downloads": 642,
         "endorsements": 10
       }
     },
@@ -3604,7 +3664,7 @@
         "config": 7
       },
       "stats": {
-        "downloads": 802,
+        "downloads": 804,
         "endorsements": 1
       }
     },
@@ -4952,7 +5012,7 @@
         "height": 911
       },
       "stats": {
-        "downloads": 72,
+        "downloads": 73,
         "endorsements": 0
       }
     },
@@ -4986,7 +5046,7 @@
       ],
       "language": "en",
       "stats": {
-        "downloads": 47,
+        "downloads": 48,
         "endorsements": 0
       }
     },
@@ -5020,7 +5080,7 @@
       ],
       "language": "en",
       "stats": {
-        "downloads": 33,
+        "downloads": 34,
         "endorsements": 0
       }
     },
@@ -5104,56 +5164,8 @@
         "config": 4
       },
       "stats": {
-        "downloads": 808,
+        "downloads": 809,
         "endorsements": 3
-      }
-    },
-    {
-      "id": "plugins/phospheneoverdrive/iactions-drunk-for-skyrimnet",
-      "plugin_id": "phospheneoverdrive.iactions-drunk-for-skyrimnet",
-      "type": "listing",
-      "title": "iActions [Drunk+] for SkyrimNet",
-      "tagline": "NPC drinking, intoxication, food, exchange, and related actions for SkyrimNet.",
-      "author": "phospheneoverdrive",
-      "tags": [
-        "dialogue",
-        "immersion",
-        "actions"
-      ],
-      "nsfw": false,
-      "icon": "zap",
-      "mods": [],
-      "first_published": "2026-09-12T21:07:45Z",
-      "last_updated": "2026-10-10T20:32:32Z",
-      "version": "0.6.7",
-      "history": [
-        {
-          "version": "0.6.7",
-          "commit": "453f385a255cf4313628936b2796f6eded89af85",
-          "date": "2026-10-10T20:32:32Z",
-          "changelog": "## What changes in *LEGIT*(*) v0.6.7\n\n- Version 0.6.7 adds compatibility work for Skyrim **1.5.97, 1.6.640, 1.6.1170, 1.7.99 and 1.7.104**. Support for these versions is still being evaluated; **Skyrim VR is not supported**.\n\n- Drinking, food requests, arrow extraction and sobering are now individual actions rather than grouped under Food and Drink / Health and Recovery. Drinking behavior and save formats are unchanged.\n\n\n### Temporary Skyrim 1.7.x workaround\n\nPapyrus MessageBox has not yet been rebuilt for 1.7.x, so **dialog-based drink and food requests are unavailable**. To use those actions without their choice dialogs, configure the iActions MCM before requesting them:\n\n- **Drunk Behavior → Auto-Take Alcohol: ON** for drinks taken from your inventory. If the toggle is greyed out, enable **Require Alcohol in Inventory** first.\n- **Configuration → Auto-Give Food: ON** for food requests. **Auto-Give Max Food Items** controls the transfer limit.\n\n\n> (*) Previous 0.6.7 was a result of SkyrimNet plugin familiarity growing pain. Sorry for any confusion."
-        },
-        {
-          "version": "0.6.6",
-          "commit": "30146b7520a66fca43d6dd69e14beff1f649073c",
-          "date": "2026-09-12T21:07:45Z"
-        }
-      ],
-      "external_url": "https://github.com/Gerkinfeltser/iActions/releases",
-      "languages": [
-        "en"
-      ],
-      "language": "en",
-      "image": {
-        "file": "cover.png",
-        "sha": "c29ff8cf79c041bec811b7e553618dc0a8016fbd",
-        "commit": "e1a0c1437781a994574baf4c862c322271092969",
-        "width": 1672,
-        "height": 941
-      },
-      "stats": {
-        "downloads": 207,
-        "endorsements": 2
       }
     },
     {
@@ -5583,7 +5595,7 @@
         "height": 900
       },
       "stats": {
-        "downloads": 310,
+        "downloads": 311,
         "endorsements": 5
       }
     },
@@ -6065,7 +6077,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 4430,
+        "downloads": 4431,
         "endorsements": 4
       }
     },
@@ -6290,7 +6302,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2532,
+        "downloads": 2535,
         "endorsements": 0
       }
     },
@@ -6560,7 +6572,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 987,
+        "downloads": 988,
         "endorsements": 1
       }
     },
@@ -7055,7 +7067,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2087,
+        "downloads": 2088,
         "endorsements": 2
       }
     },
@@ -7955,7 +7967,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 958,
+        "downloads": 959,
         "endorsements": 0
       }
     },
@@ -8000,7 +8012,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1621,
+        "downloads": 1622,
         "endorsements": 2
       }
     },
@@ -8675,7 +8687,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 44,
+        "downloads": 45,
         "endorsements": 0
       }
     },
@@ -8810,7 +8822,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 782,
+        "downloads": 783,
         "endorsements": 0
       }
     },
@@ -11750,7 +11762,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2353,
+        "downloads": 2354,
         "endorsements": 2
       }
     },
