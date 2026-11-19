@@ -1,21 +1,31 @@
 {
   "id": "tetherball88.m-a-r-a-s-marry-anyone-rule-all-skyrim",
   "type": "listing",
-  "title": "M.A.R.A.S – Marry Anyone, Rule All Skyrim",
-  "tagline": "Dynamic marriage and relationship management with SkyrimNet integration.",
-  "description": "## M.A.R.A.S – Marry Anyone, Rule All Skyrim 💍🐉\n\nV2 in progress - which will allow relationships between npcs, adds new relationship types(lover, dating), children support, open relationship and cheating mechanics, fertility mods integration with possible paternity secrets.\n\nIt is not just SKyrimNet integration it is full mod with mechanics changes and SkyrimNet(though can work without it as well) native support.\n\nM.A.R.A.S (Marry Anyone, Rule All Skyrim) is a dynamic, **ESL-flagged light** marriage overhaul that lets you **marry literally anyone** in Skyrim—jarls, bandits, necromancers, that one shopkeeper who keeps ripping you off… you name it. Build relationships, juggle multiple spouses, unlock powerful buffs, and try not to emotionally (or politically) destabilize the entire province in the process. The mod itself is **SFW**, but it can hook into NSFW/relationship frameworks if *you* choose to install them. With great love comes great responsibility… and occasionally, great chaos. 😇\n\n#### SkyrimNet Integration: Smarter, Chattier, More Alive 💬\n\nM.A.R.A.S runs great without SkyrimNet, but together they’re kind of a power couple:\n\n1. **Conversation-Based Proposals**\n2. **Voices for Everyone**\n3. **AI-Driven Relationship Actions (with Safety Nets)**\n\nResult: your marriages feel more like relationships and less like menu options.",
+  "title": "M.A.R.A.S — Marriage, Affairs, Relationships, Ancestry & Society",
+  "tagline": "Marry anyone, build a multi-home dynasty, train heirs into adult followers, and navigate affairs, paternity scandals, and alimony in a living Skyrim society.",
+  "description": "# 👑 M.A.R.A.S — Marriage, Affairs, Relationships, Ancestry & Society\n> **SFW Core** • **ESL (0 Slots)** • **`Alt + B` Dashboard** • **Classic RPG or SkyrimNet AI**\n\nNot a dating-sim about bouquets or dinners — **M.A.R.A.S** brings ***Crusader Kings* & *The Sims*** household/dynasty drama to Skyrim. Both **you** & **Skyrim's NPCs** marry, run homes, raise heirs, cheat, & suffer costly divorces.\n\n### ⚔️ Highlights\n- **🖥️ `Alt + B` Dashboard:** Manage homes, search all NPCs, track gossip, scale UI (`75–150%`), switch languages, & hide spoilers in **Intrigue Mode**.\n- **💍 Marry Anyone (No Forced Ladder):** Propose **Marriage** right away — or stay **Dating** (exclusive) or **Lovers** (no commitment).\n- **🏰 Households & Perks:** **14 Buffs**, **2x Monogamy** *or* **Polygamy (`1st–4th+`)**, **9 Home Shops** (`100g/day`), **share spouse homes** (palaces too!), & **Stay at Home** toggles for Jarls/merchants.\n- **🧬 Ancestry & 22 Academies:** Unlimited adoptions (you *or* NPC couples!) + dog/critter per kid. With **FMR `1.0.7+` / Beeing Female NG `3.6.4+`**, train kids at **22 Guilds, Shrines & Werewolf Packs** into **Adult Followers** with inherited looks & **Beastblood**!\n- **🎭 Affairs, Society & Alimony:** Open relationships, **Partner Agency**, paternity scandals, **Alimony**, **NPC matchmaking**, & **town/tavern couple scenes**.\n\n### 🎭 Two Ways to Play\n- **🎲 Classic (No SkyrimNet):** Full `(M)` menus, **Marriage Chance & Prestige** checks (Affection, Speech, gold, homes, fame, guilds), Persuasion rolls, & dice simulation.\n- **🤖 SkyrimNet AI:** `(M)` proposal/affair menus hide for **18 AI actions** — **no stat rolls on proposals** (history & persuasion decide!), **TTS voice**, **\"no psychic spouses\"** secrecy, & child-to-adult memories.\n\n**⚙️ Req:** SKSE64 • Address Library • Magelight UI • SkyUI • PapyrusUtil • po3 Extender\n**📚 Docs:** <",
   "author": "tetherball88",
   "tags": [
     "marriage",
+    "dating",
     "relationships",
-    "immersion",
-    "character_bio"
+    "polygamy",
+    "affairs",
+    "divorce",
+    "children",
+    "adoption",
+    "family",
+    "matchmaking",
+    "skyrimnet"
   ],
   "nsfw": false,
   "icon": "characters",
   "mods": [],
-  "image": "cover.png",
+  "languages": [
+    "en"
+  ],
+  "image": "cover.jpg",
   "external_url": "https://github.com/tetherball88/maras/releases/latest",
-  "version": "0.11.0",
-  "changelog": "replaced cover image"
+  "version": "2.6.0",
+  "changelog": "- IMPORTANT: Switched the in-game Dashboard (Alt + B) and pop-ups from Prisma UI to Magelight UI (Prisma UI is no longer required).\n- Child Training & Grown Adult Offspring: Send young children to 22 guilds, colleges, temples, Daedric shrines, and Werewolf packs (with parent faction discounts), then spawn them as full-grown adult adventurers and followers who inherit parent looks, Werewolf Beastblood, and childhood SkyrimNet memories.\n- Multi-Language Support: Full localization system with an in-game Language selector + live Reload button, plus a complete Ukrainian translation pack.\n- Fertility Mod Improvements (FMR & Beeing Female NG): Added an interactive Child Naming window, blocked legacy MCM child buttons from breaking records, and added first-load Import Checklists for existing pregnancies and adopted kids.\n- Save Upgrade Protection & Performance: Major background speedups, smoother family relocations, automatic save-migration safety checks, and fixes for loading freezes, Intrigue Mode spoilers, shared spouse homes, and child greetings."
 }
