@@ -1,0 +1,33 @@
+{
+  "id": "thatguy.ostim-beast-form-and-olord",
+  "type": "listing",
+  "title": "Ostim Beast Form and OLord",
+  "tagline": "Werewolf and Vampire Lord scenes for OStim, with SkyrimNet awareness, a hub menu, beast skin swaps, and ready-made patches for Vanilla, TWO and Growl setups.",
+  "description": "# Let out your inner beast, be it a werewolf or vampire lord. Just because the sun goes down doesn't have to mean you do.\n\n### Features\n- Werewolf and Vampire Lord scenes, with a hub menu for picking them\n- Aroused skin swap for beast forms\n- SkyrimNet / OStimNet integration, so NPCs react to beast-form scenes\n- Independent of OCreatures\n- Compatible if OCreatures is installed\n- Framework for werebears and Vampire Lord bodies, ready for when suitable bodies are available\n(Works with ABC vampires and the like. Read Github and open the actual Fomod to see placement order)\n\n### Requirements\n- Refer to the\n\n### Optional patches (all on the GitHub release)\n- WVL 0.3.1 Patch: custom icons and human-first female werewolf scenes. This is a patch only, so Lirael's pack is still required.\n- Herm / Futa Patch\n- Softbody Tullius Patches\n- OStrands with Werewolves\n\n3 ways to install based on your setup. (Vanilla, Growl, or TWO)\n\nFor bug hunting video and showcasing (No, it's not like that) check out\n\nPlease don't message for missing or unsuitable animations, nor alignment issues. I spent a whole day tracking them down only to find out it was the animation packs that authors did wrong, not this mod. Also, if animations don't exist, they obviously can't be played.",
+  "author": "thatguy",
+  "tags": [
+    "OStim",
+    "Werewolf",
+    "Vampire Lord",
+    "Beast Form",
+    "Creatures",
+    "SkyrimNet",
+    "OStimNet",
+    "Animation",
+    "Adult",
+    "NSFW",
+    "Patch",
+    "Growl",
+    "TWO"
+  ],
+  "nsfw": true,
+  "icon": "skull",
+  "mods": [],
+  "languages": [
+    "en"
+  ],
+  "image": "cover.jpg",
+  "external_url": "https://github.com/Coronerra/OStim-Beast-Form/",
+  "version": "1.0.1",
+  "changelog": "Initial release"
+}
