@@ -16,43 +16,8 @@
   "icon": "brain",
   "mods": [
     {
-      "name": "SexLabDefeat.esp",
-      "file": "sexlabdefeat.esp",
-      "required": false
-    },
-    {
       "name": "Dirt and Blood - Dynamic Visuals.esp",
       "file": "dirt and blood - dynamic visuals.esp",
-      "required": false
-    },
-    {
-      "name": "Dirt and Blood - Malignis Animations Patch.esp",
-      "file": "dirt and blood - malignis animations patch.esp",
-      "required": false
-    },
-    {
-      "name": "Blood and OStim.esp",
-      "file": "blood and ostim.esp",
-      "required": false
-    },
-    {
-      "name": "Sacrosanct - Vampires of Skyrim.esp",
-      "file": "sacrosanct - vampires of skyrim.esp",
-      "required": false
-    },
-    {
-      "name": "Growl - Werebeasts of Skyrim.esp",
-      "file": "growl - werebeasts of skyrim.esp",
-      "required": false
-    },
-    {
-      "name": "CC Misc Patches - Saturalia Holiday Pack.esp",
-      "file": "cc misc patches - saturalia holiday pack.esp",
-      "required": false
-    },
-    {
-      "name": "OCreatures.esp",
-      "file": "ocreatures.esp",
       "required": false
     }
   ],
@@ -61,6 +26,6 @@
   ],
   "image": "cover.jpg",
   "external_url": "https://github.com/Coronerra/ODeadly-Skyrim",
-  "version": "1.0.1",
-  "changelog": "O'Deadly Skyrim 0.7.0 --> 1.0.1 (A SkyrimNet environmental mod) by That Guy (Coronerra).\n\nLot's of changes and additions:\n- A fix so nobody stays stuck lying in bed or sitting while a scene plays around them. It's a fix, not a new feature. \n- Savior Complex (Random travelers on the roads may be taken by bandits. Do you save them?)\n- Killer Rabbit vs Vigilants (Think Monty Python)\n- Join in (with take-over)\n- Wild creatures\n- Werewolves at night\n- OSTIM Beast Form integration, transform offers (take a beaten bandit, or claim your spouse or a companion)\n- Bitch in Heat (If a werewolf has sex outside in beast form, other werewolves may hear and smell it to join in.)\n- Blood Born Pathogen (Chance of infecting lovers with vampirism or werewolfism)\n- Saturalia, People talk about it for the three days leading up to it. On Saturalia, you may see Agrane Peryval giving out gifts."
+  "version": "1.1.8",
+  "changelog": "Lot's of Ostim Beast Form integration.\nNo popups: nothing pops up at OStim scene start anymore, and the number of beasts who join is set with an MCM slider.\nPathogen debugging: you get on-screen infection reasons, a log in ODeadlySkyrim.log, a Debug block in the MCM, and a timer fix.\nBeast transforms: infected NPCs can transform on demand through SkyrimNet, which now works for Growl followers too. O'Deadly takes over beast handling from Growl, and has soft support for Sacrosanct.\nInvisible body fix: NPCs with their own skin no longer turn invisible when they transform. The skin swaps on transform and gets restored afterwards.\nBitch in Heat: it now covers werewolves, werebears and Vampire Lords, and only triggers while someone is actually in beast form. It uses the WVL 0.3.1 scenes, Vampire Lords and werebears take turns, and mixed packs are allowed.\nVampire followers: there's a new option, off by default, that lets existing vampire followers become Vampire Lords.\nLore beasts: Serana can become a Vampire Lord, and Kodlak, Skjor, Aela, Farkas and Vilkas can become werewolves, right from the start. Harkon isn't touched."
 }
