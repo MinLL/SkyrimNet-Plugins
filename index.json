@@ -1,8 +1,60 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-11-19T03:36:40.700Z",
-  "stats_as_of": "2026-11-19T03:36:40.606Z",
+  "generated_at": "2026-11-19T03:38:43.561Z",
+  "stats_as_of": "2026-11-19T03:38:43.496Z",
   "plugins": [
+    {
+      "id": "plugins/taka/sn-sexual-memories",
+      "plugin_id": "taka.sn-sexual-memories",
+      "type": "listing",
+      "title": "SN Sexual Memories",
+      "tagline": "Every OStim or SexLab scene becomes a memory for the characters who took part and for one bystander who saw it, and NPCs speak during scenes.",
+      "author": "taka",
+      "tags": [
+        "memories",
+        "ostim",
+        "sexlab",
+        "witness",
+        "dialogue"
+      ],
+      "nsfw": true,
+      "icon": "heart",
+      "mods": [
+        {
+          "name": "SN_SexualHistory.esp",
+          "file": "sn_sexualhistory.esp",
+          "required": true
+        }
+      ],
+      "first_published": "2026-11-19T03:38:05Z",
+      "last_updated": "2026-11-19T03:38:05Z",
+      "version": "0.2.1",
+      "history": [
+        {
+          "version": "0.2.1",
+          "commit": "4212abce85aa1fa67618dc57d845b56125bf2817",
+          "date": "2026-11-19T03:38:05Z",
+          "changelog": "First version on the Hub. Memories of each OStim or SexLab scene for everyone who took part and for one bystander who saw it, lines from the NPCs during scenes, and an MCM in English or Japanese."
+        }
+      ],
+      "external_url": "https://github.com/nightlantern-mods/SN_SexualMemories",
+      "languages": [
+        "en",
+        "ja"
+      ],
+      "language": "en",
+      "image": {
+        "file": "cover.jpg",
+        "sha": "e0267182ece52ff4f9c7490bedf7241dc3a27866",
+        "commit": "4212abce85aa1fa67618dc57d845b56125bf2817",
+        "width": 1920,
+        "height": 1080
+      },
+      "stats": {
+        "downloads": 0,
+        "endorsements": 0
+      }
+    },
     {
       "id": "plugins/goodprovider/skyrimnet-sexlab",
       "plugin_id": "goodprovider.skyrimnet-sexlab",
@@ -574,7 +626,7 @@
         "height": 1152
       },
       "stats": {
-        "downloads": 553,
+        "downloads": 554,
         "endorsements": 10
       }
     },
@@ -1669,7 +1721,7 @@
         "height": 720
       },
       "stats": {
-        "downloads": 43,
+        "downloads": 44,
         "endorsements": 0
       }
     },
@@ -2098,7 +2150,7 @@
         "height": 760
       },
       "stats": {
-        "downloads": 303,
+        "downloads": 304,
         "endorsements": 0
       }
     },
