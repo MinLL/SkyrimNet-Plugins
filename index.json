@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-11-19T09:04:57.590Z",
-  "stats_as_of": "2026-11-19T09:03:50.619Z",
+  "generated_at": "2026-11-19T09:24:25.187Z",
+  "stats_as_of": "2026-11-19T09:24:25.058Z",
   "plugins": [
     {
       "id": "plugins/taka/sn-sexual-memories",
@@ -58,7 +58,7 @@
         "height": 1080
       },
       "stats": {
-        "downloads": 6,
+        "downloads": 8,
         "endorsements": 0
       }
     },
@@ -1461,7 +1461,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 1363,
+        "downloads": 1364,
         "endorsements": 43
       }
     },
@@ -1616,7 +1616,7 @@
         "height": 720
       },
       "stats": {
-        "downloads": 169,
+        "downloads": 170,
         "endorsements": 1
       }
     },
@@ -3157,7 +3157,7 @@
         "height": 1080
       },
       "stats": {
-        "downloads": 134,
+        "downloads": 135,
         "endorsements": 3
       }
     },
@@ -3601,7 +3601,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 107,
+        "downloads": 108,
         "endorsements": 2
       }
     },
@@ -5070,7 +5070,7 @@
         "height": 1008
       },
       "stats": {
-        "downloads": 44,
+        "downloads": 45,
         "endorsements": 0
       }
     },
