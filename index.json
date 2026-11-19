@@ -1,8 +1,65 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-11-19T03:38:43.561Z",
-  "stats_as_of": "2026-11-19T03:38:43.496Z",
+  "generated_at": "2026-11-19T03:45:49.398Z",
+  "stats_as_of": "2026-11-19T03:45:49.344Z",
   "plugins": [
+    {
+      "id": "plugins/tetherball88/m-a-r-a-s-marry-anyone-rule-all-skyrim",
+      "plugin_id": "tetherball88.m-a-r-a-s-marry-anyone-rule-all-skyrim",
+      "type": "listing",
+      "title": "M.A.R.A.S — Marriage, Affairs, Relationships, Ancestry & Society",
+      "tagline": "Marry anyone, build a multi-home dynasty, train heirs into adult followers, and navigate affairs, paternity scandals, and alimony in a living Skyrim society.",
+      "author": "tetherball88",
+      "tags": [
+        "marriage",
+        "dating",
+        "relationships",
+        "polygamy",
+        "affairs",
+        "divorce",
+        "children",
+        "adoption",
+        "family",
+        "matchmaking",
+        "skyrimnet"
+      ],
+      "nsfw": false,
+      "icon": "characters",
+      "mods": [],
+      "first_published": "2026-09-26T05:19:29Z",
+      "last_updated": "2026-11-19T03:45:16Z",
+      "version": "2.6.0",
+      "history": [
+        {
+          "version": "2.6.0",
+          "commit": "bf79f85d8240cac3a638edf1ec8c4cb3b0a02681",
+          "date": "2026-11-19T03:45:16Z",
+          "changelog": "- IMPORTANT: Switched the in-game Dashboard (Alt + B) and pop-ups from Prisma UI to Magelight UI (Prisma UI is no longer required).\n- Child Training & Grown Adult Offspring: Send young children to 22 guilds, colleges, temples, Daedric shrines, and Werewolf packs (with parent faction discounts), then spawn them as full-grown adult adventurers and followers who inherit parent looks, Werewolf Beastblood, and childhood SkyrimNet memories.\n- Multi-Language Support: Full localization system with an in-game Language selector + live Reload button, plus a complete Ukrainian translation pack.\n- Fertility Mod Improvements (FMR & Beeing Female NG): Added an interactive Child Naming window, blocked legacy MCM child buttons from breaking records, and added first-load Import Checklists for existing pregnancies and adopted kids.\n- Save Upgrade Protection & Performance: Major background speedups, smoother family relocations, automatic save-migration safety checks, and fixes for loading freezes, Intrigue Mode spoilers, shared spouse homes, and child greetings."
+        },
+        {
+          "version": "0.11.0",
+          "commit": "86fcbec28b66df804a302b404b41c6430dcf3f53",
+          "date": "2026-09-26T05:34:52Z",
+          "changelog": "replaced cover image"
+        }
+      ],
+      "external_url": "https://github.com/tetherball88/maras/releases/latest",
+      "languages": [
+        "en"
+      ],
+      "language": "en",
+      "image": {
+        "file": "cover.jpg",
+        "sha": "863ce72556269afa880f2fdb67cfe857c37b749e",
+        "commit": "bf79f85d8240cac3a638edf1ec8c4cb3b0a02681",
+        "width": 1376,
+        "height": 768
+      },
+      "stats": {
+        "downloads": 151,
+        "endorsements": 2
+      }
+    },
     {
       "id": "plugins/taka/sn-sexual-memories",
       "plugin_id": "taka.sn-sexual-memories",
@@ -5222,7 +5279,7 @@
         "config": 4
       },
       "stats": {
-        "downloads": 816,
+        "downloads": 817,
         "endorsements": 3
       }
     },
@@ -5794,46 +5851,6 @@
       }
     },
     {
-      "id": "plugins/tetherball88/m-a-r-a-s-marry-anyone-rule-all-skyrim",
-      "plugin_id": "tetherball88.m-a-r-a-s-marry-anyone-rule-all-skyrim",
-      "type": "listing",
-      "title": "M.A.R.A.S – Marry Anyone, Rule All Skyrim",
-      "tagline": "Dynamic marriage and relationship management with SkyrimNet integration.",
-      "author": "tetherball88",
-      "tags": [
-        "marriage",
-        "relationships",
-        "immersion",
-        "character_bio"
-      ],
-      "nsfw": false,
-      "icon": "characters",
-      "mods": [],
-      "first_published": "2026-09-26T05:19:29Z",
-      "last_updated": "2026-09-26T05:34:52Z",
-      "version": "0.11.0",
-      "history": [
-        {
-          "version": "0.11.0",
-          "commit": "86fcbec28b66df804a302b404b41c6430dcf3f53",
-          "date": "2026-09-26T05:34:52Z",
-          "changelog": "replaced cover image"
-        }
-      ],
-      "external_url": "https://github.com/tetherball88/maras/releases/latest",
-      "image": {
-        "file": "cover.png",
-        "sha": "9ba31036a430d1352ef2bea2891409d9e31ba438",
-        "commit": "86fcbec28b66df804a302b404b41c6430dcf3f53",
-        "width": 2048,
-        "height": 1152
-      },
-      "stats": {
-        "downloads": 151,
-        "endorsements": 2
-      }
-    },
-    {
       "id": "plugins/phospheneoverdrive/lore-accurate-dagoth-ur-follower-bios",
       "plugin_id": "phospheneoverdrive.lore-accurate-dagoth-ur-follower-bios",
       "type": "bundle",
@@ -6360,7 +6377,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2540,
+        "downloads": 2541,
         "endorsements": 0
       }
     },
@@ -7125,7 +7142,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2102,
+        "downloads": 2103,
         "endorsements": 2
       }
     },
@@ -7845,7 +7862,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2431,
+        "downloads": 2432,
         "endorsements": 3
       }
     },
@@ -10335,7 +10352,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 848,
+        "downloads": 849,
         "endorsements": 0
       }
     },
@@ -14970,7 +14987,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 3447,
+        "downloads": 3448,
         "endorsements": 2
       }
     },
