@@ -1,0 +1,32 @@
+{
+  "id": "taka.sn-sexual-memories",
+  "type": "listing",
+  "title": "SN Sexual Memories",
+  "tagline": "Every OStim or SexLab scene becomes a memory for the characters who took part and for one bystander who saw it, and NPCs speak during scenes.",
+  "description": "**For adult players.** A SkyrimNet add-on for OStim Standalone or SexLab (P+ or 1.6x).\n\nEvery intimate scene is remembered and talked about, by SkyrimNet's AI.\n\n## Memories of the scene\nWhen a scene ends, each character who took part, the player included, gets a first-person memory of it, stored as their own SkyrimNet memory. It says who took part, where and when, what happened (the animations, the acts, who climaxed), what was said around it, and how they felt and how the others seemed to feel, drawing on their earlier memories of each other. NPCs then recall it in later conversations like anything else they lived through.\n\n## A witness remembers too\nOne bystander who saw the scene, picked at random among the NPCs nearby with the scene in sight, gets a memory of whom they saw, doing what, and how they took it, true to their own character and their relationship with those involved. Children and sleeping NPCs are never picked, and when nobody saw it, nobody gets a memory.\n\n## Lines during scenes\nEvery so often an NPC in a running scene says a line about what is happening, written and voiced by SkyrimNet. With several NPCs, they take turns, and nothing is said while SkyrimNet is still speaking. With OStimNet installed, the lines use its description of the scene.\n\n## Settings\nAn MCM turns the witness memories and the lines on or off, and sets how often lines are said, whether your own scenes get them, and how far away you can hear them. The memories of the participants are always made. Every memory has an importance of at least 0.8.\n\n## In the dashboard\nThe memories made by this mod show \"[Sexual Memories]\" or \"[Sexual Memories / Witness]\" after the emotion in the memory list.\n\n## Requirements\nSKSE64, Address Library, SkyrimNet with an AI model set up, OStim Standalone or SexLab, SkyUI and MCM Helper. OStimNet is optional. It adds no prompt that replaces one of SkyrimNet's own.\n\n## Known limits\nTested on Skyrim 1.6.1170 with SkyrimNet 1.1.1. The installer offers the settings menu in English or Japanese; the memories are written in the language your game's SkyrimNet uses.",
+  "author": "taka",
+  "tags": [
+    "memories",
+    "ostim",
+    "sexlab",
+    "witness",
+    "dialogue"
+  ],
+  "nsfw": true,
+  "icon": "heart",
+  "mods": [
+    {
+      "name": "SN_SexualHistory.esp",
+      "file": "sn_sexualhistory.esp",
+      "required": true
+    }
+  ],
+  "languages": [
+    "en",
+    "ja"
+  ],
+  "image": "cover.jpg",
+  "external_url": "https://github.com/nightlantern-mods/SN_SexualMemories",
+  "version": "0.2.1",
+  "changelog": "First version on the Hub. Memories of each OStim or SexLab scene for everyone who took part and for one bystander who saw it, lines from the NPCs during scenes, and an MCM in English or Japanese."
+}
