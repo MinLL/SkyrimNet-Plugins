@@ -1,8 +1,67 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-11-19T08:26:25.922Z",
-  "stats_as_of": "2026-11-19T08:26:25.809Z",
+  "generated_at": "2026-11-19T09:04:57.590Z",
+  "stats_as_of": "2026-11-19T09:03:50.619Z",
   "plugins": [
+    {
+      "id": "plugins/taka/sn-sexual-memories",
+      "plugin_id": "taka.sn-sexual-memories",
+      "type": "listing",
+      "title": "SN Sexual Memories",
+      "tagline": "Every OStim or SexLab scene becomes a memory for those who took part and for a bystander who saw it, NPCs talk about it, and a relationship map shows what lies between the people around you.",
+      "author": "taka",
+      "tags": [
+        "memories",
+        "ostim",
+        "sexlab",
+        "witness",
+        "dialogue",
+        "relationships"
+      ],
+      "nsfw": true,
+      "icon": "heart",
+      "mods": [
+        {
+          "name": "SN_SexualHistory.esp",
+          "file": "sn_sexualhistory.esp",
+          "required": true
+        }
+      ],
+      "first_published": "2026-11-19T03:38:05Z",
+      "last_updated": "2026-11-19T09:04:26Z",
+      "version": "0.4.0",
+      "history": [
+        {
+          "version": "0.4.0",
+          "commit": "f4ec7de70102d4a290e27cb7182bd0de5c7b032f",
+          "date": "2026-11-19T09:04:26Z",
+          "changelog": "Changes since 0.2.1, the last version on the Hub.\n\n**New**\n- **Relationship map** (needs Magelight UI or Prisma UI). Press a key (Y by default) and choose yourself or an NPC nearby: SkyrimNet's AI writes what lies between them and up to ten people around you: what happened between them, in order, how each feels about the other, the key events, and how the others are tied to each other. It reads both sides' memories, their diaries and SkyrimNet's events, and writes only what those records say. Maps are saved per save; Refresh remakes one, and a button remakes it in English. With Phantasm installed, faces are shown.\n- **Complaints about a partner.** Now and then an NPC near you who has a husband, wife or lover complains to you about them, only while that partner is too far away to overhear.\n- **Your character speaks up** (off by default). Now and then your character says something to an NPC nearby, drawing on what just happened, on your character's memories and on how the two of you stand. It is voiced when SkyrimNet voices the player, shown as a subtitle, and the NPC answers.\n\n**Changed**\n- **Memories fit the kind of encounter.** The AI first judges what the encounter was for each person (loving, casual, paid, a duty, reluctant or forced) from what happened before and during it. Sex is no longer taken as affection.\n- New MCM settings for each feature, so any of them can be turned off."
+        },
+        {
+          "version": "0.2.1",
+          "commit": "4212abce85aa1fa67618dc57d845b56125bf2817",
+          "date": "2026-11-19T03:38:05Z",
+          "changelog": "First version on the Hub. Memories of each OStim or SexLab scene for everyone who took part and for one bystander who saw it, lines from the NPCs during scenes, and an MCM in English or Japanese."
+        }
+      ],
+      "external_url": "https://github.com/nightlantern-mods/SN_SexualMemories",
+      "languages": [
+        "en",
+        "ja"
+      ],
+      "language": "en",
+      "image": {
+        "file": "cover.jpg",
+        "sha": "e0267182ece52ff4f9c7490bedf7241dc3a27866",
+        "commit": "4212abce85aa1fa67618dc57d845b56125bf2817",
+        "width": 1920,
+        "height": 1080
+      },
+      "stats": {
+        "downloads": 6,
+        "endorsements": 0
+      }
+    },
     {
       "id": "plugins/thatguy/o-deadly-skyrim",
       "plugin_id": "thatguy.o-deadly-skyrim",
@@ -68,7 +127,7 @@
         "height": 720
       },
       "stats": {
-        "downloads": 88,
+        "downloads": 89,
         "endorsements": 0
       }
     },
@@ -235,60 +294,8 @@
         "height": 768
       },
       "stats": {
-        "downloads": 155,
+        "downloads": 158,
         "endorsements": 2
-      }
-    },
-    {
-      "id": "plugins/taka/sn-sexual-memories",
-      "plugin_id": "taka.sn-sexual-memories",
-      "type": "listing",
-      "title": "SN Sexual Memories",
-      "tagline": "Every OStim or SexLab scene becomes a memory for the characters who took part and for one bystander who saw it, and NPCs speak during scenes.",
-      "author": "taka",
-      "tags": [
-        "memories",
-        "ostim",
-        "sexlab",
-        "witness",
-        "dialogue"
-      ],
-      "nsfw": true,
-      "icon": "heart",
-      "mods": [
-        {
-          "name": "SN_SexualHistory.esp",
-          "file": "sn_sexualhistory.esp",
-          "required": true
-        }
-      ],
-      "first_published": "2026-11-19T03:38:05Z",
-      "last_updated": "2026-11-19T03:38:05Z",
-      "version": "0.2.1",
-      "history": [
-        {
-          "version": "0.2.1",
-          "commit": "4212abce85aa1fa67618dc57d845b56125bf2817",
-          "date": "2026-11-19T03:38:05Z",
-          "changelog": "First version on the Hub. Memories of each OStim or SexLab scene for everyone who took part and for one bystander who saw it, lines from the NPCs during scenes, and an MCM in English or Japanese."
-        }
-      ],
-      "external_url": "https://github.com/nightlantern-mods/SN_SexualMemories",
-      "languages": [
-        "en",
-        "ja"
-      ],
-      "language": "en",
-      "image": {
-        "file": "cover.jpg",
-        "sha": "e0267182ece52ff4f9c7490bedf7241dc3a27866",
-        "commit": "4212abce85aa1fa67618dc57d845b56125bf2817",
-        "width": 1920,
-        "height": 1080
-      },
-      "stats": {
-        "downloads": 5,
-        "endorsements": 0
       }
     },
     {
@@ -442,7 +449,7 @@
         "height": 432
       },
       "stats": {
-        "downloads": 385,
+        "downloads": 386,
         "endorsements": 5
       }
     },
@@ -629,7 +636,7 @@
         "height": 720
       },
       "stats": {
-        "downloads": 177,
+        "downloads": 178,
         "endorsements": 1
       }
     },
@@ -753,7 +760,7 @@
         "height": 1080
       },
       "stats": {
-        "downloads": 178,
+        "downloads": 179,
         "endorsements": 4
       }
     },
@@ -862,7 +869,7 @@
         "height": 1152
       },
       "stats": {
-        "downloads": 559,
+        "downloads": 560,
         "endorsements": 10
       }
     },
@@ -1358,7 +1365,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 386,
+        "downloads": 387,
         "endorsements": 6
       }
     },
@@ -1454,7 +1461,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 1361,
+        "downloads": 1363,
         "endorsements": 43
       }
     },
@@ -1712,7 +1719,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 498,
+        "downloads": 499,
         "endorsements": 11
       }
     },
@@ -2196,7 +2203,7 @@
         "height": 1152
       },
       "stats": {
-        "downloads": 298,
+        "downloads": 301,
         "endorsements": 0
       }
     },
@@ -2288,7 +2295,7 @@
         "height": 760
       },
       "stats": {
-        "downloads": 306,
+        "downloads": 307,
         "endorsements": 0
       }
     },
@@ -2998,7 +3005,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 95,
+        "downloads": 96,
         "endorsements": 0
       }
     },
@@ -3227,7 +3234,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 644,
+        "downloads": 645,
         "endorsements": 10
       }
     },
@@ -3327,7 +3334,7 @@
         "height": 1080
       },
       "stats": {
-        "downloads": 135,
+        "downloads": 136,
         "endorsements": 1
       }
     },
@@ -3430,7 +3437,7 @@
         "height": 688
       },
       "stats": {
-        "downloads": 157,
+        "downloads": 159,
         "endorsements": 0
       }
     },
@@ -3756,7 +3763,7 @@
         "config": 7
       },
       "stats": {
-        "downloads": 821,
+        "downloads": 822,
         "endorsements": 1
       }
     },
@@ -5256,7 +5263,7 @@
         "config": 4
       },
       "stats": {
-        "downloads": 821,
+        "downloads": 822,
         "endorsements": 3
       }
     },
@@ -5647,7 +5654,7 @@
       ],
       "external_url": "https://github.com/naitro2010/SkyrimNet_UDNG/releases/tag/alpha12",
       "stats": {
-        "downloads": 172,
+        "downloads": 173,
         "endorsements": 4
       }
     },
@@ -5994,7 +6001,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2301,
+        "downloads": 2302,
         "endorsements": 2
       }
     },
@@ -6354,7 +6361,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2547,
+        "downloads": 2549,
         "endorsements": 0
       }
     },
