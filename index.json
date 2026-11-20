@@ -1,8 +1,106 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-11-20T22:22:41.824Z",
-  "stats_as_of": "2026-11-20T22:22:41.734Z",
+  "generated_at": "2026-11-20T23:21:36.344Z",
+  "stats_as_of": "2026-11-20T23:21:36.249Z",
   "plugins": [
+    {
+      "id": "plugins/nosimo/nos-inworld-2-audio-tags",
+      "plugin_id": "nosimo.nos-inworld-2-audio-tags",
+      "type": "bundle",
+      "title": "Nos 2 Audio Tags",
+      "tagline": "Audio tagging for inworld 2, eleven labs, fateless TTS",
+      "author": "nosimo",
+      "tags": [
+        "inworld",
+        "audio",
+        "tags",
+        "tts",
+        "eleven",
+        "lab",
+        "elven"
+      ],
+      "nsfw": false,
+      "icon": "voice",
+      "mods": [],
+      "first_published": "2026-10-02T23:59:14Z",
+      "last_updated": "2026-11-20T23:21:02Z",
+      "version": "1.5.0",
+      "min_skyrimnet_version": "1.3.0",
+      "history": [
+        {
+          "version": "1.5.0",
+          "commit": "bdae0c32b741144edd97e4ce4fda52b02675f45f",
+          "date": "2026-11-20T23:21:02Z",
+          "changelog": "Fixed empty example tags from displaying, added explicit instructions not to use tagging which may slow speech."
+        },
+        {
+          "version": "1.4.0",
+          "commit": "ed6472c78592c1fc939ce16a89219fd616e1ec12",
+          "date": "2026-11-15T02:52:04Z",
+          "changelog": "Longer instructions from earlier versions restored, Fateless now uses the older long Inworld tagging as well as Inworld and Elevenlabs. Still cache enabled. NO REASON TO UPDATE IF YOU ARE HAPPY WITH YOUR VOICES, this \"should\" make them more expressive for the people who liked the older version."
+        },
+        {
+          "version": "1.3.0",
+          "commit": "ff157712ceb128a84bf3b3b06ae4df5e26d9166c",
+          "date": "2026-11-01T19:47:15Z",
+          "changelog": "Inworld now shares default Fateless instructions.  Cache enabled."
+        },
+        {
+          "version": "1.2.0",
+          "commit": "fecb4c8ef2e0bc9bc6bb877c13ea356fbb525d50",
+          "date": "2026-10-14T22:04:53Z",
+          "changelog": "Shortened inworld/eleven labs prompt instructions ~50%"
+        },
+        {
+          "version": "1.1.0",
+          "commit": "848d0d857d5a24756ca448c91d0a6eccf7099428",
+          "date": "2026-10-04T03:36:38Z",
+          "changelog": "Seperate Eleven labs support based on v4 tagging guidelines"
+        },
+        {
+          "version": "1.0.3",
+          "commit": "e7b124a86fa177f192d56d28757be7e68701ab75",
+          "date": "2026-10-04T01:14:43Z",
+          "changelog": "Rough Eleven lab support using inworld tt2 instructions, will refine as I play with it"
+        },
+        {
+          "version": "1.0.1",
+          "commit": "fc3dad764f7bea579b2120a44e47dbec762f60f7",
+          "date": "2026-10-03T02:01:36Z",
+          "changelog": "Removed NSFW example"
+        },
+        {
+          "version": "1.0.0",
+          "commit": "6a9bec5677486237968d14e4832c14eb0a179c4f",
+          "date": "2026-10-02T23:59:14Z",
+          "changelog": "Initial release"
+        }
+      ],
+      "languages": [
+        "en"
+      ],
+      "language": "en",
+      "image": {
+        "file": "cover.png",
+        "sha": "09a87069d4babfa7575d309e5f08db2f852fe0d0",
+        "commit": "fc3dad764f7bea579b2120a44e47dbec762f60f7",
+        "width": 1280,
+        "height": 720
+      },
+      "contents": {
+        "triggers": 0,
+        "actions": 0,
+        "prompts": 1,
+        "bios": 0,
+        "knowledge": 0,
+        "entities": 0,
+        "config": 0
+      },
+      "stats": {
+        "downloads": 606,
+        "endorsements": 6
+      }
+    },
     {
       "id": "plugins/tetherball88/ostimnet",
       "plugin_id": "tetherball88.ostimnet",
@@ -120,7 +218,7 @@
         "height": 1152
       },
       "stats": {
-        "downloads": 583,
+        "downloads": 585,
         "endorsements": 10
       }
     },
@@ -196,7 +294,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 203,
+        "downloads": 204,
         "endorsements": 1
       }
     },
@@ -733,7 +831,7 @@
         "height": 432
       },
       "stats": {
-        "downloads": 411,
+        "downloads": 412,
         "endorsements": 5
       }
     },
@@ -842,7 +940,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 521,
+        "downloads": 522,
         "endorsements": 11
       }
     },
@@ -1022,7 +1120,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 226,
+        "downloads": 227,
         "endorsements": 2
       }
     },
@@ -1155,7 +1253,7 @@
         "height": 720
       },
       "stats": {
-        "downloads": 184,
+        "downloads": 185,
         "endorsements": 1
       }
     },
@@ -1873,98 +1971,6 @@
       "stats": {
         "downloads": 1394,
         "endorsements": 43
-      }
-    },
-    {
-      "id": "plugins/nosimo/nos-inworld-2-audio-tags",
-      "plugin_id": "nosimo.nos-inworld-2-audio-tags",
-      "type": "bundle",
-      "title": "Nos 2 Audio Tags",
-      "tagline": "Audio tagging for inworld 2, eleven labs",
-      "author": "nosimo",
-      "tags": [
-        "inworld",
-        "audio",
-        "tags",
-        "tts",
-        "eleven",
-        "lab",
-        "elven"
-      ],
-      "nsfw": false,
-      "icon": "voice",
-      "mods": [],
-      "first_published": "2026-10-02T23:59:14Z",
-      "last_updated": "2026-11-15T02:52:04Z",
-      "version": "1.4.0",
-      "min_skyrimnet_version": "1.2.0",
-      "history": [
-        {
-          "version": "1.4.0",
-          "commit": "ed6472c78592c1fc939ce16a89219fd616e1ec12",
-          "date": "2026-11-15T02:52:04Z",
-          "changelog": "Longer instructions from earlier versions restored, Fateless now uses the older long Inworld tagging as well as Inworld and Elevenlabs. Still cache enabled. NO REASON TO UPDATE IF YOU ARE HAPPY WITH YOUR VOICES, this \"should\" make them more expressive for the people who liked the older version."
-        },
-        {
-          "version": "1.3.0",
-          "commit": "ff157712ceb128a84bf3b3b06ae4df5e26d9166c",
-          "date": "2026-11-01T19:47:15Z",
-          "changelog": "Inworld now shares default Fateless instructions.  Cache enabled."
-        },
-        {
-          "version": "1.2.0",
-          "commit": "fecb4c8ef2e0bc9bc6bb877c13ea356fbb525d50",
-          "date": "2026-10-14T22:04:53Z",
-          "changelog": "Shortened inworld/eleven labs prompt instructions ~50%"
-        },
-        {
-          "version": "1.1.0",
-          "commit": "848d0d857d5a24756ca448c91d0a6eccf7099428",
-          "date": "2026-10-04T03:36:38Z",
-          "changelog": "Seperate Eleven labs support based on v4 tagging guidelines"
-        },
-        {
-          "version": "1.0.3",
-          "commit": "e7b124a86fa177f192d56d28757be7e68701ab75",
-          "date": "2026-10-04T01:14:43Z",
-          "changelog": "Rough Eleven lab support using inworld tt2 instructions, will refine as I play with it"
-        },
-        {
-          "version": "1.0.1",
-          "commit": "fc3dad764f7bea579b2120a44e47dbec762f60f7",
-          "date": "2026-10-03T02:01:36Z",
-          "changelog": "Removed NSFW example"
-        },
-        {
-          "version": "1.0.0",
-          "commit": "6a9bec5677486237968d14e4832c14eb0a179c4f",
-          "date": "2026-10-02T23:59:14Z",
-          "changelog": "Initial release"
-        }
-      ],
-      "languages": [
-        "en"
-      ],
-      "language": "en",
-      "image": {
-        "file": "cover.png",
-        "sha": "09a87069d4babfa7575d309e5f08db2f852fe0d0",
-        "commit": "fc3dad764f7bea579b2120a44e47dbec762f60f7",
-        "width": 1280,
-        "height": 720
-      },
-      "contents": {
-        "triggers": 0,
-        "actions": 0,
-        "prompts": 1,
-        "bios": 0,
-        "knowledge": 0,
-        "entities": 0,
-        "config": 0
-      },
-      "stats": {
-        "downloads": 605,
-        "endorsements": 6
       }
     },
     {
@@ -4043,7 +4049,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 364,
+        "downloads": 365,
         "endorsements": 0
       }
     },
@@ -5437,7 +5443,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 324,
+        "downloads": 325,
         "endorsements": 0
       }
     },
@@ -6063,7 +6069,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2375,
+        "downloads": 2378,
         "endorsements": 2
       }
     },
@@ -6108,7 +6114,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1194,
+        "downloads": 1196,
         "endorsements": 0
       }
     },
@@ -6198,7 +6204,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 4568,
+        "downloads": 4570,
         "endorsements": 4
       }
     },
@@ -6423,7 +6429,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2623,
+        "downloads": 2625,
         "endorsements": 0
       }
     },
@@ -6693,7 +6699,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1027,
+        "downloads": 1028,
         "endorsements": 1
       }
     },
@@ -6918,7 +6924,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 749,
+        "downloads": 750,
         "endorsements": 1
       }
     },
@@ -7188,7 +7194,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2169,
+        "downloads": 2170,
         "endorsements": 2
       }
     },
@@ -7908,7 +7914,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2517,
+        "downloads": 2519,
         "endorsements": 3
       }
     },
@@ -8043,7 +8049,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 604,
+        "downloads": 605,
         "endorsements": 1
       }
     },
@@ -8088,7 +8094,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 999,
+        "downloads": 1000,
         "endorsements": 0
       }
     },
@@ -8133,7 +8139,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1688,
+        "downloads": 1690,
         "endorsements": 2
       }
     },
@@ -8268,7 +8274,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 491,
+        "downloads": 492,
         "endorsements": 0
       }
     },
@@ -9633,7 +9639,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 810,
+        "downloads": 811,
         "endorsements": 0
       }
     },
@@ -10353,7 +10359,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1221,
+        "downloads": 1222,
         "endorsements": 0
       }
     },
@@ -10488,7 +10494,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2240,
+        "downloads": 2242,
         "endorsements": 4
       }
     },
@@ -10578,7 +10584,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2897,
+        "downloads": 2900,
         "endorsements": 2
       }
     },
@@ -11073,7 +11079,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 106,
+        "downloads": 107,
         "endorsements": 0
       }
     },
@@ -11613,7 +11619,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2953,
+        "downloads": 2956,
         "endorsements": 2
       }
     },
@@ -11883,7 +11889,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2441,
+        "downloads": 2444,
         "endorsements": 2
       }
     },
@@ -12198,7 +12204,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 354,
+        "downloads": 355,
         "endorsements": 0
       }
     },
@@ -12423,7 +12429,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1729,
+        "downloads": 1732,
         "endorsements": 0
       }
     },
@@ -12468,7 +12474,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1045,
+        "downloads": 1046,
         "endorsements": 1
       }
     },
@@ -12963,7 +12969,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 523,
+        "downloads": 524,
         "endorsements": 0
       }
     },
@@ -13233,7 +13239,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1488,
+        "downloads": 1489,
         "endorsements": 0
       }
     },
@@ -14043,7 +14049,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 622,
+        "downloads": 623,
         "endorsements": 0
       }
     },
@@ -14223,7 +14229,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 969,
+        "downloads": 971,
         "endorsements": 0
       }
     },
@@ -14493,7 +14499,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1346,
+        "downloads": 1347,
         "endorsements": 2
       }
     },
@@ -14538,7 +14544,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 322,
+        "downloads": 323,
         "endorsements": 0
       }
     },
@@ -14898,7 +14904,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 446,
+        "downloads": 447,
         "endorsements": 0
       }
     },
@@ -15033,7 +15039,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 3560,
+        "downloads": 3563,
         "endorsements": 2
       }
     },
@@ -15303,7 +15309,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 922,
+        "downloads": 923,
         "endorsements": 0
       }
     },
