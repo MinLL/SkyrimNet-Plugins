@@ -1,8 +1,84 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-11-20T21:21:56.263Z",
-  "stats_as_of": "2026-11-20T21:21:56.149Z",
+  "generated_at": "2026-11-20T21:50:50.174Z",
+  "stats_as_of": "2026-11-20T21:49:05.492Z",
   "plugins": [
+    {
+      "id": "plugins/sixteenth/political-engine",
+      "plugin_id": "sixteenth.political-engine",
+      "type": "listing",
+      "title": "Political Engine",
+      "tagline": "AI-driven politics",
+      "author": "sixteenth",
+      "tags": [],
+      "nsfw": false,
+      "icon": "gamemaster",
+      "mods": [],
+      "first_published": "2026-10-13T05:51:18Z",
+      "last_updated": "2026-11-20T21:50:12Z",
+      "version": "0.8.0",
+      "history": [
+        {
+          "version": "0.8.0",
+          "commit": "3db8d48c1a07606b9a4d6e97ef31b61a70edc2ad",
+          "date": "2026-11-20T21:50:12Z",
+          "changelog": "### Political Engine 0.8.0 expands Skyrim's political campaign with autonomous NPC wars, ruler-to-ruler correspondence, war coalitions, and gold or resource aid. Realms can recruit, prepare for war, negotiate peace, and establish new governments after conquest.\n\nThe update also adds food and army upkeep, configurable turn points, improved campaign maps, persistent troop camps, and political context for soldiers speaking through SkyrimNet. Optional Intel Engine integration adds an event journal, map markers, and experimental scene requests.\n\nAvailable for **Skyrim SE/AE and VR**, with **PrismaUI or Magelight** and **English or Russian** localization. The release includes an updated developer SDK and a full changelog since 0.7.0.\n\nFull list of changes you can find on GitHub."
+        },
+        {
+          "version": "0.7.0",
+          "commit": "5ae274b93ea0bf692c0e48ea13af7cebe46e4471",
+          "date": "2026-10-24T03:51:05Z",
+          "changelog": "### **NEW in 0.7.0:**\n\n  **- Separate puppet treasuries and resources, transfers between realms, and independent AI self-government toggles.**\n  \n  **- Commander position. Stewards handle economy and trade, commanders handle armies and reconnaissance, and rulers handle both.**\n  \n  **- Dialogue orders for construction, recruitment, troop movement, reconnaissance, and trade agreement cancellation.**\n    _Just say them, what to do_\n  \n  **- Archers and battlemages, troop composition controls, new military buildings, and equipment upgrades for existing soldiers.**\n    _MORE FIGHTERS - MORE CHAOS_  \n\n  **- Fog of war and covert scouting, with detection checked once per complete campaign round.**\n    _KGB never sleeps_  \n\n  **- Initial delegation system: representative travel, invitations, meetings, return reports, and neutral camps.**\n    _They are afraid of you..._  \n\n  **- Optional realm briefings in officials’ biographies covering armies, economy, buildings, wars, and trade.**\n  \n  **- Separated field battle formations and a configurable corpse limit, defaulting to 30.**\n    _More FPS, more soldiers you can add_  \n\n  **- Reorganized settings, clearer custom realm placement instructions, updated API, and revised vanilla NPC office assignments.**\n  \n  **- Realm Management: controlled realms, offices, private puppet links, delegation stages, mission cancellation, battle diagnostics and a saved results journal.**\n  \n  **- MageLightUI support**\n  _A HUGE thank to Whyregister for fixes_ \n\n  **- New API with overwrite ability.**\n\n  **- A lot of bug fixes, perfomance and tokens usage upgrades** \n\nAlso, you can check guide on https://github.com/L-Sixteenth/Political-Engine-Releases"
+        },
+        {
+          "version": "0.7.7",
+          "commit": "5e8eae1f0e743d4934966f569e1c3df2ecee27d1",
+          "date": "2026-10-24T03:35:50Z",
+          "changelog": "### **NEW in 0.7.0:**\n\n  **- Separate puppet treasuries and resources, transfers between realms, and independent AI self-government toggles.**\n  \n  **- Commander position. Stewards handle economy and trade, commanders handle armies and reconnaissance, and rulers handle both.**\n  \n  **- Dialogue orders for construction, recruitment, troop movement, reconnaissance, and trade agreement cancellation.**\n    _Just say them, what to do_\n  \n  **- Archers and battlemages, troop composition controls, new military buildings, and equipment upgrades for existing soldiers.**\n    _MORE FIGHTERS - MORE CHAOS_  \n\n  **- Fog of war and covert scouting, with detection checked once per complete campaign round.**\n    _KGB never sleeps_  \n\n  **- Initial delegation system: representative travel, invitations, meetings, return reports, and neutral camps.**\n    _They are afraid of you..._  \n\n  **- Optional realm briefings in officials’ biographies covering armies, economy, buildings, wars, and trade.**\n  \n  **- Separated field battle formations and a configurable corpse limit, defaulting to 30.**\n    _More FPS, more soldiers you can add_  \n\n  **- Reorganized settings, clearer custom realm placement instructions, updated API, and revised vanilla NPC office assignments.**\n  \n  **- Realm Management: controlled realms, offices, private puppet links, delegation stages, mission cancellation, battle diagnostics and a saved results journal.**\n  \n  **- MageLightUI support**\n  _A HUGE thank to Whyregister for fixes_ \n\n  **- New API with overwrite ability.**\n\n  **- A lot of bug fixes, perfomance and tokens usage upgrades**\n\nAlso, you can check guide on https://github.com/L-Sixteenth/Political-Engine-Releases"
+        },
+        {
+          "version": "0.6.61",
+          "commit": "16e11155f685d43bfc13d802b21f461a07f88d34",
+          "date": "2026-10-16T13:32:23Z",
+          "changelog": "New in 0.6.6\n\n### Performance and stuttering\n- Numerous changes have been made to the logic for saving and updating information; \n_previously, this had caused frequent, brief freezes on some systems._\n- Closed interfaces no longer build map snapshots. Retrying a deferred offer does not recalculate the entire campaign.\n- Fixed Papyrus array checks, repeated command resets, and unnecessary updates for idle troops.\n_Thanks for your advice, PhospheneOverdrive_\n\n### Relationships and diplomacy\n- Fixed causes of repeated assessments of unchanged relationship history.\n- Improved history fingerprinting and preserved assessment retry/cooldown state across saves.\n- Fixed UTF-8 explanation-length handling, including Cyrillic text.\n- Clarified the distinction between personal affection, reputation, rank, and political authority.\n- Authority-transfer, territorial-concession, and puppet-rule actions now use JobJarlFaction for eligibility. Actual authority and ownership checks remain enforced during execution.\n\n### Trade and NPC construction\n- Added an explicit trade-action format specifying the resource, daily quantity, price per unit, and delivery direction.\n- Up to four agreed trade terms can be submitted through one action and player confirmation.\n- Improved JSON validation and support for opposite-direction deliveries of the same resource.\n- NPC rulers receive economically motivated negotiation opportunities based on stock, demand, treasury funds, and relationships.\n- Persistent trade routes require a proposal, a reply, and validated acceptance. Old conversations do not retroactively create agreements.\n- NPC construction AI (not LLM) considers economic and military needs while reserving development funds and materials.\n- Buildings consume actual gold, resources, and action points.\n\nand more, check 0.6.61 and 0.6.6 changelogs on GitHub"
+        },
+        {
+          "version": "0.6.5",
+          "commit": "750bc2c1c5b5640a2670fac3143e08fa6e9f6d48",
+          "date": "2026-10-14T20:26:00Z",
+          "changelog": "### Well, I can say it\n## Our first \"Feauture Update\"\n\n_Finally_\n**FOMOD INSTALLER**\n\n**Now you can acquire new territories without armed conflict.**\n  Another Jarl might simply agree to cede some territory to you or even place themselves entirely under your rule. \n  In the latter case, there are two options: a full, formal absorption of the faction or the creation of a puppet state. With the puppet state option, only you and the figurehead ruler would be aware of the agreement and who is truly in charge. In the former case, a record of the transfer of authority becomes a part of World Knowledge.\n  \n**NPC info is now have \"Bio-Block\" form, not just prompt injection.**\n_at least, it should_\n\n**You can now add each NPC to your faction and set their rank.**\n\n**You can now return occupied territories to their owners, even if you have conquered the entire faction.**\n_perhaps today you are the kind type of overlord_\n\n**The occupied territories are marked in a different color.**\n\n**Fixed an issue with constant attempts to place a military camp.**\n_I hope so. If not, these camps can now be disabled in the Settings → General → Regional military camps_\n_disabled by default_\n\n**API is updated**"
+        },
+        {
+          "version": "0.6.4",
+          "commit": "0661b34828663cd5f4ba68177ba30c3b7d187e86",
+          "date": "2026-10-13T17:19:20Z",
+          "changelog": "- Some UI improvements\nyou can now close unnecessary panels on the map screen.\n\n- Patch for VR users\nmaybe FOMOD later...\n\n- You can rename your custom faction now.\nwhy didn't I do this sooner?\n\n- Hotkey-set fixes.\nnow you can set any key you want. I think so...\n\n- Reputation and faction-rank API\nmaybe someone would need it"
+        },
+        {
+          "version": "0.6.3",
+          "commit": "7db25f6094c430a416a95553bac01c9ff3b5d8d5",
+          "date": "2026-10-13T05:51:18Z",
+          "changelog": "Public Release"
+        }
+      ],
+      "external_url": "https://github.com/L-Sixteenth/Political-Engine-Releases/releases",
+      "languages": [
+        "en",
+        "ru"
+      ],
+      "language": "en",
+      "image": {
+        "file": "cover.png",
+        "sha": "ab9a12219ca57952ab1691a9b19b2089f5f36329",
+        "commit": "3db8d48c1a07606b9a4d6e97ef31b61a70edc2ad",
+        "width": 1672,
+        "height": 941
+      },
+      "stats": {
+        "downloads": 201,
+        "endorsements": 1
+      }
+    },
     {
       "id": "plugins/awesmdiver/modpacer",
       "plugin_id": "awesmdiver.modpacer",
@@ -186,7 +262,7 @@
         "height": 1080
       },
       "stats": {
-        "downloads": 44,
+        "downloads": 46,
         "endorsements": 0
       }
     },
@@ -940,7 +1016,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 224,
+        "downloads": 225,
         "endorsements": 2
       }
     },
@@ -1693,7 +1769,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 394,
+        "downloads": 395,
         "endorsements": 6
       }
     },
@@ -1789,7 +1865,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 1393,
+        "downloads": 1394,
         "endorsements": 43
       }
     },
@@ -2999,7 +3075,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 428,
+        "downloads": 429,
         "endorsements": 0
       }
     },
@@ -3284,7 +3360,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 670,
+        "downloads": 671,
         "endorsements": 10
       }
     },
@@ -3732,7 +3808,7 @@
         "config": 7
       },
       "stats": {
-        "downloads": 639,
+        "downloads": 640,
         "endorsements": 0
       }
     },
@@ -3813,7 +3889,7 @@
         "config": 7
       },
       "stats": {
-        "downloads": 874,
+        "downloads": 875,
         "endorsements": 1
       }
     },
@@ -4270,76 +4346,6 @@
       },
       "stats": {
         "downloads": 107,
-        "endorsements": 1
-      }
-    },
-    {
-      "id": "plugins/sixteenth/political-engine",
-      "plugin_id": "sixteenth.political-engine",
-      "type": "listing",
-      "title": "Political Engine",
-      "tagline": "AI-driven politics",
-      "author": "sixteenth",
-      "tags": [],
-      "nsfw": false,
-      "icon": "gamemaster",
-      "mods": [],
-      "first_published": "2026-10-13T05:51:18Z",
-      "last_updated": "2026-10-24T03:51:05Z",
-      "version": "0.7.0",
-      "history": [
-        {
-          "version": "0.7.0",
-          "commit": "5ae274b93ea0bf692c0e48ea13af7cebe46e4471",
-          "date": "2026-10-24T03:51:05Z",
-          "changelog": "### **NEW in 0.7.0:**\n\n  **- Separate puppet treasuries and resources, transfers between realms, and independent AI self-government toggles.**\n  \n  **- Commander position. Stewards handle economy and trade, commanders handle armies and reconnaissance, and rulers handle both.**\n  \n  **- Dialogue orders for construction, recruitment, troop movement, reconnaissance, and trade agreement cancellation.**\n    _Just say them, what to do_\n  \n  **- Archers and battlemages, troop composition controls, new military buildings, and equipment upgrades for existing soldiers.**\n    _MORE FIGHTERS - MORE CHAOS_  \n\n  **- Fog of war and covert scouting, with detection checked once per complete campaign round.**\n    _KGB never sleeps_  \n\n  **- Initial delegation system: representative travel, invitations, meetings, return reports, and neutral camps.**\n    _They are afraid of you..._  \n\n  **- Optional realm briefings in officials’ biographies covering armies, economy, buildings, wars, and trade.**\n  \n  **- Separated field battle formations and a configurable corpse limit, defaulting to 30.**\n    _More FPS, more soldiers you can add_  \n\n  **- Reorganized settings, clearer custom realm placement instructions, updated API, and revised vanilla NPC office assignments.**\n  \n  **- Realm Management: controlled realms, offices, private puppet links, delegation stages, mission cancellation, battle diagnostics and a saved results journal.**\n  \n  **- MageLightUI support**\n  _A HUGE thank to Whyregister for fixes_ \n\n  **- New API with overwrite ability.**\n\n  **- A lot of bug fixes, perfomance and tokens usage upgrades** \n\nAlso, you can check guide on https://github.com/L-Sixteenth/Political-Engine-Releases"
-        },
-        {
-          "version": "0.7.7",
-          "commit": "5e8eae1f0e743d4934966f569e1c3df2ecee27d1",
-          "date": "2026-10-24T03:35:50Z",
-          "changelog": "### **NEW in 0.7.0:**\n\n  **- Separate puppet treasuries and resources, transfers between realms, and independent AI self-government toggles.**\n  \n  **- Commander position. Stewards handle economy and trade, commanders handle armies and reconnaissance, and rulers handle both.**\n  \n  **- Dialogue orders for construction, recruitment, troop movement, reconnaissance, and trade agreement cancellation.**\n    _Just say them, what to do_\n  \n  **- Archers and battlemages, troop composition controls, new military buildings, and equipment upgrades for existing soldiers.**\n    _MORE FIGHTERS - MORE CHAOS_  \n\n  **- Fog of war and covert scouting, with detection checked once per complete campaign round.**\n    _KGB never sleeps_  \n\n  **- Initial delegation system: representative travel, invitations, meetings, return reports, and neutral camps.**\n    _They are afraid of you..._  \n\n  **- Optional realm briefings in officials’ biographies covering armies, economy, buildings, wars, and trade.**\n  \n  **- Separated field battle formations and a configurable corpse limit, defaulting to 30.**\n    _More FPS, more soldiers you can add_  \n\n  **- Reorganized settings, clearer custom realm placement instructions, updated API, and revised vanilla NPC office assignments.**\n  \n  **- Realm Management: controlled realms, offices, private puppet links, delegation stages, mission cancellation, battle diagnostics and a saved results journal.**\n  \n  **- MageLightUI support**\n  _A HUGE thank to Whyregister for fixes_ \n\n  **- New API with overwrite ability.**\n\n  **- A lot of bug fixes, perfomance and tokens usage upgrades**\n\nAlso, you can check guide on https://github.com/L-Sixteenth/Political-Engine-Releases"
-        },
-        {
-          "version": "0.6.61",
-          "commit": "16e11155f685d43bfc13d802b21f461a07f88d34",
-          "date": "2026-10-16T13:32:23Z",
-          "changelog": "New in 0.6.6\n\n### Performance and stuttering\n- Numerous changes have been made to the logic for saving and updating information; \n_previously, this had caused frequent, brief freezes on some systems._\n- Closed interfaces no longer build map snapshots. Retrying a deferred offer does not recalculate the entire campaign.\n- Fixed Papyrus array checks, repeated command resets, and unnecessary updates for idle troops.\n_Thanks for your advice, PhospheneOverdrive_\n\n### Relationships and diplomacy\n- Fixed causes of repeated assessments of unchanged relationship history.\n- Improved history fingerprinting and preserved assessment retry/cooldown state across saves.\n- Fixed UTF-8 explanation-length handling, including Cyrillic text.\n- Clarified the distinction between personal affection, reputation, rank, and political authority.\n- Authority-transfer, territorial-concession, and puppet-rule actions now use JobJarlFaction for eligibility. Actual authority and ownership checks remain enforced during execution.\n\n### Trade and NPC construction\n- Added an explicit trade-action format specifying the resource, daily quantity, price per unit, and delivery direction.\n- Up to four agreed trade terms can be submitted through one action and player confirmation.\n- Improved JSON validation and support for opposite-direction deliveries of the same resource.\n- NPC rulers receive economically motivated negotiation opportunities based on stock, demand, treasury funds, and relationships.\n- Persistent trade routes require a proposal, a reply, and validated acceptance. Old conversations do not retroactively create agreements.\n- NPC construction AI (not LLM) considers economic and military needs while reserving development funds and materials.\n- Buildings consume actual gold, resources, and action points.\n\nand more, check 0.6.61 and 0.6.6 changelogs on GitHub"
-        },
-        {
-          "version": "0.6.5",
-          "commit": "750bc2c1c5b5640a2670fac3143e08fa6e9f6d48",
-          "date": "2026-10-14T20:26:00Z",
-          "changelog": "### Well, I can say it\n## Our first \"Feauture Update\"\n\n_Finally_\n**FOMOD INSTALLER**\n\n**Now you can acquire new territories without armed conflict.**\n  Another Jarl might simply agree to cede some territory to you or even place themselves entirely under your rule. \n  In the latter case, there are two options: a full, formal absorption of the faction or the creation of a puppet state. With the puppet state option, only you and the figurehead ruler would be aware of the agreement and who is truly in charge. In the former case, a record of the transfer of authority becomes a part of World Knowledge.\n  \n**NPC info is now have \"Bio-Block\" form, not just prompt injection.**\n_at least, it should_\n\n**You can now add each NPC to your faction and set their rank.**\n\n**You can now return occupied territories to their owners, even if you have conquered the entire faction.**\n_perhaps today you are the kind type of overlord_\n\n**The occupied territories are marked in a different color.**\n\n**Fixed an issue with constant attempts to place a military camp.**\n_I hope so. If not, these camps can now be disabled in the Settings → General → Regional military camps_\n_disabled by default_\n\n**API is updated**"
-        },
-        {
-          "version": "0.6.4",
-          "commit": "0661b34828663cd5f4ba68177ba30c3b7d187e86",
-          "date": "2026-10-13T17:19:20Z",
-          "changelog": "- Some UI improvements\nyou can now close unnecessary panels on the map screen.\n\n- Patch for VR users\nmaybe FOMOD later...\n\n- You can rename your custom faction now.\nwhy didn't I do this sooner?\n\n- Hotkey-set fixes.\nnow you can set any key you want. I think so...\n\n- Reputation and faction-rank API\nmaybe someone would need it"
-        },
-        {
-          "version": "0.6.3",
-          "commit": "7db25f6094c430a416a95553bac01c9ff3b5d8d5",
-          "date": "2026-10-13T05:51:18Z",
-          "changelog": "Public Release"
-        }
-      ],
-      "external_url": "https://github.com/L-Sixteenth/Political-Engine-Releases/releases",
-      "languages": [
-        "en",
-        "ru"
-      ],
-      "language": "en",
-      "image": {
-        "file": "cover.png",
-        "sha": "44ee182a4da08e30f9ecce46839b6f548eb490b7",
-        "commit": "5e8eae1f0e743d4934966f569e1c3df2ecee27d1",
-        "width": 1671,
-        "height": 941
-      },
-      "stats": {
-        "downloads": 201,
         "endorsements": 1
       }
     },
@@ -5313,7 +5319,7 @@
         "config": 4
       },
       "stats": {
-        "downloads": 857,
+        "downloads": 858,
         "endorsements": 3
       }
     },
@@ -5542,7 +5548,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 694,
+        "downloads": 696,
         "endorsements": 2
       }
     },
@@ -5612,7 +5618,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1007,
+        "downloads": 1008,
         "endorsements": 1
       }
     },
@@ -6051,7 +6057,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2372,
+        "downloads": 2375,
         "endorsements": 2
       }
     },
@@ -6186,7 +6192,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 4565,
+        "downloads": 4568,
         "endorsements": 4
       }
     },
@@ -6411,7 +6417,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2620,
+        "downloads": 2622,
         "endorsements": 0
       }
     },
@@ -6681,7 +6687,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1026,
+        "downloads": 1027,
         "endorsements": 1
       }
     },
@@ -6771,7 +6777,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 376,
+        "downloads": 377,
         "endorsements": 0
       }
     },
@@ -6951,7 +6957,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 352,
+        "downloads": 353,
         "endorsements": 0
       }
     },
@@ -7176,7 +7182,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2167,
+        "downloads": 2169,
         "endorsements": 2
       }
     },
@@ -7536,7 +7542,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1708,
+        "downloads": 1709,
         "endorsements": 1
       }
     },
@@ -7896,7 +7902,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2514,
+        "downloads": 2517,
         "endorsements": 3
       }
     },
@@ -8031,7 +8037,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 602,
+        "downloads": 604,
         "endorsements": 1
       }
     },
@@ -8076,7 +8082,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 996,
+        "downloads": 999,
         "endorsements": 0
       }
     },
@@ -8121,7 +8127,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1687,
+        "downloads": 1688,
         "endorsements": 2
       }
     },
@@ -8526,7 +8532,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 455,
+        "downloads": 457,
         "endorsements": 0
       }
     },
@@ -8931,7 +8937,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 816,
+        "downloads": 817,
         "endorsements": 0
       }
     },
@@ -9936,7 +9942,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 777,
+        "downloads": 779,
         "endorsements": 0
       }
     },
@@ -10206,7 +10212,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 458,
+        "downloads": 459,
         "endorsements": 1
       }
     },
@@ -10251,7 +10257,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 32,
+        "downloads": 33,
         "endorsements": 0
       }
     },
@@ -10341,7 +10347,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1219,
+        "downloads": 1221,
         "endorsements": 0
       }
     },
@@ -10386,7 +10392,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 881,
+        "downloads": 883,
         "endorsements": 0
       }
     },
@@ -10476,7 +10482,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2238,
+        "downloads": 2240,
         "endorsements": 4
       }
     },
@@ -10566,7 +10572,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2893,
+        "downloads": 2897,
         "endorsements": 2
       }
     },
@@ -10971,7 +10977,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 568,
+        "downloads": 570,
         "endorsements": 0
       }
     },
@@ -11421,7 +11427,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 498,
+        "downloads": 500,
         "endorsements": 1
       }
     },
@@ -11601,7 +11607,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2952,
+        "downloads": 2953,
         "endorsements": 2
       }
     },
@@ -11871,7 +11877,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2439,
+        "downloads": 2441,
         "endorsements": 2
       }
     },
@@ -12006,7 +12012,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 87,
+        "downloads": 88,
         "endorsements": 0
       }
     },
@@ -12276,7 +12282,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 610,
+        "downloads": 612,
         "endorsements": 1
       }
     },
@@ -12411,7 +12417,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1728,
+        "downloads": 1729,
         "endorsements": 0
       }
     },
@@ -12456,7 +12462,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1043,
+        "downloads": 1045,
         "endorsements": 1
       }
     },
@@ -13221,7 +13227,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1485,
+        "downloads": 1488,
         "endorsements": 0
       }
     },
@@ -13266,7 +13272,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 283,
+        "downloads": 284,
         "endorsements": 0
       }
     },
@@ -13581,7 +13587,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 334,
+        "downloads": 335,
         "endorsements": 0
       }
     },
@@ -13761,7 +13767,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 147,
+        "downloads": 148,
         "endorsements": 1
       }
     },
@@ -14031,7 +14037,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 620,
+        "downloads": 622,
         "endorsements": 0
       }
     },
@@ -14166,7 +14172,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 303,
+        "downloads": 304,
         "endorsements": 1
       }
     },
@@ -14211,7 +14217,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 967,
+        "downloads": 969,
         "endorsements": 0
       }
     },
@@ -14481,7 +14487,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1344,
+        "downloads": 1346,
         "endorsements": 2
       }
     },
@@ -14526,7 +14532,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 321,
+        "downloads": 322,
         "endorsements": 0
       }
     },
@@ -14931,7 +14937,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 84,
+        "downloads": 85,
         "endorsements": 0
       }
     },
@@ -15021,7 +15027,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 3555,
+        "downloads": 3560,
         "endorsements": 2
       }
     },
