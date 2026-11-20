@@ -1,8 +1,79 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-11-20T08:35:46.427Z",
-  "stats_as_of": "2026-11-20T08:35:46.319Z",
+  "generated_at": "2026-11-20T09:22:34.947Z",
+  "stats_as_of": "2026-11-20T09:22:34.828Z",
   "plugins": [
+    {
+      "id": "plugins/taka/sn-sexual-memories",
+      "plugin_id": "taka.sn-sexual-memories",
+      "type": "listing",
+      "title": "SN Sexual Memories",
+      "tagline": "Every OStim or SexLab scene becomes a memory for those who took part and for a bystander who saw it, NPCs talk about it, and a relationship map shows what lies between the people around you.",
+      "author": "taka",
+      "tags": [
+        "memories",
+        "ostim",
+        "sexlab",
+        "witness",
+        "dialogue",
+        "relationships"
+      ],
+      "nsfw": true,
+      "icon": "heart",
+      "mods": [
+        {
+          "name": "SN_SexualHistory.esp",
+          "file": "sn_sexualhistory.esp",
+          "required": true
+        }
+      ],
+      "first_published": "2026-11-19T03:38:05Z",
+      "last_updated": "2026-11-20T09:22:05Z",
+      "version": "0.4.2",
+      "history": [
+        {
+          "version": "0.4.2",
+          "commit": "0546fe66e3900f2618e4db4a5a301a0292b6f00d",
+          "date": "2026-11-20T09:22:05Z",
+          "changelog": "**Changed**\n- **The conversation just before a scene comes first.** If it clearly shows the one on the receiving end agreed to it freely, the lines during the scene and the memories afterwards treat it as consensual, even when the scene is marked dominating or rough (for example OStimNet's Dom intent). If it clearly shows it is against their will, it is treated as forced. Agreeing under threat, or when one could not refuse (a captive, someone defeated), does not count as agreeing. Only when the conversation does not settle it does the scene's own marking decide, as before.\n- The witness's memory follows the same order, as far as an onlooker could know what was said.\n\nThis is the AI's judgement, so it is not guaranteed."
+        },
+        {
+          "version": "0.4.1",
+          "commit": "ae8518122698cbc7d3fb87511ad70ded43c707ad",
+          "date": "2026-11-19T10:36:56Z",
+          "changelog": "**Changed**\n- **Nothing is sent to the AI until you press Create.** Opening the relationship map or choosing someone only shows a map already made. For someone without one, the map says so and the Refresh button reads Create.\n- **Choose who is on the map.** Every name on the list on the left except yours has a ×: a person taken off the list is left off the maps you make until you close the map. Each person on a map is one request to the AI, so this keeps the cost down.\n- **Earlier records are kept.** When a map is made again, the people of the earlier map who are not on the new one keep their cards under Earlier records, folded to one line with the date they were made. A name filter above the cards finds anyone among them.\n\n**Fixed**\n- A card could come out in Japanese in a game in another language, for a person the records said little about. The map now writes in the language of the records, or else in the language of the installed settings menu.\n\n**Note**\n- The relationship map's model is set in SkyrimNet's dashboard: AI > Models, sn_sexual_memories_relmap. When it is left empty, the map uses SkyrimNet's default model."
+        },
+        {
+          "version": "0.4.0",
+          "commit": "f4ec7de70102d4a290e27cb7182bd0de5c7b032f",
+          "date": "2026-11-19T09:04:26Z",
+          "changelog": "Changes since 0.2.1, the last version on the Hub.\n\n**New**\n- **Relationship map** (needs Magelight UI or Prisma UI). Press a key (Y by default) and choose yourself or an NPC nearby: SkyrimNet's AI writes what lies between them and up to ten people around you: what happened between them, in order, how each feels about the other, the key events, and how the others are tied to each other. It reads both sides' memories, their diaries and SkyrimNet's events, and writes only what those records say. Maps are saved per save; Refresh remakes one, and a button remakes it in English. With Phantasm installed, faces are shown.\n- **Complaints about a partner.** Now and then an NPC near you who has a husband, wife or lover complains to you about them, only while that partner is too far away to overhear.\n- **Your character speaks up** (off by default). Now and then your character says something to an NPC nearby, drawing on what just happened, on your character's memories and on how the two of you stand. It is voiced when SkyrimNet voices the player, shown as a subtitle, and the NPC answers.\n\n**Changed**\n- **Memories fit the kind of encounter.** The AI first judges what the encounter was for each person (loving, casual, paid, a duty, reluctant or forced) from what happened before and during it. Sex is no longer taken as affection.\n- New MCM settings for each feature, so any of them can be turned off."
+        },
+        {
+          "version": "0.2.1",
+          "commit": "4212abce85aa1fa67618dc57d845b56125bf2817",
+          "date": "2026-11-19T03:38:05Z",
+          "changelog": "First version on the Hub. Memories of each OStim or SexLab scene for everyone who took part and for one bystander who saw it, lines from the NPCs during scenes, and an MCM in English or Japanese."
+        }
+      ],
+      "external_url": "https://github.com/nightlantern-mods/SN_SexualMemories",
+      "languages": [
+        "en",
+        "ja"
+      ],
+      "language": "en",
+      "image": {
+        "file": "cover.jpg",
+        "sha": "e0267182ece52ff4f9c7490bedf7241dc3a27866",
+        "commit": "4212abce85aa1fa67618dc57d845b56125bf2817",
+        "width": 1920,
+        "height": 1080
+      },
+      "stats": {
+        "downloads": 31,
+        "endorsements": 0
+      }
+    },
     {
       "id": "plugins/taka/skyrimnet-minigame",
       "plugin_id": "taka.skyrimnet-minigame",
@@ -217,7 +288,7 @@
         "height": 1152
       },
       "stats": {
-        "downloads": 574,
+        "downloads": 576,
         "endorsements": 10
       }
     },
@@ -464,7 +535,7 @@
         "height": 432
       },
       "stats": {
-        "downloads": 403,
+        "downloads": 404,
         "endorsements": 5
       }
     },
@@ -575,71 +646,6 @@
       "stats": {
         "downloads": 515,
         "endorsements": 11
-      }
-    },
-    {
-      "id": "plugins/taka/sn-sexual-memories",
-      "plugin_id": "taka.sn-sexual-memories",
-      "type": "listing",
-      "title": "SN Sexual Memories",
-      "tagline": "Every OStim or SexLab scene becomes a memory for those who took part and for a bystander who saw it, NPCs talk about it, and a relationship map shows what lies between the people around you.",
-      "author": "taka",
-      "tags": [
-        "memories",
-        "ostim",
-        "sexlab",
-        "witness",
-        "dialogue",
-        "relationships"
-      ],
-      "nsfw": true,
-      "icon": "heart",
-      "mods": [
-        {
-          "name": "SN_SexualHistory.esp",
-          "file": "sn_sexualhistory.esp",
-          "required": true
-        }
-      ],
-      "first_published": "2026-11-19T03:38:05Z",
-      "last_updated": "2026-11-19T10:36:56Z",
-      "version": "0.4.1",
-      "history": [
-        {
-          "version": "0.4.1",
-          "commit": "ae8518122698cbc7d3fb87511ad70ded43c707ad",
-          "date": "2026-11-19T10:36:56Z",
-          "changelog": "**Changed**\n- **Nothing is sent to the AI until you press Create.** Opening the relationship map or choosing someone only shows a map already made. For someone without one, the map says so and the Refresh button reads Create.\n- **Choose who is on the map.** Every name on the list on the left except yours has a ×: a person taken off the list is left off the maps you make until you close the map. Each person on a map is one request to the AI, so this keeps the cost down.\n- **Earlier records are kept.** When a map is made again, the people of the earlier map who are not on the new one keep their cards under Earlier records, folded to one line with the date they were made. A name filter above the cards finds anyone among them.\n\n**Fixed**\n- A card could come out in Japanese in a game in another language, for a person the records said little about. The map now writes in the language of the records, or else in the language of the installed settings menu.\n\n**Note**\n- The relationship map's model is set in SkyrimNet's dashboard: AI > Models, sn_sexual_memories_relmap. When it is left empty, the map uses SkyrimNet's default model."
-        },
-        {
-          "version": "0.4.0",
-          "commit": "f4ec7de70102d4a290e27cb7182bd0de5c7b032f",
-          "date": "2026-11-19T09:04:26Z",
-          "changelog": "Changes since 0.2.1, the last version on the Hub.\n\n**New**\n- **Relationship map** (needs Magelight UI or Prisma UI). Press a key (Y by default) and choose yourself or an NPC nearby: SkyrimNet's AI writes what lies between them and up to ten people around you: what happened between them, in order, how each feels about the other, the key events, and how the others are tied to each other. It reads both sides' memories, their diaries and SkyrimNet's events, and writes only what those records say. Maps are saved per save; Refresh remakes one, and a button remakes it in English. With Phantasm installed, faces are shown.\n- **Complaints about a partner.** Now and then an NPC near you who has a husband, wife or lover complains to you about them, only while that partner is too far away to overhear.\n- **Your character speaks up** (off by default). Now and then your character says something to an NPC nearby, drawing on what just happened, on your character's memories and on how the two of you stand. It is voiced when SkyrimNet voices the player, shown as a subtitle, and the NPC answers.\n\n**Changed**\n- **Memories fit the kind of encounter.** The AI first judges what the encounter was for each person (loving, casual, paid, a duty, reluctant or forced) from what happened before and during it. Sex is no longer taken as affection.\n- New MCM settings for each feature, so any of them can be turned off."
-        },
-        {
-          "version": "0.2.1",
-          "commit": "4212abce85aa1fa67618dc57d845b56125bf2817",
-          "date": "2026-11-19T03:38:05Z",
-          "changelog": "First version on the Hub. Memories of each OStim or SexLab scene for everyone who took part and for one bystander who saw it, lines from the NPCs during scenes, and an MCM in English or Japanese."
-        }
-      ],
-      "external_url": "https://github.com/nightlantern-mods/SN_SexualMemories",
-      "languages": [
-        "en",
-        "ja"
-      ],
-      "language": "en",
-      "image": {
-        "file": "cover.jpg",
-        "sha": "e0267182ece52ff4f9c7490bedf7241dc3a27866",
-        "commit": "4212abce85aa1fa67618dc57d845b56125bf2817",
-        "width": 1920,
-        "height": 1080
-      },
-      "stats": {
-        "downloads": 30,
-        "endorsements": 0
       }
     },
     {
@@ -1185,7 +1191,7 @@
         "height": 1080
       },
       "stats": {
-        "downloads": 186,
+        "downloads": 187,
         "endorsements": 4
       }
     },
@@ -2413,7 +2419,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 269,
+        "downloads": 270,
         "endorsements": 0
       }
     },
@@ -3720,7 +3726,7 @@
         "config": 7
       },
       "stats": {
-        "downloads": 631,
+        "downloads": 632,
         "endorsements": 0
       }
     },
@@ -3801,7 +3807,7 @@
         "config": 7
       },
       "stats": {
-        "downloads": 860,
+        "downloads": 861,
         "endorsements": 1
       }
     },
@@ -6039,7 +6045,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2346,
+        "downloads": 2347,
         "endorsements": 2
       }
     },
@@ -6174,7 +6180,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 4529,
+        "downloads": 4530,
         "endorsements": 4
       }
     },
@@ -6399,7 +6405,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2592,
+        "downloads": 2593,
         "endorsements": 0
       }
     },
@@ -7119,7 +7125,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 38,
+        "downloads": 39,
         "endorsements": 0
       }
     },
@@ -7569,7 +7575,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 87,
+        "downloads": 88,
         "endorsements": 0
       }
     },
@@ -7614,7 +7620,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 23,
+        "downloads": 25,
         "endorsements": 0
       }
     },
@@ -8964,7 +8970,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 38,
+        "downloads": 39,
         "endorsements": 0
       }
     },
@@ -9009,7 +9015,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 79,
+        "downloads": 80,
         "endorsements": 0
       }
     },
@@ -9474,7 +9480,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 27,
+        "downloads": 28,
         "endorsements": 0
       }
     },
@@ -9699,7 +9705,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 133,
+        "downloads": 134,
         "endorsements": 0
       }
     },
@@ -9744,7 +9750,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 26,
+        "downloads": 27,
         "endorsements": 0
       }
     },
@@ -9969,7 +9975,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 37,
+        "downloads": 38,
         "endorsements": 0
       }
     },
@@ -10194,7 +10200,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 450,
+        "downloads": 451,
         "endorsements": 1
       }
     },
@@ -10464,7 +10470,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2213,
+        "downloads": 2215,
         "endorsements": 4
       }
     },
@@ -10959,7 +10965,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 565,
+        "downloads": 566,
         "endorsements": 0
       }
     },
@@ -11454,7 +11460,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 113,
+        "downloads": 114,
         "endorsements": 0
       }
     },
@@ -11589,7 +11595,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2919,
+        "downloads": 2920,
         "endorsements": 2
       }
     },
@@ -12129,7 +12135,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 24,
+        "downloads": 25,
         "endorsements": 0
       }
     },
@@ -12174,7 +12180,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 349,
+        "downloads": 350,
         "endorsements": 0
       }
     },
@@ -12444,7 +12450,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1032,
+        "downloads": 1033,
         "endorsements": 1
       }
     },
@@ -13569,7 +13575,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 330,
+        "downloads": 331,
         "endorsements": 0
       }
     },
@@ -14514,7 +14520,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 316,
+        "downloads": 317,
         "endorsements": 0
       }
     },
@@ -15009,7 +15015,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 3520,
+        "downloads": 3521,
         "endorsements": 2
       }
     },
