@@ -1,8 +1,124 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-11-20T18:25:49.980Z",
-  "stats_as_of": "2026-11-20T18:25:49.882Z",
+  "generated_at": "2026-11-20T18:56:27.068Z",
+  "stats_as_of": "2026-11-20T18:52:22.911Z",
   "plugins": [
+    {
+      "id": "plugins/awesmdiver/modpacer",
+      "plugin_id": "awesmdiver.modpacer",
+      "type": "listing",
+      "title": "ModPacer",
+      "tagline": "Easily install new mods and keep them on pace with updates.",
+      "author": "awesmdiver",
+      "tags": [
+        "mod updater",
+        "vortex",
+        "mod organizer 2",
+        "MO2",
+        "updates",
+        "SkyrimSE",
+        "SkyrimVR",
+        "SkyrimAE"
+      ],
+      "nsfw": false,
+      "icon": "wrench",
+      "mods": [],
+      "first_published": "2026-10-06T04:07:35Z",
+      "last_updated": "2026-11-20T18:55:52Z",
+      "version": "1.5.2",
+      "history": [
+        {
+          "version": "1.5.2",
+          "commit": "676bcd1fd0daafa7523fac3cf4c41ef345a40c4f",
+          "date": "2026-11-20T18:55:52Z",
+          "changelog": "### What's New\n\n- **Mod menus:** Click the \"...\" on any mod to **Skip this update** until a newer one arrives, or **Exclude this mod** to leave it alone for good.\n- **Excluded section:** Mods you exclude now live in a new **Excluded** section (and pill) on the Mods page, where you can easily select **Include again**.\n- **Ignore disabled mods:** A new Settings switch moves your turned-off mods into a quiet **Disabled** section so they stop asking for updates.\n- **Placeholder mods:** When a mod is just an empty stand-in (\"dummy master\"), ModPacer now offers to exclude it instead of nagging you to update.\n- **Nexus updates:** A **Current Nexus version** link now appears when Nexus is further ahead than the Plugin Hub.\n- **Still working:** A quick note under the summary pills lets you know if ModPacer is still checking your mods and the numbers might shift.\n- **Smaller fixes:** Odd version numbers read correctly in your mod manager, old copies left behind after an update are cleaned up, brand-new GitHub releases are picked up right away, and mods with similar or misspelled names are matched to the right Hub entry."
+        },
+        {
+          "version": "1.5.1",
+          "commit": "9d0e198c13ea443eec8b87c059121bf046240aa1",
+          "date": "2026-11-19T05:26:39Z",
+          "changelog": "### What's New\n\n\n- **Outside programs:** Press **I have this** on a standalone program like SkyrimNet MultiProxy and tell ModPacer which version you have, and it will watch it for updates. When one appears, use **Open download page**, install it, then press **I updated it**.\n- **Fresh discoveries:** Mods newly added to the Plugin Hub now catch your eye in a **New** section above **Updates**, then move to your usual lists.\n- **Clearer errors:** Failed downloads now give a simple reason instead of messy web code, and ModPacer quietly tries again if the site is simply busy.\n- **Newer version on GitHub:** When an author's GitHub is ahead of the Plugin Hub, a **Current GitHub version** link now shows under the button, so you can go and get the newer one yourself. The button still installs what the Hub lists.\n- **Mods that left the Hub:** Installed mods that have left the Plugin Hub now say so on their row, inside **Not on the Hub**, which opens and closes like the other sections.\n- **New stays new:** Mods in **New** now stay there until you check again or restart ModPacer, so you get to see them before they move on.\n- **Plainer Nexus message:** When Nexus no longer offers a mod, you now get a plain message pointing you to its Nexus page instead of a block of code.\n- **Little fixes:** Clicking **Check now** automatically opens your **Updates**, and fully updated rows no longer show a confusing arrow."
+        },
+        {
+          "version": "1.4.5",
+          "commit": "58bea612795f032895289238a1b4228f19c50e52",
+          "date": "2026-11-06T06:49:34Z",
+          "changelog": "### What's New\n\n- **Releases with several files:** When a mod's release has more than one file, ModPacer no longer just opens its download page. You can **Choose file** right in the row, and a one-time extra file (like a migration tool) has its own **Get** button.\n- **Remember my choice:** Pick a file once and ModPacer finds the same kind of file in the next version.\n- **Clearer updates:** Rows now say **Pending removal** and **Removing…** while old versions are cleaned up, and show only the current version once a mod is updated.\n- **No false warnings:** A mod's rules are no longer reported as missing when Vortex already has them.\n- **Tidier rows:** The version, date, icons and status line up with the mod's name and author, and the update notes show on every row that has one."
+        },
+        {
+          "version": "1.4.0",
+          "commit": "2ff987d3bba612373535bebecbb977eb56998e8e",
+          "date": "2026-10-29T06:46:05Z",
+          "changelog": "## **What's New!**\n\n- **Skyrim VR:** ModPacer now works with Skyrim VR in Vortex and Mod Organizer 2. Just point setup at your Skyrim VR folder.\n- **Pictures and descriptions:** Mods now show their cover art and a short description, and you can hide the art anytime with **Show mod pictures** in **Settings**.\n- **Search:** Find what you need fast using the new search box right next to **Sort by**.\n- **See each step:** An updating mod now shows what ModPacer is doing, such as unpacking, installing, enabling plugins and removing the old version.\n- **Cut-off downloads:** A download that stopped halfway is noticed and downloaded again.\n- **Better matching:** Mods whose names differ between the Hub and Vortex or listed under a different id are matched more reliably.\n- **Stuck updates:** A new Help section walks you through what to do if a mod keeps offering an update you've already installed, and how to report it.\n- **No more guessing:** If a release has several files and it isn't clear which one is the mod, ModPacer sends you to its download page instead of picking one.\n- **Smart startup:** ModPacer now automatically opens the **Updates** section at launch if you have mods that need attention.\n- **Polish:** A lot of under the hood and UI polish."
+        },
+        {
+          "version": "1.2.0",
+          "commit": "a28424aadce8283d4196d2d80901a38ad1d645bf",
+          "date": "2026-10-27T04:00:37Z",
+          "changelog": "### What's New\n\n- **Sort your mods:** pick **Default order**, **Name A to Z** or **Name Z to A** above your list, and ModPacer remembers your choice.\n- **Set missing versions:** if **Vortex** doesn't know a mod's version, click the new \"It's <version>\" button so we can check for future updates.\n- **One options screen per update:** you now make your mod choices just once, even if **Vortex** is busy.\n- **Clearer logs:** the update log now shows every step of an options-screen installation so you can easily track what happened."
+        },
+        {
+          "version": "1.1.9",
+          "commit": "246c51b3cc85724485dbb41e0ad0b00addec70e5",
+          "date": "2026-10-23T16:25:45Z",
+          "changelog": "### What's New v1.1.9\n\n- **Vortex updates:** ModPacer only removes the old version after checking that the new one is installed and switched on. If the new one is missing, your old mod is not removed.\n- **Waiting for a busy Vortex:** Clicking **Update** on a single mod now waits patiently if Vortex is slow to answer, instead of reporting a failed removal.\n- **Vortex Updates:** Update all now waits for a busy Vortex and removes the old versions it replaced. Any old versions left behind are removed too, or listed with a Remove old versions button.\n- **Tidier Add-on List:** Add-ons whose files are missing no longer appear as blank rows, and add-ons not found on the Hub now display their names."
+        },
+        {
+          "version": "1.1.7",
+          "commit": "55fe07563ffff4b194b549dbae298593192b9bdb",
+          "date": "2026-10-21T07:38:04Z",
+          "changelog": "### What's New\n\n- **Hand-Updated Add-ons:** Add-ons you manually update in Mod Organizer 2 now show their true version and no longer prompt for unneeded updates.\n- **Better Version Checks:** ModPacer now correctly compares four-part and beta version numbers, so real updates are no longer missed.\n- **Clearer Logs:** The update log now tracks every download from start to finish, recording the exact version found and where it came from."
+        },
+        {
+          "version": "1.1.6",
+          "commit": "49e8226a64561f6efb26f2d2339523af27b29712",
+          "date": "2026-10-21T04:55:20Z",
+          "changelog": "### What's New\n\n- **Exclude a Mod:** Click Exclude in Mods not installed to stop listing and downloading a mod, and use Settings to view Excluded mods or click Include again.\n- **Better Mod Organizer 2 Detection:** ModPacer now judges each add-on by its own files, so similar-looking folders no longer count as installed and old versions stop showing false updates."
+        },
+        {
+          "version": "1.1.5",
+          "commit": "17633c2bedc622f65e6763600f7349794ef67d45",
+          "date": "2026-10-14T04:45:35Z",
+          "changelog": "### What's New\n\n- **Nexus Details in Vortex:** Mods installed from Nexus now carry their details into Vortex, so the \"missing identification information\" warning no longer appears.\r\n- **Smoother Updates:** Update all installs every new mod first, then removes the old ones together under \"Removing old mods\", without \"Mod not found\" warnings.\r\n- **Cleaner Startup:** ModPacer opens just one Mods section, says so if it is already running, and the installer closes running copies first."
+        },
+        {
+          "version": "1.1.4",
+          "commit": "2eacb62b646358ba2a0b0774fbe76266aa0b3233",
+          "date": "2026-10-07T22:04:44Z",
+          "changelog": "### What's New\r\n\r\n- **Broader MO2 Detection:** Detects SkyrimNet in Mod Organizer 2's Overwrite and Stock Game folders to support custom modlists like Nolvus and Nordic Souls.\r\n- **Respects MO2 Load Order:** Reads the winning copy of SkyrimNet when multiple exist, and alerts you if the only installed copy is disabled.\r\n- **Improved Add-on Tracking:** Recognizes add-ons as installed whether they are located in the Overwrite folder or any active mod.\r\n- **Flexible Folder Recognition:** Correctly identifies installed MO2 mods even if their folder names differ from their official listing names.\r\n- **Self-Exclusion Fix:** ModPacer no longer incorrectly lists itself under \"Mods not installed.\"\r\n- **Streamlined Alerts:** Provides shorter, clearer messages when SkyrimNet is missing or an add-on hasn't registered.\r\n- **Interactive Setup Fallback:** Prompts you to manually select the SkyrimNet folder during setup if auto-detection fails, rather than halting the installation.\r\n- **True Clean Uninstall:** Choosing \"Delete settings\" during uninstallation now completely removes all ModPacer traces."
+        },
+        {
+          "version": "1.1.1",
+          "commit": "8e3ffa3b13de3c88a900592e03b8a28a44fef98b",
+          "date": "2026-10-06T21:49:20Z",
+          "changelog": "**What's New**\r\n\r\n- **Fixed SkyrimNet Folder Detection:** Resolved an issue where ModPacer could mistakenly select a subfolder created by an add-on instead of the main SkyrimNet directory, resulting in a Could not read content-registry.json error. \r\n\r\n- **Improved Logging:** Setup and installation errors are now accurately captured in the diagnostic log, making troubleshooting and support requests much easier."
+        },
+        {
+          "version": "1.1.0",
+          "commit": "526db56f205786e9ccce8572e9b1b66ca49c7248",
+          "date": "2026-10-06T19:35:56Z",
+          "changelog": "**Mod Organizer 2** users: this update is for you. \n\n- Mod Organizer 2 and Wabbajack modlists are now properly handled.\n- Mod Organizer 2: can now pick your Mod Organizer 2 folder and ModPacer finds your mods and Skyrim folder from it.\n- Added logging, which is on by default, but can be turned off in settings.\n- Tells you when a newer ModPacer is out."
+        },
+        {
+          "version": "1.0.0",
+          "commit": "af3e0b8c3452da83640c639c5166db42530c76df",
+          "date": "2026-10-06T06:13:32Z",
+          "changelog": "Initial Release"
+        }
+      ],
+      "external_url": "https://github.com/awesmdiver/modpacer/releases/latest",
+      "image": {
+        "file": "cover.png",
+        "sha": "175af6991604d3810b726c724d7b15a0f62e892f",
+        "commit": "e3bc3bf7cbdc250fb980e857933ede27c591c10b",
+        "width": 1940,
+        "height": 1091
+      },
+      "stats": {
+        "downloads": 52,
+        "endorsements": 1
+      }
+    },
     {
       "id": "plugins/taka/sn-sexual-memories",
       "plugin_id": "taka.sn-sexual-memories",
@@ -535,7 +651,7 @@
         "height": 432
       },
       "stats": {
-        "downloads": 408,
+        "downloads": 409,
         "endorsements": 5
       }
     },
@@ -644,7 +760,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 516,
+        "downloads": 517,
         "endorsements": 11
       }
     },
@@ -713,118 +829,8 @@
         "height": 720
       },
       "stats": {
-        "downloads": 102,
+        "downloads": 103,
         "endorsements": 0
-      }
-    },
-    {
-      "id": "plugins/awesmdiver/modpacer",
-      "plugin_id": "awesmdiver.modpacer",
-      "type": "listing",
-      "title": "ModPacer",
-      "tagline": "Easily install new mods and keep them on pace with updates.",
-      "author": "awesmdiver",
-      "tags": [
-        "mod updater",
-        "vortex",
-        "mod organizer 2",
-        "MO2",
-        "updates",
-        "SkyrimSE",
-        "SkyrimVR",
-        "SkyrimAE"
-      ],
-      "nsfw": false,
-      "icon": "wrench",
-      "mods": [],
-      "first_published": "2026-10-06T04:07:35Z",
-      "last_updated": "2026-11-19T05:26:39Z",
-      "version": "1.5.1",
-      "history": [
-        {
-          "version": "1.5.1",
-          "commit": "9d0e198c13ea443eec8b87c059121bf046240aa1",
-          "date": "2026-11-19T05:26:39Z",
-          "changelog": "### What's New\n\n\n- **Outside programs:** Press **I have this** on a standalone program like SkyrimNet MultiProxy and tell ModPacer which version you have, and it will watch it for updates. When one appears, use **Open download page**, install it, then press **I updated it**.\n- **Fresh discoveries:** Mods newly added to the Plugin Hub now catch your eye in a **New** section above **Updates**, then move to your usual lists.\n- **Clearer errors:** Failed downloads now give a simple reason instead of messy web code, and ModPacer quietly tries again if the site is simply busy.\n- **Newer version on GitHub:** When an author's GitHub is ahead of the Plugin Hub, a **Current GitHub version** link now shows under the button, so you can go and get the newer one yourself. The button still installs what the Hub lists.\n- **Mods that left the Hub:** Installed mods that have left the Plugin Hub now say so on their row, inside **Not on the Hub**, which opens and closes like the other sections.\n- **New stays new:** Mods in **New** now stay there until you check again or restart ModPacer, so you get to see them before they move on.\n- **Plainer Nexus message:** When Nexus no longer offers a mod, you now get a plain message pointing you to its Nexus page instead of a block of code.\n- **Little fixes:** Clicking **Check now** automatically opens your **Updates**, and fully updated rows no longer show a confusing arrow."
-        },
-        {
-          "version": "1.4.5",
-          "commit": "58bea612795f032895289238a1b4228f19c50e52",
-          "date": "2026-11-06T06:49:34Z",
-          "changelog": "### What's New\n\n- **Releases with several files:** When a mod's release has more than one file, ModPacer no longer just opens its download page. You can **Choose file** right in the row, and a one-time extra file (like a migration tool) has its own **Get** button.\n- **Remember my choice:** Pick a file once and ModPacer finds the same kind of file in the next version.\n- **Clearer updates:** Rows now say **Pending removal** and **Removing…** while old versions are cleaned up, and show only the current version once a mod is updated.\n- **No false warnings:** A mod's rules are no longer reported as missing when Vortex already has them.\n- **Tidier rows:** The version, date, icons and status line up with the mod's name and author, and the update notes show on every row that has one."
-        },
-        {
-          "version": "1.4.0",
-          "commit": "2ff987d3bba612373535bebecbb977eb56998e8e",
-          "date": "2026-10-29T06:46:05Z",
-          "changelog": "## **What's New!**\n\n- **Skyrim VR:** ModPacer now works with Skyrim VR in Vortex and Mod Organizer 2. Just point setup at your Skyrim VR folder.\n- **Pictures and descriptions:** Mods now show their cover art and a short description, and you can hide the art anytime with **Show mod pictures** in **Settings**.\n- **Search:** Find what you need fast using the new search box right next to **Sort by**.\n- **See each step:** An updating mod now shows what ModPacer is doing, such as unpacking, installing, enabling plugins and removing the old version.\n- **Cut-off downloads:** A download that stopped halfway is noticed and downloaded again.\n- **Better matching:** Mods whose names differ between the Hub and Vortex or listed under a different id are matched more reliably.\n- **Stuck updates:** A new Help section walks you through what to do if a mod keeps offering an update you've already installed, and how to report it.\n- **No more guessing:** If a release has several files and it isn't clear which one is the mod, ModPacer sends you to its download page instead of picking one.\n- **Smart startup:** ModPacer now automatically opens the **Updates** section at launch if you have mods that need attention.\n- **Polish:** A lot of under the hood and UI polish."
-        },
-        {
-          "version": "1.2.0",
-          "commit": "a28424aadce8283d4196d2d80901a38ad1d645bf",
-          "date": "2026-10-27T04:00:37Z",
-          "changelog": "### What's New\n\n- **Sort your mods:** pick **Default order**, **Name A to Z** or **Name Z to A** above your list, and ModPacer remembers your choice.\n- **Set missing versions:** if **Vortex** doesn't know a mod's version, click the new \"It's <version>\" button so we can check for future updates.\n- **One options screen per update:** you now make your mod choices just once, even if **Vortex** is busy.\n- **Clearer logs:** the update log now shows every step of an options-screen installation so you can easily track what happened."
-        },
-        {
-          "version": "1.1.9",
-          "commit": "246c51b3cc85724485dbb41e0ad0b00addec70e5",
-          "date": "2026-10-23T16:25:45Z",
-          "changelog": "### What's New v1.1.9\n\n- **Vortex updates:** ModPacer only removes the old version after checking that the new one is installed and switched on. If the new one is missing, your old mod is not removed.\n- **Waiting for a busy Vortex:** Clicking **Update** on a single mod now waits patiently if Vortex is slow to answer, instead of reporting a failed removal.\n- **Vortex Updates:** Update all now waits for a busy Vortex and removes the old versions it replaced. Any old versions left behind are removed too, or listed with a Remove old versions button.\n- **Tidier Add-on List:** Add-ons whose files are missing no longer appear as blank rows, and add-ons not found on the Hub now display their names."
-        },
-        {
-          "version": "1.1.7",
-          "commit": "55fe07563ffff4b194b549dbae298593192b9bdb",
-          "date": "2026-10-21T07:38:04Z",
-          "changelog": "### What's New\n\n- **Hand-Updated Add-ons:** Add-ons you manually update in Mod Organizer 2 now show their true version and no longer prompt for unneeded updates.\n- **Better Version Checks:** ModPacer now correctly compares four-part and beta version numbers, so real updates are no longer missed.\n- **Clearer Logs:** The update log now tracks every download from start to finish, recording the exact version found and where it came from."
-        },
-        {
-          "version": "1.1.6",
-          "commit": "49e8226a64561f6efb26f2d2339523af27b29712",
-          "date": "2026-10-21T04:55:20Z",
-          "changelog": "### What's New\n\n- **Exclude a Mod:** Click Exclude in Mods not installed to stop listing and downloading a mod, and use Settings to view Excluded mods or click Include again.\n- **Better Mod Organizer 2 Detection:** ModPacer now judges each add-on by its own files, so similar-looking folders no longer count as installed and old versions stop showing false updates."
-        },
-        {
-          "version": "1.1.5",
-          "commit": "17633c2bedc622f65e6763600f7349794ef67d45",
-          "date": "2026-10-14T04:45:35Z",
-          "changelog": "### What's New\n\n- **Nexus Details in Vortex:** Mods installed from Nexus now carry their details into Vortex, so the \"missing identification information\" warning no longer appears.\r\n- **Smoother Updates:** Update all installs every new mod first, then removes the old ones together under \"Removing old mods\", without \"Mod not found\" warnings.\r\n- **Cleaner Startup:** ModPacer opens just one Mods section, says so if it is already running, and the installer closes running copies first."
-        },
-        {
-          "version": "1.1.4",
-          "commit": "2eacb62b646358ba2a0b0774fbe76266aa0b3233",
-          "date": "2026-10-07T22:04:44Z",
-          "changelog": "### What's New\r\n\r\n- **Broader MO2 Detection:** Detects SkyrimNet in Mod Organizer 2's Overwrite and Stock Game folders to support custom modlists like Nolvus and Nordic Souls.\r\n- **Respects MO2 Load Order:** Reads the winning copy of SkyrimNet when multiple exist, and alerts you if the only installed copy is disabled.\r\n- **Improved Add-on Tracking:** Recognizes add-ons as installed whether they are located in the Overwrite folder or any active mod.\r\n- **Flexible Folder Recognition:** Correctly identifies installed MO2 mods even if their folder names differ from their official listing names.\r\n- **Self-Exclusion Fix:** ModPacer no longer incorrectly lists itself under \"Mods not installed.\"\r\n- **Streamlined Alerts:** Provides shorter, clearer messages when SkyrimNet is missing or an add-on hasn't registered.\r\n- **Interactive Setup Fallback:** Prompts you to manually select the SkyrimNet folder during setup if auto-detection fails, rather than halting the installation.\r\n- **True Clean Uninstall:** Choosing \"Delete settings\" during uninstallation now completely removes all ModPacer traces."
-        },
-        {
-          "version": "1.1.1",
-          "commit": "8e3ffa3b13de3c88a900592e03b8a28a44fef98b",
-          "date": "2026-10-06T21:49:20Z",
-          "changelog": "**What's New**\r\n\r\n- **Fixed SkyrimNet Folder Detection:** Resolved an issue where ModPacer could mistakenly select a subfolder created by an add-on instead of the main SkyrimNet directory, resulting in a Could not read content-registry.json error. \r\n\r\n- **Improved Logging:** Setup and installation errors are now accurately captured in the diagnostic log, making troubleshooting and support requests much easier."
-        },
-        {
-          "version": "1.1.0",
-          "commit": "526db56f205786e9ccce8572e9b1b66ca49c7248",
-          "date": "2026-10-06T19:35:56Z",
-          "changelog": "**Mod Organizer 2** users: this update is for you. \n\n- Mod Organizer 2 and Wabbajack modlists are now properly handled.\n- Mod Organizer 2: can now pick your Mod Organizer 2 folder and ModPacer finds your mods and Skyrim folder from it.\n- Added logging, which is on by default, but can be turned off in settings.\n- Tells you when a newer ModPacer is out."
-        },
-        {
-          "version": "1.0.0",
-          "commit": "af3e0b8c3452da83640c639c5166db42530c76df",
-          "date": "2026-10-06T06:13:32Z",
-          "changelog": "Initial Release"
-        }
-      ],
-      "external_url": "https://github.com/awesmdiver/modpacer/releases/latest",
-      "image": {
-        "file": "cover.png",
-        "sha": "175af6991604d3810b726c724d7b15a0f62e892f",
-        "commit": "e3bc3bf7cbdc250fb980e857933ede27c591c10b",
-        "width": 1940,
-        "height": 1091
-      },
-      "stats": {
-        "downloads": 52,
-        "endorsements": 1
       }
     },
     {
@@ -934,7 +940,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 220,
+        "downloads": 221,
         "endorsements": 2
       }
     },
@@ -1067,7 +1073,7 @@
         "height": 720
       },
       "stats": {
-        "downloads": 183,
+        "downloads": 184,
         "endorsements": 1
       }
     },
@@ -1405,7 +1411,7 @@
         "height": 1008
       },
       "stats": {
-        "downloads": 211,
+        "downloads": 212,
         "endorsements": 3
       }
     },
@@ -1687,7 +1693,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 392,
+        "downloads": 394,
         "endorsements": 6
       }
     },
@@ -1783,7 +1789,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 1387,
+        "downloads": 1388,
         "endorsements": 43
       }
     },
@@ -1875,7 +1881,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 603,
+        "downloads": 604,
         "endorsements": 6
       }
     },
@@ -2247,7 +2253,7 @@
         "height": 1152
       },
       "stats": {
-        "downloads": 304,
+        "downloads": 306,
         "endorsements": 0
       }
     },
@@ -2993,7 +2999,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 427,
+        "downloads": 428,
         "endorsements": 0
       }
     },
@@ -3545,7 +3551,7 @@
         "height": 1008
       },
       "stats": {
-        "downloads": 219,
+        "downloads": 220,
         "endorsements": 3
       }
     },
@@ -3726,7 +3732,7 @@
         "config": 7
       },
       "stats": {
-        "downloads": 636,
+        "downloads": 637,
         "endorsements": 0
       }
     },
@@ -4697,7 +4703,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 232,
+        "downloads": 233,
         "endorsements": 0
       }
     },
@@ -5307,7 +5313,7 @@
         "config": 4
       },
       "stats": {
-        "downloads": 850,
+        "downloads": 852,
         "endorsements": 3
       }
     },
@@ -5606,7 +5612,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1000,
+        "downloads": 1001,
         "endorsements": 1
       }
     },
@@ -5874,7 +5880,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 299,
+        "downloads": 300,
         "endorsements": 1
       }
     },
@@ -6000,7 +6006,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 581,
+        "downloads": 582,
         "endorsements": 6
       }
     },
@@ -6045,7 +6051,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2362,
+        "downloads": 2364,
         "endorsements": 2
       }
     },
@@ -6090,7 +6096,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1188,
+        "downloads": 1190,
         "endorsements": 0
       }
     },
@@ -6180,7 +6186,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 4555,
+        "downloads": 4557,
         "endorsements": 4
       }
     },
@@ -6900,7 +6906,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 747,
+        "downloads": 748,
         "endorsements": 1
       }
     },
@@ -7530,7 +7536,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1702,
+        "downloads": 1703,
         "endorsements": 1
       }
     },
@@ -7890,7 +7896,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2504,
+        "downloads": 2505,
         "endorsements": 3
       }
     },
@@ -7935,7 +7941,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 524,
+        "downloads": 525,
         "endorsements": 0
       }
     },
@@ -8025,7 +8031,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 599,
+        "downloads": 600,
         "endorsements": 1
       }
     },
@@ -8070,7 +8076,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 993,
+        "downloads": 994,
         "endorsements": 0
       }
     },
@@ -8115,7 +8121,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1677,
+        "downloads": 1678,
         "endorsements": 2
       }
     },
@@ -8250,7 +8256,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 489,
+        "downloads": 490,
         "endorsements": 0
       }
     },
@@ -9615,7 +9621,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 804,
+        "downloads": 806,
         "endorsements": 0
       }
     },
@@ -10200,7 +10206,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 454,
+        "downloads": 455,
         "endorsements": 1
       }
     },
@@ -10335,7 +10341,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1216,
+        "downloads": 1217,
         "endorsements": 0
       }
     },
@@ -10380,7 +10386,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 877,
+        "downloads": 878,
         "endorsements": 0
       }
     },
@@ -10470,7 +10476,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2230,
+        "downloads": 2233,
         "endorsements": 4
       }
     },
@@ -10560,7 +10566,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2881,
+        "downloads": 2883,
         "endorsements": 2
       }
     },
@@ -11595,7 +11601,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2941,
+        "downloads": 2944,
         "endorsements": 2
       }
     },
@@ -11865,7 +11871,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2430,
+        "downloads": 2432,
         "endorsements": 2
       }
     },
@@ -12180,7 +12186,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 353,
+        "downloads": 354,
         "endorsements": 0
       }
     },
@@ -12405,7 +12411,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1722,
+        "downloads": 1724,
         "endorsements": 0
       }
     },
@@ -12450,7 +12456,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1039,
+        "downloads": 1040,
         "endorsements": 1
       }
     },
@@ -12945,7 +12951,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 521,
+        "downloads": 522,
         "endorsements": 0
       }
     },
@@ -13170,7 +13176,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 603,
+        "downloads": 604,
         "endorsements": 0
       }
     },
@@ -13215,7 +13221,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1481,
+        "downloads": 1482,
         "endorsements": 0
       }
     },
@@ -14205,7 +14211,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 964,
+        "downloads": 965,
         "endorsements": 0
       }
     },
@@ -14475,7 +14481,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1340,
+        "downloads": 1341,
         "endorsements": 2
       }
     },
@@ -14520,7 +14526,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 320,
+        "downloads": 321,
         "endorsements": 0
       }
     },
@@ -14610,7 +14616,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 391,
+        "downloads": 392,
         "endorsements": 0
       }
     },
@@ -14880,7 +14886,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 444,
+        "downloads": 445,
         "endorsements": 0
       }
     },
@@ -15015,7 +15021,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 3546,
+        "downloads": 3548,
         "endorsements": 2
       }
     },
@@ -15285,7 +15291,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 917,
+        "downloads": 918,
         "endorsements": 0
       }
     },
