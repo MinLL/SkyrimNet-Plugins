@@ -2,8 +2,8 @@
   "id": "awesmdiver.skyrimnet-multiproxy",
   "type": "listing",
   "title": "SkyrimNet MultiProxy",
-  "tagline": "Connect your AI of choice to SkyrimNet — set it up once, and it starts every time you play.",
-  "description": "SkyrimNet uses AI for much more than conversation: dynamic dialogue, actions, personal diaries, character bios, the GameMaster, Quick decisions, and more. It sends many requests at once. **MultiProxy** sits quietly in the background, catches them all, and sends each one to whichever AI you want handling that job. It installs like a normal program and lives in your system tray.\n\n**Use what you already have:**\n* **Subscriptions (no API keys needed):** Your existing Claude, ChatGPT (Codex), Google AI Pro (Antigravity), or SuperGrok account.\n* **API keys:** GLM (z.ai), Nano-GPT, OpenAI, DeepSeek, Gemini, xAI, Continuum, Kilo Gateway, and TypeSafe, plus Cloudflare Workers AI, Mistral, and Groq for small free allowances.\n* **Your own hardware:** Built-in local models run on your graphics card with no extra program, no key, and no bill. Ollama and LM Studio models show up too.\n\n**What it does for you:**\n* **Use your other PCs:** Put the small MultiProxy Courier on a spare PC or laptop and use its models from your gaming PC. It updates itself.\n* **Quick decisions and voice:** A fast, private model answers SkyrimNet's constant background questions. NPCs speak with a voice running on your own hardware, and you can talk to them with push-to-talk (speech to text through xAI, off until you turn it on).\n* **Routing:** Pick which model answers Dialogue, Combat, Memory, and every other job, with backups if one fails.\n* **Starts with Skyrim:** The Skyrim mod starts MultiProxy when your game boots, so there is nothing to click or remember.\n* **Easy local dashboard:** Add keys, pick models, test any AI with a quick in-character chat, and see what is running on the Overview page. Every tab has built-in Help.\n* **Live Speeds tab:** Real response times and reliability for each AI, and which AI runs each SkyrimNet job.\n* **Smooths out rough replies:** Retries dropped calls, cleans up garbled output, and fixes broken tags before SkyrimNet sees them.",
+  "tagline": "Your game, your AI. Mix and match cloud AI and local models for SkyrimNet. Just set it up once, and it’s ready every time you play.",
+  "description": "Playing Skyrim with SkyrimNet and tired of fiddling with AI settings? **MultiProxy** is the one place to set it all up, just once. It quietly sits in your system tray and starts up with Skyrim.\n\n**Why you'll want it**\n* **Use the AI you already have:** Connect your Claude, ChatGPT, Google, or SuperGrok subscription. You can also use your own keys or run free local models on your graphics card. Pick a different AI for each job, complete with backups.\n* **Voices at home:** NPCs speak using voices generated right on your PC. Hear each one before you choose!\n* **Borrow a spare PC:** Got a laptop? Its graphics card can help share the heavy lifting.\n* **Easy to run:** It installs like a normal app, with a friendly dashboard and built-in help to guide you.\n\nFind the full list of AIs, setup steps, and every setting on GitHub.",
   "author": "awesmdiver",
   "tags": [
     "proxy",
@@ -19,7 +19,9 @@
     "voice",
     "performance",
     "utility",
-    "benchmark"
+    "benchmark",
+    "tts",
+    "breeze"
   ],
   "nsfw": false,
   "icon": "ai",
@@ -29,6 +31,6 @@
   ],
   "image": "cover.jpg",
   "external_url": "https://github.com/awesmdiver/skyrimnet-multiproxy/releases/latest",
-  "version": "4.2.1",
-  "changelog": "## 🔧 Improvements & Polish\n\n* **Claude answers:** Newer Claude models no longer spend the small answer budget on thinking. If an answer still runs out of room, MultiProxy asks once more, or tells you plainly: \"The AI ran out of room before it finished its answer.\"\n* **ChatGPT card:** The list shows every model Codex offers your account, and **Check for models** asks Codex to refresh the old listing.\n* **No more empty squares:** Skyrim's subtitle font cannot draw a long dash (em-dash), so MultiProxy swaps it for a plain hyphen. You can switch this off in **Settings**."
+  "version": "4.3.0",
+  "changelog": "**A new voice, a guide to hear and pick any voice, and quicker first lines for every character.**\n\n* **Breeze voice:** A natural English voice that mimics a short audio clip. Pick from four sound choices ranging from **Quickest** to **Most natural**. Free for personal use!\n* **Which voice?:** A handy new guide on the **Voice** tab. Hear a man and a woman in every voice, then pick your favorite with a single click.\n* **Quick first lines:** Characters no longer wait for their voice to be set up.\n* **Google Decisions:** Google's decision model joins the quick decisions list.\n* **Spare PCs:** While a spare PC starts, the Voice and Decisions tabs keep showing your choice, with \"Waiting for it to come online\". Press **Update Courier** on your spare PCs to bring them all of this.\n* **Fixes:** New Higgs installs are working smoothly again, and outdated graphics drivers now trigger a simple, two-step help message."
 }
