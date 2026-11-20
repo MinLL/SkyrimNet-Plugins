@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-11-20T23:21:36.344Z",
-  "stats_as_of": "2026-11-20T23:21:36.249Z",
+  "generated_at": "2026-11-20T23:22:28.434Z",
+  "stats_as_of": "2026-11-20T23:22:28.357Z",
   "plugins": [
     {
       "id": "plugins/nosimo/nos-inworld-2-audio-tags",
@@ -3575,7 +3575,7 @@
         "height": 688
       },
       "stats": {
-        "downloads": 166,
+        "downloads": 167,
         "endorsements": 0
       }
     },
