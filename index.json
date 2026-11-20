@@ -1,8 +1,129 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-11-20T21:50:50.174Z",
-  "stats_as_of": "2026-11-20T21:49:05.492Z",
+  "generated_at": "2026-11-20T22:22:41.824Z",
+  "stats_as_of": "2026-11-20T22:22:41.734Z",
   "plugins": [
+    {
+      "id": "plugins/tetherball88/ostimnet",
+      "plugin_id": "tetherball88.ostimnet",
+      "type": "listing",
+      "title": "OStimNet",
+      "tagline": "Intimate encounter AI framework integration for OStim and SkyrimNet.",
+      "author": "tetherball88",
+      "tags": [
+        "ostim",
+        "animation",
+        "adult"
+      ],
+      "nsfw": true,
+      "icon": "heart",
+      "mods": [
+        {
+          "name": "SkyrimNet.esp",
+          "file": "skyrimnet.esp",
+          "required": true
+        },
+        {
+          "name": "OStim.esp",
+          "file": "ostim.esp",
+          "required": true
+        }
+      ],
+      "first_published": "2026-09-12T06:44:36-08:00",
+      "last_updated": "2026-11-20T22:21:26Z",
+      "version": "2.7.4",
+      "history": [
+        {
+          "version": "2.7.4",
+          "commit": "baec9809a6acf2007d24716413eda6bad1178139",
+          "date": "2026-11-20T22:21:26Z",
+          "changelog": "github https://github.com/tetherball88/OStimNet/releases/latest\nnexusmods https://www.nexusmods.com/skyrimspecialedition/mods/169603\n- **Player controls locking after Magelight UI modals and OStim scenes** — Separated Magelight UI modal focus from OStim scene startup, hot-swap, and teardown transitions so player movement, camera, and menus are never left locked when scenes end or modals close.\n- **Inviting & joining actors into ongoing scenes (`InviteToYourSex` / `JoinOngoingSex`)** — Filtered out current scene participants, duplicates, and busy actors before confirmation and `OStimHotSwap`, excluded unwilling invitees on partial acceptance, and fixed scene-end events after player-thread actor additions or failed hot-swaps."
+        },
+        {
+          "version": "2.7.3",
+          "commit": "2a50a228fdf6af1eacd49352efeaf884484bd027",
+          "date": "2026-11-20T04:03:11Z",
+          "changelog": "github https://github.com/tetherball88/OStimNet/releases/latest\nnexusmods https://www.nexusmods.com/skyrimspecialedition/mods/169603\n- **Player movement, camera & menu controls after Magelight UI modals and OStim scenes** — Fixed player controls (`Movement`, `Looking`, `Activate`, `Menu`, `POVSwitch`, `WheelZoom`, `Fighting`) or text-input locks remaining disabled after dismissing a Magelight UI modal or finishing an OStim scene, including when modals open mid-scene while the player character is AI-driven (`SetAIDriven`) or overlap with scene-end fade-outs.\n- **Magelight UI focus handoff & exit recovery** — Captured Skyrim's main thread ID at SKSE plugin load, added support for Magelight UI `v0.9.1+` exit callbacks alongside `MagelightFocus` menu-close fallbacks, and prevented `UIModeExited` events from clearing focus ownership when back-to-back modals open consecutively."
+        },
+        {
+          "version": "2.7.1",
+          "commit": "9cdb7583c7107a14456787e5c6b7bbaeb5de54e1",
+          "date": "2026-11-17T19:43:19Z",
+          "changelog": "github https://github.com/tetherball88/OStimNet/releases/latest\nnexusmods https://www.nexusmods.com/skyrimspecialedition/mods/169603\n**Crash to desktop (CTD) when ending scenes on Skyrim AE (`1.6.x`)** — Fixed an unmapped Address Library call (`Actor::IsInBleedout`) in scene-end interruption detection that caused an immediate crash to desktop whenever an OStim scene finished on Skyrim Anniversary Edition\n**Phase activity lists in ongoing scene prompts (`ostimnet_thread_phase`)** — Fixed `ONavGetThreadActions` array parsing so `foreplayActions`, `oralActions`, and `sexActions` populate properly instead of returning empty strings.\n**Thread safety & save-reload stability across AI evaluations and prompt decorators** — Synchronized `ThreadRegistry` access across SkyrimNet worker threads, marshaled async LLM/Decisions callbacks and pull-out scene transitions onto the SKSE main thread with save-session guards, and cached `OVirginityQuest` resolution once at startup to avoid repeated off-thread form lookups when `OVirginity.esp` is not installed."
+        },
+        {
+          "version": "2.7.0",
+          "commit": "64648d7bfd3aeec6da016f1a6a624f2cb4a2bdc0",
+          "date": "2026-11-17T02:25:07Z",
+          "changelog": "github https://github.com/tetherball88/OStimNet/releases/latest\nnexusmods https://www.nexusmods.com/skyrimspecialedition/mods/169603\nAdded Magelight UI modals replacing Skyrim message boxes and UIExtensions menus across confirmations, retry prompts, external thread setup, and OStim wheel role/intent menus (mouse, keyboard, and gamepad supported; Magelight UI replaces UIExtensions requirement).\nAdded optional OVirginity Reflowered integration: exposes virginity status to Game Master bios, evaluations, and ongoing dialogue, starts romantic/lustful animations at slow pace for virgins, and triggers first-time reactions, permanent memories, and optional diary entries.\nExpanded StartCareScene (hugging and kissing), non-sexual scene evaluations, manual external setup, and event logs to support lustful and transactional intents alongside platonic and romantic.\nAdded animation pace awareness (slow, moderate, fast) to ongoing scene prompts so NPC vocal delivery and breathlessness match the current animation rhythm.\nAdded combat and guard-arrest scene interruption detection and immediate high-priority NPC reaction trigger (tton_sex_interrupted), cancelling stale scene/speed narration on abrupt stops.\nImproved foreplay, oral, and position search filtering by blacklisting higher-phase action types during earlier-stage searches and clearing incompatible intercourse position tags.\nFixed \"0 starting animations found\" on NPC/AI scene starts: fixed SceneSexSearch relaxing intercourse to sexual when actionType is empty, fixed bed subtype checks (doublebed/singlebed/bedroll), and removed SetDominantActors slot inversion on femdom starts.\nAdded pre-start and start-time furniture-to-floor fallbacks, restricted default undressing start scene to loaded 2-actor male+female pairs, and hardened ThreadRegistry claim expiration and starting-phase sync."
+        },
+        {
+          "version": "2.6.2",
+          "commit": "d87c0e8d1cf35754bb6eba0b783e26e220063a49",
+          "date": "2026-11-14T19:08:56Z",
+          "changelog": "github https://github.com/tetherball88/OStimNet/releases/latest\nnexusmods https://www.nexusmods.com/skyrimspecialedition/mods/169603\n### Added\n- **Billyy animation pack descriptions** — Added detailed scene descriptions and updated position metadata for **Billyy's** animation pack(covering male/female dom and spawned furniture modules), giving the AI a clearer understanding of what characters are doing during those scenes for more accurate dialogue and reactions.\n### Fixed\n- **Scene setup & progression popup errors with limited options** — Fixed a SkyrimNet Decisions error popup (*\"offers 1 option(s); at least two are needed\"*) that could interrupt scene starts, NPC location scans, or automatic scene progression when only a single compatible activity or position existed for the current participants and furniture. When only one valid option is available, OStimNet now selects it automatically."
+        },
+        {
+          "version": "2.6.1",
+          "commit": "28d2fd5cd88caff00997a45e13dab32f1ee0a164",
+          "date": "2026-11-10T16:35:15Z",
+          "changelog": "**Solo / masturbation scene support & phrasing across modals, evaluations, and events** — Fixed several issues where solo (1-person) sexual scenes were blocked or treated as partnered encounters with placeholder names\ngithub https://github.com/tetherball88/OStimNet/releases/latest\nnexusmods https://www.nexusmods.com/skyrimspecialedition/mods/169603"
+        },
+        {
+          "version": "2.6.0",
+          "commit": "3c16bb252b76512fa1e917d2e7ef3f4d2d3faa80",
+          "date": "2026-11-04T03:10:22Z",
+          "changelog": "!!!ATTENTION!!!\nIt requires new OStim Navigator version 2.3.0(https://github.com/tetherball88/OStimNavigator/releases/tag/v2.3.0)\n\n### Added\n\n- **Faster, more reliable AI scene setup & progression (SkyrimNet Decisions support)** — OStimNet now uses SkyrimNet's **Decisions** system to evaluate and set up scenes step-by-step instead of relying solely on long, complex AI text responses:\n  - Makes scene evaluations significantly faster, more consistent, and far less prone to AI formatting errors—especially with smaller or faster AI models.\n  - Covers all scene evaluations: starting new sexual or affectionate scenes, inviting or joining ongoing scenes, automatic scene progression, near-climax pull-out decisions, spontaneous NPC location scans, and scenes started by external mods.\n  - Enabled by default under **General → Use Jev Decisions for evaluations**. If no Decisions model is configured in SkyrimNet, OStimNet automatically falls back to the standard Game Master AI without any extra setup needed.\n\nFull changelog is on github."
+        },
+        {
+          "version": "2.5.7",
+          "commit": "d12033c6b7cffe5de11c41fc920e29f1a6cd1f23",
+          "date": "2026-10-24T03:32:49Z",
+          "changelog": "### Fixed\n\n- **Hotkeys triggering on mouse clicks & extended keys mapping** — Fixed an issue in `HotkeyInputSink::ProcessEvent` where configuring hotkeys (`Advance scene (player thread)`, `Location scan`, `Toggle mute`) to keys without a standard 1-byte `MapVirtualKeyA` scan code (such as `Pause/Break` / `VK_PAUSE = 19`, which mapped to `0`) caused every Left Mouse Click (`IDCode == 0`) to trigger the hotkey action and advance the player's scene:\n  - Restricted keyboard hotkey evaluation strictly to `RE::INPUT_DEVICE::kKeyboard` events and required non-zero DirectInput scan codes.\n  - Added `VkToDirectInputKeyCode` helper with explicit `VK_PAUSE` (`0xC5`) and `VK_NUMLOCK` (`0x45`) handling and `MAPVK_VK_TO_VSC_EX` translation for `0xE0`-extended keys (arrow keys, Insert/Delete/Home/End/PageUp/PageDown, Numpad Divide, right modifiers)."
+        },
+        {
+          "version": "2.5.6",
+          "commit": "af7bd389cff21a7671a283fd675e84dab10c57c6",
+          "date": "2026-10-18T03:50:27Z",
+          "changelog": "Changelog (2.5.6):\n## v2.5.6\n### Added\n\n- **Session mute Papyrus API** — Added global native Papyrus functions on `OStimNet` (`ToggleMute()`, `IsMuted()`, and `SetMuted(bool akMuted)`)\n\n### Fixed\n\n- **Spectator handling across thread continuations (join/swap)** — Fixed spectators being prematurely removed or stuck when an active scene transitions via thread continuation\n- **Thread continuation event prompt rendering** — Added `sex_continue_thread` event rendering (`{{msg}}`) to `ostimnet_event_compact.prompt` and `ostimnet_event_verbose.prompt` so scene continuation events are no longer omitted from SkyrimNet event logs.\n- **External thread start with AI evaluation** — Fixed third-party / external scene starts failing when delegating scene evaluation to AI"
+        },
+        {
+          "version": "2.5.4",
+          "commit": "d492cd94f3f219da97c2b0ca51124c2e9ec2fed1",
+          "date": "2026-10-05T22:09:21Z",
+          "changelog": "attempt to improve reset OStimNet state when save was done during OStim scene and then loaded. I highly not recommend saving during OStim scenes it can break your game.\nupdated Billyy's meta tags for ostimnet(intent and position tags, not descriptions!)"
+        },
+        {
+          "version": "2.5.3",
+          "commit": "62c1ab313251a1148723fb97dbc72b55146f5df6",
+          "date": "2026-09-29T17:08:22Z",
+          "changelog": "added Being Female pregnancy and female cycles note - to make female npcs aware of pregnancy risk."
+        },
+        {
+          "version": "2.5.0",
+          "commit": "6d53bf9f8ee01c6aca1b0d6fdef004ef2fa02b62",
+          "date": "2026-09-26T05:47:57Z",
+          "changelog": "replaced cover image"
+        },
+        {
+          "version": "2.4.2",
+          "commit": "6beaea6234d873a19a83b6da3003d65d0c5982ab",
+          "date": "2026-09-12T06:44:36-08:00"
+        }
+      ],
+      "external_url": "https://www.nexusmods.com/skyrimspecialedition/mods/169603",
+      "image": {
+        "file": "cover.png",
+        "sha": "24935e170bd427bf1791e1330315a5a711f7e715",
+        "commit": "6d53bf9f8ee01c6aca1b0d6fdef004ef2fa02b62",
+        "width": 2048,
+        "height": 1152
+      },
+      "stats": {
+        "downloads": 583,
+        "endorsements": 10
+      }
+    },
     {
       "id": "plugins/sixteenth/political-engine",
       "plugin_id": "sixteenth.political-engine",
@@ -75,7 +196,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 201,
+        "downloads": 203,
         "endorsements": 1
       }
     },
@@ -365,123 +486,8 @@
         "height": 1080
       },
       "stats": {
-        "downloads": 83,
+        "downloads": 86,
         "endorsements": 0
-      }
-    },
-    {
-      "id": "plugins/tetherball88/ostimnet",
-      "plugin_id": "tetherball88.ostimnet",
-      "type": "listing",
-      "title": "OStimNet",
-      "tagline": "Intimate encounter AI framework integration for OStim and SkyrimNet.",
-      "author": "tetherball88",
-      "tags": [
-        "ostim",
-        "animation",
-        "adult"
-      ],
-      "nsfw": true,
-      "icon": "heart",
-      "mods": [
-        {
-          "name": "SkyrimNet.esp",
-          "file": "skyrimnet.esp",
-          "required": true
-        },
-        {
-          "name": "OStim.esp",
-          "file": "ostim.esp",
-          "required": true
-        }
-      ],
-      "first_published": "2026-09-12T06:44:36-08:00",
-      "last_updated": "2026-11-20T04:03:11Z",
-      "version": "2.7.3",
-      "history": [
-        {
-          "version": "2.7.3",
-          "commit": "2a50a228fdf6af1eacd49352efeaf884484bd027",
-          "date": "2026-11-20T04:03:11Z",
-          "changelog": "github https://github.com/tetherball88/OStimNet/releases/latest\nnexusmods https://www.nexusmods.com/skyrimspecialedition/mods/169603\n- **Player movement, camera & menu controls after Magelight UI modals and OStim scenes** — Fixed player controls (`Movement`, `Looking`, `Activate`, `Menu`, `POVSwitch`, `WheelZoom`, `Fighting`) or text-input locks remaining disabled after dismissing a Magelight UI modal or finishing an OStim scene, including when modals open mid-scene while the player character is AI-driven (`SetAIDriven`) or overlap with scene-end fade-outs.\n- **Magelight UI focus handoff & exit recovery** — Captured Skyrim's main thread ID at SKSE plugin load, added support for Magelight UI `v0.9.1+` exit callbacks alongside `MagelightFocus` menu-close fallbacks, and prevented `UIModeExited` events from clearing focus ownership when back-to-back modals open consecutively."
-        },
-        {
-          "version": "2.7.1",
-          "commit": "9cdb7583c7107a14456787e5c6b7bbaeb5de54e1",
-          "date": "2026-11-17T19:43:19Z",
-          "changelog": "github https://github.com/tetherball88/OStimNet/releases/latest\nnexusmods https://www.nexusmods.com/skyrimspecialedition/mods/169603\n**Crash to desktop (CTD) when ending scenes on Skyrim AE (`1.6.x`)** — Fixed an unmapped Address Library call (`Actor::IsInBleedout`) in scene-end interruption detection that caused an immediate crash to desktop whenever an OStim scene finished on Skyrim Anniversary Edition\n**Phase activity lists in ongoing scene prompts (`ostimnet_thread_phase`)** — Fixed `ONavGetThreadActions` array parsing so `foreplayActions`, `oralActions`, and `sexActions` populate properly instead of returning empty strings.\n**Thread safety & save-reload stability across AI evaluations and prompt decorators** — Synchronized `ThreadRegistry` access across SkyrimNet worker threads, marshaled async LLM/Decisions callbacks and pull-out scene transitions onto the SKSE main thread with save-session guards, and cached `OVirginityQuest` resolution once at startup to avoid repeated off-thread form lookups when `OVirginity.esp` is not installed."
-        },
-        {
-          "version": "2.7.0",
-          "commit": "64648d7bfd3aeec6da016f1a6a624f2cb4a2bdc0",
-          "date": "2026-11-17T02:25:07Z",
-          "changelog": "github https://github.com/tetherball88/OStimNet/releases/latest\nnexusmods https://www.nexusmods.com/skyrimspecialedition/mods/169603\nAdded Magelight UI modals replacing Skyrim message boxes and UIExtensions menus across confirmations, retry prompts, external thread setup, and OStim wheel role/intent menus (mouse, keyboard, and gamepad supported; Magelight UI replaces UIExtensions requirement).\nAdded optional OVirginity Reflowered integration: exposes virginity status to Game Master bios, evaluations, and ongoing dialogue, starts romantic/lustful animations at slow pace for virgins, and triggers first-time reactions, permanent memories, and optional diary entries.\nExpanded StartCareScene (hugging and kissing), non-sexual scene evaluations, manual external setup, and event logs to support lustful and transactional intents alongside platonic and romantic.\nAdded animation pace awareness (slow, moderate, fast) to ongoing scene prompts so NPC vocal delivery and breathlessness match the current animation rhythm.\nAdded combat and guard-arrest scene interruption detection and immediate high-priority NPC reaction trigger (tton_sex_interrupted), cancelling stale scene/speed narration on abrupt stops.\nImproved foreplay, oral, and position search filtering by blacklisting higher-phase action types during earlier-stage searches and clearing incompatible intercourse position tags.\nFixed \"0 starting animations found\" on NPC/AI scene starts: fixed SceneSexSearch relaxing intercourse to sexual when actionType is empty, fixed bed subtype checks (doublebed/singlebed/bedroll), and removed SetDominantActors slot inversion on femdom starts.\nAdded pre-start and start-time furniture-to-floor fallbacks, restricted default undressing start scene to loaded 2-actor male+female pairs, and hardened ThreadRegistry claim expiration and starting-phase sync."
-        },
-        {
-          "version": "2.6.2",
-          "commit": "d87c0e8d1cf35754bb6eba0b783e26e220063a49",
-          "date": "2026-11-14T19:08:56Z",
-          "changelog": "github https://github.com/tetherball88/OStimNet/releases/latest\nnexusmods https://www.nexusmods.com/skyrimspecialedition/mods/169603\n### Added\n- **Billyy animation pack descriptions** — Added detailed scene descriptions and updated position metadata for **Billyy's** animation pack(covering male/female dom and spawned furniture modules), giving the AI a clearer understanding of what characters are doing during those scenes for more accurate dialogue and reactions.\n### Fixed\n- **Scene setup & progression popup errors with limited options** — Fixed a SkyrimNet Decisions error popup (*\"offers 1 option(s); at least two are needed\"*) that could interrupt scene starts, NPC location scans, or automatic scene progression when only a single compatible activity or position existed for the current participants and furniture. When only one valid option is available, OStimNet now selects it automatically."
-        },
-        {
-          "version": "2.6.1",
-          "commit": "28d2fd5cd88caff00997a45e13dab32f1ee0a164",
-          "date": "2026-11-10T16:35:15Z",
-          "changelog": "**Solo / masturbation scene support & phrasing across modals, evaluations, and events** — Fixed several issues where solo (1-person) sexual scenes were blocked or treated as partnered encounters with placeholder names\ngithub https://github.com/tetherball88/OStimNet/releases/latest\nnexusmods https://www.nexusmods.com/skyrimspecialedition/mods/169603"
-        },
-        {
-          "version": "2.6.0",
-          "commit": "3c16bb252b76512fa1e917d2e7ef3f4d2d3faa80",
-          "date": "2026-11-04T03:10:22Z",
-          "changelog": "!!!ATTENTION!!!\nIt requires new OStim Navigator version 2.3.0(https://github.com/tetherball88/OStimNavigator/releases/tag/v2.3.0)\n\n### Added\n\n- **Faster, more reliable AI scene setup & progression (SkyrimNet Decisions support)** — OStimNet now uses SkyrimNet's **Decisions** system to evaluate and set up scenes step-by-step instead of relying solely on long, complex AI text responses:\n  - Makes scene evaluations significantly faster, more consistent, and far less prone to AI formatting errors—especially with smaller or faster AI models.\n  - Covers all scene evaluations: starting new sexual or affectionate scenes, inviting or joining ongoing scenes, automatic scene progression, near-climax pull-out decisions, spontaneous NPC location scans, and scenes started by external mods.\n  - Enabled by default under **General → Use Jev Decisions for evaluations**. If no Decisions model is configured in SkyrimNet, OStimNet automatically falls back to the standard Game Master AI without any extra setup needed.\n\nFull changelog is on github."
-        },
-        {
-          "version": "2.5.7",
-          "commit": "d12033c6b7cffe5de11c41fc920e29f1a6cd1f23",
-          "date": "2026-10-24T03:32:49Z",
-          "changelog": "### Fixed\n\n- **Hotkeys triggering on mouse clicks & extended keys mapping** — Fixed an issue in `HotkeyInputSink::ProcessEvent` where configuring hotkeys (`Advance scene (player thread)`, `Location scan`, `Toggle mute`) to keys without a standard 1-byte `MapVirtualKeyA` scan code (such as `Pause/Break` / `VK_PAUSE = 19`, which mapped to `0`) caused every Left Mouse Click (`IDCode == 0`) to trigger the hotkey action and advance the player's scene:\n  - Restricted keyboard hotkey evaluation strictly to `RE::INPUT_DEVICE::kKeyboard` events and required non-zero DirectInput scan codes.\n  - Added `VkToDirectInputKeyCode` helper with explicit `VK_PAUSE` (`0xC5`) and `VK_NUMLOCK` (`0x45`) handling and `MAPVK_VK_TO_VSC_EX` translation for `0xE0`-extended keys (arrow keys, Insert/Delete/Home/End/PageUp/PageDown, Numpad Divide, right modifiers)."
-        },
-        {
-          "version": "2.5.6",
-          "commit": "af7bd389cff21a7671a283fd675e84dab10c57c6",
-          "date": "2026-10-18T03:50:27Z",
-          "changelog": "Changelog (2.5.6):\n## v2.5.6\n### Added\n\n- **Session mute Papyrus API** — Added global native Papyrus functions on `OStimNet` (`ToggleMute()`, `IsMuted()`, and `SetMuted(bool akMuted)`)\n\n### Fixed\n\n- **Spectator handling across thread continuations (join/swap)** — Fixed spectators being prematurely removed or stuck when an active scene transitions via thread continuation\n- **Thread continuation event prompt rendering** — Added `sex_continue_thread` event rendering (`{{msg}}`) to `ostimnet_event_compact.prompt` and `ostimnet_event_verbose.prompt` so scene continuation events are no longer omitted from SkyrimNet event logs.\n- **External thread start with AI evaluation** — Fixed third-party / external scene starts failing when delegating scene evaluation to AI"
-        },
-        {
-          "version": "2.5.4",
-          "commit": "d492cd94f3f219da97c2b0ca51124c2e9ec2fed1",
-          "date": "2026-10-05T22:09:21Z",
-          "changelog": "attempt to improve reset OStimNet state when save was done during OStim scene and then loaded. I highly not recommend saving during OStim scenes it can break your game.\nupdated Billyy's meta tags for ostimnet(intent and position tags, not descriptions!)"
-        },
-        {
-          "version": "2.5.3",
-          "commit": "62c1ab313251a1148723fb97dbc72b55146f5df6",
-          "date": "2026-09-29T17:08:22Z",
-          "changelog": "added Being Female pregnancy and female cycles note - to make female npcs aware of pregnancy risk."
-        },
-        {
-          "version": "2.5.0",
-          "commit": "6d53bf9f8ee01c6aca1b0d6fdef004ef2fa02b62",
-          "date": "2026-09-26T05:47:57Z",
-          "changelog": "replaced cover image"
-        },
-        {
-          "version": "2.4.2",
-          "commit": "6beaea6234d873a19a83b6da3003d65d0c5982ab",
-          "date": "2026-09-12T06:44:36-08:00"
-        }
-      ],
-      "external_url": "https://www.nexusmods.com/skyrimspecialedition/mods/169603",
-      "image": {
-        "file": "cover.png",
-        "sha": "24935e170bd427bf1791e1330315a5a711f7e715",
-        "commit": "6d53bf9f8ee01c6aca1b0d6fdef004ef2fa02b62",
-        "width": 2048,
-        "height": 1152
-      },
-      "stats": {
-        "downloads": 583,
-        "endorsements": 10
       }
     },
     {
@@ -727,7 +733,7 @@
         "height": 432
       },
       "stats": {
-        "downloads": 410,
+        "downloads": 411,
         "endorsements": 5
       }
     },
@@ -836,7 +842,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 520,
+        "downloads": 521,
         "endorsements": 11
       }
     },
@@ -1016,7 +1022,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 225,
+        "downloads": 226,
         "endorsements": 2
       }
     },
@@ -1384,7 +1390,7 @@
         "height": 720
       },
       "stats": {
-        "downloads": 13,
+        "downloads": 14,
         "endorsements": 0
       }
     },
@@ -1957,7 +1963,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 604,
+        "downloads": 605,
         "endorsements": 6
       }
     },
@@ -3360,7 +3366,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 671,
+        "downloads": 672,
         "endorsements": 10
       }
     },
@@ -6417,7 +6423,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2622,
+        "downloads": 2623,
         "endorsements": 0
       }
     },
