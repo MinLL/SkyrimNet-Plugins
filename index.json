@@ -1,8 +1,69 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-11-21T19:22:26.763Z",
-  "stats_as_of": "2026-11-21T19:22:26.701Z",
+  "generated_at": "2026-11-21T20:03:06.988Z",
+  "stats_as_of": "2026-11-21T20:03:06.902Z",
   "plugins": [
+    {
+      "id": "plugins/nosimo/partyframes-light",
+      "plugin_id": "nosimo.partyframes-light",
+      "type": "listing",
+      "title": "PartyFrames Light",
+      "tagline": "Magelight UI based Party Frames",
+      "author": "nosimo",
+      "tags": [
+        "party",
+        "frames"
+      ],
+      "nsfw": false,
+      "icon": "package",
+      "mods": [
+        {
+          "name": "SeverActions.esp",
+          "file": "severactions.esp",
+          "required": false
+        },
+        {
+          "name": "SeversHearth.esp",
+          "file": "severshearth.esp",
+          "required": false
+        }
+      ],
+      "first_published": "2026-11-17T08:03:21Z",
+      "last_updated": "2026-11-21T20:02:28Z",
+      "version": "0.4.5",
+      "history": [
+        {
+          "version": "0.4.5",
+          "commit": "0228dd711e1d64ead13750baeaf2e5a603484591",
+          "date": "2026-11-21T20:02:28Z",
+          "changelog": "0.4.4\n-SeverActions casual followers and recruited companions share follow-package machinery. PartyFrames now distinguishes them using SeverActions' recruited-roster status, so a casual NPC cannot bypass the filter through an engine link or shared package.\nNew settings:\n-Show SeverActions casual followers, default off. Opt in to frames for casual tag-alongs.\n-Hide casual followers beyond range, default on. Hide casuals farther than the configured range. Starts at 100 metres; adjustable from 10 to 500 m. Unloaded actors and other interiors/worldspaces count as outside range. Turn this off to allow casuals at any distance.\n-Only active SeverActions companions, default off.  Takes priority over casual/summon options. Requires recruited SeverActions roster membership plus active follow evidence or the supported Hearth camp package. Independent vanilla/quest followers and unrostered summons are excluded.\n-Range limiting applies only to casual followers. Recruited companions retain existing camp support. Filter changes apply on the next one-second follower scan. Existing settings files receive the new defaults automatically.\n\n0.4.5 \n-Excludes SCGobservePack (0012CC:suspiciouscityguards.esp) while it is an actor's current package. Suspicious City Guards assigns this player-targeted follow/watch task through its Observer alias; it is surveillance, not party recruitment. The exclusion takes priority over engine links and package-follow signals. It does not blacklist all guards or the NPC permanently.\n-Fixes a broader package classifier bug: package and procedure types are numbered enum values, even though CommonLib stores them in EnumSet. Bitmask comparisons could mistake overlapping values, including dialogue, observation and generic Package types, for following. These checks now use exact equality.\n-Adds package/procedure type numbers to follower diagnostics and logs whether the optional surveillance package was resolved. Excluded observers have a specific log reason."
+        },
+        {
+          "version": "0.4.3",
+          "commit": "ecc3b5aed5fe0496bbdc221f6d38c9c0ca91b67b",
+          "date": "2026-11-18T23:16:29Z",
+          "changelog": "-Teammate status alone no longer qualifies an actor, regardless of SeverActions roster membership.\n-Preserves current SeverActions follow state, engine follower links, live player-targeted follow/escort/accompany packages and the supported Hearth camping-package exception.\n-Adds Follower included / Follower removed log lines with actor IDs, follow signals and package/target IDs to help diagnose remaining reports"
+        },
+        {
+          "version": "0.4.2",
+          "commit": "7a1dfb2cc21631b62e2f84bffe006f47597f2550",
+          "date": "2026-11-17T08:03:21Z",
+          "changelog": "Initial release"
+        }
+      ],
+      "external_url": "https://github.com/Nosimo-SN/PartyFrames-Light/releases/latest",
+      "image": {
+        "file": "cover.png",
+        "sha": "4efc73dc819294d56c9be6fb18444f050dffb28d",
+        "commit": "7a1dfb2cc21631b62e2f84bffe006f47597f2550",
+        "width": 1280,
+        "height": 720
+      },
+      "stats": {
+        "downloads": 34,
+        "endorsements": 0
+      }
+    },
     {
       "id": "plugins/taka/sn-sexual-memories",
       "plugin_id": "taka.sn-sexual-memories",
@@ -82,7 +143,7 @@
         "height": 1080
       },
       "stats": {
-        "downloads": 66,
+        "downloads": 69,
         "endorsements": 0
       }
     },
@@ -146,7 +207,7 @@
         "height": 1008
       },
       "stats": {
-        "downloads": 79,
+        "downloads": 81,
         "endorsements": 0
       }
     },
@@ -197,7 +258,7 @@
         "height": 720
       },
       "stats": {
-        "downloads": 303,
+        "downloads": 305,
         "endorsements": 2
       }
     },
@@ -416,7 +477,7 @@
         "height": 1152
       },
       "stats": {
-        "downloads": 604,
+        "downloads": 605,
         "endorsements": 10
       }
     },
@@ -492,7 +553,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 210,
+        "downloads": 211,
         "endorsements": 1
       }
     },
@@ -711,7 +772,7 @@
         "height": 1080
       },
       "stats": {
-        "downloads": 89,
+        "downloads": 90,
         "endorsements": 0
       }
     },
@@ -1252,61 +1313,6 @@
       }
     },
     {
-      "id": "plugins/nosimo/partyframes-light",
-      "plugin_id": "nosimo.partyframes-light",
-      "type": "listing",
-      "title": "PartyFrames Light",
-      "tagline": "Magelight UI based Party Frames",
-      "author": "nosimo",
-      "tags": [
-        "party",
-        "frames"
-      ],
-      "nsfw": false,
-      "icon": "package",
-      "mods": [
-        {
-          "name": "SeverActions.esp",
-          "file": "severactions.esp",
-          "required": false
-        },
-        {
-          "name": "SeversHearth.esp",
-          "file": "severshearth.esp",
-          "required": false
-        }
-      ],
-      "first_published": "2026-11-17T08:03:21Z",
-      "last_updated": "2026-11-18T23:16:29Z",
-      "version": "0.4.3",
-      "history": [
-        {
-          "version": "0.4.3",
-          "commit": "ecc3b5aed5fe0496bbdc221f6d38c9c0ca91b67b",
-          "date": "2026-11-18T23:16:29Z",
-          "changelog": "-Teammate status alone no longer qualifies an actor, regardless of SeverActions roster membership.\n-Preserves current SeverActions follow state, engine follower links, live player-targeted follow/escort/accompany packages and the supported Hearth camping-package exception.\n-Adds Follower included / Follower removed log lines with actor IDs, follow signals and package/target IDs to help diagnose remaining reports"
-        },
-        {
-          "version": "0.4.2",
-          "commit": "7a1dfb2cc21631b62e2f84bffe006f47597f2550",
-          "date": "2026-11-17T08:03:21Z",
-          "changelog": "Initial release"
-        }
-      ],
-      "external_url": "https://github.com/Nosimo-SN/PartyFrames-Light/releases/latest",
-      "image": {
-        "file": "cover.png",
-        "sha": "4efc73dc819294d56c9be6fb18444f050dffb28d",
-        "commit": "7a1dfb2cc21631b62e2f84bffe006f47597f2550",
-        "width": 1280,
-        "height": 720
-      },
-      "stats": {
-        "downloads": 32,
-        "endorsements": 0
-      }
-    },
-    {
       "id": "plugins/goodprovider/skyrimnet-leashed",
       "plugin_id": "goodprovider.skyrimnet-leashed",
       "type": "listing",
@@ -1427,7 +1433,7 @@
         "height": 1080
       },
       "stats": {
-        "downloads": 107,
+        "downloads": 108,
         "endorsements": 0
       }
     },
@@ -1615,7 +1621,7 @@
         "height": 720
       },
       "stats": {
-        "downloads": 15,
+        "downloads": 16,
         "endorsements": 0
       }
     },
@@ -2330,7 +2336,7 @@
         "height": 864
       },
       "stats": {
-        "downloads": 521,
+        "downloads": 522,
         "endorsements": 8
       }
     },
@@ -2498,7 +2504,7 @@
         "height": 760
       },
       "stats": {
-        "downloads": 333,
+        "downloads": 335,
         "endorsements": 0
       }
     },
@@ -2631,7 +2637,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 190,
+        "downloads": 191,
         "endorsements": 4
       }
     },
@@ -3278,7 +3284,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 227,
+        "downloads": 228,
         "endorsements": 2
       }
     },
@@ -3437,7 +3443,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 685,
+        "downloads": 687,
         "endorsements": 10
       }
     },
@@ -3537,7 +3543,7 @@
         "height": 1080
       },
       "stats": {
-        "downloads": 140,
+        "downloads": 141,
         "endorsements": 1
       }
     },
@@ -3704,7 +3710,7 @@
         "height": 1008
       },
       "stats": {
-        "downloads": 223,
+        "downloads": 224,
         "endorsements": 3
       }
     },
@@ -3760,7 +3766,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 431,
+        "downloads": 433,
         "endorsements": 1
       }
     },
@@ -3885,7 +3891,7 @@
         "config": 7
       },
       "stats": {
-        "downloads": 671,
+        "downloads": 672,
         "endorsements": 0
       }
     },
@@ -3966,7 +3972,7 @@
         "config": 7
       },
       "stats": {
-        "downloads": 916,
+        "downloads": 917,
         "endorsements": 1
       }
     },
@@ -4114,7 +4120,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 374,
+        "downloads": 375,
         "endorsements": 0
       }
     },
@@ -4377,7 +4383,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 109,
+        "downloads": 110,
         "endorsements": 1
       }
     },
@@ -5158,7 +5164,7 @@
         "height": 1008
       },
       "stats": {
-        "downloads": 47,
+        "downloads": 48,
         "endorsements": 0
       }
     },
@@ -5351,7 +5357,7 @@
         "config": 4
       },
       "stats": {
-        "downloads": 888,
+        "downloads": 890,
         "endorsements": 4
       }
     },
@@ -5580,7 +5586,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 715,
+        "downloads": 716,
         "endorsements": 2
       }
     },
@@ -5742,7 +5748,7 @@
       ],
       "external_url": "https://github.com/naitro2010/SkyrimNet_UDNG/releases/tag/alpha12",
       "stats": {
-        "downloads": 176,
+        "downloads": 177,
         "endorsements": 4
       }
     },
@@ -5985,7 +5991,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 122,
+        "downloads": 123,
         "endorsements": 0
       }
     },
@@ -6044,7 +6050,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 590,
+        "downloads": 591,
         "endorsements": 6
       }
     },
@@ -6134,7 +6140,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1217,
+        "downloads": 1218,
         "endorsements": 0
       }
     },
@@ -6224,7 +6230,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 4630,
+        "downloads": 4633,
         "endorsements": 4
       }
     },
@@ -6449,7 +6455,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2688,
+        "downloads": 2690,
         "endorsements": 0
       }
     },
@@ -6944,7 +6950,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 764,
+        "downloads": 765,
         "endorsements": 1
       }
     },
@@ -7214,7 +7220,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2236,
+        "downloads": 2237,
         "endorsements": 2
       }
     },
@@ -7259,7 +7265,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 142,
+        "downloads": 143,
         "endorsements": 0
       }
     },
@@ -7574,7 +7580,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1736,
+        "downloads": 1737,
         "endorsements": 1
       }
     },
@@ -7934,7 +7940,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2559,
+        "downloads": 2562,
         "endorsements": 3
       }
     },
@@ -7979,7 +7985,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 535,
+        "downloads": 536,
         "endorsements": 0
       }
     },
@@ -8159,7 +8165,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1728,
+        "downloads": 1730,
         "endorsements": 2
       }
     },
@@ -8249,7 +8255,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 505,
+        "downloads": 506,
         "endorsements": 0
       }
     },
@@ -8564,7 +8570,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 466,
+        "downloads": 467,
         "endorsements": 0
       }
     },
@@ -9659,7 +9665,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 826,
+        "downloads": 827,
         "endorsements": 0
       }
     },
@@ -9974,7 +9980,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 792,
+        "downloads": 794,
         "endorsements": 0
       }
     },
@@ -10244,7 +10250,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 470,
+        "downloads": 471,
         "endorsements": 1
       }
     },
@@ -10379,7 +10385,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1245,
+        "downloads": 1246,
         "endorsements": 0
       }
     },
@@ -10514,7 +10520,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2299,
+        "downloads": 2303,
         "endorsements": 4
       }
     },
@@ -10604,7 +10610,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2950,
+        "downloads": 2952,
         "endorsements": 2
       }
     },
@@ -11459,7 +11465,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 509,
+        "downloads": 510,
         "endorsements": 1
       }
     },
@@ -11504,7 +11510,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 116,
+        "downloads": 117,
         "endorsements": 0
       }
     },
@@ -11909,7 +11915,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2483,
+        "downloads": 2484,
         "endorsements": 2
       }
     },
@@ -12224,7 +12230,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 367,
+        "downloads": 368,
         "endorsements": 0
       }
     },
@@ -12494,7 +12500,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1070,
+        "downloads": 1071,
         "endorsements": 1
       }
     },
@@ -13259,7 +13265,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1513,
+        "downloads": 1514,
         "endorsements": 0
       }
     },
@@ -13304,7 +13310,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 292,
+        "downloads": 293,
         "endorsements": 0
       }
     },
@@ -15014,7 +15020,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 113,
+        "downloads": 114,
         "endorsements": 0
       }
     },
@@ -15059,7 +15065,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 3620,
+        "downloads": 3621,
         "endorsements": 2
       }
     },
@@ -15419,7 +15425,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 94,
+        "downloads": 96,
         "endorsements": 0
       }
     },
