@@ -1,8 +1,72 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-11-21T05:23:05.202Z",
-  "stats_as_of": "2026-11-21T05:23:05.110Z",
+  "generated_at": "2026-11-21T06:27:27.707Z",
+  "stats_as_of": "2026-11-21T06:27:27.631Z",
   "plugins": [
+    {
+      "id": "plugins/thatguy/o-blood-dirt-and-cum",
+      "plugin_id": "thatguy.o-blood-dirt-and-cum",
+      "type": "listing",
+      "title": "O'Blood, Dirt and Cum",
+      "tagline": "A mod that bridges Ocum, Dirt and Blood, and Skyrimnet... a bit more. :)",
+      "author": "thatguy",
+      "tags": [
+        "NSFW",
+        "Cum",
+        "Ocum",
+        "Dirt and Blood",
+        "Dirt",
+        "Blood"
+      ],
+      "nsfw": true,
+      "icon": "package",
+      "mods": [
+        {
+          "name": "Dirt and Blood - Dynamic Visuals.esp",
+          "file": "dirt and blood - dynamic visuals.esp",
+          "required": false
+        },
+        {
+          "name": "Dirt and Blood - Malignis Animations Patch.esp",
+          "file": "dirt and blood - malignis animations patch.esp",
+          "required": false
+        },
+        {
+          "name": "OCum.esp",
+          "file": "ocum.esp",
+          "required": false
+        }
+      ],
+      "first_published": "2026-11-13T04:04:27Z",
+      "last_updated": "2026-11-21T06:26:51Z",
+      "version": "0.5.7",
+      "history": [
+        {
+          "version": "0.5.7",
+          "commit": "fc93999b18447deb77ba2e29c9533cc136153ffb",
+          "date": "2026-11-21T06:26:51Z",
+          "changelog": "> **0.3 → 0.5.7:** Baths now really wash cum off, overlays and Tull/Liquid/Beast Form meshes included, and SkyrimNet is only told someone is clean after that's checked. Leftover cum overlays on NPCs are cleared after the bath. NPCs can walk to nearby real water (lakes, rivers, pools, tubs) to bathe, and non-followers can WashUp too. New optional SkyrimNet customs make open-air or communal bathing, and intimacy at bathing spots, normal. Characters notice nearby water. There's a new troubleshooting log file and new MCM toggles. Save-safe, so just update in place. Custom player homes and rimmed tubs are hit an miss but open waters seem to always work, so no more having followers bathe in the road or in the sand on a beach. They actually go to the water first."
+        },
+        {
+          "version": "0.3.0",
+          "commit": "4ac45c438ccb01ddaf9a4eb13c71f6d333b4d606",
+          "date": "2026-11-13T04:04:27Z",
+          "changelog": "Initial release"
+        }
+      ],
+      "external_url": "https://github.com/Coronerra/OBlood-Dirt-and-Cum#6-ocum-washing-cum-off-in-a-bath",
+      "image": {
+        "file": "cover.jpg",
+        "sha": "0e40b6e34c93e2b2ba8f234db40637d7a5246e31",
+        "commit": "4ac45c438ccb01ddaf9a4eb13c71f6d333b4d606",
+        "width": 1792,
+        "height": 1008
+      },
+      "stats": {
+        "downloads": 78,
+        "endorsements": 0
+      }
+    },
     {
       "id": "plugins/nosimo/and-awareness",
       "plugin_id": "nosimo.and-awareness",
@@ -148,7 +212,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 611,
+        "downloads": 613,
         "endorsements": 6
       }
     },
@@ -269,7 +333,7 @@
         "height": 1152
       },
       "stats": {
-        "downloads": 590,
+        "downloads": 591,
         "endorsements": 10
       }
     },
@@ -345,7 +409,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 206,
+        "downloads": 207,
         "endorsements": 1
       }
     },
@@ -532,7 +596,7 @@
         "height": 1080
       },
       "stats": {
-        "downloads": 50,
+        "downloads": 51,
         "endorsements": 0
       }
     },
@@ -1117,7 +1181,7 @@
         "height": 768
       },
       "stats": {
-        "downloads": 172,
+        "downloads": 174,
         "endorsements": 2
       }
     },
@@ -1171,7 +1235,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 227,
+        "downloads": 228,
         "endorsements": 2
       }
     },
@@ -1428,7 +1492,7 @@
         "height": 1080
       },
       "stats": {
-        "downloads": 189,
+        "downloads": 190,
         "endorsements": 4
       }
     },
@@ -1642,7 +1706,7 @@
         "height": 1008
       },
       "stats": {
-        "downloads": 214,
+        "downloads": 215,
         "endorsements": 3
       }
     },
@@ -2138,68 +2202,6 @@
       }
     },
     {
-      "id": "plugins/thatguy/o-blood-dirt-and-cum",
-      "plugin_id": "thatguy.o-blood-dirt-and-cum",
-      "type": "listing",
-      "title": "O'Blood, Dirt and Cum",
-      "tagline": "A mod that bridges Ocum, Dirt and Blood, and Skyrimnet... a bit more. :)",
-      "author": "thatguy",
-      "tags": [
-        "NSFW",
-        "Cum",
-        "Ocum",
-        "Dirt and Blood",
-        "Dirt",
-        "Blood"
-      ],
-      "nsfw": true,
-      "icon": "package",
-      "mods": [
-        {
-          "name": "Dirt and Blood - Dynamic Visuals.esp",
-          "file": "dirt and blood - dynamic visuals.esp",
-          "required": false
-        },
-        {
-          "name": "Dirt and Blood - Malignis Animations Patch.esp",
-          "file": "dirt and blood - malignis animations patch.esp",
-          "required": false
-        },
-        {
-          "name": "OCum.esp",
-          "file": "ocum.esp",
-          "required": false
-        }
-      ],
-      "first_published": "2026-11-13T04:04:27Z",
-      "last_updated": "2026-11-13T04:04:27Z",
-      "version": "0.3.0",
-      "history": [
-        {
-          "version": "0.3.0",
-          "commit": "4ac45c438ccb01ddaf9a4eb13c71f6d333b4d606",
-          "date": "2026-11-13T04:04:27Z",
-          "changelog": "Initial release"
-        }
-      ],
-      "external_url": "https://github.com/Coronerra/OBlood-Dirt-and-Cum#6-ocum-washing-cum-off-in-a-bath",
-      "languages": [
-        "en"
-      ],
-      "language": "en",
-      "image": {
-        "file": "cover.jpg",
-        "sha": "0e40b6e34c93e2b2ba8f234db40637d7a5246e31",
-        "commit": "4ac45c438ccb01ddaf9a4eb13c71f6d333b4d606",
-        "width": 1792,
-        "height": 1008
-      },
-      "stats": {
-        "downloads": 78,
-        "endorsements": 0
-      }
-    },
-    {
       "id": "plugins/deadohiosky/relationships",
       "plugin_id": "deadohiosky.relationships",
       "type": "listing",
@@ -2316,7 +2318,7 @@
         "height": 864
       },
       "stats": {
-        "downloads": 518,
+        "downloads": 519,
         "endorsements": 8
       }
     },
@@ -2564,7 +2566,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 274,
+        "downloads": 275,
         "endorsements": 0
       }
     },
@@ -3423,7 +3425,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 674,
+        "downloads": 677,
         "endorsements": 10
       }
     },
@@ -3626,7 +3628,7 @@
         "height": 688
       },
       "stats": {
-        "downloads": 168,
+        "downloads": 169,
         "endorsements": 0
       }
     },
@@ -3871,7 +3873,7 @@
         "config": 7
       },
       "stats": {
-        "downloads": 649,
+        "downloads": 650,
         "endorsements": 0
       }
     },
@@ -3952,7 +3954,7 @@
         "config": 7
       },
       "stats": {
-        "downloads": 891,
+        "downloads": 892,
         "endorsements": 1
       }
     },
@@ -4363,7 +4365,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 107,
+        "downloads": 108,
         "endorsements": 1
       }
     },
@@ -4768,7 +4770,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 210,
+        "downloads": 211,
         "endorsements": 3
       }
     },
@@ -5337,7 +5339,7 @@
         "config": 4
       },
       "stats": {
-        "downloads": 872,
+        "downloads": 873,
         "endorsements": 3
       }
     },
@@ -5566,7 +5568,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 707,
+        "downloads": 708,
         "endorsements": 2
       }
     },
@@ -5636,7 +5638,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1016,
+        "downloads": 1017,
         "endorsements": 1
       }
     },
@@ -5844,7 +5846,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 554,
+        "downloads": 555,
         "endorsements": 1
       }
     },
@@ -6030,7 +6032,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 585,
+        "downloads": 586,
         "endorsements": 6
       }
     },
@@ -6075,7 +6077,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2400,
+        "downloads": 2402,
         "endorsements": 2
       }
     },
@@ -6120,7 +6122,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1206,
+        "downloads": 1207,
         "endorsements": 0
       }
     },
@@ -6210,7 +6212,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 4598,
+        "downloads": 4599,
         "endorsements": 4
       }
     },
@@ -6435,7 +6437,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2650,
+        "downloads": 2651,
         "endorsements": 0
       }
     },
@@ -7560,7 +7562,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1718,
+        "downloads": 1719,
         "endorsements": 1
       }
     },
@@ -7920,7 +7922,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2536,
+        "downloads": 2537,
         "endorsements": 3
       }
     },
@@ -8145,7 +8147,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1703,
+        "downloads": 1704,
         "endorsements": 2
       }
     },
@@ -8955,7 +8957,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 820,
+        "downloads": 821,
         "endorsements": 0
       }
     },
@@ -10500,7 +10502,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2264,
+        "downloads": 2265,
         "endorsements": 4
       }
     },
@@ -10590,7 +10592,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2922,
+        "downloads": 2924,
         "endorsements": 2
       }
     },
@@ -11625,7 +11627,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2980,
+        "downloads": 2983,
         "endorsements": 2
       }
     },
@@ -11895,7 +11897,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2461,
+        "downloads": 2463,
         "endorsements": 2
       }
     },
@@ -12210,7 +12212,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 357,
+        "downloads": 358,
         "endorsements": 0
       }
     },
@@ -12435,7 +12437,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1746,
+        "downloads": 1747,
         "endorsements": 0
       }
     },
@@ -14235,7 +14237,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 982,
+        "downloads": 984,
         "endorsements": 0
       }
     },
@@ -14325,7 +14327,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 305,
+        "downloads": 306,
         "endorsements": 0
       }
     },
@@ -14505,7 +14507,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1353,
+        "downloads": 1354,
         "endorsements": 2
       }
     },
@@ -14640,7 +14642,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 397,
+        "downloads": 398,
         "endorsements": 0
       }
     },
@@ -15045,7 +15047,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 3586,
+        "downloads": 3588,
         "endorsements": 2
       }
     },
