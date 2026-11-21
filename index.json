@@ -1,8 +1,59 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-11-20T23:22:28.434Z",
-  "stats_as_of": "2026-11-20T23:22:28.357Z",
+  "generated_at": "2026-11-21T00:06:41.584Z",
+  "stats_as_of": "2026-11-21T00:05:11.728Z",
   "plugins": [
+    {
+      "id": "plugins/nosimo/and-awareness",
+      "plugin_id": "nosimo.and-awareness",
+      "type": "listing",
+      "title": "AND-Awareness",
+      "tagline": "SkyrimNet awareness of Advanced Nudity Detection's clothing and flashing states.",
+      "author": "nosimo",
+      "tags": [
+        "AND",
+        "Advanced Nudity Detection",
+        "awareness"
+      ],
+      "nsfw": true,
+      "icon": "package",
+      "mods": [
+        {
+          "name": "Advanced Nudity Detection.esp",
+          "file": "advanced nudity detection.esp",
+          "required": true
+        }
+      ],
+      "first_published": "2026-10-25T08:31:47Z",
+      "last_updated": "2026-11-21T00:06:00Z",
+      "version": "1.1.0",
+      "history": [
+        {
+          "version": "1.1.0",
+          "commit": "941f1b15127a0f6aa4c16536b50883d3162d09a4",
+          "date": "2026-11-21T00:06:00Z",
+          "changelog": "New additions — thanks to @bondfan (Semaphor)\nbondfan contributed the ORF/SLA clothing-description feature in PR #1, including the follow-up fixes for style-only garments and the revised NearlyNaked wording.\n\n-Optional Outfit Recognition Framework (ORF_*) and SexLab Aroused (SLA_*) keywords add descriptions of garment colours, materials, fit, styles, heels, and accessories to SkyrimNet's Clothing Coverage section.\n-ORF Classy/Scruffy tags supplement clothing quality; supported ORF/SLA impression tags add outfit descriptions.\n-ORF/SLA transparency tags provide a sheer-garment description when the item has no applicable A.N.D. layer keywords. The existing A.N.D. exposure calculations and flash behavior are retained.\n-New Skip Garments With Vision Descriptions setting, enabled by default, avoids an extra keyword description when OmniSight already describes the garment.\nStyle-only tags such as dresses and harnesses now produce descriptions without needing an extra colour or material tag.\n\n\nCompiled for SE/AE/VR [VR needs testing, I have no VR setup]"
+        },
+        {
+          "version": "1.0.1",
+          "commit": "1940189873cb07b6f17403cdab125d959dd63212",
+          "date": "2026-10-25T08:31:47Z",
+          "changelog": "Initial release"
+        }
+      ],
+      "external_url": "https://github.com/Nosimo-SN/AND-Awareness/releases/latest",
+      "image": {
+        "file": "cover.png",
+        "sha": "cefac73807ee69660ef45ebe8123130e0add52f0",
+        "commit": "1940189873cb07b6f17403cdab125d959dd63212",
+        "width": 1280,
+        "height": 720
+      },
+      "stats": {
+        "downloads": 284,
+        "endorsements": 2
+      }
+    },
     {
       "id": "plugins/nosimo/nos-inworld-2-audio-tags",
       "plugin_id": "nosimo.nos-inworld-2-audio-tags",
@@ -97,7 +148,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 606,
+        "downloads": 607,
         "endorsements": 6
       }
     },
@@ -218,7 +269,7 @@
         "height": 1152
       },
       "stats": {
-        "downloads": 585,
+        "downloads": 586,
         "endorsements": 10
       }
     },
@@ -294,7 +345,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 204,
+        "downloads": 205,
         "endorsements": 1
       }
     },
@@ -1066,7 +1117,7 @@
         "height": 768
       },
       "stats": {
-        "downloads": 170,
+        "downloads": 171,
         "endorsements": 2
       }
     },
@@ -1591,7 +1642,7 @@
         "height": 1008
       },
       "stats": {
-        "downloads": 212,
+        "downloads": 213,
         "endorsements": 3
       }
     },
@@ -2265,7 +2316,7 @@
         "height": 864
       },
       "stats": {
-        "downloads": 516,
+        "downloads": 517,
         "endorsements": 8
       }
     },
@@ -3087,7 +3138,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 429,
+        "downloads": 430,
         "endorsements": 0
       }
     },
@@ -3639,7 +3690,7 @@
         "height": 1008
       },
       "stats": {
-        "downloads": 220,
+        "downloads": 221,
         "endorsements": 3
       }
     },
@@ -3820,7 +3871,7 @@
         "config": 7
       },
       "stats": {
-        "downloads": 640,
+        "downloads": 641,
         "endorsements": 0
       }
     },
@@ -3901,7 +3952,7 @@
         "config": 7
       },
       "stats": {
-        "downloads": 875,
+        "downloads": 876,
         "endorsements": 1
       }
     },
@@ -4259,51 +4310,6 @@
       },
       "stats": {
         "downloads": 168,
-        "endorsements": 2
-      }
-    },
-    {
-      "id": "plugins/nosimo/and-awareness",
-      "plugin_id": "nosimo.and-awareness",
-      "type": "listing",
-      "title": "AND-Awareness",
-      "tagline": "SkyrimNet awareness of Advanced Nudity Detection's clothing and flashing states.",
-      "author": "nosimo",
-      "tags": [
-        "AND",
-        "Advanced Nudity Detection",
-        "awareness"
-      ],
-      "nsfw": true,
-      "icon": "package",
-      "mods": [
-        {
-          "name": "Advanced Nudity Detection.esp",
-          "file": "advanced nudity detection.esp",
-          "required": true
-        }
-      ],
-      "first_published": "2026-10-25T08:31:47Z",
-      "last_updated": "2026-10-25T08:31:47Z",
-      "version": "1.0.1",
-      "history": [
-        {
-          "version": "1.0.1",
-          "commit": "1940189873cb07b6f17403cdab125d959dd63212",
-          "date": "2026-10-25T08:31:47Z",
-          "changelog": "Initial release"
-        }
-      ],
-      "external_url": "https://github.com/Nosimo-SN/AND-Awareness/releases/latest",
-      "image": {
-        "file": "cover.png",
-        "sha": "cefac73807ee69660ef45ebe8123130e0add52f0",
-        "commit": "1940189873cb07b6f17403cdab125d959dd63212",
-        "width": 1280,
-        "height": 720
-      },
-      "stats": {
-        "downloads": 284,
         "endorsements": 2
       }
     },
@@ -4721,7 +4727,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 233,
+        "downloads": 234,
         "endorsements": 0
       }
     },
@@ -5331,7 +5337,7 @@
         "config": 4
       },
       "stats": {
-        "downloads": 858,
+        "downloads": 859,
         "endorsements": 3
       }
     },
@@ -5560,7 +5566,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 696,
+        "downloads": 697,
         "endorsements": 2
       }
     },
@@ -5722,7 +5728,7 @@
       ],
       "external_url": "https://github.com/naitro2010/SkyrimNet_UDNG/releases/tag/alpha12",
       "stats": {
-        "downloads": 174,
+        "downloads": 175,
         "endorsements": 4
       }
     },
@@ -5898,7 +5904,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 301,
+        "downloads": 302,
         "endorsements": 1
       }
     },
@@ -6069,7 +6075,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2378,
+        "downloads": 2379,
         "endorsements": 2
       }
     },
@@ -6114,7 +6120,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1196,
+        "downloads": 1197,
         "endorsements": 0
       }
     },
@@ -6204,7 +6210,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 4570,
+        "downloads": 4571,
         "endorsements": 4
       }
     },
@@ -7554,7 +7560,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1709,
+        "downloads": 1711,
         "endorsements": 1
       }
     },
@@ -7914,7 +7920,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2519,
+        "downloads": 2520,
         "endorsements": 3
       }
     },
@@ -7959,7 +7965,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 527,
+        "downloads": 528,
         "endorsements": 0
       }
     },
@@ -9639,7 +9645,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 811,
+        "downloads": 812,
         "endorsements": 0
       }
     },
@@ -10224,7 +10230,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 459,
+        "downloads": 460,
         "endorsements": 1
       }
     },
@@ -10404,7 +10410,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 883,
+        "downloads": 884,
         "endorsements": 0
       }
     },
@@ -10584,7 +10590,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2900,
+        "downloads": 2901,
         "endorsements": 2
       }
     },
@@ -11619,7 +11625,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2956,
+        "downloads": 2958,
         "endorsements": 2
       }
     },
@@ -11889,7 +11895,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2444,
+        "downloads": 2445,
         "endorsements": 2
       }
     },
@@ -12429,7 +12435,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1732,
+        "downloads": 1733,
         "endorsements": 0
       }
     },
@@ -13194,7 +13200,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 606,
+        "downloads": 607,
         "endorsements": 0
       }
     },
@@ -15039,7 +15045,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 3563,
+        "downloads": 3564,
         "endorsements": 2
       }
     },
@@ -15309,7 +15315,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 923,
+        "downloads": 924,
         "endorsements": 0
       }
     },
