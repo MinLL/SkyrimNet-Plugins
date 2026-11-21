@@ -1,8 +1,91 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-11-21T13:22:48.965Z",
-  "stats_as_of": "2026-11-21T13:22:48.909Z",
+  "generated_at": "2026-11-21T13:41:34.466Z",
+  "stats_as_of": "2026-11-21T13:41:34.353Z",
   "plugins": [
+    {
+      "id": "plugins/taka/sn-sexual-memories",
+      "plugin_id": "taka.sn-sexual-memories",
+      "type": "listing",
+      "title": "SN Sexual Memories",
+      "tagline": "Every OStim or SexLab scene becomes a memory for those who took part and for a bystander who saw it, NPCs talk about it, and a relationship map shows what lies between the people around you.",
+      "author": "taka",
+      "tags": [
+        "memories",
+        "ostim",
+        "sexlab",
+        "witness",
+        "dialogue",
+        "relationships",
+        "diary"
+      ],
+      "nsfw": true,
+      "icon": "heart",
+      "mods": [
+        {
+          "name": "OStim.esp",
+          "file": "ostim.esp",
+          "required": false
+        },
+        {
+          "name": "SexLab.esm",
+          "file": "sexlab.esm",
+          "required": false
+        }
+      ],
+      "first_published": "2026-11-19T03:38:05Z",
+      "last_updated": "2026-11-21T13:41:02Z",
+      "version": "0.4.3",
+      "history": [
+        {
+          "version": "0.4.3",
+          "commit": "582447bcbaa85477ad3c9248c3736ce68a3ecf91",
+          "date": "2026-11-21T13:41:02Z",
+          "changelog": "**Added**\n- **Diary entries after scenes (off by default).** Turn it on in the MCM (\"Diary entries after scenes\"). After a scene, everyone who took part, the player too, writes a private diary entry in their own voice, stored as their SkyrimNet diary entry. It does not retell the scene (the scene memory keeps that): it is what they never say aloud, how things have changed with the others over their history together, what they mean to do next, and how they see their life so far and where it is going, unflattering thoughts included.\n  - One more request to your LLM per person per scene.\n  - Its model is set in SkyrimNet's dashboard: AI > Models, sn_sexual_memories_diary (this mod's own card, not SkyrimNet's diary model). Left empty, it uses SkyrimNet's default model. To try it out, we recommend an inexpensive model there.\n  - When SkyrimNet also writes its usual diary entries, the same scene may appear in both.\n  - An entry can fail to be written (the model may decline or give an unusable answer, the request may fail, or SkyrimNet may refuse it, for example while a save is still loading). Then that person gets no entry for that scene; the scene memories are not affected.\n\n**Changed**\n- **The scene memories have their own model card:** AI > Models, sn_sexual_memories_memory, used for the participants' and the witness's memories. Left empty, it uses SkyrimNet's default model, as before."
+        },
+        {
+          "version": "0.4.2",
+          "commit": "0546fe66e3900f2618e4db4a5a301a0292b6f00d",
+          "date": "2026-11-20T09:22:05Z",
+          "changelog": "**Changed**\n- **The conversation just before a scene comes first.** If it clearly shows the one on the receiving end agreed to it freely, the lines during the scene and the memories afterwards treat it as consensual, even when the scene is marked dominating or rough (for example OStimNet's Dom intent). If it clearly shows it is against their will, it is treated as forced. Agreeing under threat, or when one could not refuse (a captive, someone defeated), does not count as agreeing. Only when the conversation does not settle it does the scene's own marking decide, as before.\n- The witness's memory follows the same order, as far as an onlooker could know what was said.\n\nThis is the AI's judgement, so it is not guaranteed."
+        },
+        {
+          "version": "0.4.1",
+          "commit": "ae8518122698cbc7d3fb87511ad70ded43c707ad",
+          "date": "2026-11-19T10:36:56Z",
+          "changelog": "**Changed**\n- **Nothing is sent to the AI until you press Create.** Opening the relationship map or choosing someone only shows a map already made. For someone without one, the map says so and the Refresh button reads Create.\n- **Choose who is on the map.** Every name on the list on the left except yours has a ×: a person taken off the list is left off the maps you make until you close the map. Each person on a map is one request to the AI, so this keeps the cost down.\n- **Earlier records are kept.** When a map is made again, the people of the earlier map who are not on the new one keep their cards under Earlier records, folded to one line with the date they were made. A name filter above the cards finds anyone among them.\n\n**Fixed**\n- A card could come out in Japanese in a game in another language, for a person the records said little about. The map now writes in the language of the records, or else in the language of the installed settings menu.\n\n**Note**\n- The relationship map's model is set in SkyrimNet's dashboard: AI > Models, sn_sexual_memories_relmap. When it is left empty, the map uses SkyrimNet's default model."
+        },
+        {
+          "version": "0.4.0",
+          "commit": "f4ec7de70102d4a290e27cb7182bd0de5c7b032f",
+          "date": "2026-11-19T09:04:26Z",
+          "changelog": "Changes since 0.2.1, the last version on the Hub.\n\n**New**\n- **Relationship map** (needs Magelight UI or Prisma UI). Press a key (Y by default) and choose yourself or an NPC nearby: SkyrimNet's AI writes what lies between them and up to ten people around you: what happened between them, in order, how each feels about the other, the key events, and how the others are tied to each other. It reads both sides' memories, their diaries and SkyrimNet's events, and writes only what those records say. Maps are saved per save; Refresh remakes one, and a button remakes it in English. With Phantasm installed, faces are shown.\n- **Complaints about a partner.** Now and then an NPC near you who has a husband, wife or lover complains to you about them, only while that partner is too far away to overhear.\n- **Your character speaks up** (off by default). Now and then your character says something to an NPC nearby, drawing on what just happened, on your character's memories and on how the two of you stand. It is voiced when SkyrimNet voices the player, shown as a subtitle, and the NPC answers.\n\n**Changed**\n- **Memories fit the kind of encounter.** The AI first judges what the encounter was for each person (loving, casual, paid, a duty, reluctant or forced) from what happened before and during it. Sex is no longer taken as affection.\n- New MCM settings for each feature, so any of them can be turned off."
+        },
+        {
+          "version": "0.2.1",
+          "commit": "4212abce85aa1fa67618dc57d845b56125bf2817",
+          "date": "2026-11-19T03:38:05Z",
+          "changelog": "First version on the Hub. Memories of each OStim or SexLab scene for everyone who took part and for one bystander who saw it, lines from the NPCs during scenes, and an MCM in English or Japanese."
+        }
+      ],
+      "external_url": "https://github.com/nightlantern-mods/SN_SexualMemories",
+      "languages": [
+        "en",
+        "ja"
+      ],
+      "language": "en",
+      "image": {
+        "file": "cover.jpg",
+        "sha": "e0267182ece52ff4f9c7490bedf7241dc3a27866",
+        "commit": "4212abce85aa1fa67618dc57d845b56125bf2817",
+        "width": 1920,
+        "height": 1080
+      },
+      "stats": {
+        "downloads": 57,
+        "endorsements": 0
+      }
+    },
     {
       "id": "plugins/thatguy/o-blood-dirt-and-cum",
       "plugin_id": "thatguy.o-blood-dirt-and-cum",
@@ -527,77 +610,6 @@
       "stats": {
         "downloads": 52,
         "endorsements": 1
-      }
-    },
-    {
-      "id": "plugins/taka/sn-sexual-memories",
-      "plugin_id": "taka.sn-sexual-memories",
-      "type": "listing",
-      "title": "SN Sexual Memories",
-      "tagline": "Every OStim or SexLab scene becomes a memory for those who took part and for a bystander who saw it, NPCs talk about it, and a relationship map shows what lies between the people around you.",
-      "author": "taka",
-      "tags": [
-        "memories",
-        "ostim",
-        "sexlab",
-        "witness",
-        "dialogue",
-        "relationships"
-      ],
-      "nsfw": true,
-      "icon": "heart",
-      "mods": [
-        {
-          "name": "SN_SexualHistory.esp",
-          "file": "sn_sexualhistory.esp",
-          "required": true
-        }
-      ],
-      "first_published": "2026-11-19T03:38:05Z",
-      "last_updated": "2026-11-20T09:22:05Z",
-      "version": "0.4.2",
-      "history": [
-        {
-          "version": "0.4.2",
-          "commit": "0546fe66e3900f2618e4db4a5a301a0292b6f00d",
-          "date": "2026-11-20T09:22:05Z",
-          "changelog": "**Changed**\n- **The conversation just before a scene comes first.** If it clearly shows the one on the receiving end agreed to it freely, the lines during the scene and the memories afterwards treat it as consensual, even when the scene is marked dominating or rough (for example OStimNet's Dom intent). If it clearly shows it is against their will, it is treated as forced. Agreeing under threat, or when one could not refuse (a captive, someone defeated), does not count as agreeing. Only when the conversation does not settle it does the scene's own marking decide, as before.\n- The witness's memory follows the same order, as far as an onlooker could know what was said.\n\nThis is the AI's judgement, so it is not guaranteed."
-        },
-        {
-          "version": "0.4.1",
-          "commit": "ae8518122698cbc7d3fb87511ad70ded43c707ad",
-          "date": "2026-11-19T10:36:56Z",
-          "changelog": "**Changed**\n- **Nothing is sent to the AI until you press Create.** Opening the relationship map or choosing someone only shows a map already made. For someone without one, the map says so and the Refresh button reads Create.\n- **Choose who is on the map.** Every name on the list on the left except yours has a ×: a person taken off the list is left off the maps you make until you close the map. Each person on a map is one request to the AI, so this keeps the cost down.\n- **Earlier records are kept.** When a map is made again, the people of the earlier map who are not on the new one keep their cards under Earlier records, folded to one line with the date they were made. A name filter above the cards finds anyone among them.\n\n**Fixed**\n- A card could come out in Japanese in a game in another language, for a person the records said little about. The map now writes in the language of the records, or else in the language of the installed settings menu.\n\n**Note**\n- The relationship map's model is set in SkyrimNet's dashboard: AI > Models, sn_sexual_memories_relmap. When it is left empty, the map uses SkyrimNet's default model."
-        },
-        {
-          "version": "0.4.0",
-          "commit": "f4ec7de70102d4a290e27cb7182bd0de5c7b032f",
-          "date": "2026-11-19T09:04:26Z",
-          "changelog": "Changes since 0.2.1, the last version on the Hub.\n\n**New**\n- **Relationship map** (needs Magelight UI or Prisma UI). Press a key (Y by default) and choose yourself or an NPC nearby: SkyrimNet's AI writes what lies between them and up to ten people around you: what happened between them, in order, how each feels about the other, the key events, and how the others are tied to each other. It reads both sides' memories, their diaries and SkyrimNet's events, and writes only what those records say. Maps are saved per save; Refresh remakes one, and a button remakes it in English. With Phantasm installed, faces are shown.\n- **Complaints about a partner.** Now and then an NPC near you who has a husband, wife or lover complains to you about them, only while that partner is too far away to overhear.\n- **Your character speaks up** (off by default). Now and then your character says something to an NPC nearby, drawing on what just happened, on your character's memories and on how the two of you stand. It is voiced when SkyrimNet voices the player, shown as a subtitle, and the NPC answers.\n\n**Changed**\n- **Memories fit the kind of encounter.** The AI first judges what the encounter was for each person (loving, casual, paid, a duty, reluctant or forced) from what happened before and during it. Sex is no longer taken as affection.\n- New MCM settings for each feature, so any of them can be turned off."
-        },
-        {
-          "version": "0.2.1",
-          "commit": "4212abce85aa1fa67618dc57d845b56125bf2817",
-          "date": "2026-11-19T03:38:05Z",
-          "changelog": "First version on the Hub. Memories of each OStim or SexLab scene for everyone who took part and for one bystander who saw it, lines from the NPCs during scenes, and an MCM in English or Japanese."
-        }
-      ],
-      "external_url": "https://github.com/nightlantern-mods/SN_SexualMemories",
-      "languages": [
-        "en",
-        "ja"
-      ],
-      "language": "en",
-      "image": {
-        "file": "cover.jpg",
-        "sha": "e0267182ece52ff4f9c7490bedf7241dc3a27866",
-        "commit": "4212abce85aa1fa67618dc57d845b56125bf2817",
-        "width": 1920,
-        "height": 1080
-      },
-      "stats": {
-        "downloads": 57,
-        "endorsements": 0
       }
     },
     {
@@ -2085,7 +2097,7 @@
       "curated": true,
       "stats": {
         "downloads": 1408,
-        "endorsements": 43
+        "endorsements": 44
       }
     },
     {
@@ -3954,7 +3966,7 @@
         "config": 7
       },
       "stats": {
-        "downloads": 900,
+        "downloads": 901,
         "endorsements": 1
       }
     },
@@ -4102,7 +4114,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 371,
+        "downloads": 372,
         "endorsements": 0
       }
     },
@@ -5339,7 +5351,7 @@
         "config": 4
       },
       "stats": {
-        "downloads": 880,
+        "downloads": 881,
         "endorsements": 3
       }
     },
@@ -5846,7 +5858,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 560,
+        "downloads": 561,
         "endorsements": 1
       }
     },
@@ -6077,7 +6089,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2412,
+        "downloads": 2413,
         "endorsements": 2
       }
     },
@@ -6122,7 +6134,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1210,
+        "downloads": 1211,
         "endorsements": 0
       }
     },
@@ -6212,7 +6224,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 4615,
+        "downloads": 4616,
         "endorsements": 4
       }
     },
@@ -6932,7 +6944,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 757,
+        "downloads": 758,
         "endorsements": 1
       }
     },
@@ -7922,7 +7934,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2545,
+        "downloads": 2546,
         "endorsements": 3
       }
     },
@@ -8057,7 +8069,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 610,
+        "downloads": 611,
         "endorsements": 1
       }
     },
@@ -8102,7 +8114,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1012,
+        "downloads": 1013,
         "endorsements": 0
       }
     },
@@ -8282,7 +8294,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 494,
+        "downloads": 495,
         "endorsements": 0
       }
     },
@@ -9647,7 +9659,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 818,
+        "downloads": 819,
         "endorsements": 0
       }
     },
@@ -10367,7 +10379,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1233,
+        "downloads": 1234,
         "endorsements": 0
       }
     },
@@ -10502,7 +10514,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2279,
+        "downloads": 2280,
         "endorsements": 4
       }
     },
