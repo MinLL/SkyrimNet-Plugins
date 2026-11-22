@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-11-22T07:12:11.270Z",
-  "stats_as_of": "2026-11-22T07:12:11.157Z",
+  "generated_at": "2026-11-22T07:51:42.695Z",
+  "stats_as_of": "2026-11-22T07:47:49.613Z",
   "plugins": [
     {
       "id": "plugins/taka/skyrimnet-dialogue-scenario-editor",
@@ -32,9 +32,15 @@
         }
       ],
       "first_published": "2026-11-22T07:11:33Z",
-      "last_updated": "2026-11-22T07:11:33Z",
-      "version": "0.1.0",
+      "last_updated": "2026-11-22T07:51:05Z",
+      "version": "0.2.0",
       "history": [
+        {
+          "version": "0.2.0",
+          "commit": "3d022f3df48236ed1baa235a320154b53a6b65a5",
+          "date": "2026-11-22T07:51:05Z",
+          "changelog": "New\n- How a column ends is now a choice: nothing (talk only), an OStim scene, or move and wait: chosen people walk to an interior and wait there until another scenario has happened or some days have passed.\n- Prerequisite: a scenario can wait until another one has finished.\n- Starts by hotkey: each scenario starts automatically or when you press the new MCM key \"Key that starts a hotkey scenario\".\n- Cell condition: a scenario can be limited to one cell, picked from the list of interiors or set to the cell you are in.\n- Generate (auto lines): writes only the people, narration and OStim (tags) of each column; the lines are set to Auto (Medium) and made up in the game.\n- Log file: Documents\\My Games\\Skyrim Special Edition\\SKSE\\SkyrimNet_DialogueScenarioEditor.log, no INI setting needed. It says why a scenario does not start, and while one runs, every line, SkyrimNet's speech events and how long each wait took.\n\nChanged\n- A child nearby no longer keeps a scenario from starting (children still cannot take part).\n\nFixed\n- A deleted scenario (also the bundled example) came back after the mod was reinstalled or updated.\n- A scenario deleted and made again under the same name counted as having run already."
+        },
         {
           "version": "0.1.0",
           "commit": "73ecb62827d96a7e15b51acb0504a8725833b467",
@@ -48,8 +54,15 @@
         "en"
       ],
       "language": "ja",
+      "image": {
+        "file": "cover.jpg",
+        "sha": "f941c7a8fb435e5e5e13913a1bd1214576f3afa5",
+        "commit": "3d022f3df48236ed1baa235a320154b53a6b65a5",
+        "width": 1920,
+        "height": 1080
+      },
       "stats": {
-        "downloads": 0,
+        "downloads": 1,
         "endorsements": 0
       }
     },
@@ -176,7 +189,7 @@
         "height": 864
       },
       "stats": {
-        "downloads": 527,
+        "downloads": 529,
         "endorsements": 8
       }
     },
@@ -320,7 +333,7 @@
         "height": 1080
       },
       "stats": {
-        "downloads": 85,
+        "downloads": 86,
         "endorsements": 0
       }
     },
@@ -384,7 +397,7 @@
         "height": 1008
       },
       "stats": {
-        "downloads": 85,
+        "downloads": 86,
         "endorsements": 0
       }
     },
@@ -654,7 +667,7 @@
         "height": 1152
       },
       "stats": {
-        "downloads": 609,
+        "downloads": 610,
         "endorsements": 10
       }
     },
@@ -2279,7 +2292,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 1429,
+        "downloads": 1430,
         "endorsements": 44
       }
     },
@@ -5104,7 +5117,7 @@
         "height": 720
       },
       "stats": {
-        "downloads": 44,
+        "downloads": 45,
         "endorsements": 0
       }
     },
@@ -6511,7 +6524,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2721,
+        "downloads": 2722,
         "endorsements": 0
       }
     },
