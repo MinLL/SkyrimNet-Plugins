@@ -1,8 +1,90 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-11-22T12:33:35.382Z",
-  "stats_as_of": "2026-11-22T12:33:35.311Z",
+  "generated_at": "2026-11-22T13:45:05.274Z",
+  "stats_as_of": "2026-11-22T13:45:05.208Z",
   "plugins": [
+    {
+      "id": "plugins/taka/skyrimnet-dialogue-scenario-editor",
+      "plugin_id": "taka.skyrimnet-dialogue-scenario-editor",
+      "type": "listing",
+      "title": "SkyrimNet Dialogue Scenario Editor",
+      "tagline": "Write scenarios that nearby NPCs play out - narration, lines spoken in their own voice, OStim scenes - or let an NPC write the whole scenario for you with SkyrimNet's AI.",
+      "author": "taka",
+      "tags": [
+        "scenarios",
+        "ostim",
+        "sexlab",
+        "dialogue",
+        "narration",
+        "generation",
+        "actions"
+      ],
+      "nsfw": true,
+      "icon": "sparkles",
+      "mods": [
+        {
+          "name": "OStim.esp",
+          "file": "ostim.esp",
+          "required": false
+        },
+        {
+          "name": "SN_SexualHistory.esp",
+          "file": "sn_sexualhistory.esp",
+          "required": false
+        },
+        {
+          "name": "SexLab.esm",
+          "file": "sexlab.esm",
+          "required": false
+        }
+      ],
+      "first_published": "2026-11-22T07:11:33Z",
+      "last_updated": "2026-11-22T13:44:28Z",
+      "version": "0.3.1",
+      "history": [
+        {
+          "version": "0.3.1",
+          "commit": "641ee45dc2e2ed42ad79683db5e2cb627284b622",
+          "date": "2026-11-22T13:44:28Z",
+          "changelog": "Fixed\n- A scenario set to indoors only (or outdoors only) did not start again after you left its place and came back.\n- An edited scenario counted as having run already: saving a scenario with changed content now lets it run again (turning it on or off in the list does not).\n- Someone left in SexLab's animating faction after a scene that did not end cleanly was taken as still in a scene, so scenarios with them never started. A SexLab scene of theirs must now really exist.\n\nChanged\n- When someone is taken as in a sex scene, the log now says whether OStim or SexLab said so."
+        },
+        {
+          "version": "0.3.0",
+          "commit": "bf4687726c71904fa0612e728b3b4e0a80cc041b",
+          "date": "2026-11-22T12:02:10Z",
+          "changelog": "New\n- A SkyrimNet action at the end of a column: pick an action from the mods you have installed (SeverActions, OStimNet, SkyrimNet SexLab, Relationships and others), who does it, and its parameters. Only actions SkyrimNet has registered in your game are offered; one whose mod was removed later is skipped.\n- SexLab support (P+ and 1.6x): the MCM setting \"Sex scenes with\" (Automatic / OStim / SexLab) chooses when both are installed; Automatic uses OStim. Scenario tags keep OStim's names and SexLab gets the nearest SexLab tags. Not tested in game yet.\n- OStim is no longer needed: without OStim or SexLab, scenarios still play their talk, move and wait, and actions.\n\nChanged\n- People who are fighting (a brawl too), in a sex scene, changed by an action or a move and wait earlier in the same scenario, or held by another mod's scene are no longer gathered or held. They still say their lines from where they are.\n- Someone who fights while talking loses SkyrimNet's talk package (which keeps a speaker standing still), so they keep fighting.\n\nGood to know\n- SkyrimNet itself can pick actions from what the narration and lines say, apart from the column-end action; auto lines make this more likely."
+        },
+        {
+          "version": "0.2.0",
+          "commit": "3d022f3df48236ed1baa235a320154b53a6b65a5",
+          "date": "2026-11-22T07:51:05Z",
+          "changelog": "New\n- How a column ends is now a choice: nothing (talk only), an OStim scene, or move and wait: chosen people walk to an interior and wait there until another scenario has happened or some days have passed.\n- Prerequisite: a scenario can wait until another one has finished.\n- Starts by hotkey: each scenario starts automatically or when you press the new MCM key \"Key that starts a hotkey scenario\".\n- Cell condition: a scenario can be limited to one cell, picked from the list of interiors or set to the cell you are in.\n- Generate (auto lines): writes only the people, narration and OStim (tags) of each column; the lines are set to Auto (Medium) and made up in the game.\n- Log file: Documents\\My Games\\Skyrim Special Edition\\SKSE\\SkyrimNet_DialogueScenarioEditor.log, no INI setting needed. It says why a scenario does not start, and while one runs, every line, SkyrimNet's speech events and how long each wait took.\n\nChanged\n- A child nearby no longer keeps a scenario from starting (children still cannot take part).\n\nFixed\n- A deleted scenario (also the bundled example) came back after the mod was reinstalled or updated.\n- A scenario deleted and made again under the same name counted as having run already."
+        },
+        {
+          "version": "0.1.0",
+          "commit": "73ecb62827d96a7e15b51acb0504a8725833b467",
+          "date": "2026-11-22T07:11:33Z",
+          "changelog": "First release. Scenarios in up to 10 columns that nearby NPCs play out (narration, lines in their own voice, OStim scenes), Auto lines and Auto columns, Generate (an NPC writes the whole scenario with SkyrimNet's AI), a settings page on Magelight UI or Prisma UI, and an installer in English or Japanese."
+        }
+      ],
+      "external_url": "https://github.com/nightlantern-mods/SkyrimNet_DialogueScenarioEditor",
+      "languages": [
+        "ja",
+        "en"
+      ],
+      "language": "ja",
+      "image": {
+        "file": "cover.jpg",
+        "sha": "f941c7a8fb435e5e5e13913a1bd1214576f3afa5",
+        "commit": "3d022f3df48236ed1baa235a320154b53a6b65a5",
+        "width": 1920,
+        "height": 1080
+      },
+      "stats": {
+        "downloads": 9,
+        "endorsements": 0
+      }
+    },
     {
       "id": "plugins/nosimo/partyframes-light",
       "plugin_id": "nosimo.partyframes-light",
@@ -67,82 +149,6 @@
       },
       "stats": {
         "downloads": 41,
-        "endorsements": 0
-      }
-    },
-    {
-      "id": "plugins/taka/skyrimnet-dialogue-scenario-editor",
-      "plugin_id": "taka.skyrimnet-dialogue-scenario-editor",
-      "type": "listing",
-      "title": "SkyrimNet Dialogue Scenario Editor",
-      "tagline": "Write scenarios that nearby NPCs play out - narration, lines spoken in their own voice, OStim scenes - or let an NPC write the whole scenario for you with SkyrimNet's AI.",
-      "author": "taka",
-      "tags": [
-        "scenarios",
-        "ostim",
-        "sexlab",
-        "dialogue",
-        "narration",
-        "generation",
-        "actions"
-      ],
-      "nsfw": true,
-      "icon": "sparkles",
-      "mods": [
-        {
-          "name": "OStim.esp",
-          "file": "ostim.esp",
-          "required": false
-        },
-        {
-          "name": "SN_SexualHistory.esp",
-          "file": "sn_sexualhistory.esp",
-          "required": false
-        },
-        {
-          "name": "SexLab.esm",
-          "file": "sexlab.esm",
-          "required": false
-        }
-      ],
-      "first_published": "2026-11-22T07:11:33Z",
-      "last_updated": "2026-11-22T12:02:10Z",
-      "version": "0.3.0",
-      "history": [
-        {
-          "version": "0.3.0",
-          "commit": "bf4687726c71904fa0612e728b3b4e0a80cc041b",
-          "date": "2026-11-22T12:02:10Z",
-          "changelog": "New\n- A SkyrimNet action at the end of a column: pick an action from the mods you have installed (SeverActions, OStimNet, SkyrimNet SexLab, Relationships and others), who does it, and its parameters. Only actions SkyrimNet has registered in your game are offered; one whose mod was removed later is skipped.\n- SexLab support (P+ and 1.6x): the MCM setting \"Sex scenes with\" (Automatic / OStim / SexLab) chooses when both are installed; Automatic uses OStim. Scenario tags keep OStim's names and SexLab gets the nearest SexLab tags. Not tested in game yet.\n- OStim is no longer needed: without OStim or SexLab, scenarios still play their talk, move and wait, and actions.\n\nChanged\n- People who are fighting (a brawl too), in a sex scene, changed by an action or a move and wait earlier in the same scenario, or held by another mod's scene are no longer gathered or held. They still say their lines from where they are.\n- Someone who fights while talking loses SkyrimNet's talk package (which keeps a speaker standing still), so they keep fighting.\n\nGood to know\n- SkyrimNet itself can pick actions from what the narration and lines say, apart from the column-end action; auto lines make this more likely."
-        },
-        {
-          "version": "0.2.0",
-          "commit": "3d022f3df48236ed1baa235a320154b53a6b65a5",
-          "date": "2026-11-22T07:51:05Z",
-          "changelog": "New\n- How a column ends is now a choice: nothing (talk only), an OStim scene, or move and wait: chosen people walk to an interior and wait there until another scenario has happened or some days have passed.\n- Prerequisite: a scenario can wait until another one has finished.\n- Starts by hotkey: each scenario starts automatically or when you press the new MCM key \"Key that starts a hotkey scenario\".\n- Cell condition: a scenario can be limited to one cell, picked from the list of interiors or set to the cell you are in.\n- Generate (auto lines): writes only the people, narration and OStim (tags) of each column; the lines are set to Auto (Medium) and made up in the game.\n- Log file: Documents\\My Games\\Skyrim Special Edition\\SKSE\\SkyrimNet_DialogueScenarioEditor.log, no INI setting needed. It says why a scenario does not start, and while one runs, every line, SkyrimNet's speech events and how long each wait took.\n\nChanged\n- A child nearby no longer keeps a scenario from starting (children still cannot take part).\n\nFixed\n- A deleted scenario (also the bundled example) came back after the mod was reinstalled or updated.\n- A scenario deleted and made again under the same name counted as having run already."
-        },
-        {
-          "version": "0.1.0",
-          "commit": "73ecb62827d96a7e15b51acb0504a8725833b467",
-          "date": "2026-11-22T07:11:33Z",
-          "changelog": "First release. Scenarios in up to 10 columns that nearby NPCs play out (narration, lines in their own voice, OStim scenes), Auto lines and Auto columns, Generate (an NPC writes the whole scenario with SkyrimNet's AI), a settings page on Magelight UI or Prisma UI, and an installer in English or Japanese."
-        }
-      ],
-      "external_url": "https://github.com/nightlantern-mods/SkyrimNet_DialogueScenarioEditor",
-      "languages": [
-        "ja",
-        "en"
-      ],
-      "language": "ja",
-      "image": {
-        "file": "cover.jpg",
-        "sha": "f941c7a8fb435e5e5e13913a1bd1214576f3afa5",
-        "commit": "3d022f3df48236ed1baa235a320154b53a6b65a5",
-        "width": 1920,
-        "height": 1080
-      },
-      "stats": {
-        "downloads": 8,
         "endorsements": 0
       }
     },
@@ -269,7 +275,7 @@
         "height": 864
       },
       "stats": {
-        "downloads": 542,
+        "downloads": 544,
         "endorsements": 8
       }
     },
@@ -352,7 +358,7 @@
         "height": 1080
       },
       "stats": {
-        "downloads": 99,
+        "downloads": 101,
         "endorsements": 0
       }
     },
@@ -416,7 +422,7 @@
         "height": 1008
       },
       "stats": {
-        "downloads": 88,
+        "downloads": 90,
         "endorsements": 0
       }
     },
@@ -565,7 +571,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 647,
+        "downloads": 649,
         "endorsements": 6
       }
     },
@@ -686,7 +692,7 @@
         "height": 1152
       },
       "stats": {
-        "downloads": 614,
+        "downloads": 618,
         "endorsements": 10
       }
     },
@@ -981,7 +987,7 @@
         "height": 1080
       },
       "stats": {
-        "downloads": 92,
+        "downloads": 93,
         "endorsements": 0
       }
     },
@@ -1228,7 +1234,7 @@
         "height": 432
       },
       "stats": {
-        "downloads": 428,
+        "downloads": 429,
         "endorsements": 5
       }
     },
@@ -1463,7 +1469,7 @@
         "height": 768
       },
       "stats": {
-        "downloads": 181,
+        "downloads": 182,
         "endorsements": 2
       }
     },
@@ -1517,7 +1523,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 237,
+        "downloads": 238,
         "endorsements": 2
       }
     },
@@ -1595,7 +1601,7 @@
         "height": 720
       },
       "stats": {
-        "downloads": 192,
+        "downloads": 193,
         "endorsements": 1
       }
     },
@@ -1786,7 +1792,7 @@
         "height": 1080
       },
       "stats": {
-        "downloads": 19,
+        "downloads": 20,
         "endorsements": 0
       }
     },
@@ -2311,7 +2317,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 1433,
+        "downloads": 1434,
         "endorsements": 45
       }
     },
@@ -2424,7 +2430,7 @@
         "height": 720
       },
       "stats": {
-        "downloads": 45,
+        "downloads": 46,
         "endorsements": 0
       }
     },
@@ -3082,7 +3088,7 @@
         "height": 720
       },
       "stats": {
-        "downloads": 127,
+        "downloads": 128,
         "endorsements": 0
       }
     },
@@ -3246,7 +3252,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 467,
+        "downloads": 468,
         "endorsements": 0
       }
     },
@@ -3531,7 +3537,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 700,
+        "downloads": 701,
         "endorsements": 10
       }
     },
@@ -3798,7 +3804,7 @@
         "height": 1008
       },
       "stats": {
-        "downloads": 226,
+        "downloads": 227,
         "endorsements": 3
       }
     },
@@ -4060,7 +4066,7 @@
         "config": 7
       },
       "stats": {
-        "downloads": 947,
+        "downloads": 948,
         "endorsements": 1
       }
     },
@@ -4876,7 +4882,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 219,
+        "downloads": 220,
         "endorsements": 3
       }
     },
@@ -5210,7 +5216,7 @@
         "height": 1080
       },
       "stats": {
-        "downloads": 41,
+        "downloads": 42,
         "endorsements": 0
       }
     },
@@ -5496,7 +5502,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 228,
+        "downloads": 229,
         "endorsements": 0
       }
     },
@@ -5674,7 +5680,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 730,
+        "downloads": 731,
         "endorsements": 2
       }
     },
@@ -5836,7 +5842,7 @@
       ],
       "external_url": "https://github.com/naitro2010/SkyrimNet_UDNG/releases/tag/alpha12",
       "stats": {
-        "downloads": 178,
+        "downloads": 179,
         "endorsements": 4
       }
     },
@@ -6138,7 +6144,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 597,
+        "downloads": 599,
         "endorsements": 6
       }
     },
@@ -6183,7 +6189,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2458,
+        "downloads": 2459,
         "endorsements": 2
       }
     },
@@ -6318,7 +6324,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 4683,
+        "downloads": 4687,
         "endorsements": 4
       }
     },
@@ -6543,7 +6549,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2729,
+        "downloads": 2732,
         "endorsements": 0
       }
     },
@@ -6813,7 +6819,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1057,
+        "downloads": 1059,
         "endorsements": 1
       }
     },
@@ -7668,7 +7674,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1753,
+        "downloads": 1754,
         "endorsements": 1
       }
     },
@@ -7938,7 +7944,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 96,
+        "downloads": 97,
         "endorsements": 0
       }
     },
@@ -8163,7 +8169,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 629,
+        "downloads": 630,
         "endorsements": 1
       }
     },
@@ -8208,7 +8214,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1039,
+        "downloads": 1040,
         "endorsements": 0
       }
     },
@@ -8253,7 +8259,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1763,
+        "downloads": 1764,
         "endorsements": 2
       }
     },
@@ -8658,7 +8664,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 476,
+        "downloads": 477,
         "endorsements": 0
       }
     },
@@ -9018,7 +9024,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 175,
+        "downloads": 176,
         "endorsements": 0
       }
     },
@@ -10158,7 +10164,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 71,
+        "downloads": 72,
         "endorsements": 0
       }
     },
@@ -10203,7 +10209,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 41,
+        "downloads": 42,
         "endorsements": 1
       }
     },
@@ -10248,7 +10254,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 82,
+        "downloads": 83,
         "endorsements": 0
       }
     },
@@ -10293,7 +10299,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 69,
+        "downloads": 70,
         "endorsements": 1
       }
     },
@@ -10338,7 +10344,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 474,
+        "downloads": 475,
         "endorsements": 1
       }
     },
@@ -10518,7 +10524,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 901,
+        "downloads": 902,
         "endorsements": 0
       }
     },
@@ -10608,7 +10614,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2346,
+        "downloads": 2348,
         "endorsements": 4
       }
     },
@@ -11103,7 +11109,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 585,
+        "downloads": 586,
         "endorsements": 0
       }
     },
@@ -11373,7 +11379,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 64,
+        "downloads": 65,
         "endorsements": 0
       }
     },
@@ -11733,7 +11739,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 3071,
+        "downloads": 3072,
         "endorsements": 2
       }
     },
@@ -12408,7 +12414,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 633,
+        "downloads": 634,
         "endorsements": 1
       }
     },
@@ -12588,7 +12594,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1095,
+        "downloads": 1096,
         "endorsements": 1
       }
     },
@@ -12993,7 +12999,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 22,
+        "downloads": 23,
         "endorsements": 0
       }
     },
@@ -13083,7 +13089,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 549,
+        "downloads": 550,
         "endorsements": 0
       }
     },
@@ -13218,7 +13224,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 266,
+        "downloads": 267,
         "endorsements": 1
       }
     },
@@ -13713,7 +13719,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 357,
+        "downloads": 358,
         "endorsements": 0
       }
     },
@@ -14028,7 +14034,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 38,
+        "downloads": 39,
         "endorsements": 0
       }
     },
@@ -14163,7 +14169,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 637,
+        "downloads": 638,
         "endorsements": 0
       }
     },
@@ -14298,7 +14304,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 319,
+        "downloads": 320,
         "endorsements": 1
       }
     },
@@ -14343,7 +14349,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1004,
+        "downloads": 1005,
         "endorsements": 0
       }
     },
@@ -14478,7 +14484,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 12,
+        "downloads": 13,
         "endorsements": 0
       }
     },
@@ -15018,7 +15024,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 469,
+        "downloads": 470,
         "endorsements": 0
       }
     },
@@ -15063,7 +15069,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 87,
+        "downloads": 88,
         "endorsements": 0
       }
     },
@@ -15153,7 +15159,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 3682,
+        "downloads": 3684,
         "endorsements": 2
       }
     },
