@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-11-22T01:16:53.978Z",
-  "stats_as_of": "2026-11-22T01:16:53.909Z",
+  "generated_at": "2026-11-22T01:22:24.825Z",
+  "stats_as_of": "2026-11-22T01:21:41.719Z",
   "plugins": [
     {
       "id": "plugins/deadohiosky/relationships",
@@ -2229,7 +2229,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 1419,
+        "downloads": 1420,
         "endorsements": 44
       }
     },
