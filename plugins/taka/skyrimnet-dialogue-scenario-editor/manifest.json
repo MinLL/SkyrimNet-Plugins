@@ -1,0 +1,36 @@
+{
+  "id": "taka.skyrimnet-dialogue-scenario-editor",
+  "type": "listing",
+  "title": "SkyrimNet Dialogue Scenario Editor",
+  "tagline": "Write scenarios that nearby NPCs play out - narration, lines spoken in their own voice, OStim scenes - or let an NPC write the whole scenario for you with SkyrimNet's AI.",
+  "description": "**For adult players.** Scenarios can end in sex scenes (OStim).\n\nWrite short scenarios that real NPCs play out when you meet them: who takes part, what the situation is, who says what, and whether a sex scene follows. Or let an NPC write the whole scenario for you. SkyrimNet's AI speaks every line in the speaker's own voice, so the same scenario fits any character.\n\n## Scenarios in columns\nA scenario has up to 10 columns, played from left to right. Each column has 1 to 3 people (the player too), a narration that sets the situation, up to 10 lines in any order (anyone may speak several times), and, if you like, an OStim scene after the lines with the tags you pick. The same person may appear in several columns; a column with one person can be a masturbation scene.\n\n## Lines in the speaker's own voice\nA line is not read out word for word: SkyrimNet is told that the speaker is about to say something that means it, and the AI words it the way that character would. Your own lines are spoken by your character through SkyrimNet.\n\n## Auto lines\nSwitch a single line to Auto, or a whole column (Short 3, Medium 6, Long 10 lines): the AI makes those lines up when they are spoken, from the column's narration, the columns before and after, and the talk so far.\n\n## Generate\nPick a scenario writer (an NPC), 2 to 10 people (NPCs and you), the number of columns and, if you like, a theme. The writer writes every column in their own style: the people of each column, the narration, the lines with their speakers, and where an OStim scene fits, with tags. It draws on the people's bios, memories, recent events and latest diary entries, and on the relationship maps of SN Sexual Memories when there are any. The result goes into the editor, where you check it, change what you like and save. Its model is set in the dashboard: AI > Models, dialogue_scenario_writer (left empty, the default model is used). One request for the plot, then one per column.\n\n## When it starts\nA scenario starts by itself when everyone in it is near you. You choose whether others may be around (it never starts with a child nearby) or only the people in it, indoors, outdoors or anywhere, and once or again every few days.\n\n## How a column plays\nThe people walk over to you and stay together while they talk; anyone who does not arrive within a few seconds is moved over. Then the OStim scene starts and the next column begins at once.\n\n## Settings page\nMade and changed on an in-game page (Magelight UI or Prisma UI), opened with a key you set in the MCM. Scenarios are saved as files, the same for every save.\n\n## Requirements\nSKSE64, Address Library, SkyrimNet with an AI model set up, OStim Standalone, PapyrusUtil SE, powerofthree's Papyrus Extender, MCM Helper, SkyUI, and Magelight UI or Prisma UI for the settings page. SN Sexual Memories is optional. It adds no prompt that replaces one of SkyrimNet's own.\n\n## Known limits\nTested on Skyrim 1.6.1170 with Magelight UI; the Prisma UI page has not been tested in game yet. An NPC sitting in a chair may not stand up to walk over and is moved over instead. The installer offers the settings menu and page in English or Japanese.",
+  "author": "taka",
+  "tags": [
+    "scenarios",
+    "ostim",
+    "dialogue",
+    "narration",
+    "generation"
+  ],
+  "nsfw": true,
+  "icon": "sparkles",
+  "mods": [
+    {
+      "name": "OStim.esp",
+      "file": "ostim.esp",
+      "required": true
+    },
+    {
+      "name": "SN_SexualHistory.esp",
+      "file": "sn_sexualhistory.esp",
+      "required": false
+    }
+  ],
+  "languages": [
+    "ja",
+    "en"
+  ],
+  "external_url": "https://github.com/nightlantern-mods/SkyrimNet_DialogueScenarioEditor",
+  "version": "0.1.0",
+  "changelog": "First release. Scenarios in up to 10 columns that nearby NPCs play out (narration, lines in their own voice, OStim scenes), Auto lines and Auto columns, Generate (an NPC writes the whole scenario with SkyrimNet's AI), a settings page on Magelight UI or Prisma UI, and an installer in English or Japanese."
+}
