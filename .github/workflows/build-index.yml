@@ -41,6 +41,7 @@ on:
       - 'plugins/**'
       - 'hidden.json'
       - 'curated.json'
+  # Touched 2026-11-23 so GitHub registers this schedule again: after the repo moved to FatelessAI its scheduled runs stopped firing.
   schedule:
     - cron: "17 * * * *"
   workflow_dispatch:
