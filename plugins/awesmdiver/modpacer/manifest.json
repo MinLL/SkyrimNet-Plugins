@@ -13,13 +13,15 @@
     "updates",
     "SkyrimSE",
     "SkyrimVR",
-    "SkyrimAE"
+    "SkyrimAE",
+    "LoversLab",
+    "GitHub"
   ],
   "nsfw": false,
   "icon": "wrench",
   "mods": [],
   "image": "cover.png",
   "external_url": "https://github.com/awesmdiver/modpacer/releases/latest",
-  "version": "1.5.2",
-  "changelog": "### What's New\n\n- **Mod menus:** Click the \"...\" on any mod to **Skip this update** until a newer one arrives, or **Exclude this mod** to leave it alone for good.\n- **Excluded section:** Mods you exclude now live in a new **Excluded** section (and pill) on the Mods page, where you can easily select **Include again**.\n- **Ignore disabled mods:** A new Settings switch moves your turned-off mods into a quiet **Disabled** section so they stop asking for updates.\n- **Placeholder mods:** When a mod is just an empty stand-in (\"dummy master\"), ModPacer now offers to exclude it instead of nagging you to update.\n- **Nexus updates:** A **Current Nexus version** link now appears when Nexus is further ahead than the Plugin Hub.\n- **Still working:** A quick note under the summary pills lets you know if ModPacer is still checking your mods and the numbers might shift.\n- **Smaller fixes:** Odd version numbers read correctly in your mod manager, old copies left behind after an update are cleaned up, brand-new GitHub releases are picked up right away, and mods with similar or misspelled names are matched to the right Hub entry."
+  "version": "2.0.0",
+  "changelog": "### What's new\n\n### Add mod (beta)\nModPacer can now follow mods that aren't on the Plugin Hub. Press the **+** button at the top of the Mods page and choose where the mod lives:\n\n- GitHub: Paste the project link. ModPacer reads its releases, shows the newest version, and gives you a **Download** button. It also shows a picture from the release or project page.\n- **A folder on this PC**: Point ModPacer at the folder where a mod author's builds land. It reads the newest file there and never changes anything in it.\n- LoversLab: ModPacer reads the file page using a browser helper (see setup below). A LoversLab row opens the page so you can install by hand, then press **Update version**.\n- More than one source: Add a second place to look for the same mod and pin the one you trust.\n\nAdd mod is beta. We'd love to hear what worked, what confused you, and anything that broke on the project's GitHub Issues page or the Plugin Hub listing.\n\nEverything else in this release is small interface polish: tidier mod rows (extra actions live in the menu), a wider page, **Update version** replacing the old check button, sticky exclusions, and ModPacer matching your SkyrimNet theme, Stormcloak included."
 }
