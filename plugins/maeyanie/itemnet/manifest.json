@@ -17,6 +17,6 @@
     "en"
   ],
   "external_url": "https://github.com/Maeyanie/ItemNet",
-  "version": "1.0.0",
-  "changelog": "Initial release"
+  "version": "1.0.1",
+  "changelog": "- Whitelisted database schemas 32 and 33. (No changes were needed, the check is intentionally very strict to prevent accidentally corrupting savegames.)\n- Check the database schema earlier, before making a backup or replacing any screenshots."
 }
