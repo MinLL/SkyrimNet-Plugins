@@ -12,6 +12,7 @@
   "nsfw": false,
   "icon": "package",
   "mods": [],
+  "image": "cover.jpg",
   "external_url": "https://github.com/Maeyanie/Unvoice/releases/tag/v1.0.0-beta.2",
   "version": "0.99.0",
   "changelog": "Initial public beta.\nTested on 1.6.1170, should theoretically work on any 1.5-1.6 and 1.7.104."
