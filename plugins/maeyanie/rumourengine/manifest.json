@@ -17,6 +17,6 @@
   ],
   "image": "cover.jpg",
   "external_url": "https://github.com/Maeyanie/RumourEngine/",
-  "version": "1.0.0",
-  "changelog": "Initial public release.\nTested on 1.6.1170, may work with other versions."
+  "version": "1.1.0",
+  "changelog": "- Logs moved from `Skyrim.INI/SKSE` to `Skyrim Special Edition/SKSE` (due to a CommonLibSSE-NG Bugfix)\n- Fixes for non-ASCII characters.\n- Support for 1.7.99 and 1.7.104. Untested, please let me know how it goes if you try it.\n- Fixes for NPCs in light plugins on Skyrim VR.\n- Safe to update existing saves."
 }
