@@ -1,8 +1,110 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-11-24T00:22:17.060Z",
-  "stats_as_of": "2026-11-24T00:22:16.914Z",
+  "generated_at": "2026-11-24T03:49:55.459Z",
+  "stats_as_of": "2026-11-24T03:49:55.373Z",
   "plugins": [
+    {
+      "id": "plugins/severause/severactions",
+      "plugin_id": "severause.severactions",
+      "type": "listing",
+      "title": "SeverActions ",
+      "tagline": "An action, prompt, and behavior pack for SkyrimNet",
+      "author": "severause",
+      "tags": [],
+      "nsfw": false,
+      "icon": "scroll",
+      "mods": [],
+      "first_published": "2026-09-14T10:26:17Z",
+      "last_updated": "2026-11-24T03:49:24Z",
+      "version": "4.9.2",
+      "history": [
+        {
+          "version": "4.9.2",
+          "commit": "406b0369a8b634d65bbfa64e3ef613de3441b3de",
+          "date": "2026-11-24T03:49:24Z",
+          "changelog": "## **SeverActions v4.9.2 - Arms and Oaths**\n\nOutfits that carry weapons, NPCs who attend each other around the clock, outlaw camps with a temper, a say in who tags along, and food your followers leave alone.\n\n:busts_in_silhouette: **The people around you**\n- **Anyone can attend someone:** Attend on the Companions page's Work row, Attend Someone on the Actions page, or ask in conversation. Give the role in your own words (bodyguard, squire, lady's maid), change it any time, and both NPCs are told.\n- **Work hours for anyone:** a new Work hours row under Work sets an NPC's own hours. **24 h** keeps them at their post, or at someone's side, around the clock.\n- **NPCs you only gave work have a card** in the Companions page's Assigned NPCs, so you can change their role or hours there.\n- **Choose who tags along:** Settings > Followers > Ask Before NPCs Tag Along (on by default) shows a card when an NPC agrees to walk with you. Those who come know they still are.\n- **SkyrimNet's Accompany** now follows you through doors, and asks first when the card is on.\n- **Companions cast the spells you ask for,** even while following or waiting.\n- **NPCs teach each other spells:** in conversation, or pick a Student for Teach Spell on the Actions page.\n- **Followers remember thane quests and the jarls' tasks,** which quest awareness used to skip. **Remember Minor Quests** (Settings > Background AI, off by default) adds favors, odd jobs, bounties and city tasks.\n\n- See announcement page for more"
+        },
+        {
+          "version": "4.9.0",
+          "commit": "bb2cac2769d1669b52fc24f9cd3428b366b78877",
+          "date": "2026-11-15T14:27:42Z",
+          "changelog": "## **SeverActions v4.9.0** — Familiar Faces\n\nNPCs who remember you, scenes that hold, and saves that always load.\n\n:floppy_disk: **Stability**\n- **No more unloadable saves:** a save made at the wrong moment (during an NPC's off-screen day, banter in a big party, or a long book read aloud) could crash on every load. That can't happen any more. A save that already crashes this way isn't repaired.\n- **Faster with many homes:** with dozens of homes, the schedule check drops from 5+ seconds to a fraction of one, and loading a save does far less work.\n- **Cleaner releases after a load:** an NPC let go from an old home, job or follow no longer misses a camp's muster or their next routine.\n\n:crossed_swords: **Fights and scenes**\n- **Ceasefires hold:** bandits who stood down no longer attack you for walking close, or start fighting each other. The whole group nearby is covered, and an NPC who surrenders stays calm too.\n- **SexLab and OStim scenes keep their actors:** waiting followers, NPCs at home or work, prisoners, travellers, couriers and Hearth campers no longer walk out of a scene. Their sandbox steps aside and comes back when it ends.\n\n- See announcements page for more"
+        },
+        {
+          "version": "4.8.0",
+          "commit": "9d2150ef660c26205a23be340b749856603d0e73",
+          "date": "2026-11-09T00:51:11Z",
+          "changelog": "## **SeverActions v4.8.0** — Many Hands\n\nGive one order to a whole group, follow any NPC's days without moving them, and watch companions rest, trade and react as themselves.\n\n:busts_in_silhouette: **One order, several people**\n- **Send a group:** \"Rin, Jenassa, Rayya, meet me at the Bannered Mare\" and they all set off. With the travel popup on, one card names the whole group.\n- **Wait and follow together:** \"Lydia, Rin, wait here\" parks both, and \"everyone, come on\" calls back every companion nearby, with one reply for the group.\n- **Several items in one trade:** \"a mead, and an ale for Rin\" is one purchase. The innkeeper hands you yours and walks over to give Rin hers, and the card lists every item, who it's for and one total.\n- **Walled cities:** Fixed bug that would make NPCs teleport to their travel destination if it was in a walled city\n\n- See announcement page for more"
+        },
+        {
+          "version": "4.7.0",
+          "commit": "3d67ceea80b5e1a79072d98a54ee3e94f2bab4f5",
+          "date": "2026-11-01T01:48:27Z",
+          "changelog": "## **SeverActions v4.7.0** — Linen and Bone\n\nA redesigned menu with a new look on every page, full controller support, NPCs who keep the weapons you give them, and wounds you can treat: broken bones, splints, bandaged stumps and limbs that grow back. Various bug fixes\n\n- See announcement page for the full changelog"
+        },
+        {
+          "version": "4.6.0",
+          "commit": "e5a0d21f81952998a310b0c91f829d4b79c31ade",
+          "date": "2026-10-27T01:14:00Z",
+          "changelog": "# SeverActions 4.6.0 - Blood and Thread\n\n**Bundled with it:**\n- **Magelight UI 1.5.1:** Ultralight 2.0, less memory after pages close, in-page IME typing, crash fixes, pages no longer put your weapons away, and the cursor stays in the game window.\n- **Phantasm:** a separate renderer that now draws the Outfits mirror, the Inventory item view and the party's faces. It installs with SeverActions.(Will be it's own separate mod with an API to hook into in the future)\n\nIf you also run Magelight UI as its own mod, let the newer copy win.\n\n## :drop_of_blood: Survivable dismemberment (highly experimental)\nNeeds Dismembering Framework. Off until you turn it on (Settings → Combat Context, or the MCM's Combat & Outlaws page).\n- A power attack with a sword or axe that leaves someone at low health can take a forearm or lower leg **without killing them**. They stagger, scream and beg for the fight to stop.\n- Most surrender after losing an arm. A brave fighter (a boss, or at least your level) keeps fighting with the other hand (not in VR).\n- A lost leg, or both hands, knocks them down for good.\n- **The wound bleeds** until they die. Adept-or-better Restoration healing (Heal Other, Grand Healing) from you or a follower closes it.\n- They remember who cut them, and who they surrendered to.\n- Followers, guards, children and essential characters are never cut.\n- Limbs don't grow back yet; that's coming in a later update, alongside possible prosthetics.\n\n-See Announcement Page For More"
+        },
+        {
+          "version": "4.5.0",
+          "commit": "49cc60c400a7125b9c24376d7809e4c56aa583f4",
+          "date": "2026-10-19T09:52:36Z",
+          "changelog": "## **SeverActions v4.5.0** — Mirrors and Motives\n\nA new Outfits page built around a live mirror, a reworked Inventory with trading, a way to see why your companions feel the way they do, NPCs who can study spell tomes, and NPCs who level up with you."
+        },
+        {
+          "version": "4.3.0",
+          "commit": "cea225d3267864dbc88e21825d43a72d9ab550cd",
+          "date": "2026-10-11T06:18:40Z",
+          "changelog": "SeverActions v4.3.0 — Law and Language\nA Law & Crime page, guards who stop to talk before they arrest your companions, a language setting with full translations, situation outfits for you, and Bio Blocks starter packs with a bigger API.\n- See announcement page for more information"
+        },
+        {
+          "version": "4.2.0",
+          "commit": "4d9ccc9039e7651d6aa1836feb02f1fa0e8cbf08",
+          "date": "2026-10-05T02:48:23Z",
+          "changelog": "## **SeverActions v4.2.0** — Colours and Clarity\n- See announcement channel for the full changelog\n\nColour themes, presets that stay on, real control over a follower's built-in spells, a bigger quick wheel, plainer menus and a corrected Russian translation.\n\n:warning: **Before you update**\n- **Replace over 4.1.x** in MO2. The installer's pages and choices are the same, and saves carry over.\n- **FOMOD Plus users:** the installer now always installs the module scripts, so installs that came out missing scripts get all of them.\n- **Magelight UI 0.31.2 is included.** If you also run it as its own mod, let the newer copy win.\n\n:art: **Themes**\n- **Five themes** in Settings > UI Display: The Ledger (today's look), Windhelm Slate, Dwemer Verdigris, Soul Cairn and Jarl's Vellum, a light theme.\n- **Everywhere:** every page, popup and the quick wheel, and the cursor takes the theme's colours too.\n\n:dress: **Outfits**\n- **Presets stay on** after fast travel, sleep and waiting, and a sleep outfit no longer dresses a follower over a preset.(needs further testing)\n- **Situation outfits** No timer on situation switches\n- **Inventory** lists armour freed from a default outfit again, with a Take off button for worn pieces.\n- **Warmth:** 100% means a full set of warm gear, so ordinary armour no longer reads \"Bare\".\n\n:magic_wand: **Spells**\n- **Turn off built-in spells:** switching off a spell on the Spells page really stops a follower casting it, including ones they came with. Built-in spells are marked, and ones shared by other NPCs say why they can't be removed.\n\n:joystick: **Quick wheel and hotkeys**\n- **Twelve slots,** showing only the ones you fill.\n- **Key capture always ends,** and VR warns when the menu chord clashes with another binding.\n\n:moneybag: **Enterprises and off-screen life**\n- **Work marks are back:**"
+        },
+        {
+          "version": "4.1.0",
+          "commit": "5738aa5f161c80a73a312d49fadca75880753ad9",
+          "date": "2026-10-04T01:35:24Z",
+          "changelog": "## SeverActions 4.1.0\nMagelight UI 0.30.5 is included in the SeverActions download and is also available on its own.\n\n**SeverActions 4.1.0**\n- **Wait and Follow work on the first press.** Wait All and Follow All finish in a second or two instead of seeming to do nothing. Each command now undoes only what SeverActions actually put on a follower, which helps custom followers most.\n- **Faster loading.** On a long-running save, SeverActions' startup after a load went from about a minute to about 12 seconds, and commands given right after a load no longer wait 20+ seconds.\n- Companions are no longer pushed back onto their follow package every few seconds.\n- Mouse and gamepad buttons (M3, M4, M5…) work again as the menu and quick wheel keys, and Settings > Hotkeys can capture them.\n- Tracking mode: casual follow works again for NPCs no follower framework leads.\n- The Companions page now shows the framework mode the game is actually using.\n- If Magelight can't draw, the menu and wheel keys now tell you so (and point to Magelight.log) instead of doing nothing.\n- Outfits mirror on CPU rendering: the Live Stage takes over instead of leaving a hole in the menu. In VR it's a dark box.\n\n**Magelight UI 0.30.5** (includes 0.30.4)\n- Menus no longer open invisible with DLSS or frame generation behind NVIDIA Streamline (Community Shaders, Open Shaders).\n- Community Shaders frame generation: the UI shows again.\n- NVIDIA Smooth Motion: opening a menu no longer freezes the game.\n- A lost graphics device turns the overlay off instead of leaving the game paused.\n- A new, sharper cursor, and no more double cursor.\n\n**Installing:** install over 4.0.x with Replace. Saves load as they are. Still needs SkyrimNet 0.25 or newer."
+        },
+        {
+          "version": "4.0.2",
+          "commit": "2cc98ac524e8da504068d8822f40f7d2c12b5b27",
+          "date": "2026-10-02T23:24:33Z",
+          "changelog": "## SeverActions 4.0.2 — Hotfix\n\nUpdates the bundled **Magelight UI to 0.30.3**, which fixes three problems in 4.0.1:\n\n**Fixed: crash at startup with Community Shaders**, or a few minutes into play with ENB or an upscaler (`d3d11.dll` in the crash log)\n**Fixed: crash at startup with ENB** that left no crash log\n**Fixed: menu cut off** on screens under ~1067 pixels tall (1366×768, 1600×900)\n\nIf you made a `Magelight.json` to work around the ENB crash, you can delete it now.\n\n**Installing:** install over 4.0.1 and choose **Replace**. Your saves load as they are."
+        },
+        {
+          "version": "4.0.1",
+          "commit": "274859a71a0cc908296244bb9e627151de0e859a",
+          "date": "2026-10-02T15:26:46Z",
+          "changelog": "4.0 Release - Several fixes and additions, please see the announcement channel for the full changelog"
+        },
+        {
+          "version": "3.9.14",
+          "commit": "cfe54b268475b645084a2b7450af4c26e9c06f90",
+          "date": "2026-09-27T16:10:44Z",
+          "changelog": "Added a cover image"
+        }
+      ],
+      "external_url": "https://github.com/Severause/SeverActions/releases/tag/v4.9.2",
+      "image": {
+        "file": "cover.png",
+        "sha": "351df21ec714f00feb26d8f950c47e4179c2c177",
+        "commit": "9d2150ef660c26205a23be340b749856603d0e73",
+        "width": 1920,
+        "height": 1080
+      },
+      "curated": true,
+      "stats": {
+        "downloads": 1465,
+        "endorsements": 45
+      }
+    },
     {
       "id": "plugins/maeyanie/unvoice",
       "plugin_id": "maeyanie.unvoice",
@@ -37,7 +139,7 @@
         "height": 900
       },
       "stats": {
-        "downloads": 6,
+        "downloads": 10,
         "endorsements": 0
       }
     },
@@ -276,7 +378,7 @@
         "height": 768
       },
       "stats": {
-        "downloads": 238,
+        "downloads": 240,
         "endorsements": 0
       }
     },
@@ -445,7 +547,7 @@
         "height": 1152
       },
       "stats": {
-        "downloads": 641,
+        "downloads": 645,
         "endorsements": 10
       }
     },
@@ -703,7 +805,7 @@
         "height": 1080
       },
       "stats": {
-        "downloads": 35,
+        "downloads": 40,
         "endorsements": 0
       }
     },
@@ -897,7 +999,7 @@
         "height": 864
       },
       "stats": {
-        "downloads": 563,
+        "downloads": 565,
         "endorsements": 8
       }
     },
@@ -980,7 +1082,7 @@
         "height": 1080
       },
       "stats": {
-        "downloads": 118,
+        "downloads": 121,
         "endorsements": 0
       }
     },
@@ -1044,7 +1146,7 @@
         "height": 1008
       },
       "stats": {
-        "downloads": 96,
+        "downloads": 97,
         "endorsements": 0
       }
     },
@@ -1095,7 +1197,7 @@
         "height": 720
       },
       "stats": {
-        "downloads": 332,
+        "downloads": 334,
         "endorsements": 2
       }
     },
@@ -1193,7 +1295,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 669,
+        "downloads": 671,
         "endorsements": 6
       }
     },
@@ -1269,7 +1371,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 216,
+        "downloads": 218,
         "endorsements": 1
       }
     },
@@ -1797,7 +1899,7 @@
         "height": 720
       },
       "stats": {
-        "downloads": 121,
+        "downloads": 123,
         "endorsements": 0
       }
     },
@@ -1854,7 +1956,7 @@
         "height": 768
       },
       "stats": {
-        "downloads": 186,
+        "downloads": 187,
         "endorsements": 2
       }
     },
@@ -2110,7 +2212,7 @@
         "height": 1080
       },
       "stats": {
-        "downloads": 204,
+        "downloads": 205,
         "endorsements": 4
       }
     },
@@ -2177,7 +2279,7 @@
         "height": 1080
       },
       "stats": {
-        "downloads": 28,
+        "downloads": 29,
         "endorsements": 0
       }
     },
@@ -2221,7 +2323,7 @@
         "height": 720
       },
       "stats": {
-        "downloads": 24,
+        "downloads": 25,
         "endorsements": 0
       }
     },
@@ -2436,104 +2538,8 @@
         "height": 941
       },
       "stats": {
-        "downloads": 406,
+        "downloads": 407,
         "endorsements": 6
-      }
-    },
-    {
-      "id": "plugins/severause/severactions",
-      "plugin_id": "severause.severactions",
-      "type": "listing",
-      "title": "SeverActions ",
-      "tagline": "An action, prompt, and behavior pack for SkyrimNet",
-      "author": "severause",
-      "tags": [],
-      "nsfw": false,
-      "icon": "scroll",
-      "mods": [],
-      "first_published": "2026-09-14T10:26:17Z",
-      "last_updated": "2026-11-15T14:27:42Z",
-      "version": "4.9.0",
-      "history": [
-        {
-          "version": "4.9.0",
-          "commit": "bb2cac2769d1669b52fc24f9cd3428b366b78877",
-          "date": "2026-11-15T14:27:42Z",
-          "changelog": "## **SeverActions v4.9.0** — Familiar Faces\n\nNPCs who remember you, scenes that hold, and saves that always load.\n\n:floppy_disk: **Stability**\n- **No more unloadable saves:** a save made at the wrong moment (during an NPC's off-screen day, banter in a big party, or a long book read aloud) could crash on every load. That can't happen any more. A save that already crashes this way isn't repaired.\n- **Faster with many homes:** with dozens of homes, the schedule check drops from 5+ seconds to a fraction of one, and loading a save does far less work.\n- **Cleaner releases after a load:** an NPC let go from an old home, job or follow no longer misses a camp's muster or their next routine.\n\n:crossed_swords: **Fights and scenes**\n- **Ceasefires hold:** bandits who stood down no longer attack you for walking close, or start fighting each other. The whole group nearby is covered, and an NPC who surrenders stays calm too.\n- **SexLab and OStim scenes keep their actors:** waiting followers, NPCs at home or work, prisoners, travellers, couriers and Hearth campers no longer walk out of a scene. Their sandbox steps aside and comes back when it ends.\n\n- See announcements page for more"
-        },
-        {
-          "version": "4.8.0",
-          "commit": "9d2150ef660c26205a23be340b749856603d0e73",
-          "date": "2026-11-09T00:51:11Z",
-          "changelog": "## **SeverActions v4.8.0** — Many Hands\n\nGive one order to a whole group, follow any NPC's days without moving them, and watch companions rest, trade and react as themselves.\n\n:busts_in_silhouette: **One order, several people**\n- **Send a group:** \"Rin, Jenassa, Rayya, meet me at the Bannered Mare\" and they all set off. With the travel popup on, one card names the whole group.\n- **Wait and follow together:** \"Lydia, Rin, wait here\" parks both, and \"everyone, come on\" calls back every companion nearby, with one reply for the group.\n- **Several items in one trade:** \"a mead, and an ale for Rin\" is one purchase. The innkeeper hands you yours and walks over to give Rin hers, and the card lists every item, who it's for and one total.\n- **Walled cities:** Fixed bug that would make NPCs teleport to their travel destination if it was in a walled city\n\n- See announcement page for more"
-        },
-        {
-          "version": "4.7.0",
-          "commit": "3d67ceea80b5e1a79072d98a54ee3e94f2bab4f5",
-          "date": "2026-11-01T01:48:27Z",
-          "changelog": "## **SeverActions v4.7.0** — Linen and Bone\n\nA redesigned menu with a new look on every page, full controller support, NPCs who keep the weapons you give them, and wounds you can treat: broken bones, splints, bandaged stumps and limbs that grow back. Various bug fixes\n\n- See announcement page for the full changelog"
-        },
-        {
-          "version": "4.6.0",
-          "commit": "e5a0d21f81952998a310b0c91f829d4b79c31ade",
-          "date": "2026-10-27T01:14:00Z",
-          "changelog": "# SeverActions 4.6.0 - Blood and Thread\n\n**Bundled with it:**\n- **Magelight UI 1.5.1:** Ultralight 2.0, less memory after pages close, in-page IME typing, crash fixes, pages no longer put your weapons away, and the cursor stays in the game window.\n- **Phantasm:** a separate renderer that now draws the Outfits mirror, the Inventory item view and the party's faces. It installs with SeverActions.(Will be it's own separate mod with an API to hook into in the future)\n\nIf you also run Magelight UI as its own mod, let the newer copy win.\n\n## :drop_of_blood: Survivable dismemberment (highly experimental)\nNeeds Dismembering Framework. Off until you turn it on (Settings → Combat Context, or the MCM's Combat & Outlaws page).\n- A power attack with a sword or axe that leaves someone at low health can take a forearm or lower leg **without killing them**. They stagger, scream and beg for the fight to stop.\n- Most surrender after losing an arm. A brave fighter (a boss, or at least your level) keeps fighting with the other hand (not in VR).\n- A lost leg, or both hands, knocks them down for good.\n- **The wound bleeds** until they die. Adept-or-better Restoration healing (Heal Other, Grand Healing) from you or a follower closes it.\n- They remember who cut them, and who they surrendered to.\n- Followers, guards, children and essential characters are never cut.\n- Limbs don't grow back yet; that's coming in a later update, alongside possible prosthetics.\n\n-See Announcement Page For More"
-        },
-        {
-          "version": "4.5.0",
-          "commit": "49cc60c400a7125b9c24376d7809e4c56aa583f4",
-          "date": "2026-10-19T09:52:36Z",
-          "changelog": "## **SeverActions v4.5.0** — Mirrors and Motives\n\nA new Outfits page built around a live mirror, a reworked Inventory with trading, a way to see why your companions feel the way they do, NPCs who can study spell tomes, and NPCs who level up with you."
-        },
-        {
-          "version": "4.3.0",
-          "commit": "cea225d3267864dbc88e21825d43a72d9ab550cd",
-          "date": "2026-10-11T06:18:40Z",
-          "changelog": "SeverActions v4.3.0 — Law and Language\nA Law & Crime page, guards who stop to talk before they arrest your companions, a language setting with full translations, situation outfits for you, and Bio Blocks starter packs with a bigger API.\n- See announcement page for more information"
-        },
-        {
-          "version": "4.2.0",
-          "commit": "4d9ccc9039e7651d6aa1836feb02f1fa0e8cbf08",
-          "date": "2026-10-05T02:48:23Z",
-          "changelog": "## **SeverActions v4.2.0** — Colours and Clarity\n- See announcement channel for the full changelog\n\nColour themes, presets that stay on, real control over a follower's built-in spells, a bigger quick wheel, plainer menus and a corrected Russian translation.\n\n:warning: **Before you update**\n- **Replace over 4.1.x** in MO2. The installer's pages and choices are the same, and saves carry over.\n- **FOMOD Plus users:** the installer now always installs the module scripts, so installs that came out missing scripts get all of them.\n- **Magelight UI 0.31.2 is included.** If you also run it as its own mod, let the newer copy win.\n\n:art: **Themes**\n- **Five themes** in Settings > UI Display: The Ledger (today's look), Windhelm Slate, Dwemer Verdigris, Soul Cairn and Jarl's Vellum, a light theme.\n- **Everywhere:** every page, popup and the quick wheel, and the cursor takes the theme's colours too.\n\n:dress: **Outfits**\n- **Presets stay on** after fast travel, sleep and waiting, and a sleep outfit no longer dresses a follower over a preset.(needs further testing)\n- **Situation outfits** No timer on situation switches\n- **Inventory** lists armour freed from a default outfit again, with a Take off button for worn pieces.\n- **Warmth:** 100% means a full set of warm gear, so ordinary armour no longer reads \"Bare\".\n\n:magic_wand: **Spells**\n- **Turn off built-in spells:** switching off a spell on the Spells page really stops a follower casting it, including ones they came with. Built-in spells are marked, and ones shared by other NPCs say why they can't be removed.\n\n:joystick: **Quick wheel and hotkeys**\n- **Twelve slots,** showing only the ones you fill.\n- **Key capture always ends,** and VR warns when the menu chord clashes with another binding.\n\n:moneybag: **Enterprises and off-screen life**\n- **Work marks are back:**"
-        },
-        {
-          "version": "4.1.0",
-          "commit": "5738aa5f161c80a73a312d49fadca75880753ad9",
-          "date": "2026-10-04T01:35:24Z",
-          "changelog": "## SeverActions 4.1.0\nMagelight UI 0.30.5 is included in the SeverActions download and is also available on its own.\n\n**SeverActions 4.1.0**\n- **Wait and Follow work on the first press.** Wait All and Follow All finish in a second or two instead of seeming to do nothing. Each command now undoes only what SeverActions actually put on a follower, which helps custom followers most.\n- **Faster loading.** On a long-running save, SeverActions' startup after a load went from about a minute to about 12 seconds, and commands given right after a load no longer wait 20+ seconds.\n- Companions are no longer pushed back onto their follow package every few seconds.\n- Mouse and gamepad buttons (M3, M4, M5…) work again as the menu and quick wheel keys, and Settings > Hotkeys can capture them.\n- Tracking mode: casual follow works again for NPCs no follower framework leads.\n- The Companions page now shows the framework mode the game is actually using.\n- If Magelight can't draw, the menu and wheel keys now tell you so (and point to Magelight.log) instead of doing nothing.\n- Outfits mirror on CPU rendering: the Live Stage takes over instead of leaving a hole in the menu. In VR it's a dark box.\n\n**Magelight UI 0.30.5** (includes 0.30.4)\n- Menus no longer open invisible with DLSS or frame generation behind NVIDIA Streamline (Community Shaders, Open Shaders).\n- Community Shaders frame generation: the UI shows again.\n- NVIDIA Smooth Motion: opening a menu no longer freezes the game.\n- A lost graphics device turns the overlay off instead of leaving the game paused.\n- A new, sharper cursor, and no more double cursor.\n\n**Installing:** install over 4.0.x with Replace. Saves load as they are. Still needs SkyrimNet 0.25 or newer."
-        },
-        {
-          "version": "4.0.2",
-          "commit": "2cc98ac524e8da504068d8822f40f7d2c12b5b27",
-          "date": "2026-10-02T23:24:33Z",
-          "changelog": "## SeverActions 4.0.2 — Hotfix\n\nUpdates the bundled **Magelight UI to 0.30.3**, which fixes three problems in 4.0.1:\n\n**Fixed: crash at startup with Community Shaders**, or a few minutes into play with ENB or an upscaler (`d3d11.dll` in the crash log)\n**Fixed: crash at startup with ENB** that left no crash log\n**Fixed: menu cut off** on screens under ~1067 pixels tall (1366×768, 1600×900)\n\nIf you made a `Magelight.json` to work around the ENB crash, you can delete it now.\n\n**Installing:** install over 4.0.1 and choose **Replace**. Your saves load as they are."
-        },
-        {
-          "version": "4.0.1",
-          "commit": "274859a71a0cc908296244bb9e627151de0e859a",
-          "date": "2026-10-02T15:26:46Z",
-          "changelog": "4.0 Release - Several fixes and additions, please see the announcement channel for the full changelog"
-        },
-        {
-          "version": "3.9.14",
-          "commit": "cfe54b268475b645084a2b7450af4c26e9c06f90",
-          "date": "2026-09-27T16:10:44Z",
-          "changelog": "Added a cover image"
-        }
-      ],
-      "external_url": "https://github.com/Severause/SeverActions/releases/tag/v4.9.0",
-      "image": {
-        "file": "cover.png",
-        "sha": "351df21ec714f00feb26d8f950c47e4179c2c177",
-        "commit": "9d2150ef660c26205a23be340b749856603d0e73",
-        "width": 1920,
-        "height": 1080
-      },
-      "curated": true,
-      "stats": {
-        "downloads": 1465,
-        "endorsements": 45
       }
     },
     {
@@ -2595,7 +2601,7 @@
         "height": 720
       },
       "stats": {
-        "downloads": 183,
+        "downloads": 184,
         "endorsements": 1
       }
     },
@@ -2721,7 +2727,7 @@
         "height": 1152
       },
       "stats": {
-        "downloads": 316,
+        "downloads": 317,
         "endorsements": 0
       }
     },
@@ -2813,7 +2819,7 @@
         "height": 760
       },
       "stats": {
-        "downloads": 359,
+        "downloads": 360,
         "endorsements": 0
       }
     },
@@ -3265,7 +3271,7 @@
         "height": 769
       },
       "stats": {
-        "downloads": 105,
+        "downloads": 106,
         "endorsements": 0
       }
     },
@@ -3358,7 +3364,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 489,
+        "downloads": 494,
         "endorsements": 0
       }
     },
@@ -3643,7 +3649,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 720,
+        "downloads": 722,
         "endorsements": 11
       }
     },
@@ -3810,7 +3816,7 @@
         "height": 688
       },
       "stats": {
-        "downloads": 181,
+        "downloads": 182,
         "endorsements": 0
       }
     },
@@ -3930,7 +3936,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 462,
+        "downloads": 464,
         "endorsements": 3
       }
     },
@@ -3974,7 +3980,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 130,
+        "downloads": 131,
         "endorsements": 2
       }
     },
@@ -4055,7 +4061,7 @@
         "config": 7
       },
       "stats": {
-        "downloads": 747,
+        "downloads": 755,
         "endorsements": 0
       }
     },
@@ -4136,7 +4142,7 @@
         "config": 7
       },
       "stats": {
-        "downloads": 1015,
+        "downloads": 1025,
         "endorsements": 1
       }
     },
@@ -4284,7 +4290,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 407,
+        "downloads": 410,
         "endorsements": 0
       }
     },
@@ -4410,7 +4416,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 252,
+        "downloads": 253,
         "endorsements": 3
       }
     },
@@ -4493,7 +4499,7 @@
         "height": 928
       },
       "stats": {
-        "downloads": 172,
+        "downloads": 173,
         "endorsements": 2
       }
     },
@@ -5008,7 +5014,7 @@
         "height": 1080
       },
       "stats": {
-        "downloads": 229,
+        "downloads": 230,
         "endorsements": 5
       }
     },
@@ -5286,7 +5292,7 @@
         "height": 1080
       },
       "stats": {
-        "downloads": 43,
+        "downloads": 44,
         "endorsements": 0
       }
     },
@@ -5521,7 +5527,7 @@
         "config": 4
       },
       "stats": {
-        "downloads": 954,
+        "downloads": 964,
         "endorsements": 4
       }
     },
@@ -5572,7 +5578,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 236,
+        "downloads": 237,
         "endorsements": 0
       }
     },
@@ -5750,7 +5756,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 762,
+        "downloads": 763,
         "endorsements": 2
       }
     },
@@ -5820,7 +5826,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1096,
+        "downloads": 1104,
         "endorsements": 1
       }
     },
@@ -6028,7 +6034,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 598,
+        "downloads": 604,
         "endorsements": 1
       }
     },
@@ -6088,7 +6094,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 329,
+        "downloads": 331,
         "endorsements": 1
       }
     },
@@ -6155,7 +6161,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 128,
+        "downloads": 129,
         "endorsements": 0
       }
     },
@@ -6214,7 +6220,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 608,
+        "downloads": 609,
         "endorsements": 6
       }
     },
@@ -6259,7 +6265,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2532,
+        "downloads": 2542,
         "endorsements": 2
       }
     },
@@ -6304,7 +6310,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1282,
+        "downloads": 1285,
         "endorsements": 0
       }
     },
@@ -6394,7 +6400,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 4780,
+        "downloads": 4788,
         "endorsements": 5
       }
     },
@@ -6619,7 +6625,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2815,
+        "downloads": 2820,
         "endorsements": 0
       }
     },
@@ -6889,7 +6895,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1093,
+        "downloads": 1096,
         "endorsements": 1
       }
     },
@@ -6979,7 +6985,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 391,
+        "downloads": 392,
         "endorsements": 0
       }
     },
@@ -7114,7 +7120,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 806,
+        "downloads": 809,
         "endorsements": 1
       }
     },
@@ -7159,7 +7165,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 368,
+        "downloads": 369,
         "endorsements": 0
       }
     },
@@ -7384,7 +7390,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2335,
+        "downloads": 2342,
         "endorsements": 2
       }
     },
@@ -7744,7 +7750,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1793,
+        "downloads": 1797,
         "endorsements": 1
       }
     },
@@ -8104,7 +8110,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2665,
+        "downloads": 2672,
         "endorsements": 3
       }
     },
@@ -8239,7 +8245,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 653,
+        "downloads": 656,
         "endorsements": 1
       }
     },
@@ -8284,7 +8290,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1080,
+        "downloads": 1083,
         "endorsements": 0
       }
     },
@@ -8329,7 +8335,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1807,
+        "downloads": 1815,
         "endorsements": 2
       }
     },
@@ -8419,7 +8425,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 523,
+        "downloads": 524,
         "endorsements": 0
       }
     },
@@ -8464,7 +8470,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 530,
+        "downloads": 532,
         "endorsements": 0
       }
     },
@@ -8734,7 +8740,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 485,
+        "downloads": 488,
         "endorsements": 0
       }
     },
@@ -9139,7 +9145,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 852,
+        "downloads": 855,
         "endorsements": 0
       }
     },
@@ -9829,7 +9835,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 870,
+        "downloads": 873,
         "endorsements": 0
       }
     },
@@ -9919,7 +9925,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 142,
+        "downloads": 143,
         "endorsements": 0
       }
     },
@@ -10144,7 +10150,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 825,
+        "downloads": 827,
         "endorsements": 0
       }
     },
@@ -10414,7 +10420,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 490,
+        "downloads": 491,
         "endorsements": 1
       }
     },
@@ -10549,7 +10555,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1304,
+        "downloads": 1305,
         "endorsements": 0
       }
     },
@@ -10594,7 +10600,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 926,
+        "downloads": 927,
         "endorsements": 0
       }
     },
@@ -10684,7 +10690,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2427,
+        "downloads": 2437,
         "endorsements": 4
       }
     },
@@ -10774,7 +10780,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 3092,
+        "downloads": 3103,
         "endorsements": 2
       }
     },
@@ -11179,7 +11185,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 598,
+        "downloads": 599,
         "endorsements": 0
       }
     },
@@ -11269,7 +11275,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 110,
+        "downloads": 111,
         "endorsements": 0
       }
     },
@@ -11629,7 +11635,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 525,
+        "downloads": 527,
         "endorsements": 1
       }
     },
@@ -11674,7 +11680,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 117,
+        "downloads": 118,
         "endorsements": 0
       }
     },
@@ -11809,7 +11815,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 3169,
+        "downloads": 3179,
         "endorsements": 2
       }
     },
@@ -11989,7 +11995,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 129,
+        "downloads": 130,
         "endorsements": 0
       }
     },
@@ -12079,7 +12085,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2599,
+        "downloads": 2609,
         "endorsements": 2
       }
     },
@@ -12394,7 +12400,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 390,
+        "downloads": 394,
         "endorsements": 0
       }
     },
@@ -12484,7 +12490,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 645,
+        "downloads": 646,
         "endorsements": 2
       }
     },
@@ -12619,7 +12625,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1860,
+        "downloads": 1867,
         "endorsements": 0
       }
     },
@@ -12664,7 +12670,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1135,
+        "downloads": 1139,
         "endorsements": 1
       }
     },
@@ -13159,7 +13165,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 567,
+        "downloads": 568,
         "endorsements": 0
       }
     },
@@ -13294,7 +13300,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 277,
+        "downloads": 279,
         "endorsements": 1
       }
     },
@@ -13384,7 +13390,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 650,
+        "downloads": 651,
         "endorsements": 0
       }
     },
@@ -13429,7 +13435,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1586,
+        "downloads": 1588,
         "endorsements": 0
       }
     },
@@ -13474,7 +13480,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 302,
+        "downloads": 304,
         "endorsements": 0
       }
     },
@@ -13789,7 +13795,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 368,
+        "downloads": 369,
         "endorsements": 0
       }
     },
@@ -13969,7 +13975,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 156,
+        "downloads": 157,
         "endorsements": 1
       }
     },
@@ -14374,7 +14380,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 331,
+        "downloads": 333,
         "endorsements": 1
       }
     },
@@ -14419,7 +14425,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1031,
+        "downloads": 1034,
         "endorsements": 0
       }
     },
@@ -14689,7 +14695,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1431,
+        "downloads": 1435,
         "endorsements": 2
       }
     },
@@ -14824,7 +14830,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 429,
+        "downloads": 433,
         "endorsements": 0
       }
     },
@@ -15094,7 +15100,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 491,
+        "downloads": 492,
         "endorsements": 0
       }
     },
@@ -15139,7 +15145,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 90,
+        "downloads": 92,
         "endorsements": 0
       }
     },
@@ -15229,7 +15235,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 3794,
+        "downloads": 3804,
         "endorsements": 2
       }
     },
@@ -15499,7 +15505,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 978,
+        "downloads": 982,
         "endorsements": 0
       }
     },
