@@ -1,8 +1,322 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-11-25T00:51:52.659Z",
-  "stats_as_of": "2026-11-25T00:51:31.016Z",
+  "generated_at": "2026-11-25T02:45:04.217Z",
+  "stats_as_of": "2026-11-25T02:45:04.095Z",
   "plugins": [
+    {
+      "id": "plugins/taka/sn-sexual-memories",
+      "plugin_id": "taka.sn-sexual-memories",
+      "type": "listing",
+      "title": "SN Sexual Memories",
+      "tagline": "Every OStim or SexLab scene becomes a memory for those who took part and for a bystander who saw it, NPCs talk about it, and a relationship map shows what lies between the people around you.",
+      "author": "taka",
+      "tags": [
+        "memories",
+        "ostim",
+        "sexlab",
+        "witness",
+        "dialogue",
+        "relationships",
+        "diary",
+        "gossip"
+      ],
+      "nsfw": true,
+      "icon": "heart",
+      "mods": [
+        {
+          "name": "OStim.esp",
+          "file": "ostim.esp",
+          "required": false
+        },
+        {
+          "name": "SexLab.esm",
+          "file": "sexlab.esm",
+          "required": false
+        }
+      ],
+      "first_published": "2026-11-19T03:38:05Z",
+      "last_updated": "2026-11-25T02:43:54Z",
+      "version": "0.4.4",
+      "history": [
+        {
+          "version": "0.4.4",
+          "commit": "0ccf669c3cfaccdccb1a81933b1fbea85e21fa4c",
+          "date": "2026-11-25T02:43:54Z",
+          "changelog": "**Added**\n- **Followers talk behind your back (off by default).** Turn it on in the MCM (\"Followers gossip about you\") and set how often a chance comes (30 to 3600 seconds, 600 by default). When two or more of your followers are near you, now and then one of them talks about you to another, thinking you cannot hear. You hear every word. SkyrimNet writes and voices it from the speaker's character, memories and how they feel about you, so it can be fond teasing as well as real resentment. Nothing is said in combat, in a menu or while SkyrimNet is speaking."
+        },
+        {
+          "version": "0.4.3",
+          "commit": "582447bcbaa85477ad3c9248c3736ce68a3ecf91",
+          "date": "2026-11-21T13:41:02Z",
+          "changelog": "**Added**\n- **Diary entries after scenes (off by default).** Turn it on in the MCM (\"Diary entries after scenes\"). After a scene, everyone who took part, the player too, writes a private diary entry in their own voice, stored as their SkyrimNet diary entry. It does not retell the scene (the scene memory keeps that): it is what they never say aloud, how things have changed with the others over their history together, what they mean to do next, and how they see their life so far and where it is going, unflattering thoughts included.\n  - One more request to your LLM per person per scene.\n  - Its model is set in SkyrimNet's dashboard: AI > Models, sn_sexual_memories_diary (this mod's own card, not SkyrimNet's diary model). Left empty, it uses SkyrimNet's default model. To try it out, we recommend an inexpensive model there.\n  - When SkyrimNet also writes its usual diary entries, the same scene may appear in both.\n  - An entry can fail to be written (the model may decline or give an unusable answer, the request may fail, or SkyrimNet may refuse it, for example while a save is still loading). Then that person gets no entry for that scene; the scene memories are not affected.\n\n**Changed**\n- **The scene memories have their own model card:** AI > Models, sn_sexual_memories_memory, used for the participants' and the witness's memories. Left empty, it uses SkyrimNet's default model, as before."
+        },
+        {
+          "version": "0.4.2",
+          "commit": "0546fe66e3900f2618e4db4a5a301a0292b6f00d",
+          "date": "2026-11-20T09:22:05Z",
+          "changelog": "**Changed**\n- **The conversation just before a scene comes first.** If it clearly shows the one on the receiving end agreed to it freely, the lines during the scene and the memories afterwards treat it as consensual, even when the scene is marked dominating or rough (for example OStimNet's Dom intent). If it clearly shows it is against their will, it is treated as forced. Agreeing under threat, or when one could not refuse (a captive, someone defeated), does not count as agreeing. Only when the conversation does not settle it does the scene's own marking decide, as before.\n- The witness's memory follows the same order, as far as an onlooker could know what was said.\n\nThis is the AI's judgement, so it is not guaranteed."
+        },
+        {
+          "version": "0.4.1",
+          "commit": "ae8518122698cbc7d3fb87511ad70ded43c707ad",
+          "date": "2026-11-19T10:36:56Z",
+          "changelog": "**Changed**\n- **Nothing is sent to the AI until you press Create.** Opening the relationship map or choosing someone only shows a map already made. For someone without one, the map says so and the Refresh button reads Create.\n- **Choose who is on the map.** Every name on the list on the left except yours has a ×: a person taken off the list is left off the maps you make until you close the map. Each person on a map is one request to the AI, so this keeps the cost down.\n- **Earlier records are kept.** When a map is made again, the people of the earlier map who are not on the new one keep their cards under Earlier records, folded to one line with the date they were made. A name filter above the cards finds anyone among them.\n\n**Fixed**\n- A card could come out in Japanese in a game in another language, for a person the records said little about. The map now writes in the language of the records, or else in the language of the installed settings menu.\n\n**Note**\n- The relationship map's model is set in SkyrimNet's dashboard: AI > Models, sn_sexual_memories_relmap. When it is left empty, the map uses SkyrimNet's default model."
+        },
+        {
+          "version": "0.4.0",
+          "commit": "f4ec7de70102d4a290e27cb7182bd0de5c7b032f",
+          "date": "2026-11-19T09:04:26Z",
+          "changelog": "Changes since 0.2.1, the last version on the Hub.\n\n**New**\n- **Relationship map** (needs Magelight UI or Prisma UI). Press a key (Y by default) and choose yourself or an NPC nearby: SkyrimNet's AI writes what lies between them and up to ten people around you: what happened between them, in order, how each feels about the other, the key events, and how the others are tied to each other. It reads both sides' memories, their diaries and SkyrimNet's events, and writes only what those records say. Maps are saved per save; Refresh remakes one, and a button remakes it in English. With Phantasm installed, faces are shown.\n- **Complaints about a partner.** Now and then an NPC near you who has a husband, wife or lover complains to you about them, only while that partner is too far away to overhear.\n- **Your character speaks up** (off by default). Now and then your character says something to an NPC nearby, drawing on what just happened, on your character's memories and on how the two of you stand. It is voiced when SkyrimNet voices the player, shown as a subtitle, and the NPC answers.\n\n**Changed**\n- **Memories fit the kind of encounter.** The AI first judges what the encounter was for each person (loving, casual, paid, a duty, reluctant or forced) from what happened before and during it. Sex is no longer taken as affection.\n- New MCM settings for each feature, so any of them can be turned off."
+        },
+        {
+          "version": "0.2.1",
+          "commit": "4212abce85aa1fa67618dc57d845b56125bf2817",
+          "date": "2026-11-19T03:38:05Z",
+          "changelog": "First version on the Hub. Memories of each OStim or SexLab scene for everyone who took part and for one bystander who saw it, lines from the NPCs during scenes, and an MCM in English or Japanese."
+        }
+      ],
+      "external_url": "https://github.com/nightlantern-mods/SN_SexualMemories",
+      "languages": [
+        "en",
+        "ja"
+      ],
+      "language": "en",
+      "image": {
+        "file": "cover.jpg",
+        "sha": "e0267182ece52ff4f9c7490bedf7241dc3a27866",
+        "commit": "4212abce85aa1fa67618dc57d845b56125bf2817",
+        "width": 1920,
+        "height": 1080
+      },
+      "stats": {
+        "downloads": 132,
+        "endorsements": 0
+      }
+    },
+    {
+      "id": "plugins/taka/skyrimnet-minigame",
+      "plugin_id": "taka.skyrimnet-minigame",
+      "type": "listing",
+      "title": "SkyrimNet MiniGame",
+      "tagline": "Ten table games with nearby NPCs: Reversi, Checkers, Gomoku, Liar's Dice, Shut the Box, Yacht, Farkle, Blackjack, Cribbage and Texas Hold'em. Your opponents talk about the game and remember it.",
+      "author": "taka",
+      "tags": [
+        "Gameplay",
+        "NPC",
+        "Minigame",
+        "Dialogue",
+        "Prisma UI"
+      ],
+      "nsfw": false,
+      "icon": "package",
+      "mods": [],
+      "first_published": "2026-11-03T15:43:06Z",
+      "last_updated": "2026-11-25T02:42:27Z",
+      "version": "0.6.0",
+      "history": [
+        {
+          "version": "0.6.0",
+          "commit": "2060fe63204376eb367c957cd1efcf5bd9d3f946",
+          "date": "2026-11-25T02:42:27Z",
+          "changelog": "NPCs can now challenge you in conversation to any of the ten games, not only Reversi: one SkyrimNet action per game (LiarsDice_Challenge, Yacht_Challenge, Farkle_Challenge and so on). A window asks whether you accept, and the game then starts with that NPC alone at the table; if you decline or close the window, they react to it. A new MCM page, Blacklist, has a switch for each game: a game switched on is left out of the menu and no NPC challenges you to it. The rest of the MCM is now on a Settings page. All new texts are in the installer's five languages."
+        },
+        {
+          "version": "0.5.2",
+          "commit": "0f23219e542e23b90e355769fbe809c9c0dc24b1",
+          "date": "2026-11-20T08:35:12Z",
+          "changelog": "A new game: Farkle, against one to three NPCs. Roll six dice and set aside the ones that score (ones, fives, three or more of a kind, a straight 1 to 6, three pairs), then roll the rest again or bank the points of the turn. A roll with nothing that scores is a farkle and loses them; when all six dice have scored, all six are rolled again. The first to bank 10000 gives everyone else one last turn. An opponent speaks once or twice a round, and always on big combinations, big farkles and reaching 10000. The opponent strength is in the MCM, and all new texts are in the installer's five languages."
+        },
+        {
+          "version": "0.5.1",
+          "commit": "d5c74b430f924b43ae6306690dccd7b2dd9a5d55",
+          "date": "2026-11-14T12:35:25Z",
+          "changelog": "Two new games. Yacht, against one to three NPCs: roll five dice up to three times a turn, keeping any between rolls, and score them in one of twelve boxes; after twelve rounds the highest total wins. An opponent speaks once or twice a round, and more on good rolls. Gomoku, against one NPC: free-style five in a row on a 15 x 15 board; the opponent speaks on fours, double threats and blocks. Each has an opponent strength in the MCM, and all new texts are in the installer's five languages."
+        },
+        {
+          "version": "0.5.0",
+          "commit": "90b6d5d1f69b46adcf74b09ef0aca880e15381b9",
+          "date": "2026-11-12T07:21:29Z",
+          "changelog": "Talk at the table: a text box under each game's log. Type a line and your character says it to one of your opponents (the one you name, else whoever spoke last), who alone answers, knowing the game; in your character's words or as written (MCM). Typing Japanese, Chinese or Korean needs Magelight UI. Fixed in Texas Hold'em: an opponent could say one thing and do another (\"I call\", then a fold); the opponent who answers your bet now has the move decided first, so the line fits it. Fixed: an opponent out of turn could answer your spoken move and make up a move of their own; your own moves no longer go through Transform Dialogue, and only the opponent who acts next reacts. Fixed: opponents kept talking about the previous hand. Fixed on Magelight UI: the board could stop answering clicks after a text box had been used."
+        },
+        {
+          "version": "0.4.1",
+          "commit": "cc489be9ceb581c208a39b5b695454b44798cf25",
+          "date": "2026-11-10T15:33:11Z",
+          "changelog": "Two new games, each against one NPC at four strengths: Checkers (American draughts: forced captures, multi-jumps, kings) and Cribbage (two-handed, to 121, with the full play and show). Both were contributed by whyregisterme. Their strength is set in the MCM and on the board. New MCM setting, Length of their lines: how long your opponents' remarks about the game are (a few words, short, SkyrimNet's own, longer). It reaches only the NPCs at the table while a game is played and changes nothing in SkyrimNet's own settings. All new texts are in the installer's five languages."
+        },
+        {
+          "version": "0.4.0",
+          "commit": "bd72e8297880795dcb5b9ae14a8227defa7cbbc2",
+          "date": "2026-11-10T08:01:22Z",
+          "changelog": "Five languages and one installer: the board, the commentary and the settings menu are now in English, Japanese, Russian, German or Simplified Chinese (the last three machine-translated), chosen in a FOMOD installer for MO2 and Vortex, independent of the game's language. The separate Japanese archive is gone: if you installed the old \"skyrimnet_MiniGame_x.x.x_Japanese\" mod, remove it and pick Japanese in the installer instead (日本語版を別 MOD で入れていた方は、その MOD を外し、インストーラーで日本語を選んでください). Since 0.3.0: faces drawn by Phantasm, with Phantasm installed (0.2.0 or later; it comes with SeverActions 4.7 or later, and is also a download of its own), each opponent's face in the frames is a head-and-shoulders portrait Phantasm draws of them, with no screenshot, so the faces also show with ENB or Skyrim Upscaler, and the opponents need not be on screen. Without Phantasm nothing changes. Since 0.2.0: Texas Hold'em, where each opponent's way of playing (tight or loose, bold or cautious, how often they bluff) comes from their character; the board runs on Magelight UI (1.0 or later) when it is installed, else on Prisma UI, one of the two being enough; and your character can speak their own poker moves through Transform Dialogue, like bids in Liar's Dice."
+        },
+        {
+          "version": "0.3.0",
+          "commit": "3548aa4f3b08b7a52e9abf4c5c93e423e8b29a04",
+          "date": "2026-11-10T05:32:32Z",
+          "changelog": "Faces drawn by Phantasm: with Phantasm installed (0.2.0 or later; it comes with SeverActions 4.7 or later, and is also a download of its own), each opponent's face in the frames is a head-and-shoulders portrait Phantasm draws of them, with no screenshot, so the faces also show with ENB or Skyrim Upscaler, and the opponents need not be on screen. Without Phantasm nothing changes. Since 0.2.0: Texas Hold'em, where each opponent's way of playing (tight or loose, bold or cautious, how often they bluff) comes from their character; the board runs on Magelight UI (1.0 or later) when it is installed, else on Prisma UI, one of the two being enough; and your character can speak their own poker moves through Transform Dialogue, like bids in Liar's Dice."
+        },
+        {
+          "version": "0.2.0",
+          "commit": "52ff2089717d5532fa12a04a971e9cc37935490b",
+          "date": "2026-11-09T08:22:36Z",
+          "changelog": "Texas Hold'em: no-limit, blinds 5 and 10, 200 chips each, up to three opponents. How each opponent plays (tight or loose, bold or cautious, how often they bluff) is read from their character by SkyrimNet when the game starts, and they talk the way they play. The board now runs on Magelight UI (1.0 or later) when it is installed, else on Prisma UI as before; one of the two is enough. Your character can also speak their own poker moves (folds, checks, calls, bets and raises) through Transform Dialogue, like bids in Liar's Dice."
+        },
+        {
+          "version": "0.1.2",
+          "commit": "2847f20c4aa29e093dc5071c49c677567da38413",
+          "date": "2026-11-06T08:50:59Z",
+          "changelog": "Fixed a crash when a mini game started with ENB or Skyrim Upscaler installed: saving the photo for the face frames crashed inside the game's own screenshot code. With either of them installed, the photo is now skipped and the frames show initials. A new MCM option, Face photos, turns the photo off by hand."
+        },
+        {
+          "version": "0.1.1",
+          "commit": "b41140512332d681fe5c6b353d84b035002a85ff",
+          "date": "2026-11-04T11:37:55Z",
+          "changelog": "Two new games: Shut the Box and Blackjack, each against up to three NPCs with four opponent strengths. In Blackjack you choose who deals, you or one of your opponents. Also fixed: the board could lose the input focus and stay on screen, reacting to nothing. It now takes the focus back, and Esc always closes it."
+        },
+        {
+          "version": "0.1.0",
+          "commit": "95ecad5ed411d5f06f4f9d95f6513dd532a63864",
+          "date": "2026-11-03T15:43:06Z",
+          "changelog": "First release: Reversi against one NPC and Liar's Dice against up to three, with SkyrimNet commentary, the game state in each opponent's prompt, your own bids spoken through Transform Dialogue, NPC challenges to Reversi, and face frames of your opponents on the board."
+        }
+      ],
+      "external_url": "https://github.com/nightlantern-mods/skyrimnet_MiniGame",
+      "languages": [
+        "en",
+        "ja",
+        "zh",
+        "de",
+        "ru"
+      ],
+      "language": "en",
+      "image": {
+        "file": "cover.jpg",
+        "sha": "c29e9e93a7d7274e3b4347cf8ce495d501f95e51",
+        "commit": "95ecad5ed411d5f06f4f9d95f6513dd532a63864",
+        "width": 1920,
+        "height": 1080
+      },
+      "stats": {
+        "downloads": 97,
+        "endorsements": 0
+      }
+    },
+    {
+      "id": "plugins/phospheneoverdrive/intelengine-npc-autonomy-faction-politics",
+      "plugin_id": "phospheneoverdrive.intelengine-npc-autonomy-faction-politics",
+      "type": "listing",
+      "title": "IntelEngine: NPC Autonomy & Faction Politics",
+      "tagline": "Give Skyrim’s NPCs agency: tasks, schedules, autonomous stories, and faction politics.",
+      "author": "phospheneoverdrive",
+      "tags": [
+        "actions",
+        "autonomy",
+        "immersion",
+        "storytelling",
+        "scheduling",
+        "travel",
+        "quests",
+        "faction politics",
+        "world simulation"
+      ],
+      "nsfw": false,
+      "icon": "gamemaster",
+      "mods": [],
+      "first_published": "2026-09-26T03:14:31Z",
+      "last_updated": "2026-11-25T02:40:58Z",
+      "version": "4.0.0",
+      "history": [
+        {
+          "version": "4.0.0",
+          "commit": "54053af01c44cc3989c615a6bb0b221f904010e0",
+          "date": "2026-11-25T02:40:58Z",
+          "changelog": "**4.0.0: the living world.** A major update.\n\n**When you update**\n- \"Living world\" defaults to **Lives**, on updated saves too. Set it to **Classic** for 3.8's behaviour.\n- Above Classic, 3.8's rescue, clear-out and find-item quests give way to town stories and new quests, and skirmishes to battles on a field.\n- Skipped time no longer counts toward the pace (there is a switch for it).\n\n**New**\n- The director sends only people with a real reason, at a good moment, never a private one.\n- Unfinished business: requests are kept in the journal with a marker and a fixed reward.\n- Quests: a stolen keepsake, a brigand, a venture with a former follower.\n- Stories of the town: hauntings, hunts, captives, thieves, murders and courtships, with branching endings.\n- Followers you left behind live their own lives; meet them on the road, at a dungeon or wherever their life takes them.\n- The talk of the day spreads between holds and fades.\n- Battles on open ground: pick a side, earn ranks and pay.\n- A faction editor on the dashboard replaces editing factions.yaml by hand. Not yet tested in game: keep a copy of your file.\n- Ten languages understood, on-screen text translated.\n- No stutter: at most about half a millisecond of a frame.\n- Travel with companions, to Named Places, \"in two hours\".\n- A new World page on the dashboard.\n\n**Fixed**\n- Carriage drivers and ferrymen are never sent; Remove works for fetch/escort; a failure is no longer repeated over and over; other mods' packages are left alone; names in non-UTF-8 plugins no longer crash.\n- A load could leave the whole mod asleep; a new game no longer hangs at start-up; Sparks bolts are visible again.\n\nInstall the whole package over 3.8.x or the alphas, and back up your save first. Requires SkyrimNet Beta 27+.\n\nThanks to everyone who tested the alphas!"
+        },
+        {
+          "version": "3.8.3",
+          "commit": "1403248836325c65b6c492871d594b95fabdb243",
+          "date": "2026-11-19T23:22:16Z",
+          "changelog": "- A new game no longer gets stuck at start-up (a 3.8.2 bug: the dashboard said \"settings not available\" and the MCM page froze). A save that already got stuck stays stuck after updating; see \"Fixing a save stuck on 3.8.2\" in the description.\n- NPCs travel to SkyrimNet's Named Places. SkyrimNet already offered them to the AI as destinations (\"Kitchen\"), but IntelEngine could not find them, so an NPC sent to one went nowhere or somewhere else. A Named Place is now matched by its exact name first. Needs SkyrimNet v1.0.0-rc1 or newer.\n- NPCs that escort the player no longer walk off toward a stranger. Asked \"take me to …\", the AI sometimes picked the escort action with you as the one to escort; IntelEngine then looked for an NPC by your name and could pick another character whose name contains yours (such as a summoned \"Shadow <your name>\"), anywhere on the map, and the task got stuck. Now the NPC travels to the place instead: go along and you arrive together, or they wait there for you.\n- Sparks bolts are visible again.\n- Children run errands again; carriage drivers are still never sent.\n\nInstall the whole package over 3.8.0, 3.8.1 or 3.8.2; saves and settings carry over. The DLL and five scripts changed; the ESP is unchanged. Requires SkyrimNet Beta 27+.\n\nThanks to @gazaret for the escort fix & @LouisCCW for helping isolate the save issues with 3.8.2!"
+        },
+        {
+          "version": "3.8.2",
+          "commit": "aa92d7b6deb634a9d8281df63e75b62d399e57ce",
+          "date": "2026-11-14T19:41:38Z",
+          "changelog": "- Scheduled tasks, scheduled battles and the story engine's game-time checks happen on time again while NPCs are busy. The game-time timer all IntelEngine scripts share was restarted every few seconds while any task ran, so it only went off when you waited or slept.\n- The legacy save converter is no longer in the mod package. Upgrading a save from IntelEngine 3.5.2 or earlier? Download the unchanged converter separately: https://github.com/galanx/IntelEngine-GamePlugin/releases/tag/save-converter-1\n\nInstall the whole package over 3.8.0 or 3.8.1; saves and settings carry over. The DLL and ESP are unchanged. Requires SkyrimNet Beta 27+."
+        },
+        {
+          "version": "3.8.1",
+          "commit": "1c40741bd9cb6c528c5c7e78847eead317d2a666",
+          "date": "2026-11-14T14:16:42Z",
+          "changelog": "# IntelEngine 3.8.1\n\n**NPCs on a task**\n- NPCs no longer stand around before setting off. Only a real conversation (the dialogue menu, or speaking) holds them back now; a chat from minutes ago no longer does.\n- An NPC no longer calls off a task you gave them on their own. Away from you, their cancel counts only right after you said something within earshot (\"Come back!\"). Cancelling from the dashboard, the MCM or SkyrimNet's Package Manager works as before.\n\n**How a battle ends**\n- When a battle is over the fighting stops, the beaten run and the winners put their weapons away and walk off.\n- Nobody is removed in your view any more: soldiers leave the world only once you can't see them. The dead stay where they fell for six game hours.\n- After a battle you fought in, one of your side comes over and says a word.\n- Battles find their soldiers again, so the first clash starts and everyone is sent home at the end.\n- Two armies raised from the same soldier list fight each other instead of standing side by side.\n- A faction without its own soldier list raises its first ally's soldiers instead of bandits (a Political Engine realm allied to the Legion fields Legion soldiers). `soldier_template` also accepts a form id (\"0x0001FC5B\", or \"MyMod.esp|0x000801\").\n- A battle cut short (time limit, save loaded mid-battle) ends the same way, and a new battle is no longer reset by the last one's wind-up.\n\nInstall the whole package over 3.8.0; saves and settings carry over. Requires SkyrimNet Beta 27+.\n\nCredits: 3.8.1 fixes by Galanx."
+        },
+        {
+          "version": "3.8.0",
+          "commit": "0934b55b9974e85bffa337a263b7aaeaf2e68d36",
+          "date": "2026-11-14T01:01:01Z",
+          "changelog": "# IntelEngine 3.8.0\n\n**New**\n- IntelEngine's settings are on SkyrimNet's plugin settings page, kept in sync with the MCM and the dashboard. Settings now belong to your install, not one save.\n- Running tasks show on SkyrimNet's Package Manager page; Remove cancels them.\n- With Magelight UI, the Allow/Deny, door-knock and quest-offer prompts are Magelight popups (keys 1-3, gamepad). No answer within 20 seconds is a deny.\n- Times in plain words: \"in 2 hours\", \"tomorrow at 6\", \"at dusk\" (time parser by Lanosity).\n- Director: a form per story type, Generate fills only the type you picked, and required fields are checked before you send.\n- Politics: choose which factions may go to war (`war_allowed:` in factions.yaml); ended wars become truces; big news reaches every NPC.\n- Optional Political Engine support, off by default and experimental.\n\n**Better**\n- Stuck NPCs recover out of your sight, and other mods' follow or wait orders survive a task.\n- Tasks finish across cells: unseen deliveries are reported back, and NPCs who arrive unseen end up inside the building.\n- NPCs finish their sentence before they leave, and the inn's bard (or his audience) can be sent on a task.\n- Visits end on their own: while you talk and a little after, six game hours at most, or when you walk away.\n- One plain name per setting in the MCM, the dashboard and SkyrimNet's page.\n\n**Fixed**\n- Assassins and spawned soldiers no longer turn on you; brawl survivors are cleaned up.\n- Story NPCs no longer get stuck arriving or speak from the floor below.\n- Settings that showed the wrong value (NPC-to-NPC switches, sliders, defaults); two settings that did nothing were removed.\n- An automatic story no longer overwrites a running one.\n\nInstall the whole package over 3.7.x. Requires SkyrimNet Beta 27+. Saves from before 3.6 still need the converter (see the FAQ).\n\nCredits: developed by Gerkinfeltser & Galanx. Natural-language time parser by Lanosity."
+        },
+        {
+          "version": "3.7.1",
+          "commit": "57451f63bc139bff24329b9e38453b87a0d9438e",
+          "date": "2026-11-06T01:52:52Z",
+          "changelog": "### Fixes\n- The dashboard no longer goes blank when a game or mod name has invalid text encoding; it shows � instead.\n- Fixed a crash near some modded NPCs whose faction list contains a non-faction record; the NPC is logged once so the mod can be found.\n- MCM Hold Restriction toggles now save when clicked (the dashboard Settings tab already worked).\n\nThis release updates `IntelEngine.dll` and the MCM script; install the whole package over 3.7.0.\n\nFull changelog: https://github.com/galanx/IntelEngine-GamePlugin/blob/main/CHANGELOG.md#371--2026-11-04\nDownload: https://github.com/galanx/IntelEngine-GamePlugin/releases/tag/v3.7.1"
+        },
+        {
+          "version": "3.7.0",
+          "commit": "3da732fc441190d7418dd3abea3186c260b68ff4",
+          "date": "2026-11-04T23:27:50Z",
+          "changelog": "### Director\n- New **Generate** button on Story, NPC Social, Political and Action forms fills in a draft from nearby NPCs and factions. **Experimental:** quality depends on the model in SkyrimNet's default slot; small models (e.g. 4B) fill fields unreliably, so review before dispatching. Stop and Clear buttons too.\n- Director requests now show an on-screen notice when accepted and the reason when refused; busy NPCs ask before replacing their task.\n- Drafts are remembered across reloads; NPC and faction pickers are searchable; required fields are marked and block Dispatch until filled.\n- Action Execution: optional reason, works on non-unique NPCs (guards, city folk), and Cancel/Change Speed act straight away.\n\n### Dashboard\n- Optional **Magelight UI** host (1.7.1+, recommended): Esc closes the menu. PrismaUI stays as a fallback.\n- Tasks tab shows each task's origin, in-game time and reason, plus the NPC's current package. Actions are grouped by category.\n- Politics shows in-game dates and faction leaders.\n- Finished Story and Social outcomes are recorded in SkyrimNet's History.\n\n### Fixes\n- No more duplicate arrivals or stale story callbacks repeating outcomes.\n- Mod-added NPCs (high form IDs) are no longer mixed up in dashboard actions.\n- Better exact NPC and faction-leader matching; same-faction political pairs are rejected.\n- Task history now says \"tried to\" when a task didn't succeed.\n- Localized place names are kept intact in travel prompts.\n\nThis release updates `IntelEngine.dll` and scripts that must match it; install the whole package over the previous version.\n\n**Antivirus note:** Microsoft Defender may flag the bundled save converter `LegacyCacheMigration.exe` as a false positive. It is only needed to upgrade 3.5.x saves.\n\nFull changelog: https://github.com/galanx/IntelEngine-GamePlugin/blob/main/CHANGELOG.md#370--2026-11-03\nDownload: https://github.com/galanx/IntelEngine-GamePlugin/releases/tag/v3.7.0"
+        },
+        {
+          "version": "3.6.2",
+          "commit": "1ca69aaf3052741648220bbe3ea0420d8ebf7b41",
+          "date": "2026-10-29T00:18:43Z",
+          "changelog": "### Save converter\n- Converts saves that the 3.5.x→3.6 converter used to refuse: caches on temporary (FF) actors and leftover global caches are now converted in place.\n- Refuses saves that are already converted (for example a later save made from an `_IEconverted` one) instead of double-encoding them.\n- Clearer, multi-line output, plus a warning not to load converted saves with any IE 3.5.x.\n\n### Couriers and quests\n- Fixed couriers sometimes \"arriving\" twice, which injected duplicate/blank facts and caused errors after the quest ended.\n- Cancelling a quest from the dashboard after the courier arrives now frees the courier properly.\n- Courier story facts are recorded when the courier actually arrives, so an aborted courier leaves no facts behind.\n\n### Dashboard hotkey\n- Only works while Skyrim is focused, and modifiers must match exactly (a plain 7 no longer fires on Shift+7).\n- Changing the hotkey on the SkyrimNet settings page now applies as soon as you click Save, no restart. The dashboard's Settings tab also changes it. Default: Shift+7.\n\n### Other\n- Politics settings now persist correctly, and politics can be turned on later without a restart.\n- Story DM prompt: knowledge every candidate shares is listed once instead of repeated per NPC.\n- Long text is truncated on UTF-8 character boundaries.\n- Removed unused internal functions.\n\nThis release updates `IntelEngine.dll` and several scripts that must match it; install the whole package over the previous version.\n\n**Antivirus note:** Microsoft Defender may flag the bundled save converter `LegacyCacheMigration.exe` (`Wacapew.C!ml`, a machine-learning heuristic, 1/70 on VirusTotal). It is a false positive and is being reported to Microsoft. The converter is only needed to upgrade 3.5.x saves.\n\nFull changelog: https://github.com/galanx/IntelEngine-GamePlugin/blob/main/CHANGELOG.md#v362\nDownload: https://github.com/galanx/IntelEngine-GamePlugin/releases/tag/v3.6.2"
+        },
+        {
+          "version": "3.6.1",
+          "commit": "d70d08cc4ec0a627bb4989e7a6bd39fa0077a091",
+          "date": "2026-10-28T14:34:26Z",
+          "changelog": "- Rebuilt the bundled save converter (`LegacyCacheMigration.exe`) so Windows Defender no longer falsely flags it as `Trojan:Win32/Wacatac.B!ml`. 3.6.0 was never harmful; this release just stops the warning.\n- No functional changes. `IntelEngine.dll` and `IntelEngine.esp` are identical to 3.6.0, so you can update mid-playthrough without converting your saves again."
+        },
+        {
+          "version": "3.6.0",
+          "commit": "bb9bc25788ea26ab0de510e209bfa0dd1b48bcf5",
+          "date": "2026-10-27T21:15:05Z",
+          "changelog": "- 💾 **Save conversion:** an offline converter (included) repairs saves from earlier versions. **Convert old saves before loading with 3.6.0;** fresh games don't need it.\n- **Names kept:** stored NPC names, including names from name mods such as RNE, now survive saves and reloads. Memories and task history no longer corrupt them.\n- **Skyrim VR re-enabled:** one shared SE/AE/VR DLL; VR saves from 3.5.1 or earlier can be converted. VR should work (partly tested).\n- **Story DM:** stays within the current candidates, leaves disabled story types out of prompts, and skips itself when all eight types are off.\n- **NPC Social DM:** safer around save loading.\n- **Fixes:** Content Library bio lookup and overlay priority; battle and peace relationship changes now survive reloads; script checks aligned with the native plugin.\n\nTested on SE/AE 1.6.1170 and 1.7.104 with SkyrimNet Beta 28. 1.5.97 is untested."
+        },
+        {
+          "version": "3.5.2",
+          "commit": "95fad015e498fa97808d152341a5ce15cbb69f47",
+          "date": "2026-10-09T19:56:07Z",
+          "changelog": "Added support for Skyrim SE/AE versions 1.7.x"
+        },
+        {
+          "version": "3.5.1",
+          "commit": "e21dc4d0cd90657841180582f569a72ef8322f11",
+          "date": "2026-09-26T03:14:31Z",
+          "changelog": "Release for use with SkyrimNet Beta 25"
+        }
+      ],
+      "external_url": "https://github.com/galanx/IntelEngine-GamePlugin/releases/latest",
+      "languages": [
+        "en"
+      ],
+      "language": "en",
+      "image": {
+        "file": "cover.png",
+        "sha": "2481c81c05b48de522dea56a269a1803f5be32f9",
+        "commit": "e21dc4d0cd90657841180582f569a72ef8322f11",
+        "width": 1672,
+        "height": 941
+      },
+      "stats": {
+        "downloads": 551,
+        "endorsements": 11
+      }
+    },
     {
       "id": "plugins/maeyanie/rumourengine",
       "plugin_id": "maeyanie.rumourengine",
@@ -18,9 +332,15 @@
       "icon": "listing",
       "mods": [],
       "first_published": "2026-11-24T06:40:41Z",
-      "last_updated": "2026-11-24T06:40:41Z",
-      "version": "1.0.0",
+      "last_updated": "2026-11-25T02:40:50Z",
+      "version": "1.1.0",
       "history": [
+        {
+          "version": "1.1.0",
+          "commit": "be233059cdb3ec209d850f3b1603091e34049727",
+          "date": "2026-11-25T02:40:50Z",
+          "changelog": "- Logs moved from `Skyrim.INI/SKSE` to `Skyrim Special Edition/SKSE` (due to a CommonLibSSE-NG Bugfix)\n- Fixes for non-ASCII characters.\n- Support for 1.7.99 and 1.7.104. Untested, please let me know how it goes if you try it.\n- Fixes for NPCs in light plugins on Skyrim VR.\n- Safe to update existing saves."
+        },
         {
           "version": "1.0.0",
           "commit": "3389db1e1a256b3b6a747a6c118a5225fcd5f82e",
@@ -41,7 +361,178 @@
         "height": 720
       },
       "stats": {
-        "downloads": 20,
+        "downloads": 21,
+        "endorsements": 0
+      }
+    },
+    {
+      "id": "plugins/urtubesrclogged/battle-summaries",
+      "plugin_id": "urtubesrclogged.battle-summaries",
+      "type": "listing",
+      "title": "Battle Summaries",
+      "tagline": "After a fight, NPCs know what really happened: who did what, who nearly died, and who saved whom. Lightweight SKSE plugin.",
+      "author": "urtubesrclogged",
+      "tags": [
+        "DLL",
+        "Combat",
+        "Context",
+        "Followers",
+        "Awareness",
+        "Memory"
+      ],
+      "nsfw": false,
+      "icon": "sword",
+      "mods": [],
+      "first_published": "2026-10-05T02:53:19Z",
+      "last_updated": "2026-11-25T02:39:25Z",
+      "version": "1.6.0",
+      "history": [
+        {
+          "version": "1.6.0",
+          "commit": "4b322d0e292fdf16c10fbd91cd5330711745dda9",
+          "date": "2026-11-25T02:39:25Z",
+          "changelog": "## 1.6.0\n\n**Allies**\n- Someone who isn't in your party but fights your enemies (Neloth at Nchardak, Whiterun's guards against a dragon) is now told as an ally: \"Neloth also fought them, apart from the party.\" Their kills are their own, their summons fight on their side, and they stay out of your party's shares and roles.\n- A bystander who turns hostile but only ever fights your enemies counts as an ally, not an enemy or bystander.\n\n**Bug Fixes**\n- Quest NPCs (such as Neloth) who fight alongside you without being a follower are now handled correctly.\n- An ally's spell that catches one of your party is told as crossfire, not as \"their own side's attacks\".\n- An aura that hits everyone nearby (like Durak's armor-weakening pulse) is no longer repeatedly told as something done to anyone.\n- Witnesses to the battle who did nothing in the fight no longer show up as \"caught up in it\".\n- Someone whose body is cleaned up mid-battle keeps their name instead of becoming \"someone\"."
+        },
+        {
+          "version": "1.5.0",
+          "commit": "135bc76bc561203a94e6d57aa864498b6b1d7b13",
+          "date": "2026-11-03T16:22:59Z",
+          "changelog": "**Teamwork**\n- Who did the work, not just who landed the last blow: \"Most of the party's damage to the enemy was dealt by Lydia\".\n- Credit for the part each played: who bore the brunt, who kept the others on their feet with healing, who shielded them with magic, who held the enemy back.\n- Fair to any size of party: an even fight is told as even, and a follower doing their share in a party of ten isn't told they did \"only a small part\".\n- New setting, \"Followers Fight as a Team\" (on by default): your followers read the results as one party instead of mocking each other or beating themselves up over who did the most. Like your followers competitive? Turn it off.\n- Potions and poisons used in the fight are mentioned.\n- Summons that drew the enemy's blows are told as their master's.\n\n**Longer fights**\n- New setting, \"Wind-down\" (default 20 seconds): fighting that starts again where it was fought (clearing a dungeon room by room, more enemies arriving) stays one battle, told as \"It was fought in 3 clashes over about 4 minutes\".\n\n**Death-alternative mods**\n- Being struck down is told as getting back up, never as dying. Getting up at a stroke with your health restored (Stay In The Fight, Sacrosanct's Fortitude, Last Man Standing) is told as rising again, with no one credited with saving you.\n- Moved away mid-fight (Revenge and Respawn carrying you to an inn, a teleport, a door)? The battle ends where it was fought, as \"cut short\". Nobody at the new place is told about it as a witness.\n\n**Bug Fixes**\n- The remembered battle is only posted while you're still where it was fought, so the people behind the next door no longer \"remember\" a fight they never saw.\n- An enemy killed by their own side is told on its own line instead of being listed among your party's kills.\n- \"Both enemies were killed\" and \"The one enemy was not killed\", not \"All 2 enemies\" and \"None of the 1 enemies\".\n- Long lists of names are cut short (\"and 3 others\")."
+        },
+        {
+          "version": "1.4.0",
+          "commit": "675df65e87d759fe7b64758836797073915086fc",
+          "date": "2026-10-18T16:41:20Z",
+          "changelog": "**Improvements**\n- Someone caught in a fight without fighting (a farmer, a passing townsman) is no longer mentioned at all, so your followers stop deciding you're a murderer. Want them back? \"Mention bystanders who were killed\" on SkyrimNet's settings page.\n- Enemies killed before they noticed you still count. Stealth archers rejoice!\n- Your summons and your followers' (Scrap, a conjured skeleton, a spectral wolf, a raised corpse) are no longer fighters of their own, and nobody mourns them. Their kills are their master's: \"Remiel 3 (Wolf x3, 2 through Scrap)\".\n- The enemy's summons are told as dispatched, with credit: \"Summoned creatures dispatched: Lydia 1 (Flame Atronach)\". Any that disappear with their master's death count for nobody.\n- Several enemies with the same name are numbered: \"the first Troll\", \"the second Troll\", so it's clear which one struck your follower down.\n- Follower Death and Injury Chance is now officially supported: a minor, a serious or a lasting injury.\n\n**Bug Fixes**\n- \"Ignore friendly fire\" now also covers bystanders caught in the crossfire. Thanks to Zol for the change.\n- Effects that did no damage (an aura pulsing over everyone nearby) are no longer blamed on anyone. Thanks to Zol.\n- Two creatures that the game gave the same ID to are no longer mixed up."
+        },
+        {
+          "version": "1.3.0",
+          "commit": "bfe78a93bd7c6af51bde592b172d1c2c8d16b8ac",
+          "date": "2026-10-13T23:13:28Z",
+          "changelog": "**Support for Custom Wording**\n- Every phrase the mod writes can now be reworded: about 150 of them, from \"took solid wounds\" to \"burned by fire\".\n  Want it darker, stricter, or just different? See \"Your own wording\" in the README.\n- Could be useful for translations.\n\n**Bug Fixes and Enhancements**\n- Someone killed without fighting is no longer called \"an innocent\". The summary says they were \"not actively engaged\n  in combat\" and leaves the rest to the story. Thanks to nan0bug00 for the change.\n- An enemy cut down before he could draw his sword no longer counts as someone who wasn't fighting.\n- When the mod can't tell what hurt someone, it says so plainly: a wolf's bite is no longer \"harmful magic\".\n- A spell, potion or weapon is only named when the attacker actually used it. No more odd internal names.\n- Multiple actors with the same name doing the same thing are told once, not three times (example: 3 wolves\n  attacking you)."
+        },
+        {
+          "version": "1.2.0",
+          "commit": "fa7b18624be1f981b8a4f39017b437effad66673",
+          "date": "2026-10-08T02:42:28Z",
+          "changelog": "**Friendly fire**\n- Caught your follower in a fireball? It's now told as an accident, not as an attack on them.\n- Or switch it off entirely and they'll stop bringing it up. (A death by friendly fire is always told.)\n\n**Settings in SkyrimNet**\n- Battle Summaries now has its own page in SkyrimNet's settings, under Plugins. The ini still works.\n\n**Moments**\n- Several enemies killed in one stroke get a mention, with what did it: \"killed 3 at once with Fireball\".\n\n**Fixes**\n- An enemy who happens to kill another enemy no longer \"saves\" your follower's life.\n- Damage done to your own side no longer counts as doing the fighting.\n- \"Killed by someone\" is gone."
+        },
+        {
+          "version": "1.1.0",
+          "commit": "a341941d5e042ace1365e72774969e59f43282ed",
+          "date": "2026-10-06T19:32:37Z",
+          "changelog": "- **Injuries from injury mods.** A fighter who picks up an injury during the battle is told so (\"was injured in this fight and still carries it: Leg Injury\"), and one they already had is told as brought into the fight. Works with Blade and Blunt and Wildcat; any other injury mod that marks its injuries with a keyword can be added in the ini (`[OtherMods] sInjuryKeywords`).\n- **Beheadings and severed limbs.** Told with the kill (\"Lydia beheaded Bandit Chief.\"): Dismembering Framework for limbs, Next-Gen Decapitations for heads, and the game's own beheadings. None of these mods is required.\n- **Innocents and allies slain.** A citizen or guard cut down without ever raising a weapon is told as an innocent, with who killed them, and is no longer counted among the enemies. An ally killed by their own side is told as that.\n- **How long the battle lasted** is told as a figure (\"It lasted 42 seconds.\", \"It lasted about 25 minutes.\").\n- **A battle ends with its enemies.** It no longer stays \"underway\" for as long as the game keeps the party in combat with wildlife that never fought, and time spent in menus is not counted in its length.\n- **Kill credit.** The game names the player for some deaths the player had no part in; a kill now goes to the player only when the player struck the victim.\n\nInjuries and dismemberment can be switched off in `BattleSummaries.ini` (`bInjuries`, `bDismemberment`). Replace the old version when updating; do not merge into it."
+        },
+        {
+          "version": "1.0.1",
+          "commit": "377833a450b49360812451bf9850e8ed4afb551c",
+          "date": "2026-10-05T02:53:19Z",
+          "changelog": "Initial release"
+        }
+      ],
+      "external_url": "https://github.com/urtubesrclogged/BattleSummaries/releases/latest",
+      "languages": [
+        "en"
+      ],
+      "language": "en",
+      "image": {
+        "file": "cover.png",
+        "sha": "ba07417512c6a8b901f60a51d64f0d1bc24c59e1",
+        "commit": "377833a450b49360812451bf9850e8ed4afb551c",
+        "width": 1920,
+        "height": 1080
+      },
+      "curated": true,
+      "stats": {
+        "downloads": 737,
+        "endorsements": 11
+      }
+    },
+    {
+      "id": "plugins/taka/skyrimnet-dialogue-scenario-editor",
+      "plugin_id": "taka.skyrimnet-dialogue-scenario-editor",
+      "type": "listing",
+      "title": "SkyrimNet Dialogue Scenario Editor",
+      "tagline": "Write scenarios that nearby NPCs play out - narration, lines spoken in their own voice, OStim scenes - or let an NPC write the whole scenario for you with SkyrimNet's AI.",
+      "author": "taka",
+      "tags": [
+        "scenarios",
+        "ostim",
+        "sexlab",
+        "dialogue",
+        "narration",
+        "generation",
+        "actions"
+      ],
+      "nsfw": true,
+      "icon": "sparkles",
+      "mods": [
+        {
+          "name": "OStim.esp",
+          "file": "ostim.esp",
+          "required": false
+        },
+        {
+          "name": "SN_SexualHistory.esp",
+          "file": "sn_sexualhistory.esp",
+          "required": false
+        },
+        {
+          "name": "SexLab.esm",
+          "file": "sexlab.esm",
+          "required": false
+        }
+      ],
+      "first_published": "2026-11-22T07:11:33Z",
+      "last_updated": "2026-11-25T02:39:19Z",
+      "version": "0.3.2",
+      "history": [
+        {
+          "version": "0.3.2",
+          "commit": "08af86b4a7a6cb220f0a0970551755d3f7454122",
+          "date": "2026-11-25T02:39:19Z",
+          "changelog": "Added\n- Bed choice for sex scenes (each column): as OStim / SexLab are set, on a bed, or never on a bed. On a bed, the scene plays on the nearest free bed; when you take part, everyone is moved onto the bed just before it starts.\n- End the scene as a column's end: once the column's lines are over, the sex scene its people are in is ended.\n- Run record in the editor: which scenarios have run in this save, and a button that makes one count as never run.\n- Excluded scenes: sex scenes never to pick, for every scenario, one scene ID (or its beginning) per line. Empty at first.\n\nChanged\n- When exactly the same people are still in a scene from an earlier column, the scene goes on and only the animation changes, instead of everyone standing up, dressing and undressing again.\n- Sex scenes fit the tags better: all of the tags first, then the tags that say what happens; a scene that only shares a mood tag comes last.\n- Leaving the place while a scenario plays stops it; it counts as not having happened and can start again later.\n- The log names each scene just before it starts, so a scene that breaks the game can be found and excluded.\n\nFixed\n- Your line could cut off an NPC who was still talking, including an NPC reacting by themselves outside the scenario. Lines now wait for them (up to 20 seconds).\n- After an NPC's line, the next line could wait up to 45 seconds.\n- A Papyrus error was logged twice a second while a scenario ran."
+        },
+        {
+          "version": "0.3.1",
+          "commit": "641ee45dc2e2ed42ad79683db5e2cb627284b622",
+          "date": "2026-11-22T13:44:28Z",
+          "changelog": "Fixed\n- A scenario set to indoors only (or outdoors only) did not start again after you left its place and came back.\n- An edited scenario counted as having run already: saving a scenario with changed content now lets it run again (turning it on or off in the list does not).\n- Someone left in SexLab's animating faction after a scene that did not end cleanly was taken as still in a scene, so scenarios with them never started. A SexLab scene of theirs must now really exist.\n\nChanged\n- When someone is taken as in a sex scene, the log now says whether OStim or SexLab said so."
+        },
+        {
+          "version": "0.3.0",
+          "commit": "bf4687726c71904fa0612e728b3b4e0a80cc041b",
+          "date": "2026-11-22T12:02:10Z",
+          "changelog": "New\n- A SkyrimNet action at the end of a column: pick an action from the mods you have installed (SeverActions, OStimNet, SkyrimNet SexLab, Relationships and others), who does it, and its parameters. Only actions SkyrimNet has registered in your game are offered; one whose mod was removed later is skipped.\n- SexLab support (P+ and 1.6x): the MCM setting \"Sex scenes with\" (Automatic / OStim / SexLab) chooses when both are installed; Automatic uses OStim. Scenario tags keep OStim's names and SexLab gets the nearest SexLab tags. Not tested in game yet.\n- OStim is no longer needed: without OStim or SexLab, scenarios still play their talk, move and wait, and actions.\n\nChanged\n- People who are fighting (a brawl too), in a sex scene, changed by an action or a move and wait earlier in the same scenario, or held by another mod's scene are no longer gathered or held. They still say their lines from where they are.\n- Someone who fights while talking loses SkyrimNet's talk package (which keeps a speaker standing still), so they keep fighting.\n\nGood to know\n- SkyrimNet itself can pick actions from what the narration and lines say, apart from the column-end action; auto lines make this more likely."
+        },
+        {
+          "version": "0.2.0",
+          "commit": "3d022f3df48236ed1baa235a320154b53a6b65a5",
+          "date": "2026-11-22T07:51:05Z",
+          "changelog": "New\n- How a column ends is now a choice: nothing (talk only), an OStim scene, or move and wait: chosen people walk to an interior and wait there until another scenario has happened or some days have passed.\n- Prerequisite: a scenario can wait until another one has finished.\n- Starts by hotkey: each scenario starts automatically or when you press the new MCM key \"Key that starts a hotkey scenario\".\n- Cell condition: a scenario can be limited to one cell, picked from the list of interiors or set to the cell you are in.\n- Generate (auto lines): writes only the people, narration and OStim (tags) of each column; the lines are set to Auto (Medium) and made up in the game.\n- Log file: Documents\\My Games\\Skyrim Special Edition\\SKSE\\SkyrimNet_DialogueScenarioEditor.log, no INI setting needed. It says why a scenario does not start, and while one runs, every line, SkyrimNet's speech events and how long each wait took.\n\nChanged\n- A child nearby no longer keeps a scenario from starting (children still cannot take part).\n\nFixed\n- A deleted scenario (also the bundled example) came back after the mod was reinstalled or updated.\n- A scenario deleted and made again under the same name counted as having run already."
+        },
+        {
+          "version": "0.1.0",
+          "commit": "73ecb62827d96a7e15b51acb0504a8725833b467",
+          "date": "2026-11-22T07:11:33Z",
+          "changelog": "First release. Scenarios in up to 10 columns that nearby NPCs play out (narration, lines in their own voice, OStim scenes), Auto lines and Auto columns, Generate (an NPC writes the whole scenario with SkyrimNet's AI), a settings page on Magelight UI or Prisma UI, and an installer in English or Japanese."
+        }
+      ],
+      "external_url": "https://github.com/nightlantern-mods/SkyrimNet_DialogueScenarioEditor",
+      "languages": [
+        "ja",
+        "en"
+      ],
+      "language": "ja",
+      "image": {
+        "file": "cover.jpg",
+        "sha": "f941c7a8fb435e5e5e13913a1bd1214576f3afa5",
+        "commit": "3d022f3df48236ed1baa235a320154b53a6b65a5",
+        "width": 1920,
+        "height": 1080
+      },
+      "stats": {
+        "downloads": 50,
         "endorsements": 0
       }
     },
@@ -143,7 +634,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 1497,
+        "downloads": 1498,
         "endorsements": 45
       }
     },
@@ -589,7 +1080,7 @@
         "height": 1152
       },
       "stats": {
-        "downloads": 653,
+        "downloads": 654,
         "endorsements": 10
       }
     },
@@ -767,88 +1258,6 @@
       "stats": {
         "downloads": 104,
         "endorsements": 1
-      }
-    },
-    {
-      "id": "plugins/taka/skyrimnet-dialogue-scenario-editor",
-      "plugin_id": "taka.skyrimnet-dialogue-scenario-editor",
-      "type": "listing",
-      "title": "SkyrimNet Dialogue Scenario Editor",
-      "tagline": "Write scenarios that nearby NPCs play out - narration, lines spoken in their own voice, OStim scenes - or let an NPC write the whole scenario for you with SkyrimNet's AI.",
-      "author": "taka",
-      "tags": [
-        "scenarios",
-        "ostim",
-        "sexlab",
-        "dialogue",
-        "narration",
-        "generation",
-        "actions"
-      ],
-      "nsfw": true,
-      "icon": "sparkles",
-      "mods": [
-        {
-          "name": "OStim.esp",
-          "file": "ostim.esp",
-          "required": false
-        },
-        {
-          "name": "SN_SexualHistory.esp",
-          "file": "sn_sexualhistory.esp",
-          "required": false
-        },
-        {
-          "name": "SexLab.esm",
-          "file": "sexlab.esm",
-          "required": false
-        }
-      ],
-      "first_published": "2026-11-22T07:11:33Z",
-      "last_updated": "2026-11-22T13:44:28Z",
-      "version": "0.3.1",
-      "history": [
-        {
-          "version": "0.3.1",
-          "commit": "641ee45dc2e2ed42ad79683db5e2cb627284b622",
-          "date": "2026-11-22T13:44:28Z",
-          "changelog": "Fixed\n- A scenario set to indoors only (or outdoors only) did not start again after you left its place and came back.\n- An edited scenario counted as having run already: saving a scenario with changed content now lets it run again (turning it on or off in the list does not).\n- Someone left in SexLab's animating faction after a scene that did not end cleanly was taken as still in a scene, so scenarios with them never started. A SexLab scene of theirs must now really exist.\n\nChanged\n- When someone is taken as in a sex scene, the log now says whether OStim or SexLab said so."
-        },
-        {
-          "version": "0.3.0",
-          "commit": "bf4687726c71904fa0612e728b3b4e0a80cc041b",
-          "date": "2026-11-22T12:02:10Z",
-          "changelog": "New\n- A SkyrimNet action at the end of a column: pick an action from the mods you have installed (SeverActions, OStimNet, SkyrimNet SexLab, Relationships and others), who does it, and its parameters. Only actions SkyrimNet has registered in your game are offered; one whose mod was removed later is skipped.\n- SexLab support (P+ and 1.6x): the MCM setting \"Sex scenes with\" (Automatic / OStim / SexLab) chooses when both are installed; Automatic uses OStim. Scenario tags keep OStim's names and SexLab gets the nearest SexLab tags. Not tested in game yet.\n- OStim is no longer needed: without OStim or SexLab, scenarios still play their talk, move and wait, and actions.\n\nChanged\n- People who are fighting (a brawl too), in a sex scene, changed by an action or a move and wait earlier in the same scenario, or held by another mod's scene are no longer gathered or held. They still say their lines from where they are.\n- Someone who fights while talking loses SkyrimNet's talk package (which keeps a speaker standing still), so they keep fighting.\n\nGood to know\n- SkyrimNet itself can pick actions from what the narration and lines say, apart from the column-end action; auto lines make this more likely."
-        },
-        {
-          "version": "0.2.0",
-          "commit": "3d022f3df48236ed1baa235a320154b53a6b65a5",
-          "date": "2026-11-22T07:51:05Z",
-          "changelog": "New\n- How a column ends is now a choice: nothing (talk only), an OStim scene, or move and wait: chosen people walk to an interior and wait there until another scenario has happened or some days have passed.\n- Prerequisite: a scenario can wait until another one has finished.\n- Starts by hotkey: each scenario starts automatically or when you press the new MCM key \"Key that starts a hotkey scenario\".\n- Cell condition: a scenario can be limited to one cell, picked from the list of interiors or set to the cell you are in.\n- Generate (auto lines): writes only the people, narration and OStim (tags) of each column; the lines are set to Auto (Medium) and made up in the game.\n- Log file: Documents\\My Games\\Skyrim Special Edition\\SKSE\\SkyrimNet_DialogueScenarioEditor.log, no INI setting needed. It says why a scenario does not start, and while one runs, every line, SkyrimNet's speech events and how long each wait took.\n\nChanged\n- A child nearby no longer keeps a scenario from starting (children still cannot take part).\n\nFixed\n- A deleted scenario (also the bundled example) came back after the mod was reinstalled or updated.\n- A scenario deleted and made again under the same name counted as having run already."
-        },
-        {
-          "version": "0.1.0",
-          "commit": "73ecb62827d96a7e15b51acb0504a8725833b467",
-          "date": "2026-11-22T07:11:33Z",
-          "changelog": "First release. Scenarios in up to 10 columns that nearby NPCs play out (narration, lines in their own voice, OStim scenes), Auto lines and Auto columns, Generate (an NPC writes the whole scenario with SkyrimNet's AI), a settings page on Magelight UI or Prisma UI, and an installer in English or Japanese."
-        }
-      ],
-      "external_url": "https://github.com/nightlantern-mods/SkyrimNet_DialogueScenarioEditor",
-      "languages": [
-        "ja",
-        "en"
-      ],
-      "language": "ja",
-      "image": {
-        "file": "cover.jpg",
-        "sha": "f941c7a8fb435e5e5e13913a1bd1214576f3afa5",
-        "commit": "3d022f3df48236ed1baa235a320154b53a6b65a5",
-        "width": 1920,
-        "height": 1080
-      },
-      "stats": {
-        "downloads": 50,
-        "endorsements": 0
       }
     },
     {
@@ -1041,91 +1450,8 @@
         "height": 864
       },
       "stats": {
-        "downloads": 570,
+        "downloads": 571,
         "endorsements": 8
-      }
-    },
-    {
-      "id": "plugins/taka/sn-sexual-memories",
-      "plugin_id": "taka.sn-sexual-memories",
-      "type": "listing",
-      "title": "SN Sexual Memories",
-      "tagline": "Every OStim or SexLab scene becomes a memory for those who took part and for a bystander who saw it, NPCs talk about it, and a relationship map shows what lies between the people around you.",
-      "author": "taka",
-      "tags": [
-        "memories",
-        "ostim",
-        "sexlab",
-        "witness",
-        "dialogue",
-        "relationships",
-        "diary"
-      ],
-      "nsfw": true,
-      "icon": "heart",
-      "mods": [
-        {
-          "name": "OStim.esp",
-          "file": "ostim.esp",
-          "required": false
-        },
-        {
-          "name": "SexLab.esm",
-          "file": "sexlab.esm",
-          "required": false
-        }
-      ],
-      "first_published": "2026-11-19T03:38:05Z",
-      "last_updated": "2026-11-21T13:41:02Z",
-      "version": "0.4.3",
-      "history": [
-        {
-          "version": "0.4.3",
-          "commit": "582447bcbaa85477ad3c9248c3736ce68a3ecf91",
-          "date": "2026-11-21T13:41:02Z",
-          "changelog": "**Added**\n- **Diary entries after scenes (off by default).** Turn it on in the MCM (\"Diary entries after scenes\"). After a scene, everyone who took part, the player too, writes a private diary entry in their own voice, stored as their SkyrimNet diary entry. It does not retell the scene (the scene memory keeps that): it is what they never say aloud, how things have changed with the others over their history together, what they mean to do next, and how they see their life so far and where it is going, unflattering thoughts included.\n  - One more request to your LLM per person per scene.\n  - Its model is set in SkyrimNet's dashboard: AI > Models, sn_sexual_memories_diary (this mod's own card, not SkyrimNet's diary model). Left empty, it uses SkyrimNet's default model. To try it out, we recommend an inexpensive model there.\n  - When SkyrimNet also writes its usual diary entries, the same scene may appear in both.\n  - An entry can fail to be written (the model may decline or give an unusable answer, the request may fail, or SkyrimNet may refuse it, for example while a save is still loading). Then that person gets no entry for that scene; the scene memories are not affected.\n\n**Changed**\n- **The scene memories have their own model card:** AI > Models, sn_sexual_memories_memory, used for the participants' and the witness's memories. Left empty, it uses SkyrimNet's default model, as before."
-        },
-        {
-          "version": "0.4.2",
-          "commit": "0546fe66e3900f2618e4db4a5a301a0292b6f00d",
-          "date": "2026-11-20T09:22:05Z",
-          "changelog": "**Changed**\n- **The conversation just before a scene comes first.** If it clearly shows the one on the receiving end agreed to it freely, the lines during the scene and the memories afterwards treat it as consensual, even when the scene is marked dominating or rough (for example OStimNet's Dom intent). If it clearly shows it is against their will, it is treated as forced. Agreeing under threat, or when one could not refuse (a captive, someone defeated), does not count as agreeing. Only when the conversation does not settle it does the scene's own marking decide, as before.\n- The witness's memory follows the same order, as far as an onlooker could know what was said.\n\nThis is the AI's judgement, so it is not guaranteed."
-        },
-        {
-          "version": "0.4.1",
-          "commit": "ae8518122698cbc7d3fb87511ad70ded43c707ad",
-          "date": "2026-11-19T10:36:56Z",
-          "changelog": "**Changed**\n- **Nothing is sent to the AI until you press Create.** Opening the relationship map or choosing someone only shows a map already made. For someone without one, the map says so and the Refresh button reads Create.\n- **Choose who is on the map.** Every name on the list on the left except yours has a ×: a person taken off the list is left off the maps you make until you close the map. Each person on a map is one request to the AI, so this keeps the cost down.\n- **Earlier records are kept.** When a map is made again, the people of the earlier map who are not on the new one keep their cards under Earlier records, folded to one line with the date they were made. A name filter above the cards finds anyone among them.\n\n**Fixed**\n- A card could come out in Japanese in a game in another language, for a person the records said little about. The map now writes in the language of the records, or else in the language of the installed settings menu.\n\n**Note**\n- The relationship map's model is set in SkyrimNet's dashboard: AI > Models, sn_sexual_memories_relmap. When it is left empty, the map uses SkyrimNet's default model."
-        },
-        {
-          "version": "0.4.0",
-          "commit": "f4ec7de70102d4a290e27cb7182bd0de5c7b032f",
-          "date": "2026-11-19T09:04:26Z",
-          "changelog": "Changes since 0.2.1, the last version on the Hub.\n\n**New**\n- **Relationship map** (needs Magelight UI or Prisma UI). Press a key (Y by default) and choose yourself or an NPC nearby: SkyrimNet's AI writes what lies between them and up to ten people around you: what happened between them, in order, how each feels about the other, the key events, and how the others are tied to each other. It reads both sides' memories, their diaries and SkyrimNet's events, and writes only what those records say. Maps are saved per save; Refresh remakes one, and a button remakes it in English. With Phantasm installed, faces are shown.\n- **Complaints about a partner.** Now and then an NPC near you who has a husband, wife or lover complains to you about them, only while that partner is too far away to overhear.\n- **Your character speaks up** (off by default). Now and then your character says something to an NPC nearby, drawing on what just happened, on your character's memories and on how the two of you stand. It is voiced when SkyrimNet voices the player, shown as a subtitle, and the NPC answers.\n\n**Changed**\n- **Memories fit the kind of encounter.** The AI first judges what the encounter was for each person (loving, casual, paid, a duty, reluctant or forced) from what happened before and during it. Sex is no longer taken as affection.\n- New MCM settings for each feature, so any of them can be turned off."
-        },
-        {
-          "version": "0.2.1",
-          "commit": "4212abce85aa1fa67618dc57d845b56125bf2817",
-          "date": "2026-11-19T03:38:05Z",
-          "changelog": "First version on the Hub. Memories of each OStim or SexLab scene for everyone who took part and for one bystander who saw it, lines from the NPCs during scenes, and an MCM in English or Japanese."
-        }
-      ],
-      "external_url": "https://github.com/nightlantern-mods/SN_SexualMemories",
-      "languages": [
-        "en",
-        "ja"
-      ],
-      "language": "en",
-      "image": {
-        "file": "cover.jpg",
-        "sha": "e0267182ece52ff4f9c7490bedf7241dc3a27866",
-        "commit": "4212abce85aa1fa67618dc57d845b56125bf2817",
-        "width": 1920,
-        "height": 1080
-      },
-      "stats": {
-        "downloads": 132,
-        "endorsements": 0
       }
     },
     {
@@ -1337,7 +1663,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 682,
+        "downloads": 683,
         "endorsements": 6
       }
     },
@@ -1415,109 +1741,6 @@
       "stats": {
         "downloads": 220,
         "endorsements": 1
-      }
-    },
-    {
-      "id": "plugins/taka/skyrimnet-minigame",
-      "plugin_id": "taka.skyrimnet-minigame",
-      "type": "listing",
-      "title": "SkyrimNet MiniGame",
-      "tagline": "Ten table games with nearby NPCs: Reversi, Checkers, Gomoku, Liar's Dice, Shut the Box, Yacht, Farkle, Blackjack, Cribbage and Texas Hold'em. Your opponents talk about the game and remember it.",
-      "author": "taka",
-      "tags": [
-        "Gameplay",
-        "NPC",
-        "Minigame",
-        "Dialogue",
-        "Prisma UI"
-      ],
-      "nsfw": false,
-      "icon": "package",
-      "mods": [],
-      "first_published": "2026-11-03T15:43:06Z",
-      "last_updated": "2026-11-20T08:35:12Z",
-      "version": "0.5.2",
-      "history": [
-        {
-          "version": "0.5.2",
-          "commit": "0f23219e542e23b90e355769fbe809c9c0dc24b1",
-          "date": "2026-11-20T08:35:12Z",
-          "changelog": "A new game: Farkle, against one to three NPCs. Roll six dice and set aside the ones that score (ones, fives, three or more of a kind, a straight 1 to 6, three pairs), then roll the rest again or bank the points of the turn. A roll with nothing that scores is a farkle and loses them; when all six dice have scored, all six are rolled again. The first to bank 10000 gives everyone else one last turn. An opponent speaks once or twice a round, and always on big combinations, big farkles and reaching 10000. The opponent strength is in the MCM, and all new texts are in the installer's five languages."
-        },
-        {
-          "version": "0.5.1",
-          "commit": "d5c74b430f924b43ae6306690dccd7b2dd9a5d55",
-          "date": "2026-11-14T12:35:25Z",
-          "changelog": "Two new games. Yacht, against one to three NPCs: roll five dice up to three times a turn, keeping any between rolls, and score them in one of twelve boxes; after twelve rounds the highest total wins. An opponent speaks once or twice a round, and more on good rolls. Gomoku, against one NPC: free-style five in a row on a 15 x 15 board; the opponent speaks on fours, double threats and blocks. Each has an opponent strength in the MCM, and all new texts are in the installer's five languages."
-        },
-        {
-          "version": "0.5.0",
-          "commit": "90b6d5d1f69b46adcf74b09ef0aca880e15381b9",
-          "date": "2026-11-12T07:21:29Z",
-          "changelog": "Talk at the table: a text box under each game's log. Type a line and your character says it to one of your opponents (the one you name, else whoever spoke last), who alone answers, knowing the game; in your character's words or as written (MCM). Typing Japanese, Chinese or Korean needs Magelight UI. Fixed in Texas Hold'em: an opponent could say one thing and do another (\"I call\", then a fold); the opponent who answers your bet now has the move decided first, so the line fits it. Fixed: an opponent out of turn could answer your spoken move and make up a move of their own; your own moves no longer go through Transform Dialogue, and only the opponent who acts next reacts. Fixed: opponents kept talking about the previous hand. Fixed on Magelight UI: the board could stop answering clicks after a text box had been used."
-        },
-        {
-          "version": "0.4.1",
-          "commit": "cc489be9ceb581c208a39b5b695454b44798cf25",
-          "date": "2026-11-10T15:33:11Z",
-          "changelog": "Two new games, each against one NPC at four strengths: Checkers (American draughts: forced captures, multi-jumps, kings) and Cribbage (two-handed, to 121, with the full play and show). Both were contributed by whyregisterme. Their strength is set in the MCM and on the board. New MCM setting, Length of their lines: how long your opponents' remarks about the game are (a few words, short, SkyrimNet's own, longer). It reaches only the NPCs at the table while a game is played and changes nothing in SkyrimNet's own settings. All new texts are in the installer's five languages."
-        },
-        {
-          "version": "0.4.0",
-          "commit": "bd72e8297880795dcb5b9ae14a8227defa7cbbc2",
-          "date": "2026-11-10T08:01:22Z",
-          "changelog": "Five languages and one installer: the board, the commentary and the settings menu are now in English, Japanese, Russian, German or Simplified Chinese (the last three machine-translated), chosen in a FOMOD installer for MO2 and Vortex, independent of the game's language. The separate Japanese archive is gone: if you installed the old \"skyrimnet_MiniGame_x.x.x_Japanese\" mod, remove it and pick Japanese in the installer instead (日本語版を別 MOD で入れていた方は、その MOD を外し、インストーラーで日本語を選んでください). Since 0.3.0: faces drawn by Phantasm, with Phantasm installed (0.2.0 or later; it comes with SeverActions 4.7 or later, and is also a download of its own), each opponent's face in the frames is a head-and-shoulders portrait Phantasm draws of them, with no screenshot, so the faces also show with ENB or Skyrim Upscaler, and the opponents need not be on screen. Without Phantasm nothing changes. Since 0.2.0: Texas Hold'em, where each opponent's way of playing (tight or loose, bold or cautious, how often they bluff) comes from their character; the board runs on Magelight UI (1.0 or later) when it is installed, else on Prisma UI, one of the two being enough; and your character can speak their own poker moves through Transform Dialogue, like bids in Liar's Dice."
-        },
-        {
-          "version": "0.3.0",
-          "commit": "3548aa4f3b08b7a52e9abf4c5c93e423e8b29a04",
-          "date": "2026-11-10T05:32:32Z",
-          "changelog": "Faces drawn by Phantasm: with Phantasm installed (0.2.0 or later; it comes with SeverActions 4.7 or later, and is also a download of its own), each opponent's face in the frames is a head-and-shoulders portrait Phantasm draws of them, with no screenshot, so the faces also show with ENB or Skyrim Upscaler, and the opponents need not be on screen. Without Phantasm nothing changes. Since 0.2.0: Texas Hold'em, where each opponent's way of playing (tight or loose, bold or cautious, how often they bluff) comes from their character; the board runs on Magelight UI (1.0 or later) when it is installed, else on Prisma UI, one of the two being enough; and your character can speak their own poker moves through Transform Dialogue, like bids in Liar's Dice."
-        },
-        {
-          "version": "0.2.0",
-          "commit": "52ff2089717d5532fa12a04a971e9cc37935490b",
-          "date": "2026-11-09T08:22:36Z",
-          "changelog": "Texas Hold'em: no-limit, blinds 5 and 10, 200 chips each, up to three opponents. How each opponent plays (tight or loose, bold or cautious, how often they bluff) is read from their character by SkyrimNet when the game starts, and they talk the way they play. The board now runs on Magelight UI (1.0 or later) when it is installed, else on Prisma UI as before; one of the two is enough. Your character can also speak their own poker moves (folds, checks, calls, bets and raises) through Transform Dialogue, like bids in Liar's Dice."
-        },
-        {
-          "version": "0.1.2",
-          "commit": "2847f20c4aa29e093dc5071c49c677567da38413",
-          "date": "2026-11-06T08:50:59Z",
-          "changelog": "Fixed a crash when a mini game started with ENB or Skyrim Upscaler installed: saving the photo for the face frames crashed inside the game's own screenshot code. With either of them installed, the photo is now skipped and the frames show initials. A new MCM option, Face photos, turns the photo off by hand."
-        },
-        {
-          "version": "0.1.1",
-          "commit": "b41140512332d681fe5c6b353d84b035002a85ff",
-          "date": "2026-11-04T11:37:55Z",
-          "changelog": "Two new games: Shut the Box and Blackjack, each against up to three NPCs with four opponent strengths. In Blackjack you choose who deals, you or one of your opponents. Also fixed: the board could lose the input focus and stay on screen, reacting to nothing. It now takes the focus back, and Esc always closes it."
-        },
-        {
-          "version": "0.1.0",
-          "commit": "95ecad5ed411d5f06f4f9d95f6513dd532a63864",
-          "date": "2026-11-03T15:43:06Z",
-          "changelog": "First release: Reversi against one NPC and Liar's Dice against up to three, with SkyrimNet commentary, the game state in each opponent's prompt, your own bids spoken through Transform Dialogue, NPC challenges to Reversi, and face frames of your opponents on the board."
-        }
-      ],
-      "external_url": "https://github.com/nightlantern-mods/skyrimnet_MiniGame",
-      "languages": [
-        "en",
-        "ja",
-        "zh",
-        "de",
-        "ru"
-      ],
-      "language": "en",
-      "image": {
-        "file": "cover.jpg",
-        "sha": "c29e9e93a7d7274e3b4347cf8ce495d501f95e51",
-        "commit": "95ecad5ed411d5f06f4f9d95f6513dd532a63864",
-        "width": 1920,
-        "height": 1080
-      },
-      "stats": {
-        "downloads": 97,
-        "endorsements": 0
       }
     },
     {
@@ -1768,115 +1991,6 @@
       }
     },
     {
-      "id": "plugins/phospheneoverdrive/intelengine-npc-autonomy-faction-politics",
-      "plugin_id": "phospheneoverdrive.intelengine-npc-autonomy-faction-politics",
-      "type": "listing",
-      "title": "IntelEngine — NPC Autonomy & Faction Politics",
-      "tagline": "Give Skyrim’s NPCs agency: tasks, schedules, autonomous stories, and faction politics.",
-      "author": "phospheneoverdrive",
-      "tags": [
-        "actions",
-        "autonomy",
-        "immersion",
-        "storytelling",
-        "scheduling",
-        "travel",
-        "quests",
-        "faction politics",
-        "world simulation"
-      ],
-      "nsfw": false,
-      "icon": "gamemaster",
-      "mods": [],
-      "first_published": "2026-09-26T03:14:31Z",
-      "last_updated": "2026-11-19T23:22:16Z",
-      "version": "3.8.3",
-      "history": [
-        {
-          "version": "3.8.3",
-          "commit": "1403248836325c65b6c492871d594b95fabdb243",
-          "date": "2026-11-19T23:22:16Z",
-          "changelog": "- A new game no longer gets stuck at start-up (a 3.8.2 bug: the dashboard said \"settings not available\" and the MCM page froze). A save that already got stuck stays stuck after updating; see \"Fixing a save stuck on 3.8.2\" in the description.\n- NPCs travel to SkyrimNet's Named Places. SkyrimNet already offered them to the AI as destinations (\"Kitchen\"), but IntelEngine could not find them, so an NPC sent to one went nowhere or somewhere else. A Named Place is now matched by its exact name first. Needs SkyrimNet v1.0.0-rc1 or newer.\n- NPCs that escort the player no longer walk off toward a stranger. Asked \"take me to …\", the AI sometimes picked the escort action with you as the one to escort; IntelEngine then looked for an NPC by your name and could pick another character whose name contains yours (such as a summoned \"Shadow <your name>\"), anywhere on the map, and the task got stuck. Now the NPC travels to the place instead: go along and you arrive together, or they wait there for you.\n- Sparks bolts are visible again.\n- Children run errands again; carriage drivers are still never sent.\n\nInstall the whole package over 3.8.0, 3.8.1 or 3.8.2; saves and settings carry over. The DLL and five scripts changed; the ESP is unchanged. Requires SkyrimNet Beta 27+.\n\nThanks to @gazaret for the escort fix & @LouisCCW for helping isolate the save issues with 3.8.2!"
-        },
-        {
-          "version": "3.8.2",
-          "commit": "aa92d7b6deb634a9d8281df63e75b62d399e57ce",
-          "date": "2026-11-14T19:41:38Z",
-          "changelog": "- Scheduled tasks, scheduled battles and the story engine's game-time checks happen on time again while NPCs are busy. The game-time timer all IntelEngine scripts share was restarted every few seconds while any task ran, so it only went off when you waited or slept.\n- The legacy save converter is no longer in the mod package. Upgrading a save from IntelEngine 3.5.2 or earlier? Download the unchanged converter separately: https://github.com/galanx/IntelEngine-GamePlugin/releases/tag/save-converter-1\n\nInstall the whole package over 3.8.0 or 3.8.1; saves and settings carry over. The DLL and ESP are unchanged. Requires SkyrimNet Beta 27+."
-        },
-        {
-          "version": "3.8.1",
-          "commit": "1c40741bd9cb6c528c5c7e78847eead317d2a666",
-          "date": "2026-11-14T14:16:42Z",
-          "changelog": "# IntelEngine 3.8.1\n\n**NPCs on a task**\n- NPCs no longer stand around before setting off. Only a real conversation (the dialogue menu, or speaking) holds them back now; a chat from minutes ago no longer does.\n- An NPC no longer calls off a task you gave them on their own. Away from you, their cancel counts only right after you said something within earshot (\"Come back!\"). Cancelling from the dashboard, the MCM or SkyrimNet's Package Manager works as before.\n\n**How a battle ends**\n- When a battle is over the fighting stops, the beaten run and the winners put their weapons away and walk off.\n- Nobody is removed in your view any more: soldiers leave the world only once you can't see them. The dead stay where they fell for six game hours.\n- After a battle you fought in, one of your side comes over and says a word.\n- Battles find their soldiers again, so the first clash starts and everyone is sent home at the end.\n- Two armies raised from the same soldier list fight each other instead of standing side by side.\n- A faction without its own soldier list raises its first ally's soldiers instead of bandits (a Political Engine realm allied to the Legion fields Legion soldiers). `soldier_template` also accepts a form id (\"0x0001FC5B\", or \"MyMod.esp|0x000801\").\n- A battle cut short (time limit, save loaded mid-battle) ends the same way, and a new battle is no longer reset by the last one's wind-up.\n\nInstall the whole package over 3.8.0; saves and settings carry over. Requires SkyrimNet Beta 27+.\n\nCredits: 3.8.1 fixes by Galanx."
-        },
-        {
-          "version": "3.8.0",
-          "commit": "0934b55b9974e85bffa337a263b7aaeaf2e68d36",
-          "date": "2026-11-14T01:01:01Z",
-          "changelog": "# IntelEngine 3.8.0\n\n**New**\n- IntelEngine's settings are on SkyrimNet's plugin settings page, kept in sync with the MCM and the dashboard. Settings now belong to your install, not one save.\n- Running tasks show on SkyrimNet's Package Manager page; Remove cancels them.\n- With Magelight UI, the Allow/Deny, door-knock and quest-offer prompts are Magelight popups (keys 1-3, gamepad). No answer within 20 seconds is a deny.\n- Times in plain words: \"in 2 hours\", \"tomorrow at 6\", \"at dusk\" (time parser by Lanosity).\n- Director: a form per story type, Generate fills only the type you picked, and required fields are checked before you send.\n- Politics: choose which factions may go to war (`war_allowed:` in factions.yaml); ended wars become truces; big news reaches every NPC.\n- Optional Political Engine support, off by default and experimental.\n\n**Better**\n- Stuck NPCs recover out of your sight, and other mods' follow or wait orders survive a task.\n- Tasks finish across cells: unseen deliveries are reported back, and NPCs who arrive unseen end up inside the building.\n- NPCs finish their sentence before they leave, and the inn's bard (or his audience) can be sent on a task.\n- Visits end on their own: while you talk and a little after, six game hours at most, or when you walk away.\n- One plain name per setting in the MCM, the dashboard and SkyrimNet's page.\n\n**Fixed**\n- Assassins and spawned soldiers no longer turn on you; brawl survivors are cleaned up.\n- Story NPCs no longer get stuck arriving or speak from the floor below.\n- Settings that showed the wrong value (NPC-to-NPC switches, sliders, defaults); two settings that did nothing were removed.\n- An automatic story no longer overwrites a running one.\n\nInstall the whole package over 3.7.x. Requires SkyrimNet Beta 27+. Saves from before 3.6 still need the converter (see the FAQ).\n\nCredits: developed by Gerkinfeltser & Galanx. Natural-language time parser by Lanosity."
-        },
-        {
-          "version": "3.7.1",
-          "commit": "57451f63bc139bff24329b9e38453b87a0d9438e",
-          "date": "2026-11-06T01:52:52Z",
-          "changelog": "### Fixes\n- The dashboard no longer goes blank when a game or mod name has invalid text encoding; it shows � instead.\n- Fixed a crash near some modded NPCs whose faction list contains a non-faction record; the NPC is logged once so the mod can be found.\n- MCM Hold Restriction toggles now save when clicked (the dashboard Settings tab already worked).\n\nThis release updates `IntelEngine.dll` and the MCM script; install the whole package over 3.7.0.\n\nFull changelog: https://github.com/galanx/IntelEngine-GamePlugin/blob/main/CHANGELOG.md#371--2026-11-04\nDownload: https://github.com/galanx/IntelEngine-GamePlugin/releases/tag/v3.7.1"
-        },
-        {
-          "version": "3.7.0",
-          "commit": "3da732fc441190d7418dd3abea3186c260b68ff4",
-          "date": "2026-11-04T23:27:50Z",
-          "changelog": "### Director\n- New **Generate** button on Story, NPC Social, Political and Action forms fills in a draft from nearby NPCs and factions. **Experimental:** quality depends on the model in SkyrimNet's default slot; small models (e.g. 4B) fill fields unreliably, so review before dispatching. Stop and Clear buttons too.\n- Director requests now show an on-screen notice when accepted and the reason when refused; busy NPCs ask before replacing their task.\n- Drafts are remembered across reloads; NPC and faction pickers are searchable; required fields are marked and block Dispatch until filled.\n- Action Execution: optional reason, works on non-unique NPCs (guards, city folk), and Cancel/Change Speed act straight away.\n\n### Dashboard\n- Optional **Magelight UI** host (1.7.1+, recommended): Esc closes the menu. PrismaUI stays as a fallback.\n- Tasks tab shows each task's origin, in-game time and reason, plus the NPC's current package. Actions are grouped by category.\n- Politics shows in-game dates and faction leaders.\n- Finished Story and Social outcomes are recorded in SkyrimNet's History.\n\n### Fixes\n- No more duplicate arrivals or stale story callbacks repeating outcomes.\n- Mod-added NPCs (high form IDs) are no longer mixed up in dashboard actions.\n- Better exact NPC and faction-leader matching; same-faction political pairs are rejected.\n- Task history now says \"tried to\" when a task didn't succeed.\n- Localized place names are kept intact in travel prompts.\n\nThis release updates `IntelEngine.dll` and scripts that must match it; install the whole package over the previous version.\n\n**Antivirus note:** Microsoft Defender may flag the bundled save converter `LegacyCacheMigration.exe` as a false positive. It is only needed to upgrade 3.5.x saves.\n\nFull changelog: https://github.com/galanx/IntelEngine-GamePlugin/blob/main/CHANGELOG.md#370--2026-11-03\nDownload: https://github.com/galanx/IntelEngine-GamePlugin/releases/tag/v3.7.0"
-        },
-        {
-          "version": "3.6.2",
-          "commit": "1ca69aaf3052741648220bbe3ea0420d8ebf7b41",
-          "date": "2026-10-29T00:18:43Z",
-          "changelog": "### Save converter\n- Converts saves that the 3.5.x→3.6 converter used to refuse: caches on temporary (FF) actors and leftover global caches are now converted in place.\n- Refuses saves that are already converted (for example a later save made from an `_IEconverted` one) instead of double-encoding them.\n- Clearer, multi-line output, plus a warning not to load converted saves with any IE 3.5.x.\n\n### Couriers and quests\n- Fixed couriers sometimes \"arriving\" twice, which injected duplicate/blank facts and caused errors after the quest ended.\n- Cancelling a quest from the dashboard after the courier arrives now frees the courier properly.\n- Courier story facts are recorded when the courier actually arrives, so an aborted courier leaves no facts behind.\n\n### Dashboard hotkey\n- Only works while Skyrim is focused, and modifiers must match exactly (a plain 7 no longer fires on Shift+7).\n- Changing the hotkey on the SkyrimNet settings page now applies as soon as you click Save, no restart. The dashboard's Settings tab also changes it. Default: Shift+7.\n\n### Other\n- Politics settings now persist correctly, and politics can be turned on later without a restart.\n- Story DM prompt: knowledge every candidate shares is listed once instead of repeated per NPC.\n- Long text is truncated on UTF-8 character boundaries.\n- Removed unused internal functions.\n\nThis release updates `IntelEngine.dll` and several scripts that must match it; install the whole package over the previous version.\n\n**Antivirus note:** Microsoft Defender may flag the bundled save converter `LegacyCacheMigration.exe` (`Wacapew.C!ml`, a machine-learning heuristic, 1/70 on VirusTotal). It is a false positive and is being reported to Microsoft. The converter is only needed to upgrade 3.5.x saves.\n\nFull changelog: https://github.com/galanx/IntelEngine-GamePlugin/blob/main/CHANGELOG.md#v362\nDownload: https://github.com/galanx/IntelEngine-GamePlugin/releases/tag/v3.6.2"
-        },
-        {
-          "version": "3.6.1",
-          "commit": "d70d08cc4ec0a627bb4989e7a6bd39fa0077a091",
-          "date": "2026-10-28T14:34:26Z",
-          "changelog": "- Rebuilt the bundled save converter (`LegacyCacheMigration.exe`) so Windows Defender no longer falsely flags it as `Trojan:Win32/Wacatac.B!ml`. 3.6.0 was never harmful; this release just stops the warning.\n- No functional changes. `IntelEngine.dll` and `IntelEngine.esp` are identical to 3.6.0, so you can update mid-playthrough without converting your saves again."
-        },
-        {
-          "version": "3.6.0",
-          "commit": "bb9bc25788ea26ab0de510e209bfa0dd1b48bcf5",
-          "date": "2026-10-27T21:15:05Z",
-          "changelog": "- 💾 **Save conversion:** an offline converter (included) repairs saves from earlier versions. **Convert old saves before loading with 3.6.0;** fresh games don't need it.\n- **Names kept:** stored NPC names, including names from name mods such as RNE, now survive saves and reloads. Memories and task history no longer corrupt them.\n- **Skyrim VR re-enabled:** one shared SE/AE/VR DLL; VR saves from 3.5.1 or earlier can be converted. VR should work (partly tested).\n- **Story DM:** stays within the current candidates, leaves disabled story types out of prompts, and skips itself when all eight types are off.\n- **NPC Social DM:** safer around save loading.\n- **Fixes:** Content Library bio lookup and overlay priority; battle and peace relationship changes now survive reloads; script checks aligned with the native plugin.\n\nTested on SE/AE 1.6.1170 and 1.7.104 with SkyrimNet Beta 28. 1.5.97 is untested."
-        },
-        {
-          "version": "3.5.2",
-          "commit": "95fad015e498fa97808d152341a5ce15cbb69f47",
-          "date": "2026-10-09T19:56:07Z",
-          "changelog": "Added support for Skyrim SE/AE versions 1.7.x"
-        },
-        {
-          "version": "3.5.1",
-          "commit": "e21dc4d0cd90657841180582f569a72ef8322f11",
-          "date": "2026-09-26T03:14:31Z",
-          "changelog": "Release for use with SkyrimNet Beta 25"
-        }
-      ],
-      "external_url": "https://github.com/galanx/IntelEngine-GamePlugin/releases/latest",
-      "languages": [
-        "en"
-      ],
-      "language": "en",
-      "image": {
-        "file": "cover.png",
-        "sha": "2481c81c05b48de522dea56a269a1803f5be32f9",
-        "commit": "e21dc4d0cd90657841180582f569a72ef8322f11",
-        "width": 1672,
-        "height": 941
-      },
-      "stats": {
-        "downloads": 551,
-        "endorsements": 11
-      }
-    },
-    {
       "id": "plugins/thatguy/o-deadly-skyrim",
       "plugin_id": "thatguy.o-deadly-skyrim",
       "type": "listing",
@@ -1941,7 +2055,7 @@
         "height": 720
       },
       "stats": {
-        "downloads": 126,
+        "downloads": 127,
         "endorsements": 0
       }
     },
@@ -1998,7 +2112,7 @@
         "height": 768
       },
       "stats": {
-        "downloads": 194,
+        "downloads": 195,
         "endorsements": 2
       }
     },
@@ -2321,7 +2435,7 @@
         "height": 1080
       },
       "stats": {
-        "downloads": 32,
+        "downloads": 33,
         "endorsements": 0
       }
     },
@@ -2994,7 +3108,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 199,
+        "downloads": 200,
         "endorsements": 4
       }
     },
@@ -3242,7 +3356,7 @@
         "height": 720
       },
       "stats": {
-        "downloads": 138,
+        "downloads": 139,
         "endorsements": 0
       }
     },
@@ -3406,7 +3520,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 511,
+        "downloads": 516,
         "endorsements": 0
       }
     },
@@ -3462,7 +3576,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 104,
+        "downloads": 105,
         "endorsements": 0
       }
     },
@@ -3532,7 +3646,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 231,
+        "downloads": 232,
         "endorsements": 2
       }
     },
@@ -3616,83 +3730,6 @@
       "stats": {
         "downloads": 141,
         "endorsements": 3
-      }
-    },
-    {
-      "id": "plugins/urtubesrclogged/battle-summaries",
-      "plugin_id": "urtubesrclogged.battle-summaries",
-      "type": "listing",
-      "title": "Battle Summaries",
-      "tagline": "After a fight, NPCs know what really happened: who did what, who nearly died, and who saved whom. Lightweight SKSE plugin.",
-      "author": "urtubesrclogged",
-      "tags": [
-        "DLL",
-        "Combat",
-        "Context",
-        "Followers",
-        "Awareness",
-        "Memory"
-      ],
-      "nsfw": false,
-      "icon": "sword",
-      "mods": [],
-      "first_published": "2026-10-05T02:53:19Z",
-      "last_updated": "2026-11-03T16:22:59Z",
-      "version": "1.5.0",
-      "history": [
-        {
-          "version": "1.5.0",
-          "commit": "135bc76bc561203a94e6d57aa864498b6b1d7b13",
-          "date": "2026-11-03T16:22:59Z",
-          "changelog": "**Teamwork**\n- Who did the work, not just who landed the last blow: \"Most of the party's damage to the enemy was dealt by Lydia\".\n- Credit for the part each played: who bore the brunt, who kept the others on their feet with healing, who shielded them with magic, who held the enemy back.\n- Fair to any size of party: an even fight is told as even, and a follower doing their share in a party of ten isn't told they did \"only a small part\".\n- New setting, \"Followers Fight as a Team\" (on by default): your followers read the results as one party instead of mocking each other or beating themselves up over who did the most. Like your followers competitive? Turn it off.\n- Potions and poisons used in the fight are mentioned.\n- Summons that drew the enemy's blows are told as their master's.\n\n**Longer fights**\n- New setting, \"Wind-down\" (default 20 seconds): fighting that starts again where it was fought (clearing a dungeon room by room, more enemies arriving) stays one battle, told as \"It was fought in 3 clashes over about 4 minutes\".\n\n**Death-alternative mods**\n- Being struck down is told as getting back up, never as dying. Getting up at a stroke with your health restored (Stay In The Fight, Sacrosanct's Fortitude, Last Man Standing) is told as rising again, with no one credited with saving you.\n- Moved away mid-fight (Revenge and Respawn carrying you to an inn, a teleport, a door)? The battle ends where it was fought, as \"cut short\". Nobody at the new place is told about it as a witness.\n\n**Bug Fixes**\n- The remembered battle is only posted while you're still where it was fought, so the people behind the next door no longer \"remember\" a fight they never saw.\n- An enemy killed by their own side is told on its own line instead of being listed among your party's kills.\n- \"Both enemies were killed\" and \"The one enemy was not killed\", not \"All 2 enemies\" and \"None of the 1 enemies\".\n- Long lists of names are cut short (\"and 3 others\")."
-        },
-        {
-          "version": "1.4.0",
-          "commit": "675df65e87d759fe7b64758836797073915086fc",
-          "date": "2026-10-18T16:41:20Z",
-          "changelog": "**Improvements**\n- Someone caught in a fight without fighting (a farmer, a passing townsman) is no longer mentioned at all, so your followers stop deciding you're a murderer. Want them back? \"Mention bystanders who were killed\" on SkyrimNet's settings page.\n- Enemies killed before they noticed you still count. Stealth archers rejoice!\n- Your summons and your followers' (Scrap, a conjured skeleton, a spectral wolf, a raised corpse) are no longer fighters of their own, and nobody mourns them. Their kills are their master's: \"Remiel 3 (Wolf x3, 2 through Scrap)\".\n- The enemy's summons are told as dispatched, with credit: \"Summoned creatures dispatched: Lydia 1 (Flame Atronach)\". Any that disappear with their master's death count for nobody.\n- Several enemies with the same name are numbered: \"the first Troll\", \"the second Troll\", so it's clear which one struck your follower down.\n- Follower Death and Injury Chance is now officially supported: a minor, a serious or a lasting injury.\n\n**Bug Fixes**\n- \"Ignore friendly fire\" now also covers bystanders caught in the crossfire. Thanks to Zol for the change.\n- Effects that did no damage (an aura pulsing over everyone nearby) are no longer blamed on anyone. Thanks to Zol.\n- Two creatures that the game gave the same ID to are no longer mixed up."
-        },
-        {
-          "version": "1.3.0",
-          "commit": "bfe78a93bd7c6af51bde592b172d1c2c8d16b8ac",
-          "date": "2026-10-13T23:13:28Z",
-          "changelog": "**Support for Custom Wording**\n- Every phrase the mod writes can now be reworded: about 150 of them, from \"took solid wounds\" to \"burned by fire\".\n  Want it darker, stricter, or just different? See \"Your own wording\" in the README.\n- Could be useful for translations.\n\n**Bug Fixes and Enhancements**\n- Someone killed without fighting is no longer called \"an innocent\". The summary says they were \"not actively engaged\n  in combat\" and leaves the rest to the story. Thanks to nan0bug00 for the change.\n- An enemy cut down before he could draw his sword no longer counts as someone who wasn't fighting.\n- When the mod can't tell what hurt someone, it says so plainly: a wolf's bite is no longer \"harmful magic\".\n- A spell, potion or weapon is only named when the attacker actually used it. No more odd internal names.\n- Multiple actors with the same name doing the same thing are told once, not three times (example: 3 wolves\n  attacking you)."
-        },
-        {
-          "version": "1.2.0",
-          "commit": "fa7b18624be1f981b8a4f39017b437effad66673",
-          "date": "2026-10-08T02:42:28Z",
-          "changelog": "**Friendly fire**\n- Caught your follower in a fireball? It's now told as an accident, not as an attack on them.\n- Or switch it off entirely and they'll stop bringing it up. (A death by friendly fire is always told.)\n\n**Settings in SkyrimNet**\n- Battle Summaries now has its own page in SkyrimNet's settings, under Plugins. The ini still works.\n\n**Moments**\n- Several enemies killed in one stroke get a mention, with what did it: \"killed 3 at once with Fireball\".\n\n**Fixes**\n- An enemy who happens to kill another enemy no longer \"saves\" your follower's life.\n- Damage done to your own side no longer counts as doing the fighting.\n- \"Killed by someone\" is gone."
-        },
-        {
-          "version": "1.1.0",
-          "commit": "a341941d5e042ace1365e72774969e59f43282ed",
-          "date": "2026-10-06T19:32:37Z",
-          "changelog": "- **Injuries from injury mods.** A fighter who picks up an injury during the battle is told so (\"was injured in this fight and still carries it: Leg Injury\"), and one they already had is told as brought into the fight. Works with Blade and Blunt and Wildcat; any other injury mod that marks its injuries with a keyword can be added in the ini (`[OtherMods] sInjuryKeywords`).\n- **Beheadings and severed limbs.** Told with the kill (\"Lydia beheaded Bandit Chief.\"): Dismembering Framework for limbs, Next-Gen Decapitations for heads, and the game's own beheadings. None of these mods is required.\n- **Innocents and allies slain.** A citizen or guard cut down without ever raising a weapon is told as an innocent, with who killed them, and is no longer counted among the enemies. An ally killed by their own side is told as that.\n- **How long the battle lasted** is told as a figure (\"It lasted 42 seconds.\", \"It lasted about 25 minutes.\").\n- **A battle ends with its enemies.** It no longer stays \"underway\" for as long as the game keeps the party in combat with wildlife that never fought, and time spent in menus is not counted in its length.\n- **Kill credit.** The game names the player for some deaths the player had no part in; a kill now goes to the player only when the player struck the victim.\n\nInjuries and dismemberment can be switched off in `BattleSummaries.ini` (`bInjuries`, `bDismemberment`). Replace the old version when updating; do not merge into it."
-        },
-        {
-          "version": "1.0.1",
-          "commit": "377833a450b49360812451bf9850e8ed4afb551c",
-          "date": "2026-10-05T02:53:19Z",
-          "changelog": "Initial release"
-        }
-      ],
-      "external_url": "https://github.com/urtubesrclogged/BattleSummaries/releases/latest",
-      "languages": [
-        "en"
-      ],
-      "language": "en",
-      "image": {
-        "file": "cover.png",
-        "sha": "ba07417512c6a8b901f60a51d64f0d1bc24c59e1",
-        "commit": "377833a450b49360812451bf9850e8ed4afb551c",
-        "width": 1920,
-        "height": 1080
-      },
-      "curated": true,
-      "stats": {
-        "downloads": 736,
-        "endorsements": 11
       }
     },
     {
@@ -4103,7 +4140,7 @@
         "config": 7
       },
       "stats": {
-        "downloads": 781,
+        "downloads": 783,
         "endorsements": 0
       }
     },
@@ -4184,7 +4221,7 @@
         "config": 7
       },
       "stats": {
-        "downloads": 1065,
+        "downloads": 1070,
         "endorsements": 1
       }
     },
@@ -4332,7 +4369,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 419,
+        "downloads": 421,
         "endorsements": 0
       }
     },
@@ -5569,7 +5606,7 @@
         "config": 4
       },
       "stats": {
-        "downloads": 989,
+        "downloads": 992,
         "endorsements": 4
       }
     },
@@ -5798,7 +5835,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 779,
+        "downloads": 781,
         "endorsements": 2
       }
     },
@@ -5868,7 +5905,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1129,
+        "downloads": 1132,
         "endorsements": 1
       }
     },
@@ -6076,7 +6113,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 618,
+        "downloads": 620,
         "endorsements": 1
       }
     },
@@ -6136,7 +6173,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 343,
+        "downloads": 344,
         "endorsements": 1
       }
     },
@@ -6307,7 +6344,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2585,
+        "downloads": 2590,
         "endorsements": 2
       }
     },
@@ -6352,7 +6389,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1309,
+        "downloads": 1315,
         "endorsements": 0
       }
     },
@@ -6442,7 +6479,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 4846,
+        "downloads": 4852,
         "endorsements": 5
       }
     },
@@ -6667,7 +6704,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2874,
+        "downloads": 2879,
         "endorsements": 0
       }
     },
@@ -6802,7 +6839,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 43,
+        "downloads": 44,
         "endorsements": 0
       }
     },
@@ -6937,7 +6974,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1109,
+        "downloads": 1113,
         "endorsements": 1
       }
     },
@@ -7162,7 +7199,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 821,
+        "downloads": 823,
         "endorsements": 1
       }
     },
@@ -7432,7 +7469,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2376,
+        "downloads": 2381,
         "endorsements": 2
       }
     },
@@ -7477,7 +7514,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 154,
+        "downloads": 155,
         "endorsements": 0
       }
     },
@@ -7792,7 +7829,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1821,
+        "downloads": 1824,
         "endorsements": 1
       }
     },
@@ -8062,7 +8099,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 97,
+        "downloads": 99,
         "endorsements": 0
       }
     },
@@ -8152,7 +8189,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2714,
+        "downloads": 2719,
         "endorsements": 3
       }
     },
@@ -8197,7 +8234,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 559,
+        "downloads": 561,
         "endorsements": 0
       }
     },
@@ -8287,7 +8324,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 665,
+        "downloads": 667,
         "endorsements": 1
       }
     },
@@ -8332,7 +8369,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1101,
+        "downloads": 1106,
         "endorsements": 0
       }
     },
@@ -8377,7 +8414,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1842,
+        "downloads": 1844,
         "endorsements": 2
       }
     },
@@ -8512,7 +8549,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 542,
+        "downloads": 543,
         "endorsements": 0
       }
     },
@@ -8782,7 +8819,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 493,
+        "downloads": 495,
         "endorsements": 0
       }
     },
@@ -9142,7 +9179,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 183,
+        "downloads": 184,
         "endorsements": 0
       }
     },
@@ -9187,7 +9224,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 870,
+        "downloads": 871,
         "endorsements": 0
       }
     },
@@ -9877,7 +9914,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 884,
+        "downloads": 886,
         "endorsements": 0
       }
     },
@@ -9922,7 +9959,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 22,
+        "downloads": 23,
         "endorsements": 0
       }
     },
@@ -10372,7 +10409,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 86,
+        "downloads": 87,
         "endorsements": 0
       }
     },
@@ -10462,7 +10499,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 496,
+        "downloads": 497,
         "endorsements": 1
       }
     },
@@ -10597,7 +10634,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1323,
+        "downloads": 1325,
         "endorsements": 0
       }
     },
@@ -10642,7 +10679,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 941,
+        "downloads": 943,
         "endorsements": 0
       }
     },
@@ -10732,7 +10769,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2476,
+        "downloads": 2482,
         "endorsements": 4
       }
     },
@@ -10822,7 +10859,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 3150,
+        "downloads": 3158,
         "endorsements": 2
       }
     },
@@ -11227,7 +11264,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 610,
+        "downloads": 612,
         "endorsements": 0
       }
     },
@@ -11272,7 +11309,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 85,
+        "downloads": 86,
         "endorsements": 0
       }
     },
@@ -11317,7 +11354,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 112,
+        "downloads": 113,
         "endorsements": 0
       }
     },
@@ -11857,7 +11894,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 3230,
+        "downloads": 3237,
         "endorsements": 2
       }
     },
@@ -12127,7 +12164,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2658,
+        "downloads": 2665,
         "endorsements": 2
       }
     },
@@ -12262,7 +12299,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 97,
+        "downloads": 98,
         "endorsements": 0
       }
     },
@@ -12352,7 +12389,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 233,
+        "downloads": 234,
         "endorsements": 0
       }
     },
@@ -12442,7 +12479,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 398,
+        "downloads": 399,
         "endorsements": 0
       }
     },
@@ -12532,7 +12569,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 655,
+        "downloads": 656,
         "endorsements": 2
       }
     },
@@ -12667,7 +12704,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1899,
+        "downloads": 1903,
         "endorsements": 0
       }
     },
@@ -12712,7 +12749,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1158,
+        "downloads": 1162,
         "endorsements": 1
       }
     },
@@ -13162,7 +13199,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 38,
+        "downloads": 39,
         "endorsements": 0
       }
     },
@@ -13207,7 +13244,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 581,
+        "downloads": 583,
         "endorsements": 0
       }
     },
@@ -13297,7 +13334,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 18,
+        "downloads": 19,
         "endorsements": 0
       }
     },
@@ -13342,7 +13379,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 284,
+        "downloads": 285,
         "endorsements": 1
       }
     },
@@ -13432,7 +13469,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 662,
+        "downloads": 664,
         "endorsements": 0
       }
     },
@@ -13477,7 +13514,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1613,
+        "downloads": 1615,
         "endorsements": 0
       }
     },
@@ -13522,7 +13559,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 306,
+        "downloads": 307,
         "endorsements": 0
       }
     },
@@ -13837,7 +13874,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 375,
+        "downloads": 376,
         "endorsements": 0
       }
     },
@@ -14017,7 +14054,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 158,
+        "downloads": 159,
         "endorsements": 1
       }
     },
@@ -14287,7 +14324,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 659,
+        "downloads": 661,
         "endorsements": 0
       }
     },
@@ -14467,7 +14504,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1057,
+        "downloads": 1061,
         "endorsements": 0
       }
     },
@@ -14557,7 +14594,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 325,
+        "downloads": 326,
         "endorsements": 0
       }
     },
@@ -14737,7 +14774,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1455,
+        "downloads": 1457,
         "endorsements": 2
       }
     },
@@ -14782,7 +14819,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 361,
+        "downloads": 362,
         "endorsements": 0
       }
     },
@@ -15142,7 +15179,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 501,
+        "downloads": 502,
         "endorsements": 0
       }
     },
@@ -15277,7 +15314,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 3864,
+        "downloads": 3873,
         "endorsements": 2
       }
     },
@@ -15547,7 +15584,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 994,
+        "downloads": 996,
         "endorsements": 0
       }
     },
@@ -15907,7 +15944,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 83,
+        "downloads": 84,
         "endorsements": 0
       }
     }
