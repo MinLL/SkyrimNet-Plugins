@@ -1,8 +1,90 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-11-25T19:59:17.199Z",
-  "stats_as_of": "2026-11-25T19:59:17.072Z",
+  "generated_at": "2026-11-25T20:30:46.965Z",
+  "stats_as_of": "2026-11-25T20:30:46.902Z",
   "plugins": [
+    {
+      "id": "plugins/tetherball88/body-language",
+      "plugin_id": "tetherball88.body-language",
+      "type": "listing",
+      "title": "Body Language",
+      "tagline": "Context-aware NPC body descriptions powered by OBody NG, RSV, and TNG.",
+      "author": "tetherball88",
+      "tags": [
+        "body",
+        "descriptions",
+        "obody",
+        "npc",
+        "immersion",
+        "appearance"
+      ],
+      "nsfw": true,
+      "icon": "package",
+      "mods": [],
+      "first_published": "2026-09-25T20:55:01Z",
+      "last_updated": "2026-11-25T20:30:06Z",
+      "version": "2.4.0",
+      "history": [
+        {
+          "version": "2.4.0",
+          "commit": "f27595b83ed035e7fa03e45e8b936dfa30b0597e",
+          "date": "2026-11-25T20:30:06Z",
+          "changelog": "github: https://github.com/tetherball88/BodyLanguage/releases/tag/latest\n\n### Added\n\n- **Public C/C++ SKSE Plugin API (`SKSE_Source/include/BodyLanguageAPI.h`)**\n- **Public Papyrus Native API (`Scripts/Source/BodyLanguage.psc`)**\n\n### Changed\n\n- **Standalone Mode (SkyrimNet Now Optional)**\n  - `SkyrimNet` is no longer a hard requirement — when `SkyrimNet.dll` is not detected at `kPostPostLoad`, SkyrimNet decorator registration is skipped cleanly with zero overhead while the full C++ and Papyrus body-analysis APIs remain available to other mods.\n  - Decoupled structured 3D geometry/classification caching from natural-language prose rendering so API queries share the thread-safe 15-second per-actor cache and skip prose generation unless a text description is requested.\n\n- **Improved SkyrimNet Prompt Caching (`stable` Render Mode)**\n  - Updated `0401_appearance_body_shape.prompt` and all `body_language` subprompts (`0001_body.prompt`, `0005_skin_features.prompt`, `0010_height.prompt`, `0020_genitals.prompt`) to support SkyrimNet's `stable` render mode and `stable_split` prompt caching, avoiding redundant re-rendering in `full` mode when `stable_split` is active."
+        },
+        {
+          "version": "2.2.2",
+          "commit": "5e8164d9714059e62827fa43ec43b4b5c8e74eb7",
+          "date": "2026-11-12T02:31:13Z",
+          "changelog": "github: https://github.com/tetherball88/BodyLanguage/releases/tag/latest\n\n### Fixed\n- Excluded Child NPCs from All Body Prompts - in v2.2.2\n  - Child NPCs are now automatically excluded from the Body shape prompt section and all subprompts (body state, skin features, height, and anatomy) in addition to 3D mesh evaluation."
+        },
+        {
+          "version": "2.2.1",
+          "commit": "10235e35024be101414eb513b2fae36d5bf14b46",
+          "date": "2026-11-12T01:44:47Z",
+          "changelog": "github: https://github.com/tetherball88/BodyLanguage/releases/tag/latest\n### Fixed\n\n- **Fixed False Male Genital Descriptions on Female NPCs**\n  - Fixed a bug where naked female NPCs without a genital addon equipped could falsely receive a male genital description.\n  - Prevented female characters from being assigned genital descriptions from unequipped items carried in their inventory.\n  - Improved 3D mesh filtering to prevent non-genital meshes from being misidentified during anatomy evaluation."
+        },
+        {
+          "version": "2.2.0",
+          "commit": "5115191a4dc26b82269a1cc9f25766c6db6f8dc4",
+          "date": "2026-11-11T19:50:10Z",
+          "changelog": "# ✨ Body Language v2.2.0 Released!\ngithub: https://github.com/tetherball88/BodyLanguage/releases/tag/latest\n### 🐺 Beast Form Support\n* Added full and short body descriptions for characters transformed into **Werewolves**, **Vampire Lords**, and **Werebears** (with separate male and female descriptions in `BeastParts.json`).\n* Automatically hides human height and racial skin-feature lines while in beast form.\n* Added beast anatomy descriptions for Werewolf, Vampire Lord, and Werebear forms in `tngAddons.json`.\n\n### 📏 Dynamic Anatomy Size & State Detection\n* **Real-Time 3D Measurement:** Genital size is now measured directly from the character's actual 3D model and live in-game scaling rather than relying on keywords or faction ranks — working out of the box with **TNG**, **SOS**, and custom/creature addons.\n* **Flaccid vs. Erect Detection:** Automatically detects whether exposed anatomy is **flaccid** or **erect** in real time.\n* **New Size Tiers:** Added **`XXL`** and **`XXXL`** tiers alongside customizable centimeter thresholds in `geometryThresholds.json`.\n\n### 🚫 NPC Exclusion List (`BodyLanguage.ini`)\n* Added an `[Exclusions]` section (`ExcludedNPCs=`) in `BodyLanguage.ini` to skip body evaluation and completely omit the `Body shape` description block for listed characters (great for followers or NPCs who already have custom hand-written appearance bios).\n* Supports excluding the player (`player`), by plugin & FormID (`Plugin.esp:ShortFormID`), or by EditorID (`DLC1Serana`).\n\n### 📐 Improved Character Height Detection\n* Character height descriptions now account for racial height, NPC base height, reference scale, and live RaceMenu/skeleton height sliders instead of relying on SkyrimNet's default height value."
+        },
+        {
+          "version": "2.1.0",
+          "commit": "d48e1bb6b4fd0dcace127b17fe497efb02469d74",
+          "date": "2026-10-24T03:32:53Z",
+          "changelog": "## Improved Body Classification, Roleplay Descriptions & Visual Blueprint Tooling\n### Added\n- Offline Testing & Visual Blueprint Suite (utility_scripts/): Added an interactive HTML visual blueprint generator, a 3D ground-truth analyzer, and an automated C++ DLL test runner with 30 reference 3BA and HIMBO presets.\n### Changed\n- Natural, Roleplay-Friendly Body Descriptions: Rewrote female and male body descriptions to replace clinical jargon with natural roleplay prose, and updated short descriptions to always mention pregnancy when present.\n- Breast Size Detection: Measured forward breast projection independently of ribcage and back width so broad-framed women are not misclassified as overly busty.\n- Pregnancy vs. Chubby/Heavy Builds: Improved pregnancy detection across baked meshes, runtime morphs, and bone scaling while isolating lower-belly overhang from hip measurements.\n- Male Chest & Midsection Accuracy: Updated male chest indexing to measure full upper-torso breadth and improved midsection detection so heavy-bellied men are properly classified as potbellied.\n- Shoulder & Arm Calibration: Recalibrated shoulder, waist, hip, and upper-arm thresholds against real-world proportions across slim, curvy, chubby, pregnant, and muscular builds."
+        },
+        {
+          "version": "2.0.0",
+          "commit": "5221f74a259dc77ac6db19639e639449285ad0e7",
+          "date": "2026-10-17T21:16:37Z",
+          "changelog": "## v2.0.0\n### Real-Time 3D Geometry & Normal-Map Engine\nComplete rewrite replacing static BodySlide XML preset tables, `.7z` texture archive hashing, and Papyrus scripts with a **real-time, mod-agnostic 3D geometry and normal-map analysis engine** built natively in C++.\n> **Upgrading from v1.x:** `TT_BodyLanguage.esp` has been removed (the mod is now ESP-free). When loading an existing save, Skyrim will warn that `TT_BodyLanguage.esp` is missing—this is expected and completely safe to continue past.\n### Added\n- **Universal 3D Body Mesh & Morph Analysis:** Directly reads `_0.nif`, `_1.nif`, and `.tri` files from Skyrim's VFS/BSAs, slicing any humanoid body replacer (3BA, BHUNP, UNP, UBE, HIMBO, SAM, vanilla, or custom follower bodies) into 10 anatomical rings (80 landmark vertices) and evaluating actor weight, RaceMenu (`skee64`) morphs, and XPMSE bone scales in real time.\n- **Pregnancy vs. Weight Isolation:** Separates localized belly morphs and `NPC Belly` node scaling from overall body mass so pregnant slender/athletic NPCs are not misclassified as overweight.\n- **On-Demand Normal Map Muscularity (`_msn.dds`):** Evaluates abdominal and deltoid normal-map definition at runtime via `DirectXTex` (configurable in `BodyLanguage.ini`) with zero startup archive scanning.\n- **Native C++ TNG & SOS Support (`ttlb_get_genitals`):** Detects *The New Gentleman* (TNG) and *Schlongs of Skyrim* (SOS) sizes and addons natively in C++ while keeping all prose and thresholds user-editable in `0020_genitals.prompt`, `tngAddons.json`, and `geometryThresholds.json`.\n- **SPID Keyword RSV Skin Complexions:** Instant keyword-based Racial Skin Variance (RSV) skin feature descriptions via `0005_skin_features.prompt` and `skinFeatures.json`.\n- **Modular Prompts & Full JSON Customization:** Split `0401_appearance_body_shape.prompt` into modular `body_language` subcomponents (`0001_body`, `0005_skin_features`, `0010_height`, `0020_genitals`) backed by `geometryThresholds.json`, `FemaleParts.jso"
+        },
+        {
+          "version": "1.0.3",
+          "commit": "8cc13e9228cd3c4f0e55fc484b1789ac73f3ab0f",
+          "date": "2026-09-26T05:27:36Z",
+          "changelog": "replaced cover image"
+        }
+      ],
+      "external_url": "https://www.nexusmods.com/skyrimspecialedition/mods/198353",
+      "languages": [
+        "en"
+      ],
+      "language": "en",
+      "image": {
+        "file": "cover.png",
+        "sha": "c4e9aec48dc2a7bef5e4a401e8241e1f5acfdf50",
+        "commit": "8cc13e9228cd3c4f0e55fc484b1789ac73f3ab0f",
+        "width": 2048,
+        "height": 1152
+      },
+      "stats": {
+        "downloads": 322,
+        "endorsements": 0
+      }
+    },
     {
       "id": "plugins/phospheneoverdrive/intelengine-npc-autonomy-faction-politics",
       "plugin_id": "phospheneoverdrive.intelengine-npc-autonomy-faction-politics",
@@ -2830,82 +2912,6 @@
       }
     },
     {
-      "id": "plugins/tetherball88/body-language",
-      "plugin_id": "tetherball88.body-language",
-      "type": "listing",
-      "title": "Body Language",
-      "tagline": "Context-aware NPC body descriptions powered by OBody NG, RSV, and TNG.",
-      "author": "tetherball88",
-      "tags": [
-        "body",
-        "descriptions",
-        "obody",
-        "npc",
-        "immersion",
-        "appearance"
-      ],
-      "nsfw": true,
-      "icon": "package",
-      "mods": [],
-      "first_published": "2026-09-25T20:55:01Z",
-      "last_updated": "2026-11-12T02:31:13Z",
-      "version": "2.2.2",
-      "history": [
-        {
-          "version": "2.2.2",
-          "commit": "5e8164d9714059e62827fa43ec43b4b5c8e74eb7",
-          "date": "2026-11-12T02:31:13Z",
-          "changelog": "github: https://github.com/tetherball88/BodyLanguage/releases/tag/latest\n\n### Fixed\n- Excluded Child NPCs from All Body Prompts - in v2.2.2\n  - Child NPCs are now automatically excluded from the Body shape prompt section and all subprompts (body state, skin features, height, and anatomy) in addition to 3D mesh evaluation."
-        },
-        {
-          "version": "2.2.1",
-          "commit": "10235e35024be101414eb513b2fae36d5bf14b46",
-          "date": "2026-11-12T01:44:47Z",
-          "changelog": "github: https://github.com/tetherball88/BodyLanguage/releases/tag/latest\n### Fixed\n\n- **Fixed False Male Genital Descriptions on Female NPCs**\n  - Fixed a bug where naked female NPCs without a genital addon equipped could falsely receive a male genital description.\n  - Prevented female characters from being assigned genital descriptions from unequipped items carried in their inventory.\n  - Improved 3D mesh filtering to prevent non-genital meshes from being misidentified during anatomy evaluation."
-        },
-        {
-          "version": "2.2.0",
-          "commit": "5115191a4dc26b82269a1cc9f25766c6db6f8dc4",
-          "date": "2026-11-11T19:50:10Z",
-          "changelog": "# ✨ Body Language v2.2.0 Released!\ngithub: https://github.com/tetherball88/BodyLanguage/releases/tag/latest\n### 🐺 Beast Form Support\n* Added full and short body descriptions for characters transformed into **Werewolves**, **Vampire Lords**, and **Werebears** (with separate male and female descriptions in `BeastParts.json`).\n* Automatically hides human height and racial skin-feature lines while in beast form.\n* Added beast anatomy descriptions for Werewolf, Vampire Lord, and Werebear forms in `tngAddons.json`.\n\n### 📏 Dynamic Anatomy Size & State Detection\n* **Real-Time 3D Measurement:** Genital size is now measured directly from the character's actual 3D model and live in-game scaling rather than relying on keywords or faction ranks — working out of the box with **TNG**, **SOS**, and custom/creature addons.\n* **Flaccid vs. Erect Detection:** Automatically detects whether exposed anatomy is **flaccid** or **erect** in real time.\n* **New Size Tiers:** Added **`XXL`** and **`XXXL`** tiers alongside customizable centimeter thresholds in `geometryThresholds.json`.\n\n### 🚫 NPC Exclusion List (`BodyLanguage.ini`)\n* Added an `[Exclusions]` section (`ExcludedNPCs=`) in `BodyLanguage.ini` to skip body evaluation and completely omit the `Body shape` description block for listed characters (great for followers or NPCs who already have custom hand-written appearance bios).\n* Supports excluding the player (`player`), by plugin & FormID (`Plugin.esp:ShortFormID`), or by EditorID (`DLC1Serana`).\n\n### 📐 Improved Character Height Detection\n* Character height descriptions now account for racial height, NPC base height, reference scale, and live RaceMenu/skeleton height sliders instead of relying on SkyrimNet's default height value."
-        },
-        {
-          "version": "2.1.0",
-          "commit": "d48e1bb6b4fd0dcace127b17fe497efb02469d74",
-          "date": "2026-10-24T03:32:53Z",
-          "changelog": "## Improved Body Classification, Roleplay Descriptions & Visual Blueprint Tooling\n### Added\n- Offline Testing & Visual Blueprint Suite (utility_scripts/): Added an interactive HTML visual blueprint generator, a 3D ground-truth analyzer, and an automated C++ DLL test runner with 30 reference 3BA and HIMBO presets.\n### Changed\n- Natural, Roleplay-Friendly Body Descriptions: Rewrote female and male body descriptions to replace clinical jargon with natural roleplay prose, and updated short descriptions to always mention pregnancy when present.\n- Breast Size Detection: Measured forward breast projection independently of ribcage and back width so broad-framed women are not misclassified as overly busty.\n- Pregnancy vs. Chubby/Heavy Builds: Improved pregnancy detection across baked meshes, runtime morphs, and bone scaling while isolating lower-belly overhang from hip measurements.\n- Male Chest & Midsection Accuracy: Updated male chest indexing to measure full upper-torso breadth and improved midsection detection so heavy-bellied men are properly classified as potbellied.\n- Shoulder & Arm Calibration: Recalibrated shoulder, waist, hip, and upper-arm thresholds against real-world proportions across slim, curvy, chubby, pregnant, and muscular builds."
-        },
-        {
-          "version": "2.0.0",
-          "commit": "5221f74a259dc77ac6db19639e639449285ad0e7",
-          "date": "2026-10-17T21:16:37Z",
-          "changelog": "## v2.0.0\n### Real-Time 3D Geometry & Normal-Map Engine\nComplete rewrite replacing static BodySlide XML preset tables, `.7z` texture archive hashing, and Papyrus scripts with a **real-time, mod-agnostic 3D geometry and normal-map analysis engine** built natively in C++.\n> **Upgrading from v1.x:** `TT_BodyLanguage.esp` has been removed (the mod is now ESP-free). When loading an existing save, Skyrim will warn that `TT_BodyLanguage.esp` is missing—this is expected and completely safe to continue past.\n### Added\n- **Universal 3D Body Mesh & Morph Analysis:** Directly reads `_0.nif`, `_1.nif`, and `.tri` files from Skyrim's VFS/BSAs, slicing any humanoid body replacer (3BA, BHUNP, UNP, UBE, HIMBO, SAM, vanilla, or custom follower bodies) into 10 anatomical rings (80 landmark vertices) and evaluating actor weight, RaceMenu (`skee64`) morphs, and XPMSE bone scales in real time.\n- **Pregnancy vs. Weight Isolation:** Separates localized belly morphs and `NPC Belly` node scaling from overall body mass so pregnant slender/athletic NPCs are not misclassified as overweight.\n- **On-Demand Normal Map Muscularity (`_msn.dds`):** Evaluates abdominal and deltoid normal-map definition at runtime via `DirectXTex` (configurable in `BodyLanguage.ini`) with zero startup archive scanning.\n- **Native C++ TNG & SOS Support (`ttlb_get_genitals`):** Detects *The New Gentleman* (TNG) and *Schlongs of Skyrim* (SOS) sizes and addons natively in C++ while keeping all prose and thresholds user-editable in `0020_genitals.prompt`, `tngAddons.json`, and `geometryThresholds.json`.\n- **SPID Keyword RSV Skin Complexions:** Instant keyword-based Racial Skin Variance (RSV) skin feature descriptions via `0005_skin_features.prompt` and `skinFeatures.json`.\n- **Modular Prompts & Full JSON Customization:** Split `0401_appearance_body_shape.prompt` into modular `body_language` subcomponents (`0001_body`, `0005_skin_features`, `0010_height`, `0020_genitals`) backed by `geometryThresholds.json`, `FemaleParts.jso"
-        },
-        {
-          "version": "1.0.3",
-          "commit": "8cc13e9228cd3c4f0e55fc484b1789ac73f3ab0f",
-          "date": "2026-09-26T05:27:36Z",
-          "changelog": "replaced cover image"
-        }
-      ],
-      "external_url": "https://www.nexusmods.com/skyrimspecialedition/mods/198353",
-      "languages": [
-        "en"
-      ],
-      "language": "en",
-      "image": {
-        "file": "cover.png",
-        "sha": "c4e9aec48dc2a7bef5e4a401e8241e1f5acfdf50",
-        "commit": "8cc13e9228cd3c4f0e55fc484b1789ac73f3ab0f",
-        "width": 2048,
-        "height": 1152
-      },
-      "stats": {
-        "downloads": 322,
-        "endorsements": 0
-      }
-    },
-    {
       "id": "plugins/7regalrascal7/delectatio-et-dominium",
       "plugin_id": "7regalrascal7.delectatio-et-dominium",
       "type": "listing",
@@ -3538,7 +3544,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 531,
+        "downloads": 532,
         "endorsements": 0
       }
     },
@@ -4158,7 +4164,7 @@
         "config": 7
       },
       "stats": {
-        "downloads": 801,
+        "downloads": 802,
         "endorsements": 0
       }
     },
@@ -4387,7 +4393,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 436,
+        "downloads": 437,
         "endorsements": 0
       }
     },
@@ -5624,7 +5630,7 @@
         "config": 4
       },
       "stats": {
-        "downloads": 1008,
+        "downloads": 1009,
         "endorsements": 4
       }
     },
@@ -5853,7 +5859,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 792,
+        "downloads": 793,
         "endorsements": 2
       }
     },
@@ -6317,7 +6323,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 618,
+        "downloads": 619,
         "endorsements": 6
       }
     },
@@ -6362,7 +6368,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2619,
+        "downloads": 2621,
         "endorsements": 2
       }
     },
@@ -6407,7 +6413,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1334,
+        "downloads": 1335,
         "endorsements": 0
       }
     },
@@ -6497,7 +6503,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 4890,
+        "downloads": 4892,
         "endorsements": 5
       }
     },
@@ -7217,7 +7223,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 841,
+        "downloads": 843,
         "endorsements": 1
       }
     },
@@ -7847,7 +7853,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1842,
+        "downloads": 1843,
         "endorsements": 1
       }
     },
@@ -8207,7 +8213,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2759,
+        "downloads": 2761,
         "endorsements": 3
       }
     },
@@ -8252,7 +8258,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 571,
+        "downloads": 572,
         "endorsements": 0
       }
     },
@@ -8342,7 +8348,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 674,
+        "downloads": 675,
         "endorsements": 1
       }
     },
@@ -8387,7 +8393,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1116,
+        "downloads": 1117,
         "endorsements": 0
       }
     },
@@ -8567,7 +8573,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 552,
+        "downloads": 553,
         "endorsements": 0
       }
     },
@@ -9932,7 +9938,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 900,
+        "downloads": 901,
         "endorsements": 0
       }
     },
@@ -10247,7 +10253,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 848,
+        "downloads": 849,
         "endorsements": 0
       }
     },
@@ -10517,7 +10523,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 503,
+        "downloads": 504,
         "endorsements": 1
       }
     },
@@ -10652,7 +10658,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1343,
+        "downloads": 1344,
         "endorsements": 0
       }
     },
@@ -10787,7 +10793,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2510,
+        "downloads": 2511,
         "endorsements": 4
       }
     },
@@ -10877,7 +10883,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 3190,
+        "downloads": 3191,
         "endorsements": 2
       }
     },
@@ -11912,7 +11918,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 3269,
+        "downloads": 3271,
         "endorsements": 2
       }
     },
@@ -12182,7 +12188,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2694,
+        "downloads": 2695,
         "endorsements": 2
       }
     },
@@ -12722,7 +12728,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1919,
+        "downloads": 1920,
         "endorsements": 0
       }
     },
@@ -12767,7 +12773,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1172,
+        "downloads": 1174,
         "endorsements": 1
       }
     },
@@ -13262,7 +13268,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 590,
+        "downloads": 591,
         "endorsements": 0
       }
     },
@@ -13532,7 +13538,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1633,
+        "downloads": 1635,
         "endorsements": 0
       }
     },
@@ -14792,7 +14798,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1475,
+        "downloads": 1476,
         "endorsements": 2
       }
     },
@@ -15197,7 +15203,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 510,
+        "downloads": 511,
         "endorsements": 0
       }
     },
@@ -15332,7 +15338,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 3907,
+        "downloads": 3908,
         "endorsements": 2
       }
     },
