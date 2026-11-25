@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-11-25T09:54:50.883Z",
-  "stats_as_of": "2026-11-25T09:52:57.609Z",
+  "generated_at": "2026-11-25T10:19:32.552Z",
+  "stats_as_of": "2026-11-25T10:19:32.473Z",
   "plugins": [
     {
       "id": "plugins/taka/skyrimnet-dialogue-scenario-editor",
@@ -39,9 +39,15 @@
         }
       ],
       "first_published": "2026-11-22T07:11:33Z",
-      "last_updated": "2026-11-25T07:41:42Z",
-      "version": "0.3.3",
+      "last_updated": "2026-11-25T10:18:53Z",
+      "version": "0.3.4",
       "history": [
+        {
+          "version": "0.3.4",
+          "commit": "8dde4d452cab3954ca1a410c2282dff4016f4a27",
+          "date": "2026-11-25T10:18:53Z",
+          "changelog": "Added\n- Page size at the top of the settings page: makes the whole page larger or smaller, from 70 to 200 %, with a large slider and - / + buttons. The size is kept for the next time the page opens."
+        },
         {
           "version": "0.3.3",
           "commit": "d5feeeaeef65b089a080110a9ad2520b875ed139",
@@ -93,7 +99,7 @@
         "height": 1080
       },
       "stats": {
-        "downloads": 52,
+        "downloads": 53,
         "endorsements": 0
       }
     },
@@ -183,7 +189,7 @@
         "height": 1080
       },
       "stats": {
-        "downloads": 140,
+        "downloads": 141,
         "endorsements": 0
       }
     },
@@ -455,7 +461,7 @@
         "height": 720
       },
       "stats": {
-        "downloads": 27,
+        "downloads": 28,
         "endorsements": 0
       }
     },
@@ -640,7 +646,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 1506,
+        "downloads": 1507,
         "endorsements": 45
       }
     },
@@ -3286,7 +3292,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 124,
+        "downloads": 125,
         "endorsements": 0
       }
     },
@@ -6485,7 +6491,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 4873,
+        "downloads": 4874,
         "endorsements": 5
       }
     },
@@ -6710,7 +6716,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2890,
+        "downloads": 2891,
         "endorsements": 0
       }
     },
@@ -8195,7 +8201,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2740,
+        "downloads": 2741,
         "endorsements": 3
       }
     },
@@ -11405,7 +11411,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 14,
+        "downloads": 15,
         "endorsements": 0
       }
     },
