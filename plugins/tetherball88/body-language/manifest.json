@@ -21,6 +21,6 @@
   ],
   "image": "cover.png",
   "external_url": "https://www.nexusmods.com/skyrimspecialedition/mods/198353",
-  "version": "2.2.2",
-  "changelog": "github: https://github.com/tetherball88/BodyLanguage/releases/tag/latest\n\n### Fixed\n- Excluded Child NPCs from All Body Prompts - in v2.2.2\n  - Child NPCs are now automatically excluded from the Body shape prompt section and all subprompts (body state, skin features, height, and anatomy) in addition to 3D mesh evaluation."
+  "version": "2.4.0",
+  "changelog": "github: https://github.com/tetherball88/BodyLanguage/releases/tag/latest\n\n### Added\n\n- **Public C/C++ SKSE Plugin API (`SKSE_Source/include/BodyLanguageAPI.h`)**\n- **Public Papyrus Native API (`Scripts/Source/BodyLanguage.psc`)**\n\n### Changed\n\n- **Standalone Mode (SkyrimNet Now Optional)**\n  - `SkyrimNet` is no longer a hard requirement — when `SkyrimNet.dll` is not detected at `kPostPostLoad`, SkyrimNet decorator registration is skipped cleanly with zero overhead while the full C++ and Papyrus body-analysis APIs remain available to other mods.\n  - Decoupled structured 3D geometry/classification caching from natural-language prose rendering so API queries share the thread-safe 15-second per-actor cache and skip prose generation unless a text description is requested.\n\n- **Improved SkyrimNet Prompt Caching (`stable` Render Mode)**\n  - Updated `0401_appearance_body_shape.prompt` and all `body_language` subprompts (`0001_body.prompt`, `0005_skin_features.prompt`, `0010_height.prompt`, `0020_genitals.prompt`) to support SkyrimNet's `stable` render mode and `stable_split` prompt caching, avoiding redundant re-rendering in `full` mode when `stable_split` is active."
 }
