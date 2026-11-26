@@ -25,7 +25,7 @@
     "ko"
   ],
   "image": "cover.png",
-  "external_url": "https://github.com/nan0bug00/DragonSense/releases/tag/v0.5.0",
-  "version": "0.5.0",
-  "changelog": "## DragonSense 0.5.0\n\n### Changed\n- **Fewer interruptions from dragon roars**: most roars are now quietly remembered instead of drawing a reaction on the spot. About 1 in 5 gets an immediate response, down from half.\n- **Longer gaps between roar reactions**: 2 minutes for nearby roars and 3 minutes for distant ones, up from 1 minute each.\n- **Roars have a range limit**: NPCs no longer react to dragons roaring too far away for you to hear.\n- **No roar events on the Throat of the World summit**: the dragons circling after Alduin's defeat no longer flood the area with reactions, and Hakon, Gormlaith and Felldir stay on script during the Time-Wound vision.\n\n### Fixed\n- **Non-English languages now load**: in 0.4.0, every language except English was rejected by SkyrimNet when picked in the installer."
+  "external_url": "https://github.com/nan0bug00/DragonSense/releases/latest",
+  "version": "0.5.1",
+  "changelog": "## DragonSense 0.5.1\n\n### Fixed\n- **FOMOD fixes for Vortex** - This is purely an installer fix, to repair an invalid schema on Vortex. If you are already using v0.5.0 on Mod Organizer 2, you don't need this at all."
 }
