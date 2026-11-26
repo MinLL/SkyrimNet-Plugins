@@ -2,33 +2,31 @@
   "id": "7regalrascal7.delectatio-et-dominium",
   "type": "listing",
   "title": "Delectatio et Dominium",
-  "tagline": "Bedroom Drama for SkyrimNet",
-  "description": "Delectatio et Dominium (DeD) is a modular SkyrimNet integration mod for a number of classic community adult mods and effects. It aims to immerse you in those mods through thoughtful integration into SkyrimNet's prompt and trigger systems: the LLM driving your NPCs doesn't just know what's happening — it reacts as the character would, narrates it in-story, and decides what happens next. In some instances, DeD even drives the functions itself: applying cum decals, executing paired animations, and applying tattoos. And it attempts to maintain complete compatibility with both main adult Skyrim frameworks, SexLab and OStim — pick either, or run both.\n\nIntegrated mods include: Baka Paired Animations - For escalating scenes that can end in adult encounters GunSlicer Poses - To allow NPCs to dance and pose emergently (and the player too) Fill Her Up Baka - For reaction to cumflated actors OCum Ascended/SLACS 2 + SCO ( Cum Overlays ) - For reactions to visible cum SlaveTats - For ambient reactions to naughty tattoos\n\nThe structural idea: a modular framework that can support a number of mods while requiring as few as one of them. Each module is a separable file-set with a FOMOD installer option, so you install only what you use.\n\nEverything the LLM narrates is written in-story: cues and ambient narration describe what is happening as it happens — the model reacts as the character would, never breaking the scene to explain itself. Nothing fires at random; every interaction and pose is decided by SkyrimNet's model, in context, from the characters' personalities. Master toggles, an intensity slider, and per-module settings let you dial everything back.\n\nThe alpha testing continues. The Daedric influence modes have been enhanced, and several bugs have been squashed.\n\nA big thank you to Around906 for the base integrations that this mod is build on top of. Their mods live on within this one.\n\nEnjoy!",
+  "tagline": "Bedroom drama for SkyrimNet: NPCs who flirt, grab, fight, pose, mark, rob and spare you, because the AI decided they would. Modular, for SexLab and OStim.",
+  "description": "**Delectatio et Dominium (DeD)** is a modular SkyrimNet integration for classic adult Skyrim mods. The LLM driving your NPCs doesn't just know what is happening: it reacts as the character would, narrates it in-story, and decides what happens next. Often DeD drives the mods itself: it starts paired animations and scenes, applies tattoos and cum decals, and downs the loser of a fight. It supports both SexLab and OStim. Adult content (18+).\n\n### What it makes possible\n- **One menu for everything:** cast DeD Interact (a minor power in your magic menu) or press the Open DeD key, and a combined menu opens on what fits: interactions, poses, tattoos, the downed menu, or a grapple mid-combat.\n- **Baka Interactions:** hugs, kisses, flirting, groping and harassment, escalation with struggles and a QTE, capture, tie-up, creatures, spanking (also during a scene), and narrated cum.\n- **DeD Downed (new in 0.6.0):** beaten, not dead. Lose a fight and the winners decide what happens next: rob you, threaten you, start a scene, or worse. You set how often each outcome happens. Companions can heal you back into the fight, help you up, or take advantage if you allow it; beaten enemies can be talked into standing down. Replaces Acheron.\n- **The daedric modes:** Mephala and Molag Bal let dominant NPCs escalate on their own initiative; Sanguine and Sheogorath have the room strike mood-fitting poses. Each moment can land as narration, nearby thoughts, words aimed at you, or your own thoughts.\n- **GS Poses:** a pose grid with 19 categories for you or any NPC, plus AI pose actions.\n- **SlaveTats:** tattoos and makeup with a live preview, and descriptions the AI can read so NPCs know what a mark shows.\n- **Fill Her Up:** inflation, narrated as it happens.\n\n### Built to be modular\nEvery module is its own installer option, nothing requires another module, and every feature can be dialled down or switched off. No DeD action ever targets a child.\n\n### Requirements\nSkyrimNet 0.25 or later, Magelight UI 1.9.0 or newer, SKSE, SkyUI, PapyrusUtil, the Baka Motion Data Pack, and SexLab or OStim. Per module: GSPoses, Fill Her Up Baka Edition, SlaveTats. Recommended: SkyrimNet-SexLab Integration or OStimNet for scene hand-off.\n\nFull details, requirements and installation are on the GitHub page.",
   "author": "7regalrascal7",
   "tags": [
     "SexLab",
     "OStim",
     "Fill Her Up",
     "GS Pose",
-    "Baka"
+    "Baka",
+    "SlaveTats",
+    "Defeat",
+    "Interactions"
   ],
   "nsfw": true,
   "icon": "heart",
   "mods": [
     {
-      "name": "Acheron.esm",
-      "file": "acheron.esm",
-      "required": true
-    },
-    {
       "name": "SexLab.esm",
       "file": "sexlab.esm",
-      "required": true
+      "required": false
     },
     {
       "name": "OStim.esp",
       "file": "ostim.esp",
-      "required": true
+      "required": false
     },
     {
       "name": "sr_FillHerUp.esp",
@@ -54,13 +52,33 @@
       "name": "OCum.esp",
       "file": "ocum.esp",
       "required": false
+    },
+    {
+      "name": "SkyrimNet_SexLab.esp",
+      "file": "skyrimnet_sexlab.esp",
+      "required": false
+    },
+    {
+      "name": "TT_OStimNet.esp",
+      "file": "tt_ostimnet.esp",
+      "required": false
+    },
+    {
+      "name": "EmoTears4NPCs.esp",
+      "file": "emotears4npcs.esp",
+      "required": false
+    },
+    {
+      "name": "EmoTearsSpells.esp",
+      "file": "emotearsspells.esp",
+      "required": false
     }
   ],
   "languages": [
     "en"
   ],
   "image": "cover.png",
-  "external_url": "https://github.com/regalrascal/Delectatio-et-Dominium/releases/tag/v0.4.0",
-  "version": "0.4.0",
-  "changelog": "Delectatio et Dominium 0.4.0\n\nNarrative Selection — the headline. Every ambient mode now casts its own scenes: one LLM call picks who acts, what they do, to whom, and why — from live context (bios, arousal, memories, recent events), not dice. And the \"why\" ships in the cue itself: \"that display of strength is the first thing in this cursed room worth wanting.\" Toggle per module if you prefer plain cues.\n\nReaction lanes everywhere — direct narration / NPC thought / player speech / player thought, unified across GS poses and Baka actions, one lane per event in rotation, with a guaranteed acknowledgment floor so no pose happens unseen.\n\nTriggers that say what happened — rich cue descriptions now flow directly into trigger text (live-proven {{ event_data }} channel). No more \"something happened, react.\"\n\nArousal doctrine completed — the last mechanical banding retired. All reaction registers render as suggestions beside actual arousal facts; the LLM picks what fits the person and the moment.\n\nHonest cadence — clocks arm at dispatch, not fire; missed LLM answers no longer burn cadence slots; fast modes auto-lean their prompts to stay affordable. 60s default.\n\nThe Acheron fix — the follower soft-lock is dead at its roots: Acheron rescues work on NPCs, Prisma HelpUp always releases, and standing over downed companions post-combat extends their wait by one minute, not forever.\n\nSofter feet — EmoTears4NPCs is now a true soft dependency (it was never actually used). One hidden load-order constraint gone.\n\nThe theme: every \"broken system\" this cycle was a too-literal gatekeeper, while the model's answers kept being the healthiest layer. 0.4.0 stops second-guessing the model — complete information, honest timing, gates that check spelling. The mod now speaks in complete sentences."
+  "external_url": "https://github.com/regalrascal/Delectatio-et-Dominium/releases/tag/v0.6.0",
+  "version": "0.6.0",
+  "changelog": "**0.6.0 - Beaten, Not Dead.** DeD Downed replaces Acheron: losing a fight downs you instead of killing you, and the winners decide what happens next (robbery, threats, a scene, or worse), weighted by your settings. Companions can heal you, help you up or take advantage; beaten enemies can be talked into standing down; restraints, and a Wounded effect until you sleep.\n\nAlso includes 0.5.0: one combined DeD menu on Magelight UI (PrismaUI is no longer needed), a tattoo and makeup overhaul with live preview and descriptions the AI can read, scene hand-off to SkyrimNet-SexLab Integration and OStimNet, and spanking during scenes.\n\nUpgrading from 0.4.x: install into a new mod folder and untick SkyrimNet_AcheronIntegration.esp; keep Acheron switched off in its MCM, or remove it after Prepare to Remove Acheron in the DeD MCM."
 }
