@@ -2,8 +2,8 @@
   "id": "maeyanie.unvoice",
   "type": "listing",
   "title": "Unvoice",
-  "tagline": "Remove custom voices from any mod and let SkyrimNet re-voice it.",
-  "description": "As of SkyrimNet 1.3.1, voices from certain mods are blacklisted.\n\n**This doesn't change that.**\n\nI'm not going to try to bypass it. My solution is the opposite: Remove the voice from the mods, and let SkyrimNet's Universal Translator re-voice them using whatever voice you set for the character instead. This fixes the problem of inconsistent voices between pre-recorded lines and SkyrimNet dialogue, without working around the blacklist.\n\nIt could also be used for mods with poor voice quality, or if you use the new \"Design a Voice\" feature to re-voice someone.\n\nThis is done using only a single SKSE plugin. No redistribution, modification, unpacking, viewing, or downloading of said mods was required in the making of it. It contains absolutely no copyrightable content from said mods.\n\nThe list of plugins is set in the `Unvoice.ini` file; the default is the two currently blacklisted by SkyrimNet.\n\nTested on 1.6.1170, but should theoretically work on 1.7.104 and other 1.5-1.6 versions. It won't work on VR currently.",
+  "tagline": "Remove custom voices from any NPC or mod and let SkyrimNet re-voice it.",
+  "description": "As of SkyrimNet 1.3.1, voices from certain mods are blacklisted.\n\n**This doesn't change that.**\n\nI'm not going to try to bypass it. My solution is the opposite: Remove the voice from the mods, and let SkyrimNet's Universal Translator re-voice them using whatever voice you set for the character instead. This fixes the problem of inconsistent voices between pre-recorded lines and SkyrimNet dialogue, without working around the blacklist.\n\nIt could also be used for mods with poor voice quality, or if you use the new \"Design a Voice\" feature to re-voice someone.\n\nAs of 1.0.0, you can blacklist either a full mod, or just a single NPC you want to re-voice. Don't like Lydia sounding the same as Arcadia, Carlotta, and dozens of other women? Blacklist just her, and use \"Design a Voice\" to make her a new one.\n\nThis is done using only a single SKSE plugin. No redistribution, modification, unpacking, viewing, or downloading of said mods was required in the making of it. It contains absolutely no copyrightable content from said mods.\n\nThe list of plugins is set in the `Unvoice.ini` file; the default is the two currently blacklisted by SkyrimNet.\n\nTested on 1.6.1170, but should theoretically work on 1.7.104 and other 1.5-1.6 versions, plus Skyrim VR.\n\nLicense: 0BSD\nDo whatever you want, just don't blame me if it explodes.",
   "author": "maeyanie",
   "tags": [
     "universal translator",
@@ -13,7 +13,7 @@
   "icon": "package",
   "mods": [],
   "image": "cover.jpg",
-  "external_url": "https://github.com/Maeyanie/Unvoice/releases/tag/v1.0.0-beta.2",
-  "version": "0.99.0",
-  "changelog": "Initial public beta.\nTested on 1.6.1170, should theoretically work on any 1.5-1.6 and 1.7.104."
+  "external_url": "https://github.com/Maeyanie/Unvoice/",
+  "version": "1.0.0",
+  "changelog": "Full release.\n- Add support for blacklisting a single NPC, in a new [NPCs] section in the .ini. This can be by name (`Lydia`), or plugin and FormID (`Skyrim.esm|A2C8E`).\n- Support 1.7.104 and Skyrim VR (untested)"
 }
