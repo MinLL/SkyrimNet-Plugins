@@ -1,8 +1,237 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-11-26T12:48:35.884Z",
-  "stats_as_of": "2026-11-26T12:48:35.774Z",
+  "generated_at": "2026-11-26T16:18:10.804Z",
+  "stats_as_of": "2026-11-26T16:18:10.691Z",
   "plugins": [
+    {
+      "id": "plugins/7regalrascal7/delectatio-et-dominium",
+      "plugin_id": "7regalrascal7.delectatio-et-dominium",
+      "type": "listing",
+      "title": "Delectatio et Dominium",
+      "tagline": "Bedroom drama for SkyrimNet: NPCs who flirt, grab, fight, pose, mark, rob and spare you, because the AI decided they would. Modular, for SexLab and OStim.",
+      "author": "7regalrascal7",
+      "tags": [
+        "SexLab",
+        "OStim",
+        "Fill Her Up",
+        "GS Pose",
+        "Baka",
+        "SlaveTats",
+        "Defeat",
+        "Interactions"
+      ],
+      "nsfw": true,
+      "icon": "heart",
+      "mods": [
+        {
+          "name": "SexLab.esm",
+          "file": "sexlab.esm",
+          "required": false
+        },
+        {
+          "name": "OStim.esp",
+          "file": "ostim.esp",
+          "required": false
+        },
+        {
+          "name": "sr_FillHerUp.esp",
+          "file": "sr_fillherup.esp",
+          "required": false
+        },
+        {
+          "name": "SexLabDefeat.esp",
+          "file": "sexlabdefeat.esp",
+          "required": false
+        },
+        {
+          "name": "SlaveTats.esp",
+          "file": "slavetats.esp",
+          "required": false
+        },
+        {
+          "name": "_GSPoses.esp",
+          "file": "_gsposes.esp",
+          "required": false
+        },
+        {
+          "name": "OCum.esp",
+          "file": "ocum.esp",
+          "required": false
+        },
+        {
+          "name": "SkyrimNet_SexLab.esp",
+          "file": "skyrimnet_sexlab.esp",
+          "required": false
+        },
+        {
+          "name": "TT_OStimNet.esp",
+          "file": "tt_ostimnet.esp",
+          "required": false
+        },
+        {
+          "name": "EmoTears4NPCs.esp",
+          "file": "emotears4npcs.esp",
+          "required": false
+        },
+        {
+          "name": "EmoTearsSpells.esp",
+          "file": "emotearsspells.esp",
+          "required": false
+        }
+      ],
+      "first_published": "2026-10-27T00:49:15Z",
+      "last_updated": "2026-11-26T16:17:38Z",
+      "version": "0.6.0",
+      "history": [
+        {
+          "version": "0.6.0",
+          "commit": "12933b94ecffe0f7a08d83240eac0704cf0dd688",
+          "date": "2026-11-26T16:17:38Z",
+          "changelog": "**0.6.0 - Beaten, Not Dead.** DeD Downed replaces Acheron: losing a fight downs you instead of killing you, and the winners decide what happens next (robbery, threats, a scene, or worse), weighted by your settings. Companions can heal you, help you up or take advantage; beaten enemies can be talked into standing down; restraints, and a Wounded effect until you sleep.\n\nAlso includes 0.5.0: one combined DeD menu on Magelight UI (PrismaUI is no longer needed), a tattoo and makeup overhaul with live preview and descriptions the AI can read, scene hand-off to SkyrimNet-SexLab Integration and OStimNet, and spanking during scenes.\n\nUpgrading from 0.4.x: install into a new mod folder and untick SkyrimNet_AcheronIntegration.esp; keep Acheron switched off in its MCM, or remove it after Prepare to Remove Acheron in the DeD MCM."
+        },
+        {
+          "version": "0.4.0",
+          "commit": "687d0105f99302460258df9d8336b0d7946395fd",
+          "date": "2026-11-12T02:23:53Z",
+          "changelog": "Delectatio et Dominium 0.4.0\n\nNarrative Selection — the headline. Every ambient mode now casts its own scenes: one LLM call picks who acts, what they do, to whom, and why — from live context (bios, arousal, memories, recent events), not dice. And the \"why\" ships in the cue itself: \"that display of strength is the first thing in this cursed room worth wanting.\" Toggle per module if you prefer plain cues.\n\nReaction lanes everywhere — direct narration / NPC thought / player speech / player thought, unified across GS poses and Baka actions, one lane per event in rotation, with a guaranteed acknowledgment floor so no pose happens unseen.\n\nTriggers that say what happened — rich cue descriptions now flow directly into trigger text (live-proven {{ event_data }} channel). No more \"something happened, react.\"\n\nArousal doctrine completed — the last mechanical banding retired. All reaction registers render as suggestions beside actual arousal facts; the LLM picks what fits the person and the moment.\n\nHonest cadence — clocks arm at dispatch, not fire; missed LLM answers no longer burn cadence slots; fast modes auto-lean their prompts to stay affordable. 60s default.\n\nThe Acheron fix — the follower soft-lock is dead at its roots: Acheron rescues work on NPCs, Prisma HelpUp always releases, and standing over downed companions post-combat extends their wait by one minute, not forever.\n\nSofter feet — EmoTears4NPCs is now a true soft dependency (it was never actually used). One hidden load-order constraint gone.\n\nThe theme: every \"broken system\" this cycle was a too-literal gatekeeper, while the model's answers kept being the healthiest layer. 0.4.0 stops second-guessing the model — complete information, honest timing, gates that check spelling. The mod now speaks in complete sentences."
+        },
+        {
+          "version": "0.3.0",
+          "commit": "5b64db3fe63da5453bbdb5638b302c28011e18e4",
+          "date": "2026-10-27T00:49:15Z",
+          "changelog": "Initial release"
+        }
+      ],
+      "external_url": "https://github.com/regalrascal/Delectatio-et-Dominium/releases/tag/v0.6.0",
+      "languages": [
+        "en"
+      ],
+      "language": "en",
+      "image": {
+        "file": "cover.png",
+        "sha": "aff62b481b43251fbe1d895cf99cbaebeae704ce",
+        "commit": "5b64db3fe63da5453bbdb5638b302c28011e18e4",
+        "width": 1352,
+        "height": 760
+      },
+      "stats": {
+        "downloads": 369,
+        "endorsements": 0
+      }
+    },
+    {
+      "id": "plugins/stoptryharding/dragonsense",
+      "plugin_id": "stoptryharding.dragonsense",
+      "type": "listing",
+      "title": "DragonSense",
+      "tagline": "Dragon roars and the Greybeards' summons stop being player-only. Nearby NPCs hear them, react, and remember.",
+      "author": "stoptryharding",
+      "tags": [
+        "External Mod"
+      ],
+      "nsfw": false,
+      "icon": "brain",
+      "mods": [],
+      "first_published": "2026-10-20T06:34:02Z",
+      "last_updated": "2026-11-26T16:17:17Z",
+      "version": "0.5.1",
+      "history": [
+        {
+          "version": "0.5.1",
+          "commit": "6bad431c385ca7a50c20b2a71f7ca4e0448b45f7",
+          "date": "2026-11-26T16:17:17Z",
+          "changelog": "## DragonSense 0.5.1\n\n### Fixed\n- **FOMOD fixes for Vortex** - This is purely an installer fix, to repair an invalid schema on Vortex. If you are already using v0.5.0 on Mod Organizer 2, you don't need this at all."
+        },
+        {
+          "version": "0.5.0",
+          "commit": "086c3423aa59904a3201ab1bbcd367d65cf051db",
+          "date": "2026-11-14T20:19:38Z",
+          "changelog": "## DragonSense 0.5.0\n\n### Changed\n- **Fewer interruptions from dragon roars**: most roars are now quietly remembered instead of drawing a reaction on the spot. About 1 in 5 gets an immediate response, down from half.\n- **Longer gaps between roar reactions**: 2 minutes for nearby roars and 3 minutes for distant ones, up from 1 minute each.\n- **Roars have a range limit**: NPCs no longer react to dragons roaring too far away for you to hear.\n- **No roar events on the Throat of the World summit**: the dragons circling after Alduin's defeat no longer flood the area with reactions, and Hakon, Gormlaith and Felldir stay on script during the Time-Wound vision.\n\n### Fixed\n- **Non-English languages now load**: in 0.4.0, every language except English was rejected by SkyrimNet when picked in the installer."
+        },
+        {
+          "version": "0.4.0",
+          "commit": "038b54c8ff22ef800482f11cd14831492b70ad89",
+          "date": "2026-10-22T23:42:13Z",
+          "changelog": "# DragonSense 0.4.0\n\n## Added\n- **Bats at Bleak Falls Sanctum** — NPCs notice the swarm bursting from the dark as the inner sanctum comes into view.\n- **Ustengrav's rising statues** — stone grinding in the dark as the ancient statues climb out of the water.\n- **FOMOD installer** — one archive, pick your language during install.\n\n## Changed\n- Narration lines are no longer wrapped in asterisks.\n\n## Languages\nEnglish, Russian, Japanese, Portuguese, Spanish, French, German, Italian, Polish, Korean, Vietnamese, Chinese (Simplified), Chinese (Traditional)."
+        },
+        {
+          "version": "0.3.0",
+          "commit": "684f61e0c09d7bcd9d5c9217c38f397c1d0d4b0e",
+          "date": "2026-10-20T06:34:02Z",
+          "changelog": "Initial release"
+        }
+      ],
+      "external_url": "https://github.com/nan0bug00/DragonSense/releases/latest",
+      "languages": [
+        "en",
+        "ru",
+        "es",
+        "ja",
+        "pt",
+        "de",
+        "fr",
+        "zh",
+        "it",
+        "pl",
+        "ko"
+      ],
+      "language": "en",
+      "image": {
+        "file": "cover.png",
+        "sha": "c036ec1179ee62772b8df0caf71a554a9d92d3d8",
+        "commit": "684f61e0c09d7bcd9d5c9217c38f397c1d0d4b0e",
+        "width": 1280,
+        "height": 720
+      },
+      "stats": {
+        "downloads": 193,
+        "endorsements": 1
+      }
+    },
+    {
+      "id": "plugins/maeyanie/unvoice",
+      "plugin_id": "maeyanie.unvoice",
+      "type": "listing",
+      "title": "Unvoice",
+      "tagline": "Remove custom voices from any NPC or mod and let SkyrimNet re-voice it.",
+      "author": "maeyanie",
+      "tags": [
+        "universal translator",
+        "tts"
+      ],
+      "nsfw": false,
+      "icon": "package",
+      "mods": [],
+      "first_published": "2026-11-23T07:05:11Z",
+      "last_updated": "2026-11-26T16:17:07Z",
+      "version": "1.0.0",
+      "history": [
+        {
+          "version": "1.0.0",
+          "commit": "7ff93d10a378dd772e32bf421fce8f4a2ea4e30f",
+          "date": "2026-11-26T16:17:07Z",
+          "changelog": "Full release.\n- Add support for blacklisting a single NPC, in a new [NPCs] section in the .ini. This can be by name (`Lydia`), or plugin and FormID (`Skyrim.esm|A2C8E`).\n- Support 1.7.104 and Skyrim VR (untested)"
+        },
+        {
+          "version": "0.99.0",
+          "commit": "0cd5690caac0674958edf4e4a575e0ded81bd6f9",
+          "date": "2026-11-24T00:21:39Z",
+          "changelog": "Initial public beta.\nTested on 1.6.1170, should theoretically work on any 1.5-1.6 and 1.7.104."
+        }
+      ],
+      "external_url": "https://github.com/Maeyanie/Unvoice/",
+      "image": {
+        "file": "cover.jpg",
+        "sha": "e4a8e7d8ff4ef5fc432311b66d1ece2f91f0233e",
+        "commit": "0cd5690caac0674958edf4e4a575e0ded81bd6f9",
+        "width": 1600,
+        "height": 900
+      },
+      "stats": {
+        "downloads": 25,
+        "endorsements": 2
+      }
+    },
     {
       "id": "plugins/urtubesrclogged/battle-summaries",
       "plugin_id": "urtubesrclogged.battle-summaries",
@@ -88,7 +317,7 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 777,
+        "downloads": 784,
         "endorsements": 12
       }
     },
@@ -221,7 +450,7 @@
         "height": 1152
       },
       "stats": {
-        "downloads": 673,
+        "downloads": 677,
         "endorsements": 11
       }
     },
@@ -303,7 +532,7 @@
         "height": 1152
       },
       "stats": {
-        "downloads": 337,
+        "downloads": 343,
         "endorsements": 0
       }
     },
@@ -424,7 +653,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 565,
+        "downloads": 568,
         "endorsements": 11
       }
     },
@@ -524,7 +753,7 @@
         "height": 1080
       },
       "stats": {
-        "downloads": 66,
+        "downloads": 68,
         "endorsements": 0
       }
     },
@@ -614,7 +843,7 @@
         "height": 1080
       },
       "stats": {
-        "downloads": 164,
+        "downloads": 166,
         "endorsements": 0
       }
     },
@@ -771,7 +1000,7 @@
         "height": 720
       },
       "stats": {
-        "downloads": 41,
+        "downloads": 42,
         "endorsements": 0
       }
     },
@@ -873,46 +1102,8 @@
       },
       "curated": true,
       "stats": {
-        "downloads": 1530,
+        "downloads": 1534,
         "endorsements": 45
-      }
-    },
-    {
-      "id": "plugins/maeyanie/unvoice",
-      "plugin_id": "maeyanie.unvoice",
-      "type": "listing",
-      "title": "Unvoice",
-      "tagline": "Remove custom voices from any mod and let SkyrimNet re-voice it.",
-      "author": "maeyanie",
-      "tags": [
-        "universal translator",
-        "tts"
-      ],
-      "nsfw": false,
-      "icon": "package",
-      "mods": [],
-      "first_published": "2026-11-23T07:05:11Z",
-      "last_updated": "2026-11-24T00:21:39Z",
-      "version": "0.99.0",
-      "history": [
-        {
-          "version": "0.99.0",
-          "commit": "0cd5690caac0674958edf4e4a575e0ded81bd6f9",
-          "date": "2026-11-24T00:21:39Z",
-          "changelog": "Initial public beta.\nTested on 1.6.1170, should theoretically work on any 1.5-1.6 and 1.7.104."
-        }
-      ],
-      "external_url": "https://github.com/Maeyanie/Unvoice/releases/tag/v1.0.0-beta.2",
-      "image": {
-        "file": "cover.jpg",
-        "sha": "e4a8e7d8ff4ef5fc432311b66d1ece2f91f0233e",
-        "commit": "0cd5690caac0674958edf4e4a575e0ded81bd6f9",
-        "width": 1600,
-        "height": 900
-      },
-      "stats": {
-        "downloads": 24,
-        "endorsements": 2
       }
     },
     {
@@ -1150,7 +1341,7 @@
         "height": 768
       },
       "stats": {
-        "downloads": 250,
+        "downloads": 251,
         "endorsements": 0
       }
     },
@@ -1192,7 +1383,7 @@
       ],
       "language": "en",
       "stats": {
-        "downloads": 102,
+        "downloads": 103,
         "endorsements": 0
       }
     },
@@ -1562,7 +1753,7 @@
         "height": 864
       },
       "stats": {
-        "downloads": 575,
+        "downloads": 577,
         "endorsements": 8
       }
     },
@@ -1677,7 +1868,7 @@
         "height": 720
       },
       "stats": {
-        "downloads": 354,
+        "downloads": 355,
         "endorsements": 2
       }
     },
@@ -1775,7 +1966,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 697,
+        "downloads": 699,
         "endorsements": 6
       }
     },
@@ -2098,7 +2289,7 @@
         "height": 432
       },
       "stats": {
-        "downloads": 442,
+        "downloads": 443,
         "endorsements": 5
       }
     },
@@ -2224,7 +2415,7 @@
         "height": 768
       },
       "stats": {
-        "downloads": 199,
+        "downloads": 202,
         "endorsements": 2
       }
     },
@@ -2356,7 +2547,7 @@
         "height": 720
       },
       "stats": {
-        "downloads": 199,
+        "downloads": 200,
         "endorsements": 1
       }
     },
@@ -2480,7 +2671,7 @@
         "height": 1080
       },
       "stats": {
-        "downloads": 209,
+        "downloads": 210,
         "endorsements": 5
       }
     },
@@ -2547,7 +2738,7 @@
         "height": 1080
       },
       "stats": {
-        "downloads": 37,
+        "downloads": 38,
         "endorsements": 0
       }
     },
@@ -2811,69 +3002,6 @@
       }
     },
     {
-      "id": "plugins/stoptryharding/dragonsense",
-      "plugin_id": "stoptryharding.dragonsense",
-      "type": "listing",
-      "title": "DragonSense",
-      "tagline": "Dragon roars and the Greybeards' summons stop being player-only. Nearby NPCs hear them, react, and remember.",
-      "author": "stoptryharding",
-      "tags": [
-        "External Mod"
-      ],
-      "nsfw": false,
-      "icon": "brain",
-      "mods": [],
-      "first_published": "2026-10-20T06:34:02Z",
-      "last_updated": "2026-11-14T20:19:38Z",
-      "version": "0.5.0",
-      "history": [
-        {
-          "version": "0.5.0",
-          "commit": "086c3423aa59904a3201ab1bbcd367d65cf051db",
-          "date": "2026-11-14T20:19:38Z",
-          "changelog": "## DragonSense 0.5.0\n\n### Changed\n- **Fewer interruptions from dragon roars**: most roars are now quietly remembered instead of drawing a reaction on the spot. About 1 in 5 gets an immediate response, down from half.\n- **Longer gaps between roar reactions**: 2 minutes for nearby roars and 3 minutes for distant ones, up from 1 minute each.\n- **Roars have a range limit**: NPCs no longer react to dragons roaring too far away for you to hear.\n- **No roar events on the Throat of the World summit**: the dragons circling after Alduin's defeat no longer flood the area with reactions, and Hakon, Gormlaith and Felldir stay on script during the Time-Wound vision.\n\n### Fixed\n- **Non-English languages now load**: in 0.4.0, every language except English was rejected by SkyrimNet when picked in the installer."
-        },
-        {
-          "version": "0.4.0",
-          "commit": "038b54c8ff22ef800482f11cd14831492b70ad89",
-          "date": "2026-10-22T23:42:13Z",
-          "changelog": "# DragonSense 0.4.0\n\n## Added\n- **Bats at Bleak Falls Sanctum** — NPCs notice the swarm bursting from the dark as the inner sanctum comes into view.\n- **Ustengrav's rising statues** — stone grinding in the dark as the ancient statues climb out of the water.\n- **FOMOD installer** — one archive, pick your language during install.\n\n## Changed\n- Narration lines are no longer wrapped in asterisks.\n\n## Languages\nEnglish, Russian, Japanese, Portuguese, Spanish, French, German, Italian, Polish, Korean, Vietnamese, Chinese (Simplified), Chinese (Traditional)."
-        },
-        {
-          "version": "0.3.0",
-          "commit": "684f61e0c09d7bcd9d5c9217c38f397c1d0d4b0e",
-          "date": "2026-10-20T06:34:02Z",
-          "changelog": "Initial release"
-        }
-      ],
-      "external_url": "https://github.com/nan0bug00/DragonSense/releases/tag/v0.5.0",
-      "languages": [
-        "en",
-        "ru",
-        "es",
-        "ja",
-        "pt",
-        "de",
-        "fr",
-        "zh",
-        "it",
-        "pl",
-        "ko"
-      ],
-      "language": "en",
-      "image": {
-        "file": "cover.png",
-        "sha": "c036ec1179ee62772b8df0caf71a554a9d92d3d8",
-        "commit": "684f61e0c09d7bcd9d5c9217c38f397c1d0d4b0e",
-        "width": 1280,
-        "height": 720
-      },
-      "stats": {
-        "downloads": 192,
-        "endorsements": 1
-      }
-    },
-    {
       "id": "plugins/nosimo/frostfall-awareness",
       "plugin_id": "nosimo.frostfall-awareness",
       "type": "listing",
@@ -2920,98 +3048,6 @@
       },
       "stats": {
         "downloads": 53,
-        "endorsements": 0
-      }
-    },
-    {
-      "id": "plugins/7regalrascal7/delectatio-et-dominium",
-      "plugin_id": "7regalrascal7.delectatio-et-dominium",
-      "type": "listing",
-      "title": "Delectatio et Dominium",
-      "tagline": "Bedroom Drama for SkyrimNet",
-      "author": "7regalrascal7",
-      "tags": [
-        "SexLab",
-        "OStim",
-        "Fill Her Up",
-        "GS Pose",
-        "Baka"
-      ],
-      "nsfw": true,
-      "icon": "heart",
-      "mods": [
-        {
-          "name": "Acheron.esm",
-          "file": "acheron.esm",
-          "required": true
-        },
-        {
-          "name": "SexLab.esm",
-          "file": "sexlab.esm",
-          "required": true
-        },
-        {
-          "name": "OStim.esp",
-          "file": "ostim.esp",
-          "required": true
-        },
-        {
-          "name": "sr_FillHerUp.esp",
-          "file": "sr_fillherup.esp",
-          "required": false
-        },
-        {
-          "name": "SexLabDefeat.esp",
-          "file": "sexlabdefeat.esp",
-          "required": false
-        },
-        {
-          "name": "SlaveTats.esp",
-          "file": "slavetats.esp",
-          "required": false
-        },
-        {
-          "name": "_GSPoses.esp",
-          "file": "_gsposes.esp",
-          "required": false
-        },
-        {
-          "name": "OCum.esp",
-          "file": "ocum.esp",
-          "required": false
-        }
-      ],
-      "first_published": "2026-10-27T00:49:15Z",
-      "last_updated": "2026-11-12T02:23:53Z",
-      "version": "0.4.0",
-      "history": [
-        {
-          "version": "0.4.0",
-          "commit": "687d0105f99302460258df9d8336b0d7946395fd",
-          "date": "2026-11-12T02:23:53Z",
-          "changelog": "Delectatio et Dominium 0.4.0\n\nNarrative Selection — the headline. Every ambient mode now casts its own scenes: one LLM call picks who acts, what they do, to whom, and why — from live context (bios, arousal, memories, recent events), not dice. And the \"why\" ships in the cue itself: \"that display of strength is the first thing in this cursed room worth wanting.\" Toggle per module if you prefer plain cues.\n\nReaction lanes everywhere — direct narration / NPC thought / player speech / player thought, unified across GS poses and Baka actions, one lane per event in rotation, with a guaranteed acknowledgment floor so no pose happens unseen.\n\nTriggers that say what happened — rich cue descriptions now flow directly into trigger text (live-proven {{ event_data }} channel). No more \"something happened, react.\"\n\nArousal doctrine completed — the last mechanical banding retired. All reaction registers render as suggestions beside actual arousal facts; the LLM picks what fits the person and the moment.\n\nHonest cadence — clocks arm at dispatch, not fire; missed LLM answers no longer burn cadence slots; fast modes auto-lean their prompts to stay affordable. 60s default.\n\nThe Acheron fix — the follower soft-lock is dead at its roots: Acheron rescues work on NPCs, Prisma HelpUp always releases, and standing over downed companions post-combat extends their wait by one minute, not forever.\n\nSofter feet — EmoTears4NPCs is now a true soft dependency (it was never actually used). One hidden load-order constraint gone.\n\nThe theme: every \"broken system\" this cycle was a too-literal gatekeeper, while the model's answers kept being the healthiest layer. 0.4.0 stops second-guessing the model — complete information, honest timing, gates that check spelling. The mod now speaks in complete sentences."
-        },
-        {
-          "version": "0.3.0",
-          "commit": "5b64db3fe63da5453bbdb5638b302c28011e18e4",
-          "date": "2026-10-27T00:49:15Z",
-          "changelog": "Initial release"
-        }
-      ],
-      "external_url": "https://github.com/regalrascal/Delectatio-et-Dominium/releases/tag/v0.4.0",
-      "languages": [
-        "en"
-      ],
-      "language": "en",
-      "image": {
-        "file": "cover.png",
-        "sha": "aff62b481b43251fbe1d895cf99cbaebeae704ce",
-        "commit": "5b64db3fe63da5453bbdb5638b302c28011e18e4",
-        "width": 1352,
-        "height": 760
-      },
-      "stats": {
-        "downloads": 368,
         "endorsements": 0
       }
     },
@@ -3091,7 +3127,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 297,
+        "downloads": 299,
         "endorsements": 0
       }
     },
@@ -3556,7 +3592,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 542,
+        "downloads": 546,
         "endorsements": 0
       }
     },
@@ -3682,7 +3718,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 234,
+        "downloads": 235,
         "endorsements": 2
       }
     },
@@ -4176,7 +4212,7 @@
         "config": 7
       },
       "stats": {
-        "downloads": 821,
+        "downloads": 825,
         "endorsements": 0
       }
     },
@@ -4257,7 +4293,7 @@
         "config": 7
       },
       "stats": {
-        "downloads": 1127,
+        "downloads": 1130,
         "endorsements": 1
       }
     },
@@ -4349,7 +4385,7 @@
         "moderator": "MinLL"
       },
       "stats": {
-        "downloads": 1615,
+        "downloads": 1616,
         "endorsements": 19
       }
     },
@@ -4405,7 +4441,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 445,
+        "downloads": 449,
         "endorsements": 0
       }
     },
@@ -4531,7 +4567,7 @@
         "height": 941
       },
       "stats": {
-        "downloads": 254,
+        "downloads": 255,
         "endorsements": 3
       }
     },
@@ -5129,7 +5165,7 @@
         "height": 1080
       },
       "stats": {
-        "downloads": 236,
+        "downloads": 237,
         "endorsements": 5
       }
     },
@@ -5216,7 +5252,7 @@
         "height": 720
       },
       "stats": {
-        "downloads": 125,
+        "downloads": 126,
         "endorsements": 1
       }
     },
@@ -5449,7 +5485,7 @@
         "height": 1008
       },
       "stats": {
-        "downloads": 49,
+        "downloads": 50,
         "endorsements": 0
       }
     },
@@ -5642,7 +5678,7 @@
         "config": 4
       },
       "stats": {
-        "downloads": 1023,
+        "downloads": 1026,
         "endorsements": 4
       }
     },
@@ -5796,7 +5832,7 @@
         "height": 1080
       },
       "stats": {
-        "downloads": 265,
+        "downloads": 266,
         "endorsements": 1
       }
     },
@@ -5871,7 +5907,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 804,
+        "downloads": 806,
         "endorsements": 2
       }
     },
@@ -5941,7 +5977,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1170,
+        "downloads": 1174,
         "endorsements": 1
       }
     },
@@ -6073,7 +6109,7 @@
         "height": 900
       },
       "stats": {
-        "downloads": 340,
+        "downloads": 341,
         "endorsements": 5
       }
     },
@@ -6149,7 +6185,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 643,
+        "downloads": 644,
         "endorsements": 1
       }
     },
@@ -6380,7 +6416,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2646,
+        "downloads": 2650,
         "endorsements": 2
       }
     },
@@ -6425,7 +6461,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1343,
+        "downloads": 1344,
         "endorsements": 0
       }
     },
@@ -6515,7 +6551,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 4944,
+        "downloads": 4949,
         "endorsements": 5
       }
     },
@@ -6740,7 +6776,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2944,
+        "downloads": 2949,
         "endorsements": 0
       }
     },
@@ -7010,7 +7046,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1146,
+        "downloads": 1150,
         "endorsements": 1
       }
     },
@@ -7235,7 +7271,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 851,
+        "downloads": 852,
         "endorsements": 1
       }
     },
@@ -7280,7 +7316,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 382,
+        "downloads": 384,
         "endorsements": 0
       }
     },
@@ -7505,7 +7541,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2423,
+        "downloads": 2428,
         "endorsements": 2
       }
     },
@@ -7550,7 +7586,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 159,
+        "downloads": 160,
         "endorsements": 0
       }
     },
@@ -7775,7 +7811,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 86,
+        "downloads": 87,
         "endorsements": 0
       }
     },
@@ -7865,7 +7901,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1851,
+        "downloads": 1855,
         "endorsements": 1
       }
     },
@@ -8225,7 +8261,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2791,
+        "downloads": 2795,
         "endorsements": 3
       }
     },
@@ -8270,7 +8306,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 578,
+        "downloads": 579,
         "endorsements": 0
       }
     },
@@ -8405,7 +8441,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1129,
+        "downloads": 1130,
         "endorsements": 0
       }
     },
@@ -8450,7 +8486,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1891,
+        "downloads": 1897,
         "endorsements": 2
       }
     },
@@ -8540,7 +8576,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 545,
+        "downloads": 546,
         "endorsements": 0
       }
     },
@@ -9215,7 +9251,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 190,
+        "downloads": 191,
         "endorsements": 0
       }
     },
@@ -9260,7 +9296,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 900,
+        "downloads": 901,
         "endorsements": 0
       }
     },
@@ -10265,7 +10301,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 861,
+        "downloads": 863,
         "endorsements": 0
       }
     },
@@ -10535,7 +10571,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 509,
+        "downloads": 510,
         "endorsements": 1
       }
     },
@@ -10670,7 +10706,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1356,
+        "downloads": 1357,
         "endorsements": 0
       }
     },
@@ -10805,7 +10841,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2537,
+        "downloads": 2541,
         "endorsements": 5
       }
     },
@@ -10850,7 +10886,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 126,
+        "downloads": 127,
         "endorsements": 0
       }
     },
@@ -10895,7 +10931,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 3228,
+        "downloads": 3233,
         "endorsements": 2
       }
     },
@@ -11030,7 +11066,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 48,
+        "downloads": 49,
         "endorsements": 0
       }
     },
@@ -11750,7 +11786,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 543,
+        "downloads": 544,
         "endorsements": 1
       }
     },
@@ -11930,7 +11966,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 3316,
+        "downloads": 3323,
         "endorsements": 2
       }
     },
@@ -12200,7 +12236,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 2730,
+        "downloads": 2733,
         "endorsements": 2
       }
     },
@@ -12515,7 +12551,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 409,
+        "downloads": 411,
         "endorsements": 0
       }
     },
@@ -12740,7 +12776,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1942,
+        "downloads": 1947,
         "endorsements": 0
       }
     },
@@ -12785,7 +12821,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1184,
+        "downloads": 1185,
         "endorsements": 1
       }
     },
@@ -13280,7 +13316,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 596,
+        "downloads": 597,
         "endorsements": 0
       }
     },
@@ -13505,7 +13541,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 681,
+        "downloads": 682,
         "endorsements": 0
       }
     },
@@ -13550,7 +13586,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1653,
+        "downloads": 1654,
         "endorsements": 0
       }
     },
@@ -13910,7 +13946,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 383,
+        "downloads": 385,
         "endorsements": 0
       }
     },
@@ -14090,7 +14126,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 159,
+        "downloads": 160,
         "endorsements": 1
       }
     },
@@ -14360,7 +14396,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 674,
+        "downloads": 676,
         "endorsements": 0
       }
     },
@@ -14540,7 +14576,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1091,
+        "downloads": 1093,
         "endorsements": 0
       }
     },
@@ -14630,7 +14666,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 349,
+        "downloads": 350,
         "endorsements": 0
       }
     },
@@ -14945,7 +14981,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 457,
+        "downloads": 459,
         "endorsements": 0
       }
     },
@@ -15350,7 +15386,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 3953,
+        "downloads": 3958,
         "endorsements": 2
       }
     },
@@ -15620,7 +15656,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 1016,
+        "downloads": 1019,
         "endorsements": 0
       }
     },
@@ -15890,7 +15926,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 13,
+        "downloads": 14,
         "endorsements": 0
       }
     },
