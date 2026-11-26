@@ -21,6 +21,6 @@
   ],
   "image": "cover.png",
   "external_url": "https://github.com/urtubesrclogged/BattleSummaries/releases/latest",
-  "version": "1.6.0",
-  "changelog": "## 1.6.0\n\n**Allies**\n- Someone who isn't in your party but fights your enemies (Neloth at Nchardak, Whiterun's guards against a dragon) is now told as an ally: \"Neloth also fought them, apart from the party.\" Their kills are their own, their summons fight on their side, and they stay out of your party's shares and roles.\n- A bystander who turns hostile but only ever fights your enemies counts as an ally, not an enemy or bystander.\n\n**Bug Fixes**\n- Quest NPCs (such as Neloth) who fight alongside you without being a follower are now handled correctly.\n- An ally's spell that catches one of your party is told as crossfire, not as \"their own side's attacks\".\n- An aura that hits everyone nearby (like Durak's armor-weakening pulse) is no longer repeatedly told as something done to anyone.\n- Witnesses to the battle who did nothing in the fight no longer show up as \"caught up in it\".\n- Someone whose body is cleaned up mid-battle keeps their name instead of becoming \"someone\"."
+  "version": "1.6.1",
+  "changelog": "## 1.6.1\n\n**Improvements**\n- Enemies and witnesses who never saw you no longer learn your name from the summary: they hear of \"an unseen attacker\".\n- NPCs who spotted you halfway through the fight know who made the kills they saw, but not the ones before.\n- Your party still knows who did what, and gets the credit for kills made without being seen (stealth archers still get credit)."
 }
