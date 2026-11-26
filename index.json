@@ -1,8 +1,47 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-11-26T16:18:10.804Z",
-  "stats_as_of": "2026-11-26T16:18:10.691Z",
+  "generated_at": "2026-11-26T16:19:09.934Z",
+  "stats_as_of": "2026-11-26T16:19:09.799Z",
   "plugins": [
+    {
+      "id": "plugins/trevaun23/conquest-of-skyrimnet",
+      "plugin_id": "trevaun23.conquest-of-skyrimnet",
+      "type": "listing",
+      "title": "Conquest of SkyrimNet",
+      "tagline": "Choose a government, raise an army, conquer territory and manage your economy with the end goal being to become the High King of Skyrim",
+      "author": "trevaun23",
+      "tags": [],
+      "nsfw": false,
+      "icon": "brain",
+      "mods": [],
+      "first_published": "2026-11-26T16:18:34Z",
+      "last_updated": "2026-11-26T16:18:34Z",
+      "version": "2.1.15",
+      "history": [
+        {
+          "version": "2.1.15",
+          "commit": "215d64eec95985d6e344ea315d35db05e1e91d71",
+          "date": "2026-11-26T16:18:34Z",
+          "changelog": "# Conquest of SkyrimNet: changes since 1.9.9 (2.0.0 to 2.1.15)\n\n\n## Settlements\n\n- Build from the faction screen: a catalogue with costs and what each building gives (unaffordable ones greyed out), grid and angle snapping, and ready-made layouts (starter camp, farmstead, lumber camp, mining camp, outpost, market square) shown in outline before you place them.\n- Move or take down any building, nearest first. Storage chests, strongboxes and a weapon rack. Every building adds beds, food, wood, metal or gold; tents come with bedrolls; the lumber mill has its log pile and working saw.\n\n## Armies and war\n\n- Troop upkeep: every troop and claim or settlement guard is paid daily (MCM > Economy), with an upkeep table per army.\n- Armies sent against an uprising or deserters really march there (walking or running, as to a garrison or an attack), and fight when they arrive.\n- Peace talks: ask your Steward or a jarl, or press *Peace talks…* on the War sub-tab; the enemy leader comes to your palace under truce.\n\n## Government and officers\n\n- **Thanes:** name Thanes in holds you control (1,000 gold, 3 per hold plus one per settlement). They wear their hold's Thane outfit and, as one of their privileges, bring you private ventures to invest in, in conversation or by request. A hold whose capital you lose loses its Thanes.\n- Jarls act with your Steward's full authority for any of your towns, and know every town's stores.\n\n## Economy and towns\n\n- Lands and the Steward's books are one tab: each town is a card with gold, food, metal and wood tiles showing stores and daily surplus or deficit.\n- Town gold moves as a daily flow, like food, metal and wood (Take / Send / Set on the Gold tile). Jarls who manage a town's economy balance its gold too.\n- Thane ventures pay their gold into the hold's city treasury; hover the Gold tile for every venture running there, its gold a day and days left. Losing the city deletes them."
+        }
+      ],
+      "external_url": "https://www.nexusmods.com/skyrimspecialedition/mods/200149",
+      "languages": [
+        "en"
+      ],
+      "language": "en",
+      "image": {
+        "file": "cover.png",
+        "sha": "332baa83475464dc56c4e13505859907ffaf73b7",
+        "commit": "215d64eec95985d6e344ea315d35db05e1e91d71",
+        "width": 1920,
+        "height": 1080
+      },
+      "stats": {
+        "downloads": 0,
+        "endorsements": 0
+      }
+    },
     {
       "id": "plugins/7regalrascal7/delectatio-et-dominium",
       "plugin_id": "7regalrascal7.delectatio-et-dominium",
@@ -952,7 +991,7 @@
         "height": 1080
       },
       "stats": {
-        "downloads": 103,
+        "downloads": 104,
         "endorsements": 0
       }
     },
@@ -4087,7 +4126,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 475,
+        "downloads": 476,
         "endorsements": 3
       }
     },
@@ -4293,7 +4332,7 @@
         "config": 7
       },
       "stats": {
-        "downloads": 1130,
+        "downloads": 1131,
         "endorsements": 1
       }
     },
@@ -6911,7 +6950,7 @@
         "config": 0
       },
       "stats": {
-        "downloads": 48,
+        "downloads": 49,
         "endorsements": 0
       }
     },
