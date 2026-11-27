@@ -17,6 +17,6 @@
   ],
   "image": "cover.jpg",
   "external_url": "https://github.com/Maeyanie/RumourEngine/",
-  "version": "1.1.0",
-  "changelog": "- Logs moved from `Skyrim.INI/SKSE` to `Skyrim Special Edition/SKSE` (due to a CommonLibSSE-NG Bugfix)\n- Fixes for non-ASCII characters.\n- Support for 1.7.99 and 1.7.104. Untested, please let me know how it goes if you try it.\n- Fixes for NPCs in light plugins on Skyrim VR.\n- Safe to update existing saves."
+  "version": "1.2.0",
+  "changelog": "-\"Quiet room\" cooldown before gossip starts increased from 20s to 30s, and added a 60s cooldown after the player speaks.\n-Tuned prompt to make people less likely to suddenly feel the urge to gossip mid-conversation.\n-Encouraged people to talk about rumours where they were there as if they were there.\n-Better support for Sofia and other difficult followers, plus an .ini to add more. If you encounter any, please let me know. Of all the ones I checked, only Sofia was broken."
 }
