@@ -16,7 +16,7 @@
     "en"
   ],
   "image": "cover.png",
-  "external_url": "https://github.com/blackpotoftea/SkyrimNet_PairedAnimations/releases/download/beta-release-0.3/SkyrimNet_PairedAnimations.zip",
-  "version": "0.0.3",
-  "changelog": "Initial release"
+  "external_url": "https://github.com/blackpotoftea/SkyrimNet_PairedAnimations/releases/download/beta-release-0.4/SkyrimNet_PairedAnimations.zip",
+  "version": "0.0.4",
+  "changelog": "Fixes the clash with SkyrimNet 1.2.0's built-in vampire_feed event. This mod's feed events are now spa_vampire_feed and spa_vampire_feed_failed, so they no longer override the built-in schema."
 }
